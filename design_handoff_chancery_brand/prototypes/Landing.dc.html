@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" href="assets/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  :root, body { --bg: #ffffff; --bg-alt: #f6f8fb; --panel: #ffffff; --border: #e4e8ee; --ink: #0d1220; --muted: #5a6577; --link: #6428c9; --link-h: #4d0fa0; --accent: #671bc6; --chip: #f1eefb; --btn-fg: #ffffff; --code-bg: #0b0f17; }
+  body[data-theme="dark"] { --bg: #0b0f17; --bg-alt: #0e1420; --panel: #121826; --border: #232b3d; --ink: #e8ecf4; --muted: #93a1b8; --link: #53d6c2; --link-h: #8ae8da; --accent: #33d6c2; --chip: #1a2233; --btn-fg: #06251f; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "IBM Plex Sans", sans-serif; transition: background 0.2s, color 0.2s; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { color: var(--link-h); text-decoration: underline; }
+  @keyframes kb-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  @media (max-width: 1180px) { [data-kb-search] { display: none !important; } }
+</style>
+</helmet>
+<div data-screen-label="kb docs landing" style="min-height: 100vh">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--border)">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 0 20px; height: 58px; display: flex; align-items: center; gap: 14px">
+      <a href="Landing.dc.html" style="display: flex; align-items: center; gap: 10px; color: var(--ink); flex-shrink: 0; white-space: nowrap" style-hover="text-decoration: none">
+        <img src="assets/logo-mark.svg" alt="kb" style="width: 28px; height: 28px">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: -0.01em">chancery</span>
+      </a>
+      <nav style="display: flex; gap: 15px; font-size: 13px; font-weight: 500; white-space: nowrap; flex-shrink: 0">
+        <a href="Landing.dc.html" style="color: var(--ink); border-bottom: 2px solid var(--accent); padding: 18px 0 16px">Home</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 18px 0 16px">Getting Started</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 18px 0 16px">Guides</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 18px 0 16px">Reference</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 18px 0 16px">Architecture</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 18px 0 16px">Blog</a>
+      </nav>
+      <div style="flex: 1"></div>
+      <div data-kb-search="true" style="display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); background: var(--bg-alt); border-radius: 6px; padding: 6px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); flex: 0 1 180px; min-width: 120px; overflow: hidden">Search<span style="margin-left: auto; border: 1px solid var(--border); border-radius: 4px; padding: 0 5px">/</span></div>
+      <button onClick="{{ toggleTheme }}" style="border: 1px solid var(--border); background: var(--bg-alt); color: var(--ink); border-radius: 6px; padding: 7px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; cursor: pointer; white-space: nowrap; flex-shrink: 0" style-hover="border-color: var(--accent)">{{ themeLabel }}</button>
+      <a href="https://github.com/amiable-dev/swe-ai-ml-kb" style="display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); border-radius: 6px; padding: 5px 12px; color: var(--ink); flex-shrink: 0; white-space: nowrap" style-hover="border-color: var(--accent); text-decoration: none">
+        <span style="font-size: 12px; font-weight: 600">amiable-dev/swe-ai-ml-kb</span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--muted)">v0.x · MIT</span>
+      </a>
+    </div>
+    <div style="height: 3px; display: flex"><div style="flex: 1; background: #33d6c2"></div><div style="flex: 1; background: #37bfc0"></div><div style="flex: 1; background: #3aacc1"></div><div style="flex: 1; background: #3e9ac2"></div><div style="flex: 1; background: #4289c3"></div><div style="flex: 1; background: #4778c4"></div><div style="flex: 1; background: #4c68c5"></div><div style="flex: 1; background: #5258c6"></div><div style="flex: 1; background: #5848c7"></div><div style="flex: 1; background: #5e38c8"></div><div style="flex: 1; background: #6428c9"></div><div style="flex: 1; background: #6b19ca"></div></div>
+  </header>
+
+  <div style="max-width: 1360px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: 224px minmax(0, 1fr) 196px; gap: 44px">
+
+    <aside style="position: sticky; top: 85px; align-self: start; height: calc(100vh - 85px); overflow-y: auto; scrollbar-width: none; padding: 28px 0 40px; font-size: 13.5px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <a href="Landing.dc.html" style="color: var(--accent); font-weight: 600; padding: 4px 0">Home</a>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 16px 0 4px">Getting started</div>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">Installation</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">Quick Start</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">Configuration</a>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 16px 0 4px">Guides</div>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">Gated promotion</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">Falsifiable citations</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">Query &amp; context</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">MCP facade</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">Flashcards</a>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 16px 0 4px">Reference</div>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">CLI</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">kb.config.yaml</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">Schemas</a>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 16px 0 4px">Architecture</div>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">Overview</a>
+        <a href="Guide.dc.html" style="color: var(--muted); padding: 3px 0" style-hover="color: var(--link)">ADRs</a>
+        <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border)">
+          <a href="Brand Pack.dc.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted)" style-hover="color: var(--link)">design pack →</a>
+        </div>
+      </div>
+    </aside>
+
+    <main style="padding: 44px 0 80px; min-width: 0">
+
+      <section style="text-align: center; padding: 28px 0 8px">
+        <img src="assets/logo-mark.svg" alt="chancery" style="width: 92px; height: 92px">
+        <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; letter-spacing: -0.02em; margin: 18px 0 0">chancery</h1>
+        <p style="font-size: 19px; line-height: 1.55; color: var(--muted); max-width: 620px; margin: 16px auto 0; text-wrap: pretty">A governed, git-native knowledge base for AI agents — deterministic gates, falsifiable citations, portable skills.</p>
+        <div style="display: flex; gap: 12px; justify-content: center; margin-top: 26px">
+          <a href="Guide.dc.html" style="background: var(--accent); color: var(--btn-fg); border-radius: 7px; padding: 11px 20px; font-weight: 600; font-size: 14.5px" style-hover="filter: brightness(0.94); text-decoration: none">Get started →</a>
+          <a href="https://github.com/amiable-dev/swe-ai-ml-kb" style="border: 1px solid var(--border); color: var(--ink); border-radius: 7px; padding: 11px 20px; font-weight: 600; font-size: 14.5px" style-hover="border-color: var(--accent); text-decoration: none">★ Star on GitHub</a>
+        </div>
+        <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 24px">
+          <span style="display: inline-flex; border-radius: 3px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 500"><span style="background: #444d5c; color: #fff; padding: 3px 7px">kb verify</span><span style="background: #33d6c2; color: #06251f; padding: 3px 7px">passing</span></span>
+          <span style="display: inline-flex; border-radius: 3px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 500"><span style="background: #444d5c; color: #fff; padding: 3px 7px">license</span><span style="background: #671bc6; color: #fff; padding: 3px 7px">MIT</span></span>
+          <span style="display: inline-flex; border-radius: 3px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 500"><span style="background: #444d5c; color: #fff; padding: 3px 7px">status</span><span style="background: #5848c7; color: #fff; padding: 3px 7px">early v0.x</span></span>
+          <span style="display: inline-flex; border-radius: 3px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 500"><span style="background: #444d5c; color: #fff; padding: 3px 7px">node</span><span style="background: #4289c3; color: #fff; padding: 3px 7px">≥ 22</span></span>
+          <span style="display: inline-flex; border-radius: 3px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 500"><span style="background: #444d5c; color: #fff; padding: 3px 7px">gate</span><span style="background: #37bfc0; color: #06251f; padding: 3px 7px">0 model calls</span></span>
+        </div>
+      </section>
+
+      <section id="start" style="margin-top: 56px">
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 6px">Start in 60 seconds</h2>
+        <p style="color: var(--muted); margin: 0 0 16px; font-size: 15px">Your agent supplies the judgment. The CLI supplies everything that can be deterministic.</p>
+        <div style="display: flex; gap: 4px; border-bottom: 1px solid var(--border)">
+          <button onClick="{{ pickTab0 }}" style="background: none; border: none; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 13.5px; font-weight: 600; padding: 10px 14px; color: {{ tab0Color }}; border-bottom: 2px solid {{ tab0Border }}; margin-bottom: -1px">Claude Code / MCP</button>
+          <button onClick="{{ pickTab1 }}" style="background: none; border: none; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 13.5px; font-weight: 600; padding: 10px 14px; color: {{ tab1Color }}; border-bottom: 2px solid {{ tab1Border }}; margin-bottom: -1px">The CLI loop</button>
+          <button onClick="{{ pickTab2 }}" style="background: none; border: none; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 13.5px; font-weight: 600; padding: 10px 14px; color: {{ tab2Color }}; border-bottom: 2px solid {{ tab2Border }}; margin-bottom: -1px">CI gate</button>
+        </div>
+        <sc-if value="{{ qs0 }}" hint-placeholder-val="{{ true }}">
+          <pre style="margin: 0; background: var(--code-bg); color: #d7e0ee; border-radius: 0 0 10px 10px; padding: 20px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.8; overflow-x: auto">$ claude mcp add kb -- npx kb-mcp
+<span style="color: #7f8ba0"># six tools, byte-identical to the CLI: kb_search · kb_read · kb_propose …</span>
+
+&gt; <span style="color: #53d6c2">"Ingest this post to staging and assess it against our rubric."</span>
+<span style="color: #7f8ba0"># the generated skills already taught your agent the loop</span></pre>
+        </sc-if>
+        <sc-if value="{{ qs1 }}">
+          <pre style="margin: 0; background: var(--code-bg); color: #d7e0ee; border-radius: 0 0 10px 10px; padding: 20px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.8; overflow-x: auto">$ kb ingest https://example.com/article     <span style="color: #7f8ba0"># → staging/&lt;slug&gt;.md, source hashed</span>
+$ kb assess staging/&lt;slug&gt;.md               <span style="color: #7f8ba0"># → judgment task for your agent</span>
+$ kb promote &lt;slug&gt; --draft d.json --apply  <span style="color: #7f8ba0"># → concepts/&lt;slug&gt;.md, by construction</span>
+$ kb query "what do we know about X?"       <span style="color: #7f8ba0"># grounded — uncited answers rejected</span></pre>
+        </sc-if>
+        <sc-if value="{{ qs2 }}">
+          <pre style="margin: 0; background: var(--code-bg); color: #d7e0ee; border-radius: 0 0 10px 10px; padding: 20px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.8; overflow-x: auto"><span style="color: #7f8ba0"># .github/workflows/kb-verify.yml — the contract, before every commit</span>
+$ npm run verify
+<span style="color: #53d6c2">480+ files · schema / links / index / cards · ~1s</span>
+<span style="color: #7f8ba0"># no API keys in the gate · no network · the exit code is the contract</span></pre>
+        </sc-if>
+      </section>
+
+      <section id="gate" style="margin-top: 56px">
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 6px">See it gate</h2>
+        <p style="color: var(--muted); margin: 0 0 16px; font-size: 15px; max-width: 640px">verify doesn't hand you prose to parse. Evidence drift is caught mechanically — which claims, not just which links.</p>
+        <div style="background: #0b0f17; border-radius: 10px; border: 1px solid #232b3d; overflow: hidden">
+          <div style="display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-bottom: 1px solid #1a2233">
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: #2a3346"></div>
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: #2a3346"></div>
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: #2a3346"></div>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #7f8ba0; margin-left: 8px">kb verify — 480 files, no network</span>
+            <button onClick="{{ replayTerm }}" style="margin-left: auto; background: #1a2233; border: 1px solid #232b3d; color: #93a1b8; border-radius: 5px; padding: 3px 10px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; cursor: pointer" style-hover="color: #53d6c2; border-color: #53d6c2">replay</button>
+          </div>
+          <div style="padding: 18px 22px; min-height: 236px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.9">
+            <sc-for list="{{ termLines }}" as="ln" hint-placeholder-count="3">
+              <div style="white-space: pre-wrap"><span style="color: {{ ln.markColor }}; font-weight: 600">{{ ln.mark }}</span><span style="color: {{ ln.color }}">{{ ln.text }}</span></div>
+            </sc-for>
+            <sc-if value="{{ termRunning }}" hint-placeholder-val="{{ false }}">
+              <span style="display: inline-block; width: 8px; height: 15px; background: #53d6c2; vertical-align: text-bottom; animation: kb-blink 1s steps(1) infinite"></span>
+            </sc-if>
+          </div>
+        </div>
+      </section>
+
+      <section id="pipeline" style="margin-top: 56px">
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 6px">Two phases, one gate</h2>
+        <p style="color: var(--muted); margin: 0 0 24px; font-size: 15px; max-width: 640px">kb never calls a model. Walk the loop — judgment arrives from outside, everything else is a lookup table.</p>
+        <div style="display: flex; align-items: flex-start">
+          <sc-for list="{{ stages }}" as="s">
+            <div style="display: flex; align-items: flex-start; flex: {{ s.flex }}">
+              <div onClick="{{ s.pick }}" style="display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; width: 84px; flex-shrink: 0">
+                <div style="width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; background: {{ s.bg }}; color: {{ s.fg }}; box-shadow: {{ s.ring }}; transition: all 0.15s">{{ s.n }}</div>
+                <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: {{ s.labelColor }}; text-align: center; line-height: 1.5">{{ s.label }}</div>
+              </div>
+              <sc-if value="{{ s.hasSeg }}" hint-placeholder-val="{{ true }}">
+                <div style="flex: 1; height: 2px; margin-top: 20px; background: {{ s.segBg }}"></div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div style="border: 1px solid var(--border); border-left: 3px solid {{ curColor }}; background: var(--panel); border-radius: 10px; padding: 24px 28px; margin-top: 22px">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: {{ curColor }}">{{ curKicker }}</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 700; margin: 8px 0 8px">{{ curTitle }}</div>
+          <p style="margin: 0 0 16px; color: var(--muted); line-height: 1.6; font-size: 14.5px; max-width: 620px">{{ curDesc }}</p>
+          <pre style="margin: 0; background: var(--code-bg); color: #d7e0ee; border-radius: 8px; padding: 14px 18px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; line-height: 1.75; overflow-x: auto; white-space: pre-wrap">{{ curCode }}</pre>
+          <div style="display: flex; gap: 10px; margin-top: 18px">
+            <button onClick="{{ prevStage }}" style="border: 1px solid var(--border); background: none; color: var(--ink); border-radius: 6px; padding: 7px 14px; font-size: 13px; font-weight: 600; cursor: pointer; opacity: {{ prevOp }}" style-hover="border-color: var(--accent)">← Prev</button>
+            <button onClick="{{ nextStage }}" style="border: 1px solid var(--border); background: none; color: var(--ink); border-radius: 6px; padding: 7px 14px; font-size: 13px; font-weight: 600; cursor: pointer; opacity: {{ nextOp }}" style-hover="border-color: var(--accent)">Next →</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" style="margin-top: 56px">
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 20px">Why chancery</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px">
+          <div style="border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 20px 22px"><div style="width: 26px; height: 4px; border-radius: 2px; background: #33d6c2; margin-bottom: 14px"></div><div style="font-weight: 600; font-size: 15px; margin-bottom: 6px">Gated promotion</div><p style="margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6">Sources land in staging, get judged against a rubric — knockout disqualifiers first — and only then become concepts. Nothing is auto-deleted.</p></div>
+          <div style="border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 20px 22px"><div style="width: 26px; height: 4px; border-radius: 2px; background: #3e9ac2; margin-bottom: 14px"></div><div style="font-weight: 600; font-size: 15px; margin-bottom: 6px">Falsifiable citations</div><p style="margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6">Every source is content-hashed at ingest. revalidate reports which claims' evidence drifted; support gives claim-by-claim verdicts against the exact snapshot judged.</p></div>
+          <div style="border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 20px 22px"><div style="width: 26px; height: 4px; border-radius: 2px; background: #4778c4; margin-bottom: 14px"></div><div style="font-weight: 600; font-size: 15px; margin-bottom: 6px">A typed concept graph</div><p style="margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6">Explicit relationship clauses ("X supersedes Y because…"), faceted classification, a generated index. The hallucination-free graph auto-extraction can't produce.</p></div>
+          <div style="border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 20px 22px"><div style="width: 26px; height: 4px; border-radius: 2px; background: #5258c6; margin-bottom: 14px"></div><div style="font-weight: 600; font-size: 15px; margin-bottom: 6px">Grounded query + context</div><p style="margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6">query returns ranked concepts with their graph edges — answers citing unretrieved concepts are rejected. context compiles the exact bundle a task needs, byte-stable.</p></div>
+          <div style="border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 20px 22px"><div style="width: 26px; height: 4px; border-radius: 2px; background: #5e38c8; margin-bottom: 14px"></div><div style="font-weight: 600; font-size: 15px; margin-bottom: 6px">A tamper-evident loop</div><p style="margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6">Judgments travel in task envelopes — stale, replayed, or out-of-bounds answers are refused. Applies verify themselves and roll back; audit sweeps for rot.</p></div>
+          <div style="border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 20px 22px"><div style="width: 26px; height: 4px; border-radius: 2px; background: #6b19ca; margin-bottom: 14px"></div><div style="font-weight: 600; font-size: 15px; margin-bottom: 6px">Your agent already knows it</div><p style="margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6">One procedure source generates skills for Claude Code, Copilot, Windsurf, and Devin — CI-diffed so they can't go stale — plus a local MCP facade.</p></div>
+        </div>
+      </section>
+
+      <section id="paths" style="margin-top: 56px">
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 20px">Pick your path</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px">
+          <a href="Guide.dc.html" style="border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 22px; color: var(--ink); display: block" style-hover="border-color: #33d6c2; text-decoration: none"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #19b3a1; margin-bottom: 10px">coding agent</div><div style="font-weight: 600; font-size: 15px; margin-bottom: 6px">I use Claude Code / Copilot</div><p style="margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6">Generated skills teach your agent the loop — no glue code. →</p></a>
+          <a href="Guide.dc.html" style="border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 22px; color: var(--ink); display: block" style-hover="border-color: #5258c6; text-decoration: none"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #5258c6; margin-bottom: 10px">research workflow</div><div style="font-weight: 600; font-size: 15px; margin-bottom: 6px">I run deep research</div><p style="margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6">kb-mcp: six tools, byte-identical to the CLI, local stdio. →</p></a>
+          <a href="Guide.dc.html" style="border: 1px solid var(--border); background: var(--panel); border-radius: 10px; padding: 22px; color: var(--ink); display: block" style-hover="border-color: #6b19ca; text-decoration: none"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #7c3aed; margin-bottom: 10px">ci gate</div><div style="font-weight: 600; font-size: 15px; margin-bottom: 6px">I want the corpus gated</div><p style="margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6">kb verify — hermetic, ~1s, the exit code is the contract. →</p></a>
+        </div>
+      </section>
+
+      <section id="stats" style="margin-top: 56px; border: 1px solid var(--border); background: var(--bg-alt); border-radius: 12px; padding: 28px 32px">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center">
+          <div><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; color: #19b3a1">244</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--muted); margin-top: 2px">concept notes</div></div>
+          <div><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; color: #4778c4">1,240</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--muted); margin-top: 2px">flashcards</div></div>
+          <div><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; color: #5848c7">~1s</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--muted); margin-top: 2px">to verify 480+ files</div></div>
+          <div><div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; color: #6b19ca">0</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--muted); margin-top: 2px">model calls in the gate</div></div>
+        </div>
+        <p style="text-align: center; color: var(--muted); font-size: 13.5px; margin: 20px 0 0; line-height: 1.6">This repo is both the engine and its first reference instance — a corpus on AI engineering, maintained daily with the pipeline itself. <em>The dogfood is the demo.</em></p>
+      </section>
+
+      <section id="next" style="margin-top: 56px">
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 14px">Next steps</h2>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14.5px">
+          <div><a href="Guide.dc.html">Quick Start</a> <span style="color: var(--muted)">— your first gated promotion in five minutes</span></div>
+          <div><a href="Guide.dc.html">Gated promotion</a> <span style="color: var(--muted)">— rubrics, knockouts, and why a discard is only a recommendation</span></div>
+          <div><a href="Guide.dc.html">Falsifiable citations</a> <span style="color: var(--muted)">— evidence pinning, drift, and claim-level support</span></div>
+          <div><a href="Guide.dc.html">Architecture overview</a> <span style="color: var(--muted)">— invariants first: no model calls, no network in the gate</span></div>
+        </div>
+      </section>
+
+      <footer style="margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 18px; font-size: 12.5px; color: var(--muted)">
+        <img src="assets/logo-mark.svg" alt="" style="width: 20px; height: 20px">
+        <span>© 2026 Chris Joseph (amiable-dev) · MIT · <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px">chancery.dev</span></span>
+        <div style="flex: 1"></div>
+        <a href="https://llm-council.dev">llm-council</a>
+        <a href="https://amiable-templates.dev">amiable-templates</a>
+        <a href="Brand Pack.dc.html">design pack</a>
+      </footer>
+
+    </main>
+
+    <aside style="position: sticky; top: 85px; align-self: start; padding: 28px 0; font-size: 12.5px">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px">On this page</div>
+      <div style="display: flex; flex-direction: column; gap: 7px; border-left: 1px solid var(--border); padding-left: 14px">
+        <a href="#start" style="color: var(--muted)" style-hover="color: var(--link)">Start in 60 seconds</a>
+        <a href="#gate" style="color: var(--muted)" style-hover="color: var(--link)">See it gate</a>
+        <a href="#pipeline" style="color: var(--muted)" style-hover="color: var(--link)">Two phases, one gate</a>
+        <a href="#why" style="color: var(--muted)" style-hover="color: var(--link)">Why kb</a>
+        <a href="#paths" style="color: var(--muted)" style-hover="color: var(--link)">Pick your path</a>
+        <a href="#stats" style="color: var(--muted)" style-hover="color: var(--link)">The corpus</a>
+        <a href="#next" style="color: var(--muted)" style-hover="color: var(--link)">Next steps</a>
+      </div>
+    </aside>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultTheme&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;light&quot;, &quot;dark&quot;], &quot;default&quot;: &quot;light&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Theme&quot;}, &quot;autoplayTerminal&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Demos&quot;}, &quot;terminalOutcome&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;fail&quot;, &quot;pass&quot;], &quot;default&quot;: &quot;fail&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Demos&quot;}}">
+class Component extends DCLogic {
+  state = { theme: null, tab: 0, stage: 0, termN: 0, termRunning: false };
+
+  componentDidMount() {
+    const saved = localStorage.getItem('kb-proto-theme');
+    const theme = saved || (this.props.defaultTheme ?? 'light');
+    document.body.dataset.theme = theme;
+    this.setState({ theme });
+    if (this.props.autoplayTerminal ?? true) this.playTerm();
+  }
+  componentWillUnmount() { clearInterval(this._t); }
+
+  termData() {
+    const fail = (this.props.terminalOutcome ?? 'fail') === 'fail';
+    const L = (mark, markColor, text, color) => ({ mark, markColor, text, color });
+    const lines = [
+      L('$ ', '#53d6c2', 'kb verify', '#e8ecf4'),
+      L('  ✓ ', '#33d6c2', 'schema      480 files', '#c5d0e2'),
+      L('  ✓ ', '#33d6c2', 'links       1,912 graph edges', '#c5d0e2'),
+      L('  ✓ ', '#33d6c2', 'index       244 concepts, regenerated clean', '#c5d0e2'),
+      L('  ✓ ', '#33d6c2', 'cards       1,240 stable ids', '#c5d0e2'),
+    ];
+    if (fail) {
+      lines.push(
+        L('  ✗ ', '#ff7a8a', 'citations   2 sources drifted since ingest', '#c5d0e2'),
+        L('', '#fff', ' ', '#c5d0e2'),
+        L('', '#fff', 'verify: FAIL (exit 1) — evidence drifted, not just links dead', '#ff7a8a'),
+        L('→ ', '#53d6c2', 'kb revalidate --pins   · deterministic · no model · no network', '#7f8ba0'),
+      );
+    } else {
+      lines.push(
+        L('  ✓ ', '#33d6c2', 'citations   sources match pinned snapshots', '#c5d0e2'),
+        L('', '#fff', ' ', '#c5d0e2'),
+        L('', '#fff', 'verify: PASS (exit 0) — 480 files in 0.9s', '#33d6c2'),
+        L('→ ', '#53d6c2', 'safe to commit · deterministic · no model · no network', '#7f8ba0'),
+      );
+    }
+    return lines;
+  }
+
+  playTerm() {
+    clearInterval(this._t);
+    this.setState({ termN: 0, termRunning: true });
+    this._t = setInterval(() => {
+      this.setState(s => {
+        const max = this.termData().length;
+        if (s.termN + 1 >= max) { clearInterval(this._t); return { termN: max, termRunning: false }; }
+        return { termN: s.termN + 1 };
+      });
+    }, 380);
+  }
+
+  stageData() {
+    return [
+      { n: '1', label: 'ingest', kicker: 'untrusted inflow', title: 'kb ingest', color: '#19b3a1',
+        desc: 'Every source lands in staging/ with its content hashed into an append-only evidence store. Nothing enters canon directly — on any interface.',
+        code: '$ kb ingest https://example.com/attention-sinks\n\u2192 staging/attention-sinks.md   (sha256 pinned, evidence stored)' },
+      { n: '2', label: 'assess', kicker: 'phase 1 — emit the task', title: 'kb assess', color: '#4289c3',
+        desc: 'Commands that need judgment never call a model. Phase 1 emits a self-contained task envelope: the note, the rubric, the bounds an answer must respect.',
+        code: '$ kb assess staging/attention-sinks.md\n\u2192 task.json   (rubric: source-quality@3 \u00b7 knockouts checked first)' },
+      { n: '3', label: 'your agent', kicker: 'judgment — outside kb', title: 'Your agent answers', color: '#7c3aed',
+        desc: 'Claude Code, a council, a human — any schema-conforming supplier. Judgment belongs to the model; kb stays deterministic and never picks a supplier.',
+        code: '# your harness, your model\nagent &lt; task.json &gt; answer.json' },
+      { n: '4', label: 'apply', kicker: 'phase 2 — validate & apply', title: 'kb assess --verdict', color: '#5848c7',
+        desc: 'The answer is schema-validated and applied by rule. Stale, replayed, or out-of-bounds verdicts are refused; a discard is a recommendation, never a deletion.',
+        code: "$ kb assess staging/attention-sinks.md --verdict answer.json\n\u2192 promote   (knockouts: none \u00b7 score 4.2/5 \u00b7 apply verifies itself)" },
+      { n: '5', label: 'verify', kicker: 'the contract', title: 'kb verify', color: '#6b19ca',
+        desc: 'CI re-checks everything deterministically — schema, links, index, cards — with no API keys and no network. Only then is the note canon.',
+        code: '$ kb verify\n480 files \u00b7 schema \u2713 links \u2713 index \u2713 cards \u2713   (~1s, hermetic)' },
+    ];
+  }
+
+  toggleTheme = () => {
+    const theme = (this.state.theme === 'dark') ? 'light' : 'dark';
+    document.body.dataset.theme = theme;
+    localStorage.setItem('kb-proto-theme', theme);
+    this.setState({ theme });
+  };
+
+  renderVals() {
+    const { tab, stage, termN, termRunning, theme } = this.state;
+    const raw = this.stageData();
+    const stages = raw.map((s, i) => {
+      const active = i === stage;
+      const done = i < stage;
+      return {
+        n: s.n, label: s.label,
+        flex: i < raw.length - 1 ? '1 1 0' : '0 0 auto',
+        hasSeg: i < raw.length - 1,
+        segBg: done ? s.color : 'var(--border)',
+        bg: active ? s.color : (done ? 'var(--chip)' : 'var(--chip)'),
+        fg: active ? (i === 0 ? '#06251f' : '#ffffff') : 'var(--muted)',
+        ring: active ? '0 0 0 5px ' + s.color + '33' : 'none',
+        labelColor: active ? s.color : 'var(--muted)',
+        pick: () => this.setState({ stage: i }),
+      };
+    });
+    const cur = raw[stage];
+    const decode = t => t.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    return {
+      themeLabel: theme === 'dark' ? 'light mode' : 'dark mode',
+      toggleTheme: this.toggleTheme,
+      pickTab0: () => this.setState({ tab: 0 }),
+      pickTab1: () => this.setState({ tab: 1 }),
+      pickTab2: () => this.setState({ tab: 2 }),
+      qs0: tab === 0, qs1: tab === 1, qs2: tab === 2,
+      tab0Color: tab === 0 ? 'var(--ink)' : 'var(--muted)', tab0Border: tab === 0 ? 'var(--accent)' : 'transparent',
+      tab1Color: tab === 1 ? 'var(--ink)' : 'var(--muted)', tab1Border: tab === 1 ? 'var(--accent)' : 'transparent',
+      tab2Color: tab === 2 ? 'var(--ink)' : 'var(--muted)', tab2Border: tab === 2 ? 'var(--accent)' : 'transparent',
+      termLines: this.termData().slice(0, termN),
+      termRunning,
+      replayTerm: () => this.playTerm(),
+      stages,
+      curColor: cur.color, curKicker: cur.kicker, curTitle: cur.title, curDesc: cur.desc,
+      curCode: decode(cur.code),
+      prevStage: () => this.setState(s => ({ stage: Math.max(0, s.stage - 1) })),
+      nextStage: () => this.setState(s => ({ stage: Math.min(raw.length - 1, s.stage + 1) })),
+      prevOp: stage === 0 ? '0.4' : '1',
+      nextOp: stage === raw.length - 1 ? '0.4' : '1',
+    };
+  }
+}
+</script>
+</body>
+</html>

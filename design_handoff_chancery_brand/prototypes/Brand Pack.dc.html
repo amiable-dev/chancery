@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #f6f8fb; color: #0d1220; font-family: "IBM Plex Sans", sans-serif; }
+  a { color: #6428c9; text-decoration: none; }
+  a:hover { color: #4d0fa0; text-decoration: underline; }
+</style>
+</helmet>
+<div style="max-width: 1080px; margin: 0 auto; padding: 56px 32px 96px">
+
+  <header data-screen-label="Cover" style="display: flex; align-items: center; gap: 24px; padding-bottom: 32px; border-bottom: 1px solid #e4e8ee">
+    <img src="assets/logo-mark.svg" alt="chancery mark" style="width: 72px; height: 72px">
+    <div style="flex: 1">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; letter-spacing: -0.02em">chancery <span style="color: #5a6577; font-weight: 500">— design pack</span></div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5a6577; margin-top: 6px">v1 · 2026-08 · chancery.dev · continues the amiable-dev family (llm-council, amiable-templates) · <a href="Landing.dc.html">site prototype →</a></div>
+    </div>
+    <div style="display: flex; gap: 0; height: 8px; width: 220px; border-radius: 4px; overflow: hidden">
+      <div style="flex: 1; background: #33d6c2"></div><div style="flex: 1; background: #3aacc1"></div><div style="flex: 1; background: #4289c3"></div><div style="flex: 1; background: #4c68c5"></div><div style="flex: 1; background: #5848c7"></div><div style="flex: 1; background: #6428c9"></div><div style="flex: 1; background: #6b19ca"></div>
+    </div>
+  </header>
+
+  <section data-screen-label="01 Logo" style="padding: 48px 0; border-bottom: 1px solid #e4e8ee">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #5a6577; text-transform: uppercase">01 — Logo system</div>
+    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; letter-spacing: -0.01em; margin: 10px 0 6px">Brackets around the corpus</h2>
+    <p style="max-width: 640px; color: #3c4557; line-height: 1.6; margin: 0 0 28px; text-wrap: pretty">Two brackets — the deterministic gate — hold ragged note lines that consolidate as they descend the family ramp: teal staging in, purple canon out. Same bar language as llm-council, inverted story: the council fragments one answer into voices; kb converges many notes into one governed corpus.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+      <div style="background: #ffffff; border: 1px solid #e4e8ee; border-radius: 10px; padding: 36px; display: flex; align-items: center; justify-content: center">
+        <img src="assets/logo-mark.svg" alt="primary mark" style="width: 168px; height: 168px">
+      </div>
+      <div style="background: #0b0f17; border-radius: 10px; padding: 36px; display: flex; align-items: center; justify-content: center">
+        <img src="assets/logo-mark.svg" alt="mark on dark" style="width: 168px; height: 168px">
+      </div>
+      <div style="background: #ffffff; border: 1px solid #e4e8ee; border-radius: 10px; padding: 28px 36px; display: flex; align-items: center; justify-content: center; gap: 16px">
+        <img src="assets/logo-mark.svg" alt="" style="width: 44px; height: 44px">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; letter-spacing: -0.02em; font-weight: 700">chancery</div>
+      </div>
+      <div style="background: #ffffff; border: 1px solid #e4e8ee; border-radius: 10px; padding: 28px 36px; display: flex; align-items: center; justify-content: center; gap: 28px">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
+          <img src="assets/favicon.svg" alt="favicon 32" style="width: 32px; height: 32px">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5a6577">32px</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
+          <img src="assets/favicon.svg" alt="favicon 16" style="width: 16px; height: 16px">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5a6577">16px</span>
+        </div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5a6577; line-height: 1.7">favicon.svg<br>3 bars, endpoint brackets</div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 20px">
+      <div style="font-size: 13.5px; color: #3c4557; line-height: 1.6"><strong style="color: #0d1220">Clearspace.</strong> One post-width (26/300) on all sides. Minimum size 20px; below 24px use the favicon cut.</div>
+      <div style="font-size: 13.5px; color: #3c4557; line-height: 1.6"><strong style="color: #0d1220">Color.</strong> Always the full ramp on white or slate #0b0f17. Never recolor, outline, or add gradients within a bar.</div>
+      <div style="font-size: 13.5px; color: #3c4557; line-height: 1.6"><strong style="color: #0d1220">Files.</strong> <a href="assets/logo-mark.svg">assets/logo-mark.svg</a> · <a href="assets/favicon.svg">assets/favicon.svg</a>. Ask me for PNG cuts at any size.</div>
+    </div>
+  </section>
+
+  <section data-screen-label="02 Color" style="padding: 48px 0; border-bottom: 1px solid #e4e8ee">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #5a6577; text-transform: uppercase">02 — Color</div>
+    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; margin: 10px 0 24px">The family ramp, verbatim</h2>
+    <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-bottom: 24px">
+      <div style="border: 1px solid #e4e8ee; border-radius: 8px; overflow: hidden; background: #fff"><div style="height: 64px; background: #33d6c2"></div><div style="padding: 10px 12px"><div style="font-weight: 600; font-size: 13px">Teal 500</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #5a6577">#33d6c2 · start</div></div></div>
+      <div style="border: 1px solid #e4e8ee; border-radius: 8px; overflow: hidden; background: #fff"><div style="height: 64px; background: #6b19ca"></div><div style="padding: 10px 12px"><div style="font-weight: 600; font-size: 13px">Purple 600</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #5a6577">#6b19ca · end</div></div></div>
+      <div style="border: 1px solid #e4e8ee; border-radius: 8px; overflow: hidden; background: #fff"><div style="height: 64px; background: #671bc6"></div><div style="padding: 10px 12px"><div style="font-weight: 600; font-size: 13px">Violet 500</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #5a6577">#671bc6 · action</div></div></div>
+      <div style="border: 1px solid #e4e8ee; border-radius: 8px; overflow: hidden; background: #fff"><div style="height: 64px; background: #0d1220"></div><div style="padding: 10px 12px"><div style="font-weight: 600; font-size: 13px">Ink</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #5a6577">#0d1220</div></div></div>
+      <div style="border: 1px solid #e4e8ee; border-radius: 8px; overflow: hidden; background: #fff"><div style="height: 64px; background: #0b0f17"></div><div style="padding: 10px 12px"><div style="font-weight: 600; font-size: 13px">Slate</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #5a6577">#0b0f17 · dark bg</div></div></div>
+      <div style="border: 1px solid #e4e8ee; border-radius: 8px; overflow: hidden; background: #fff"><div style="height: 64px; background: #f6f8fb; border-bottom: 1px solid #e4e8ee"></div><div style="padding: 10px 12px"><div style="font-weight: 600; font-size: 13px">Paper</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #5a6577">#f6f8fb · light bg</div></div></div>
+    </div>
+    <div style="border: 1px solid #e4e8ee; border-radius: 8px; overflow: hidden; background: #fff">
+      <div style="display: flex; height: 56px">
+        <div style="flex: 1; background: #33d6c2"></div><div style="flex: 1; background: #37bfc0"></div><div style="flex: 1; background: #3aacc1"></div><div style="flex: 1; background: #3e9ac2"></div><div style="flex: 1; background: #4289c3"></div><div style="flex: 1; background: #4778c4"></div><div style="flex: 1; background: #4c68c5"></div><div style="flex: 1; background: #5258c6"></div><div style="flex: 1; background: #5848c7"></div><div style="flex: 1; background: #5e38c8"></div><div style="flex: 1; background: #6428c9"></div><div style="flex: 1; background: #6b19ca"></div>
+      </div>
+      <div style="display: flex; padding: 8px 0; font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; color: #5a6577; text-align: center">
+        <div style="flex: 1">33d6c2</div><div style="flex: 1">37bfc0</div><div style="flex: 1">3aacc1</div><div style="flex: 1">3e9ac2</div><div style="flex: 1">4289c3</div><div style="flex: 1">4778c4</div><div style="flex: 1">4c68c5</div><div style="flex: 1">5258c6</div><div style="flex: 1">5848c7</div><div style="flex: 1">5e38c8</div><div style="flex: 1">6428c9</div><div style="flex: 1">6b19ca</div>
+      </div>
+    </div>
+    <p style="max-width: 720px; color: #3c4557; line-height: 1.6; font-size: 13.5px; margin: 18px 0 0">The 12-step ramp is shared with llm-council. Ramp steps are for the mark, strips, and diagram stages — never body text. Interactive color is Violet 500 on light, Teal 500 on dark. Links: #6428c9 light / #53d6c2 dark.</p>
+  </section>
+
+  <section data-screen-label="03 Type" style="padding: 48px 0; border-bottom: 1px solid #e4e8ee">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #5a6577; text-transform: uppercase">03 — Type</div>
+    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; margin: 10px 0 24px">Space Grotesk · IBM Plex Sans · IBM Plex Mono</h2>
+    <div style="background: #fff; border: 1px solid #e4e8ee; border-radius: 10px; padding: 32px 36px; display: flex; flex-direction: column; gap: 22px">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5a6577; margin-bottom: 8px">Display — Space Grotesk 700 · 44/1.1 · -0.02em</div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1">Knowledge, treated like code.</div>
+      </div>
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5a6577; margin-bottom: 8px">H2 — Space Grotesk 700 · 26/1.2</div>
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700">Judgment belongs to the model; bookkeeping is deterministic.</div>
+      </div>
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5a6577; margin-bottom: 8px">Body — IBM Plex Sans 400 · 16/1.65</div>
+        <div style="font-size: 16px; line-height: 1.65; max-width: 640px">Markdown files are the source of truth. Every change passes a CI gate: schema, links, index, cards — 480+ files in about a second, no API keys, no network, no trust in any single agent's diligence.</div>
+      </div>
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5a6577; margin-bottom: 8px">Code — IBM Plex Mono 400–600 · 13.5/1.7</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; background: #0b0f17; color: #d7e0ee; border-radius: 8px; padding: 14px 18px">kb assess staging/new-source.md <span style="color: #7f8ba0">--verdict answer.json</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="04 Badges" style="padding: 48px 0; border-bottom: 1px solid #e4e8ee">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #5a6577; text-transform: uppercase">04 — Badge set</div>
+    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; margin: 10px 0 24px">README shields, on the ramp</h2>
+    <div style="background: #fff; border: 1px solid #e4e8ee; border-radius: 10px; padding: 28px 36px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+      <span style="display: inline-flex; border-radius: 3px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500"><span style="background: #444d5c; color: #fff; padding: 4px 8px">kb verify</span><span style="background: #33d6c2; color: #06251f; padding: 4px 8px">passing</span></span>
+      <span style="display: inline-flex; border-radius: 3px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500"><span style="background: #444d5c; color: #fff; padding: 4px 8px">license</span><span style="background: #671bc6; color: #fff; padding: 4px 8px">MIT</span></span>
+      <span style="display: inline-flex; border-radius: 3px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500"><span style="background: #444d5c; color: #fff; padding: 4px 8px">status</span><span style="background: #5848c7; color: #fff; padding: 4px 8px">early v0.x</span></span>
+      <span style="display: inline-flex; border-radius: 3px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500"><span style="background: #444d5c; color: #fff; padding: 4px 8px">node</span><span style="background: #4289c3; color: #fff; padding: 4px 8px">&#8805; 22</span></span>
+      <span style="display: inline-flex; border-radius: 3px; overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500"><span style="background: #444d5c; color: #fff; padding: 4px 8px">gate</span><span style="background: #37bfc0; color: #06251f; padding: 4px 8px">0 model calls</span></span>
+    </div>
+    <p style="color: #3c4557; line-height: 1.6; font-size: 13.5px; margin: 18px 0 0; max-width: 720px">Label always #444d5c white; value takes a ramp color (dark text on teal steps, white from #3e9ac2 on). Shields.io equivalents: <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px">color=33d6c2, 671bc6, 5848c7, 4289c3</span>.</p>
+  </section>
+
+  <section data-screen-label="05 Diagram style" style="padding: 48px 0; border-bottom: 1px solid #e4e8ee">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #5a6577; text-transform: uppercase">05 — Diagram style</div>
+    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; margin: 10px 0 24px">Stages ride the ramp, the gate is drawn</h2>
+    <div style="background: #fff; border: 1px solid #e4e8ee; border-radius: 10px; padding: 36px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap">
+      <div style="border: 1.5px solid #33d6c2; border-radius: 6px; padding: 12px 18px; text-align: center"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: #5a6577; text-transform: uppercase">untrusted</div><div style="font-weight: 600; font-size: 14px; margin-top: 3px">staging/</div></div>
+      <div style="color: #5258c6; font-family: 'IBM Plex Mono', monospace; font-size: 16px">&#8594;</div>
+      <div style="border: 1.5px solid #4289c3; border-radius: 6px; padding: 12px 18px; text-align: center"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: #5a6577; text-transform: uppercase">phase 1</div><div style="font-weight: 600; font-size: 14px; margin-top: 3px">kb assess &#8594; task</div></div>
+      <div style="color: #5258c6; font-family: 'IBM Plex Mono', monospace; font-size: 16px">&#8594;</div>
+      <div style="border: 1.5px dashed #7c3aed; border-radius: 6px; padding: 12px 18px; text-align: center"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: #7c3aed; text-transform: uppercase">outside kb</div><div style="font-weight: 600; font-size: 14px; margin-top: 3px">your agent</div></div>
+      <div style="color: #5258c6; font-family: 'IBM Plex Mono', monospace; font-size: 16px">&#8594;</div>
+      <div style="display: flex; gap: 4px; padding: 0 4px"><div style="width: 5px; height: 44px; background: #6428c9; border-radius: 2px"></div><div style="width: 5px; height: 44px; background: #6428c9; border-radius: 2px"></div></div>
+      <div style="color: #5258c6; font-family: 'IBM Plex Mono', monospace; font-size: 16px">&#8594;</div>
+      <div style="background: #6b19ca; border-radius: 6px; padding: 12px 18px; text-align: center"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: #d9c6f6; text-transform: uppercase">canon</div><div style="font-weight: 600; font-size: 14px; margin-top: 3px; color: #fff">concepts/</div></div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 20px; font-size: 13.5px; color: #3c4557; line-height: 1.6">
+      <div><strong style="color: #0d1220">Nodes.</strong> White card, 1.5px border in the stage's ramp step, radius 6, mono uppercase kicker + Plex Sans 600 name. Canon nodes fill Purple 600.</div>
+      <div><strong style="color: #0d1220">Judgment.</strong> Anything outside kb (agents, humans, councils) is dashed #7c3aed — never filled: kb never calls a model.</div>
+      <div><strong style="color: #0d1220">The gate.</strong> Two 5px vertical bars in #6428c9. Edges are mono arrows in #5258c6; no curves, no shadows.</div>
+    </div>
+  </section>
+
+  <section data-screen-label="06 Social card" style="padding: 48px 0; border-bottom: 1px solid #e4e8ee">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #5a6577; text-transform: uppercase">06 — GitHub social card · 1280&#215;640</div>
+    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; margin: 10px 0 24px">Repository preview</h2>
+    <div style="width: 896px; height: 448px; overflow: hidden; border-radius: 12px; border: 1px solid #e4e8ee">
+      <div id="social-card" style="width: 1280px; height: 640px; transform: scale(0.7); transform-origin: top left; background: #0b0f17; display: flex; align-items: center; gap: 72px; padding: 0 96px; box-sizing: border-box; position: relative">
+        <img src="assets/logo-mark.svg" alt="" style="width: 240px; height: 240px; flex-shrink: 0">
+        <div style="min-width: 0">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 92px; letter-spacing: -0.02em; color: #fff; line-height: 1; font-weight: 700">chancery</div>
+          <div style="font-size: 31px; color: #b9c2d4; margin-top: 26px; line-height: 1.4; max-width: 700px; text-wrap: pretty">A governed, git-native knowledge base for AI agents.</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; color: #53d6c2; margin-top: 22px">deterministic gates · falsifiable citations · portable skills</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 19px; color: #7f8ba0; margin-top: 40px">chancery.dev · github.com/amiable-dev/swe-ai-ml-kb</div>
+        </div>
+        <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 10px; display: flex"><div style="flex: 1; background: #33d6c2"></div><div style="flex: 1; background: #37bfc0"></div><div style="flex: 1; background: #3aacc1"></div><div style="flex: 1; background: #3e9ac2"></div><div style="flex: 1; background: #4289c3"></div><div style="flex: 1; background: #4778c4"></div><div style="flex: 1; background: #4c68c5"></div><div style="flex: 1; background: #5258c6"></div><div style="flex: 1; background: #5848c7"></div><div style="flex: 1; background: #5e38c8"></div><div style="flex: 1; background: #6428c9"></div><div style="flex: 1; background: #6b19ca"></div></div>
+      </div>
+    </div>
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5a6577; margin: 14px 0 0">shown at 70% — ask me to export the full-size PNG</p>
+  </section>
+
+  <section data-screen-label="07 README banner" style="padding: 48px 0; border-bottom: 1px solid #e4e8ee">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #5a6577; text-transform: uppercase">07 — README banner · 1280&#215;256</div>
+    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; margin: 10px 0 24px">Header for the repo README</h2>
+    <div style="width: 896px; height: 179px; overflow: hidden; border-radius: 12px; border: 1px solid #e4e8ee">
+      <div id="readme-banner" style="width: 1280px; height: 256px; transform: scale(0.7); transform-origin: top left; background: #0b0f17; display: flex; align-items: center; gap: 44px; padding: 0 72px; box-sizing: border-box; position: relative">
+        <img src="assets/logo-mark.svg" alt="" style="width: 132px; height: 132px; flex-shrink: 0">
+        <div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 56px; letter-spacing: -0.02em; color: #fff; line-height: 1; font-weight: 700">chancery</div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 19px; color: #53d6c2; margin-top: 16px">agents read your notes and write new ones — govern the corpus</div>
+        </div>
+        <div style="margin-left: auto; font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: #7f8ba0; text-align: right; line-height: 1.8">244 concepts<br>1,240 cards<br>~1s verify</div>
+        <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 8px; display: flex"><div style="flex: 1; background: #33d6c2"></div><div style="flex: 1; background: #37bfc0"></div><div style="flex: 1; background: #3aacc1"></div><div style="flex: 1; background: #3e9ac2"></div><div style="flex: 1; background: #4289c3"></div><div style="flex: 1; background: #4778c4"></div><div style="flex: 1; background: #4c68c5"></div><div style="flex: 1; background: #5258c6"></div><div style="flex: 1; background: #5848c7"></div><div style="flex: 1; background: #5e38c8"></div><div style="flex: 1; background: #6428c9"></div><div style="flex: 1; background: #6b19ca"></div></div>
+      </div>
+    </div>
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5a6577; margin: 14px 0 0">shown at 70% — ask me to export the full-size PNG</p>
+  </section>
+
+  <section data-screen-label="08 MkDocs" style="padding: 48px 0">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #5a6577; text-transform: uppercase">08 — MkDocs Material overrides</div>
+    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; margin: 10px 0 24px">Drop-in theme for the docs site</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5a6577; margin-bottom: 10px">mkdocs.yml</div>
+        <pre style="margin: 0; background: #0b0f17; color: #d7e0ee; border-radius: 10px; padding: 20px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; line-height: 1.75; overflow-x: auto">site_name: chancery
+site_url: https://chancery.dev
+theme:
+  name: material
+  logo: img/logo.svg
+  favicon: img/favicon.svg
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  palette:
+    - scheme: default
+      toggle: { icon: material/brightness-7 }
+    - scheme: slate
+      toggle: { icon: material/brightness-4 }
+extra_css:
+  - stylesheets/extra.css</pre>
+      </div>
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5a6577; margin-bottom: 10px"><a href="pack/extra.css">pack/extra.css</a> — key rules</div>
+        <pre style="margin: 0; background: #0b0f17; color: #d7e0ee; border-radius: 10px; padding: 20px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; line-height: 1.75; overflow-x: auto"><span style="color: #7f8ba0">/* light */</span>
+--md-primary-fg-color: #671bc6;
+--md-accent-fg-color: #19b3a1;
+--md-typeset-a-color: #6428c9;
+<span style="color: #7f8ba0">/* slate */</span>
+--md-primary-fg-color: #171130;
+--md-typeset-a-color: #53d6c2;
+<span style="color: #7f8ba0">/* signature */</span>
+.md-header::after &#123;
+  height: 3px;
+  background: var(--kb-ramp);
+&#125;</pre>
+      </div>
+    </div>
+    <p style="color: #3c4557; line-height: 1.6; font-size: 13.5px; margin: 20px 0 0; max-width: 720px">Full file: <a href="pack/extra.css">pack/extra.css</a>. Copy to <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px">docs/stylesheets/extra.css</span>; logo and favicon go to <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px">docs/img/</span>. See it live: <a href="Landing.dc.html">landing prototype</a> · <a href="Guide.dc.html">docs page</a>.</p>
+  </section>
+
+</div>
+</x-dc>
+</body>
+</html>

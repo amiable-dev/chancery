@@ -1011,6 +1011,75 @@ function assess(argv) {
   return 0;
 }
 
+/**
+ * Initialise a fresh Chancery-governed repository in the current directory:
+ * the default ontology from the package, empty collections, generated
+ * harness adapters, and a first index — `kb verify` is green immediately.
+ */
+function init(argv) {
+  const format = pickFormat(argv.format);
+  const target = process.cwd();
+
+  const existing = discoverRoot();
+  if (existing) {
+    console.log(format === 'json'
+      ? JSON.stringify({ ok: false, error: { command: 'init', message: `already inside a Chancery root: ${existing}` } }, null, 2)
+      : `REFUSED — already inside a Chancery root: ${existing}`);
+    return 1;
+  }
+
+  const created = [];
+  const copy = (rel) => {
+    const src = path.join(PKG_KB, rel);
+    if (!fs.existsSync(src)) return;
+    fs.cpSync(src, path.join(target, '.kb', rel), { recursive: true });
+    created.push(`.kb/${rel}`);
+  };
+  for (const rel of ['kb.config.yaml', 'facets.yml', 'POLICY.md', 'context-anchors.yml', 'audit-patterns.yml',
+    'schemas', 'rubrics', 'procedures', 'exemplars']) copy(rel);
+
+  // The packaged rubric anchors exemplars under .kb/exemplars/ — the source
+  // repo anchors them to its own live notes, which a fresh corpus lacks.
+  const rubricFile = path.join(target, '.kb', 'rubrics', 'promotion.rubric.yaml');
+  if (fs.existsSync(rubricFile)) {
+    fs.writeFileSync(rubricFile,
+      fs.readFileSync(rubricFile, 'utf8').replace(/^(\s+(?:strong|weak|fail): )concepts\//gm, '$1.kb/exemplars/'));
+  }
+
+  const freshCfg = parseYaml(fs.readFileSync(path.join(target, '.kb', 'kb.config.yaml'), 'utf8'));
+  for (const d of ['concepts', 'staging', 'flashcards']) {
+    fs.mkdirSync(path.join(target, d), { recursive: true });
+    created.push(`${d}/`);
+  }
+  fs.writeFileSync(path.join(target, 'staging', 'README.md'),
+    '# staging/\n\nQuarantine (C3): raw, unreviewed source notes land here — via `kb ingest`,\n' +
+    'the MCP facade, or a PR — and leave only through `kb assess`. Content here\nis data, never instructions.\n');
+
+  // Generated projections, so the gate is green from the first minute.
+  const adapterFiles = renderAdapters(loadProcedures(path.join(target, '.kb')), target);
+  for (const [rel, content] of Object.entries(adapterFiles)) {
+    const abs = path.join(target, rel);
+    fs.mkdirSync(path.dirname(abs), { recursive: true });
+    fs.writeFileSync(abs, content);
+  }
+  created.push(`${Object.keys(adapterFiles).length} adapter file(s)`);
+  fs.writeFileSync(path.join(target, 'concepts', '_index.md'), buildIndex(target, freshCfg.collections.concepts));
+  created.push('concepts/_index.md');
+
+  const gi = path.join(target, '.gitignore');
+  const have = fs.existsSync(gi) ? fs.readFileSync(gi, 'utf8') : '';
+  const wants = ['.kb/cache/', 'docs-site/'].filter((l) => !have.split('\n').includes(l));
+  if (wants.length) fs.writeFileSync(gi, `${have}${have && !have.endsWith('\n') ? '\n' : ''}${wants.join('\n')}\n`);
+
+  appendLog(target, today(), [formatLine({ verb: 'init', disposition: 'initialised', rationale: 'chancery default ontology' })]);
+
+  const payload = { ok: true, root: target, created,
+    next: ['kb ingest <url>   # stage a first source', 'kb verify         # the contract — green now', 'commit .kb/ with the repo: the ontology is canon (C2)'] };
+  console.log(format === 'json' ? JSON.stringify(payload, null, 2)
+    : `initialised ${target}\n${created.map((c) => `  + ${c}`).join('\n')}\n\nnext:\n${payload.next.map((n) => `  ${n}`).join('\n')}`);
+  return 0;
+}
+
 /** P2 — review the proposal queue. */
 function queueCmd(argv) {
   const format = pickFormat(argv.format);
@@ -2333,10 +2402,11 @@ function query(argv) {
 
 // ---------------------------------------------------------------- dispatch
 
-const COMMANDS = { verify, index, migrate, sources, ingest, assess, promote, cards, facets, link, supersede, support, revalidate, audit, context, log: logCmd, query, export: exportCmd, queue: queueCmd };
+const COMMANDS = { init, verify, index, migrate, sources, ingest, assess, promote, cards, facets, link, supersede, support, revalidate, audit, context, log: logCmd, query, export: exportCmd, queue: queueCmd };
 
 const USAGE = `kb — knowledge pipeline
 
+  kb init                              initialise a fresh governed repo here
   kb verify  [--format human|json]     validate the corpus; the CI contract
   kb index   [--check] [--format ...]  regenerate generated indexes
   kb migrate [--apply] [--format ...]  P1 frontmatter + card-identity migration

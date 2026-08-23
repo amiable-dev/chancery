@@ -75,6 +75,22 @@ const deep = run(['verify', '--format', 'json'], path.join(target, 'concepts'));
 check('discovery walks up from a subdirectory', deep.code === 0 && JSON.parse(deep.out).ok === true);
 check('nothing leaked into the package dir', !fs.existsSync(path.join(pkg, 'concepts', '_index.md')) && !fs.existsSync(path.join(pkg, '.kb', 'queue')));
 
+// ---- kb init from the packed tarball: a green gate in an empty directory ----
+{
+  const fresh = path.join(work, 'green-field');
+  fs.mkdirSync(fresh, { recursive: true });
+  const initRun = run(['init', '--format', 'json'], fresh);
+  check('packed kb init succeeds', initRun.code === 0 && JSON.parse(initRun.out).ok === true);
+  const v2 = JSON.parse(run(['verify', '--format', 'json'], fresh).out);
+  check('freshly initialised repo verifies clean', v2.ok === true && v2.summary.warnings === 0);
+  const rubric = fs.readFileSync(path.join(fresh, '.kb', 'rubrics', 'promotion.rubric.yaml'), 'utf8');
+  check('fresh rubric anchors to shipped exemplars', /\.kb\/exemplars\//.test(rubric) && !/: concepts\//.test(rubric));
+  check('exemplar notes shipped and copied', fs.existsSync(path.join(fresh, '.kb', 'exemplars', 'context-engineering.md')));
+  check('adapters generated for the fresh repo', fs.existsSync(path.join(fresh, '.claude', 'skills', 'kb-verify', 'SKILL.md')));
+  const again = run(['init', '--format', 'json'], fresh);
+  check('re-init inside a root is refused', again.code === 1 && JSON.parse(again.out).ok === false);
+}
+
 fs.rmSync(work, { recursive: true, force: true });
 
 if (failures.length) {
