@@ -1,5 +1,5 @@
 {
-  "name": "chancery",
+  "name": "@amiable-dev/chancery",
   "version": "0.1.0",
   "type": "module",
   "description": "Chancery \u2014 governed, git-native knowledge base for AI agents; ships the kb CLI",
@@ -58,5 +58,8 @@
     ".kb/audit-patterns.yml",
     ".kb/POLICY.md",
     "docs/why-chancery.md"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

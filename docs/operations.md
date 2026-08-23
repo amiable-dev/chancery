@@ -58,7 +58,7 @@ Making the repo public exposes **all history, forever**. Everything below happen
 
 ## Release policy
 
-**Governance note, 2026-08-23:** ADR-011 §7 gated npm publication on an external consumer; the owner exercised the trigger early — name security (`chancery` on npm) under the product direction, with chancery.dev registered. Provenance-mandatory holds; nothing else about the gear changes.
+**Governance note, 2026-08-23:** ADR-011 §7 gated npm publication on an external consumer; the owner exercised the trigger early — name security (npm: `@amiable-dev/chancery` — the unscoped name is blocked by npm's similarity rule against `chance`, discovered at first publish) under the product direction, with chancery.dev registered. Provenance-mandatory holds; nothing else about the gear changes.
 
 The artifact is the npm tarball: **engine + default ontology only** (never the reference corpus, never operational state — enforced by the package test suite). `bin` installs `kb` and `kb-mcp`; the installed CLI governs the repo it runs *in* via root discovery (nearest ancestor with `.kb/kb.config.yaml`).
 
@@ -69,7 +69,7 @@ npm version patch        # or minor — bumps package.json, commits, tags vX.Y.Z
 git push --follow-tags   # the tag triggers .github/workflows/release.yml
 ```
 
-The workflow re-runs the full gate, refuses a tag/version mismatch, packs, generates a CycloneDX SBOM, attests SLSA provenance for the tarball (GitHub-native, Sigstore), creates the GitHub release with tarball + SBOM attached, and publishes to npm with `--provenance`. Consumers verify with `gh attestation verify chancery-X.Y.Z.tgz --repo amiable-dev/chancery` or `npm audit signatures`.
+The workflow re-runs the full gate, refuses a tag/version mismatch, packs, generates a CycloneDX SBOM, attests SLSA provenance for the tarball (GitHub-native, Sigstore), creates the GitHub release with tarball + SBOM attached, and publishes to npm with `--provenance`. Consumers verify with `gh attestation verify amiable-dev-chancery-X.Y.Z.tgz --repo amiable-dev/chancery` or `npm audit signatures`.
 
 **One-time setup (owner):** create an npm **automation** token (npmjs.com → Access Tokens → Generate → Automation) and store it as the repo secret — run `gh secret set NPM_TOKEN` yourself and paste the token; it must never pass through an agent. After the first publish exists, optionally switch the package to npm **trusted publishing** (GitHub Actions OIDC; package settings on npmjs.com) and delete the token.
 
