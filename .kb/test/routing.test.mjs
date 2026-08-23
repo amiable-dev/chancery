@@ -33,6 +33,16 @@ const cases = [
   ['unmatched combination -> queue, never silent discard',
     verdict({ durability: 'weak', actionability: 'weak', atomicity: 'weak' }), 'queue'],
 
+  // First real-world gap (llm-council routing whitepaper, 2026-08-23): several
+  // separable, actionable ideas in a weak-durability container must split, not
+  // queue — the parts are judged on their own merits after extraction.
+  ['actionable multi-concept document -> split even with weak durability',
+    verdict({ durability: 'weak', actionability: 'strong', atomicity: 'fail' }), 'split'],
+  ['strong container with several ideas -> split',
+    verdict({ durability: 'strong', actionability: 'strong', atomicity: 'fail' }), 'split'],
+  ['failed durability still discards despite atomicity fail',
+    verdict({ durability: 'fail', actionability: 'strong', atomicity: 'fail' }), 'discard'],
+
   // The property that weighted sums cannot give you: a knockout is absolute.
   ['knockout beats three strong ratings', verdict(ALL_STRONG, { duplicate: true }), 'discard'],
   ['knockout beats an otherwise-promotable note', verdict(ALL_STRONG, { 'pure-announcement': true }), 'discard'],

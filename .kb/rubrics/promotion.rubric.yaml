@@ -10,7 +10,7 @@
 # So: knockouts that cannot be compensated for, then ordinal judgments anchored
 # to real notes in this repo, then a deterministic routing table.
 id: promotion
-version: 2
+version: 3
 applies_to: staging
 
 # Stage 1 — any YES discards outright. No arithmetic, no compensation.
@@ -69,6 +69,11 @@ routing:
     action: promote
   - when: { durability: [strong], actionability: [strong], atomicity: [weak] }
     action: split          # good material, wrong shape — propose a split
+  - when: { durability: [strong, weak], actionability: [strong], atomicity: [fail] }
+    action: split          # several separable ideas, at least one worth acting on:
+                           # the split is judged per-part, so a weak container
+                           # durability must not block extraction (first real-world
+                           # gap: a strategy whitepaper carrying durable mechanisms)
   - when: { durability: [fail] }
     action: discard
   - when: { actionability: [fail], atomicity: [fail] }
