@@ -1,9 +1,10 @@
 # Release pipeline (ADR-011 §7 / operations.md): a tag vX.Y.Z produces a
 # GitHub release carrying the npm tarball + CycloneDX SBOM, a GitHub-native
 # SLSA provenance attestation for the tarball, and an npm publish with
-# --provenance. Modelled on llm-council's release-security workflow.
-# Requires the NPM_TOKEN repo secret (npm automation token) — the runbook in
-# docs/operations.md covers creating it.
+# --provenance. Publishing uses npm TRUSTED PUBLISHING (GitHub Actions OIDC,
+# configured on the package's npmjs.com settings for this repo + this
+# workflow filename) — no token, no secret; the runbook is in
+# docs/operations.md.
 
 name: release
 
@@ -72,9 +73,10 @@ jobs:
             sbom.cdx.json
           generate_release_notes: true
 
-      - name: Publish to npm (with provenance)
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish to npm (trusted publishing, with provenance)
+        # OIDC-minted credentials via the trusted publisher registered for
+        # release.yml in this repo; needs npm >= 11.5 (Node 24 bundles it).
         run: |
-          [ -n "$NODE_AUTH_TOKEN" ] || { echo "NPM_TOKEN secret not set — docs/operations.md release runbook"; exit 1; }
+          npm --version | awk -F. '($1 > 11) || ($1 == 11 && $2 >= 5) { ok = 1 } END { exit !ok }' \
+            || { echo "npm $(npm --version) lacks trusted-publishing support (need >= 11.5)"; exit 1; }
           npm publish --provenance --access public
