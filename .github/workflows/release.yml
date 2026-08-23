@@ -1,0 +1,78 @@
+# Release pipeline (ADR-011 §7 / operations.md): a tag vX.Y.Z produces a
+# GitHub release carrying the npm tarball + CycloneDX SBOM, a GitHub-native
+# SLSA provenance attestation for the tarball, and an npm publish with
+# --provenance. Modelled on llm-council's release-security workflow.
+# Requires the NPM_TOKEN repo secret (npm automation token) — the runbook in
+# docs/operations.md covers creating it.
+
+name: release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write        # create the GitHub release
+      id-token: write        # OIDC for npm --provenance and the attestation
+      attestations: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          registry-url: https://registry.npmjs.org
+
+      - run: npm ci --ignore-scripts
+
+      # The gate runs before anything ships — a release is not exempt.
+      - name: Gate
+        run: npm test && node .kb/bin/kb.mjs verify --format json > /dev/null
+
+      - name: Tag matches package.json
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          V="$(node -p "require('./package.json').version")"
+          [ "v$V" = "$TAG" ] || { echo "tag $TAG != package version v$V"; exit 1; }
+
+      - name: Pack
+        id: pack
+        run: echo "tarball=$(npm pack --json | node -p "JSON.parse(require('fs').readFileSync(0)).at(0).filename")" >> "$GITHUB_OUTPUT"
+
+      - name: SBOM (CycloneDX)
+        run: npx --yes @cyclonedx/cyclonedx-npm@6.0.1 --omit dev --output-file sbom.cdx.json
+
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: ${{ steps.pack.outputs.tarball }}
+
+      - name: GitHub release
+        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
+        with:
+          files: |
+            ${{ steps.pack.outputs.tarball }}
+            sbom.cdx.json
+          generate_release_notes: true
+
+      - name: Publish to npm (with provenance)
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          [ -n "$NODE_AUTH_TOKEN" ] || { echo "NPM_TOKEN secret not set — docs/operations.md release runbook"; exit 1; }
+          npm publish --provenance --access public

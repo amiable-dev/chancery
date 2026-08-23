@@ -1,0 +1,62 @@
+{
+  "name": "chancery",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Chancery \u2014 governed, git-native knowledge base for AI agents; ships the kb CLI",
+  "bin": {
+    "kb": ".kb/bin/kb.mjs",
+    "kb-mcp": ".kb/bin/kb-mcp.mjs"
+  },
+  "scripts": {
+    "kb": "node .kb/bin/kb.mjs",
+    "verify": "node .kb/bin/kb.mjs verify",
+    "index": "node .kb/bin/kb.mjs index",
+    "test": "node .kb/test/md.test.mjs && node .kb/test/polarity.test.mjs && node .kb/test/routing.test.mjs && node .kb/test/migrate.test.mjs && node .kb/test/promote.test.mjs && node .kb/test/cards.test.mjs && node .kb/test/facets.test.mjs && node .kb/test/link.test.mjs && node .kb/test/query.test.mjs && node .kb/test/queue.test.mjs && node .kb/test/export.test.mjs && node .kb/test/adapters.test.mjs && node .kb/test/cli.test.mjs && node .kb/test/conformance.test.mjs && node .kb/test/r1a.test.mjs && node .kb/test/context.test.mjs && node .kb/test/mcp.test.mjs && node .kb/test/log-audit.test.mjs && node .kb/test/export-integration.test.mjs && node .kb/test/package.test.mjs",
+    "export": "node .kb/bin/kb.mjs export docusaurus",
+    "adapters": "node .kb/bin/install-knowledge.mjs"
+  },
+  "engines": {
+    "node": "22.x || 24.x"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "jsdom": "^30.0.1",
+    "turndown": "^7.2.4",
+    "yaml": "^2.6.1"
+  },
+  "license": "MIT",
+  "author": "Chris Joseph (amiable-dev) <chris@amiable.dev>",
+  "homepage": "https://chancery.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amiable-dev/chancery.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amiable-dev/chancery/issues"
+  },
+  "keywords": [
+    "knowledge-base",
+    "ai-agents",
+    "markdown",
+    "obsidian",
+    "deterministic",
+    "governance",
+    "mcp"
+  ],
+  "files": [
+    ".kb/bin/",
+    ".kb/lib/",
+    ".kb/schemas/",
+    ".kb/procedures/",
+    ".kb/rubrics/",
+    ".kb/exemplars/",
+    ".kb/kb.config.yaml",
+    ".kb/facets.yml",
+    ".kb/context-anchors.yml",
+    ".kb/audit-patterns.yml",
+    ".kb/POLICY.md",
+    "docs/why-chancery.md"
+  ]
+}

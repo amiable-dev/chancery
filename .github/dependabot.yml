@@ -1,0 +1,38 @@
+# ADR-011 §3/§4. Cooldown is the supply-chain knob: a hijacked release's most
+# dangerous week is its first (the trivy-action/CVE-2026-33634 class), so
+# nothing is proposed until it has aged. Gate-path packages (yaml, ajv,
+# ajv-formats) arrive as individual PRs, never in a batch; grouped updates are
+# never auto-merged (CONTRIBUTING).
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels: [dependencies]
+    commit-message:
+      prefix: "chore(deps)"
+    cooldown:
+      default-days: 7
+    groups:
+      extraction-stack:
+        patterns: ["jsdom", "@mozilla/readability", "turndown"]
+        update-types: ["minor", "patch"]
+      # gate-path deps (yaml, ajv, ajv-formats) intentionally ungrouped:
+      # individual PRs, reviewed individually. Majors always arrive individual.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels: [dependencies]
+    commit-message:
+      prefix: "chore(deps)"
+    cooldown:
+      default-days: 7
+    groups:
+      action-pins:
+        patterns: ["*"]

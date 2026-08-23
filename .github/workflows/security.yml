@@ -1,0 +1,151 @@
+# Security scanning — right-sized from llm-council's ADR-035 stack (ADR-011).
+# Fork-safe: no job needs a secret beyond GITHUB_TOKEN (gitleaks verified
+# license-free for user-owned repos). Public-gated jobs resolve visibility
+# through the precheck job — fail-closed on every event type, never deleted
+# on flip day (the guard simply starts passing).
+
+name: security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '0 9 * * 1'   # weekly, Monday 09:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: true
+
+jobs:
+  precheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    outputs:
+      visibility: ${{ steps.vis.outputs.visibility }}
+    steps:
+      - id: vis
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: echo "visibility=$(gh api "repos/$GITHUB_REPOSITORY" --jq .visibility)" >> "$GITHUB_OUTPUT"
+
+  zizmor:
+    # Workflow-security lint that runs while the repo is private — the only
+    # detector for this file's own defect class until CodeQL `actions` arms.
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+      # --min-severity low: informational advice never blocks; low+ does.
+      - run: uvx zizmor==1.6.0 --min-severity low .github/workflows/
+
+  gitleaks:
+    # Push/PR: scans the event's commit range. Schedule/dispatch: the action
+    # scans full history (checkout is fetch-depth 0 for exactly that run).
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e # v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  npm-audit:
+    # Weekly + on demand, as documented — never on push/PR, where an unfixable
+    # transitive advisory would redden every branch with no remediation path.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+      # --package-lock-only: asks the registry about the lockfile without
+      # installing (or executing) anything.
+      - run: npm audit --package-lock-only --audit-level=high
+
+  codeql:
+    name: CodeQL (arms at the public flip)
+    needs: precheck
+    if: |
+      needs.precheck.outputs.visibility == 'public' &&
+      (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+    strategy:
+      fail-fast: false   # one language's failure must not cancel the other's evidence
+      matrix:
+        include:
+          - language: javascript-typescript
+            queries: security-extended
+            # The engine lives under .kb/ — a dot-directory, which the JS
+            # extractor EXCLUDES by default (first public run found zero files).
+            config: |
+              paths:
+                - .kb
+          - language: actions
+            queries: ''   # default suite; security-extended is not defined for actions
+            config: ''    # default paths: workflows live in .github, which the actions extractor scans
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: github/codeql-action/init@db488ddef3bf6cb639b32c2e9a7c0a7ea8271d28 # v4
+        with:
+          languages: ${{ matrix.language }}
+          queries: ${{ matrix.queries }}
+          config: ${{ matrix.config }}
+      - uses: github/codeql-action/analyze@db488ddef3bf6cb639b32c2e9a7c0a7ea8271d28 # v4
+        with:
+          category: "/language:${{ matrix.language }}"
+
+  dependency-review:
+    name: Dependency review (arms at the public flip)
+    needs: precheck
+    if: github.event_name == 'pull_request' && needs.precheck.outputs.visibility == 'public'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v5.0.0
+        with:
+          fail-on-severity: high
+          # The licence half matters as much as the vulnerability half for an
+          # open-source corpus (packet-5 security #9).
+          allow-licenses: MIT, Apache-2.0, ISC, BSD-2-Clause, BSD-3-Clause, 0BSD, CC0-1.0, Unicode-3.0, Unicode-DFS-2016
+
+  node-eol:
+    # The mechanism behind "the floor moves when an LTS line dies" (ADR-011 §1).
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+      - run: node .kb/bin/check-node-eol.mjs

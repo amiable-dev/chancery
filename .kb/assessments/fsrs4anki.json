@@ -1,0 +1,44 @@
+{
+  "target": "staging/fsrs4anki.md",
+  "rubric": "promotion@2",
+  "assessed": "2026-08-21",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@2",
+    "target": "staging/fsrs4anki.md",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Documents a scheduling algorithm and its memory model, not a release event."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The shortlist returned only unrelated concepts; nothing in the corpus covers spaced-repetition scheduling algorithms. retention-decay-knowledge describes forgetting, not how to schedule against it."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The algorithm is published, open-source, and benchmarked against SM-2 on public review datasets."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "A memory model and scheduling algorithm outlive any particular Anki version."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Directly informs how this repo's own 1,240 flashcards should be scheduled and when a card is badly written."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One idea: schedule reviews by predicting memory state rather than by fixed multipliers."
+      }
+    }
+  }
+}

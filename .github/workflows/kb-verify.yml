@@ -1,0 +1,121 @@
+name: kb verify
+
+# This workflow is the contract (ADR-002): the aggregate `gate` job is the one
+# required status check. The verify step's exit code is real (no pipe — the
+# original `| tee` swallowed it; packet-5 review, finding kb-verify #1), the
+# report assertion is a committed, tested script, and one leg re-runs verify
+# with the network namespace removed — executable evidence for invariant 2.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    strategy:
+      matrix:
+        # Supported-LTS lines (ADR-011 §1). macOS runs on main only — the
+        # 10x minute multiplier is not spent per push on feature branches.
+        os: ${{ fromJSON(github.ref == 'refs/heads/main' && '["ubuntu-latest","macos-latest"]' || '["ubuntu-latest"]') }}
+        node: ['22', '24']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      # --ignore-scripts: dependency lifecycle scripts never execute in CI
+      # (ADR-011 §3 install-time policy; none of the six deps needs them).
+      - run: npm ci --ignore-scripts
+
+      # Prove the gate still catches things before trusting it to pass.
+      - name: Gate tests
+        run: npm test
+
+      - name: Adapters up to date
+        run: node .kb/bin/install-knowledge.mjs --check
+
+      - name: Verify corpus
+        run: node .kb/bin/kb.mjs verify --format json > kb-report.json
+
+      - name: Report and assert
+        if: always() && matrix.os == 'ubuntu-latest' && matrix.node == '24'
+        run: node .kb/bin/report-summary.mjs kb-report.json
+
+      - name: Upload report
+        if: always() && matrix.os == 'ubuntu-latest' && matrix.node == '24'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: kb-report
+          path: kb-report.json
+          if-no-files-found: error
+
+  verify-offline:
+    # Invariant 2 as a runtime fact, not a code-review hope: verify runs inside
+    # an empty network namespace after dependencies are already installed.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Verify with no network
+        # Ubuntu 24.04 runners restrict unprivileged user namespaces, so the
+        # empty network namespace comes from root; verify is read-only, so
+        # running it as root risks nothing.
+        run: sudo unshare -n -- "$(command -v node)" .kb/bin/kb.mjs verify --format json > /dev/null
+
+  pr-contract:
+    # The write-paths §1 PR rule: canonical diffs need matching apply-records,
+    # and gate-code + fixtures changing together is flagged as the attack shape.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+      - run: node .kb/bin/check-pr-writes.mjs ${{ github.event.pull_request.base.sha }}
+      - name: Log append-only + coupling (KB019)
+        run: node .kb/bin/kb.mjs log check --base ${{ github.event.pull_request.base.sha }}
+
+  gate:
+    # The single required status check. Fails when any needed job failed or was
+    # cancelled; pr-contract may be skipped (push events) but never failed.
+    needs: [verify, verify-offline, pr-contract]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Assert all legs green
+        env:
+          VERIFY: ${{ needs.verify.result }}
+          OFFLINE: ${{ needs.verify-offline.result }}
+          PR_CONTRACT: ${{ needs.pr-contract.result }}
+        run: |
+          [ "$VERIFY" = "success" ] || { echo "verify: $VERIFY"; exit 1; }
+          [ "$OFFLINE" = "success" ] || { echo "verify-offline: $OFFLINE"; exit 1; }
+          case "$PR_CONTRACT" in success|skipped) ;; *) echo "pr-contract: $PR_CONTRACT"; exit 1;; esac

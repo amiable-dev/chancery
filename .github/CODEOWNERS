@@ -1,0 +1,10 @@
+# Default: everything needs the maintainer.
+* @amiable-dev
+
+# The gate-attack-shape paths (ADR-002 §6): a PR touching checks and fixtures
+# together is the shape to review hardest. Explicit ownership keeps these
+# review-required once branch protection arms at the public flip.
+/.kb/lib/ @amiable-dev
+/.kb/test/ @amiable-dev
+/.github/workflows/ @amiable-dev
+/.kb/POLICY.md @amiable-dev

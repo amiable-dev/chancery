@@ -1,0 +1,48 @@
+# Chancery: a governed knowledge base for AI agents
+
+*2026-08 · [amiable-dev/chancery](https://github.com/amiable-dev/chancery) · MIT*
+
+Agent-maintained knowledge rots in a particular way. The prose stays fluent while the substrate decays: citations that resolve but no longer support their claims (audits of deep-research tools put claim support at 39–77% even when links work), links rewritten by a helpful cleanup pass, classifications that drift, duplicates that accumulate. The failure isn't that models write badly — it's that we keep asking them to do **bookkeeping**, and bookkeeping is exactly what they're bad at.
+
+**Chancery** (it ships a CLI called `kb`) is built on one split: **bookkeeping must be deterministic; judgment is supplied.** A plain-markdown corpus (Obsidian-compatible) is maintained by a CLI that never calls a model, holds no model credential, and makes no network call in its verification path. Where judgment is genuinely needed — is this source worth keeping? does this citation actually support this claim? are these two notes contradicting each other? — the CLI emits a self-contained task, *any* supplier answers (your coding agent, a model panel, a human), and the CLI validates the answer and applies it by rule. `kb verify` in CI is the contract that makes all of it stick.
+
+## What's in v0.x
+
+- **A gated write path.** Sources land in quarantine, get judged against a rubric (knockout disqualifiers first — a fatal flaw can't be averaged away), and only then become concepts. Every judgment travels in a **task envelope**: stale answers, replays, and out-of-bounds writes are refused with stable codes; applies verify themselves and roll back byte-identically on failure; the audit trail records who answered.
+- **Falsifiable citations.** Every source is content-hashed into an append-only evidence store. `kb revalidate` tells you *which claims' evidence drifted*, not just which links died; `kb support` collects claim-by-claim verdicts, each bound to the exact snapshot that was judged, with quotes checked verbatim against the note.
+- **A typed concept graph with a lifecycle.** Explicit relationship clauses, faceted classification, atomic supersession (`kb supersede` leans the old note to a pointer and keeps history in git), and grounded query — an answer citing a concept that wasn't retrieved is rejected.
+- **Compiled context.** `kb context` assembles exactly what a task needs — target notes, the policy that binds the task, graph neighbours, prior artifacts — as a deterministic, budgeted, byte-stable bundle, so every harness judges from identical input.
+- **Semantic lint and a learning log.** `kb audit` sweeps for contradictions, stale claims, concept gaps, and graph rot from pinned, reproducible candidates; every canon change writes a line in `log/` recording what was *learned*, enforced append-only against the merge base.
+- **Meet your agent where it is.** One procedure source generates skills for Claude Code, GitHub Copilot, Windsurf, and Devin (CI-diffed so they can't go stale), plus a local stdio MCP facade whose six tools are byte-identical to the CLI. Exports mount into an existing Docusaurus or MkDocs site behind a publication filter, or ship as presentation-free JSON.
+
+It ships with its reference corpus: ~244 concept notes and ~1,240 spaced-repetition cards on software engineering and AI/ML — the knowledge base this system was built to govern, dogfooded daily.
+
+## How it was built
+
+The design documents were adversarially reviewed — by a multi-model panel ([llm-council](https://github.com/amiable-dev/llm-council)) run under the project's own rule that *panel agreement validates process, never truth* — before the build was allowed to start. Five documents were rejected outright and rewritten; roughly 140 findings were individually adopted, bounded, or rejected with reasons. The review artifacts and per-finding dispositions ship in [`docs/reviews/`](reviews/2026-08-22/), because a governance system whose own governance is unpublishable wouldn't be worth trusting. The single best catch: the CI step this whole design calls "the contract" was piping `verify` through `tee` under a shell with no `pipefail` — **the gate could not fail**. It can now, and one CI leg re-runs it inside an empty network namespace to prove the hermetic claim at runtime rather than by code review.
+
+## What this deliberately is not
+
+This is published working software, not a product. No hosted service, no benchmarks, no adoption claims — single maintainer, 0.x semver, breaking changes allowed and flagged. On day one, some OpenSSF Scorecard checks are **knowingly red, as recorded positions**: Branch-Protection (the sole admin can push past the required check — a named, documented exception that retires when a second maintainer arrives), Signed-Releases and the release pipeline (no releases exist yet; SBOM + SLSA provenance are specified for the first tag), Fuzzing, and the CII badge. If any of those matter for your use, the honest status is written down before the score is.
+
+## The roadmap is a set of tripwires, not dates
+
+Everything unbuilt carries the condition that builds it: confidence tiers and lineage counting arm after 90 days and ≥50 support verdicts of real evidence *and* an adjudication-budget audit (queues that outgrow their curator are the failure mode, so affordability is proven first — with cancellation as a legitimate outcome); full-text search arms when measured recall on the query eval set degrades for two consecutive months, never at a note-count; a remote MCP surface arms at a concrete external consumer; binaries arm at distribution demand, with a byte-parity contract. Details in [SCOPE](SCOPE.md) and the [ADRs](adrs/).
+
+## Why the name
+
+A medieval chancery authenticated documents under seal and kept the rolls: nothing entered the record without passing the office, and the record could prove it. That's the whole design — judgment supplied from outside, canon only through examination, envelope, and enrolment. The CLI is `kb`, kept short for the hands that type it; [the longer story](why-chancery.md).
+
+## A note on lineage
+
+The premise resembles Karpathy's LLM Wiki sketch, and the resemblance is real — but this system's ancestor predates that gist, and the designs went different ways on the load-bearing question: there, the model maintains the wiki; here, the model is never trusted with the bookkeeping. Parallel invention, one disagreement, documented in the repo's history records.
+
+## Try it
+
+```bash
+git clone https://github.com/amiable-dev/chancery && cd chancery
+npm ci && npm test
+node .kb/bin/kb.mjs query "how should agent memory persist?"
+```
+
+Contributions go through the same gate everything else does — the [PR contract](../CONTRIBUTING.md) explains why a structurally perfect hand-edit to a concept will be declined without its judgment records. That's not ceremony; it's the entire idea.

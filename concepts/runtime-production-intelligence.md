@@ -1,0 +1,81 @@
+---
+title: "Runtime Production Intelligence"
+date: 2026-05-02
+domain: observability
+maturity: emerging
+source_type: practitioner
+topics: [static-analysis, devops]
+tags: [concept, observability, static-analysis, code-quality, production, refactoring, domain/observability, maturity/emerging, source-type/practitioner, topic/static-analysis, topic/devops]
+status: draft
+sources:
+  - url: https://github.com/fallow-rs/fallow
+    hash: sha256:c9d8e33f047bc6cf1b0c52852a16031767a6b31545548f3a889cb58f44251b43
+    retrieved: 2026-08-21
+    class: unclassified
+    reachability: ok
+  - url: https://docs.fallow.tools
+    hash: sha256:e21629f777f02488472613e4a212628641a324c6b34e2fcefb422ae66554d777
+    retrieved: 2026-08-21
+    class: unclassified
+    reachability: ok
+---
+
+# Runtime Production Intelligence
+
+## Definition
+The practice of instrumenting production systems to collect function- or module-level execution data — what code actually runs, how often, and under what conditions — and feeding that signal back into static analysis or developer tooling to answer the question: "is this code actually used in production?"
+
+## Explanation
+Static analysis can tell you that code *could* be dead — nothing imports it in the source tree. But large systems often have code that is technically reachable (has an import path) but never actually called in production. This is the gap runtime production intelligence fills.
+
+**The hot/cold path model:**
+- **Hot path:** code executed frequently in production traffic (critical; risky to touch)
+- **Cold path:** code that exists but is never (or rarely) executed in production — the safest deletion candidates even if statically reachable
+
+Without production data, static analysis can only give deletion *candidates*. With production data, it gives *evidence-backed* deletion candidates — code you can remove with high confidence because it hasn't run in 30, 60, or 90 days.
+
+**How it typically works:**
+1. Instrument the running application (function-level hooks, eBPF probes, or custom middleware)
+2. Aggregate execution traces into a coverage/hit-count store
+3. Join the production hit data with the static module graph
+4. Surface findings: "this export has 0 production calls in the last 30 days AND is statically reachable — safe to delete"
+
+**Fallow's approach (paid runtime layer):**
+Fallow's optional runtime intelligence hooks into production traffic to produce this data. The static layer is free/OSS; the runtime layer is a paid addon. The value proposition: static analysis gives you candidates, runtime data gives you confidence.
+
+**The AI development context:** AI agents generate code quickly. Teams sometimes merge features that never get exercised. Runtime production intelligence creates a feedback loop: if code isn't hit in N days, surface it as a deletion candidate regardless of what the import graph says.
+
+**Contrast with test coverage:** Test coverage measures which code is exercised by tests, not by real users. A function can be 100% test-covered but never called in production if the tested code path doesn't match actual user behavior. Runtime production intelligence measures *actual* usage, not test usage.
+
+## Key Properties
+- **Evidence-backed** — deletion decisions are grounded in real execution data, not just static inference
+- **Hot/cold path classification** — distinguishes frequently-called (risky to touch) from rarely-called (safe to remove)
+- **Time-windowed** — typically analyzed over 30/60/90-day windows to account for seasonal or periodic usage
+- **Complements static analysis** — most valuable when joined with module-graph data, not used in isolation
+- **Distinct from test coverage** — measures production user behavior, not test suite coverage
+
+## Relationships
+- Complements [[fallow-codebase-intelligence]]: Fallow's optional paid layer extends static analysis with this signal
+- Related to [[dead-code-detection]]: static dead code = unreachable in graph; runtime cold paths = reachable but unexecuted
+- Related to [[continuous-profiling]]: both collect runtime execution data, but continuous profiling focuses on performance hotspots (CPU/memory) while production intelligence focuses on code coverage/usage
+- Related to [[ebpf-observability]]: eBPF can be used as a zero-instrumentation mechanism to collect function-level hit data without modifying application code
+
+## Applications
+- **Evidence-backed deletion campaigns:** "this module has 0 production hits in 90 days" is a much stronger argument for deletion than "nothing imports it"
+- **Hot path protection:** before a refactor, identify which code paths carry production traffic and prioritize careful review there
+- **Feature flag archaeology:** features behind flags that have never been activated in production are safe cleanup targets
+- **Dependency removal:** a dependency that's imported but whose functions are never called in production is a safe removal candidate
+- **AI-generated code hygiene:** code generated by agents that was merged but never executed → runtime cold path → deletion candidate
+
+## Study
+- Flashcards: [[flashcards/runtime-production-intelligence|Practice this concept]]
+
+## Sources
+- [fallow-rs/fallow on GitHub](https://github.com/fallow-rs/fallow) — Fallow's runtime layer documentation
+- [Fallow docs](https://docs.fallow.tools)
+
+## See Also
+- [[fallow-codebase-intelligence]]
+- [[dead-code-detection]]
+- [[continuous-profiling]]
+- [[ebpf-observability]]
