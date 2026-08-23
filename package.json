@@ -1,8 +1,8 @@
 {
   "name": "@amiable-dev/chancery",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
-  "description": "Chancery \u2014 governed, git-native knowledge base for AI agents; ships the kb CLI",
+  "description": "Chancery — governed, git-native knowledge base for AI agents; ships the kb CLI",
   "bin": {
     "kb": ".kb/bin/kb.mjs",
     "kb-mcp": ".kb/bin/kb-mcp.mjs"
