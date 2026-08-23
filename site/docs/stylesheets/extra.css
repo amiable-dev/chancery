@@ -1,0 +1,66 @@
+/* chancery — MkDocs Material overrides
+   Place at docs/stylesheets/extra.css and register in mkdocs.yml:
+   extra_css: [stylesheets/extra.css] */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap");
+
+:root {
+  --kb-teal: #33d6c2;
+  --kb-purple: #6b19ca;
+  --kb-violet: #671bc6;
+  --kb-ramp: linear-gradient(90deg, #33d6c2, #4289c3, #5258c6, #6b19ca);
+}
+
+/* Light scheme */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #671bc6;
+  --md-primary-fg-color--light: #7c3aed;
+  --md-primary-fg-color--dark: #4d0fa0;
+  --md-accent-fg-color: #19b3a1;
+  --md-typeset-a-color: #6428c9;
+}
+
+/* Dark scheme */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #171130;
+  --md-accent-fg-color: #33d6c2;
+  --md-typeset-a-color: #53d6c2;
+  --md-default-bg-color: #0b0f17;
+}
+
+/* Signature ramp strip under the header */
+.md-header { position: relative; }
+.md-header::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -3px; height: 3px;
+  background: var(--kb-ramp);
+}
+
+/* Display face for headings; body/code fonts set in mkdocs.yml
+   (font: { text: IBM Plex Sans, code: IBM Plex Mono }) */
+.md-typeset h1, .md-typeset h2, .md-typeset h3,
+.md-header__topic, .md-nav__title {
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Buttons */
+.md-typeset .md-button--primary {
+  background-color: #671bc6; border-color: #671bc6;
+}
+.md-typeset .md-button--primary:hover {
+  background-color: #4d0fa0; border-color: #4d0fa0;
+}
+
+/* Inline code tinted toward the brand ink */
+[data-md-color-scheme="default"] .md-typeset code {
+  background: #f1eefb; color: #3d2b66;
+}
+
+/* Admonition accents on the ramp */
+.md-typeset .admonition.note, .md-typeset details.note { border-color: #4778c4; }
+.md-typeset .note > .admonition-title { background: rgba(71, 120, 196, 0.1); }
+.md-typeset .admonition.tip, .md-typeset details.tip { border-color: #33d6c2; }
+.md-typeset .tip > .admonition-title { background: rgba(51, 214, 194, 0.12); }
+.md-typeset .admonition.warning, .md-typeset details.warning { border-color: #6428c9; }
+.md-typeset .warning > .admonition-title { background: rgba(100, 40, 201, 0.1); }

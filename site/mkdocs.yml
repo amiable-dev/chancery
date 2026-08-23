@@ -1,0 +1,77 @@
+site_name: chancery
+site_url: https://chancery.dev
+site_description: A governed, git-native knowledge base for AI agents — deterministic gates, falsifiable citations, portable skills.
+repo_url: https://github.com/amiable-dev/chancery
+repo_name: amiable-dev/chancery
+edit_uri: edit/main/site/docs/
+site_dir: build
+
+theme:
+  name: material
+  logo: img/logo.svg
+  favicon: img/favicon.svg
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+    - content.code.copy
+    - search.suggest
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/landing.css
+
+extra_javascript:
+  - js/landing.js
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Installation: getting-started/installation.md
+      - Quick Start: getting-started/quickstart.md
+      - Configuration: getting-started/configuration.md
+  - Guides:
+      - Gated promotion: guides/gated-promotion.md
+      - Falsifiable citations: guides/falsifiable-citations.md
+      - Query & context: guides/query-and-context.md
+      - MCP facade: guides/mcp-facade.md
+      - Flashcards: guides/flashcards.md
+  - Reference:
+      - CLI: reference/cli.md
+      - kb.config.yaml: reference/kb-config.md
+      - Schemas: reference/schemas.md
+  - Architecture:
+      - Overview: architecture/overview.md
+  - Knowledge Base:
+      - Concepts: kb/concepts/index.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/amiable-dev/chancery
+    - icon: fontawesome/brands/npm
+      link: https://www.npmjs.com/package/@amiable-dev/chancery
+copyright: MIT · sibling of <a href="https://llm-council.dev">llm-council</a>

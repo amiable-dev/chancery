@@ -34,6 +34,7 @@ check('procedures ship (adapters regenerate from them)', has('.kb/procedures/'))
 check('the reference corpus does NOT ship', !has('concepts/') && !has('flashcards/') && !has('staging/'));
 check('operational state does NOT ship (C4-C6)', !has('.kb/queue/') && !has('.kb/assessments/') && !has('.kb/evidence/'));
 check('tests and log do NOT ship', !has('.kb/test/') && !has('log/'));
+check('the doc site does NOT ship (ADR-012 §4)', !has('site/') && !has('design_handoff_chancery_brand/'));
 check('governance docs beyond the name page do NOT ship', !has('docs/adrs/') && !has('docs/reviews/'));
 
 // ---- extract; borrow node_modules; drive an EXTERNAL self-governed repo ----

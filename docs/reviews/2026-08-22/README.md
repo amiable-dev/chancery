@@ -9,6 +9,7 @@ Adversarial documentation review before the next build phase. llm-council **0.45
 | 3 | ADR-008..010 | high → **rerun at reasoning** (3/4 member timeouts at high) | 4/4 + chairman on rerun | `packet-3-interfaces-synthesis.md` |
 | 4 | six design specs | reasoning | 4/4 + chairman | `packet-4-specs-synthesis.md` |
 | 5 | productionisation baseline (ADR-011, operations.md, workflows, dependabot) | reasoning | 3/4 + chairman (glm-5.3 timeout) | `packet-5-productionisation-synthesis.md` |
+| 6 | ADR-012 doc-site tooling (2026-08-23) | reasoning | 4/4 + chairman | `packet-6-doc-site-synthesis.md` |
 
 Dispositions (adopted / bounded / rejected, with reasons) live in `dispositions.md`. Per the standing rule (ADR-010): council output is judgment, not corroboration — findings were verified against the code and invariants before adoption.
 

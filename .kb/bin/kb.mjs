@@ -536,7 +536,11 @@ function checkEvidence(collections, cfg, out) {
  * this catches a hand-edited tree becoming a second source of truth.
  */
 function checkExportTree(cfg, out) {
-  const outDir = path.join(ROOT, 'docs-site');
+  for (const root of ['docs-site', path.join('site', 'docs', 'kb')]) checkOneExportTree(root, cfg, out);
+}
+
+function checkOneExportTree(rel, cfg, out) {
+  const outDir = path.join(ROOT, rel);
   if (!fs.existsSync(outDir)) return;
   if (!fs.existsSync(path.join(outDir, 'kb-export-manifest.json'))) {
     out.push(finding({
@@ -553,19 +557,19 @@ function checkExportTree(cfg, out) {
   const walk = (dir) => {
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
       const abs = path.join(dir, e.name);
-      const rel = path.relative(outDir, abs).split(path.sep).join('/');
+      const relPath = path.relative(outDir, abs).split(path.sep).join('/');
       if (e.isDirectory()) { walk(abs); continue; }
-      if (EXCLUDED.test(rel)) {
+      if (EXCLUDED.test(relPath)) {
         out.push(finding({
-          severity: 'error', code: 'KB021', check: 'export', file: `docs-site/${rel}`,
+          severity: 'error', code: 'KB021', check: 'export', file: `${rel}/${relPath}`,
           message: 'excluded-class content inside the export tree',
           remedy: 'C3-C6, log/ and maintenance/ never ship; regenerate with `kb export`',
         }));
       }
-      const m = rel.match(/^concepts\/([a-z0-9-]+)\.md$/);
+      const m = relPath.match(/^concepts\/([a-z0-9-]+)\.md$/);
       if (m && superseded.has(m[1])) {
         out.push(finding({
-          severity: 'error', code: 'KB021', check: 'export', file: `docs-site/${rel}`,
+          severity: 'error', code: 'KB021', check: 'export', file: `${rel}/${relPath}`,
           message: `superseded note published as a page: ${m[1]}`,
           remedy: 'superseded notes ship as manifest redirects, never pages; regenerate',
         }));

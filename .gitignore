@@ -5,3 +5,5 @@ kb-report.json
 docs-site/
 .council/
 .kb/cache/
+site/build/
+site/docs/kb/

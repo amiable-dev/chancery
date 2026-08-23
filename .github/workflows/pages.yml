@@ -1,27 +1,60 @@
-# chancery.dev — GitHub Pages deployment of site/ (the placeholder landing
-# page until the design pack lands). Serves static files only; the corpus
-# publication filter is irrelevant here because nothing under site/ derives
-# from the corpus.
+# chancery.dev — the MkDocs Material doc site (ADR-012). This workflow is a
+# PUBLISHING INTERFACE for corpus content, so invariant 8 applies: the gate
+# (kb verify, incl. KB021 over the mounted tree) runs on the exact deployed
+# SHA before the locked export and a strict build. A PR-time twin runs the
+# same steps with no deploy permissions. Python is confined here, frozen by
+# the committed hash-checked lock (site/requirements.lock).
 
 name: pages
 
 on:
   push:
     branches: [main]
-    paths: ['site/**', '.github/workflows/pages.yml']
+    paths: ['site/**', 'concepts/**', 'flashcards/**', '.kb/**', '.github/workflows/pages.yml']
+  pull_request:
+    paths: ['site/**', 'concepts/**', 'flashcards/**', '.kb/**', '.github/workflows/pages.yml']
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: The gate, on the deployed SHA (incl. KB021 over the mount)
+        run: node .kb/bin/kb.mjs verify --format json > /dev/null
+      - name: Mount the corpus through our own exporter
+        run: node .kb/bin/kb.mjs export mkdocs --out site/docs/kb --format json
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+      - name: Build (frozen environment, strict)
+        run: |
+          uv venv --python "$(cat site/.python-version)" .venv-site
+          uv pip install --python .venv-site --require-hashes -r site/requirements.lock
+          .venv-site/bin/mkdocs build --strict -f site/mkdocs.yml
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        if: github.event_name != 'pull_request'
+        with:
+          path: site/build/
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
     permissions:
       pages: write
       id-token: write
@@ -29,12 +62,5 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
-        with:
-          path: site/
       - id: deployment
         uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
