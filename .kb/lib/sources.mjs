@@ -173,6 +173,13 @@ export async function fetchExtract(url) {
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     assertPublicHttpUrl(res.url);
+    // Binary formats have no honest text extraction: judging a claim against
+    // PDF bytes rendered as mojibake is worse than refusing (first real-world
+    // support run cached 262KB of noise from an arxiv /pdf/ URL).
+    const type = res.headers.get('content-type') ?? '';
+    if (!/html|xml|text\/plain/i.test(type)) {
+      throw new Error(`no text extraction for ${type.split(';')[0] || 'binary content'} — cite an HTML source (e.g. an arXiv /abs/ page)`);
+    }
     const text = await extractText(await readCapped(res), res.url);
     if (!text.trim()) throw new Error('no extractable text');
     return { url: res.url, text, hash: hashText(text) };
