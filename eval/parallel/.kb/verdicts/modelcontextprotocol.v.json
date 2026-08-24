@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/modelcontextprotocol.md",
+  "task_id": "4b40472c0fe5514b",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is a technical specification proposal with normative MUST/MAY requirements and a security analysis, not a launch, release or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The vault's MCP concepts cover authorization hardening, extensions, the stateless core and code mode; none touches supply-chain integrity of tool code via content digests."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The mechanism — SHA256 over a canonical archive, client-side pin checks — is fully specified and grounded in proven precedents like GitHub Action SHA pinning and OCI image digests."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The SEP is a single-author proposal in Proposed status that MCP maintainers may reject or reshape, and it leans on the also-unaccepted interceptors SEP-1763 for enforcement — the underlying digest-pinning pattern endures, but this note is about the proposal."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "A builder can act on it today — publish a digest per tool version on their own MCP servers, pin digests in client config, and gate unfamiliar digests behind allowlists or approval — without waiting for formal adoption."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It carries exactly one idea, digest-pinned tool versioning as a minimal supply-chain integrity layer, with runtime enforcement explicitly delegated to a separate referenced proposal."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

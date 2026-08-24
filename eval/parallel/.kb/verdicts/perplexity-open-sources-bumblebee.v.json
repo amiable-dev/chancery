@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/perplexity-open-sources-bumblebee.md",
+  "task_id": "248e12eb661bba0c",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is release coverage, but it carries ideas that transfer beyond Bumblebee: the SBOM/EDR blind spot for on-disk developer state, and the principle that a supply-chain scanner must never invoke package managers because postinstall scripts would trigger the very attack it checks for."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "Shadow-mcp-detection and siem-agentic-visibility-gap concern unsanctioned MCP servers and telemetry gaps, not read-only inventory of package, extension, and MCP-config state on developer endpoints."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The tool is public on GitHub under Apache 2.0, so every mechanism claim in the note is directly checkable."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "Much of the note is v0.1-bound specifics — unsupported bun.lockb, exact config filename lists, Go 1.25 requirement, current ecosystem matrix — that will churn, even though the dev-endpoint blind-spot framing is durable."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "The concrete steps are product-specific (install command, scan profiles, catalog format); the transferable never-execute-installers principle is real but stated in passing rather than developed into guidance."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "The note states one idea cleanly: answer 'which developer machines are exposed right now' by read-only scanning of on-disk package, extension, and AI-tool-config metadata."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

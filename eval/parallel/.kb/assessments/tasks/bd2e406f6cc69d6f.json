@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "bd2e406f6cc69d6f",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/your-brain-on-chatgpt.md": "sha256:900d00d1e635828cb1c8a07c161ed253f952ebfbf0431ce68892a0fd5f6f6e63",
+      "assessment:your-brain-on-chatgpt": "sha256:b3b5ece47d8807ed3075c015e31a247e4c90e26d3978d10e841f23094cf06381",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:b7eb381e0f76a462f5aa7f46b1398a67ecd131f6a052c005dceb5ced63c4c0a8",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/cognitive-debt.md"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/technology-radar-thoughtworks.md",
+  "task_id": "d055727051b79620",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "This is Thoughtworks' editorial assessment of 41 software delivery techniques, which is coverage of durable practices rather than any product launch or release note."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "Individual blips brush against existing concepts (Agent Skills format, context layer), but the bulk of the 41 techniques — mutation testing, feedback sensors, semantic layer, MCP-by-default caution — is not substantively covered by any nearest concept."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Each blip links primary sources (papers, tool docs, named frameworks) and grounds claims in Thoughtworks' stated project experience, all checkable."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The blips describe mechanisms and trade-offs — mutation testing versus coverage, progressive context disclosure, sandboxing as default, the MCP abstraction tax — that remain useful well beyond this edition's ring placements."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "Every technique carries explicit adopt/trial/assess/caution guidance with named tools and failure modes, directly changing what a team would pick up or avoid."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "The note bundles 41 separable techniques spanning authentication, testing, data architecture and agent engineering, each of which could stand alone as its own concept — this is a compendium that must be split."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

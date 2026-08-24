@@ -1,0 +1,49 @@
+{
+  "target": "staging/writing-effective-tools-for-ai-agents.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/writing-effective-tools-for-ai-agents.md",
+    "task_id": "c3cf3a0c9672dab2",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a design-principles essay on building tools for agents, with products appearing only as worked examples and test beds."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Code Mode for MCP covers how agents invoke tools through code, not these ergonomics-of-tool-design principles; the other nearest concepts are unrelated."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The advice is mechanistic and paired with a reproducible eval methodology, held-out test results, and linked cookbook material."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Consolidating tools around workflows, semantic identifiers over UUIDs, token-efficient responses and description-as-onboarding are agent-ergonomics patterns the post itself argues outlast protocol and model churn."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "A tool builder can apply it directly: replace list_* with search_/schedule_-style tools, add a response_format enum, cap and steer truncated responses, and prompt-engineer error messages into actionable guidance."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Everything serves one stateable idea — tools are contracts with a non-deterministic caller and must be designed around the agent's scarce context — with the eval loop as the method that grounds it."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

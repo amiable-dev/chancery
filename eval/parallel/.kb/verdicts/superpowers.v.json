@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/superpowers.md",
+  "task_id": "6898c930de2402e8",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It documents a working methodology and skills library rather than announcing a launch or release; the linked release announcement is peripheral."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The nearest concept, Agent Skills format, covers the SKILL.md packaging and progressive-disclosure standard — not this opinionated development methodology built on top of skills."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims are checkable against the open-source repo, and skill behaviour is itself tested with a documented eval harness."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The workflow core — tease out a spec before any code, write plans an unskilled junior could follow, dispatch a fresh subagent per task with two-stage review, and enforce red/green TDD to the point of deleting code written before tests — is a harness-agnostic process pattern; only the fourteen install sections are ephemeral."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "A reader can either install it in one command on their harness or lift the process itself — mandatory skill checks before tasks, subagent-driven development with spec-compliance then code-quality review — into their own agent setup."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "One idea — composable skills that enforce a spec-first, TDD, subagent-driven development methodology — states in a paragraph; the per-harness install guides and skill catalogue are packaging around it."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

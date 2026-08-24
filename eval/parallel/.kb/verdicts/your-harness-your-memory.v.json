@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/your-harness-your-memory.md",
+  "task_id": "99744b00624c97de",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "An argumentative essay on memory ownership and lock-in; the Deep Agents pitch at the end is a coda, not the substance."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "Context-layer is about assembling task context, not about who owns agent memory; no nearest concept covers the harness-memory lock-in argument."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The load-bearing claims (stateful Responses API, Claude Managed Agents, Codex's encrypted compaction summaries) are sourced and independently checkable."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The mechanism — memory is a harness capability because managing context is the harness's job, so closed or API-hosted harnesses convert accumulated state into provider lock-in — is a trade-off argument that holds regardless of which products currently illustrate it."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It yields a concrete decision rule — before adopting a harness or stateful API, check where session and long-term state physically lives, because switching cost compounds with accumulated memory — which changes vendor and architecture choices."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "One argument, stated in the note's own abstract: if you don't own the harness you don't own the memory, and memory is what creates lock-in."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

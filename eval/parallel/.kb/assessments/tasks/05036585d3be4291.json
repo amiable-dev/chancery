@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "05036585d3be4291",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/sarah-wooders-sarahwooders-on-x.md": "sha256:c1871b08f8b3bffaab0f31a3d9b630984c46a320ebef78f8a2e35f2614939970",
+      "assessment:sarah-wooders-sarahwooders-on-x": "sha256:fefd702d33c0782338f38ed613987de6c54d569433e09579de3cd4aea831db71",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:cc1b483d69fce69d2a69dcad644f70f2e55a05a2244de9dcb93b9384e2d9c8de",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/memory-as-harness-capability.md"
+  ]
+}

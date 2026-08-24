@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "399cc027411236fb",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/how-the-open-knowledge-format-can.md": "sha256:bc6717f695e066df1f48fe3675707866215ac33137ba0782ef87037bd8810af1",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:c57b3526ad1d0ce9c863877d6f6d3cb68dc7cf33cad0127229c60871fcb60734",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/how-the-open-knowledge-format-can.json"
+  ]
+}

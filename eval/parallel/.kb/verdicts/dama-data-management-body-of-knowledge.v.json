@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/dama-data-management-body-of-knowledge.md",
+  "task_id": "323ad2015cd2d024",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is DAMA's own sales page with order links and 2nd-edition what's-new bullets, but it is not solely a launch note — the is/is-not sections describe the framework's role rather than announce a release."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No nearest concept touches data-management frameworks; the closest matches are evals, vulnerability formats and MCP platform notes."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The central claim is that the DMBOK exists as a consensus reference with stated boundaries, which a reader can verify directly against the published book and DAMA's project pages."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The DMBOK framework itself endures, but this page carries none of its content — only edition-specific marketing (2nd-edition bullets, 3.0 project status, order links) that the next revision cycle obsoletes."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "The only action available to a reader is to order the book or pursue CDMP certification; the page conveys no data-management practice one could apply."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "Everything in the note is a facet of one statable idea — DMBOK is the consensus, non-prescriptive body of knowledge that defines the data-management profession's scope."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

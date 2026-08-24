@@ -1,0 +1,47 @@
+{
+  "target": "staging/opentelemetry-profiling-goes-alpha.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "discard",
+  "reason": "disqualified: pure-announcement",
+  "disqualifiers": [
+    "pure-announcement"
+  ],
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/opentelemetry-profiling-goes-alpha.md",
+    "task_id": "f9dda1af52a48d78",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": true,
+        "rationale": "This is the vendor's own milestone post — 'goes Alpha' plus wiring instructions for Polar Signals Cloud and Parca — and it explicitly defers the protocol's substance to the official announcement it links."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts touch OpenTelemetry, profiling, or observability signals."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The alpha status and symbolization limits are checkable against the linked OpenTelemetry announcement and the opentelemetry-ebpf-profiler repo."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Everything load-bearing is milestone-bound — alpha status, which stacks symbolize on-host today, an unfinished symbol-upload spec — though the fourth-signal idea itself will outlive the post."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The steps are product-specific collector-to-Polar-Signals/Parca wiring, and the actual configs were stripped in capture, leaving only pointers to follow."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One subject throughout: running the new OTel profiling signal via the collector's eBPF profiler."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

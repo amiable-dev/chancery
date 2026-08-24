@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/from-manufacturing-to-microservices.md",
+  "task_id": "d28935225eb14f6f",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is an educational essay on reliability principles, not a product, release, or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The supplied nearest concepts cover retrieval evals and MCP governance; the corpus has no note on general reliability-engineering principles."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Its claims (redundancy buys resilience, blameless postmortems increase reporting, test under realistic load) are standard SRE practice checkable against well-known industry literature even though the essay cites almost none of it."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The content is deliberately timeless — weakest-link thinking, defect compounding, redundancy trade-offs — with no version, price, or vendor pinning to age out."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "It restates familiar reliability folk wisdom at a generality ('invest in redundancy', 'test realistically') that gives a practising engineer no mechanism, threshold, or design rule they do not already have."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "It is a listicle of seven loosely-joined principles whose only unifying thread — manufacturing lessons transfer to software — is framing rather than a single extractable idea."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

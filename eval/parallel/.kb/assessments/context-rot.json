@@ -1,0 +1,49 @@
+{
+  "target": "staging/context-rot.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/context-rot.md",
+    "task_id": "c56f89006d6fe2d9",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a controlled-experiment technical report from Chroma on long-context degradation across 18 models, not a launch, release note, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts are all about code retrieval and eval methodology; none covers the finding that LLM performance degrades non-uniformly with input length."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The methodology is specified in detail (models, datasets, embedding measures, judge alignment) and the complete replication codebase is published on GitHub."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The central finding — models process context non-uniformly, and degradation compounds with lower needle-question similarity, distractors, and structural coherence — is a mechanism-level pattern plus an isolation methodology that outlives the specific 2025-era model list."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It directly changes builder decisions: stop trusting NIAH-style scores as long-context evidence, prefer focused retrieved context over stuffing full histories into large windows, and treat context construction as an engineering surface."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Every experiment serves one statable claim — increasing input length alone degrades LLM reliability, non-uniformly — so the core idea fits in a paragraph independent of the report's structure."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

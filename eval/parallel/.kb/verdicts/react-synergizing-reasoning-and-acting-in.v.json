@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/react-synergizing-reasoning-and-acting-in.md",
+  "task_id": "3d34b7180837d9b8",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is the abstract of an ICLR research paper introducing a prompting pattern, not a product launch, release note or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The nearest concepts cover retrieval and MCP tooling built atop agent loops, but none describes the ReAct pattern of interleaving reasoning traces with actions itself."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Claims are grounded in the primary paper with quantified results on four public benchmarks and a linked project site with code."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The thought-action-observation loop this 2022 paper named is the mechanism underlying virtually every production tool-using agent today, so the pattern has proven durable well beyond its original benchmarks."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "A builder can apply it directly — interleave reasoning traces with tool calls so observations ground the next thought — and the paper's finding that this curbs CoT hallucination is a concrete design argument."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It carries one idea, that reasoning and acting reinforce each other when generated in an interleaved loop, statable in a single paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

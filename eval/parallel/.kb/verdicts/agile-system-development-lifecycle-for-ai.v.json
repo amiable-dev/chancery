@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/agile-system-development-lifecycle-for-ai.md",
+  "task_id": "3867763fec79ce68",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is an academic paper abstract proposing a methodology, not a product launch, release note or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No nearest concept (RAG, context layer, protocol lifecycle policy, OSV format) covers SDLC methodology or decision architecture for AI systems."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims trace to the linked arXiv paper, which describes its decision-architecture approach and an insurance-claim worked example a reader can inspect."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "This is self-described 'initial work' proposing that decision science could enhance agile SDLC, a single-paper framework with no demonstrated adoption, so like an unadopted convention it may never harden into something a reader relies on."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "The captured note is an abstract plus arXiv page boilerplate; beyond the general suggestion to describe decisions and their architecture before automating them, it gives a builder no method concrete enough to apply."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It carries one idea — extend agile SDLC with an explicit decision-architecture phase for AI decision-automation systems — statable in a single paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

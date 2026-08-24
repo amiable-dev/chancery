@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "df5ae453f73f4bce",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/semantic-conventions-genai.md": "sha256:fcab4ab69ac3cf572c6cea93f5eb8aed1ccc2da987dab550d576563bc2b94212",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:31c96544c5d7127f043f5dc6bb295453d4436d46b26aebd473b26e3f49dc36ad",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/semantic-conventions-genai.json"
+  ]
+}

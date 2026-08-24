@@ -1,0 +1,49 @@
+{
+  "target": "staging/japans-sakana-ai-bets-on-orchestration.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/japans-sakana-ai-bets-on-orchestration.md",
+    "task_id": "92e55d8bbbb11734",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is coverage occasioned by the Fugu launch, but the transferable idea — learned multi-LLM orchestration over a swappable pool as a hedge against single-provider access loss — is developed with research grounding (TRINITY, The Conductor) and explicit trade-off analysis."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "fable-5-export-directive covers the access-suspension event and Anthropic's framework, not the orchestration-as-resilience response architecture, so a reader of that concept learns the coordinator-pool mechanism and lock-in trade-off only here."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Claims are attributed to Sakana's launch materials and two named ICLR 2026 papers, and the article itself labels the Fable 5 parity line as an unverified vendor claim with a live API available for independent testing."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The mechanism (a coordinator model trained to route across a swappable pool) and the trade-offs (orchestration latency/cost overhead, orchestrator lock-in versus provider lock-in, opt-out gaps for regulated sectors) stay useful in twelve months even though the benchmark table and model identifiers will not."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The reader gains a decision posture — make no single model load-bearing and treat vendor parity claims as unverified — but no buildable mechanism, since the orchestration itself is Sakana's closed product."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The core idea states cleanly in one paragraph: a small coordinator model trained to delegate across a swappable pool of LLMs, sold as resilience against provider-access volatility rather than as raw capability."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

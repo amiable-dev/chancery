@@ -1,0 +1,47 @@
+{
+  "target": "staging/managing-context-on-the-claude-developer.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "discard",
+  "reason": "disqualified: pure-announcement",
+  "disqualifiers": [
+    "pure-announcement"
+  ],
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/managing-context-on-the-claude-developer.md",
+    "task_id": "095f1d556bb5709c",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": true,
+        "rationale": "This is the vendor's own launch post — 'Today, we're introducing... available today in public beta' — whose substance is feature positioning, availability and internal benchmark deltas; the underlying techniques get their durable treatment in the separate context-engineering essay, not here."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the supplied nearest concepts (context layer, LLM-maintained wiki, MCP notes) covers platform-level context editing or the memory tool."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The features are documented at linked docs pages, so the descriptive claims are checkable even if the internal eval numbers are not."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Beta status, 'best model in the world' positioning, and internal eval deltas (39%, 84%) churn quickly; only the one-line mechanism descriptions of tool-result clearing and file-based memory transfer."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The only action offered is product adoption — enable the beta features and read the docs — with no transferable how-to beyond that."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One coherent announcement: two features presented as a single context-management capability."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "target": "staging/what-is-the-agent-skills-open.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "discard",
+  "reason": "disqualified: duplicate",
+  "disqualifiers": [
+    "duplicate"
+  ],
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/what-is-the-agent-skills-open.md",
+    "task_id": "9d9517f5af8a87d8",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "The page is a truncated explainer capture whose only body text is an Agensi marketplace promo line, which is promotional but not literally a product launch, release note, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": true,
+        "rationale": "The only substantive claim captured — SKILL.md is an open standard portable across Claude Code, Cursor, and other agents — is already fully covered by the existing agent-skills-format concept, which additionally explains progressive disclosure and context economics, so a reader of it learns nothing new here."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The one claim present (a SKILL.md standard adopted across many agents) is checkable against the published agentskills.io specification."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "fail",
+        "rationale": "Beyond the teaser sentence, the capture contains only a time-bound marketplace availability promo ('Now open worldwide... Start selling') with nothing that stays useful."
+      },
+      "actionability": {
+        "rating": "fail",
+        "rationale": "There is nothing to act on: the explainer content failed to capture, leaving no guidance, mechanism, or decision input."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The single idea present is an undeveloped one-line teaser borrowed from the page's meta description, with no body to state a core idea from."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

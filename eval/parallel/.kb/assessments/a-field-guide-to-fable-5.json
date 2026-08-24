@@ -1,0 +1,49 @@
+{
+  "target": "staging/a-field-guide-to-fable-5.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\",\"weak\"],\"actionability\":[\"strong\"],\"atomicity\":[\"fail\"]}",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "fail"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/a-field-guide-to-fable-5.md",
+    "task_id": "364f9c249545488c",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Although it contains announcement items (Square's integration, a tool promo), the note also carries transferable techniques — the unknowns-surfacing workflows and a complete reusable audit prompt."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts cover export controls, evals and context infrastructure; none cover model-assisted blind-spot discovery or conversion microcopy auditing."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Each item links its primary source — Thariq Shihipar's posted guide, the Pew Research survey, and Square's press release — so a reader can check the claims."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The blind-spot-pass workflow could outlive the model generation, but the note is padded with expiring specifics — plan-limit dates, Pew adoption percentages, and affiliate tool promos."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "A reader can immediately run the three named Fable 5 workflows or paste the complete microcopy-audit prompt; these are usable procedures, not product descriptions."
+      },
+      "atomicity": {
+        "rating": "fail",
+        "rationale": "This is a newsletter issue bundling at least four unrelated items — Fable 5 unknowns workflows, Pew adoption stats, a microcopy-audit prompt, and Square/Nitrosend product news — each of which would have to stand alone."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

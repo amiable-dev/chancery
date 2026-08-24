@@ -1,0 +1,49 @@
+{
+  "target": "staging/fsrs4anki.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/fsrs4anki.md",
+    "task_id": "843e5fa85b8bbd3b",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It documents an established scheduling algorithm and its Anki integration, not a launch, release or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The vault's ebbinghaus-forgetting-curve concept covers the decay phenomenon and never mentions FSRS; an ML-optimized scheduler fitted to review history is new material for a reader of that note."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The algorithm's claims rest on two linked peer-reviewed Maimemo papers (KDD 2022, TKDE 2023) and open-source implementations anyone can run."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The core — a two-part design where a scheduler applies the FSRS memory model and an optimizer fits its parameters to the user's own review history — is research-backed and shipped in Anki core since 23.10, so it will outlast the ephemeral add-on compatibility table."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The note's own actions are product steps and pointers — enable FSRS via the Anki manual, avoid interval-modifying add-ons, follow links to implementations — with the transferable mechanism detail living behind its references rather than in the note."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "It is one idea — data-driven spaced-repetition scheduling with per-user parameter optimization — stateable in a paragraph, with the compatibility matrix and acknowledgements as packaging."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

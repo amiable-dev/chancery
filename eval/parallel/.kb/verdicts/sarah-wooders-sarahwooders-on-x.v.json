@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/sarah-wooders-sarahwooders-on-x.md",
+  "task_id": "bd063fce129c9603",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "Despite the closing Letta plug, the body is an architectural argument about where memory lives in agent systems, which transfers beyond any product."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No supplied concept makes the memory-is-the-harness claim — context-layer covers enterprise context infrastructure, not the plugin-versus-harness boundary for agent memory."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims come from the MemGPT author as a primary practitioner source and rest on enumerated, checkable harness behaviors (instruction-file loading, compaction survival, history queryability)."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The mechanism argument — memory emerges from harness context management (what loads, what survives compaction, what state the agent can rewrite), so it cannot be bolted on as a plugin — is a trade-off framing that outlives the Letta-specific examples."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "The list of invisible harness decisions doubles as a concrete checklist for evaluating or designing an agent harness, and the thesis directly changes a buy-a-memory-plugin decision."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "One claim — agent memory is a core harness capability rather than a pluggable component — with the RAG contrast, checklist, and product examples all serving it."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

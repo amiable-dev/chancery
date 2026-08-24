@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/ghostcommit.md",
+  "task_id": "cf3678b89f36a32c",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It documents a reproducible attack technique with a threat model and decoder, not a product launch or release note."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "None of the nearest concepts cover cross-modal prompt injection or image-carried exfiltration in coding-agent pipelines; the closest are session capture and MCP topics."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The attack is backed by a public PoC repo with a fixture, decoder, reproduction protocol and a full recorded trial, so a reader can reproduce and check it."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The core insight — a review process that scans textual diffs but never interprets image semantics misses instructions a vision-capable agent later executes — is a trust-boundary mechanism that outlasts the specific GPT-5.6 models and trial counts named here."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It tells anyone building agent code-review or ingestion pipelines exactly what to change: extend review to interpret image and non-text convention-file content, not just diffs."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "The note carries one idea — steganographic exfiltration through a convention file pointing at an image, exploiting a cross-modal review gap — with the trial matrix and repo map as supporting evidence for that single technique."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

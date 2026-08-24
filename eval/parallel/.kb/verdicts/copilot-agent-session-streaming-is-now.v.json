@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/copilot-agent-session-streaming-is-now.md",
+  "task_id": "fdc13faf8b58b483",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": true,
+      "rationale": "This is GitHub's own changelog entry announcing a public-preview feature, consisting of enablement steps and an endpoint path, with no transferable idea developed beyond the product itself — the auditability theme it instantiates is not articulated here."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "siem-agentic-visibility-gap and proxy-boundary-session-capture cover the surrounding problem, but neither contains this specific vendor capability, so the note is not a duplicate — it is disqualified on other grounds."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Every claim is checkable against GitHub's linked documentation and the live product setting."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The 'public preview' status, the AI Controls settings path, and the 48-hour-window endpoint are launch-day specifics that will be stale within months even though the underlying capability will persist in some form."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Its only actions are product-only toggles — select 'Enable everywhere' twice and call one REST endpoint — applicable solely to GitHub Enterprise Cloud EMU customers."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It communicates exactly one thing: Copilot agent session data is now streamable and pullable for enterprises."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

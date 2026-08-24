@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "84dbf31767355255",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/open-source-ai-penetration-testing-assistant.md": "sha256:83fc9c8724b11bbfc36b048069bedc62363ecf3ec4e099cd2f6c368a108bed6c",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:b096d910040aa819fa5c012347814de23b40db57965cde64ef34f355c7c6fe59",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/open-source-ai-penetration-testing-assistant.json"
+  ]
+}

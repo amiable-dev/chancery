@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/self-hosted-sandboxes.md",
+  "task_id": "15cc7e8e339a765c",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "The capture is not an announcement — it is a failed fetch whose body is only the site's cookie-consent banner."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "There is no content to duplicate: nothing of the self-hosted-sandboxes documentation was actually captured."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The note makes no claims at all beyond its one-line meta description, which is trivially checkable against the live docs page."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "fail",
+      "rationale": "Nothing survives twelve months because nothing was captured — the body consists entirely of Anthropic's cookie-settings boilerplate."
+    },
+    "actionability": {
+      "rating": "fail",
+      "rationale": "There is no mechanism, step, or decision in the note; a reader can act on nothing but the URL itself."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "No core idea exists to state in a paragraph — the capture is empty of subject-matter content."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

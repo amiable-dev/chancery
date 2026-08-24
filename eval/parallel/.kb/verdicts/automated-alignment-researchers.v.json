@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/automated-alignment-researchers.md",
+  "task_id": "c139cc335c0bfecb",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is a research-results writeup with transferable findings about running autonomous research agents, not a product launch or release note."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The existing weak-to-strong-generalization and automated-w2s-sandbox concepts cover the problem framing and the environment but not this note's new material: the AAR-vs-human results, the seeding and scaffolding lessons, and the evaluation-bottleneck implication."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims link to the full alignment-blog writeup and publicly released code and datasets on GitHub, so a reader can check them."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The note's spine is point-in-time results — PGR 0.97 vs a 0.23 human baseline, $22 per AAR-hour, Opus 4.6 on specific Qwen pairs — which will be superseded quickly, even though the seeding and oversight lessons age better."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It gives explicit build guidance for anyone running automated research agents: seed each agent with a distinct vague direction, avoid prescriptive workflows, stress-test discovered ideas on held-out datasets, and make evaluations tamper-proof."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "Everything in the note serves one statable idea — parallel, diversely seeded autonomous agents can already do outcome-gradable alignment research, shifting the bottleneck to evaluation — rather than bundling unrelated topics."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

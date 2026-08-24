@@ -1,0 +1,49 @@
+{
+  "target": "staging/why-customers-love-desktop-apps-with.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/why-customers-love-desktop-apps-with.md",
+    "task_id": "eff3fb2a8b060119",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Despite the Keyforge product plugs, the piece is coverage of a long-standing licensing pattern (perpetual fallback access) with BBEdit, Sublime Text and Affinity as evidence, not a launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The six nearest concepts are all MCP, retrieval, or vulnerability-format notes; nothing in the corpus covers desktop licensing or expiry behaviour."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The named vendors' licensing models are publicly checkable and the piracy argument rests on a stated incentive mechanism a reader can evaluate."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The core trade-off - let expiry gate future value instead of revoking existing value - is a decades-old pattern (Sublime's update windows, BBEdit's limited mode) that does not depend on any current product or price."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It gives a designer two concrete implementable variants (updates-based licensing and graceful degradation), a status-check code sketch, and a threat-model argument that directly changes how one would build license expiry handling."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The single idea - never hard-lock a lapsed desktop user; degrade to a useful mode so renewal is a banner, not a wall - is statable in one paragraph, with the two models as variants of it."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+---
+title: Wide events as a single source of truth
+aliases:
+  - Wide structured events
+  - Single source of truth telemetry
+  - Observability 2.0 storage model
+date: 2026-08-24
+tags:
+  - concept
+  - observability
+  - telemetry
+  - instrumentation
+status: draft
+sources:
+  - url: https://www.honeycomb.io/blog/one-key-difference-observability1dot0-2dot0
+---
+
+# Wide events as a single source of truth
+
+## Definition
+
+**Wide events as a single source of truth** is the telemetry architecture in which each unit of work — a request hop, a job run, a pipeline stage — emits one arbitrarily-wide structured log event carrying all of its context, that event stream is stored once, and every other signal a team needs (metrics, traces, SLOs, aggregates) is derived from it at read time; it stands opposite the multi-pillar architecture, in which telemetry for the same work is written separately into metrics, logging, tracing, APM and other stores, each of which forces write-time decisions about which questions the data will ever be able to answer.
+
+## Explanation
+
+The mechanism turns on when aggregation happens. Pillar tools aggregate at write time: counters increment and log lines fire as the request executes, context is discarded before anyone knows which question will matter, and what survives can only ever yield percentile aggregates and random exemplars. A wide-event store defers the decision: events are composed deliberately per unit of work (canonical log lines per request hop, spans per step of application logic, periodic pulses for long-running jobs), preserving high-cardinality fields such as build id, feature flag and user id, so read-time queries can slice on arbitrary dimensions, compute outliers, and zoom between a single request and long-term trends; system, application, product and business telemetry live in the same store. Cost is paid once and controlled by head- or tail-based sampling rather than by suppressing cardinality or log levels. The sharpest practical edge is an evaluation test: a "unified observability platform" that federates several stores behind one bill or one presentation layer still has many sources of truth — the discriminating question is how many times the data is stored. The source is a vendor essay by Honeycomb's co-founder, who coined the observability 1.0/2.0 framing her product exemplifies, so its adoption claims are advocacy; the architectural distinction itself is checkable against any stack, and the essay credits the pattern's lineage to columnar business-analytics stores and Facebook's Scuba.
+
+## Key Properties
+
+- One event per unit of work, arbitrarily wide, composed deliberately rather than fired ad hoc
+- Aggregation moves from write time to read time; metrics, traces and SLOs become derived views over the same events
+- High-cardinality, high-dimensionality data is preserved, enabling arbitrary slicing and outlier correlation
+- Cost model: store once and control spend by sampling, instead of paying per pillar and capping cardinality
+- Litmus test: count how many times telemetry is stored — a unified presentation layer over many stores is not one source of truth
+
+## Relationships
+
+- [[siem-agentic-visibility-gap]] — that gap's remedy — emitting AI-native structured events that carry the full causal tool chain — applies the same compose-rich-context-per-unit-of-work principle to security telemetry that wide events apply to system telemetry
+
+## Applications
+
+Choosing or auditing an observability stack by counting sources of truth rather than comparing feature lists; designing instrumentation as canonical per-request events wide enough to carry build, flag and user dimensions, so debugging, SLO derivation and product questions all run against the same store.
+
+## Sources
+
+- https://www.honeycomb.io/blog/one-key-difference-observability1dot0-2dot0
+
+## See Also
+
+- [[siem-agentic-visibility-gap]]

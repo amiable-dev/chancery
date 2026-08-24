@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/our-new-report.md",
+  "task_id": "533fd52868ff01fb",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It announces CodeRabbit's own report and ends in a product pitch, but the post substantively summarizes the findings and category-targeted guardrail recommendations, which transfer to any team reviewing AI-authored code."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The nearest concepts (evals, MCP, code retrieval) do not touch AI-versus-human code-defect rates or review guardrails, so nothing in the corpus covers this."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims trace to a linked report with a stated methodology and disclosed limitations, so a reader can check what was measured even though independent reproduction is limited."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The headline rate ratios (1.7x overall, 2.74x security, ~8x excessive I/O) are point-in-time measurements of current model generations built on a self-admittedly unverifiable authorship-labeling heuristic, so the numbers will drift even if the amplification pattern holds."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "The recommendations are concrete team actions targeted at the amplified categories — policy-as-code for style, mandated nullability and exception rules, centralized credential handling, and AI-aware reviewer checklists for error paths and concurrency."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "One central claim carries the whole note — AI-authored PRs show the same issue categories as human ones but at materially higher rates, so guardrails should target the amplified categories — and the ten findings are facets of it."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

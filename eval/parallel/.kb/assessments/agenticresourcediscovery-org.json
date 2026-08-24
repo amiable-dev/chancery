@@ -1,0 +1,49 @@
+{
+  "target": "staging/agenticresourcediscovery-org.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/agenticresourcediscovery-org.md",
+    "task_id": "21bc683f0e2418aa",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a procedural how-to-publish guide with a manifest template and hosting steps, not a launch, release note, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No listed concept covers publishing resources for pre-invocation discovery; the MCP and skills neighbours concern execution and governance, not the catalog-manifest mechanism."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Every claim is a concrete, testable procedure — a manifest schema, a well-known path, headers, and DNS record shapes — checkable against the public spec."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The mechanics are pinned to specVersion 1.0 of an early working-group protocol — the urn:air scheme, well-known path, and DNS record names could all shift before stabilization, and whether public ARD crawlers exist in twelve months is uncertain."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It is a complete, executable three-step procedure — copy-pasteable ai-catalog.json manifest, exact hosting requirements including the CORS header, and TXT/SRV fallbacks — that a resource publisher can act on directly."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The note carries one idea, how to make agentic resources discoverable by publishing a catalog manifest, and all three steps serve it."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

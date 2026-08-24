@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/specification-overview-cyclonedx.md",
+  "task_id": "1d232ad2a0110704",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is specification documentation of the CycloneDX object model, not a launch, release note or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "osv-format covers a different, vulnerability-only interchange format; a reader of that concept learns the entire CycloneDX object model fresh here."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Every claim is verifiable against the published CycloneDX specification and the IANA media-type registry it links."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The object model of an ECMA-standardized format — components, services, dependencies, compositions, formulation, declarations — plus IANA-registered media types and bom.json/*.cdx.json conventions is structural and changes slowly, not a version-pinned feature matrix."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "It catalogs what the model can represent rather than guiding a decision; beyond a few integration facts (media types, file globs, the in-toto predicate type) it describes a landscape."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It is one statable idea — CycloneDX's modular object model and its serialization surface — with the per-object sections as facets of that single schema."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

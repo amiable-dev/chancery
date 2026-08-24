@@ -1,0 +1,47 @@
+{
+  "target": "staging/open-source-ai-penetration-testing-assistant.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "discard",
+  "reason": "disqualified: pure-announcement",
+  "disqualifiers": [
+    "pure-announcement"
+  ],
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/open-source-ai-penetration-testing-assistant.md",
+    "task_id": "84dbf31767355255",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": true,
+        "rationale": "This is a new-tool release writeup that is entirely a METATRON feature rundown — model variant, sampling parameters, database schema, export formats, RAM requirement, GitHub link — and its only general ideas (local inference avoids exfiltration, an agentic tool loop) appear as one-line product positioning with no transferable mechanism."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No nearest concept covers AI-assisted penetration testing or local-LLM security tooling; the overlap candidates (osv-format, siem-agentic-visibility-gap) address vulnerability data formats and SIEM logging."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The described tool is public on GitHub under MIT license, so every feature claim can be checked against the code."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The content is spec-sheet detail — huihui_ai/qwen3.5-abliterated:9b, a 16,384-token window, temperature 0.7, a five-table MariaDB schema, 8.4 GB RAM — that will misdescribe the tool within months and carries no mechanism that outlives it."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The only action a reader can take is to install and run this specific product; nothing guides how to build or evaluate offline AI pentest tooling in general."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The note is about exactly one thing — the METATRON tool and its feature set — and states it in a paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

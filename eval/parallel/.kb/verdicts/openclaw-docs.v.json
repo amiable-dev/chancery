@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/openclaw-docs.md",
+  "task_id": "3baec1cdd3d9b2b9",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is the project's standing docs index, not a launch, release note, or funding announcement, and the gateway-bridges-chat-apps-to-agents pattern it describes is not tied to a release event."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The nearest concepts are all MCP governance and observability notes; none describe a self-hosted multi-channel messaging gateway for agents."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims are install commands, config keys, and architecture statements checkable against the MIT-licensed project itself."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "Most of the concrete content is release-sensitive setup detail — Node 26/22.22.3+/24.15+ support ranges, npm 11.16 flag differences, port 18789, the current channel roster — that will drift within months, leaving only a thin architecture sketch."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Its instructions are purely product operation (npm install -g openclaw, openclaw onboard, openclaw dashboard, allowFrom config), which helps someone run this tool but transfers no build-or-decide guidance beyond it."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "Despite the link-farm packaging, the page has exactly one stateable core — a single self-hosted gateway process is the source of truth bridging many chat channels to agent sessions — with everything else being navigation."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/top-mcp-security-resources-march-2026.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/top-mcp-security-resources-march-2026.md",
+    "task_id": "516601443ca71a91",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a curated link digest rather than a launch, release note or funding announcement, so the announcement disqualifier does not apply even though the content is ephemeral."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Existing MCP security concepts (authorization hardening, remote-first governance, shadow detection) overlap in topic but none already carries this digest's specific items such as overthinking-loop denial-of-wallet or the DXT privilege RCE."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Every claim is a one-line summary linked to a named external source (arXiv paper, CSO article, Microsoft guide), so each is checkable."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "A March-2026 monthly roundup keyed to counts like '30 CVEs in 60 days' and '38% of 500 scanned servers' is a snapshot built to be superseded by the next month's digest."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Its own guidance amounts to one generic closing paragraph (restrict privileges, add timeouts and cost controls); anything a builder could act on lives in the linked resources, not in this note."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "It bundles eight unrelated resources across threat models, defenses, a CVE and CISO guidance with only a sentence on each, so there is no single core idea and no item developed enough here to stand alone."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

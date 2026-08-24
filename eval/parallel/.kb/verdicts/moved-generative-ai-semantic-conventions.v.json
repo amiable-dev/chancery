@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/moved-generative-ai-semantic-conventions.md",
+  "task_id": "f2ab0aab3562eb19",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": true,
+      "rationale": "The entire content is an administrative announcement that the GenAI semconv docs moved to another repository — two sentences, a link, and no idea that transfers anywhere."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No nearest concept covers the semconv relocation, though there is nothing here for any concept to duplicate."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The single claim (the docs moved) is trivially checkable by following the linked repository."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "fail",
+      "rationale": "A redirect stub is obsolete the moment the move completes and carries no claim that could stay useful for twelve months."
+    },
+    "actionability": {
+      "rating": "fail",
+      "rationale": "There is nothing to act on beyond following a link to the real documentation."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It states exactly one (administrative, not conceptual) fact in a single sentence."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/stateful-vs-stateless-agent-design.md",
+  "task_id": "e3fa105271006957",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "This is a tutorial explaining an architectural pattern with runnable examples, not a product launch or release note."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The nearest concept, MCP stateless protocol core, covers protocol-level statelessness in MCP, not the agent-memory-residence tradeoff this note centres on, so a reader still learns something new."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The tradeoffs are demonstrated with runnable code and rest on standard distributed-systems reasoning any reader can verify."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The core tradeoff — client-held vs server-held conversation state and its consequences for horizontal scaling, token growth, and async workflows — is a classic architecture pattern that will hold in twelve months, while the Groq free-tier and model-name details are incidental illustration."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It gives a concrete, product-agnostic decision rule — stateless for single-turn task pipelines, stateful (with a persistent store and centralized cache to avoid localized amnesia) for long-running multi-turn assistants — that directly shapes a deployment design."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "The note carries exactly one idea, the state-residence tradeoff, and both code examples are illustrations of that same idea rather than separable concepts."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

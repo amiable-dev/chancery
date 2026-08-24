@@ -1,0 +1,49 @@
+{
+  "target": "staging/google-cloud-introduces-open-knowledge-format.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/google-cloud-introduces-open-knowledge-format.md",
+    "task_id": "1c49ac8b7fb685c1",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It introduces a specification whose conventions are themselves the content — path-as-identity markdown concepts, a single required frontmatter field, links-as-graph — which is coverage of a technique, not a version release."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The existing llm-maintained-wiki concept covers the underlying pattern but not this note's new material: a vendor-neutral spec, its concrete conventions, and the interoperability argument that bespoke wiki instances cannot exchange bundles."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The Google Cloud primary source is linked and the spec is described concretely enough to parse with the included ten-line consumer."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Like the llms.txt exemplar, this is a just-proposed v0.1 vendor convention with reference tools but no committed consumers, so its standing in twelve months depends entirely on adoption that has not happened."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "A team can adopt the conventions today with no product dependency — the note gives the directory shape, reserved frontmatter fields, and a working parser, plus concrete uses like metadata-as-code and agent runbooks."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Everything serves one statable idea: standardize curated agent context as a bundle of cross-linked markdown-plus-frontmatter concept files."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

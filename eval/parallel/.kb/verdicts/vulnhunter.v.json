@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/vulnhunter.md",
+  "task_id": "f76b7a97e84bfeeb",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "Though it is a tool README, it explains transferable analysis techniques (attacker-first forward reasoning, self-falsification) that the note itself says can be adapted to other models, not just an X-is-released notice."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No nearest concept covers agentic vulnerability discovery; OSV format and SIEM visibility are adjacent security topics, not this approach."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The tool is open-source with a public benchmarking harness against known-vulnerable corpora (NodeGoat, Juice Shop, WebGoat), so its detection claims are reproducible."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The forward attacker-first-vs-sink-first analysis contrast and the self-falsification-to-cut-false-positives discipline are reasoning patterns that outlast the Opus/Claude Code plumbing and install steps that date the note."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "A security engineer can adopt the entry-point-forward analysis, the disprove-your-own-finding filter, and the independent read-only verify step in their own pipeline regardless of whether they run VulnHunter."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "The note bundles several separable ideas — attacker-first forward analysis, the falsification engine, and the hunt/fix/verify loop with an independent verifier — each promotable on its own, so one paragraph cannot hold it."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

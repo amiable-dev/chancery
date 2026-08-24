@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "4c7b025feea7d04a",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/we-put-the-exploit-in-a.md": "sha256:b3452a3e7a082cb2b2072fef4a3fd36237783b3922bc59911dbb7c5bc5e35de3",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:a184c7a2fd9b1a44b84bc69321c2eb0bed86ca632a2fd6468c2d414bd641476b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/we-put-the-exploit-in-a.json"
+  ]
+}

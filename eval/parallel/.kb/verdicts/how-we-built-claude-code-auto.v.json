@@ -1,0 +1,10 @@
+{"rubric":"promotion@3","target":"staging/how-we-built-claude-code-auto.md","task_id":"02c04e61748de49c",
+"disqualifiers":{
+"pure-announcement":{"triggered":false,"rationale":"Although it accompanies a feature launch, the post is an engineering writeup of a transferable defense architecture — threat model, classifier design, and measured trade-offs — not a release note."},
+"duplicate":{"triggered":false,"rationale":"Nothing in the nearest concepts (MCP platform notes, retrieval evals, SIEM gap) covers model-based approval classification for agent actions."},
+"unfalsifiable":{"triggered":false,"rationale":"The design is described mechanistically and the claims carry evaluation tables and a cited system card a reader can check."}},
+"dimensions":{
+"durability":{"rating":"strong","rationale":"The core content is mechanism and trade-off — reasoning-blind classifiers, structural injection defense by stripping tool outputs, two-stage FPR/FNR cascades, delegation-boundary checks — which outlives the specific model names and percentages used as evidence."},
+"actionability":{"rating":"strong","rationale":"Anyone building agent autonomy can lift concrete choices from it: drop blanket interpreter allow-rules, judge actions not rationalizations, tier approvals by blast radius, and use deny-and-continue with escalation limits instead of halting."},
+"atomicity":{"rating":"strong","rationale":"The probe, classifier, and handoff checks are facets of one stateable idea — delegate approvals to a conservative, reasoning-blind classifier that treats anything the user did not authorize as unauthorized."}},
+"supplier":{"class":"model-single","id":"claude-fable-5"}}

@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "12a0f322766ff471",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/how-to-reduce-observability-costs-by.md": "sha256:ff82613349fcd6ee408c48c41bfaabe7d13cea1b064d7c0cf265d4aba83e8f08",
+      "assessment:how-to-reduce-observability-costs-by": "sha256:ad0e4230114bd8eec0c912c652d0bbf6d999f039c77030e904fce274fcd86f55",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

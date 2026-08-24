@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/the-average-cost-of-a-data.md",
+  "task_id": "218e89cc0e85bf6b",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "This is trade-press coverage of the findings of IBM's annual Cost of a Data Breach study, not a product launch, release note or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No nearest concept (SIEM agentic visibility gap, SLO burn-rate alerting, OSV format, etc.) covers breach-cost economics or extortion tactics, so nothing here is already in the corpus."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Every headline claim is attributed to the linked 2026 IBM report drawn from 602 breached organizations, which a reader can obtain and check."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The note is dominated by single-year survey figures — $4.99m average, 12% rise, 41% reputation-extortion rate, sector rankings — that the 2027 edition of the same report will supersede wholesale."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Its only guidance is IBM's boilerplate (monitor data flows, adopt zero trust), which changes no concrete build or buy decision for a reader."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "All the statistics serve one statable claim — breach costs hit a record high, pushed up by AI-driven attacks and reputation-based extortion — with no unrelated ideas bundled in."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

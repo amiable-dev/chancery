@@ -1,0 +1,49 @@
+{
+  "target": "staging/how-we-built-our-multi-agent.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/how-we-built-our-multi-agent.md",
+    "task_id": "1a8bc637e1de36c2",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "The Research feature is only the case study; the substance is transferable architecture, prompting, evaluation and reliability lessons."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts cover retrieval evals and MCP mechanics — none covers orchestrator-worker multi-agent design or its economics, and the eval concepts would still learn the LLM-as-judge and end-state findings here."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Claims are grounded in described internal experiments with named benchmarks (BrowseComp) and mechanisms a reader can reproduce."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The load-bearing content is pattern and trade-off — parallel context windows as token scaling, 15x cost economics, effort-scaling rules, end-state evaluation, artifact references over relaying — which outlives the cited model names and percentages."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It prescribes specifics a builder can lift: delegate with objective, output format, tool guidance and boundaries; start evals at ~20 queries; use one rubric-based judge call; resume from checkpoints instead of restarting."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "It bundles at least three separable concepts — multi-agent token-scaling economics, agent evaluation methodology, and production reliability for stateful agents — that no single paragraph captures without becoming a list."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/fallow-codebase-intelligence-for-typescript-and.md",
+  "task_id": "8f0677d125575b01",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is a product docs landing page rather than a launch, release note or funding announcement, and it does gesture at a transferable trade-off (static reachability versus runtime coverage) beyond the product itself."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "None of the nearest code-intelligence concepts (code knowledge graph, graph-vs-vector retrieval) cover combining static reachability with runtime coverage for deletion confidence."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims describe checkable tool behaviour documented at the source, not unverifiable assertions."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The captured content is dominated by a vendor feature matrix (dead code, duplication, complexity, feature-flag branches, hot/cold paths) with mostly empty section headers, and only a thin durable kernel — the static-vs-runtime deletion-confidence trade-off — survives twelve months."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "As captured it mostly says 'use fallow to find X'; the transferable decision (confirm static dead-code findings against runtime coverage before deleting) is present only as a one-line teaser, not developed enough to act on."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It stays on one idea — two layers of codebase intelligence, static reachability and runtime coverage, meeting in a health check — statable in a single paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

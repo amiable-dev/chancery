@@ -1,0 +1,32 @@
+{
+  "envelope": {
+    "task_id": "53f963ac26370b10",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/the-anatomy-of-an-agent-harness.md": "sha256:5be3ab9b67437096a8cee7050de3d46665589bb9253fd9e82bc788ab8f8c7edd",
+      "assessment:the-anatomy-of-an-agent-harness": "sha256:d6d087abcbc2de67ad3c4d0333dc9d0f2b6696cf4962475597b3ff1c4a087147",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:e821b256f65b57ac8929586d3caff9d44a0ee114d458f033f375fbf439d18f7b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/agent-harness.md",
+    "concepts/model-harness-coevolution.md"
+  ]
+}

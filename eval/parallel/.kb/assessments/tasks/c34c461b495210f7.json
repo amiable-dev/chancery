@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "c34c461b495210f7",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/vannevar-bush.md": "sha256:76af0e588a395004d33d5dcccb0eaa6f05769c386d880b58900fa301b645328a",
+      "assessment:vannevar-bush": "sha256:5fb5cb0d4d3673d2ef3634fee6497593d520d0990d4b6ad35ed87ce44078042e",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

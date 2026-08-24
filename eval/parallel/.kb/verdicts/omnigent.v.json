@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/omnigent.md",
+  "task_id": "058c53f1e6ef75d6",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is a product README and feature tour rather than a launch, release-note or funding announcement, and it does contain one transferable idea in the meta-harness abstraction."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No nearest concept covers an orchestration layer over multiple coding-agent harnesses; the closest are MCP protocol notes and the skills format."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Everything described is verifiable against the open-source repository and its documentation."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The bulk is alpha-status product mechanics — installer extras lists, gateway base-URL tables, per-OS sandboxing caveats, upgrade and uninstall flows, a deploy-target menu — exactly the feature-matrix material that churns, with the durable meta-harness and layered-policy ideas stated only briefly."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Nearly every step is a product-only command for this tool (curl installer, omnigent claude, omni upgrade); the one design idea a reader could reuse, policies stacked at server, agent and session level, is presented as this product's config rather than portable guidance."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "Despite the sprawling feature tour, it is one idea — a common orchestration layer (meta-harness) over interchangeable coding-agent harnesses — stateable in a single paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

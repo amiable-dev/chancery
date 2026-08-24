@@ -1,0 +1,49 @@
+{
+  "target": "staging/building-effective-ai-agents.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/building-effective-ai-agents.md",
+    "task_id": "3536ffad4dc20aed",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a patterns-and-principles essay distilled from customer implementations, not a launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No existing concept covers the workflows-versus-agents distinction or the composable pattern taxonomy — the nearest are skills, MCP and retrieval notes."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Each pattern is described mechanistically with when-to-use conditions and linked reference implementations a reader can test."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The workflows-versus-agents distinction and the five composable patterns became the field's standard vocabulary, and the note's own December-2024 caveat applies to the framework listings, not to the patterns."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It tells a builder what to do case by case — start with a single augmented call, add a named pattern only when measured, and invest in the agent-computer interface with tactics like absolute-path parameters and poka-yoke arguments."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One stateable idea — prefer the simplest composable agentic pattern and reserve autonomous loops for unpredictable paths — with the pattern catalogue as that idea's content and the appendices subordinate."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

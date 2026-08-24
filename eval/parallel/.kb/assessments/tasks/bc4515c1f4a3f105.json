@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "bc4515c1f4a3f105",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/how-we-built-claude-code-auto.md": "sha256:a968b6343ab9a403321f8e34d255c9ac3c026e01e8b60e48702b35f9856f9e7f",
+      "assessment:how-we-built-claude-code-auto": "sha256:588484da4984186dc932d79da422cc3d30abb3d418bbcd9d49b0ed759a2a8406",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

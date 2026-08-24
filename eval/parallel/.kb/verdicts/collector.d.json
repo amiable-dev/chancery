@@ -1,0 +1,28 @@
+{
+  "task_id": "1517c05fccf1eab0",
+  "supplier": {"class": "model-single", "id": "claude-fable-5"},
+  "concepts": [
+    {
+      "slug": "telemetry-collector-pipeline",
+      "title": "Telemetry collector pipeline",
+      "tags": ["concept", "observability", "telemetry", "opentelemetry"],
+      "definition": "A **telemetry collector pipeline** is a vendor-agnostic intermediary process that receives telemetry — traces, metrics, and logs — from instrumented services, processes it in flight, and exports it to one or more observability backends, so applications hand off telemetry quickly instead of shipping directly to a vendor. The OpenTelemetry Collector is the canonical implementation: a single deployable that replaces the fleet of per-vendor agents a host would otherwise run, accepting open formats and forwarding to open-source or commercial backends interchangeably.",
+      "explanation": "The pipeline has three stages — receivers take telemetry in, processors transform it in flight, and exporters deliver it onward — packaged in one codebase that runs either as an agent beside a service or as a standalone gateway. Adoption is deliberately low-friction: the default OTLP exporters in each language SDK assume a local collector endpoint, so launching a collector starts capturing telemetry without touching application code. The architectural question the pattern answers is when to interpose it at all: exporting straight from the SDK to a backend is fine for getting started and for small environments, but in production a collector lets the service offload data fast while the collector absorbs the operational work — retries, batching, encryption, filtering of sensitive data — that would otherwise be reimplemented in every application. It also collapses the per-vendor agent fleet into one process speaking open formats such as Jaeger, Prometheus, and Fluent Bit. This account comes from the project's own documentation overview, so its stated objectives (usability, performance, observability, extensibility, unification) are self-declared goals rather than measured results, and core components carry explicitly mixed stability levels.",
+      "key_properties": [
+        "Single codebase handles traces, metrics, and logs, deployable as a per-host agent or as a standalone collector/gateway",
+        "Speaks open observability formats — OTLP, Jaeger, Prometheus, Fluent Bit — and exports to one or more open-source or commercial backends",
+        "Production guidance: services export to a local collector, which takes over retries, batching, encryption, and sensitive-data filtering",
+        "Language SDKs' default OTLP exporters assume a local collector endpoint, so a newly launched collector begins receiving telemetry automatically",
+        "Core components have mixed stability levels, documented per component, with support windows set by each artifact's intended audience"
+      ],
+      "relationships": [
+        {
+          "target": "wide-events-single-source-of-truth",
+          "clause": "wide-events-single-source-of-truth prescribes what telemetry should look like — one wide event stream as the source of truth — while the collector pattern supplies the vendor-neutral pipeline that receives, reshapes, and routes whatever signal shape a team adopts"
+        }
+      ],
+      "applications": "Run a collector alongside production services so they hand telemetry off quickly while it absorbs retries, batching, encryption, and scrubbing of sensitive data before export. The same pipeline lets a team switch observability vendors or fan out to multiple backends without re-instrumenting applications.",
+      "see_also": ["wide-events-single-source-of-truth"]
+    }
+  ]
+}

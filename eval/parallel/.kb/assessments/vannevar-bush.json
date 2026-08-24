@@ -1,0 +1,49 @@
+{
+  "target": "staging/vannevar-bush.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/vannevar-bush.md",
+    "task_id": "97295dc8f1abeae8",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is Bush's 1945 Atlantic essay proposing the memex and associative trails, not a product launch, release note, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Nothing in the nearest concepts (evals, proxy capture, code graphs, context layer) covers associative trails, the memex, or the selection-over-storage bottleneck."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The essay is itself the primary source, and its design arguments (indexing is artificial, selection is the bottleneck) are checkable against eighty years of hypertext and knowledge-tool history."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The core claims — consultation, not storage, is the bottleneck of the record; selection should work by association rather than hierarchical indexing; trails between items are durable, shareable artifacts — have stayed true and generative for eighty years even though the microfilm-era gadgetry around them is long superseded."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "The trail mechanism is specified concretely enough to build from (named trails, joining two items with persistent mutual codes, side trails, sharing a trail into another person's store) and is the direct design principle behind hypertext and modern linked knowledge bases."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The durable memex-and-trails core is bundled with several separable period excursions — walnut head cameras and dry photography, the Vocoder speech typewriter, arithmetic and logic machines, and neural-interface speculation — so the note carries multiple ideas and the split is the finding."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/langfuse.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "discard",
+  "reason": "matched {\"durability\":[\"fail\"]}",
+  "ratings": {
+    "durability": "fail",
+    "actionability": "weak",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/langfuse.md",
+    "task_id": "e40554dd91dcdd55",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is the vendor's docs landing page rather than a launch, release note or funding announcement, though it is equally promotional in character."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts (deprecation policy, OSV format, eval envelopes, SIEM gap) share no ground with an LLM observability platform overview."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The feature claims are trivially checkable against the Langfuse repository and the docs pages they link to."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "fail",
+        "rationale": "It is a vendor feature catalog — the exact genre the rubric names as aging poorly — whose content tracks the product's changelog rather than any mechanism or trade-off."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Beyond signalling that an open-source, OTel-based tracing/prompt/eval platform exists for stack selection, every bullet is a feature name plus a link with nothing a builder could apply."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "It is a catalog of four parallel feature areas (tracing, prompts, evals, platform) with no single extractable concept beneath the product name."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

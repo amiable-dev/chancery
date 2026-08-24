@@ -1,0 +1,49 @@
+{
+  "target": "staging/new-ghostcommit-attack-hides-malicious-prompts.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/new-ghostcommit-attack-hides-malicious-prompts.md",
+    "task_id": "71e5916e0642e9c5",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is third-party coverage of a disclosed attack technique with a published proof of concept, not a product launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No nearest concept touches multimodal prompt injection, poisoned convention files, or supply-chain attacks on coding agents; the closest (siem-agentic-visibility-gap) is about SIEM logging, not this attack class."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The claims trace to the ASSET Research Group's linked disclosure page and an open-source PoC repo with the split-payload PR and decoder, which a reader can inspect and reproduce."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The attack-class mechanisms — instructions hidden in an image channel text-diff reviewers never parse, secrets exfiltrated as non-string-shaped integer tuples, deferred activation through a merged convention file, and outcomes depending on harness more than model — remain exploitable patterns long after the specific tool/model results (Cursor, Sonnet 4.6, GPT-5.5) go stale."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It names the exact blind spots a defender must close — CodeRabbit's default PNG exclusion, text-only diff review, string-pattern secret scanning, and unvetted AGENTS.md instructions — which directly changes how someone configures AI code review and treats repo convention files."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The note is one attack pattern — split-payload multimodal prompt injection into coding agents via repository convention files — with the harness-vs-model result and the detector prototype as supporting findings of the same study."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

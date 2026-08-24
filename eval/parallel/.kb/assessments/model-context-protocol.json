@@ -1,0 +1,49 @@
+{
+  "target": "staging/model-context-protocol.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/model-context-protocol.md",
+    "task_id": "f958ef13395577ab",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is the normative Tools chapter of the MCP specification, not a launch, release note or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "mcp-stateless-core already carries the explicit-handle state pattern and the input_required/requestState flow, but the rest of the tools surface — schema rules, naming, x-mcp-header, result content types, the two-tier error model, security requirements — is new to a reader of that concept."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is normative specification text, verifiable against the published 2026-07-28 MCP spec."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "It is pinned to the dated 2026-07-28 revision of a spec that has broken compatibility roughly every release, and its newest normative details (x-mcp-header, InputRequiredResult, subscriptions/listen) sit exactly where the protocol churns — only the core tools/list-tools/call model is stable."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "An MCP server author acts on this directly: declare capabilities, keep tool ordering deterministic for prompt-cache hits, satisfy the schema rules, design handles for authorization/opacity/lifetime, and choose protocol errors versus isError results for model self-correction."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "It bundles several separable mechanisms — tool schema rules, header mirroring for body-blind routing, multi-round-trip input, handle-based state, the error split — that cohere as a reference chapter but do not reduce to one paragraph without losing most of the content."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

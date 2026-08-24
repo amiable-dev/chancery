@@ -1,0 +1,49 @@
+{
+  "target": "staging/what-is-hyde-how-to-improve.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/what-is-hyde-how-to-improve.md",
+    "task_id": "5a847d5d9d2ae0c9",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a technique explainer with working code, not a product, release, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "retrieval-augmented-generation covers the Lewis et al. architecture; HyDE is a specific query-transformation technique (embed a generated hypothetical answer instead of the query) a reader of that concept has not seen."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The mechanism is reproducible from the included code, and the underlying approach traces to the published HyDE work the article paraphrases."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The core claim — question and answer embeddings occupy different geometries, so embedding a hypothetical answer makes the search answer-to-answer — is a mechanism-level insight that stays true regardless of which embedding model or LLM is fashionable in twelve months."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It gives the one-function delta over naive retrieval, production guardrails (fallback, length caps, PII scrubbing, tracing), and explicit adopt/avoid criteria — everything needed to decide and implement."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One idea — change what gets embedded at query time — carries the whole note; guardrails and criteria are elaborations of it, not separate concepts."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

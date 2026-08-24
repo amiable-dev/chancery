@@ -1,0 +1,49 @@
+{
+  "target": "staging/experiences-with-local-models-for-coding.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/experiences-with-local-models-for-coding.md",
+    "task_id": "6208bc309b093275",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a first-person experiment memo about running local models for agentic coding, with no product launch, release, or funding content."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (Agent Skills format, acceptability-envelope evals, Code Mode, W2S sandbox, retrieval evals) cover local-model coding viability or its evaluation."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The author documents machines, models, settings, and links the open eval harness (birgitta410/local-coding-evals), so the results are reproducible in principle."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The load-bearing findings are pass rates and rankings for specific model versions (Qwen3.6 35B MoE 2/2 vs Gemma 4 26B 0/3, 5/7 failures on 48GB vs 1/7 on 64GB) that the next model generation will invalidate, even though the seven-step viability funnel itself would age well."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It hands a reader a reusable seven-step viability funnel plus concrete task-fit heuristics — minimise discovery, point at files, keep instructions specific, pre-plan with a big model — that directly change how someone would trial a local coding setup."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "It interleaves at least two separable ideas — the viability funnel as an evaluation method and the task-characteristics that determine local-model fit — inside a narrative of experiment results, so no single paragraph states the core."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

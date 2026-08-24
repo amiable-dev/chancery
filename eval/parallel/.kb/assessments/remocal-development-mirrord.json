@@ -1,0 +1,49 @@
+{
+  "target": "staging/remocal-development-mirrord.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/remocal-development-mirrord.md",
+    "task_id": "49234ab8b47cf25f",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a product use-case page describing a development approach ('remocal') and its mechanism, not a launch or release announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No supplied nearest concept (MCP governance, code mode, context layer) covers running local processes with remote cluster context."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The mechanism — a mirrord-layer intercepting syscalls in the local process paired with an in-cluster agent in the target pod's network namespace — is documented and testable against the open-source tool."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The remocal pattern — remove deployment from the dev loop by running local code against real cluster traffic, files and env vars via syscall-level interception — and its trade-off against VPN-style cluster tools age beyond any single release."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Beyond the decision-level framing, the concrete path is product-only (run your process under mirrord), padded with marketing specifics like '15 seconds or less' and '10,000+ pod clusters' rather than transferable implementation guidance."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One idea — local execution with remote context via intercepted syscalls — is stated in a single paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

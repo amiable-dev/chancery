@@ -1,0 +1,49 @@
+{
+  "target": "staging/andrew-ng-andrewyng-on-x.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/andrew-ng-andrewyng-on-x.md",
+    "task_id": "45a4c459f2f10b09",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "An essay articulating a development framework, with no product, release, or funding being announced."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (context layer, MCP platform notes, W2S sandbox) cover nested feedback loops for agentic product development."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The letter itself is the primary source for a named practitioner framework whose mechanism — three loops at distinct cadences — a reader can inspect and apply."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The structural pattern — a fast self-testing agent loop nested inside a developer steering loop nested inside slow external feedback, with human involvement justified by an information asymmetry rather than 'taste' — ages independently of the buzzword that prompted it."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It tells a builder concretely how to work: close the inner loop with evals and self-testing, shift personal time from QA to product decisions, and add evals when the agent repeatedly hits the same failure."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One core idea — three nested loops at different timescales govern agentic product development — with the context-advantage point serving as the rationale for the middle loop."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

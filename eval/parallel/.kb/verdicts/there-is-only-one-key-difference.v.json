@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/there-is-only-one-key-difference.md",
+  "task_id": "eaaae1ad1a51574f",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "This is a vendor-authored essay articulating an architectural distinction (one vs. many sources of telemetry truth), not a launch or release note for any product."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "None of the nearest concepts (MCP governance, SIEM gaps, context layer, evals) covers the observability 1.0 vs 2.0 storage-model distinction."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The central claim is a checkable technical property — count how many places your telemetry is stored — and the piece links primary sources like Scuba and canonical-log write-ups."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The core mechanism — wide structured events as a single store with read-time aggregation versus pillar tools that force write-time decisions — is an architectural trade-off that will hold regardless of which vendors survive, though the adoption predictions around it will date."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It gives a concrete evaluation test ('how many times is your data stored?') and a design prescription (compose wide canonical events per unit of work, decide at read time) that directly changes instrumentation and tool-selection decisions."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "The whole essay reduces to one statable idea — the generational difference is single vs. many sources of truth, and everything else is consequence — which fits in one paragraph independent of Honeycomb's framing."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

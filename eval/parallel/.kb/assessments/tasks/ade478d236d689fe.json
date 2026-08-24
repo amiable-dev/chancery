@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "ade478d236d689fe",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/how-harvey-fireworks-beat-closed-source.md": "sha256:5de1a5368ea1b1d47c91a3228a2514e1323f749cf41466e221655131a599abcc",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:7e56ae8167ac1ff5343e5908923729afe6a500449a0febdb3e3d80d6c96f7302",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/how-harvey-fireworks-beat-closed-source.json"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "f9dda1af52a48d78",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/opentelemetry-profiling-goes-alpha.md": "sha256:7d6603f0f90c57fd9ed7574b2695c25d07f3c0394c36ae8cf708a97248041c4f",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:7c0b1ddd8517646936cf3620b21b45e830031de68659b85b4374ba9dc852cd56",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/opentelemetry-profiling-goes-alpha.json"
+  ]
+}

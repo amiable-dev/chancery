@@ -1,0 +1,49 @@
+{
+  "task_id": "5e2343e9a4e01315",
+  "supplier": { "class": "model-single", "id": "claude-fable-5" },
+  "concepts": [
+    {
+      "slug": "continuous-profiling",
+      "title": "Continuous profiling",
+      "tags": ["concept", "observability", "performance", "profiling"],
+      "definition": "**Continuous profiling** is the always-on statistical profiling of production systems: an agent samples stack traces at a fixed rate, aggregates the samples into a time series, and renders any window of them as a flamegraph showing which functions consumed CPU or memory — the function-level attribution that metrics, logs and traces structurally lack.",
+      "explanation": "The economics rest on sampling. Where an APM agent pays a cost on every request, a profiler wakes at a fixed frequency (Parca samples 19 times per second per logical CPU via eBPF), records what is on the stack, and goes back to sleep; missed moments do not matter because patterns emerge statistically over time, which is what keeps overhead negligible and lets profiling run continuously rather than in ad-hoc sessions. eBPF-based profilers sample from the kernel, so they need no SDK, recompilation or redeploy and yield comparable profiles across languages. The standard deployment is a per-node agent (a DaemonSet in Kubernetes) forwarding aggregated profiles to a central server backed by object storage, with the OpenTelemetry Profiling SIG working to carry profiles over OTLP alongside metrics, logs and traces. Profiles complement rather than replace traces: a trace explains why one request was slow, a profile shows where a service spends CPU overall, and the two disagree instructively — a slow request can have a cheap profile (waiting on I/O) while a fast request has an expensive one. The source, a practitioner blog post in a Kubernetes observability series, is emphatic about adoption discipline: profiling is an optimization tool, not a substitute for missing observability basics; adopt it when compute cost is a major line item or performance incidents recur without clear root cause, start with the most compute-expensive services, and make profiles self-service for the owning teams, because flamegraphs nobody owns go unread. The typical wins it reports are hotspots in libraries assumed optimized — JSON serialization, regex matching, logging formatters — where fixes commonly cut a service's CPU by 20-40%.",
+      "key_properties": [
+        "Fixed-rate statistical stack sampling (Parca: 19 samples per second per logical CPU) keeps overhead low enough to run always-on in production",
+        "eBPF-based profilers need no SDK, recompilation or redeploy and produce comparable profiles across languages",
+        "Profiles answer where a service spends CPU overall; traces answer why one request was slow — complementary, not substitutes",
+        "Deployment shape: per-node agent forwarding to a central server with object storage; the OTel Profiling SIG is standardizing profiles in OTLP",
+        "Adoption rule: profile the most expensive services first and make results self-service per owning team"
+      ],
+      "relationships": [
+        {
+          "target": "ebpf-observability",
+          "clause": "is the profiling member of that tool family, relying on eBPF's in-kernel stack sampling to attribute CPU to functions without touching application code"
+        }
+      ],
+      "applications": "Finding the exact function burning CPU during an incident without pre-instrumented spans; building a compute cost-reduction roadmap starting from the most expensive services; catching runaway code and noisy-neighbour pods in multi-tenant clusters.",
+      "see_also": ["ebpf-observability"]
+    },
+    {
+      "slug": "ebpf-observability",
+      "title": "eBPF observability",
+      "tags": ["concept", "observability", "ebpf", "kernel"],
+      "definition": "**eBPF observability** is the collection of telemetry by loading sandboxed programs into the Linux kernel, where they hook system calls, network events and CPU scheduling — so flows, traces and profiles can be gathered from any process, in any language, without modifying application code, adding SDKs or redeploying.",
+      "explanation": "eBPF lets verified, sandboxed programs run inside the kernel without kernel modules or kernel source changes, which turns the kernel itself into the instrumentation point: whatever crosses it — system calls, network buffers, scheduler decisions — can be observed for every process on the node. Three tool families have grown on this base: network-flow visibility (Cilium and Hubble), automatic protocol-level tracing that reconstructs HTTP, gRPC and DNS calls from kernel network buffers without SDKs (Pixie), and continuous profiling of CPU and memory by stack sampling (Parca). The limit is as important as the capability: kernel-level data carries no business context — it cannot say which team owns a hot code path, correlate behavior with user-facing SLOs, or emit custom business metrics — so eBPF extends explicit instrumentation rather than replacing it. The source's formulation is that eBPF collects the low-level truth while OpenTelemetry normalizes and correlates it with the rest of the observability stack, which is why the two are paired rather than rivals. Operationally, eBPF requires recent kernels (5.10 or newer recommended, 4.19 minimum), the CAP_BPF and CAP_PERFMON capabilities, and often a security review — some organizations prohibit kernel-level access outright — though current managed-Kubernetes node images (EKS, GKE, AKS) generally support it. The source is a practitioner blog post in a Kubernetes observability series.",
+      "key_properties": [
+        "Sandboxed in-kernel programs hook syscalls, network events and scheduling with no kernel modules and no application changes",
+        "Three tool families: network flow (Cilium/Hubble), protocol-level auto-tracing (Pixie), continuous profiling (Parca)",
+        "Collects system-level truth but no business context — ownership, SLO correlation and custom metrics still need explicit instrumentation",
+        "Prerequisites: kernel 5.10+ recommended (4.19 minimum) and CAP_BPF/CAP_PERFMON capabilities; some security policies ban eBPF entirely"
+      ],
+      "relationships": [
+        {
+          "target": "continuous-profiling",
+          "clause": "supplies the in-kernel stack-sampling mechanism that continuous profiling runs on, making function-level attribution possible without instrumenting the application"
+        }
+      ],
+      "applications": "Observing polyglot or third-party workloads that cannot be instrumented; deciding whether an observability gap calls for an SDK rollout or a DaemonSet; preparing the security case (capabilities, kernel versions) for kernel-level telemetry.",
+      "see_also": ["continuous-profiling"]
+    }
+  ]
+}

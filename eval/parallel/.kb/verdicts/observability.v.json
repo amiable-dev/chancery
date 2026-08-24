@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/observability.md",
+  "task_id": "0c1ce90c90999508",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "This is a podcast episode recap of a practitioner interview on observability practice, not a product launch, release note, or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The supplied nearest concepts are all MCP-, graph-, and agent-governance notes; none covers Observability 2.0, cardinality economics, or the three-pillars critique discussed here."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims are attributed on the record to Charity Majors with links to the full episode, transcript, and her published writing, so a reader can check both the source and the argument."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The load-bearing ideas — the three-pillars model multiplying storage cost, high cardinality driving observability spend, unified structured-event storage, SLOs as the entry point, OTel for vendor portability — are mechanisms and trade-offs that will hold in twelve months even if side remarks like DevOps's decline date."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "It is a timestamped episode summary that states positions ('dashboards are a poor view', 'SLOs are the APIs for teams', 'move to 80% structured data') at survey level across a dozen topics without enough mechanism on any one of them for a reader to act."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "A dominant thesis (Observability 2.0: unified high-cardinality event storage replacing the three pillars) carries most of the note, but it is bundled with separable riders on DevOps's obsolescence, Honeycomb's custom database, mobile observability, and AI-code observability."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/welcome-to-llamaindex.md",
+  "task_id": "812ed072c7521240",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is a docs welcome/navigation page rather than a launch, release note, or funding announcement, and it does define transferable notions like context augmentation and workflows, however thinly."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The existing RAG concept covers this page's one conceptual nugget (context augmentation via retrieval), but the page's actual subject — the LlamaIndex framework and its ecosystem — is not covered by any nearest concept."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Its checkable content (APIs, quickstart code, package names) is verifiable against the linked repos and docs; only puffery like 'world's best document parser' is unverifiable."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The bulk is a vendor feature matrix and navigation index — LlamaCloud plans, 10,000 free monthly credits, ecosystem project lists — that churns with every docs reorg, leaving only one-paragraph definitions of RAG-adjacent terms as stable content."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Its only concrete guidance is product-bound setup (pip install llama-index, the 5-line quickstart, sign up for LlamaCloud), which informs adoption of this vendor but not how to build or decide in general."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "It is a grab-bag hub — agents, workflows, context augmentation, cloud services, community, ecosystem — where no single idea is developed beyond a teaser paragraph, so there is no one stateable core and nothing meaty enough to split out."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

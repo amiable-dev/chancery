@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/detect-mcp-traffic-in-gateway-logs.md",
+  "task_id": "70bba5aa89248cc0",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "A hands-on tutorial, not a launch, release note or funding post."
+    },
+    "duplicate": {
+      "triggered": true,
+      "rationale": "shadow-mcp-detection already records this exact mechanism — gateway egress scanning with host patterns and DLP signatures for MCP JSON-RPC, classified against the sanctioned portal path — so what remains here is Cloudflare-specific implementation detail (GraphQL dataset, Rust regexes, 1,024-byte scan depth), not a new central idea."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The queries, regex patterns and API calls are runnable and checkable against the documented Cloudflare APIs."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The detection signals are pinned to current protocol-version strings (202[4-9]), current DLP engine limits and current API surfaces that will drift, while the underlying idea is already captured in the corpus."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Copy-paste actionable, but as Cloudflare-specific GraphQL and DLP API steps; only the small JSON-RPC signature list would transfer to other inspection engines."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "A single idea — detect shadow MCP traffic at the gateway — carried through one tutorial's steps."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

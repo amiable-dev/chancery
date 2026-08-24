@@ -1,0 +1,49 @@
+{
+  "target": "staging/a-field-guide-to-claude-fable.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/a-field-guide-to-claude-fable.md",
+    "task_id": "29610e08a49982f9",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Although published around the Fable 5 launch, the piece is a practitioner's technique guide to unknown-reduction workflows, not a release note about the product itself."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (retrieval composition, Agent Skills format, export directive, SIEM gap, code graphs) cover elicitation patterns for surfacing unknowns in agentic coding."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The claims are workflow patterns with concrete example prompts a reader can reproduce and test directly in their own sessions."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The Rumsfeld-quadrant framing of prompting and the cheap-artifact elicitation patterns (blind-spot pass, interviews, references, plan review, quizzes) are model-agnostic practices, not version-bound features."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Each pattern comes with a copy-adaptable prompt and a stated trigger condition, so a reader can change how they run their next agent session immediately."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The unifying thesis (spend cheap tokens to surface unknowns before they get expensive) is one paragraph, but the note bundles eight separable techniques from blind-spot passes to merge quizzes, each usable independently."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

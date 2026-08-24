@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "14e7720b21df8e1f",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/designing-ai-platforms-for-reliability.md": "sha256:5ed7b575ba046b4689feac563de7495694b06f00b7b4337e19acedd717a838d5",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:4dbe27c6a13fa5bcbb0ea53651fd7ae09575c32e4c6b2063a9616a00381241ba",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/designing-ai-platforms-for-reliability.json"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "1f7ce29a372c2734",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/technology-radar-thoughtworks.md": "sha256:f971fafa1617caf597f9e2eff7df7814bb2e23310ffc03bdb3233c6a7997b678",
+      "assessment:technology-radar-thoughtworks": "sha256:52dd021cc4a250f22da9965fa4313bf59e2bafac6b0aa8ba3122dbccb2ef5492",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

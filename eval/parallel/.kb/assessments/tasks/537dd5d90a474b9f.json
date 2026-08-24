@@ -1,0 +1,33 @@
+{
+  "envelope": {
+    "task_id": "537dd5d90a474b9f",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/build-long-running-ai-agents-that.md": "sha256:b2cadcd7865e3d3823f9056f667c790bda97dcdfaa539df3536e0e3654b5e1a8",
+      "assessment:build-long-running-ai-agents-that": "sha256:59b22b55aba71c68729492cab2a1710dc8a9729279dc69550a4c871720c36042",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:fb64782f1a2aefd3911f606252ddc482c497940f1db83ae5e8a25a6d92b3aa02",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/agent-checkpoint-resume.md",
+    "concepts/subagent-delegation.md",
+    "concepts/preseeded-state-evals.md"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/use-keygen-to-license-and-distribute.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "discard",
+  "reason": "matched {\"durability\":[\"fail\"]}",
+  "ratings": {
+    "durability": "fail",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/use-keygen-to-license-and-distribute.md",
+    "task_id": "a906b101ff2728c8",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is an evergreen sales landing page rather than a launch, release note, or funding announcement, so this specific disqualifier does not fit even though the page is wholly promotional."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Nothing in the nearest concepts (OSV, MCP notes, Agent Skills format, code knowledge graph) touches software licensing or desktop app distribution."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Its one substantive claim — Tauri's updater can authenticate against Keygen with a license header — is demonstrated in a snippet checkable against both projects' public docs."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "fail",
+        "rationale": "The page is customer logos, a Capterra star rating, pricing links, and 'free during development' copy; the sole technical content is one updater snippet bound to current Tauri and Keygen API details, leaving nothing that stays useful in twelve months."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Its only guidance is product-bound — call Keygen's licensing and distribution API and paste the updater snippet — which is a vendor onboarding step, not transferable build-or-decide knowledge."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "It says exactly one thing — license and auto-update a Tauri app through Keygen's API — so the core is trivially stateable in a paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

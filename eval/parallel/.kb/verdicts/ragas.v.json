@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/ragas.md",
+  "task_id": "e78ba27ce1789660",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is a documentation homepage for an existing library, not a launch, release note or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The nearby eval concepts (acceptability-envelope, golden-dataset retrieval evals) are methodology notes that overlap in topic only; neither covers the Ragas library itself."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Its claims about what the library does are directly checkable against the open-source package and linked docs."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "fail",
+      "rationale": "The page is slogan-level marketing copy ('from vibe checks to eval loops') plus doc links and a consulting pitch; every substantive detail lives behind links, leaving nothing here that stays useful as the product churns."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "The only actions offered are product-only pointers — follow the quickstart, use the decorator API, book a consulting slot — with none of the how actually present in the note."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It states exactly one thing — Ragas is an LLM-app evaluation framework built around experiments and LLM-driven metrics — with no separable bundled ideas."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

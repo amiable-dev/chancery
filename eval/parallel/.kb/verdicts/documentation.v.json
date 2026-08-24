@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/documentation.md",
+  "task_id": "6b7e8c49268090a0",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "A documentation landing page, not a launch, release note or funding post — though it is nearly content-free."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No existing concept covers what OpenTelemetry is; the nearest concepts are about MCP detection, OSV and evals."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Its two claims (vendor-neutral framework; 90+ vendor support) link to checkable ecosystem pages."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The one-sentence definition of OTel stays true, but the note's only other content is an adoption count ('more than 90 vendors') that dates."
+    },
+    "actionability": {
+      "rating": "fail",
+      "rationale": "A navigation stub with a definition and a feedback widget; nothing here changes how anyone would build or decide."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It carries exactly one idea — OTel is a vendor-neutral framework for traces, metrics and logs — stateable in a sentence."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

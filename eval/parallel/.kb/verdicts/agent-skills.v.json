@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/agent-skills.md",
+  "task_id": "2eaf4bdc038b9a10",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is third-party explainer coverage of the Agent Skills technique, not a vendor launch, release note, or funding announcement."
+    },
+    "duplicate": {
+      "triggered": true,
+      "rationale": "Its central idea — a SKILL.md folder standard with three-tier progressive disclosure, portable across compliant agents — is exactly what the existing agent-skills-format concept already states, leaving only ephemeral extras (adoption timeline, directory paths, marketplace counts) that add no new conceptual content."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The core claims cite checkable primary sources (agentskills.io spec, Anthropic docs, the anthropics/skills and openai/skills repos), even if some adoption figures are journalistic."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "Much of its bulk is adoption-count and catalog material — 32 tools, tens of thousands of marketplace listings, per-tool directory paths, a quarter-stamped 'Skills 2.0' timeline — which the article itself warns may change, while the durable architecture is already captured elsewhere."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "The authoring walkthrough (description field does the triggering, keep the body under ~5k tokens, split references into secondary files) and the three security vetting rules give a reader concrete, tool-spanning practice to apply."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "It bundles a standard explainer, an adoption timeline, a Skills-vs-MCP-vs-subagents comparison, a directory map, an authoring guide, marketplace analysis, and security guidance — several separable strands under one umbrella."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

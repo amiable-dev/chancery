@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/how-harvey-fireworks-beat-closed-source.md",
+  "task_id": "ade478d236d689fe",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It markets the Fireworks platform heavily, but it is a benchmark-study writeup whose worker/advisor harness pattern and trajectory-filtering SFT recipe transfer beyond the product."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "Weak-to-strong generalization is the nearest neighbour but covers the training-supervision direction, not this inference-time pattern of an open worker invoking a frontier advisor as a tool."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims are anchored to Harvey's open-sourced 1,250-task LAB benchmark and named public models, so the runs are reproducible in principle despite being vendor-reported."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The load-bearing content is model versions, pass rates and dollar costs (GLM 5.1 at 18/100 for $368 vs Opus at $954) that will be stale within months, even though the underlying harness pattern ages well."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "A builder can act on two concrete recipes — let an open-source worker self-invoke a frontier advisor sparingly as a callable tool, and SFT on the completions that pass the benchmark rubric — both stated with enough mechanism to reproduce."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "It bundles two separable techniques the post itself treats as counterparts — inference-time harness engineering with a frontier advisor, and post-training via SFT/RFT on LAB trajectories — each of which could stand alone as a concept."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

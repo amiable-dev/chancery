@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "289e1ee5ca0db03f",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/attention-is-all-you-need.md": "sha256:123f480b33ef4f3d8133697504281d012f3d1c4b46677ff4d2c43ecbf9f7b0ce",
+      "assessment:attention-is-all-you-need": "sha256:a5d6f26deb5c9e137913c18e9eccd4d664008a0ebda5c69712c7c3f4fe00d779",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:397a9f4a78b4cebfedf60b22adb0cf8d35d616bb0b1139d5894dd27d63b13c00",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/transformer-architecture.md"
+  ]
+}

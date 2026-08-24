@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/omnibox-omnigent.md",
+  "task_id": "8c242c5aa0577eae",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "An architecture explainer for a shipped capability, not a launch, release note or funding post."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No nearest concept covers OS-level agent sandboxing or credential injection — automated-w2s-sandbox is a research environment, and the others are MCP/observability notes."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The mechanisms are concrete and checkable — named kernel primitives (bubblewrap, seccomp, Seatbelt), a default-deny proxy, and linked reference docs for each layer."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "Kernel-enforced boundaries the agent cannot opt out of, default-deny egress, and placeholder-credential swapping at the proxy are security mechanisms that hold in twelve months regardless of this product's fate."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It gives transferable design rules for running unattended agents — enforce in the kernel not the prompt, mask dotfiles under broad grants, block metadata endpoints, let agents use but never read secrets — that shape any harness's sandbox design."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "One idea — a kernel-enforced sandbox composed of filesystem, network and credential isolation — stated in a paragraph, with the three layers as facets rather than separate concepts."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

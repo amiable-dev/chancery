@@ -1,0 +1,51 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/how-schneider-electric-built-their-llmops.md",
+  "task_id": "023fbd1e3fb90ba5",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "This is a practitioner case study of architecture decisions by named Schneider Electric platform engineers, not a launch or release note, despite being hosted on the vendor's blog."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "paved-road-mcp-platform shares the paved-path platform philosophy but covers MCP governance, not the trace-to-dataset workspace loop, LLMOps maturity gates, or per-product runtime isolation described here."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "It is a first-person account by named authors describing named production systems (One Jo, CSM Copilot) with specific design decisions a reader can compare against LangSmith's documented capabilities."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The reasoned trade-offs — one workspace per product spanning environments so production traces feed evaluation datasets, per-product runtimes trading infra overhead for blast-radius isolation, a maturity model wired into lifecycle gate reviews — are patterns that transfer beyond LangSmith and beyond this year's adoption numbers."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "A platform team can copy the concrete structural decisions directly: the workspace instantiation model, the SME-scoped annotation role, maturity criteria as gate reviews, and the deliberate rejection of a centralized agent runtime."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "The note carries at least three separable promotable patterns — the environment-spanning trace-to-dataset loop, the LLMOps maturity framework as lifecycle gates, and per-product runtime isolation — each of which stands alone, so the split is the finding."
+    }
+  },
+  "proposed_concepts": [
+    {
+      "title": "Trace-to-dataset evaluation loop",
+      "definition": "Structuring LLM observability so one workspace per AI product spans all environments (dev through prod), letting domain experts annotate production traces and push them straight into offline evaluation datasets that new agent versions are replayed against — closing the loop an environment-per-workspace model breaks."
+    },
+    {
+      "title": "LLMOps maturity gates",
+      "definition": "A codified maturity model over LLMOps capabilities — is the product instrumented, does it have an offline eval suite, are online evaluators running, is user feedback flowing back — reported automatically against the observability platform's API and used as gate criteria that move an AI use case between lifecycle stages (exploration, incubation, industrialization, operations)."
+    },
+    {
+      "title": "Per-product agent runtime isolation",
+      "definition": "Running each AI product on its own dedicated agent runtime stack instead of a centralized shared runtime, so squads own latency, cost, and incident response ('you build it, you run it') and no single faulty deployment can take down every agent at once — accepting more infrastructure and upgrade coordination as the explicit price."
+    }
+  ],
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

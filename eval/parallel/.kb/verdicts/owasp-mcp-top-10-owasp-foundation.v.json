@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/owasp-mcp-top-10-owasp-foundation.md",
+  "task_id": "7f8693364cecce3b",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is the OWASP project's reference page carrying the substance of the risk taxonomy itself, not a launch, release or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The supplied nearest concepts touch MCP governance and agentic visibility, but none contains the ten-category MCP risk taxonomy; a reader of remote-first-mcp-governance still learns the full attack-surface map here."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Each entry names concrete, independently documented attack classes (tool-poisoning sub-techniques, command injection, shadow servers) with a public GitHub repository as source."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The ten risk classes — token mismanagement, scope creep, tool poisoning, supply chain, injection, intent subversion, authn/z gaps, missing audit, shadow servers, context over-sharing — are durable vulnerability categories even as the v0.1 beta's numbering and titles shuffle (MCP06 already appears under two different names on the page)."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "Like other OWASP Top 10s it works as a design-and-audit checklist, and entries carry concrete controls: short-lived scoped credentials, automated scope expiry, signed components with provenance tracking, immutable audit trails."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "The taxonomy is one stateable idea — the ten most critical MCP security risks — of which the entries are members, not unrelated bundled claims."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "task_id": "138a9045ecdca581",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "concepts": [
+    {
+      "slug": "ebpf-zero-instrumentation-observability",
+      "title": "eBPF zero-instrumentation observability",
+      "aliases": ["Zero-instrumentation monitoring", "Kernel-level Kubernetes observability"],
+      "tags": ["concept", "observability", "kubernetes", "ebpf"],
+      "definition": "**eBPF zero-instrumentation observability** is the pattern of collecting telemetry for every container on a Kubernetes node from sandboxed programs running inside the shared Linux kernel: because containers are ordinary Linux processes whose system calls, network packets and function calls all pass through the one kernel per node, a verified eBPF program at that chokepoint can observe network flows, application-layer requests and process behavior for every pod simultaneously — without modifying application code, injecting per-pod sidecar proxies, or depending on developers wiring in tracing SDKs.",
+      "explanation": "The mechanism is the kernel as chokepoint. eBPF lets operators attach small programs to kernel events — kprobes, uprobes, tracepoints, XDP and TC hooks — and an in-kernel verifier proves each program cannot crash the kernel, loop forever, or read unauthorized memory, which is what makes kernel-side observation safe enough for production. That placement removes the three structural costs of the agent-and-sidecar approach: per-pod proxy overhead (a service-mesh sidecar runs roughly 50–150 MB of RAM and adds latency on every hop, versus a handful of per-node agents), the instrumentation coverage gap (the kernel sees legacy services, third-party binaries and every language runtime equally, where SDK-based tracing covers only code someone instrumented — and gaps sit exactly where incidents originate), and user-space clock drift (timestamps are kernel-accurate). The guide's reference stack layers four tools: Cilium with Hubble for L3–L7 network flow visibility at the CNI, Pixie for auto-captured application-protocol traces (HTTP, gRPC, database and queue protocols) held in a rolling per-node buffer, Tetragon for syscall-level security observability with optional in-kernel enforcement, and Grafana Beyla for emitting standard OpenTelemetry spans with no SDK. Capability is gated by kernel version — roughly 5.4 for Cilium basics, 5.8+ with BTF for uprobe auto-instrumentation, 6.x for CO-RE portability — and the elevated capabilities the agents need (BPF, PERFMON, SYS_PTRACE) collide with restricted PodSecurity profiles, so the monitoring namespace needs an explicit exception. The source is a practitioner-authored guide from a DevOps training vendor: its migration phasing, sizing arithmetic and named failure modes are concrete and reproducible from the included commands, but its adoption statistics (an uncited \"67% CNCF survey\" figure) and banking war stories are not independently checkable.",
+      "key_properties": [
+        "One kernel, one vantage point: a single per-node eBPF program observes every container, replacing per-pod sidecars",
+        "Zero application changes: kernel-side visibility covers uninstrumented, legacy and third-party workloads in any language",
+        "Resource inversion: per-node agents in the tens-to-hundreds of MB versus 50–150 MB per pod for sidecar proxies (illustrative 500-pod cluster: ~12 GB stack-wide versus >75 GB of proxies)",
+        "Kernel-version gated: ~5.4 for basics, 5.8+ with BTF for uprobes, 6.x for CO-RE portability; agents need BPF/PERFMON/SYS_PTRACE, clashing with restricted PodSecurity profiles",
+        "Layered reference stack: network flows (Cilium/Hubble), protocol-level APM (Pixie), syscall security and enforcement (Tetragon), SDK-less OpenTelemetry spans (Beyla)"
+      ],
+      "relationships": [
+        {
+          "target": "proxy-boundary-session-capture",
+          "clause": "shares its capture-at-an-infrastructure-chokepoint-you-control principle, but moves the tap from a proxy in front of one application into the kernel beneath every container, trading per-app placement for node-wide coverage"
+        }
+      ],
+      "applications": "Adding cluster-wide network, application and security telemetry to Kubernetes estates where instrumenting every service is impractical — legacy JVMs, third-party containers, polyglot fleets; phased adoption starts with Cilium as the CNI, then layers SDK-less traces (Beyla), deep protocol-level APM (Pixie) and syscall policy (Tetragon) onto the same kernel vantage point.",
+      "see_also": ["proxy-boundary-session-capture"]
+    }
+  ]
+}

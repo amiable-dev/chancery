@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "8078a0bc4c52305d",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/securing-mcp-in-production.md": "sha256:9884dc90c2e8b47f81a65d95529066d4a811b9624bd80cfe6d453a68f043ad34",
+      "assessment:securing-mcp-in-production": "sha256:6423814519de14655f793c57979763c0ded9843aef1adeb2c161e0e0cca65f92",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

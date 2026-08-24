@@ -1,0 +1,28 @@
+{
+  "task_id": "7ce44ba66b410fb3",
+  "supplier": { "class": "model-single", "id": "claude-fable-5" },
+  "concepts": [
+    {
+      "slug": "model-supply-chain-trust",
+      "title": "Model supply-chain trust",
+      "tags": ["concept", "ai-security", "supply-chain", "provenance"],
+      "definition": "**Model supply-chain trust** is the problem that an AI model cannot be trusted by inspecting the artifact itself: unlike a third-party binary, which can be reverse engineered into a full description of its behavior, model weights admit no such analysis, and training-time backdoors are both cheap to insert and unreliable to detect — so trust has to be established upstream, from the provenance of the training data and pipeline and from independent evaluation, rather than from the artifact or its benchmark scores.",
+      "explanation": "Three mechanisms drive the argument. First, there is no reverse engineering for weights: mechanistic interpretability remains a research problem, so a model of unknown origin lacks the fallback that makes even questionable binaries analyzable — deploying one, open-weight or not, means accepting black-box risk. Second, poisoning research (the sleeper-agent and instruction-poisoning papers, and Anthropic's small-samples result) shows that the number of poisoned pretraining samples needed to implant a persistent backdoor is small and does not grow with model size, so dataset scale confers no immunity; a compromise also need not break anything visible — subtly insecure code generation or biased recommendations suffice — and prompt/response logging cannot reveal behavior implanted in fine-tuned weights. Third, Ken Thompson's Reflections on Trusting Trust applies to model lineage: as models inherit from earlier models and datasets, a compromise can ride that inheritance invisibly, so inspecting what is in front of you is not enough — you have to trust everything that was used to build it. The conclusion the essay draws (an argumentative piece from Semgrep's blog, prescribing direction rather than a practice a team can adopt today) is that benchmarks certify nothing because models can be fine-tuned to pass them, and that the trust ecosystem software already has — independent researchers, code auditors, CVE programs — has no AI equivalent yet; building one requires vendors to open their data, filtering and training stages to independent validation. It also notes a definitional edge: deliberate behavior shaping and alignment are the same operation with different sponsors — one actor's model poisoning is another's alignment.",
+      "key_properties": [
+        "Binaries can be reverse engineered to a behavioral description; model weights cannot — mechanistic interpretability is still research",
+        "Backdoor insertion needs a small, model-size-independent number of poisoned samples (Anthropic's small-samples result; sleeper-agent literature)",
+        "Prompt/response logs cannot surface a compromise implanted in fine-tuned weights",
+        "Trusting-trust corollary: behavior inherited through model lineage evades inspection of the artifact in front of you",
+        "Benchmarks are gameable, so the proposed trust substitutes are provenance, reproducibility and independent third-party audit"
+      ],
+      "relationships": [
+        {
+          "target": "osv-format",
+          "clause": "illustrates the mature, automatable supply-chain machinery software already has for tracking known-bad components — exactly the ecosystem this concept argues AI models still lack"
+        }
+      ],
+      "applications": "Deciding what evidence to demand before adopting a third-party or open-weight model — training-data provenance, reproducible pipeline, independent audit — instead of benchmark scores; framing fine-tune-of-a-fine-tune lineage risk in a security review.",
+      "see_also": ["osv-format"]
+    }
+  ]
+}

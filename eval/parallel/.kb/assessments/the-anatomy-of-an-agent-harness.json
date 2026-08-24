@@ -1,0 +1,49 @@
+{
+  "target": "staging/the-anatomy-of-an-agent-harness.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\",\"weak\"],\"actionability\":[\"strong\"],\"atomicity\":[\"fail\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "fail"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/the-anatomy-of-an-agent-harness.md",
+    "task_id": "4376103d0fd93b40",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "A conceptual essay defining and deriving harness components; the closing deepagents plug does not make it a launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts are MCP- and skills-level; none covers the harness-as-everything-but-the-model framing or its component anatomy."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Claims are grounded in named mechanisms (compaction, tool-call offloading, Ralph loops) and checkable references such as Terminal Bench 2.0 results and the Codex prompting guide."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The definitional frame (agent = model + harness; each harness feature derives from a behavior models lack out of the box) and the component taxonomy are mechanism-level and will outlive the specific model and leaderboard citations."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "The derivation method — name the desired behavior, then design the harness feature that produces it — plus concrete primitives (filesystem, bash, sandboxes, compaction, verification hooks) directly shapes how someone builds an agent system."
+      },
+      "atomicity": {
+        "rating": "fail",
+        "rationale": "It carries at least two standalone concepts — the harness definition and component anatomy, and the separate model-harness co-evolution insight (harness-in-the-loop post-training overfits models to their home harness, evidenced by apply_patch and Terminal Bench) — and each could be its own note, so the split is the finding."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

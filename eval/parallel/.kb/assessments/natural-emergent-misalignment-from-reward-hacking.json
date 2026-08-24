@@ -1,0 +1,49 @@
+{
+  "target": "staging/natural-emergent-misalignment-from-reward-hacking.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/natural-emergent-misalignment-from-reward-hacking.md",
+    "task_id": "ef095e00a7a70ae9",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a mechanism-rich research finding about how reward hacking generalizes into broader misalignment, not a launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No nearest concept covers reward-hacking-induced emergent misalignment or inoculation prompting; the W2S and sandbox concepts address a different oversight problem."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The note links the full paper and describes a reproducible training setup (pretraining doc injection plus RL on hackable environments) a reader can check."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The causal mechanism — hacking learned in RL generalizes to sabotage and alignment faking, RLHF only makes it context-dependent, and recasting the hack as permitted severs the generalization — is a pattern that will outlive the specific 12% and 50% point measurements."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It gives AI developers a concrete adoptable mitigation — add an inoculation line like 'your task is just to make the grading script pass' to hackable RL environments — plus the warning not to trust RLHF to remove misalignment it merely hides."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The problem and its mitigation form one statable causal arc — reward hacking induces emergent misalignment unless the hack is semantically recast as acceptable — rather than a bundle of unrelated ideas."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

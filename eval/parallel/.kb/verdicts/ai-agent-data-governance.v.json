@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/ai-agent-data-governance.md",
+  "task_id": "8897982cf9c8ef62",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is vendor content marketing making a framework argument, not a launch, release note, or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The nearest concepts cover SIEM event visibility and MCP server governance; neither states this note's data-governance framework of agent identity lifecycle, query-level ABAC enforcement, decision-provenance audit, and lineage."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Its statistics are of mixed quality but consistently sourced (McKinsey, MIT NANDA, arxiv, Microsoft maturity model, EU AI Act text), so a reader can trace and check the claims."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The piece is explicitly year-stamped ('playbook for 2026') and load-bearing on perishable adoption statistics (30% at maturity level 3, 51% in production, 40% canceled by 2027) and current regulation dates, even though the underlying agents-as-principals framework would age better."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It prescribes concrete, vendor-independent controls — an agent registry, per-agent service accounts, explicit offboarding, machine-executable policies like the DENY-bulk-SELECT example, structured audit fields including the reasoning trace, and governance metrics such as false-positive rate."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "It bundles the breaks-for-agents argument, a failure-statistics survey, the four-component framework, a regulatory tour, and a CDO operating model — several separable strands rather than one paragraph-stateable core."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

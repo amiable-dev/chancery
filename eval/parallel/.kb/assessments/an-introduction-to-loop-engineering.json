@@ -1,0 +1,49 @@
+{
+  "target": "staging/an-introduction-to-loop-engineering.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\",\"weak\"],\"actionability\":[\"strong\"],\"atomicity\":[\"fail\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "fail"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/an-introduction-to-loop-engineering.md",
+    "task_id": "b9a22975b18da226",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is an educational survey of a technique with a traced research lineage (ReAct, Reflexion, evaluator-optimizer, orchestrator-workers), not a launch, release note, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No existing concept covers loop engineering; context-layer (a company-brain context system) and agent-skills-format (the SKILL.md packaging format) are cited only as building blocks the loop reaches for, and a reader of neither learns this material there."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Central claims are anchored to primary sources — arXiv papers for ReAct and Reflexion, Anthropic's engineering guides, the LangChain and Osmani essays, and dated primary posts — that a reader can check."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The substance is mechanisms, patterns, and trade-offs (the reason-act-observe loop, layered termination exits, deterministic-over-model verification, hill-climbing on traces) that age well; the June-2026 timeline and view counts are incidental color, not the load-bearing content."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It changes how a reader builds — start with one goal, one deterministic verifier, a hard iteration cap and one escalation path on a low-stakes recurring task before stacking loops — and gives concrete design decisions (what counts as verifier.passes, how compact and no_progress behave) plus a pattern-selection guide."
+      },
+      "atomicity": {
+        "rating": "fail",
+        "rationale": "The note is a comprehensive survey bundling several standalone concepts — the prompt/context/harness/loop layer progression, the anatomy-plus-pseudocode of a reliable loop, the four stacked loops (agent/verification/event-driven/hill-climbing), the loop-pattern taxonomy, and the three hard problems (context/termination/verification) — each of which could be its own concept, so the split is the finding."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "c123a1480ff800b1",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/stateful-vs-stateless-agent-design.md": "sha256:3fa12f0ce73962b141a627d5b19563d1d31a7f6efb467a6abfde09133df44e64",
+      "assessment:stateful-vs-stateless-agent-design": "sha256:b1031ea11064e5ddc51a93d0f2eb4c7991761a74f6115206b4239e6976ab7050",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

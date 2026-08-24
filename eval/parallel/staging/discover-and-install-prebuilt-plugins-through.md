@@ -1,0 +1,336 @@
+# Discover and install prebuilt plugins through marketplaces - Claude Code Docs
+
+**Source:** https://code.claude.com/docs/en/discover-plugins
+**Added:** 2026-08-24
+**Tags:** #unsorted
+
+---
+
+> Find and install plugins from marketplaces to extend Claude Code with new skills, agents, and capabilities.
+
+---
+
+Plugins extend Claude Code with skills, agents, hooks, and MCP servers. Plugin marketplaces are catalogs that help you discover and install these extensions without building them yourself. Looking to create and distribute your own marketplace? See [Create and distribute a plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces).
+
+## How marketplaces work
+
+A marketplace is a catalog of plugins that someone else has created and shared. Using a marketplace is a two-step process:
+
+1
+
+2
+
+## Official Anthropic marketplace
+
+Claude Code adds the official Anthropic marketplace (`claude-plugins-official`) automatically the first time you start it interactively. If Claude Code can’t add it, for example because your network blocks the download or a [marketplace policy](https://code.claude.com/docs/en/plugin-marketplaces#managed-marketplace-restrictions) blocked an earlier attempt, add it yourself with `/plugin marketplace add anthropics/claude-plugins-official`. To browse what’s available, run `/plugin` and go to the **Discover** tab, or view the catalog at [claude.com/plugins](https://claude.com/plugins). To install a plugin from the official marketplace, use `/plugin install <name>@claude-plugins-official`. For example, to install the GitHub integration:
+
+`/plugin` opens an interactive panel in the terminal CLI. If Claude replies that `/plugin` isn’t available in this environment, use the [plugin browser](https://code.claude.com/docs/en/desktop#install-plugins) in the Claude desktop app, or declare the plugin under [`enabledPlugins`](https://code.claude.com/docs/en/settings-reference#enabledplugins) in `.claude/settings.json` for cloud sessions. If the install fails, match the message Claude Code reports:
+
+-   `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
+-   The plugin is [not found in the marketplace](#install-plugins): check the plugin name.
+
+The official marketplace includes several categories of plugins:
+
+### Code intelligence
+
+Code intelligence plugins enable Claude Code’s built-in LSP tool, giving Claude the ability to jump to definitions, find references, and see type errors immediately after edits. These plugins configure [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) connections, the same technology that powers VS Code’s code intelligence. Install the language server binary from the table below before using these plugins; the plugin doesn’t install it for you. If you already have a language server installed, Claude may prompt you to install the corresponding plugin when you open a project.
+
+Language
+
+Plugin
+
+Binary required
+
+C/C++
+
+`clangd-lsp`
+
+`clangd`
+
+C#
+
+`csharp-lsp`
+
+`csharp-ls`
+
+Go
+
+`gopls-lsp`
+
+`gopls`
+
+Java
+
+`jdtls-lsp`
+
+`jdtls`
+
+Kotlin
+
+`kotlin-lsp`
+
+`kotlin-language-server`
+
+Lua
+
+`lua-lsp`
+
+`lua-language-server`
+
+PHP
+
+`php-lsp`
+
+`intelephense`
+
+Python
+
+`pyright-lsp`
+
+`pyright-langserver`
+
+Rust
+
+`rust-analyzer-lsp`
+
+`rust-analyzer`
+
+Swift
+
+`swift-lsp`
+
+`sourcekit-lsp`
+
+TypeScript
+
+`typescript-lsp`
+
+`typescript-language-server`
+
+You can also [create your own LSP plugin](https://code.claude.com/docs/en/plugins-reference#lsp-servers) for other languages.
+
+#### What Claude gains from code intelligence plugins
+
+Once a code intelligence plugin is installed and its language server binary is available, Claude gains two capabilities:
+
+-   **Automatic diagnostics**: after every file edit Claude makes, the language server reports errors and warnings back, so Claude sees type errors, missing imports, and syntax issues without running a compiler or linter. If Claude introduces an error, it notices and fixes it in the same turn.
+-   **Code navigation**: Claude can use the language server to jump to definitions, find references, get type info on hover, list symbols, find implementations, and trace call hierarchies. These operations give Claude more precise navigation than grep-based search, though availability may vary by language and environment.
+
+You don’t need to configure diagnostics beyond installing the plugin. To read them yourself, press **Ctrl+O** when Claude Code shows an indicator such as **Found 3 new diagnostic issues in 2 files**. If you run into issues, see [Code intelligence troubleshooting](#code-intelligence-issues).
+
+### External integrations
+
+These plugins bundle pre-configured [MCP servers](https://code.claude.com/docs/en/mcp) so you can connect Claude to external services without manual setup:
+
+-   **Source control**: `github`, `gitlab`
+-   **Project management**: `atlassian` (Jira/Confluence), `asana`, `linear`, `notion`
+-   **Design**: `figma`
+-   **Infrastructure**: `vercel`, `firebase`, `supabase`
+-   **Communication**: `slack`
+-   **Monitoring**: `sentry`
+
+### Automatic security review
+
+The `security-guidance` plugin reviews each change Claude makes for common vulnerabilities and instructs Claude to fix what it finds in the same session. See [Catch security issues as Claude writes code](https://code.claude.com/docs/en/security-guidance) for what it checks and how to add project-specific rules.
+
+### Development workflows
+
+Plugins that add skills and agents for common development tasks:
+
+-   **commit-commands**: Git commit workflows including commit, push, and PR creation
+-   **pr-review-toolkit**: specialized agents for reviewing pull requests
+-   **agent-sdk-dev**: tools for building with the Claude Agent SDK
+-   **plugin-dev**: toolkit for creating your own plugins
+
+### Output styles
+
+Customize how Claude responds:
+
+-   **explanatory-output-style**: educational insights about implementation choices
+-   **learning-output-style**: interactive learning mode for skill building
+
+The community marketplace at [`anthropics/claude-plugins-community`](https://github.com/anthropics/claude-plugins-community) hosts third-party plugins that have passed Anthropic’s automated validation and safety screening. Each plugin is pinned to a specific commit SHA in the catalog. Unlike the official marketplace, you add it manually:
+
+Then install plugins from it using the `claude-community` marketplace name:
+
+To submit your own plugin to the community marketplace, see [Submit your plugin to the community marketplace](https://code.claude.com/docs/en/plugins#submit-your-plugin-to-the-community-marketplace) in the create-plugins guide.
+
+## Try it: add the demo marketplace
+
+Anthropic also maintains a [demo plugins marketplace](https://github.com/anthropics/claude-code/tree/main/plugins) (`claude-code-plugins`) with example plugins that show what’s possible with the plugin system. Unlike the official marketplace, you need to add this one manually.
+
+1
+
+2
+
+3
+
+4
+
+Use the `/plugin marketplace add` command to add marketplaces from different sources.
+
+-   **GitHub repositories**: `owner/repo` format, for example `anthropics/claude-code`
+-   **Git URLs**: any git repository URL, including GitLab, Bitbucket, and self-hosted servers
+-   **Local paths**: directories or direct paths to `marketplace.json` files
+-   **Remote URLs**: direct URLs to hosted `marketplace.json` files
+
+### Add from GitHub
+
+Add a GitHub repository that contains a `.claude-plugin/marketplace.json` file using the `owner/repo` format, where `owner` is the GitHub username or organization and `repo` is the repository name. For example, `anthropics/claude-code` refers to the `claude-code` repository owned by `anthropics`:
+
+### Add from other Git hosts
+
+Add a git marketplace repository by providing its full URL. For an `https://` URL, whether to include the `.git` suffix depends on the host:
+
+-   **`github.com` and `gitlab.com`**: Claude Code recognizes a repository URL with or without the `.git` suffix and clones it. Adding a `gitlab.com` URL without the suffix requires Claude Code v2.1.232 or later. Before v2.1.232, Claude Code treated it as a direct link to a hosted `marketplace.json` file.
+-   **Azure DevOps**: omit the suffix. Claude Code clones any URL whose path contains `/_git/`. If you append `.git` to a `/_git/` path, the clone fails.
+-   **Every other host, including self-managed GitLab servers**: include the `.git` suffix so Claude Code clones the repository rather than treating the URL as a direct link to a hosted `marketplace.json` file. For a host whose clone URLs don’t carry the suffix, such as AWS CodeCommit, add the marketplace as a git entry in [`extraKnownMarketplaces`](https://code.claude.com/docs/en/settings-reference#extraknownmarketplaces) instead. Claude Code clones a git entry whether or not its URL ends in `.git`.
+
+Claude Code also clones a `gitlab.com` URL with nested subgroups, such as `https://gitlab.com/group/subgroup/project`. Include the `https://` prefix. Claude Code v2.1.196 and later reject a host typed without it, such as `gitlab.com/company/plugins.git`, as an invalid GitHub `owner/repo` shorthand, and the error tells you to add the prefix. Earlier versions misread it as a GitHub repository path and fail at clone time. Using HTTPS:
+
+Using SSH:
+
+Claude Code clones an SSH address whether or not it ends in `.git`. To add a specific branch or tag, append `#` followed by the ref:
+
+### Add from local paths
+
+Add a local directory that contains a `.claude-plugin/marketplace.json` file:
+
+You can also add a direct path to a `marketplace.json` file:
+
+### Add from remote URLs
+
+Add a remote `marketplace.json` file via URL:
+
+## Install plugins
+
+Once you’ve added marketplaces, you can install a plugin by name:
+
+The command opens that plugin’s details, where you choose an [installation scope](https://code.claude.com/docs/en/settings#where-settings-live). You see the same choices when you run `/plugin`, go to the **Discover** tab, and press **Enter** on a plugin:
+
+-   **User scope**: install for yourself across all projects
+-   **Project scope**: install for all collaborators on this repository, which adds the plugin to `.claude/settings.json`
+-   **Local scope**: install for yourself in this repository only, not shared with collaborators
+
+To install without an interactive step, use the [`claude plugin install`](https://code.claude.com/docs/en/plugins-reference#plugin-install) shell command, which installs to user scope unless you pass `--scope`. For a plugin with a [`command` source](https://code.claude.com/docs/en/plugin-marketplaces#how-users-accept-the-command), pass `--yes` to accept the command it displays. You may also see plugins with **managed** scope. These are installed by administrators via [managed settings](https://code.claude.com/docs/en/managed-settings) and can’t be modified. Claude Code looks the plugin up in its local copy of the marketplace catalog. How you name the plugin controls whether Claude Code refreshes that copy first:
+
+-   **With a marketplace name**: when you install `plugin-name@marketplace-name`, in a session or with `claude plugin install`, Claude Code refreshes that marketplace before the lookup. Claude Code runs the refresh even if you turned off [auto-update](#configure-auto-updates) for the marketplace or set `DISABLE_AUTOUPDATER`. Before v2.1.232, Claude Code didn’t refresh the marketplace before the lookup. Claude Code skips this refresh when:
+    -   The marketplace wasn’t [added from GitHub, another Git host, or a remote URL](#add-marketplaces).
+    -   A [seed directory](https://code.claude.com/docs/en/plugin-marketplaces#pre-populate-plugins-for-containers) supplies the marketplace.
+    -   Claude Code refreshed the marketplace within the last 30 seconds.
+    -   You set [`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`](https://code.claude.com/docs/en/env-vars).
+    -   [Managed settings](https://code.claude.com/docs/en/plugin-marketplaces#managed-marketplace-restrictions) block the marketplace, in which case Claude Code also refuses the install.
+-   **Plugin name only**: when you run `/plugin install plugin-name` in a session, Claude Code refreshes only the marketplaces it also [updates in the background](#configure-auto-updates), and only after the lookup misses. When you run `claude plugin install plugin-name`, Claude Code reads the cached catalogs without refreshing. To install a plugin that was published after your last refresh, run `/plugin marketplace update <marketplace-name>` in a session or [`claude plugin marketplace update <marketplace-name>`](https://code.claude.com/docs/en/plugin-marketplaces#plugin-marketplace-update) in your shell, then retry the install.
+
+If the refresh before a named install fails, for example because you’re offline, Claude Code looks the plugin up in the cached catalog anyway. `claude plugin install` reports `marketplace not refreshed` in its success message, and `/plugin install` shows the failure above the plugin’s details or in its not-found message. When you install from the `/plugin` interface, the install summary tells you whether the plugin is active in your current session:
+
+-   `Plugin is now active.`: Claude Code activated the plugin as part of the install.
+-   `Run /reload-plugins to activate.`: the plugin isn’t active yet, because activating it would [invalidate the prompt cache](https://code.claude.com/docs/en/prompt-caching#enabling-or-disabling-a-plugin) or because the activation attempt failed. Run the command to activate the plugin.
+-   If the plugin fails to load, the summary reports the failure and the `/plugin` **Errors** tab shows the detail.
+
+Before v2.1.221, no install took effect in the current session until you ran `/reload-plugins` or restarted. The `claude plugin install` shell command doesn’t run in a session, so Claude Code loads the plugins it installs the next time you start Claude Code, or when you run `/reload-plugins` in a session that’s already open.
+
+## Manage installed plugins
+
+Run `/plugin` and go to the **Installed** tab to view, enable, disable, or uninstall your plugins. The list is grouped by scope and sorted so you see problems first: plugins with load errors or unresolved dependencies appear at the top, followed by your favorites, with disabled plugins folded behind a collapsed header at the bottom. From the list you can:
+
+-   press `f` to favorite or unfavorite the selected plugin
+-   type to filter by plugin name or description
+-   press Enter to open a plugin’s detail view and enable, disable, or uninstall it
+
+When you uninstall a plugin that a project’s `.claude/settings.json` enables, Claude Code asks which scope you mean: disable it for you alone, which writes an override to your `.claude/settings.local.json` and leaves the plugin installed for the project, or uninstall it for everyone, which removes it from the shared `.claude/settings.json`. The detail view shows the components the plugin contributes: commands, skills, agents, hooks, MCP servers, and LSP servers. The same inventory is available from the command line with `claude plugin details`. Claude Code also lists marketplace plugins you installed yourself but haven’t used in at least two weeks, over a span of at least 10 sessions, under a **Not used recently** header in the **Installed** tab. The detail view shows a **Last used** line for each plugin. Use these to find plugins that still add startup and context cost even though you no longer use them, then disable or uninstall them. Two kinds of plugins are never listed as unused:
+
+-   plugins that your organization manages or that you load with `--plugin-dir`
+-   plugins that contribute a theme, output style, monitor, or workflow, since those deliver value without an invocation to track
+
+The **Not used recently** header and the **Last used** line are both hidden when your organization restricts marketplaces with [`strictKnownMarketplaces`](https://code.claude.com/docs/en/settings-reference#strictknownmarketplaces). A plugin’s [language server](https://code.claude.com/docs/en/plugins#add-lsp-servers-to-your-plugin) counts as used when it delivers diagnostics or answers a code navigation request, so an LSP plugin whose server is active in your sessions isn’t listed as unused. Before v2.1.203, language server activity couldn’t be counted as use, so plugins that contribute an LSP server were exempt from the group entirely, the same way theme and output style plugins still are. The first session on a version that counts language server activity also resets the usage record of each LSP plugin that hadn’t recorded any use yet, so Claude Code doesn’t judge a plugin you installed earlier as unused based on data recorded before its server activity was tracked. When you install a plugin that declares dependencies, the install output lists which dependencies were auto-installed alongside it. You can also manage plugins with direct commands:
+
+-   When you run `/plugin disable`, `/plugin enable`, or `/plugin uninstall`, Claude Code opens the plugin panel to apply the change and leaves it open. Press **Esc** to close the panel before typing another command.
+-   For scripting, use the `claude plugin` shell commands instead, which don’t open the panel.
+
+List installed plugins without opening the menu:
+
+Pass `--enabled` or `--disabled` to show only plugins in that state. Disable a plugin without uninstalling:
+
+Re-enable a disabled plugin:
+
+In these identifiers, `plugin-name` is the plugin’s `name` in the [marketplace entry](https://code.claude.com/docs/en/plugin-marketplaces#plugin-entries), which can differ from the `name` in the plugin’s own `plugin.json`. As of Claude Code v2.1.195, **Enable** and **Disable** in the `/plugin` interface work for plugins whose two names differ, and `/plugin enable` and `/plugin disable` accept either name. When you disable such a plugin in an earlier version, Claude Code reports `already disabled` and leaves it enabled. Completely remove a plugin:
+
+The `--scope` option lets you target a specific scope with CLI commands:
+
+### Apply plugin changes without restarting
+
+When the [install summary](#install-plugins) reports `Plugin is now active.`, Claude Code already activated the plugin, and you can skip this step. For everything else, plugins you enabled or disabled during the session and installs whose summary reports `Run /reload-plugins to activate.`, apply all changes without restarting:
+
+When the reload would invalidate the prompt cache, the command warns and skips until you rerun it with `--force`. Claude Code reloads all active plugins and shows counts for plugins, skills, agents, hooks, plugin MCP servers, and plugin LSP servers. The skills count covers only each plugin’s `commands/` directory, not its `skills/` directory, so the summary can report `0 skills` even when the plugin’s skills reloaded. Reloading has a token cost on the next request: newly loaded components announce themselves in content appended to the conversation, while the existing history still reads from the prompt cache. A plugin that provides MCP servers costs more when its tools aren’t deferred by [tool search](https://code.claude.com/docs/en/mcp#scale-with-mcp-tool-search): the change invalidates the cache and the next request re-reads the entire conversation. See [enabling or disabling a plugin](https://code.claude.com/docs/en/prompt-caching#enabling-or-disabling-a-plugin) for details.
+
+## Manage marketplaces
+
+You can manage marketplaces through the interactive `/plugin` interface or with CLI commands.
+
+### Use the interactive interface
+
+Run `/plugin` and go to the **Marketplaces** tab to:
+
+-   View all your added marketplaces with their sources and status
+-   Add new marketplaces
+-   Update marketplace listings to fetch the latest plugins
+-   Remove marketplaces you no longer need
+
+### Use CLI commands
+
+You can also manage marketplaces with direct commands. List all configured marketplaces:
+
+Refresh plugin listings from a marketplace:
+
+Remove a marketplace:
+
+### Configure auto-updates
+
+Claude Code can automatically update marketplaces and their installed plugins in the background after startup. When auto-update is enabled for a marketplace, Claude Code refreshes the marketplace data and updates installed plugins to their latest versions on disk. Claude Code checks for marketplace and plugin updates after your session starts, with a random delay of up to ten minutes, so the running session keeps using the versions it loaded at launch. If any plugins were updated, you’ll see a notification prompting you to run `/reload-plugins`, or the new versions load on your next launch. Claude Code updates plugins that have a [`command` source](https://code.claude.com/docs/en/plugin-marketplaces#command-sources) on a separate cadence from the marketplace auto-update setting and from `DISABLE_AUTOUPDATER`. Instead, it [re-runs the command once per session](https://code.claude.com/docs/en/plugin-marketplaces#when-claude-code-re-runs-the-command) and installs the output as a new plugin version when its [hash](https://code.claude.com/docs/en/plugins-reference#version-management) has changed. Toggle auto-update for individual marketplaces through the UI:
+
+1.  Run `/plugin` to open the plugin manager
+2.  Select **Marketplaces**
+3.  Choose a marketplace from the list
+4.  Select **Enable auto-update** or **Disable auto-update**
+
+`claude-plugins-official` and most other official Anthropic marketplaces have auto-update enabled by default. Third-party and local development marketplaces have auto-update disabled by default. Administrators can also set `"autoUpdate": true` on each [`extraKnownMarketplaces`](https://code.claude.com/docs/en/settings-reference#extraknownmarketplaces) entry in managed settings to enable auto-update for an organization marketplace without requiring each user to toggle it. To disable automatic updates for Claude Code and for plugins fetched from marketplaces, set the `DISABLE_AUTOUPDATER` environment variable. Plugins with a [`command` source](https://code.claude.com/docs/en/plugin-marketplaces#command-sources) follow their own once-per-session re-resolve. See [Auto updates](https://code.claude.com/docs/en/setup#auto-updates) for details. To keep plugin auto-updates enabled while disabling Claude Code auto-updates, set `FORCE_AUTOUPDATE_PLUGINS=1` along with `DISABLE_AUTOUPDATER`:
+
+## Configure team marketplaces
+
+Team admins can set up automatic marketplace installation for projects by adding marketplace configuration to `.claude/settings.json`. Once a team member [trusts the repository folder](https://code.claude.com/docs/en/permissions#what-runs-before-you-trust-a-folder), Claude Code adds these marketplaces without a further prompt. As of Claude Code v2.1.195, adding the marketplace doesn’t install plugins that come from an external source, on any path that loads plugins. A plugin that only the project’s `.claude/settings.json` enables, and that comes from an external source such as a GitHub repository or npm package, doesn’t load until the team member installs it. Until then, Claude Code reports the plugin as not installed and shows the `claude plugin install` command to run. Add `extraKnownMarketplaces` to your project’s `.claude/settings.json`:
+
+For full configuration options including `extraKnownMarketplaces` and `enabledPlugins`, see [Plugin settings](https://code.claude.com/docs/en/settings-reference#plugin-settings).
+
+## Security
+
+Plugins and marketplaces are highly trusted components that can execute arbitrary code on your machine with your user privileges. Only install plugins and add marketplaces from sources you trust. Organizations can restrict which marketplaces users are allowed to add using [managed marketplace restrictions](https://code.claude.com/docs/en/plugin-marketplaces#managed-marketplace-restrictions).
+
+## Troubleshooting
+
+### /plugin command not recognized
+
+If you see “unknown command” or the `/plugin` command doesn’t appear:
+
+1.  **Check your version**: run `claude --version` to see what’s installed.
+2.  **Update Claude Code**:
+    -   **Homebrew**: `brew upgrade claude-code`, or `brew upgrade claude-code@latest` if you installed that cask
+    -   **npm**: `npm install -g @anthropic-ai/claude-code@latest`
+    -   **Native installer**: re-run the install command from [Setup](https://code.claude.com/docs/en/setup)
+3.  **Restart Claude Code**: after updating, restart your terminal and run `claude` again.
+
+### Common issues
+
+If plugin skills don’t appear, clear the cache with `rm -rf ~/.claude/plugins/cache`, restart Claude Code, and reinstall the plugin. For detailed troubleshooting with solutions, see [Troubleshooting](https://code.claude.com/docs/en/plugin-marketplaces#troubleshooting) in the marketplace guide. For debugging tools, see [Debugging and development tools](https://code.claude.com/docs/en/plugins-reference#debugging-and-development-tools).
+
+### Code intelligence issues
+
+-   **Language server not starting**: verify the binary is installed and available in your `$PATH`. Check the `/plugin` Errors tab for details.
+-   **High memory usage**: language servers like `rust-analyzer` and `pyright` can consume significant memory on large projects. If you experience memory issues, disable the plugin with `/plugin disable <plugin-name>` and rely on Claude’s built-in search tools instead.
+-   **False positive diagnostics in monorepos**: language servers may report unresolved import errors for internal packages if the workspace isn’t configured correctly. These don’t affect Claude’s ability to edit code.
+
+## Next steps
+
+-   **Build your own plugins**: see [Plugins](https://code.claude.com/docs/en/plugins) to create skills, agents, and hooks
+-   **Create a marketplace**: see [Create a plugin marketplace](https://code.claude.com/docs/en/plugin-marketplaces) to distribute plugins to your team or community
+-   **Technical reference**: see [Plugins reference](https://code.claude.com/docs/en/plugins-reference) for complete specifications

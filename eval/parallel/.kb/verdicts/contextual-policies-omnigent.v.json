@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/contextual-policies-omnigent.md",
+  "task_id": "a53fa8c551a64349",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "Vendor documentation explaining how a policy engine works, not a launch, release note or funding announcement; it teaches a mechanism rather than announcing availability."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The nearest concepts cover MCP governance and platform paving; none covers stateful allow/ask/deny policy interception of agent actions."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The decision semantics and configuration mechanics are primary-source documented behavior a reader can reproduce against the product."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The transferable insight (session-stateful policies can express budgets, rate limits and risk scores that static allowlists cannot) is durable, but most of the note is Omnigent-specific config syntax, level names and REST endpoints that will churn with the product."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Every concrete step (YAML policy blocks, `-c` server config, settings panel) applies only inside Omnigent; a reader building elsewhere gets a design principle to reconstruct, not directly usable guidance."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "One core idea, statable in a single paragraph: contextual, stateful policy enforcement over agent actions with allow/ask/deny decisions at layered scopes."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

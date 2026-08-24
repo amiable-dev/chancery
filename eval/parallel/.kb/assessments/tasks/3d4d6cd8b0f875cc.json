@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "3d4d6cd8b0f875cc",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/how-we-built-our-multi-agent.md": "sha256:eb49b02d659c34bc0941b83792c3e3326f836846e365322b23a5442d8324ea39",
+      "assessment:how-we-built-our-multi-agent": "sha256:4ae5120478a55f63d5ed6e19fdfac4c12991f97fdd8d2763ec81d4f21ac2d068",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

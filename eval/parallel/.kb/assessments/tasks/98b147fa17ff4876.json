@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "98b147fa17ff4876",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/rfc-7516.md": "sha256:7c636f8299b22993a83ed62e07834b342f607987ab371a7e0a55f7586719064e",
+      "assessment:rfc-7516": "sha256:bf8e3537458d11942ac8286a3278109f1058bde407b84e1da2287470d686a888",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

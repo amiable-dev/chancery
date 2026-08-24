@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/stereos.md",
+  "task_id": "6e08d26057b2a22d",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "A technical README describing an isolation architecture (privilege-separated agent user, lifecycle daemons, minimal hardened images), not launch or funding coverage, and the agents-in-purpose-built-VMs pattern transfers beyond this product."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No nearest concept covers OS-image-level agent sandboxing; the closest, 'Automated W2S research sandbox', is about a research environment, not hardened agent runtime images."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims are the repo's own buildable artifacts — Nix build attributes, daemons, and options anyone can inspect and build."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The transferable pattern (run agents in minimal hardened VMs with a restricted agent user) gets two sentences while the bulk is churn-prone specifics: build attribute names, a flake pinned to nixos-26.05, zstd flags, and a one-row mixtape table for a very young project."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Every concrete step is stereOS-specific (which Nix attribute to build, which option to set); a reader not adopting this exact distro takes away only the general isolation idea."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It describes one thing — an agent-purposed OS image pipeline — and the core idea states cleanly in a paragraph without the README's tables."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

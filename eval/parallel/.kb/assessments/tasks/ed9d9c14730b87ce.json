@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "ed9d9c14730b87ce",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/effective-context-engineering-for-ai-agents.md": "sha256:5a3bfb0a35ca92b92a8c349ba94973050dca9c93b6b2c0a2ca8732c8252fa997",
+      "assessment:effective-context-engineering-for-ai-agents": "sha256:3b8e326643ad3a953d821ad504b26aac8c49bbca222eb6873aecf1fa2acc7feb",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

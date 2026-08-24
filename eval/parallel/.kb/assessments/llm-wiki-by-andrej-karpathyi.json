@@ -1,0 +1,47 @@
+{
+  "target": "staging/llm-wiki-by-andrej-karpathyi.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "discard",
+  "reason": "disqualified: duplicate",
+  "disqualifiers": [
+    "duplicate"
+  ],
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/llm-wiki-by-andrej-karpathyi.md",
+    "task_id": "fc438c1f5dbb8f3a",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a how-to tutorial for a pattern, not a launch, release note or funding announcement."
+      },
+      "duplicate": {
+        "triggered": true,
+        "rationale": "The nearest concept llm-maintained-wiki already covers this note's entire central idea — the Karpathy April 2026 pattern, the write-time-distillation-versus-RAG contrast, and the compounding/maintenance trade — leaving only tutorial mechanics whose key compilation prompts were even lost in this capture."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The pattern it describes is reproducible by following the steps, and the origin claim traces to Karpathy's public gist."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Its lasting content is the pattern itself, which the corpus already holds; what this note adds is tool-of-the-day mechanics (Claude.ai upload flow, Obsidian shortcuts, bootcamp plugs) that will not read the same in twelve months."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The steps are product-specific click-throughs, and the capture dropped the actual compilation and linting prompts, so a reader cannot execute the tutorial's core operation from this note."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Everything in the note serves the single idea of building one LLM-maintained wiki, statable in a paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

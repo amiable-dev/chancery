@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/llms-txt-does-nothing-for-google.md",
+  "task_id": "af51cec163c7f467",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is an evidence review of what llms.txt actually does, not a launch or release note, despite ending with the author's product plug."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The corpus has no llms.txt concept (the rubric's exemplar is canned text, and a grep of concepts/ confirms none), and the supplied nearest concepts are all unrelated agent/retrieval topics."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Its central claims cite Google's own June 2026 Search Central docs and four named measurement studies (SE Ranking, Ahrefs, Limy, Otterly) with linked sources and sample sizes."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The rubric's own weak exemplar is llms.txt for exactly this reason: the claims rest on dated adoption and fetch statistics and on vendor postures (Google Search vs Chrome Lighthouse) that the article itself concedes could flip if agentic browsing grows."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It ends in a concrete decision rule — ship the file as half-day agent-readiness infrastructure if developers-in-agents are your audience, and never treat it as a ranking or GEO lever — which directly changes what a site owner does."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "The whole article supports one statable idea: llms.txt has no measured effect on search or AI citations and its only real consumers are coding agents and agentic browsers."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

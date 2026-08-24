@@ -1,0 +1,49 @@
+{
+  "target": "staging/generative-ai.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/generative-ai.md",
+    "task_id": "682f3503fe2e11bc",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a sample-repo walkthrough documenting an architectural technique for long-running agents, not a launch, release or funding note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts concern MCP governance, SIEM visibility and context infrastructure; none cover durable state-machine memory or dormancy gates for multi-day agent workflows."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The pattern is backed by public runnable code with linked source files, tests and golden evaluation sets a reader can execute."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The core trade-off triad — enum-grounded durable memory over chat-log dumps, event-driven dormancy over polling, delegation over monoliths — is a mechanism-level pattern that outlives the Gemini/ADK specifics it is demonstrated on."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "A builder of any long-running agent can directly adopt the state-machine-plus-webhook-resume design, and the stateless-vs-durable comparison table tells them exactly what to change and why."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Everything in the note serves one statable idea — architect background agents for idle time with persisted state and event-driven resumption — with the rest being implementation detail of that single pattern."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

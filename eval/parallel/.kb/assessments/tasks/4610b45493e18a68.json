@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "4610b45493e18a68",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/there-is-only-one-key-difference.md": "sha256:ecd15c3e3fe5be3c4440eee3c3534a2210b51ec507c66705ce7013b5461bd003",
+      "assessment:there-is-only-one-key-difference": "sha256:523c57f58e4bb395eb8b5cfb1f34e4a256d84bb803d754c25db407aaf6253b46",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:afb7c63e353ac13a0a511e2c00361cf892e7c75071b60cb878ab714040277c36",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/wide-events-single-source-of-truth.md"
+  ]
+}

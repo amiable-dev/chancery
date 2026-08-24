@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "0b68d5fc8ad4b583",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/omnibox-omnigent.md": "sha256:c27fb8aef3c2f318caaecbc33bd92eae16674efa3ac8b5e8533159bf6b1f22ae",
+      "assessment:omnibox-omnigent": "sha256:7119d4b00fbdf17ea5dab2f1f9ef03a35017c0182e668f62deb6a3e41a2d29f8",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

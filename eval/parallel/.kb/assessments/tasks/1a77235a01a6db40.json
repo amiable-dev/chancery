@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "1a77235a01a6db40",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/why-customers-love-desktop-apps-with.md": "sha256:f50268ae7c9172be7073e257b0bf704e492d8935cf0368b671e6092019674b8a",
+      "assessment:why-customers-love-desktop-apps-with": "sha256:e083740518aad32d090d14a82beb41f7edd96d89a63ef52425fe10c75b2215c0",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

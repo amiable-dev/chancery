@@ -1,0 +1,49 @@
+{
+  "target": "staging/all-you-need-is-wide-events.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/all-you-need-is-wide-events.md",
+    "task_id": "16b1fa4843caa316",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a practitioner essay arguing for an instrumentation model, with no product launch, release, or funding content anywhere in it."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts (Cypher querying, retrieval composition, MCP notes, SIEM gap) contain nothing about wide events or the metrics/logs/traces pillar model."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The central claim is a checkable mapping — spans are wide events with SpanId/TraceId/ParentSpanId, metrics are periodic snapshot events — stated against quoted, linked OpenTelemetry docs and the documented Scuba system."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The argument that logs, metrics, and traces are projections of high-cardinality wide events is a data-model position with no version numbers or vendor matrices, and it has only gained relevance as the 'observability 2.0' debate since 2024."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It changes how a reader instruments: emit one context-rich event per unit of work without cardinality fear, carry the sampling rate in-band and aggregate with SUM(samplingRate), and pick tooling on raw-event slice-and-dice rather than pre-aggregation."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One idea carries the whole piece — wide events subsume the three pillars — and the sampling and explorable-UI material are facets of that same idea rather than separable concepts."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/its-time-to-version-observability.md",
+  "task_id": "7ff6553f7a5776e6",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It coins and argues for a generational framing of observability tooling rather than announcing any release, though it is written by the vendor whose product exemplifies the framing."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No supplied nearest concept touches observability tooling generations, but note the staged companion piece 'there-is-only-one-key-difference' distils this same central idea."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The storage-model claims are checkable against cited primary material (Stripe canonical logs, AWS service logs, Scuba paper) and against any team's own telemetry bill."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The write-time vs read-time aggregation trade-off and the cardinality-driven cost contrast between metrics stores and wide-event stores will hold in twelve months, even though the ZIRP commentary and five-year predictions are period colour."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "It is mostly manifesto and landscape contrast — the concrete build guidance (instrument with wide events, derive SLOs at read time, practise observability-driven development) is directional here and is stated more sharply in the later distilled piece."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "Every 1.0-vs-2.0 contrast in the piece is a consequence of the single statable idea that the generations differ by one-versus-many sources of telemetry truth."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

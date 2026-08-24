@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/what-is-the-model-context-protocol.md",
+  "task_id": "321c3f61eeb9fbf4",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is the protocol's getting-started intro page, not a launch, release note or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "None of the six specialized MCP concepts has the basic definition as its subject, though every one of them presupposes essentially everything this intro says."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The definitional claims about a public, open protocol are directly checkable against the specification and the named clients."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "Beyond the one-sentence definition, the content is a USB-C analogy, benefit bullets per audience, and a client adoption list (Claude, ChatGPT, VS Code, Cursor) — exactly the adoption-list material that ages badly."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "It describes what MCP is and who supports it without any mechanism, trade-off or guidance that would change how someone builds or decides."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It is a single definitional idea — MCP is an open standard for connecting AI applications to external systems — statable in one sentence."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

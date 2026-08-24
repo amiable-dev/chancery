@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/mcp-server-portals-cloudflare-one-docs.md",
+  "task_id": "be1fb56bc337da27",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "Reference documentation for a shipped feature, not a launch, release note or funding post."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "remote-first-mcp-governance and code-mode-mcp already cover the governance architecture and the search/execute pattern at concept altitude, but a reader of those learns the tool-namespacing scheme, transport fallback order, context-optimization modes and gateway DLP mechanics only here."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Every mechanism is specified concretely — API bodies, URL formats, error codes, limits — and checkable against the product."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "Dominated by dashboard paths, API field names, current limits (40 servers, 24-hour sessions) and already-churned surfaces (the 'Agents Gateway' rename, the deprecated allow_code_mode field) that will shift well inside twelve months."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Thoroughly actionable, but almost entirely as Cloudflare-specific dashboard, API and Terraform steps rather than decisions that transfer to other stacks."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "It bundles several standalone-capable mechanisms — the aggregation-portal pattern, tool namespacing and alias precedence, the minimize_tools/search_and_execute context-optimization modes, Code Mode policy, and DLP inspection of proxied MCP traffic — each of which could be its own concept."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

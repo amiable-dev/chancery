@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "44a7c18a0eef3a81",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/announcing-the-agentic-resource-discovery-specification.md": "sha256:1364973f9fcca745eb460f866da7c5a6f0510f7a77f6e7d076af7e6902533482",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:831f12c87c05ec25f2154be6902e9a13da477680ee3f9a1a6637e9364685f70b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/announcing-the-agentic-resource-discovery-specification.json"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "8b288f136188d69c",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/how-anthropic-secures-its-ai-native.md": "sha256:a798afb6cb1dcd5fed73012282ebe74ed82436ab68b2a5fc8f8179fbc09a11c2",
+      "assessment:how-anthropic-secures-its-ai-native": "sha256:f577335ca43a308438d9239f698b16a5c1adc43501ee3a636621aa4d5f953dcb",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "332766cd9dd5028d",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/designing-ai-platforms-for-reliability.md": "sha256:5ed7b575ba046b4689feac563de7495694b06f00b7b4337e19acedd717a838d5",
+      "assessment:designing-ai-platforms-for-reliability": "sha256:e8cc12fb26fc9e7337ca33807a5475c9acae02285c4439786200e46b2e8dcee7",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

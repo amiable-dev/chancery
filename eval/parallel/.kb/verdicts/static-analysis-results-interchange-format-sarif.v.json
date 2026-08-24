@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/static-analysis-results-interchange-format-sarif.md",
+  "task_id": "fe2b8f8ec8855c0b",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "This is the ratified OASIS specification text itself, not an announcement about it."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No supplied nearest concept (code knowledge graph, retrieval composition, context layer) covers a static-analysis results interchange format."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "It is the normative primary source, with a published JSON schema that implementers can validate real logs against."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "SARIF 2.1.0 is a finalized OASIS standard (plus errata) whose core model — runs, results, locations, code flows, baselining, taxonomies — has been stable for years and underpins tooling such as GitHub code scanning."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "An implementer can build emitters or consumers directly against its normative MUST/SHALL clauses, and adopting it settles the interchange-format decision for a static-analysis toolchain."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "Despite the spec's length, everything serves one stateable idea: a standard JSON format so any static-analysis tool's results can be aggregated and managed uniformly."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

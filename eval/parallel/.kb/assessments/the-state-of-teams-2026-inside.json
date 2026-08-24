@@ -1,0 +1,49 @@
+{
+  "target": "staging/the-state-of-teams-2026-inside.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/the-state-of-teams-2026-inside.md",
+    "task_id": "c082c4399a9f753a",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a marketing teaser for Atlassian's own survey report, not a product launch or release note, and it does carry a transferable claim about coordination costs."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (MCP platforms, evals, wikis, skills, context layer) cover team-level coordination costs of individual AI adoption."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The claims trace to a named survey (12,035 knowledge workers, 173 executives, Jan-Feb 2026) whose report a reader can consult, even if it is vendor self-reported data."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The one durable kernel — individual AI speedups shift the bottleneck to team coordination — is buried under 2026-vintage survey percentages ($161B, 89%, 5.6x) that will be superseded by next year's edition."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It tells a reader that coordination matters but gives no mechanism or practice to adopt — the concrete 'new ways of working' are withheld behind the full report."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Despite duplicated sections, the note carries exactly one idea — the fragmentation tax on team coordination — statable in a single paragraph without Atlassian's framing."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

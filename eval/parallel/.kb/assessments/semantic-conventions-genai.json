@@ -1,0 +1,49 @@
+{
+  "target": "staging/semantic-conventions-genai.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/semantic-conventions-genai.md",
+    "task_id": "df5ae453f73f4bce",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a repository README describing what the repo contains, not a launch, release-note or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No nearest concept covers OpenTelemetry GenAI semantic conventions; the closest are unrelated format standards like CycloneDX and OSV."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Everything stated is directly verifiable in the public repository it describes."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Its one fact — GenAI semantic conventions now live in a dedicated repo extending core semconv via Weaver — should persist, but the note is early-stage scaffolding whose schema URL is literally TODO, so its specifics are likely to churn."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It only tells an instrumentation author where the conventions and reference implementations now live; no actual convention content a builder could apply appears in the note itself."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "It carries exactly one small idea — a dedicated home for GenAI, MCP and provider-specific telemetry conventions — trivially stateable in a paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

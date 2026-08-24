@@ -1,0 +1,49 @@
+{
+  "target": "staging/openclaw.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/openclaw.md",
+    "task_id": "7a455a86635ed8b8",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is the project's standing README (install, architecture, security, community sections), not a launch, release note, or funding announcement — though its content is almost entirely product-bound."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (OSV format, proxy-boundary capture, shadow MCP detection, SIEM gap, MCP governance, Code Mode) describe OpenClaw or a self-hosted personal-assistant gateway."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Everything stated is checkable against the public repo, npm package, and docs site the note links to."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The bulk is install commands pinned to specific Node/npm versions and a link farm into fast-moving docs; only the coarse Gateway-plus-channels architecture sketch and the product's existence will still hold in twelve months."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Every step is product-only — curl the installer, run `openclaw onboard`, open the dashboard — useful solely to someone adopting OpenClaw, not to how anyone builds or decides beyond it."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Despite many README sections it describes exactly one thing, and the core idea — a self-hosted single-operator assistant whose local Gateway bridges models to consumer messaging channels — fits in one paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

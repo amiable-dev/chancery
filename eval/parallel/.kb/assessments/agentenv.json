@@ -1,0 +1,49 @@
+{
+  "target": "staging/agentenv.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/agentenv.md",
+    "task_id": "86fd88bebc015dce",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "The note explains the platform's mechanisms — snapshot-backed microVMs, on-demand image loading, memory ballooning — rather than announcing a launch or release."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The closest concept is a W2S research sandbox; none of the nearest concepts covers scale-out microVM infrastructure for agent environments."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The production claims are tied to the linked Kimi K3 tech report and the open-source implementation itself."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The design trade-offs — sub-100ms snapshot/fork of Firecracker environments, local disk as a bounded cache over on-demand OCI images, and ballooning to reclaim idle-environment memory — are systems patterns for agent sandboxing that will outlast the specific 9.6x and 1.5M-image figures."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It changes how someone would build agent-RL or sandbox infrastructure — pause and fork environments instead of keeping them warm — and the E2B-compatible API gives an immediate adoption path without code changes."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Everything in the note serves one idea — running agent environments at scale on snapshot-backed microVMs — with the CLI reference and install steps as packaging around it."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

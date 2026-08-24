@@ -1,0 +1,49 @@
+{
+  "target": "staging/dynatrace-moves-upstream.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/dynatrace-moves-upstream.md",
+    "task_id": "885d9e49aaabae20",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "The piece is third-party analyst coverage occasioned by the Bindplane acquisition, but it carries a transferable idea — the telemetry pipeline as a control plane upstream of observability backends — so it is not solely a launch announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (SIEM agentic visibility gap, MCP governance notes, OSV format, context layer) cover telemetry pipeline control planes or observability data governance."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The claims are anchored to the linked Dynatrace announcement, named vendors (Cribl, Mezmo, Datadog) and a quoted CPO interview, all checkable by a reader."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The durable kernel (whoever controls collection, normalization and routing determines what data arrives) is buried under deal-close timing, TAM speculation and a vendor competitive matrix that will read as stale within a year."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It describes the observability market landscape and Dynatrace's positioning rather than giving a builder or buyer anything to do beyond 'consider this vendor combination'."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Everything in the article serves one thesis — the telemetry pipeline layer is the next competitive battleground because AI analytics depend on input data quality — statable in a single paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

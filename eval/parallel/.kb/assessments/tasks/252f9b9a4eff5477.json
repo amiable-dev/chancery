@@ -1,0 +1,33 @@
+{
+  "envelope": {
+    "task_id": "252f9b9a4eff5477",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/automated-weak-to-strong-researcher.md": "sha256:529a47a7bf5e26e19c5f01a1e181add112367ed2aebe59e7bcdf409bfab75a55",
+      "assessment:automated-weak-to-strong-researcher": "sha256:f84caa4c794e1a1e011ed77feee80ac8e1392fe792f638dc404733122bbae5c5",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:b28d6e1219b74d4e6314d067b19b8a6ef306b9381e5499d5e44d67285380ab8f",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/parallel-automated-researchers.md",
+    "concepts/evaluation-api-reward-hacking.md",
+    "concepts/agent-discovered-w2s-methods.md"
+  ]
+}

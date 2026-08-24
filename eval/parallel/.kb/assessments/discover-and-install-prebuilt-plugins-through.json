@@ -1,0 +1,49 @@
+{
+  "target": "staging/discover-and-install-prebuilt-plugins-through.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/discover-and-install-prebuilt-plugins-through.md",
+    "task_id": "acb3440b0f60ae02",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Reference documentation for an existing product feature, not a launch, release note or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Agent Skills format and MCP extensions are adjacent distribution concepts, but none of the nearest concepts covers marketplace-based plugin discovery and install semantics."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Every behavior described is checkable against the shipped CLI and its documentation."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The page is dominated by version-gated behavior (v2.1.195/.203/.221/.232 caveats), cache-refresh mechanics and command flags that churn release to release; the durable residue (marketplaces as trusted catalogs with scoped installs) is thin."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It is all product-only steps — slash commands, CLI flags and settings — actionable solely inside Claude Code rather than shaping how anyone builds or decides elsewhere."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "A sprawling reference bundling marketplace sources, install scopes, auto-update cadence, LSP plugins and troubleshooting; none of the fragments stands alone as a concept and no single idea covers the whole."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

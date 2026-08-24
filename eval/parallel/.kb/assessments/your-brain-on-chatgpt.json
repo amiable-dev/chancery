@@ -1,0 +1,49 @@
+{
+  "target": "staging/your-brain-on-chatgpt.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/your-brain-on-chatgpt.md",
+    "task_id": "952e6b8f5d999632",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a peer-style arXiv research study with methodology and findings, not a product launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (RAG, Ebbinghaus forgetting curve, LLM-maintained wiki, etc.) cover empirical evidence of reduced neural engagement from LLM-assisted writing."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Claims trace to a primary arXiv paper (2506.08872) with a described EEG protocol, participant counts, and session design a reader can check."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The mechanism-level finding — cognitive engagement and memory scale down as writing is offloaded to an LLM, and unaided-first ordering preserves them — is an empirical result that will not expire with model versions."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The abstract mainly documents a phenomenon and raises concerns; the practice implication (do unaided work before invoking the LLM) is implied by the Brain-to-LLM result but never stated as a usable pattern."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One core idea — LLM assistance accumulates cognitive debt measurable in connectivity, recall, and ownership — states cleanly in a single paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

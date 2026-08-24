@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/introducing-pyroscope-2-0.md",
+  "task_id": "8dcf3171bce7e5e5",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": true,
+      "rationale": "This is Grafana's own launch post for its Pyroscope 2.0 release - the case-for-profiling and rearchitecture sections exist to sell the upgrade, and the piece closes with migration and GrafanaCON links rather than any product-independent method."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No nearest concept (code graph, retrieval evals, MCP, SLO alerting, OSV) covers continuous profiling or profiling-database architecture."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The architectural claims and figures (write-path replication removed, 95% symbol-storage reduction, 19.5PB processed) are attributed to Grafana's production rollout and the open-source release a reader can inspect."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The v1-vs-v2 feature deltas, rollout dates, and petabyte counts are release-bound, and even the reusable ideas (object storage as source of truth, stateless read path) are presented as this product's internals rather than as a general pattern."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "The concrete steps it enables - upgrade to 2.0, provision object storage, follow the migration guide - are product-only actions rather than transferable build guidance."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "It interleaves two separable arguments - why continuous profiling belongs in the observability stack at all, and how the 2.0 rearchitecture cuts its cost - each aimed at a different reader."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

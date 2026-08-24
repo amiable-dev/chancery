@@ -1,0 +1,49 @@
+{
+  "target": "staging/how-does-chain-of-thought-cot.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/how-does-chain-of-thought-cot.md",
+    "task_id": "f31654a497ab1430",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a tutorial explaining a prompting technique; no product launch, release, or funding content is present beyond course self-promotion asides."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (Cypher querying, Code Mode, LLM-maintained wiki, retrieval composition, context layer) cover chain-of-thought prompting or its mechanism."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Although it cites no papers, every central claim is directly reproducible by running the given prompts, and the technique is extensively documented in primary literature."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "It explains the mechanism — autoregressive generation lets written-out steps condition later tokens, so decomposition beats one-shot answers on multi-step problems — with no version numbers, and even flags that reasoning models now internalise the same behaviour."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "A reader leaves with a directly applicable practice: trigger reasoning zero-shot with a step-by-step instruction or few-shot with worked examples, apply it only to multi-step problems, and verify the steps rather than trusting them."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The whole piece states one idea — elicit intermediate reasoning before the answer — and the zero-shot/few-shot variants are modes of that single technique, not separable concepts."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

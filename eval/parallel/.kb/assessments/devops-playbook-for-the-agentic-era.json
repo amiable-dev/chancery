@@ -1,0 +1,49 @@
+{
+  "target": "staging/devops-playbook-for-the-agentic-era.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "fail"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/devops-playbook-for-the-agentic-era.md",
+    "task_id": "e2b5c5d0e7363a35",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a strategic practices playbook for engineering leaders, not a product launch, release note, or funding announcement, despite the Microsoft resource plugs at the end."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No nearest concept (SIEM gap, paved-road MCP, evals, OSV, MCP governance, code graph) covers agentic DevOps practices, pipeline verification for agent code, or the maturity model."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The central content is prescriptive frameworks a team can trial and check, though its empirical asides ('teams report measurably better output') are unsourced."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Its load-bearing claims - agents amplify whatever system health exists, pipelines must shift from gatekeeper to structural/semantic/provenance verifier, durable specs beat ephemeral prompts - are trade-offs that will hold regardless of which agent products win."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "By its own framing it offers no implementation walkthroughs, staying at leader-level checklists and maturity self-assessment; the few concrete controls (registry-existence checks, mutation testing against self-validating tests) are mentioned rather than shown."
+      },
+      "atomicity": {
+        "rating": "fail",
+        "rationale": "It is ten separable frameworks in one - foundations checklist, role evolution, collaboration zones, repo-as-interface, spec maturity curve, agent governance, layered pipeline verification, metrics, trends, and a maturity model - each able to stand alone."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

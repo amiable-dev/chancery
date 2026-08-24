@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "512cf9e30647f355",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/ai-native-sdlc-security.md": "sha256:20cb7dff9184287f7cb7f160009657537a0e04da8654331dae9afa470029f08f",
+      "assessment:ai-native-sdlc-security": "sha256:e384305528affa3db7e34c3f42831ad888b1f3fca548e9a4418294e72ac0bff1",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

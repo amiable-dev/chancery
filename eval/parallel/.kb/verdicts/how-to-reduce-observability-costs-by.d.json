@@ -1,0 +1,28 @@
+{
+  "task_id": "12a0f322766ff471",
+  "supplier": { "class": "model-single", "id": "claude-fable-5" },
+  "concepts": [
+    {
+      "slug": "collector-side-telemetry-reduction",
+      "title": "Collector-side telemetry reduction",
+      "tags": ["concept", "observability", "opentelemetry", "cost-control"],
+      "definition": "**Collector-side telemetry reduction** is the practice of deciding telemetry fidelity in the pipeline — at the OpenTelemetry Collector, before data reaches a storage backend — keeping every high-value signal (error traces, slow traces, debug-flagged requests) at full fidelity while sampling, trimming, aggregating or dropping the routine remainder, so that cost falls with data volume rather than with visibility.",
+      "explanation": "The lever order follows the cost structure: in the source's breakdown, traces are 60-70% of observability spend (high cardinality, 10-50 spans per request), logs 20-30%, metrics 5-10%, so trace sampling pays first. Head-based sampling decides at the start of a trace and is blind to how it ends; tail-based sampling buffers spans until the trace completes (a decision wait longer than the longest expected trace) and then applies ordered policies — keep every error-status trace, keep everything over a latency threshold, keep traces carrying a debug header, drop known-noise routes such as health checks outright, and probabilistically sample a small percentage of the remainder. Companion processors extend the same fidelity decision to the other signals: attribute trimming truncates long values and deletes bulky span attributes such as full SQL statements and HTTP headers; metric transforms delete per-instance labels and normalize UUID-bearing routes before re-aggregating; log filters drop DEBUG everywhere and INFO for named noisy services. The reduction is measurable from the Collector's own telemetry — the ratio of exported to accepted spans — with the source claiming 90-95% trace-volume cuts as typical and tail sampling alone contributing 70-80% of the total win. The rollout discipline matters as much as the configs: apply one strategy at a time and validate after each by triggering a known error, injecting artificial latency, and confirming dashboards show the same trends and alerts still fire. The source is a vendor blog post (OneUptime), but every mechanism ships as a stock OpenTelemetry Collector processor configuration, so the content is vendor-neutral.",
+      "key_properties": [
+        "Cost concentrates in traces (60-70% in the source's breakdown), making trace sampling the biggest single lever",
+        "Tail-based sampling defers the keep/drop decision until a trace is complete, so policy can key on outcome: errors, latency, debug flags",
+        "Policy shape: keep all errors and slow traces, drop known-noise routes, probabilistically sample the routine remainder",
+        "Attribute trimming, metric-cardinality reduction and log-severity filtering extend the same fidelity decision to spans, metrics and logs",
+        "Savings are measured from the Collector's own accepted-versus-sent span metrics, and each strategy is validated before the next is applied"
+      ],
+      "relationships": [
+        {
+          "target": "slo-burn-rate-alerting",
+          "clause": "constrains it: a sampled pipeline must still deliver every error signal, so validating a reduction includes proving that budget-based alerts like these still fire"
+        }
+      ],
+      "applications": "Cutting an observability bill without losing incident evidence, since every error and slow trace is kept at full fidelity; trimming span attributes and metric label cardinality before paying for a bigger storage tier.",
+      "see_also": ["slo-burn-rate-alerting"]
+    }
+  ]
+}

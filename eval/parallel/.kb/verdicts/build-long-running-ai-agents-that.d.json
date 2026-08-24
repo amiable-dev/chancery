@@ -1,0 +1,86 @@
+{
+  "task_id": "537dd5d90a474b9f",
+  "supplier": { "class": "model-single", "id": "claude-fable-5" },
+  "concepts": [
+    {
+      "slug": "agent-checkpoint-resume",
+      "title": "Checkpoint-and-resume agents",
+      "tags": ["concept", "ai-agents", "architecture", "reliability"],
+      "definition": "**Checkpoint-and-resume** is an architecture for agents that run workflows spanning days or weeks: the agent's position lives in an explicit, durably persisted state machine rather than in accumulated conversation history — the current state is injected into the system prompt on every call, each tool call atomically advances the state and thereby records a checkpoint, and external events wake the dormant agent by applying a state transition before its next inference — so the process can pause indefinitely, survive restarts and scale-to-zero, and resume exactly where it stopped without replaying its past.",
+      "explanation": "The failure it answers is specific: over a multi-day workflow, the stateless pattern of replaying an ever-growing conversation history breaks three ways — the history pollutes the prompt until the model loses track of its current step, token cost grows with every replayed turn, and after a days-long pause the model hallucinates intermediate steps, remembering approvals that were never given. Checkpoint-and-resume removes conversation history as the source of truth. A small closed set of named workflow states is defined up front; the current state and its associated details are template-injected into the system prompt at every inference, so the model reads its position instead of inferring it; each tool call writes the next state atomically, making every action a checkpoint; and session state lives in a database rather than process memory, so a crash, restart, or scale-to-zero costs nothing. Idle time is handled by sleeping rather than polling: when a real-world event completes, a webhook hydrates the persisted session and applies an atomic state delta before the model's next call, so the agent wakes already knowing the transition happened. The source is a Google Developers Blog tutorial demonstrating the pattern on ADK with complete runnable code — a vendor piece, but the architecture (explicit state, checkpointing transitions, event-driven wake) transfers to any framework with persistent sessions.",
+      "key_properties": [
+        "Workflow position is an explicit state schema read from session state, never inferred from chat history",
+        "Tool calls double as atomic checkpoints, so a crash after any action resumes from the written state",
+        "Session state persists in a database, letting containers restart or scale to zero through idle gaps",
+        "External events wake the agent via webhooks that apply a state delta atomically before the next model call, replacing polling and blocked threads",
+        "Targets three stateless failure modes: prompt context pollution, token-cost explosion, and hallucinated steps on resume"
+      ],
+      "relationships": [
+        {
+          "target": "subagent-delegation",
+          "clause": "the persisted state machine is the shared ground that lets a coordinator hand work to sub-agents mid-workflow and absorb their results"
+        },
+        {
+          "target": "preseeded-state-evals",
+          "clause": "makes those evals possible — only explicit persisted state can be seeded to an arbitrary checkpoint, where chat-history state would demand replaying the whole transcript"
+        },
+        {
+          "target": "context-layer",
+          "clause": "both reject accumulate-and-replay as a context strategy — the context layer composes retrieved knowledge per query, checkpoint-and-resume injects explicit workflow state per call"
+        }
+      ],
+      "applications": "Workflow agents with human-in-the-loop pauses or multi-day timelines — HR onboarding, invoice disputes, procurement approvals, sales sequences — that must survive restarts and idle gaps of days; also the architecture to reach for when a bigger context window is being proposed as the fix for a long-running process.",
+      "see_also": ["subagent-delegation", "preseeded-state-evals"]
+    },
+    {
+      "slug": "subagent-delegation",
+      "title": "Sub-agent delegation",
+      "tags": ["concept", "ai-agents", "architecture", "orchestration"],
+      "definition": "**Sub-agent delegation** is the pattern of splitting an agent's responsibilities between a coordinating agent that owns the workflow sequence and specialized sub-agents that each carry a focused instruction and a narrow tool set: at defined points the coordinator transfers execution to a sub-agent, which completes its specialty, writes results into shared state, and hands control back — in place of one monolithic prompt loaded with every tool and rule the whole workflow could ever need.",
+      "explanation": "The mechanism is division of context rather than mere division of labor: the coordinator sequences the workflow and, when it reaches a state another specialty owns, transfers execution to a sub-agent whose instruction covers only that specialty and whose tool list contains only what it needs; the sub-agent works independently, updates the shared session state, and returns control. The motivation is reasoning quality under load — a single prompt carrying every tool description, workflow rule, and accumulated state variable degrades the model's tool selection and step tracking, and the degradation worsens in long-running contexts where state keeps accruing. Narrow prompts keep each model call sharp regardless of how much total machinery the system holds. The source is a Google ADK tutorial (vendor piece) where an onboarding coordinator delegates IT provisioning to a dedicated sub-agent, but the move is general — the same split-by-specialty, coordinate-through-shared-state shape appears as subagent spawning in coding harnesses.",
+      "key_properties": [
+        "Coordinator owns workflow sequencing; each sub-agent owns exactly one specialty",
+        "Each agent sees a focused instruction and only the tools its job requires",
+        "Sub-agents read and write the same shared state as the coordinator, then hand control back",
+        "The payoff is reasoning quality: overloaded single prompts degrade tool selection and step tracking as context accumulates"
+      ],
+      "relationships": [
+        {
+          "target": "agent-checkpoint-resume",
+          "clause": "delegation stays coherent across pauses because coordinator and sub-agents share the same persisted state machine that architecture checkpoints"
+        }
+      ],
+      "applications": "Any agent whose workflow crosses specialties — a coordinator delegating IT provisioning, research, or review steps to focused sub-agents — and a lever to reach for when a single agent's tool list has grown large enough that it misfires on selection or sequencing.",
+      "see_also": ["agent-checkpoint-resume"]
+    },
+    {
+      "slug": "preseeded-state-evals",
+      "title": "Pre-seeded-state agent evals",
+      "tags": ["concept", "ai-agents", "evaluation", "testing"],
+      "definition": "**Pre-seeded-state evals** validate long-running agent workflows without living through their timeline: because workflow position is explicit state, a test fixture can seed that state to any checkpoint — standing in for days of idle time or an external event that has not fired — and then assert deterministically on what the agent does next, meaning which tools it invokes and in what order, whether it refuses to act while a gate is unsatisfied, and whether details captured before the gap survive the resumption.",
+      "explanation": "The blocking problem is time: a workflow that spans two weeks cannot be validated by running it in real time, so a bug like skipping an approval gate would otherwise surface only in production. Because the architecture stores workflow position as explicit state, an eval fixture pre-seeds that state to any checkpoint — the equivalent of fast-forwarding through the idle time — and golden conversation fixtures then pin the expected tool calls per turn. The empty case is as load-bearing as the positive one: a turn asserting zero tool uses verifies the agent refuses to act while a gate is unsatisfied, even when the user asks it directly to skip ahead. A companion fixture seeds a late-stage state and confirms resumption invokes the remaining tools in sequence with the originally captured details intact, proving context survives the simulated gap. The tests run in seconds and slot into CI, catching state-machine regressions before deployment. Demonstrated in a Google ADK tutorial (vendor piece) using its evaluation-set format, but the technique requires only seedable state and recorded tool calls.",
+      "key_properties": [
+        "State pre-seeding replaces waiting: any checkpoint, including post-idle resumption, is reachable in seconds",
+        "Golden fixtures assert expected tool calls per turn; an asserted-empty tool list pins refusal at a pause gate",
+        "Late-stage seeding verifies that details captured before a simulated multi-day gap survive resumption",
+        "Deterministic and fast enough for CI, so state-machine regressions are caught before production"
+      ],
+      "relationships": [
+        {
+          "target": "agent-checkpoint-resume",
+          "clause": "presupposes that architecture — a checkpoint can only be seeded because workflow position is explicit persisted state rather than implicit chat history"
+        },
+        {
+          "target": "golden-dataset-retrieval-evals",
+          "clause": "shares the golden-fixture-in-CI discipline, but pins agent behavior at seeded workflow states where that harness pins retrieval quality against labeled questions"
+        },
+        {
+          "target": "acceptability-envelope-evals",
+          "clause": "sits at the deterministic end of that framing's spectrum — workflow steps have enumerable correct actions (call this tool, refuse that one), so the acceptability envelope collapses to exact assertions"
+        }
+      ],
+      "applications": "Regression-testing multi-day agent workflows in CI — pause-gate enforcement, post-idle resumption, context retention — before changes ship; reproducing a reported mid-workflow failure by seeding the exact state it occurred in.",
+      "see_also": ["agent-checkpoint-resume", "golden-dataset-retrieval-evals"]
+    }
+  ]
+}

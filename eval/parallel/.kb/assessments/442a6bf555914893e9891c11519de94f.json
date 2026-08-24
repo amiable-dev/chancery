@@ -1,0 +1,49 @@
+{
+  "target": "staging/442a6bf555914893e9891c11519de94f.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/442a6bf555914893e9891c11519de94f.md",
+    "task_id": "d34af8e2cbe7d31a",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is an idea file describing a technique, with no product, release or funding being announced."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "llm-maintained-wiki shares the central pattern but was built from secondary coverage and stays at pattern level; a reader of it still learns the three-layer architecture (immutable sources / wiki / schema), the ingest-query-lint loop, and the index.md/log.md conventions from this primary gist, which that concept itself defers to for specifics."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The claims are an architecture and workflow the reader can reproduce directly; the mechanism is the evidence."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The compile-at-write-time wiki versus re-derive-at-query-time RAG trade, with its layered architecture and maintenance-cost argument, is tool-agnostic and will read the same in twelve months; the Obsidian/qmd tips are incidental."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It hands a reader the exact structure to build — three layers, ingest/query/lint operations, index and log conventions, filing answers back — and this repository is itself evidence the instructions are executable."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "It is one pattern statable in a paragraph — an LLM incrementally maintains a persistent wiki between you and raw sources — with architecture and operations as facets of that single idea."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

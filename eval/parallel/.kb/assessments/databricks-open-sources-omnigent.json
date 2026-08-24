@@ -1,0 +1,49 @@
+{
+  "target": "staging/databricks-open-sources-omnigent.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/databricks-open-sources-omnigent.md",
+    "task_id": "a090ce1580b3c64a",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is launch coverage, but the meta-harness abstraction — harnesses share a uniform messages-in/streams-out interface, so a layer above can make them swappable and enforce stateful policies there instead of in prompts — is an idea that transfers beyond Omnigent."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No nearest concept covers a composition-and-governance layer above agent harnesses; proxy-boundary-session-capture shares only the egress-proxy locus, used here for secret injection rather than capture."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The project is public on GitHub with docs, so the architectural claims are checkable against the code."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The note leans on the current state of an alpha project — the specific harness roster, install commands, credential types, unshipped roadmap items — which will churn even if the meta-harness idea persists."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Its concrete steps are all Omnigent-specific (curl install, omni setup, product YAML), while the transferable patterns like harness-layer budget policies and egress-proxy secret injection are described only as features."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Composition, control, and collaboration are all facets of the single statable idea of a governance layer that treats agent harnesses as interchangeable components."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

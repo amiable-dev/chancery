@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/https-www-cs-cmu-edu-rdriley.md",
+  "task_id": "23034191ca2b2798",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "The note is a raw PDF byte dump of Thompson's 1984 Turing lecture, not an announcement of anything."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No legible content overlaps any neighbour, and the underlying trusting-trust paper has no counterpart concept in the corpus."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The linked source is Thompson's published 1984 ACM lecture, a primary and checkable document; the note's defect is failed extraction, not unverifiable claims."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "fail",
+      "rationale": "The staged note contains only unparsed PDF binary streams (%PDF-1.3 headers, FlateDecode objects), so there is no legible content in it to remain true or useful."
+    },
+    "actionability": {
+      "rating": "fail",
+      "rationale": "Nothing in the note can be read, so nothing in it can change how anyone builds or decides."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "No core idea can be stated from the note at all, since its body is 361KB of binary garbage rather than prose."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

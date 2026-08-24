@@ -1,0 +1,49 @@
+{
+  "target": "staging/opentelemetry-ebpf-instrumentation-obi-the-complete.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/opentelemetry-ebpf-instrumentation-obi-the-complete.md",
+    "task_id": "6a0c96aa2c971002",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is hung on the KubeCon beta launch but goes far past it — architecture, CNI-collision caveats, header-enrichment policy design, and the OBI/Hubble/Tetragon role-split are transferable coverage of the zero-code eBPF technique."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts are MCP-governance and vulnerability-format notes; nothing in the supplied set covers eBPF-based zero-code observability."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Claims are sourced to the OpenTelemetry docs, the OBI GitHub repo, and the Splunk KubeCon announcement, and the deployment behaviour is reproducible on any cluster."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The spine of the note is the pre-1.0 moment — v0.8.0, beta status, a late-2026 GA roadmap at '60% of the checklist', and config keys the author warns v0 minors may break — so much of it goes stale within twelve months even though the kernel-capture/user-space-parse mechanism endures."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "The adoption checklist, the run-OBI-alongside-Hubble/Tetragon role split, tail-sampling and default-redaction recommendations, and the OBI-vs-Pixie/Beyla decision table directly change how a team would build its observability stack."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Despite its length it argues one idea — vendor-neutral zero-code L7 instrumentation from the kernel via OTLP, run alongside SDKs and network/security eBPF tools — and everything else is supporting detail for that adoption decision."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/github-veteran-brian-douglas-launches-paper.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/github-veteran-brian-douglas-launches-paper.md",
+    "task_id": "5e158e04de24a26a",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Third-party profile of a company launch rather than vendor PR, and the record-and-confine pairing (proxy-captured replayable logs plus sandboxed least-privilege execution with credential destruction) is an idea that transfers beyond Paper Compute's products."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The Tapes half is substantively covered by proxy-boundary-session-capture, but the StereOS confinement half and the explicit observe-plus-confine pairing are not in that concept, so a reader still learns something new."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Tapes and StereOS are open-sourced with linked launch posts and a public demo, so the central claims about what the tools do are directly checkable."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The piece is dominated by launch-time specifics — company formation, hires, monetization sketches, and a six-month enterprise-adoption prediction — with the durable observe-and-confine pattern present but thin."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It describes what the two products do and one demo's guardrails but gives a reader no mechanism or decision procedure beyond knowing these tools exist."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The note bundles proxy observability (already a concept), the StereOS sandbox OS, a Kubernetes-wave market thesis, and a pay-per-compute business model, none developed enough to stand alone cleanly."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

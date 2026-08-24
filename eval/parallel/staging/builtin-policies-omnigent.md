@@ -1,0 +1,301 @@
+# Builtin Policies · Omnigent
+
+**Source:** https://omnigent.ai/docs/policies/builtin
+**Added:** 2026-08-24
+**Tags:** #unsorted
+
+---
+
+> Built-in Omnigent policies for common safety and cost-control guardrails. Apply them by name or reference them in YAML.
+
+---
+
+Omnigent ships with policies for common guardrails, organized into two categories: **Safety** and **Cost Control**. Your Omnigent can apply any of these by name when you [ask it to add a policy](https://omnigent.ai/docs/policies/overview#adding-a-policy), or you can reference them in YAML by their full path in the `handler` field.
+
+All builtin policies live under `omnigent.policies.builtins`.
+
+## Safety
+
+Policy
+
+What it does
+
+Parameters
+
+`ask_on_os_tools`
+
+ASKs before any file or shell operation.
+
+None
+
+`block_skills`
+
+Prevents specific skills from loading.
+
+`blocked` (string\[\], required)
+
+`block_working_dir_changes`
+
+Blocks shell commands that change the working directory.
+
+`block_cd` (bool), `block_worktree` (bool), `allowed_dirs` (string\[\]), `action` (`"deny"` or `"ask"`)
+
+`cel_policy`
+
+Write custom policy logic using CEL (Common Expression Language), a safe, non-Turing-complete expression language.
+
+`expression` (CEL expression string), `reason` (deny message)
+
+`deny_pii_in_llm_request`
+
+Scans outgoing messages for PII and blocks or flags them.
+
+`pii_types` (string\[\]), `action` (`"DENY"` or `"ASK"`)
+
+`detect_thrashing`
+
+Detects when an agent is failing repeatedly by tracking tool-result outcomes in a rolling window. Fires when consecutive errors cross a threshold or the window error rate is too high. Error detection is heuristic — no server LLM required.
+
+`consecutive_threshold` (int, default `5`; `0` disables), `window` (int, default `10`), `window_error_rate` (number `0.0`–`1.0`, default `0.8`; `0` disables), `action` (`"ASK"` or `"DENY"`, default `"ASK"`)
+
+`detect_loop`
+
+ASKs when the agent is stuck retrying the same tool call. Hashes each `(tool, arguments)` pair and, when an identical call repeats `threshold` times within a sliding `window` of recent calls, routes it to human approval. Catches a token-waste pattern `max_tool_calls_per_session` can't see, since that policy only counts total calls.
+
+`window` (int, default `10`, min `1`), `threshold` (int, default `3`, min `1`)
+
+`enforce_sandbox`
+
+Forces a sandbox configuration on agent start.
+
+`sandbox_type`, `allow_network`, `write_paths`, `read_paths`
+
+`gcalendar_policy`
+
+Controls Google Calendar. Defaults to read-only.
+
+None
+
+`gdrive_policy`
+
+Controls Google Drive, Docs, Sheets, and Slides access. Writes restricted to agent-created files by default. Optionally enforces Bell-LaPadula "no write-down": once the session reads a confidential file, its writes are confined to that set.
+
+`read_all`, `allow_create`, `write_files`, `read_files`, `comment_files`, `confidential_files` (string\[\]), `write_down_action` (`"DENY"` or `"ASK"`, default `"DENY"`)
+
+`github_policy`
+
+Controls GitHub read/write access across MCP tools and shell commands. Irreversible destructive operations (deletes) are denied by default even on allowed repos, unless `allow_destructive` is set. `git push` force flags (`--force`, `-f`, `--force-with-lease`, `--force-if-includes`), bundled short flags containing `f` (e.g. `-uf`), and `+refspec` force prefixes are denied by default regardless of the repo/branch allowlists, unless `deny_force_push` is set to `false`.
+
+`read_all`, `write_repos`, `write_branches`, `allow_destructive` (bool, default `false`), `deny_force_push` (bool, default `true`)
+
+`gmail_policy`
+
+Controls Gmail. Defaults to read + draft, no send.
+
+`allow_read`, `allow_send`, `allow_drafts`
+
+`intent_based_authorization`
+
+Records the first user message as the session's intent, then ASKs before any tool call that has no plausible connection to that intent. Requires an `llm:` config block; fails open when none is available.
+
+None
+
+`max_tool_calls_per_session`
+
+DENYs after a total tool-call limit is reached.
+
+`limit` (int, default `100`)
+
+`prompt_policy`
+
+Evaluate policy decisions using an LLM. The policy sends the event context to a model and interprets the response as ALLOW/ASK/DENY. Useful for nuanced decisions that can't be expressed as static rules.
+
+`prompt` (system instructions for the evaluator model)
+
+`risk_score_policy`
+
+Accumulate a risk score from tool calls and sensitive data labels. Escalates guarded tools to ASK or DENY once the score exceeds a threshold.
+
+`threshold` (int), `tool_points` (object mapping tool names to points), `sensitive_labels` (object mapping labels to points), `guarded_tools` (string\[\]), `escalate_action` (`"ASK"` or `"DENY"`)
+
+`blast_radius`
+
+Classifies shell commands as safe (ALLOW), recoverable-but-risky (`risky_action`), or catastrophic (always DENY, e.g. `rm -rf /` or force-push). Covers the shell tool across Omnigent (`sys_os_shell`), Claude/Codex (`Bash`), Cursor, Pi, Hermes, and Goose.
+
+`gate_pushes` (bool, default `true`), `risky_action` (`"ASK"` default or `"DENY"`), `deny_reason`
+
+`spawn_bounds`
+
+Limits the number of sub-agent dispatches per turn to prevent runaway fan-out.
+
+`max_dispatches_per_turn` (int, default `5`), `dispatch_tools`
+
+`headless_subagent_purpose_guard`
+
+Requires every sub-agent dispatch to declare a `purpose` (`implement`, `review`, `explore`, `search`).
+
+`allowed_purposes` (string\[\]), `deny_reason`
+
+`worktree_guard`
+
+Blocks file writes outside the worker's git worktree to prevent cross-branch contamination.
+
+`allowed_root` (string, default `.worktrees`), `deny_reason`
+
+`read_only_os`
+
+Denies every file-mutating tool so a report-only agent can read and run shell but never change code.
+
+`deny_reason`
+
+## Cost Control
+
+Policy
+
+What it does
+
+Parameters
+
+`cost_budget`
+
+Tracks cumulative LLM spend per session. ASKs at soft thresholds, blocks expensive models at the hard limit.
+
+`max_cost_usd` (required), `ask_thresholds_usd`, `expensive_models`
+
+`detect_task_switch`
+
+Uses the server-level LLM to detect when a user starts a new unrelated task and nudges starting a fresh session.
+
+`min_turns` (int), `history_window` (int), `action` (`"ASK"` or `"DENY"`, default `"ASK"`), `classification_prompt` (string)
+
+`deny_trivial_to_expensive_model`
+
+Classifies messages as trivial or complex. Routes trivial tasks away from expensive models.
+
+`expensive_models` (string\[\], required), `classification_prompt` (string)
+
+`subagent_cost_budget`
+
+Gates a sub-agent on its own subtree LLM spend. Blocks expensive models at the hard limit, ASKs at soft thresholds. Attach to a child via `sys_session_send`'s `cost_budget` argument.
+
+`max_cost_usd`, `ask_thresholds_usd`, `expensive_models`
+
+`user_daily_cost_budget`
+
+Same as `cost_budget`, but enforced per-user daily across all sessions.
+
+`max_cost_usd` (required), `ask_thresholds_usd`, `expensive_models`
+
+### Usage examples
+
+#### Confine confidential Google Drive data
+
+`gdrive_policy` can layer Bell-LaPadula's classic "no write-down" rule on top of its access controls. You declare a set of confidential documents up front with `confidential_files` (file IDs or Google URLs). The rule engages only once the session **reads** one of those files: from then on, its writes are confined to the confidential set. A write to — or creation of — any other file would move confidential data into a less-protected place, so it is blocked.
+
+```
+# Omnigent config (policies block)
+policies:
+  confidential_containment:
+    type: function
+    handler: omnigent.policies.builtins.google.gdrive_policy
+    factory_params:
+      # The confidential compartment: file IDs or Google URLs.
+      confidential_files:
+        - "1ConfidentialStrategyDocID"
+      # Allow creating new files, so a create can be shown being gated as a
+      # write-down rather than blocked outright by the base access rules.
+      allow_create: true
+      # DENY (hard block) or ASK (require human approval) on a write-down.
+      write_down_action: DENY
+```
+
+Because the confidential set is declared explicitly rather than inferred from a per-document classification label, the rule works on any Google Drive tenant.
+
+#### Catch a stuck agent
+
+`detect_thrashing` watches `tool_result` events and flags an agent that is failing repeatedly — retrying the same broken command, looping on a permission error, or otherwise making no progress. Unlike [`detect_task_switch`](#keep-sessions-focused), it needs **no server LLM**: error detection is heuristic (common error prefixes like `Error:`, `Traceback (most recent call last)`, `Permission denied`, and JSON payloads carrying an `"error"` key).
+
+It keeps a rolling window of recent tool-result outcomes (error or success) in session state and fires when either condition is met:
+
+-   the last `consecutive_threshold` results are all errors, **or**
+-   the error rate within the last `window` results reaches or exceeds `window_error_rate`.
+
+On detection it returns the configured `action` with a message telling the user the agent appears stuck. The window is **not** reset on firing — a thrashing agent tends to keep failing, so the policy keeps firing until the user intervenes or the agent recovers naturally (successful results push old errors out of the window).
+
+```
+# Omnigent config (policies block)
+policies:
+  catch_stuck_agent:
+    type: function
+    handler: omnigent.policies.builtins.context.detect_thrashing
+    factory_params:
+      consecutive_threshold: 5 # fire after 5 errors in a row (0 disables)
+      window: 10 # rolling window for the rate check
+      window_error_rate: 0.8 # fire at ≥80% errors in the window (0 disables)
+      action: ASK # ASK escalates to the user; DENY blocks the next result
+```
+
+Both checks are independent — set `consecutive_threshold: 0` to rely purely on the window error rate, or `window_error_rate: 0` to rely purely on the consecutive-error run.
+
+#### Make spend visible before you restrict it
+
+Start with soft thresholds only. Engineers see when they're running an expensive session and can decide whether the task warrants it. No one gets blocked; habits change on their own.
+
+```
+# Omnigent config (policies block)
+policies:
+  session_visibility:
+    type: function
+    handler: omnigent.policies.builtins.cost.cost_budget
+    factory_params:
+      ask_thresholds_usd: [1.0, 5.0]
+      max_cost_usd: 999.0 # effectively no hard cap
+  daily_visibility:
+    type: function
+    handler: omnigent.policies.builtins.cost.user_daily_cost_budget
+    factory_params:
+      ask_thresholds_usd: [10.0, 25.0]
+      max_cost_usd: 999.0
+```
+
+This gives you real data on where spend is concentrated before you decide where to add guardrails.
+
+#### Server-wide team policy
+
+A reasonable starting point for a team deployment: per-user daily visibility at $25, a soft check at $50. Engineers can still use any model for any task — they just get asked before spending more than $25 in a day.
+
+```
+# config.yaml
+policies:
+  daily_budget:
+    type: function
+    function:
+      path: omnigent.policies.builtins.cost.user_daily_cost_budget
+      arguments:
+        ask_thresholds_usd: [25.0, 50.0]
+        max_cost_usd: 100.0
+```
+
+```
+omnigent server -c config.yaml
+```
+
+The daily cap exists to surface sessions that are genuinely off the rails, not to penalize productive use.
+
+#### Keep sessions focused
+
+Use this policy to keep sessions focused and avoid wasting tokens on stale context. On each user `request`, it classifies whether the latest message continues the current task or starts a new one, and returns the configured `action` when it detects a task switch. It requires a server `llm:` config and fails open if no LLM client is available.
+
+```
+# Omnigent config (policies block)
+policies:
+  keep_context_lean:
+    type: function
+    handler: omnigent.policies.builtins.context.detect_task_switch
+    factory_params:
+      min_turns: 2
+      history_window: 4
+      action: ASK
+```
+
+[← PreviousContextual Policies: Overview](https://omnigent.ai/docs/policies/overview)[Next →Contextual Policies: Custom Policies](https://omnigent.ai/docs/policies/custom)

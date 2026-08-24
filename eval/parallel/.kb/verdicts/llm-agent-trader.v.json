@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/llm-agent-trader.md",
+  "task_id": "fd442767d268243a",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is a project README with setup instructions and an architecture diagram, not a launch, release or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "None of the nearest concepts touches LLM-driven trading backtests; they cover code graphs, OSV, retrieval evals and alerting."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims are trivially checkable by running the open-source repo the note points at."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The note is almost entirely quick-start mechanics — make targets, .env key switching between Azure OpenAI and Gemini, Windows caveats — and the one lasting idea (an LLM as the decision engine inside a backtest loop) exists only as an unexplained flowchart."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Its only actions are product-only steps for this specific repo (make install, cp .env, make run); it offers no design guidance a reader could apply to their own trading or backtesting system."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It carries a single idea — an LLM-driven stock backtesting system combining technical analysis and risk management — which fits in one paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/claude-code-docs.md",
+  "task_id": "3847e89eaa6c1ed6",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "A documentation landing page rather than a launch, release note or funding announcement; its emptiness is a dimension problem, not an announcement problem."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "None of the nearest concepts covers a Claude Code product overview; there is no substantive overlap to duplicate."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Install commands and surface listings are trivially verifiable against the product."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "fail",
+      "rationale": "Install one-liners, download links and a surface/integration matrix are pure onboarding navigation that churns within months and carries no claim that would remain useful as knowledge."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "The only actions are installing and launching the product on each surface — product-only steps with no bearing on how anyone builds or decides."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "A landing page enumerating five surfaces, three install methods and a table of integration links has no core idea to state in a paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

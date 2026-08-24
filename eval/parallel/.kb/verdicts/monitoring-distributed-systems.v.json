@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/monitoring-distributed-systems.md",
+  "task_id": "5ebcd62fd0da3387",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is a chapter of the published Google SRE book laying out monitoring principles; nothing is being launched or announced."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The existing slo-burn-rate-alerting concept covers the Workbook's later budget-burn technique, while this chapter's golden signals, symptom-versus-cause discipline, and paging philosophy are not stated anywhere in the nearest concepts."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims are Google's documented operational practice in a primary published source, grounded in named case studies (Bigtable SLO relaxation, Gmail Workqueue) a reader can check and test in practice."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "Its content is version-free principles and trade-offs — latency/traffic/errors/saturation, page on symptoms not causes, histograms over means, simplicity over magic — that have stayed canonical for a decade since publication."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It directly changes what a builder instruments and alerts on: measure the four golden signals, bucket latencies exponentially, run every proposed page through the urgent/actionable/novel question checklist, and delete rarely exercised rules."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "The chapter carries several separable, individually promotable ideas — the four golden signals, symptom-vs-cause and black-box/white-box framing, the paging philosophy checklist, tail-latency histogram measurement, and the short-term-availability-vs-long-term-health trade — each of which could stand alone as a concept."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

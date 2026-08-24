@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/claudedevs-claudedevs-on-x.md",
+  "task_id": "97f9cea5f1053e58",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": true,
+      "rationale": "This is the vendor's own release note — 'Today we added new guides for' five named sandbox providers — and beyond that day's documentation drop it carries no idea that transfers past the Claude Managed Agents product."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No nearest concept covers managed-agent sandbox hosting, so the announcement is not redundant with the corpus — it simply is not a concept."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claim that these provider guides exist is directly checkable against the vendor's documentation."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "fail",
+      "rationale": "A dated provider-support list ('today we added guides') is a vendor feature matrix that will be stale as soon as the roster changes."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "The only available action is the product-only step of picking one of the five listed providers and following its guide."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It carries exactly one thin message — managed agents can run in a sandbox you control, and guides now exist — easily stated in a sentence."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

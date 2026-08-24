@@ -1,0 +1,47 @@
+{
+  "target": "staging/introducing-the-model-context-protocol.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "discard",
+  "reason": "disqualified: pure-announcement",
+  "disqualifiers": [
+    "pure-announcement"
+  ],
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/introducing-the-model-context-protocol.md",
+    "task_id": "110d0f677c450ab2",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": true,
+        "rationale": "This is the vendor's own launch post — 'Today, we're open-sourcing...' with component lists, early-adopter names, a CTO quote and getting-started links — and its one transferable idea, standardizing the model-to-data interface, is stated only at press-release depth with no mechanism."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The corpus's five MCP concepts each treat a specific mechanism (stateless core, extensions, authorization, governance) and presume rather than restate this launch framing, so no single one substantively covers it."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The protocol, SDKs and server repository are all linked and publicly checkable."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The contents are launch-day snapshot — Claude 3.5 Sonnet, three shipped components, an early-adopter list, promised toolkits — already superseded by MCP's later governance and spec history; only the N-times-M integration problem statement transfers."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Its guidance is product onboarding — install desktop servers and follow the quickstart — not a practice or design decision a builder could carry elsewhere."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One subject throughout: the launch of MCP and its pitch."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

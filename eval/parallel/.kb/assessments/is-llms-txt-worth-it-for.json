@@ -1,0 +1,49 @@
+{
+  "target": "staging/is-llms-txt-worth-it-for.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/is-llms-txt-worth-it-for.md",
+    "task_id": "16906a6bf2ba5480",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "A sourced analysis answering whether site owners should adopt llms.txt, not any kind of launch or funding notice."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the supplied nearest concepts covers llms.txt; the corpus's only llms.txt text is a rubric exemplar under .kb/exemplars, not a concept note a reader could have learned this from."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Every load-bearing claim links a primary source — Google's two AI-search docs, OpenAI's crawler documentation, and named on-record statements from the Search team."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Its subject matches the rubric's own weak-durability anchor: an unadopted proposal whose evidence base (doc dates, on-record quotes, disputed crawler logs) will shift within months even if the no-provider-commitment conclusion holds."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It gives a site owner a direct decision rule — skip it for Google visibility, treat it as a cheap noindexed experiment for agent traffic, measure citations instead — grounded in the cited record."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One question, one verdict: llms.txt is not an AI-search ranking lever; its real use is as an agent-facing documentation index."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/openai-api.md",
+  "task_id": "cc61fe9e35a656bd",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is an operational how-to guide for an existing API feature, not a launch, release note or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No supplied nearest concept (code mode, evals, session capture) covers prompt caching or prefix-oriented prompt structuring."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "It is primary vendor documentation whose described behaviours (cached_tokens, cache_write_tokens, breakpoints, TTL) are directly observable through the API."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "It is dominated by vendor- and generation-specific mechanics — GPT-5.6-vs-earlier behaviour matrices, 0.1x read and 1.25x write pricing, per-model retention lists, 1,024-token minimums and 15-rpm key limits — that OpenAI can and does change; the stable-prefix-first principle is the small durable kernel."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Its steps are product-only parameters (prompt_cache_key, prompt_cache_breakpoint, prompt_cache_options.ttl) rather than provider-independent guidance, though the static-content-first ordering advice transfers."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "Everything covers the single idea of exact-prefix prompt caching — structure, breakpoints, measurement, pricing — stateable in one paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/learning-to-orchestrate-agents-in-natural.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/learning-to-orchestrate-agents-in-natural.md",
+    "task_id": "ede06d23029b0b33",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "An ICLR 2026 research paper introducing a trained coordination mechanism, not a product launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No nearest concept covers learned multi-agent orchestration; weak-to-strong generalization is about supervision quality, not RL-discovered coordination topologies."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Claims are anchored to a primary arXiv/ICLR paper with named benchmarks (LiveCodeBench, GPQA) a reader can verify."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The transferable mechanism — coordination topology and per-agent prompting can be learned end-to-end via RL rather than hand-designed, generalizing via randomized agent pools — outlives the specific benchmark numbers cited."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The pattern requires RL-training a dedicated conductor model, so for most builders it reframes what is possible in orchestration rather than giving a step they can take today."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One idea — a learned conductor that discovers coordination strategies over worker LLMs — with recursion and pool-randomization as elaborations of it, statable in a paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

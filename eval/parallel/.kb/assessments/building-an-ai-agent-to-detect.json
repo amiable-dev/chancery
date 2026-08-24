@@ -1,0 +1,49 @@
+{
+  "target": "staging/building-an-ai-agent-to-detect.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/building-an-ai-agent-to-detect.md",
+    "task_id": "2fc274182fbd6af5",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a step-by-step implementation tutorial with code and a limitations analysis, not a launch, release note, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (SLO burn-rate alerting, Agent Skills, context layer, eval notes) covers putting an LLM triage agent between anomaly detection and data-correcting action."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The full implementation is published on GitHub against a public API (disease.sh), so every claim about the system's behavior is reproducible."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The transferable pattern — severity-gated agent triage where only minor anomalies are auto-fixed and criticals escalate to humans — is thin relative to the bulk of the note, which is a stack-specific walkthrough (phidata, GroqCloud, gpt-oss-120b, Streamlit) that will rot quickly."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "A reader gets a complete runnable implementation plus explicit build guardrails: gate auto-correction by severity, never auto-fix critical anomalies, and never deploy the agent where anomalies trigger irreversible actions."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The whole tutorial elaborates one statable idea: insert an LLM agent between statistical detection and downstream action to decide fix, keep, or escalate under severity constraints."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

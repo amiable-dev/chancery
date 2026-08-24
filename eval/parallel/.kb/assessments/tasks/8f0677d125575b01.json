@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "8f0677d125575b01",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/fallow-codebase-intelligence-for-typescript-and.md": "sha256:1c6a96001a4fda544df983c2ef172feff657a8fedb43c84f84d4478e5013fe66",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:687a9a266809a20b0fefbd514977d8047cbacbdd628dc5162f5b09db3cb4af72",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/fallow-codebase-intelligence-for-typescript-and.json"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/mcp-tool-poisoning.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/mcp-tool-poisoning.md",
+    "task_id": "9a4cbed76c5d66c6",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a research note analyzing an attack class, with no product launch or release content anywhere in it."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "remote-first-mcp-governance names tool-poisoning risk only as a one-line motivator; no existing concept covers the attack mechanism, its rug-pull and shadowing variants, or the pin-and-verify defenses detailed here."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Central claims are anchored to checkable artifacts — CVE-2025-54136 and CVE-2025-6514 in NVD, Invariant Labs' reproducible PoC repo, and the MCPTox arXiv benchmark."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The core finding is structural — server-supplied tool metadata enters the agent's context with instruction-level authority and no integrity verification — and the note itself argues this survives individual CVE patches, so the mechanism and its defenses will hold in twelve months."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It prescribes specific controls a deploying team can implement now: SHA-256 pinning of tool manifests with re-verification at session init, server allowlists, treating tool-returned content as untrusted, gateway-level manifest inspection, and behavioral baselining."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The variants (description poisoning, rug pull, shadowing, supply chain) are explicitly framed as one attack class with a single structural cause, statable in one paragraph, with the framework-alignment section as supporting apparatus rather than separate ideas."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

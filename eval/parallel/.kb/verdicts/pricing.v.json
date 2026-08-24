@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/pricing.md",
+  "task_id": "ec7c494e4bcb2924",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is a vendor pricing reference page, not a launch, release note or funding announcement — though the fetch captured no actual content."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "None of the nearest concepts (export controls, shadow MCP, SIEM gaps) touch Anthropic pricing at all."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The capture makes no claims whatsoever — only a page description and a cookie banner — so there is nothing unverifiable, but also nothing to check."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "fail",
+      "rationale": "The captured body is an empty shell (cookie banner), and even the intended subject — current vendor pricing — is the rubric's canonical example of content that does not survive twelve months."
+    },
+    "actionability": {
+      "rating": "fail",
+      "rationale": "There is no information in the note beyond a one-line page description, so nothing here can change how anyone builds or decides."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "No core idea can be stated in any paragraph because the fetch captured no content — there is no idea in the note at all."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

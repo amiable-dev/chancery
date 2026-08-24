@@ -1,0 +1,49 @@
+{
+  "target": "staging/vigolium.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\",\"weak\"],\"actionability\":[\"strong\"],\"atomicity\":[\"fail\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "fail"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/vigolium.md",
+    "task_id": "3ee012d1a3e14f24",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Though pegged to a launch, this is third-party coverage built on an author interview about design trade-offs — budget caps, triage separation, extension trust — that transfer beyond Vigolium itself."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No nearest concept (SIEM gap, code-mode MCP, OSV, MCP governance) covers budgeting or triaging autonomous security agents."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The design claims are attributed on-record to the named author and checkable against the public AGPL repository."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Matching budget-cap types to job shapes, the under/over-budget failure modes, and evidence-checked triage as a separate pass are trade-offs for agentic tooling that outlive the 235-module launch details."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "'Start tight and loosen only when genuine work is cut off', per-target budgets for broad sweeps, and a separate re-check pass that downgrades rather than drops uncertain findings are directly adoptable by anyone running LLM-driven scanners."
+      },
+      "atomicity": {
+        "rating": "fail",
+        "rationale": "It bundles at least two ideas that each stand alone — budget-capping autonomous auditors with its failure modes, and triage as a separate evidence-checking pass with merge-over-delete dedup — plus an extension-registry trust model; the split is the finding."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/andrej-karpathy-karpathy-on-x.md",
+  "task_id": "b90a92703ebd8837",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "A conceptual argument defining and situating a discipline, with no product, release, or funding announced."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "None of the supplied nearest concepts covers context engineering, and a corpus search confirms no existing note defines it — the adjacent context-layer note describes production context infrastructure, not the discipline."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The tweet is itself the primary source coining the framing, and its mechanism claims (too little context starves the model, too much degrades cost and performance) are directly checkable in practice."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "Both ideas — treating the entire context window as the engineering surface, and LLM apps as a thick coordination layer rather than wrappers — are paradigm-level framings that have already outlived the moment of the tweet."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "It orients a builder toward what to attend to (context curation, control flow, dispatch, verification UX) but enumerates the landscape without giving steps for any of it."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "The note bundles two separable, individually standalone concepts — the definition of context engineering, and the thick-software-layer argument against 'ChatGPT wrapper' — which the author himself distinguishes ('context engineering is just one small piece')."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

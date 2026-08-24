@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "87f49b480a04c18e",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/specification-overview-cyclonedx.md": "sha256:bb98fd25e29d90cfa92aed81b84d321787e16cef435d069029bc8b10ee4de29d",
+      "assessment:specification-overview-cyclonedx": "sha256:64d3fe297cbe4a7c0982cfb80f017efbe96a4f2e8b6bed846253a721147eb756",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:2253c799b74b167a9e4b2a92156fecf94030c1c5517ba61a4a3d5c4401d210a4",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/cyclonedx-object-model.md"
+  ]
+}

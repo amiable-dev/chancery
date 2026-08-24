@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/tree-sitter.md",
+  "task_id": "733e07624ff1ea13",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is the introduction page of a project's documentation book, not a launch, release note or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "code-knowledge-graph is the closest neighbour but covers graph databases of code structure, not incremental parsing or parser generation."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "It is the project's own documentation with the runtime source and six underlying research papers linked for verification."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The four design properties (general, per-keystroke fast, error-robust, dependency-free C11) are tree-sitter's enduring identity, but the bulk of the capture is binding and parser adoption lists the page itself warns may be incomplete or out of date."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "It supports at most the decision to pick tree-sitter and find a binding; every how-to (grammars, queries, incremental editing API) lives in later chapters this capture does not include."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "It is one idea — an incremental, error-tolerant parser generator with an embeddable runtime — statable in a single paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

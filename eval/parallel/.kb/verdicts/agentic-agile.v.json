@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/agentic-agile.md",
+  "task_id": "c252d4b603ca0fab",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It introduces a development methodology — spec-first backlogs, acceptance-criteria contracts, staged delivery waves, governance from day one — rather than announcing a product; the template repo is illustrative material, not the point."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The supplied nearest concepts are MCP-platform and skills-format notes; none covers applying Agile process discipline to human-agent development teams."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The claims rest on a public template repo and a described project history (Minthe), and the central mechanism — process gates and locked specs reduce agent drift — is something a reader can apply and check."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "Its core argument — agent failures at scale are process problems fixed by specs, contract acceptance criteria and early governance, not by better models — is a pattern that outlives the named tools (Copilot CLI, GPT-5.5, CLAUDE.md)."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It prescribes adoptable practices with rationale: every capability becomes an issue with acceptance criteria and file-ownership tables, CI is the first story rather than the last, review gates sit between waves, and retrospectives feed the process back."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "The practices are facets of one stateable idea — run human-agent development as contract-driven Agile — not a bundle of unrelated claims."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

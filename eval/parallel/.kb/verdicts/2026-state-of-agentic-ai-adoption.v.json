@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/2026-state-of-agentic-ai-adoption.md",
+  "task_id": "5760588a97da5f9c",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is not literally a product launch, release note, or funding announcement — it is a gated lead-generation landing page teasing a downloadable Snyk report."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The nearest concepts cover SIEM visibility and MCP governance mechanisms, while this page's only content is teaser statistics about AI-BOM-measured adoption, so nothing here is covered by them."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The headline numbers are attributed to a described dataset (anonymized AI-BOM telemetry from 500+ Evo by Snyk assessments) and the full report is linked, so the claims are checkable in principle."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "fail",
+      "rationale": "The page carries nothing but 2026 adoption-snapshot teasers ('1 in 4 organizations', '3x larger footprint') from one vendor's customer sample, with no mechanism or pattern that would still be useful in twelve months."
+    },
+    "actionability": {
+      "rating": "fail",
+      "rationale": "There is nothing to act on: every substantive finding sits behind the download form, and the visible bullets only advertise what the report would explain."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "No core idea is developed at all — the page is four disjoint chapter teasers, none of which can be stated as a claim independent of the marketing framing."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

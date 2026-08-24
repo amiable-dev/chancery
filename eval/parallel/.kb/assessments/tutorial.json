@@ -1,0 +1,49 @@
+{
+  "target": "staging/tutorial.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/tutorial.md",
+    "task_id": "9d9e3845f13ab93c",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a product quickstart tutorial, not a launch, release note or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (research sandboxes, skills format, MCP governance) covers deploying or sharing Omnigent sessions."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The steps are reproducible against the named product and hosting provider."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Railway deploy clicks, `omni login`/`omni host` commands and UI buttons are product-and-provider specifics that churn quickly; the only enduring line is that co-driving a shared session grants code execution on the host machine."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Entirely product-only steps, useful to an Omnigent user today but transferring nothing to anyone building or deciding outside that product."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "It bundles server deployment, phone access, session sharing and cloud sandbox hosts as a feature tour with no single core idea to state in a paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

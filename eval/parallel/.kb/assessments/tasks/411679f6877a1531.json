@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "411679f6877a1531",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/what-is-hyde-how-to-improve.md": "sha256:13201d80f623926438600024a2327e61aaec1710904b65007e6e839a1b9b910c",
+      "assessment:what-is-hyde-how-to-improve": "sha256:f41771c84fce3272d13007431da2a30d8c088399d61ee937e2a2c820886ca398",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

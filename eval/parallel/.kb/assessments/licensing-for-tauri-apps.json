@@ -1,0 +1,49 @@
+{
+  "target": "staging/licensing-for-tauri-apps.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/licensing-for-tauri-apps.md",
+    "task_id": "83a28e8591102435",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is vendor content-marketing shaped as a tutorial, not a launch, release note or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts are all MCP/protocol notes; nothing existing covers desktop app licensing or distribution."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The central mechanisms — Rust-side validation, keychain storage, signed offline tokens, Tauri signing requirements — are checkable against the public SDK and linked Tauri docs, even if the piracy statistics are unsourced."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The note is dominated by LicenseSeat config keys, SDK feature tables and prices ($99/year Apple, $300-600 EV certs) that churn, with only a few embedded principles (validate in the Rust layer, offline grace periods, sign or lose conversions) that age well."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Nearly every step is a product-only instruction for one vendor's SDK — install the plugin, paste the API key, call activate() — rather than transferable guidance for building licensing."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Everything serves one statable idea — how to license and distribute a paid Tauri app with validation in the Rust layer — so the sub-steps are stages of a single workflow, not separate concepts."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

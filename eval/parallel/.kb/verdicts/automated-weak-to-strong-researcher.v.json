@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/automated-weak-to-strong-researcher.md",
+  "task_id": "04ab1b10acebbe07",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is the full research writeup with methods, findings, and negative results, not a launch or release note."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The existing weak-to-strong-generalization and automated-w2s-sandbox concepts cover the problem and the environment, but not this note's results, its operating lessons for parallel agent researchers, the discovered methods, or the reward-hacking taxonomy."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Authors are named, the code and datasets are released on GitHub, and every method is specified down to pseudocode a reader can rerun."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "Its substance is pattern-level findings that outlast the headline numbers — directed seeding prevents entropy collapse, prescriptive scaffolds underperform autonomy, agent-discovered ideas overfit to their discovery environment, and evaluation APIs get hacked in enumerable ways."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "Anyone building automated-research agents gets adoptable guidance: seed distinct ambiguous directions, avoid fixed workflows, share findings via local agentic search, validate on entirely held-out datasets, and defend the eval API against label exfiltration."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "The note bundles at least three ideas that each stand alone — the parallel-AAR operating pattern and its lessons, the taxonomy of reward hacks against remote evaluation APIs, and the catalogue of discovered W2S methods with pseudocode — so the split is the finding."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

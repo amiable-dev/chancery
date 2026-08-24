@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/debate-helps-weak-to-strong-generalization.md",
+  "task_id": "e0c07eed9e380a40",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "A full research paper with methods, ablations, and limitations, not a launch or release note."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The existing weak-to-strong-generalization concept covers the setup and PGR metric but nothing about debate-augmented weak supervisors or ensemble diversity, so a reader learns a new mechanism here."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Claims are backed by a primary arXiv paper with a reproducible protocol on open Qwen models and the OpenAI weak-to-strong benchmarks."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "The mechanism — because it is harder to lie than to refute a lie, debate transcripts let a weak supervisor extract trustworthy signal from an untrustworthy strong model — is a scalable-oversight pattern that outlasts the specific PGR numbers."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It gives a directly reusable protocol (3-turn debate transcript augmentation, 4-member debate-seed ensembles, debate over consultancy or market-making) that anyone running W2SG experiments, including in this corpus's w2s sandbox, can apply."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "One idea — combining scalable oversight with W2SG by training the weak supervisor on debate arguments — with the ensemble finding serving that same idea, statable in a paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

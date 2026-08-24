@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/redirecting.md",
+  "task_id": "864dd77bd036876c",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "The note is not an announcement of anything — the fetch captured only a redirect placeholder."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "There is no central idea in the body to duplicate any existing concept."
+    },
+    "unfalsifiable": {
+      "triggered": true,
+      "rationale": "The capture failed — the body is the single word 'Redirecting...' with no claims, no content and nothing a reader could source or verify about the intended LangGraph multi-agent page."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "fail",
+      "rationale": "A one-word redirect stub contains nothing that could still be true or useful in twelve months."
+    },
+    "actionability": {
+      "rating": "fail",
+      "rationale": "There is no content to act on; the intended multi-agent documentation was never captured."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "No core idea exists to state in a paragraph — the note body carries no idea at all."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

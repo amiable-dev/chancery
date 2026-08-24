@@ -1,0 +1,49 @@
+{
+  "target": "staging/from-prompts-to-production.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\",\"weak\"],\"actionability\":[\"strong\"],\"atomicity\":[\"fail\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "fail"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/from-prompts-to-production.md",
+    "task_id": "2a1f3a381406e09a",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a practitioner playbook article on development practices, not a launch, release note, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Only acceptability-envelope evals grazes one facet (behavioral testing); the capability-matrix decomposition, artifact versioning, and golden-trajectory ideas are not covered by any listed neighbour."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Nearly every claim links to a primary source — arXiv papers, ISO/IEC 5338, vendor engineering posts — so a reader can check them, even where the quoted figures are secondhand."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The load-bearing practices — decomposing workflows into deterministic vs LLM-reasoned steps, versioning prompts and tool manifests as IaC, golden-trajectory regression baselines — are mechanisms that will hold in twelve months, while the benchmark percentages and vendor name-drops are decoration."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "The capability matrix gives an explicit procedure for deciding which workflow steps get agentic reasoning, and the testing table maps concrete test types to tools, both of which directly change how a team builds."
+      },
+      "atomicity": {
+        "rating": "fail",
+        "rationale": "The note bundles at least four separable ideas — the agent pattern catalog, the deterministic-vs-agentic capability matrix, versioned agentic artifacts with golden-trajectory rollback, and a testing taxonomy for nondeterministic systems — each of which could stand alone as its own concept."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

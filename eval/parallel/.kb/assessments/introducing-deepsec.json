@@ -1,0 +1,47 @@
+{
+  "target": "staging/introducing-deepsec.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "discard",
+  "reason": "disqualified: pure-announcement",
+  "disqualifiers": [
+    "pure-announcement"
+  ],
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/introducing-deepsec.md",
+    "task_id": "967593fb9f2c3f79",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": true,
+        "rationale": "This is Vercel's own launch post ('Today we're open sourcing deepsec') built of testimonials, screenshots and npx setup steps, and its five one-line workflow bullets describe the product rather than teach a technique that stands apart from it."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No nearest concept covers agentic security scanning of codebases; the overlap with existing MCP and sandbox notes is topical only."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The tool is open source and runnable, so its behaviour is checkable even though the false-positive rate and customer claims are vendor-reported."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Its substance is launch-moment specifics — Opus 4.7 at max effort, GPT 5.5 at xhigh, a 10-20% false-positive rate, current sandbox scaling — that will be stale well inside twelve months."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The only actions offered are product-only steps (npx deepsec init, write custom matchers for this tool), with the scan-investigate-revalidate pattern never developed enough to reproduce independently."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "It is one idea — an agent-driven security scanning harness run on your own infrastructure — statable in a single paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

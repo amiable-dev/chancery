@@ -1,0 +1,49 @@
+{
+  "target": "staging/the-three-layers-of-an-agentic.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/the-three-layers-of-an-agentic.md",
+    "task_id": "81da59a764004584",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is consultancy thought-leadership proposing a reference architecture, not a product launch, release note or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Paved-road-mcp-platform and context-layer overlap in topic, but neither states this specific three-layer decomposition (orchestration / analytics / governed data), so a reader would still learn the framework here."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The convergence claim is asserted without evidence, but the components it describes (orchestration engines, agent registries, execution tracing) are concrete practices a reader can check against real platforms."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Like the llms.txt exemplar, it is a proposed framing with no measured adoption behind it — one consultancy's snapshot claim that the market is 'converging', wrapped around concerns generic enough to stay true but not to stay useful."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It is precisely a landscape description — a checklist of what a mature platform 'should' have — with no trade-offs, decision rules or concrete steps a builder could act on."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The core idea — agentic platforms need three layers: orchestration, observability, governed data access — is one framework statable in a single paragraph, with the sub-points all hanging off it."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

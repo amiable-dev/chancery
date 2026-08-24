@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "d8a2432e8a151d0f",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/learning-to-orchestrate-agents-in-natural.md": "sha256:4c5cb75200164b5f30ae57815a001e76b902c56aa6c9f89ae779c24a00927753",
+      "assessment:learning-to-orchestrate-agents-in-natural": "sha256:d54679b2b9425553f1b0b4357a4eea0958638b7aa24c0b0114a9e35baccb537f",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:abf99dade490c94a156eb63977618c6dc7be05432d0695d6080a77c409a0a35a",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/rl-learned-orchestration.md"
+  ]
+}

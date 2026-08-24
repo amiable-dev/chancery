@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/agentic-engineering.md",
+  "task_id": "bf8d8e5c027c1c08",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is an educational newsletter surveying agentic engineering concepts, not a launch, release note or funding announcement (its embedded sponsor ads are incidental)."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "Existing concepts like agent-skills-format cover single slices of this survey, but no nearest concept covers its span of loop mechanics, state, orchestration, guardrails and observability."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Key claims are anchored to primary sources — the ReAct paper, SkillsBench and context-rot studies on arXiv, and named public tools a reader can inspect."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "Its substance is tool-agnostic mechanisms — the think/act/observe loop, context rot from attention dilution, state placement, subagent compression, layered guardrails, trace/replay — which will hold in twelve months even as its illustrative tool names and benchmark figures go stale."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It prescribes concrete build decisions — sub-100-line config files, deny-lists plus pre-tool hooks, a four-layer pre-commit stack, a minimum JSONL logging set, and an adoption order — that directly change how someone sets up agents."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "It deliberately bundles thirty separable concepts across six layers — context rot, prompt-injection defense, structural linting, agent loops, tracing and more — each of which could stand alone as its own note."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

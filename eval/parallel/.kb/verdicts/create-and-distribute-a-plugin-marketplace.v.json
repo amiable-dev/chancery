@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/create-and-distribute-a-plugin-marketplace.md",
+  "task_id": "7e5d71cf4b0d54eb",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "A how-to reference for building and hosting plugin marketplaces, not a launch, release note or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "Agent Skills format covers a component plugins can carry, not the marketplace catalog and distribution mechanism documented here; no nearest concept overlaps substantively."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Schema fields and behaviors are verifiable against the shipped validator and CLI."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The marketplace.json schema, six source types and their behaviors are pinned to specific releases (v2.1.193/.224/.229/.239 caveats) and will churn; the genuinely durable bits (SHA-pinned sources, append-only rename history, explicit user acceptance of command sources) are buried product mechanics."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Every step is a Claude Code config field or CLI invocation — highly actionable inside the product, transferring little to anyone building or deciding elsewhere."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "It bundles schema reference, source types, hosting and auth, container seeding, managed restrictions and troubleshooting — many separable product details, none of which stands alone as a concept."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "target": "staging/announcing-the-agent2agent-protocol-a2a.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "discard",
+  "reason": "disqualified: pure-announcement",
+  "disqualifiers": [
+    "pure-announcement"
+  ],
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/announcing-the-agent2agent-protocol-a2a.md",
+    "task_id": "e73c3b896b143d2d",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": true,
+        "rationale": "Google's own launch post for A2A: a launch-partner roll call, vision framing, and roughly two-thirds of the text is partner endorsement quotes; the protocol mechanics are a promotional summary of the linked draft spec, which is the actual primary source."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No nearest concept covers an agent-to-agent interoperability protocol; the corpus neighbours are skills, governance and observability concepts."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The draft specification and code samples are linked and independently checkable."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Anchored to launch-day state — a draft spec, 'production-ready later this year', and a 50-partner roster — which is exactly the adoption-list content that ages badly even though the protocol itself lived on."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Five design principles and a candidate-sourcing vignette describe the landscape; a builder gets nothing to act on beyond links to the spec."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "A single idea — an open client/remote agent protocol with capability discovery via Agent Cards, a task lifecycle producing artifacts, and modality-negotiated message parts — statable in one paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

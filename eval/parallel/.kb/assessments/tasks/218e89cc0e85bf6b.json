@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "218e89cc0e85bf6b",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/the-average-cost-of-a-data.md": "sha256:e668ca363ba9eda33fdf4ef9e640dcfd4c09fbbfdcc67d7e0f69d2804769267b",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:20c7380bf6b6c6a1ab8fdd5411a0441107a1197da1220e7ebf153d70cb374dbb",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/the-average-cost-of-a-data.json"
+  ]
+}

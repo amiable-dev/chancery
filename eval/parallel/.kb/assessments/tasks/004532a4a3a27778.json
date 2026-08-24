@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "004532a4a3a27778",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/a-field-guide-to-claude-fable.md": "sha256:ebaf2377fa5e44c95f84861af7f907d4aeccdcb07ec627db04e7355d629ba52a",
+      "assessment:a-field-guide-to-claude-fable": "sha256:d567f4d1b0f3ae4aee4795c8c532f21e211ea90f8bc399c565251de067e1986f",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

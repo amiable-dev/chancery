@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "b90a92703ebd8837",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/andrej-karpathy-karpathy-on-x.md": "sha256:6ff725e5df72d431a2363afd7a3b96e32823a5eaa2f55309fe04be93fa6b2e3d",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:7cc603d9627a368b6ef85d43fab4e1cfc9bcd0cf383df23b5491c52ced132af0",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/andrej-karpathy-karpathy-on-x.json"
+  ]
+}

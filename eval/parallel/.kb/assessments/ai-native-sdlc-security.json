@@ -1,0 +1,49 @@
+{
+  "target": "staging/ai-native-sdlc-security.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/ai-native-sdlc-security.md",
+    "task_id": "d9a34bfc9a0d2ca0",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is third-party coverage that turns Anthropic's published case study into a vendor-neutral control plan, not a launch, release note, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts (SIEM visibility gap, paved-road MCP platform, proxy-boundary capture) touch adjacent agent-security surfaces but none covers risk-tiered review, identity separation, or evidence receipts for agent-written code."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Every load-bearing claim is tied to a checkable primary source — Anthropic's SDLC post, NIST SSDF, OWASP's agent cheat sheet, SLSA levels — and the case-study numbers are explicitly caveated."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The core mechanisms — separating create/check/authorize/deploy identities, spending human attention by risk tier, deterministic checks for provable facts versus narrow AI reviewers for contextual ones, and reconstructable evidence receipts — are trade-off-level designs that outlive the dated Claude Code version references."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It ships a reusable YAML policy artifact, a four-week rollout sequence with acceptance criteria, and concrete metrics (verified finding precision, incident-fixture recall, unauthorized side effects), all directly adoptable by a platform team."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The whole playbook elaborates one statable idea — when agents outproduce human review, security comes from separated identities, risk-tiered gates, and evidence receipts rather than prompts — with the scenarios and policy as supporting detail."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

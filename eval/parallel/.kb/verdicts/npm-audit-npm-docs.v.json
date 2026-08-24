@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/npm-audit-npm-docs.md",
+  "task_id": "0a4946493e4b2ef5",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "This is command reference documentation for npm audit, not a launch or release announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The nearest concept osv-format covers a vulnerability data format, not the audit command's tree submission, metavulnerability calculation or remediation mechanics captured here."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Everything documented is directly verifiable by running the npm CLI against a registry."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The note is pinned to CLI v10 behaviour — endpoint paths, flag defaults, version-specific history ('as of version 7', 'versions 5 and 6 scrubbed') and a long config matrix — with the metavulnerability concept the only piece likely to outlive it."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Its guidance is product-only command invocations (npm audit fix, --audit-level gating in CI) rather than transferable build or design decisions."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "It bundles vulnerability auditing, registry signature/provenance verification and a general-purpose config-flag reference — separable topics that share only the command name."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "d097b1ff23a2e177",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/andrew-ng-andrewyng-on-x.md": "sha256:8212b08ca2f9195d4416a60fc57b8395848caa7fd447b94f188f379b69fc91cd",
+      "assessment:andrew-ng-andrewyng-on-x": "sha256:31c250dcca030b1e80b6c5306c38623d1bc9700752ab642ac7b35fcfb96fe5a3",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:0c5ff13b9eeaa44acc47b3bcc07bf8188fe97f1ee081f85db1b9915ffa6abfde",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/three-loops-of-agentic-development.md"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/agentic-resource-discovery-specification-agenticresourcediscovery-org.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/agentic-resource-discovery-specification-agenticresourcediscovery-org.md",
+    "task_id": "6096ab543c9893bd",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a project overview page defining what the protocol is and is not, rather than a launch, release note, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No listed concept covers pre-invocation resource discovery; the skills and MCP concepts describe execution-layer formats, which this page explicitly distinguishes itself from."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The claims about ARD's scope and governance are checkable against the linked public spec repository and site."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "ARD is an early working-group proposal whose weight here rests on a vendor logo wall rather than settled adoption — like the llms.txt exemplar, whether this specific protocol matters in twelve months is genuinely uncertain even though the discovery-layer idea itself is sound."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The page orients — discovery sits before invocation, there is no central catalog — but contains no schema, endpoint, or protocol mechanics, so a builder cannot act on this note without going to the spec it links."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "It states exactly one idea, a decentralized discovery layer for agentic resources separate from invocation, in a form that fits one paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

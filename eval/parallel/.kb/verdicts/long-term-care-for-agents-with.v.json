@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/long-term-care-for-agents-with.md",
+  "task_id": "011a5c9fd0fac4ff",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": true,
+      "rationale": "This is the vendor's own launch post for tapes.dev — 'We're sharing Tapes on GitHub today', install commands, a design-partner call-to-action — and its non-product content is either aspirational roadmap ('we're building toward a future where...') or the proxy-capture mechanism the corpus already holds."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "proxy-boundary-session-capture already covers Tapes' capture mechanism (proxy, Merkle DAG, content addressing) but frames it as crash recovery, so the semantic-recall-as-agent-memory purpose here is nominally new to a reader of that concept."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The mechanism is checkable — the open-source repo, docs, and runnable proxy are linked — even though the benefit claims (warm starts, self-healing loops) are asserted rather than evidenced."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "Most of the content is product-specific setup (install script, tapes serve flags, OpenClaw config, Chroma partnership) and unshipped roadmap bullets, which will not describe reality in twelve months even if the underlying preserve-and-recall idea survives."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "The only concrete actions are product-only steps — curl-install Tapes, run the proxy, edit openclaw.json — rather than guidance that transfers to building session memory with any stack."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "The note tells one product story whose core idea — preserve agent sessions and give future sessions semantic recall over them — is stateable in a single paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

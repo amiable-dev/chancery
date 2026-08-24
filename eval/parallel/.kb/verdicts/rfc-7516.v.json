@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/rfc-7516.md",
+  "task_id": "8d616b513b59c577",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is the full text of an IETF Standards Track specification, not a launch, release note, or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No listed neighbour touches JOSE or encrypted-token formats; the closest, OSV format, is a different standard in a different domain."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "It is a normative primary source whose processing rules come with reproducible test vectors an implementer can verify."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "strong",
+      "rationale": "RFC 7516 has been the stable, authoritative JWE definition since 2015 and IETF Standards Track documents change only by successor RFC, so it will still be true and useful in twelve months."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It prescribes exact encryption and decryption step sequences, two serializations with selection criteria, five key management modes, and validation test vectors an implementer builds directly against."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "Everything in the document serves one idea — the JWE representation of encrypted, integrity-protected content — which can be stated in a single paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

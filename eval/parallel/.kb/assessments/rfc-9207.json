@@ -1,0 +1,49 @@
+{
+  "target": "staging/rfc-9207.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/rfc-9207.md",
+    "task_id": "f5817bcd6b95dc5e",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is the full text of an IETF Standards Track specification, not a launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "MCP authorization hardening cites RFC 9207 iss validation as a requirement but does not teach the mechanism — a reader of that concept still learns the mix-up attack mechanics, the exact validation procedure, and why response integrity protection is unnecessary from this source."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is a normative primary source whose central claim — iss checking defeats mix-up attacks — is backed by a cited formal security analysis."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "A Standards Track countermeasure stable since 2022, formally proven effective, and now being made mandatory downstream (e.g. by MCP), so it will hold well beyond twelve months."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It gives exact MUST-level behaviour for both sides — servers include iss and advertise support in metadata; clients decode, string-compare against the expected issuer, reject mismatches, and track per-server support in mixed deployments."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The whole document is one idea — a single response parameter countering a single attack class — statable in one paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

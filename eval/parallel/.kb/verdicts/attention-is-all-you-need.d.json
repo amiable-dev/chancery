@@ -1,0 +1,29 @@
+{
+  "task_id": "289e1ee5ca0db03f",
+  "supplier": {"class": "model-single", "id": "claude-fable-5"},
+  "concepts": [
+    {
+      "slug": "transformer-architecture",
+      "title": "Transformer architecture",
+      "aliases": ["Attention Is All You Need", "Transformer"],
+      "tags": ["concept", "machine-learning", "neural-networks", "attention"],
+      "definition": "The **Transformer** is a sequence transduction architecture that dispenses with recurrence and convolution entirely and relies solely on attention mechanisms: self-attention layers relate every position in a sequence to every other position directly, in an encoder-decoder configuration, so each token's representation is computed from the whole sequence in a constant number of steps rather than by stepping through it sequentially.",
+      "explanation": "Before this architecture, the dominant sequence models were recurrent or convolutional encoder-decoders, with attention added on top as a bridge between the two halves. Recurrence imposes a sequential dependency — position t cannot be processed until t-1 — which blocks parallelization within a training example and forces long-range dependencies through many intermediate steps. The Transformer's move is to make attention the only sequence-mixing mechanism: every layer attends over all positions at once, so the path between any two tokens is constant-length and the whole sequence computes in parallel on accelerators. The source is the peer-reviewed 2017 paper by Vaswani et al.; its evidence is machine translation — 28.4 BLEU on WMT 2014 English-to-German, beating the best prior results including ensembles by over 2 BLEU, and 41.8 BLEU single-model state of the art on English-to-French after 3.5 days on eight GPUs, a fraction of prior training costs — plus successful transfer to English constituency parsing. The benchmark numbers are period pieces, but the trade the paper identified — buy training parallelism and shorter dependency paths by paying attention's quadratic cost in sequence length — is the architectural decision underneath essentially every modern large language model.",
+      "key_properties": [
+        "Attention is the sole sequence-mixing mechanism; no recurrence, no convolution",
+        "Constant path length between any two positions, versus one step per position under recurrence",
+        "Training parallelizes across sequence positions, cutting wall-clock cost on parallel hardware",
+        "Original evidence: 28.4 BLEU WMT 2014 En-De (over 2 BLEU past prior ensembles) and 41.8 BLEU En-Fr single-model, trained in 3.5 days on eight GPUs",
+        "Generalized beyond translation in the paper itself (constituency parsing) and became the substrate of modern LLMs"
+      ],
+      "relationships": [
+        {
+          "target": "retrieval-augmented-generation",
+          "clause": "supplies the parametric half of RAG — the pre-trained generator (and the neural retriever's encoders) are Transformer models whose weight-bound knowledge RAG supplements with retrieved evidence"
+        }
+      ],
+      "applications": "Reading any modern LLM stack: today's chat, coding and embedding models are descendants of this architecture, and its parallel-training economics are what made web-scale pretraining affordable. Choosing it remains the default when training throughput and long-range dependency modeling matter more than per-token sequential cost.",
+      "see_also": ["retrieval-augmented-generation"]
+    }
+  ]
+}

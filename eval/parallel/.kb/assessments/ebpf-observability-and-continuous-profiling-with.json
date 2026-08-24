@@ -1,0 +1,49 @@
+{
+  "target": "staging/ebpf-observability-and-continuous-profiling-with.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/ebpf-observability-and-continuous-profiling-with.md",
+    "task_id": "e8cee7c2a0e93450",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "An educational deep dive on continuous profiling as a technique; it covers Parca but is not a launch, release note or funding notice."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts cover SIEM gaps, SLO alerting and retrieval topics; none covers continuous profiling or the profile-versus-trace distinction."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Its mechanisms (kernel stack sampling, DaemonSet architecture, OTel Profiling SIG work) are checkable against the public project docs and posts it cites."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The profile-versus-trace distinction, statistical-sampling economics and adopt/wait/skip criteria age well even though the Parca-vs-Pyroscope matrix and AI-tooling asides will date."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It gives tool-agnostic decision rules — adopt when compute cost is a major line item, start with the most expensive services, make profiles per-team self-service — that change how a reader would roll profiling out."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "One promotable idea (eBPF profiling fills the function-level gap metrics and traces leave) is bundled with a vendor comparison table and a speculative AI-tools section that need stripping."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

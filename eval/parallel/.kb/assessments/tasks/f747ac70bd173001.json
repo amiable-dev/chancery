@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "f747ac70bd173001",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/its-time-to-version-observability.md": "sha256:61d458ba5ed18a627c8f20e621f12dd24a1c2c80b5556bba8d1c6a410fcb60df",
+      "assessment:its-time-to-version-observability": "sha256:4a483a874ce4e471fdecea40383285b6627951c976b45c76f1bcec1fa49b811d",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:fb59cc22b35994e858a7d06f0a2f71ea2a0e0059cd8e277f85db3f9da3c64801",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/observability-generations.md"
+  ]
+}

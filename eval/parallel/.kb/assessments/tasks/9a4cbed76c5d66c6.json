@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "9a4cbed76c5d66c6",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/mcp-tool-poisoning.md": "sha256:1d2f28b0774401bc1ead8c8bbca8e6efc4b9d84e33c0dcd34580aa6525dab146",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:9bd0bb3bb172ff84da431c138eb8195f6b340f4539575db6a5a9d8f97cbad2f1",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/mcp-tool-poisoning.json"
+  ]
+}

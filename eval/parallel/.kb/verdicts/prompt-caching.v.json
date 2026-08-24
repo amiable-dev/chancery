@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/prompt-caching.md",
+  "task_id": "9b0f66c1264f509c",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is vendor documentation of an ongoing technique (prompt-prefix caching), not a launch, release or funding announcement."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "None of the nearest concepts (proxy capture, SIEM gaps, MCP statelessness) cover prompt caching or inference cost reduction."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The single captured claim is backed by a primary vendor docs URL any reader can check."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The underlying prefix-caching mechanism ages well, but everything actually captured — the `cache_control` parameter name and the 5-minute/1-hour TTL values — is vendor feature-matrix detail that can change under the reader."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "The one-sentence capture names a product knob to turn but carries none of the trade-offs (minimum cacheable lengths, pricing multipliers, invalidation rules) a builder would need to actually decide anything."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "What little was captured is exactly one idea — cache prompt prefixes at explicit breakpoints — statable in a single sentence."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/fallow.md",
+  "task_id": "4bac7e0d49b2ac6b",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is a product manual rather than a launch or funding notice, and it does carry a transferable idea — that deleting code means proving a negative, so read the repo as one dependency graph."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "Code knowledge graph is topically adjacent but describes a graph model for agents, whereas fallow's deterministic static-analysis-and-typed-contract approach is not covered such that a reader learns nothing new here."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "It is an open-source tool with public benchmarks and reproduction scripts, so its determinism and performance claims are directly checkable."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The durable kernel (prove-a-negative dead-code analysis over a whole-repo graph) is drowned by tool-specific matter that ages fast — version numbers (3.5.0, 2.100.0, v3.17.0), benchmark timings, exit-code tables, command and flag lists, and pricing for the paid runtime layer."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Almost every actionable step is a product-only invocation (npx fallow ...), so a reader can act only by adopting this specific binary, not by applying a portable practice."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "The note bundles several separable facets — the free static analyzer, the changed-file audit gate, the deterministic JSON/exit-code agent contract, and the optional paid runtime execution-evidence layer — rather than one paragraph-statable idea."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

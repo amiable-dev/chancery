@@ -1,0 +1,49 @@
+{
+  "target": "staging/the-state-of-the-opentelemetry-genai.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/the-state-of-the-opentelemetry-genai.md",
+    "task_id": "cc7b0841854444e3",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is independent practitioner analysis of a specification's migration state, not a vendor launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the supplied nearest concepts (SIEM visibility gap, protocol lifecycle policy, context layer) covers the OTel GenAI semantic conventions or their multi-generation attribute problem."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Every claim is anchored to dated releases, linked repositories and the author's own exported traces, all independently checkable."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The bulk is an explicitly dated snapshot — a rename timeline across six releases and a per-framework emission matrix as of 2026-07-17 — that the next convention release will obsolete, with the own-your-internal-representation advice the durable remainder."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It gives directly usable practices: coalesce both attribute generations with precedence and never sum them, pin framework/SDK/exporter versions, publish a dated tested-with table, and keep custom attributes out of the reserved gen_ai.* namespace."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Timeline, framework survey and guidance all serve one stateable thesis: 'OpenTelemetry-compatible' is not yet a sufficient schema contract for GenAI telemetry, so normalize, pin and date what you run."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

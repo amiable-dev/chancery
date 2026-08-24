@@ -1,0 +1,49 @@
+{
+  "target": "staging/rust.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/rust.md",
+    "task_id": "c8346ee328f4a2d7",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a docs.rs API reference capture, not a launch, release note or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (skills format, OSV, code graphs, context layer, MCP detection) cover linting AI-generated code slop."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The crate is a public, installable primary source whose detection behaviour anyone can run and check."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The bulk is a version-pinned rustdoc module/struct index that churns with releases; only the four-part slop taxonomy (placeholder, deferral, hedging, stub) would still matter in a year."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The only action available is adopting this specific crate — product-only steps with no transferable guidance on how or when to lint for AI slop."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "It is one idea — a linter that pattern-matches AI-generated slop categories — statable in a single paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

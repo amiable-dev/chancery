@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "8e845ad66cdbef6d",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/unlocking-the-power-of-sarif.md": "sha256:f8eda52c9c1c903485f70def0d43a4f4c2b0fa9f85df0f3b287957404df269d6",
+      "assessment:unlocking-the-power-of-sarif": "sha256:b20ed9c2acbf581fa7c7ca2b138352da1f159651a9e1f60015f272fd0b63649d",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

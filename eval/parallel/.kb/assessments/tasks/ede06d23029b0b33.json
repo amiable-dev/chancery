@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "ede06d23029b0b33",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/learning-to-orchestrate-agents-in-natural.md": "sha256:4c5cb75200164b5f30ae57815a001e76b902c56aa6c9f89ae779c24a00927753",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:b54aebefbdfa7ed729b5267187d09b53cb6329a54d9ca1a38b0dc5277b327c58",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/learning-to-orchestrate-agents-in-natural.json"
+  ]
+}

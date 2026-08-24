@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/sigstore.md",
+  "task_id": "83d74ea00b2bc00d",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "The capture contains only a 'Loading...' placeholder and a logo reference, so nothing is being announced."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "There is no content to duplicate; osv-format is adjacent supply-chain territory but artifact signing is covered nowhere in the corpus."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The note makes no claims at all; the linked sigstore.dev is a real primary source whose JavaScript-rendered content simply failed to fetch."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "fail",
+      "rationale": "The fetch captured a JavaScript loading shell with zero article content, so there is nothing in the note to stay true or useful."
+    },
+    "actionability": {
+      "rating": "fail",
+      "rationale": "A single 'Loading...' line gives a reader nothing to build with or decide on."
+    },
+    "atomicity": {
+      "rating": "fail",
+      "rationale": "No core idea exists in the note to state in any form — the body is an unrendered page placeholder."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

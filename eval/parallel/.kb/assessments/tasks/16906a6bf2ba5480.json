@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "16906a6bf2ba5480",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/is-llms-txt-worth-it-for.md": "sha256:b2c9a046228ef80b0c069b755d67d6b39aa4396190123cd7e587d36a9cff22b4",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:2a5dc1a8a8a39ac24e8d2c3703e7d05f7d83e2c77135443af6d94bbc17bf10d0",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/is-llms-txt-worth-it-for.json"
+  ]
+}

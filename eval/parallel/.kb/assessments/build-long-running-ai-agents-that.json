@@ -1,0 +1,49 @@
+{
+  "target": "staging/build-long-running-ai-agents-that.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/build-long-running-ai-agents-that.md",
+    "task_id": "e748cad6e5cb7f6a",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "A tutorial teaching an architecture for long-running agents, not a launch or release note, even though it demonstrates on Google's ADK stack throughout."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No nearest concept covers durable long-running agent execution; context-layer and the MCP concepts address different layers."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Complete runnable source is linked and each claimed pattern is demonstrated in code a reader can execute."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The core patterns — explicit persisted state machines instead of chat-history state, event-driven wake-up with atomic state deltas, and the three named failure modes of stateless agents over idle time — transfer beyond ADK and will still hold in twelve months."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It gives a reproducible recipe — state schema injected into the system prompt, tools as checkpointing transitions, webhook-driven resumption, pre-seeded evals that simulate idle time — that changes how someone would build workflow agents in any framework."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The checkpoint-and-resume architecture is one paragraph-statable idea, but the note bundles it with two separable practices the source itself headlines — sub-agent delegation and golden-eval simulation of multi-day flows — that are distinct findings."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/agentmemory.md",
+  "task_id": "f1492c5d59550b60",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is a full product manual rather than launch or funding coverage, and it does describe transferable machinery — hook-based session capture, tiered consolidation with decay, RRF-fused hybrid retrieval — beyond the product pitch."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "No nearest concept covers persistent cross-session agent memory; 'Context layer' and 'Retrieval as composition' are enterprise context-infrastructure ideas, and the hybrid-retrieval overlap with 'Graph vs vector retrieval for code' is topical, not substantive."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Headline numbers are tied to a public dataset (LongMemEval-S) with an in-repo reproduction harness, and the note itself flags which competitor figures are unverified self-reports."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The note is dominated by content the rubric names as perishable — benchmark pass rates, competitor star counts, model pricing at 2026-05-23, an engine pinned to v0.11.2, port tables, and workarounds for open upstream issues — with the durable memory-pipeline ideas a small fraction of it."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "Nearly every instruction is wiring this product into one of thirty hosts; the transferable design guidance (capture via lifecycle hooks, compress, inject under a token budget) is present only as feature description, not as something a reader could build from."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "It interleaves at least two separable stories — the agent-memory system itself and the iii runtime platform pitch ('what iii replaces', its console and worker registry) — plus freestanding local-model cost guidance, so no single paragraph carries the note."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

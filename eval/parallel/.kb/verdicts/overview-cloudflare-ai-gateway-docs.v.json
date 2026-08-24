@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/overview-cloudflare-ai-gateway-docs.md",
+  "task_id": "ede115434d940401",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "An evergreen product docs landing page, not a launch, release note or funding post, though it reads as marketing."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "proxy-boundary-session-capture covers crash-resilient recording for session recovery, not a managed gateway's analytics/caching/rate-limiting/fallback control plane; the other nearest concepts are MCP-governance notes."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Each capability claim links to its own feature documentation where it can be verified."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "It is a vendor feature list ('analytics, caching, rate limiting, model fallback', 'one line of code', 'available on all plans') — exactly the matrix-and-pitch content that dates, with no mechanism behind it."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "It sketches what an AI gateway buys you but gives no steps, trade-offs or decision criteria — a landscape description that ends in navigation cards."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "One idea — a gateway between app and model providers centralizes observability and control — stateable in a paragraph; the Workers AI and Discord cards are page chrome, not extra ideas."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

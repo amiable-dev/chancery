@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/inside-the-llm-call.md",
+  "task_id": "3c4390477fbc22af",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "This is a walkthrough of the OTel GenAI semantic conventions using already-shipped tools, not a launch, release note or funding post."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "The nearest concepts cover MCP mechanics, proxy-boundary capture, SIEM gaps and evals; none records the gen_ai.* span, metric and content-capture conventions."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Claims are checkable against the linked semconv spec, the vendor telemetry docs, and a reproducible local Aspire Dashboard setup."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The standardized-GenAI-telemetry mechanism ages well, but the note leans on a current tool-support matrix, Copilot setting keys and conventions it itself says are under active development."
+    },
+    "actionability": {
+      "rating": "strong",
+      "rationale": "It tells a builder exactly which standard attributes and histograms to emit (gen_ai.request.model, token/duration histograms) and that content capture is off by default — decisions that apply to any GenAI app, not just the demo tools."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "One idea — LLM-call observability via the GenAI semantic conventions — carried through a single walkthrough whose demo steps support rather than dilute it."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

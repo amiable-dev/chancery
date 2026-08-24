@@ -1,0 +1,49 @@
+{
+  "target": "staging/ringkasan-agent-registry.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/ringkasan-agent-registry.md",
+    "task_id": "bc0dc83992a5cf4a",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is top-of-funnel product documentation for Google's Agent Registry rather than a launch or funding note, though it never rises above the product's own value bullets."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "remote-first-mcp-governance and paved-road-mcp-platform cover remote deployment control and template-inherited governance, not the central catalog/inventory pattern with an Agent/McpServer/Skill/Publisher data model this page describes."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The claims describe a shipping Google Cloud product whose data model and setup are checkable against the linked official docs."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The content is a vendor feature summary of one Google Cloud product — three marketing pillars plus resource names tied to the current API surface — and the durable registry-as-governance idea appears only at bullet depth."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It describes what the product does and links to setup elsewhere; there is no mechanism, trade-off, or decision guidance a reader could act on beyond knowing the catalog exists."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One idea — a centralized registry of agents, MCP servers, and skills as the inventory-and-governance pillar of an agent platform — states cleanly in a paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

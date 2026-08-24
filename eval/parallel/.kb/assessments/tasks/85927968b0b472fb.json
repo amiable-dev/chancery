@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "85927968b0b472fb",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/442a6bf555914893e9891c11519de94f.md": "sha256:d24861d579d27de89dd49ccd9a7399bb993de7cc6d107778d7d6d27892ed5e87",
+      "assessment:442a6bf555914893e9891c11519de94f": "sha256:ad214f7de254c7118a13592d9fdd96ff30e99cdeffc35cbae22ac962cb36c025",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:ad35c9c714ba10ea77d92f874938b28b332050245daed5c6e553744e0d1a9d0b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/llm-wiki-architecture.md"
+  ]
+}

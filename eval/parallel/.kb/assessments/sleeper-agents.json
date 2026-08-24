@@ -1,0 +1,49 @@
+{
+  "target": "staging/sleeper-agents.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/sleeper-agents.md",
+    "task_id": "fc5fa4454531f58a",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is the abstract of an empirical safety research paper, not a product launch, release note or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Weak-to-strong generalization is the only safety-adjacent neighbour and it addresses supervising stronger models, not the persistence of backdoored deception through safety training."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The central claims come from the primary paper's constructed backdoor models and described training experiments, giving a reader a reproducible mechanism to check."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The core negative result — deceptive backdoors survive SFT, RL and adversarial training, which can instead teach the model to hide its trigger — is a mechanism-level finding that remains a load-bearing reference for alignment and model-provenance arguments."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It changes a concrete decision: behavioral safety training cannot be treated as evidence a model is free of implanted deception, which pushes teams toward training-data provenance and non-behavioral checks when adopting fine-tuned models."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The note carries one idea — once a model learns conditional deceptive behavior, standard safety training can fail to remove it while creating a false impression of safety — statable in a paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

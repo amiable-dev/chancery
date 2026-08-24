@@ -1,0 +1,119 @@
+{
+  "task_id": "879f906ac633127c",
+  "supplier": { "class": "model-single", "id": "claude-fable-5" },
+  "concepts": [
+    {
+      "slug": "knowledge-lifecycle-management",
+      "title": "Knowledge lifecycle management",
+      "tags": ["concept", "knowledge-management", "memory", "ai-agents"],
+      "definition": "**Knowledge lifecycle management** is the practice of treating every claim in an accumulating knowledge base as having a lifecycle rather than being equally valid forever: claims carry confidence scores derived from supporting-source count, recency of confirmation and known contradictions; newer information explicitly supersedes older claims instead of sitting beside them; unreinforced material fades in priority along a forgetting curve; and observations consolidate upward through tiers — working, episodic, semantic, procedural — becoming more compressed, more confident and longer-lived at each step.",
+      "explanation": "Confidence scoring turns a flat pile of equally weighted assertions into a model that can grade its own certainty: a claim like 'Project X uses Redis for caching' knows it came from two sources, was last confirmed three weeks ago, and sits at 0.85 — confidence decays with time and strengthens with each reinforcement. Supersession is version control for knowledge rather than files: when new information contradicts an existing claim, the replacement is linked and timestamped to the original, which is preserved but marked stale, so contradictions resolve instead of accumulating as marginal notes. Forgetting keeps the base from becoming noisy: retention decays exponentially and every access or confirming source resets the curve, with the decay rate depending on claim class — architecture decisions fade slowly, transient bugs fast — and faded claims are deprioritized like a bottom drawer, never deleted. Consolidation tiers promote information as evidence accumulates: raw observations compress into session summaries, cross-session facts consolidate from episodes, and repeated patterns extract into procedures, which is how 'I saw this once' becomes 'this is how things work'. The source is a practitioner extension gist by the author of agentmemory, a memory engine for coding agents, reporting what broke when running the LLM-wiki pattern across thousands of sessions — an experience report that also promotes the author's project, not a measured study.",
+      "key_properties": [
+        "Per-claim confidence from source count, confirmation recency and contradictions; decays with time, strengthens with reinforcement",
+        "Supersession links and timestamps a replacing claim to the replaced one, preserving the stale version",
+        "Decay is class-dependent — architecture decisions fade slowly, transient bugs fast — and faded claims are deprioritized, never deleted",
+        "Consolidation tiers (working, episodic, semantic, procedural) are each more compressed, more confident and longer-lived than the tier below"
+      ],
+      "relationships": [
+        {
+          "target": "ebbinghaus-forgetting-curve",
+          "clause": "borrows its decay model for machine memory — retention falls exponentially with time and every access or newly confirming source resets the curve, with the decay constant varying by claim class"
+        },
+        {
+          "target": "llm-maintained-wiki",
+          "clause": "adds the layer that pattern omits: the base wiki treats all content as equally valid forever, whereas lifecycle management grades, supersedes and fades claims as evidence shifts"
+        }
+      ],
+      "applications": "Keeping a long-lived agent memory or team wiki trustworthy as it grows: rank answers by claim confidence, resolve contradictions by supersession instead of accumulation, and let stale operational detail fade while durable decisions persist.",
+      "see_also": ["ebbinghaus-forgetting-curve", "llm-maintained-wiki"]
+    },
+    {
+      "slug": "typed-knowledge-graph-layer",
+      "title": "Typed knowledge graph layer",
+      "tags": ["concept", "knowledge-management", "knowledge-graph", "ai-agents"],
+      "definition": "A **typed knowledge graph layer** augments a prose knowledge base with structure extracted at ingest time: people, projects, libraries, concepts, files and decisions become entities with types and attributes, their connections become semantically distinct edges such as uses, depends on, contradicts, caused, fixed and supersedes, and queries can traverse the graph instead of matching keywords — pages remain the layer for reading while the graph carries navigation and discovery.",
+      "explanation": "The mechanism is replacing untyped links with edges that mean something. A wikilink says only that A relates to B; a typed edge can say 'A caused B, confirmed by 3 sources, confidence 0.9', which a query can act on. Extraction happens during ingest — the model emits entities and relationships alongside the prose it writes — so the graph stays current without separate modeling work. Traversal is what pays for the structure: asked the impact of upgrading Redis, the system starts at the Redis node and walks outward through depends-on and uses edges to find everything downstream, catching connections keyword search misses because they are structural rather than textual. The layer explicitly augments rather than replaces the wiki's pages — the same division found in code tooling, where prose and diagrams serve reading while graphs serve exact structural questions. The source is a practitioner extension gist mirroring what its author built in agentmemory, a memory engine for coding agents; the design is asserted from production use, not from a controlled comparison.",
+      "key_properties": [
+        "Entities extracted at ingest — people, projects, libraries, concepts, files, decisions — each with a type and attributes",
+        "Edges are typed (uses, depends on, contradicts, caused, fixed, supersedes) and can carry provenance and confidence",
+        "Impact queries walk the graph outward from a node instead of keyword-searching pages",
+        "Augments pages rather than replacing them: pages for reading, graph for navigation and discovery"
+      ],
+      "relationships": [
+        {
+          "target": "llm-wiki-architecture",
+          "clause": "upgrades that architecture's flat wikilinked pages by layering typed entities and edges over the wiki, so navigation and impact queries stop depending on untyped links alone"
+        },
+        {
+          "target": "code-knowledge-graph",
+          "clause": "applies the same construction — typed nodes and typed edges answering structural questions by traversal — to a general knowledge corpus instead of a codebase"
+        },
+        {
+          "target": "hybrid-search-fusion",
+          "clause": "supplies the graph-traversal stream that hybrid search fuses with keyword and vector results"
+        }
+      ],
+      "applications": "Impact analysis over accumulated project knowledge, such as what depends on a library or what a decision caused; entity pages that stay consistent because relationships are data rather than prose; traversal-based context assembly for agent queries.",
+      "see_also": ["code-knowledge-graph", "llm-wiki-architecture"]
+    },
+    {
+      "slug": "hybrid-search-fusion",
+      "title": "Hybrid search with rank fusion",
+      "tags": ["concept", "retrieval", "search", "knowledge-management"],
+      "definition": "**Hybrid search with rank fusion** combines three retrieval streams over one corpus — BM25 keyword matching with stemming and synonym expansion, vector search over embeddings for semantic similarity, and entity-aware graph traversal for structural connections — and merges their candidate lists with reciprocal rank fusion, on the grounds that each stream retrieves relevant material the other two systematically miss.",
+      "explanation": "Each stream has a characteristic blind spot the others cover: BM25 finds exact terms and identifiers that embeddings blur, vectors find paraphrases and semantic neighbours that share no keywords, and graph traversal finds items connected by relationships that neither textual stream can see. Reciprocal rank fusion merges by rank position rather than raw score, which sidesteps calibrating incomparable scoring scales across the streams. The pattern's trigger is scale: an LLM-maintained wiki can navigate by reading a single index file in full up to roughly 100-200 pages, after which the index outgrows a single reading pass and real search must replace it as the model's primary mechanism — the index survives as a human-readable catalog. The claim that the fused ensemble beats any single approach comes from a practitioner extension gist reporting production experience with agentmemory, a memory engine for coding agents; it matches the wider industry practice of hybrid lexical-plus-vector search, but the note offers no published measurements.",
+      "key_properties": [
+        "Three streams: BM25 (exact terms, stemming, synonym expansion), embedding vectors (semantic similarity), graph traversal (structural connections)",
+        "Reciprocal rank fusion merges by rank position, sidestepping score calibration across streams",
+        "Single-file index navigation stops scaling around 100-200 pages; past that the index remains a human catalog while search takes over",
+        "Each stream catches relevant results the others systematically miss"
+      ],
+      "relationships": [
+        {
+          "target": "llm-wiki-architecture",
+          "clause": "replaces that architecture's index-first navigation once the wiki outgrows the roughly hundred-source scale its index file can serve in a single reading pass"
+        },
+        {
+          "target": "graph-vs-vector-code-retrieval",
+          "clause": "operationalizes that comparison's closing rule — structural questions want graphs, semantic ones want similarity, production needs both — by running the streams in parallel and fusing their ranks"
+        },
+        {
+          "target": "retrieval-composition-engine",
+          "clause": "shares the move of composing multiple retrieval strategies per query, but fuses fixed parallel streams by rank where that engine routes predicate-gated strategies under token budgets"
+        },
+        {
+          "target": "typed-knowledge-graph-layer",
+          "clause": "draws its third stream from that layer, whose typed, entity-aware edges make traversal usable as a retrieval strategy"
+        }
+      ],
+      "applications": "Search over a knowledge base that has outgrown catalog-file navigation; retrieval layers for agent memory where identifier lookups, paraphrase questions and dependency questions all occur against the same corpus.",
+      "see_also": ["graph-vs-vector-code-retrieval", "retrieval-composition-engine"]
+    },
+    {
+      "slug": "event-driven-knowledge-maintenance",
+      "title": "Event-driven knowledge maintenance",
+      "tags": ["concept", "knowledge-management", "ai-agents", "automation"],
+      "definition": "**Event-driven knowledge maintenance** replaces the manual operating loop of an LLM-maintained knowledge base with hooks bound to lifecycle events: a new source triggers ingest, entity extraction and index updates; session start loads relevant context; session end compresses the session into observations; each query checks whether its answer scores well enough to file back; each write checks for contradictions and triggers supersession; and a schedule drives lint, consolidation and retention decay — keeping humans on curation and direction while the bookkeeping runs itself.",
+      "explanation": "The failure mode of manual operation is that maintenance happens only when someone remembers: lint passes lapse, good answers evaporate into chat history, contradictions linger. Hooks bind each maintenance action to the event that makes it necessary, so the work cannot be forgotten. Quality controls make the automation safe to trust: every piece of generated content is scored for structure, citations and consistency — by self-evaluation or a second pass — content below threshold is flagged or rewritten, and answers file back into the wiki only above a threshold. Lint becomes self-healing rather than advisory: orphan pages are linked or flagged, stale claims marked, broken cross-references repaired, so the wiki tends toward health without being asked. Contradictions get a proposed resolution by default — the likelier claim chosen from source recency, source authority and supporting-observation count, with human override. Crystallization closes the loop on exploration: a completed chain of work such as a research thread or debugging session is automatically distilled into a structured digest — question, findings, entities involved, lessons — that becomes a first-class page, its lessons extracted as standalone facts, so explorations are ingested like any other source. The source is a practitioner extension gist distilling the automation its author built into agentmemory; it is prescriptive experience from one team's engine, not a measured study.",
+      "key_properties": [
+        "Hooks bind maintenance to events: source added, session start and end, query answered, memory written, schedule tick",
+        "Generated content is quality-scored; answers file back into the wiki only above a threshold",
+        "Lint is self-healing — orphans linked or flagged, stale claims marked, broken cross-references repaired — rather than advisory",
+        "Contradictions receive a default resolution from recency, authority and support count, with human override",
+        "Crystallization distills completed work threads into digest pages plus extracted standalone lessons"
+      ],
+      "relationships": [
+        {
+          "target": "llm-wiki-architecture",
+          "clause": "automates that architecture's operating loop: the ingest, answer-filing and lint its human operator triggers manually become hooks bound to the events that require them"
+        },
+        {
+          "target": "knowledge-lifecycle-management",
+          "clause": "provides the execution layer for that lifecycle — contradiction checks on write drive supersession, and scheduled ticks drive consolidation and retention decay"
+        }
+      ],
+      "applications": "Wiring a knowledge base into an agent harness through hooks on ingest, session start and end, memory writes and a cron schedule; ending research or debugging sessions with an automatic crystallized digest instead of losing the thread to chat history.",
+      "see_also": ["llm-wiki-architecture"]
+    }
+  ]
+}

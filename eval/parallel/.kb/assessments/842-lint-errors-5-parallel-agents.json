@@ -1,0 +1,49 @@
+{
+  "target": "staging/842-lint-errors-5-parallel-agents.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\",\"weak\"],\"actionability\":[\"strong\"],\"atomicity\":[\"fail\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "fail"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/842-lint-errors-5-parallel-agents.md",
+    "task_id": "8c351bba366b4e40",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Although Sweeper is the author's own tool, the post is a measured case study (842 errors, 99 files, linked PRs, an unexpected type-cascade failure) whose architectural lessons transfer beyond the product, not a launch notice."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts cover parallel fan-out orchestration, escalation ladders, or cross-run observational memory; proxy-boundary-session-capture only covers the Tapes recording layer this note builds on."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The central claims are backed by linked public PRs (#1741, #1745), the open-source repo, and concrete run metrics a reader can check or reproduce."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The load-bearing claims — parallelism, not context size, is the right scaling axis for multi-file work; retries should escalate strategy rather than repeat; per-file isolation trades away cross-file type safety — are mechanisms and trade-offs that hold regardless of the tool or the 1M-context news peg."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "The patterns are directly buildable without Sweeper: group issues per file, keep the orchestrator free of source code, run stateless one-file agents, escalate standard-to-retry-to-exploration with a stale threshold, and record per-round strategy outcomes for the next run."
+      },
+      "atomicity": {
+        "rating": "fail",
+        "rationale": "The note bundles at least three separable stand-alone ideas — parallel fan-out beats bigger context windows, an escalation ladder for stalled fixes, and observational memory across runs (plus the type-cascade isolation trade-off) — each of which could be its own concept, so the split is the finding."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

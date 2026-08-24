@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "4f5c1f239cfc41ce",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/five-tools-to-bolster-your-ai.md": "sha256:fc7b27301d6393b1bfc3290552ab19770b72bdb0f53a27126e6f5c1d9e85cf07",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:ffb5ad4c29c8ab3dbbdf260581de1c195431f9d2b3a71963a10639ee916818dc",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/five-tools-to-bolster-your-ai.json"
+  ]
+}

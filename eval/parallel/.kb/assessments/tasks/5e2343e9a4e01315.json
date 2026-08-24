@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "5e2343e9a4e01315",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/ebpf-observability-and-continuous-profiling-with.md": "sha256:21eea807cd524465dc43845bb11fe160fe47d89119ecc4f56e3f4aa6b6a4ae79",
+      "assessment:ebpf-observability-and-continuous-profiling-with": "sha256:8fd06a5df852607465e0ca9575b7c35d5ead9b547cd12ba20c851b877d8b9d9c",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

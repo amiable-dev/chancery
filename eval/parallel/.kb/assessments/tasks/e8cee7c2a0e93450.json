@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "e8cee7c2a0e93450",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/ebpf-observability-and-continuous-profiling-with.md": "sha256:21eea807cd524465dc43845bb11fe160fe47d89119ecc4f56e3f4aa6b6a4ae79",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:402cdc586745810da85c0896fa0dbd8f2cd8f056d10ea37a43e002ff94c90f15",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/ebpf-observability-and-continuous-profiling-with.json"
+  ]
+}

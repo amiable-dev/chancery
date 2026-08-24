@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/exploring-the-future-of-mcp-transports.md",
+  "task_id": "6446b07902547800",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": false,
+      "rationale": "It is a working-group design roadmap discussing architectural trade-offs, not a product launch, release note, or funding announcement."
+    },
+    "duplicate": {
+      "triggered": true,
+      "rationale": "The existing mcp-stateless-core concept already covers this note's central ideas as landed 2026-07-28 spec - handshake removal with per-request _meta, echoed request state for multi-round-trip calls, Mcp-Method routing headers, TTL-based caching - so the reader gains only the December-2025 'exploring' framing and minor since-decided proposals."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "Every proposal links to the MCP specification, SEP issues, or GitHub discussions a reader can check."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The scaling rationale endures, but the note is written as an exploration with a Q1-2026 SEP timeline whose outcomes have since been fixed by the 2026-07-28 release candidate, making the roadmap framing already stale."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "It describes directions and solicits Discord/SEP feedback rather than giving a builder steps or decisions beyond 'do not depend on transport-layer sessions'."
+    },
+    "atomicity": {
+      "rating": "weak",
+      "rationale": "It bundles six distinct workstreams - stateless core, session elevation, elicitation redesign, subscription streams, envelope routing, and Server Cards - that do not reduce to one paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

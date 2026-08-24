@@ -1,0 +1,37 @@
+{
+  "rubric": "promotion@3",
+  "target": "staging/introducing-opentelemetry-ebpf-instrumentation.md",
+  "task_id": "efa10cc9f60409d5",
+  "disqualifiers": {
+    "pure-announcement": {
+      "triggered": true,
+      "rationale": "This is Grafana's own GrafanaCON announcement that it donated Beyla to OpenTelemetry - donation news, contributor thanks, and repo roadmap - and the zero-code-instrumentation rationale appears only as backstory justifying that news."
+    },
+    "duplicate": {
+      "triggered": false,
+      "rationale": "None of the six nearest concepts (OSV format, SIEM gap, evals, retrieval, Code Mode, Agent Skills) touch eBPF instrumentation or the Beyla donation."
+    },
+    "unfalsifiable": {
+      "triggered": false,
+      "rationale": "The donation, code drop, and due-diligence process are all linked to public GitHub issues and documents a reader can verify."
+    }
+  },
+  "dimensions": {
+    "durability": {
+      "rating": "weak",
+      "rationale": "The lasting residue is only that OTel eBPF Instrumentation originated from Beyla; the donation timeline, acceptance-criteria status, and 100k-pulls-per-month figures are news that expires quickly."
+    },
+    "actionability": {
+      "rating": "weak",
+      "rationale": "It tells a reader the tool exists for the can't-instrument-the-source niche and to join the SIG, but offers no steps or trade-offs that would change how they build."
+    },
+    "atomicity": {
+      "rating": "strong",
+      "rationale": "The whole piece states one event - Beyla becomes OpenTelemetry eBPF Instrumentation and the Beyla repo becomes a downstream wrapper - which fits in a single paragraph."
+    }
+  },
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "target": "staging/sakana-ai.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "discard",
+  "reason": "disqualified: pure-announcement",
+  "disqualifiers": [
+    "pure-announcement"
+  ],
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/sakana-ai.md",
+    "task_id": "923e107f081a0665",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": true,
+        "rationale": "This is Sakana's own GA launch PR for Fugu — benchmark grid against named rivals, customer testimonials, pricing tiers and a careers CTA — and its transferable orchestration substance lives in the separately published Trinity and Conductor papers it cites, not in the announcement itself."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "fable-5-export-directive covers the US export order Sakana invokes as a selling point, but nothing in the corpus covers Fugu or learned orchestration, so a reader would still learn new product facts here."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The launch claims cite a public technical report and two ICLR papers, and the benchmark grid is attributed to provider-reported scores, so the claims are checkable even if promotional."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Launch-day benchmark parity claims against Fable 5 and Mythos Preview, a two-model lineup and GA pricing tiers are exactly the comparative, versioned material that dates within months, even if the orchestration-model framing persists."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Beyond 'call Fugu's OpenAI-compatible API', the note offers a landscape argument for multi-model orchestration as vendor-risk hedging rather than anything a builder could implement."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The launch bundles a product announcement, a learned-orchestration research claim and an AI-sovereignty geopolitical argument that do not reduce to one paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "7450ef9a1adc436d",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "bd4ea6e2ee80e7586bc813c3c08b800ddb4cdb81",
+    "input_hashes": {
+      "staging/matryoshka-representation-learning.md": "sha256:9dcaf89dbdc9ae4d88ebc946ca6cf17a1726f8e2edffb74067e1a164282029c7",
+      "assessment:matryoshka-representation-learning": "sha256:19fc3b51dbe234a1610d0f3459b53fa0764b93f0c09e4c4bf8af344e5acb784c",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:b1ccf17a9ecc111ce4cb055b8bfffbe0551a9639f693944ae09c262e59977116",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/matryoshka-embeddings.md"
+  ]
+}

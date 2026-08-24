@@ -1,0 +1,47 @@
+{
+  "target": "staging/opentelemetry-ebpf-instrumentation-marks-the-first.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "discard",
+  "reason": "disqualified: pure-announcement",
+  "disqualifiers": [
+    "pure-announcement"
+  ],
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/opentelemetry-ebpf-instrumentation-marks-the-first.md",
+    "task_id": "2c10bc8e037b29ae",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": true,
+        "rationale": "This is the OpenTelemetry project's own launch PR for OBI's first alpha ('we are thrilled to announce'), organized around the release milestone, getting-started links, SIG calls and acknowledgments rather than a technique independent of the product."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (protocol deprecation policy, proxy-boundary capture, MCP notes, OSV, evals) covers eBPF-based zero-code instrumentation."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Claims are checkable against the linked OBI repository, docs and integration tests, and the distributed-tracing limitations are documented at a cited page."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The protocol-level vs library-level instrumentation trade-off ages well, but the note is anchored to alpha status, a current protocol support list, and per-language tracing gaps that will shift within months."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The when-to-use guidance (drop OBI on uninstrumented services, keep SDKs where they work) is real but consists of adoption steps for this one product at its current capability level."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "One core idea (eBPF trades universal zero-effort coverage for depth) is stateable in a paragraph, but the note bundles it with release news, marketing claims and getting-started pointers."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/builtin-policies-omnigent.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "fail"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/builtin-policies-omnigent.md",
+    "task_id": "6d1a6cfc2622b632",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Reference documentation for existing builtin policies, not a launch, release note or funding post."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Nothing in the corpus covers agent guardrail catalogs, thrashing/loop detection or no-write-down containment; the nearest concepts are MCP-governance and alerting notes."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Each policy's behavior, parameters and defaults are specified concretely with runnable YAML examples checkable against the product."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "A per-product parameter matrix (handler paths, defaults, YAML shapes) that will churn with releases, even though embedded patterns like rolling-window thrashing detection and no-write-down containment age well."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Rich configuration guidance, but almost all of it is Omnigent-specific policy wiring; the transferable design rules (visibility before restriction, heuristic error windows) appear as asides inside product steps."
+      },
+      "atomicity": {
+        "rating": "fail",
+        "rationale": "A catalog of roughly 25 policies bundling several standalone-capable ideas — Bell-LaPadula no-write-down for agent file access, LLM-free thrashing detection via rolling error windows, identical-call loop detection, blast-radius command classification, graduated cost budgets — each of which could be its own concept."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}
