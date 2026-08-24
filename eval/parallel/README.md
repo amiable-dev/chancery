@@ -154,3 +154,17 @@ source, and re-enter it through the normal loop (ingest → fresh assessment
 → promote only if the better source clears the bar). Items with no better
 source get resolved with that finding on record. The queue is worked off by
 improving evidence, not by lowering or mechanising the bar.
+
+**Source-strengthening pass (2026-08-24, results).** All 55 weak/weak items
+hunted under a hard per-item budget (2 searches, 2 ingests, 1 assessment,
+3 applies, ≤12 tool calls; budget exhaustion leaves the entry open rather
+than resolving it): **28 promoted on stronger primary sources · 9 duplicates
+of existing concepts caught by the assess-phase disqualifier · 12 where even
+the better source failed the bar · 4 with no better source found · 2 called
+off at budget** (still open). Notable protocol behaviour: one worker's own
+judgment leaned promote on a re-found source, but the identical content
+already carried an applied verdict routing queue — the worker deferred to
+the recorded verdict, since re-litigating identical content is the
+rating-shopping the idempotent-task design exists to prevent. Corpus after
+the pass: 212 concepts; open queue entries: 37 (26 hand-review patterns,
+2 called-off, 9 resolved-adjacent remainders).
