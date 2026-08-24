@@ -1,17 +1,18 @@
 ---
 title: Retrieval as composition
+aliases: ["Retrieval as composition"]
 date: 2026-08-24
-tags:
-  - concept
-  - llm
-  - retrieval
-  - orchestration
+domain: llm
+maturity: emerging
+source_type: practitioner
+tags: [concept, llm, retrieval, orchestration, domain/llm, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://towardsdatascience.com/how-to-build-a-context-layer-and-a-company-brain/
     hash: sha256:b20520de2900c93455d4757c6d6ed3ab57f2a8351623246c60ee9dbfe22da7ef
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Retrieval as composition

@@ -1,17 +1,18 @@
 ---
 title: SIEM visibility gap for agentic AI
+aliases: ["SIEM visibility gap for agentic AI"]
 date: 2026-08-24
-tags:
-  - concept
-  - observability
-  - security
-  - ai-agents
+domain: observability
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, observability, security, ai-agents, domain/observability, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://predictionguard.com/blog/ai-security-event-logging-the-siem-gap-in-agentic-ai-governance
     hash: sha256:05e623945dbd3b38e678c6324467645829e41b9ff27e58bdeb5344c35c83432c
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # SIEM visibility gap for agentic AI
@@ -34,6 +35,7 @@ The gap is architectural, not configurational. Agents operate in a plan–act–
 ## Relationships
 
 - _No relationships recorded yet._
+- [[shadow-mcp-detection]] — complementary visibility controls: gateway scanning finds ungoverned agent endpoints, AI-native event logging records what governed agents actually did
 
 ## Applications
 

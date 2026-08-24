@@ -1,17 +1,17 @@
 ---
 title: Shadow MCP detection
 date: 2026-08-24
-tags:
-  - concept
-  - infrastructure
-  - security
-  - observability
+domain: infrastructure
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, infrastructure, security, observability, domain/infrastructure, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://blog.cloudflare.com/enterprise-mcp/
     hash: sha256:b6afb82e86c514d9d7c7684b8c129302c2647fefc41d29ee4d12e0d003bdca89
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Shadow MCP detection
@@ -34,6 +34,7 @@ Governing the authorized path is only half the control; employees can point MCP 
 ## Relationships
 
 - [[remote-first-mcp-governance]] — closes that architecture's escape hatch by finding the servers employees adopted outside it
+- [[siem-agentic-visibility-gap]] — complementary visibility controls: gateway scanning finds ungoverned agent endpoints, AI-native event logging records what governed agents actually did
 
 ## Applications
 

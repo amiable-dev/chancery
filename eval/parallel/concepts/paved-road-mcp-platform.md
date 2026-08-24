@@ -1,17 +1,17 @@
 ---
 title: Paved-road MCP platform
 date: 2026-08-24
-tags:
-  - concept
-  - infrastructure
-  - governance
-  - platform-engineering
+domain: infrastructure
+maturity: established
+source_type: vendor-doc
+tags: [concept, infrastructure, governance, platform-engineering, domain/infrastructure, maturity/established, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://blog.cloudflare.com/enterprise-mcp/
     hash: sha256:b6afb82e86c514d9d7c7684b8c129302c2647fefc41d29ee4d12e0d003bdca89
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Paved-road MCP platform

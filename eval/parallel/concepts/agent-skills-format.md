@@ -1,17 +1,17 @@
 ---
 title: Agent Skills format
 date: 2026-08-24
-tags:
-  - concept
-  - standards
-  - ai-agents
-  - context
+domain: standards
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, standards, ai-agents, context, domain/standards, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://agentskills.io/home
     hash: sha256:60403a5b54531e66647bc330f08ad149e07d1de303baf1c203deba27a79e8e1b
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Agent Skills format
@@ -34,6 +34,7 @@ The format answers a context problem: agents are capable but lack the procedural
 ## Relationships
 
 - _No relationships recorded yet._
+- [[code-mode-mcp]] — both apply progressive disclosure to agent capability: skills load full instructions only when a task matches, Code Mode loads tool schemas only when model-written code requests them
 
 ## Applications
 

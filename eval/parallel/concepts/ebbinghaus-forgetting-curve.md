@@ -1,17 +1,17 @@
 ---
 title: Ebbinghaus forgetting curve
 date: 2026-08-24
-tags:
-  - concept
-  - knowledge-management
-  - memory
-  - learning
+domain: knowledge-management
+maturity: established
+source_type: research
+tags: [concept, knowledge-management, memory, learning, domain/knowledge-management, maturity/established, source-type/research]
 status: draft
 sources:
   - url: https://en.wikipedia.org/wiki/Forgetting_curve
     hash: sha256:4909f49875e6dd6c3e8b72580e74292e0cc52ecfcffee7741f5f6036da97a6fe
     retrieved: 2026-08-24
     reachability: ok
+    class: external-secondary
 ---
 
 # Ebbinghaus forgetting curve
@@ -34,6 +34,7 @@ Ebbinghaus quantified retention as 'savings': the reduction in time needed to re
 ## Relationships
 
 - _No relationships recorded yet._
+- [[llm-maintained-wiki]] — supplies the mechanism behind the problem the wiki pattern solves — unreviewed knowledge decays on this curve, so distillation into revisable pages replaces re-reading
 
 ## Applications
 

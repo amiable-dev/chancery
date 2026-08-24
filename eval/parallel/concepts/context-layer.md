@@ -1,17 +1,17 @@
 ---
 title: Context layer
 date: 2026-08-24
-tags:
-  - concept
-  - data
-  - ai-agents
-  - architecture
+domain: data
+maturity: emerging
+source_type: practitioner
+tags: [concept, data, ai-agents, architecture, domain/data, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://towardsdatascience.com/how-to-build-a-context-layer-and-a-company-brain/
     hash: sha256:b20520de2900c93455d4757c6d6ed3ab57f2a8351623246c60ee9dbfe22da7ef
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Context layer
@@ -37,6 +37,7 @@ The demo version — chunk, embed, retrieve top-k, paste — is a weekend projec
 - [[sync-deletion-semantics]] — depends on that discipline to keep its map truthful — a missed deletion channel leaves the brain confidently describing what no longer exists
 - [[retrieval-composition-engine]] — delegates its query-time verb to that engine, which composes heterogeneous context under a token budget
 - [[golden-dataset-retrieval-evals]] — is kept honest by that harness, because its retrieval quality degrades invisibly otherwise
+- [[llm-maintained-wiki]] — contrasting substrates for agent knowledge: the wiki distils at write time into curated pages, the context layer indexes sources at read time and layers curation on top
 
 ## Applications
 

@@ -1,17 +1,17 @@
 ---
 title: Remote-first MCP governance
 date: 2026-08-24
-tags:
-  - concept
-  - infrastructure
-  - security
-  - mcp
+domain: infrastructure
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, infrastructure, security, mcp, domain/infrastructure, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://blog.cloudflare.com/enterprise-mcp/
     hash: sha256:b6afb82e86c514d9d7c7684b8c129302c2647fefc41d29ee4d12e0d003bdca89
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Remote-first MCP governance
@@ -36,6 +36,7 @@ Local MCP servers put the security decision in each employee's hands: unvetted s
 - [[paved-road-mcp-platform]] — is enforced most cheaply by that pattern, which makes the governed path the easiest path to ship a server
 - [[shadow-mcp-detection]] — is completed by that control, which finds the servers this governance did not capture
 - [[code-mode-mcp]] — gains a cost rationale from that pattern, since portals are also where tool schemas collapse into two calls
+- [[mcp-authorization-hardening]] — specifies at the protocol level the OAuth alignment that architecture deploys operationally, with an identity-aware provider fronting every server
 
 ## Applications
 

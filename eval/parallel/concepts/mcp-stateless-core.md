@@ -1,17 +1,18 @@
 ---
 title: MCP stateless protocol core
+aliases: ["MCP stateless protocol core"]
 date: 2026-08-24
-tags:
-  - concept
-  - standards
-  - mcp
-  - protocols
+domain: standards
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, standards, mcp, protocols, domain/standards, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/
     hash: sha256:41ac604fbe79fbb905ca0b2bed18394fccab871c1fd521c363c5cc913881b227
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # MCP stateless protocol core

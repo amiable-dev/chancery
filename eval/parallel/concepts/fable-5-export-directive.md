@@ -1,17 +1,18 @@
 ---
 title: Fable 5 export-control directive
+aliases: ["Fable 5 export-control directive"]
 date: 2026-08-24
-tags:
-  - concept
-  - governance
-  - ai-safety
-  - policy
+domain: governance
+maturity: emerging
+source_type: announcement
+tags: [concept, governance, ai-safety, policy, domain/governance, maturity/emerging, source-type/announcement]
 status: draft
 sources:
   - url: https://www.anthropic.com/news/fable-mythos-access
     hash: sha256:59403c9be01303ca40c4223ddfc1f6d2ac432cb5d287ebcfc3f46dc1bec7b36b
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Fable 5 export-control directive

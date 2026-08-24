@@ -1,17 +1,17 @@
 ---
 title: SLO burn-rate alerting
 date: 2026-08-24
-tags:
-  - concept
-  - observability
-  - reliability
-  - sre
+domain: reliability
+maturity: established
+source_type: practitioner
+tags: [concept, observability, reliability, sre, domain/reliability, maturity/established, source-type/practitioner]
 status: draft
 sources:
   - url: https://sre.google/workbook/alerting-on-slos/
     hash: sha256:77453677a42a9a711660c69e556b5a785a41685acab57ff18667a7fba561ccde
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # SLO burn-rate alerting
@@ -34,6 +34,7 @@ The chapter (Thurgood et al.) evaluates any alerting strategy on four attributes
 ## Relationships
 
 - _No relationships recorded yet._
+- [[golden-dataset-retrieval-evals]] — the retrieval harness's nightly regression alerting applies this discipline — measured budgets with alerts on consumption — to context quality instead of request errors
 
 ## Applications
 

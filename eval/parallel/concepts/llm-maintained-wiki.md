@@ -1,17 +1,17 @@
 ---
 title: LLM-maintained wiki
 date: 2026-08-24
-tags:
-  - concept
-  - knowledge-management
-  - ai-agents
-  - memory
+domain: knowledge-management
+maturity: emerging
+source_type: practitioner
+tags: [concept, knowledge-management, ai-agents, memory, domain/knowledge-management, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://www.aibuilderclub.com/blog/karpathy-llm-wiki
     hash: sha256:4018178174683320ffd5f3942cf55802c9872e851c2a539deb5c7971ae817668
     retrieved: 2026-08-24
     reachability: ok
+    class: external-secondary
 ---
 
 # LLM-maintained wiki
@@ -34,6 +34,8 @@ The pattern targets a compounding problem: the more one reads, the less one reta
 ## Relationships
 
 - [[retrieval-augmented-generation]] — positions itself as the write-time alternative to RAG's query-time retrieval: distil into maintained pages once rather than search raw sources every session
+- [[ebbinghaus-forgetting-curve]] — supplies the mechanism behind the problem the wiki pattern solves — unreviewed knowledge decays on this curve, so distillation into revisable pages replaces re-reading
+- [[context-layer]] — contrasting substrates for agent knowledge: the wiki distils at write time into curated pages, the context layer indexes sources at read time and layers curation on top
 
 ## Applications
 

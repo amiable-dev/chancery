@@ -15,7 +15,7 @@ Agent-maintained knowledge rots in a particular way. The prose stays fluent whil
 - **Semantic lint and a learning log.** `kb audit` sweeps for contradictions, stale claims, concept gaps, and graph rot from pinned, reproducible candidates; every canon change writes a line in `log/` recording what was *learned*, enforced append-only against the merge base.
 - **Meet your agent where it is.** One procedure source generates skills for Claude Code, GitHub Copilot, Windsurf, and Devin (CI-diffed so they can't go stale), plus a local stdio MCP facade whose six tools are byte-identical to the CLI. Exports mount into an existing Docusaurus or MkDocs site behind a publication filter, or ship as presentation-free JSON.
 
-It ships with its reference corpus: ~244 concept notes and ~1,240 spaced-repetition cards on software engineering and AI/ML — the knowledge base this system was built to govern, dogfooded daily.
+It ships with its reference corpus: ~244 concept notes and ~1,240 spaced-repetition cards on software engineering and AI/ML — the knowledge base this system was built to govern, dogfooded daily. The corpus predates the gate (a predecessor pipeline produced it; Chancery governs it), so we ran a pre-registered check: 25 of its own sources, fed back through the judged loop. The gate admitted 56% of what the predecessor had admitted at 100%, agreed with it almost perfectly on which sources are composite, and discarded the one source in the sample whose content drifted within days. Numbers, confounds, and records: [the parallel run](the-parallel-run.md).
 
 ## How it was built
 

@@ -1,17 +1,18 @@
 ---
 title: Code Mode for MCP
+aliases: ["Code Mode for MCP"]
 date: 2026-08-24
-tags:
-  - concept
-  - infrastructure
-  - ai-agents
-  - cost
+domain: infrastructure
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, infrastructure, ai-agents, cost, domain/infrastructure, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://blog.cloudflare.com/enterprise-mcp/
     hash: sha256:b6afb82e86c514d9d7c7684b8c129302c2647fefc41d29ee4d12e0d003bdca89
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Code Mode for MCP
@@ -34,6 +35,7 @@ Standard MCP defines one tool per operation and ships every schema to the client
 ## Relationships
 
 - [[remote-first-mcp-governance]] — deploys at that architecture's portal layer, where progressive disclosure and audit already live
+- [[agent-skills-format]] — both apply progressive disclosure to agent capability: skills load full instructions only when a task matches, Code Mode loads tool schemas only when model-written code requests them
 
 ## Applications
 

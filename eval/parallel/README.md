@@ -64,7 +64,57 @@ only if the sample yields a finding worth the supplier cost (an admission rate
 surprising in either direction, or a structuring pattern the sample cannot
 settle), decided by the owner and recorded here.
 
-## Results
+## Results (run executed 2026-08-24)
 
-*(Empty at pre-registration. Filled by the run; the companion article is
-[`docs/the-parallel-run.md`](../../docs/the-parallel-run.md).)*
+Companion article: [`docs/the-parallel-run.md`](../../docs/the-parallel-run.md).
+Every number below is reproducible from this directory's records: assessments in
+`.kb/assessments/`, drafts and verdicts in `.kb/verdicts/`, queue in `.kb/queue/`,
+evidence in `.kb/evidence/`.
+
+**Funnel.** 25 sampled → 20 staged → 14 admitted → 26 concepts.
+
+- **Ingest refused 5/25.** The 3 deliberately degraded sources failed exactly as
+  their recorded reachability predicted (`js-required` → no extractable content;
+  `blocked-4xx` → HTTP 403; `dead-no-archive` → HTTP 404). Two sources recorded
+  `ok` on 2026-08-21 now return HTTP 403 (medium.com, economist.com — bot
+  blocking): reachability drift caught at the door.
+- **Assessment routed 20:** 9 promote, 5 split, 4 queue, 2 discard. Admission
+  rate 14/20 (70%) of assessed, 56% of the sample end-to-end — against the
+  predecessor's 100% by construction. The 2 discards: a personal bio/homepage
+  (durability and actionability `fail`) and a vendor launch press release
+  (`pure-announcement` knockout). The 4 queue entries are (weak, weak, strong)
+  or (weak, strong, strong) rating combinations with no routing rule — the
+  rubric refuses to guess and parks them for the owner, where they remain open.
+
+**Structuring.** The 14 admitted sources produced 26 concepts (9× 1→1, 1→2,
+1→3, two 1→4, 1→4). The same 20 staged sources back 37 distinct concepts in the
+predecessor corpus (43 across all 25). On *which* sources are composite the two
+processes agree almost perfectly: of the six sources the predecessor split
+multi-way, this run's rubric split five (MCP release candidate, Cloudflare MCP,
+context-layer essay, FalkorDB code-graph, weak-to-strong) and split nothing the
+predecessor kept single. Sole disagreement: the evals essay (predecessor 2,
+this run 1 — the LLM-as-a-judge material is peripheral in the staged
+extraction). Where both split, the cut lines land close: both carved
+Code Mode, shadow-MCP detection, and platform-baked governance out of the
+Cloudflare piece; both carved the stateless core, extensions, and authorization
+out of the MCP release candidate.
+
+**Drift.** Of the 20 sources fetchable today, 19 hash byte-identical to their
+accepted baselines; the single content drift is the NVIDIA press-release page —
+the same source the gate discarded as a pure announcement. Honest scope note:
+the main corpus's baselines were (re)accepted on 2026-08-21 when the evidence
+machinery landed, so the measured window is three days, not the months since
+original capture. Drift since original capture is **unknowable — the
+predecessor pipeline recorded no content hashes.** That absence is the
+strongest argument this repository makes for falsifiable citations.
+
+**Supplier attestation.** Every verdict and draft in this run carries
+`supplier: model-single (claude-fable-5)` with proposer overlap disclosed: the
+same agent staged, judged, and drafted. The predecessor's suppliers were
+different models and prompts, months earlier — prose differences between the
+two corpora are not attributable to the process (confound 1, above).
+
+**Trigger decision.** Owner call, recorded here when made. The sample's
+finding — admission is where the processes diverge (100% vs 56%); structuring
+largely converges — is stable enough that a full-corpus run should only be
+armed if the queue dispositions or a second stratum change the picture.

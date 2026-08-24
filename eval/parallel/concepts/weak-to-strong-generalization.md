@@ -1,17 +1,17 @@
 ---
 title: Weak-to-strong generalization
 date: 2026-08-24
-tags:
-  - concept
-  - ai-safety
-  - alignment
-  - evaluation
+domain: ai-safety
+maturity: established
+source_type: research
+tags: [concept, ai-safety, alignment, evaluation, domain/ai-safety, maturity/established, source-type/research]
 status: draft
 sources:
   - url: https://github.com/safety-research/automated-w2s-research
     hash: sha256:7686939098851d59eddbd1173785b4362c35006135fb1d617a9e6956c68d27ce
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Weak-to-strong generalization

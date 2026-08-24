@@ -1,17 +1,18 @@
 ---
 title: Automated W2S research sandbox
+aliases: ["Automated W2S research sandbox"]
 date: 2026-08-24
-tags:
-  - concept
-  - ai-safety
-  - ai-agents
-  - research-automation
+domain: ai-safety
+maturity: emerging
+source_type: research
+tags: [concept, ai-safety, ai-agents, research-automation, domain/ai-safety, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://github.com/safety-research/automated-w2s-research
     hash: sha256:7686939098851d59eddbd1173785b4362c35006135fb1d617a9e6956c68d27ce
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Automated W2S research sandbox

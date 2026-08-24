@@ -1,17 +1,17 @@
 ---
 title: Code knowledge graph
 date: 2026-08-24
-tags:
-  - concept
-  - software-engineering
-  - knowledge-graph
-  - code-analysis
+domain: software-engineering
+maturity: established
+source_type: vendor-doc
+tags: [concept, software-engineering, knowledge-graph, code-analysis, domain/software-engineering, maturity/established, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://www.falkordb.com/blog/code-graph/
     hash: sha256:030278b97b8f98026960c39895d831f42c5f379ed85f9e5d86f8659a41e39c1a
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Code knowledge graph

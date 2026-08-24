@@ -1,17 +1,18 @@
 ---
 title: Deletion semantics in continuous sync
+aliases: ["Deletion semantics in continuous sync"]
 date: 2026-08-24
-tags:
-  - concept
-  - data
-  - distributed-systems
-  - sync
+domain: data
+maturity: established
+source_type: practitioner
+tags: [concept, data, distributed-systems, sync, domain/data, maturity/established, source-type/practitioner]
 status: draft
 sources:
   - url: https://towardsdatascience.com/how-to-build-a-context-layer-and-a-company-brain/
     hash: sha256:b20520de2900c93455d4757c6d6ed3ab57f2a8351623246c60ee9dbfe22da7ef
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Deletion semantics in continuous sync

@@ -1,17 +1,18 @@
 ---
 title: Retrieval-Augmented Generation (RAG)
+aliases: ["Retrieval-Augmented Generation (RAG)"]
 date: 2026-08-24
-tags:
-  - concept
-  - llm
-  - retrieval
-  - architecture
+domain: llm
+maturity: established
+source_type: research
+tags: [concept, llm, retrieval, architecture, domain/llm, maturity/established, source-type/research]
 status: draft
 sources:
   - url: https://arxiv.org/abs/2005.11401
     hash: sha256:72df6adcb0769869d4e3b2acd2cdd72495e74b49ba1c61dddeb013830df5d1e2
     retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
 # Retrieval-Augmented Generation (RAG)

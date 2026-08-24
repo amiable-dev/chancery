@@ -1,0 +1,14 @@
+{"task_id":"aa7fd68df2d3a1cc","supplier":{"class":"model-single","id":"claude-fable-5"},"links":[
+{"from":"agent-skills-format","target":"code-mode-mcp","reciprocal":true,
+ "clause":"both apply progressive disclosure to agent capability: skills load full instructions only when a task matches, Code Mode loads tool schemas only when model-written code requests them"},
+{"from":"ebbinghaus-forgetting-curve","target":"llm-maintained-wiki","reciprocal":true,
+ "clause":"supplies the mechanism behind the problem the wiki pattern solves — unreviewed knowledge decays on this curve, so distillation into revisable pages replaces re-reading"},
+{"from":"llm-maintained-wiki","target":"context-layer","reciprocal":true,
+ "clause":"contrasting substrates for agent knowledge: the wiki distils at write time into curated pages, the context layer indexes sources at read time and layers curation on top"},
+{"from":"mcp-authorization-hardening","target":"remote-first-mcp-governance","reciprocal":true,
+ "clause":"specifies at the protocol level the OAuth alignment that architecture deploys operationally, with an identity-aware provider fronting every server"},
+{"from":"siem-agentic-visibility-gap","target":"shadow-mcp-detection","reciprocal":true,
+ "clause":"complementary visibility controls: gateway scanning finds ungoverned agent endpoints, AI-native event logging records what governed agents actually did"},
+{"from":"slo-burn-rate-alerting","target":"golden-dataset-retrieval-evals","reciprocal":true,
+ "clause":"the retrieval harness's nightly regression alerting applies this discipline — measured budgets with alerts on consumption — to context quality instead of request errors"}
+]}

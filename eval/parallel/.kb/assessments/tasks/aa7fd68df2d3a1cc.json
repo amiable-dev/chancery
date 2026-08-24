@@ -1,0 +1,47 @@
+{
+  "envelope": {
+    "task_id": "aa7fd68df2d3a1cc",
+    "verb": "link",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "86331dc967e2329327872d69214d33ebea415731",
+    "input_hashes": {
+      "concepts/agent-skills-format.md": "sha256:d63e793243697fb4ec685c9664b22db4052900658f7e0c356a556214911cbffd",
+      "concepts/ebbinghaus-forgetting-curve.md": "sha256:06400eced6ff22d6e9c54beeaa909f0657cbc5479bc627191a0346f1ea5b96c2",
+      "concepts/fable-5-export-directive.md": "sha256:2fb6e3abea07d0f41bde46a19a4432421815e103570fa0bcc8f6f8faf37f32ef",
+      "concepts/llm-maintained-wiki.md": "sha256:6de35c3e684f6dc7783cd328741d9ebed351c783b57a1dd1d1889d89cfce196e",
+      "concepts/mcp-authorization-hardening.md": "sha256:17ebc0fa0ed1666dc62916c983718e1e4a0332054792e68560420cd377ea1316",
+      "concepts/osv-format.md": "sha256:a38decfc36be055ed592b112a1d2e27096cd157f0e38699cd086f1ced00dcf40",
+      "concepts/siem-agentic-visibility-gap.md": "sha256:e20944bebb6734923a84ed69240dfb4cb6defe6e2f0c2d478627be42013a80d1",
+      "concepts/slo-burn-rate-alerting.md": "sha256:1748415d50ded1bd87560df57c460a3561cc9d4eadf53767deeedeee97c65c33",
+      "schema:link-draft.schema.json": "sha256:e713aca39f650c312adb6e8921abe1fead499fc2ae57267da2cf69356ba1661a"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:5ca6279334be46d6a505bca8851adbe77d348e372b38665f1b4c18a3613696b4",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/agent-skills-format.md",
+    "concepts/code-mode-mcp.md",
+    "concepts/ebbinghaus-forgetting-curve.md",
+    "concepts/llm-maintained-wiki.md",
+    "concepts/context-layer.md",
+    "concepts/mcp-authorization-hardening.md",
+    "concepts/remote-first-mcp-governance.md",
+    "concepts/siem-agentic-visibility-gap.md",
+    "concepts/shadow-mcp-detection.md",
+    "concepts/slo-burn-rate-alerting.md",
+    "concepts/golden-dataset-retrieval-evals.md"
+  ]
+}
