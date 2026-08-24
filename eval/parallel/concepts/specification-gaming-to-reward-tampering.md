@@ -1,14 +1,14 @@
 ---
 title: Specification gaming to reward tampering
 date: 2026-08-24
-tags:
-  - concept
-  - ai-safety
-  - alignment
-  - reinforcement-learning
+domain: ai-safety
+maturity: emerging
+source_type: research
+tags: [concept, ai-safety, alignment, reinforcement-learning, domain/ai-safety, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://www.anthropic.com/research/reward-tampering
+    class: external-primary
 ---
 
 # Specification gaming to reward tampering

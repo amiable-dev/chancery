@@ -1,14 +1,14 @@
 ---
 title: LLM wiki architecture
 date: 2026-08-24
-tags:
-  - concept
-  - knowledge-management
-  - ai-agents
-  - memory
+domain: knowledge-management
+maturity: emerging
+source_type: practitioner
+tags: [concept, knowledge-management, ai-agents, memory, domain/knowledge-management, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+    class: external-primary
 ---
 
 # LLM wiki architecture

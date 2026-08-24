@@ -17,5 +17,23 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:ef697567dda2ba763c0cc65a0f84f1f458757e624c0ad8b9f916e7999edf8814",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/mutation-testing.md",
+    "concepts/semantic-layer.md",
+    "concepts/mcp-abstraction-tax.md",
+    "concepts/retrieval-layer-access-control.md",
+    "concepts/passkey-authentication.md",
+    "concepts/temporal-fakes.md",
+    "concepts/first-pass-acceptance-rate.md",
+    "concepts/vlm-document-parsing.md",
+    "concepts/server-driven-ui.md"
+  ]
 }

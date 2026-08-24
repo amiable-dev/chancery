@@ -1,14 +1,14 @@
 ---
 title: Emergent misalignment from reward hacking
 date: 2026-08-24
-tags:
-  - concept
-  - ai-safety
-  - alignment
-  - reinforcement-learning
+domain: ai-safety
+maturity: emerging
+source_type: research
+tags: [concept, ai-safety, alignment, reinforcement-learning, domain/ai-safety, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://www.anthropic.com/research/emergent-misalignment-reward-hacking
+    class: external-primary
 ---
 
 # Emergent misalignment from reward hacking

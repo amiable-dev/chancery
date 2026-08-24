@@ -1,0 +1,29 @@
+{
+  "envelope": {
+    "task_id": "96d38d4e732346da",
+    "verb": "link",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "concepts/agent-context-drift.md": "sha256:24cae68a37d2e936b136916ce6d276ee154df13fedaaa17e245dd8e2f5cf1d34",
+      "concepts/agent-outcome-vs-proxy-metrics.md": "sha256:804e8f68d3c7cb92e3f7535528f12e427ab395ade2cfffae23beea7d23cca472",
+      "concepts/agent-state-residence.md": "sha256:47135bf386a877f56c2e5bd6636be338e54e3a401f801163ef5efdf9c0b6c3fb",
+      "concepts/agent-write-permission-separation.md": "sha256:23d396ce496818966508d8a783a91056278971c73e48e6b63a6c95e8a0b91b72",
+      "concepts/answer-layer-interception.md": "sha256:3d65863f67ed4369647ffefb75687b5fc59b9a69c11e06ceeff9f5ba850e6ed1",
+      "concepts/attested-per-agent-identity.md": "sha256:51ab70726f9f7e735cc54a70c70d5e0322de58046d5b2c690f011b5433865d3a",
+      "concepts/authorization-response-issuer-identification.md": "sha256:24b7affe502a4c8a63b43d68311a5707372829fb2e62a387bd77d5e950f53491",
+      "concepts/cfrg-curves-in-jose.md": "sha256:6a36bbf9f4358de78e7a8f7b9386f859d5325d2ccd3ba4fbe9c3f5aa25e1aea6",
+      "concepts/chain-of-thought-prompting.md": "sha256:2546ea204814a9ea9f15e3568f2d48a13c4846e0512ff0f53c0afaa56bfac4b6",
+      "concepts/classifier-mediated-approval.md": "sha256:42ef03a6678e19abdad3a90b59f5c2843452c43ffacf739dd7251a37ed17075b",
+      "schema:link-draft.schema.json": "sha256:e713aca39f650c312adb6e8921abe1fead499fc2ae57267da2cf69356ba1661a"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

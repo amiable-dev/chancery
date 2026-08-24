@@ -36,6 +36,7 @@ Under 2025-11-25, calling a tool meant establishing a session whose ID pinned th
 
 - [[mcp-extensions-framework]] — forced the redesign of Tasks that framework absorbed, because task lifecycles could no longer lean on sessions
 - [[remote-first-mcp-governance]] — simplifies the infrastructure that architecture deploys — remote MCP servers stop needing sticky sessions and shared stores
+- [[agent-state-residence]] — the MCP stateless core is the protocol-level instance of state residence's first pole — removing the session handshake so every request is self-contained is choosing 'resent by the caller every turn' at the transport layer.
 
 ## Applications
 

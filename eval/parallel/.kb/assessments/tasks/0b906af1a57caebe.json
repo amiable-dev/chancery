@@ -1,0 +1,34 @@
+{
+  "envelope": {
+    "task_id": "0b906af1a57caebe",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/842-lint-errors-5-parallel-agents.md": "sha256:bf62a8c040fedb65304d181a212ac9fe9c5a7063862336d952c6f9d246a503f7",
+      "assessment:842-lint-errors-5-parallel-agents": "sha256:6cf020f4d9dc21b7607f4988a471d23e83b55872eb9709b9fa6336a0f5ee0d7f",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:a67593c11626b965f69f65385dcf08369776f6d0fdd0c730bf8a0302d58ec9cd",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/stateless-worker-fanout.md",
+    "concepts/retry-escalation-ladder.md",
+    "concepts/cross-run-observational-memory.md",
+    "concepts/partitioned-edit-consistency-debt.md"
+  ]
+}

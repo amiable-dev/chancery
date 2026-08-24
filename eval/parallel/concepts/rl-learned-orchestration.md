@@ -1,14 +1,14 @@
 ---
 title: RL-learned agent orchestration
 date: 2026-08-24
-tags:
-  - concept
-  - multi-agent
-  - orchestration
-  - reinforcement-learning
+domain: ai-agents
+maturity: emerging
+source_type: research
+tags: [concept, multi-agent, orchestration, reinforcement-learning, domain/ai-agents, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://arxiv.org/abs/2512.04388
+    class: external-primary
 ---
 
 # RL-learned agent orchestration

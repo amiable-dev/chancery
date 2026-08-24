@@ -17,5 +17,19 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:b6d9e0ddb02f9d83e70d6cf49478a35967e73e0e85156446ad654063bd5030c4",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/deterministic-agentic-capability-matrix.md",
+    "concepts/multi-agent-orchestration-topologies.md",
+    "concepts/agentic-artifacts-as-code.md",
+    "concepts/golden-trajectory-regression.md",
+    "concepts/agentic-test-layer-scoping.md"
+  ]
 }

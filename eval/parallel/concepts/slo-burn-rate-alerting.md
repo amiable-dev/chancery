@@ -35,6 +35,7 @@ The chapter (Thurgood et al.) evaluates any alerting strategy on four attributes
 
 - _No relationships recorded yet._
 - [[golden-dataset-retrieval-evals]] — the retrieval harness's nightly regression alerting applies this discipline — measured budgets with alerts on consumption — to context quality instead of request errors
+- [[spec-driven-slo-generation]] — burn-rate alerting is exactly one of the artifacts spec-driven SLO generation's compiler generates mechanically from the compact spec — the same target percentage and period that define the SLO also parametrize the burn-rate windows, rather than being hand-tuned per service.
 
 ## Applications
 

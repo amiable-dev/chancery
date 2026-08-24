@@ -17,5 +17,15 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:883b386f6603b2ac7d31c2c0e0e1a51df747bc2a6b5f57dd3d7bbc60fb28a36c",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/kernel-enforced-agent-sandbox.md"
+  ]
 }

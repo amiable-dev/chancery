@@ -3,14 +3,14 @@ title: Sleeper agent backdoors
 aliases:
   - Sleeper Agents
 date: 2026-08-24
-tags:
-  - concept
-  - ai-safety
-  - alignment
-  - security
+domain: ai-safety
+maturity: emerging
+source_type: research
+tags: [concept, ai-safety, alignment, security, domain/ai-safety, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://arxiv.org/abs/2401.05566
+    class: external-primary
 ---
 
 # Sleeper agent backdoors

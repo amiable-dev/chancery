@@ -1,14 +1,14 @@
 ---
 title: Checkpoint-and-resume agents
 date: 2026-08-24
-tags:
-  - concept
-  - ai-agents
-  - architecture
-  - reliability
+domain: ai-agents
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, ai-agents, architecture, reliability, domain/ai-agents, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://developers.googleblog.com/build-long-running-ai-agents-that-pause-resume-and-never-lose-context-with-adk/
+    class: external-primary
 ---
 
 # Checkpoint-and-resume agents
@@ -34,6 +34,8 @@ The failure it answers is specific: over a multi-day workflow, the stateless pat
 - [[subagent-delegation]] — the persisted state machine is the shared ground that lets a coordinator hand work to sub-agents mid-workflow and absorb their results
 - [[preseeded-state-evals]] — makes those evals possible — only explicit persisted state can be seeded to an arbitrary checkpoint, where chat-history state would demand replaying the whole transcript
 - [[context-layer]] — both reject accumulate-and-replay as a context strategy — the context layer composes retrieved knowledge per query, checkpoint-and-resume injects explicit workflow state per call
+- [[agent-state-residence]] — checkpoint-and-resume is the concrete architecture behind state residence's second pole — a durably persisted state machine injected into the prompt each call is what 'held behind a session identifier' looks like in practice.
+- [[state-authoritative-agent-ui]] — checkpoint-and-resume is exactly the backend architecture the state-authoritative UI pattern is built around — the durable state transition performed on each external event is the same commit the interface waits for before it will render anything.
 
 ## Applications
 

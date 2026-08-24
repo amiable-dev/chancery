@@ -1,14 +1,14 @@
 ---
 title: Agent-discovered weak-to-strong methods
 date: 2026-08-24
-tags:
-  - concept
-  - ai-safety
-  - alignment
-  - machine-learning
+domain: ai-safety
+maturity: emerging
+source_type: research
+tags: [concept, ai-safety, alignment, machine-learning, domain/ai-safety, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://alignment.anthropic.com/2026/automated-w2s-researcher/
+    class: external-primary
 ---
 
 # Agent-discovered weak-to-strong methods

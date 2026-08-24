@@ -1,14 +1,14 @@
 ---
 title: Typed knowledge graph layer
 date: 2026-08-24
-tags:
-  - concept
-  - knowledge-management
-  - knowledge-graph
-  - ai-agents
+domain: knowledge-management
+maturity: emerging
+source_type: practitioner
+tags: [concept, knowledge-management, knowledge-graph, ai-agents, domain/knowledge-management, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://gist.github.com/rohitg00/2067ab416f7bbe447c1977edaaa681e2
+    class: external-primary
 ---
 
 # Typed knowledge graph layer

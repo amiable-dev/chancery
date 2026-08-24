@@ -1,0 +1,52 @@
+---
+title: Kernel-enforced agent sandbox
+date: 2026-08-24
+domain: security
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, security, agents, sandboxing, domain/security, maturity/emerging, source-type/vendor-doc]
+status: draft
+sources:
+  - url: https://omnigent.ai/docs/omnibox
+    class: external-primary
+---
+
+# Kernel-enforced agent sandbox
+
+## Definition
+
+A **kernel-enforced agent sandbox** is a boundary around an autonomous agent that the operating system holds shut rather than the agent's prompt or its own tool logic: filesystem visibility, network egress and credential access are constrained by kernel primitives that every process the agent spawns inherits, so an agent that has been prompt-injected — or is simply misbehaving — cannot negotiate its way out of the restriction, only run into it.
+
+## Explanation
+
+The mechanism is placement: the enforcement point sits underneath the agent instead of inside it, which is what makes the boundary immune to the agent's own reasoning. Three layers compose. Filesystem isolation inverts the default so that ungranted paths do not exist from inside the sandbox at all, the working directory itself is read-only until specific directories are opted back in, and broad read grants stay safe because dotfiles are masked unless explicitly allowed — granting a whole home directory therefore does not hand over SSH keys or cloud credential files. Network isolation routes all HTTP traffic through a default-deny proxy carrying an allow-list of methods, hosts and paths, with private address ranges and cloud metadata endpoints blocked outright; the design point is that exfiltration needs a destination, so an allow-list bounds the damage of a successful injection instead of trying to detect one. Credential injection is the sharpest of the three: the agent holds a placeholder token, and the proxy substitutes the real secret only on requests that already match the allow-list, so the agent can use a credential it is never able to read. Only the placeholder ever reaches logs, transcripts and model context, which collapses the leak surface — a stolen placeholder is inert, since it works solely through the proxy and only against allowed hosts. The general rule the design encodes is that a control an agent can be talked out of is not a control. The source is a vendor architecture page for Omnigent's Omnibox describing a shipped product, so its completeness claims are marketing, but the primitives it names are concrete and checkable: bubblewrap and seccomp on Linux, Seatbelt on macOS.
+
+## Key Properties
+
+- Enforcement lives in the kernel and is inherited by every spawned process, so it cannot be argued or prompted away
+- Filesystem access is allow-listed, the working directory read-only by default, and dotfiles masked under broad grants
+- Egress is default-deny by method, host and path, with private ranges and cloud metadata endpoints blocked
+- The agent holds placeholder tokens that the proxy swaps for real secrets, so it can use a credential it cannot read
+- A leaked placeholder is worthless off the proxy, which limits the damage of exposure in logs and transcripts
+
+## Relationships
+
+- [[agent-harness]] — is where this property belongs, since the sandbox is a harness-level trait — the same model becomes safe or unsafe to run unattended depending on what wraps it
+- [[mcp-tool-poisoning]] — describes an injection this design does not attempt to prevent and instead contains, because the poisoned instruction still lands but a default-deny egress list leaves the agent nowhere to send what it collected
+- [[siem-agentic-visibility-gap]] — is the complementary half of the problem — this bounds what an agent is able to do, while that concerns whether anyone can afterwards see what it did
+- [[layered-agent-guardrails]] — the kernel-enforced sandbox is the concrete mechanism behind layered agent guardrails' first layer — 'sandboxing bounds the blast radius when anything else fails' is exactly what kernel primitives enforce, beneath every other guardrail in the sequence.
+- [[principle-of-least-agency]] — the kernel-enforced sandbox supplies the enforcement mechanism for the access boundary least agency prescribes — kernel primitives make the boundary structurally impossible to negotiate around, rather than merely specified in policy.
+
+## Applications
+
+Running coding agents unattended without handing them real credentials or an unrestricted network; giving an agent the use of a paid API while keeping the key out of its context and transcripts; deciding which controls can live in policy prompts and which have to be pushed below the agent entirely.
+
+## Sources
+
+- https://omnigent.ai/docs/omnibox
+
+## See Also
+
+- [[agent-harness]]
+- [[mcp-tool-poisoning]]
+- [[siem-agentic-visibility-gap]]

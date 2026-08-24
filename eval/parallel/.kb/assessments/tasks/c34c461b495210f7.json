@@ -17,5 +17,17 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:f3fc5549f4882f71de0b86a6909bf380002e4901884a462ac4ee4068daad8fbc",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/selection-bottleneck-of-the-record.md",
+    "concepts/memex.md",
+    "concepts/associative-trail.md"
+  ]
 }

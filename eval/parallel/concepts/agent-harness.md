@@ -1,14 +1,14 @@
 ---
 title: Agent harness
 date: 2026-08-24
-tags:
-  - concept
-  - ai-agents
-  - architecture
-  - context
+domain: ai-agents
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, ai-agents, architecture, context, domain/ai-agents, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://www.langchain.com/blog/the-anatomy-of-an-agent-harness
+    class: external-primary
 ---
 
 # Agent harness

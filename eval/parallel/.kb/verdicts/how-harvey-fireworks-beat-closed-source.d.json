@@ -1,0 +1,48 @@
+{
+  "task_id": "998bbf9f00dd2e30",
+  "supplier": { "class": "model-single", "id": "claude-opus-5" },
+  "concepts": [
+    {
+      "slug": "frontier-advisor-harness",
+      "title": "Frontier model as callable advisor",
+      "tags": ["concept", "ai-agents", "orchestration", "inference-cost"],
+      "definition": "A **frontier advisor harness** runs the agent loop on a cheaper open-weights worker model and exposes a stronger, more expensive model to it as an ordinary callable tool, so escalation is a decision the worker makes mid-trajectory at its own points of uncertainty rather than a routing decision taken up front by a separate classifier or orchestrator; the strong model advises and reviews on a minority of sub-tasks instead of executing the task end to end, which turns the frontier dependency into a per-workload cost dial rather than a load-bearing component.",
+      "explanation": "The mechanism is self-invoked escalation. There is no external router: the worker holds the trajectory, and where it reaches an uncertain step — validation most often, drafting sometimes — it calls the advisor for guidance or review, then continues with the response folded in. The signature in traces is asymmetric: advisor calls are sparse, about 0.83 per task in the reported run, while the worker's turn count rises noticeably downstream of each one, so the strong model does less of the writing and more of the steering, and the worker goes on to do work it would not have known to do on its own. That asymmetry is what makes the economics work, because the expensive model is billed for a few short steering turns rather than the whole long trajectory, and the call rate becomes a knob to raise on complex matters and lower on routine ones. The source is a vendor post from Fireworks with Harvey, run on a 100-task distribution-mirrored slice of Harvey's open-sourced Legal Agent Benchmark: an open worker with a frontier advisor scored 18 of 100 on the strict all-criteria-pass metric for $368, against 14 of 100 for the frontier model end to end at $954 and 12 of 100 for the worker alone at $121. Read the headline carefully, because the post itself reports an all-pass standard error near 2.5 tasks per 100, so beating the frontier baseline by 4 tasks is roughly one standard error and the direction of the result is stronger evidence than its size. What survives the version churn is the design point: keep open weights at the core and let the loop pull frontier intelligence in only where it changes the answer.",
+      "key_properties": [
+        "No external router — the worker itself decides when to escalate, mid-trajectory, at its own points of uncertainty",
+        "Advisor calls are sparse and steering-shaped; the worker's turn count rises downstream of each one",
+        "The advisor invocation rate is an explicit cost/quality dial, tunable per workload",
+        "Reported run: open worker plus frontier advisor at 18/100 all-pass for $368, versus the frontier model end to end at 14/100 for $954",
+        "Vendor-reported on a 100-task slice whose all-pass standard error is about 2.5 tasks, so the margin over the frontier baseline is roughly one standard error"
+      ],
+      "relationships": [
+        { "target": "agent-harness", "clause": "is a pure harness intervention in that sense — the weights are untouched and only the orchestration around the model moves, which is why the quality change arrives without any training run" },
+        { "target": "rl-learned-orchestration", "clause": "pursues the same goal of spending a strong model only where it pays, but through a coordinator trained end-to-end, where this pattern uses the worker's own uncertainty as the routing policy and is therefore buildable without an RL run" },
+        { "target": "model-harness-coevolution", "clause": "supplies the caveat that governs these numbers — scores attach to model-plus-harness pairs, so a hybrid-harness result is a claim about that combination and not about either model on its own" },
+        { "target": "rubric-as-training-signal", "clause": "is the inference-time counterpart to that training-time intervention — both close the gap to a frontier model from an open-weights base, one by restructuring how the model is called and the other by restructuring the model" }
+      ],
+      "applications": "Cutting agent inference cost on long-horizon, rubric-graded work without giving up frontier-quality outcomes: run the loop on an open-weights worker and let it call a stronger model on the validation or drafting steps it is unsure of, then tune the call rate per workload. It is also the structure to reach for when a frontier API is a dependency you want to make optional rather than load-bearing.",
+      "see_also": ["agent-harness", "rl-learned-orchestration", "rubric-as-training-signal"]
+    },
+    {
+      "slug": "rubric-as-training-signal",
+      "title": "Evaluation rubric as training signal",
+      "tags": ["concept", "evaluation", "post-training", "fine-tuning"],
+      "definition": "**Evaluation rubric as training signal** is the practice of reusing a benchmark's own grading rubric as the supervision for improving a model against it, in two escalating forms: rejection-sampling supervised fine-tuning, where the base model is run over the benchmark and only the completions passing every rubric criterion are kept as training data, and reinforcement fine-tuning, where the rubric's evaluators are called during training so each criterion contributes its own reward. In neither form is a separate reward model trained or a human relabelling pass run, because the grader that already exists is the labeller.",
+      "explanation": "The supervised form is the cheap half and is almost embarrassingly simple: generate trajectories with the base model, filter by the rubric, fine-tune on the survivors. It works because a rubric-graded benchmark is already a verifier, so the model's own passing outputs are in-distribution demonstrations of exactly the behaviour the rubric rewards, with no reward model and no architecture change. Its ceiling follows from the same fact — nothing can be learned about criteria the base model never satisfies, because there are no passing samples to imitate. Reinforcement fine-tuning is the follow-on for precisely that ceiling: scoring against the evaluators directly with per-criterion rewards can teach the criteria rejection sampling has no examples of, at the price of more compute and a noisier curve. The reported run illustrates the gain and a measurement subtlety worth carrying away: supervised fine-tuning moved the mean rubric-criterion pass rate only from 0.863 to 0.876 but moved the strict all-criteria-pass count from 11 of 100 to 15 of 100 at essentially unchanged inference cost, and a small mean lift with a large strict-metric jump is the signature of a model that learned to close tasks out cleanly rather than one that got broadly smarter — which is why the two metrics have to be read together. Reinforcement fine-tuning then reached 0.886 over 46 rollout steps. The source is a vendor post reporting its own runs, so treat the magnitudes as illustrative and the recipe as the transferable part. The hazard is structural rather than incidental: optimizing directly against the grader optimizes what the rubric measures, and the rubric is a proxy for what you actually want.",
+      "key_properties": [
+        "Supervised form: generate with the base model, keep only rubric-passing completions, fine-tune on them — no reward model, no human relabelling",
+        "Reinforcement form: call the rubric's evaluators during training with per-criterion rewards, as the follow-on when rejection sampling plateaus",
+        "Rejection sampling cannot teach criteria the base model never satisfies, since it has no passing examples of them",
+        "Reported effect concentrated in the strict all-criteria-pass metric (11 to 15 of 100) rather than the mean (0.863 to 0.876), at unchanged inference cost",
+        "Training against the grader optimizes the proxy rather than the goal the proxy stands for"
+      ],
+      "relationships": [
+        { "target": "frontier-advisor-harness", "clause": "is the training-time counterpart to that inference-time pattern — one changes the weights so the open model needs less help, the other changes the call structure so it gets help only where it matters" },
+        { "target": "emergent-misalignment-from-reward-hacking", "clause": "names the hazard this recipe walks toward — training directly against the evaluators that score you is exactly the setup in which optimizing the measured proxy, rather than the behaviour it stands for, is what gets rewarded" }
+      ],
+      "applications": "Turning an existing rubric-graded benchmark into a fine-tuning pipeline with no labelling budget: filter your own rollouts by rubric pass and fine-tune on the survivors, escalating to per-criterion reward training only once that filter stops paying. It is also a reason to hold back a rubric slice the training loop never sees, so the grader retains some independence from the thing it grades.",
+      "see_also": ["frontier-advisor-harness", "emergent-misalignment-from-reward-hacking"]
+    }
+  ]
+}

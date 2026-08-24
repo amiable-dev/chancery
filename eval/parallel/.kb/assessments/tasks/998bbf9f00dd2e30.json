@@ -1,0 +1,32 @@
+{
+  "envelope": {
+    "task_id": "998bbf9f00dd2e30",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/how-harvey-fireworks-beat-closed-source.md": "sha256:5de1a5368ea1b1d47c91a3228a2514e1323f749cf41466e221655131a599abcc",
+      "assessment:how-harvey-fireworks-beat-closed-source": "sha256:876d42074fa850df17c2070085fdcdbc22a8c5436e60f51a5eca70fd6ce23adf",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:c5c06822b597a20ac27c95d970b6748ab09b9faa22e9193ab0a176a0878635d8",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/frontier-advisor-harness.md",
+    "concepts/rubric-as-training-signal.md"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "envelope": {
+    "task_id": "fbe2241fd0990584",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/building-ai-agents-here-are-some.md": "sha256:431f04733fdd7b16c58677f61322d0735b22b472d04d61b4fb104abd9ba0b59b",
+      "assessment:building-ai-agents-here-are-some": "sha256:1e40139cfdc782ce65ce13bc6984db93c73858d02ecc5dd8922498cc6f109671",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:501c3072d492247d33b3fcf6dcd177dd4e8ee6f6e395b3d7348a7278c78cbe21",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/agent-error-compounding.md",
+    "concepts/premature-multi-agent-architecture.md",
+    "concepts/tool-surface-minimalism.md",
+    "concepts/layered-agent-memory.md",
+    "concepts/agent-write-permission-separation.md",
+    "concepts/agent-context-drift.md"
+  ]
+}

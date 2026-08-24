@@ -1,14 +1,14 @@
 ---
 title: Three loops of agentic development
 date: 2026-08-24
-tags:
-  - concept
-  - agentic-coding
-  - product-development
-  - feedback-loops
+domain: software-engineering
+maturity: emerging
+source_type: practitioner
+tags: [concept, agentic-coding, product-development, feedback-loops, domain/software-engineering, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://x.com/AndrewYNg/status/2071988145667928442
+    class: external-primary
 ---
 
 # Three loops of agentic development

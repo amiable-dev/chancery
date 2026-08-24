@@ -1,0 +1,69 @@
+{
+  "task_id": "451621f161d15e00",
+  "supplier": { "class": "model-single", "id": "claude-opus-5" },
+  "concepts": [
+    {
+      "slug": "trace-to-dataset-loop",
+      "title": "Trace-to-dataset evaluation loop",
+      "tags": ["concept", "llmops", "observability", "evaluation"],
+      "definition": "The **trace-to-dataset loop** is the practice of making the tenancy boundary in an LLM observability platform the product rather than the environment, so one workspace holds development, staging and production for a single AI product and a real production trace can be annotated in place and pushed straight into an offline evaluation dataset that the next version of the agent is replayed against. Partitioning by environment instead severs the loop, because production traces then sit in a tenancy the development-time datasets cannot reach.",
+      "explanation": "The mechanism is unglamorous and entirely structural: the unit of tenancy decides what can be joined without an export. Datasets, annotation queues and experiments live inside a workspace, so when the workspace boundary is the environment, promoting a genuine production failure into a regression case means copying data across a tenancy line — a step that is possible, is nobody's job, and therefore does not happen. Making the boundary the product puts the evaluation artifacts next to the traces they came from: a domain expert opens a real conversation, annotates it, pushes it into a dataset, and every subsequent prompt or model change is replayed against that example before it ships. The same co-location yields drift detection almost for free, since the traces feeding the regression suite are the traces being watched. Two obligations come attached. The loop needs a reviewer role scoped to annotation queues and datasets but not to the developer surface, because otherwise subject-matter experts cannot take part without engineering skills — and their attention, not the tooling, is the scarce input. And production data now shares a workspace with development, which is why teams choosing this boundary under data-residency constraints tend also to self-host inside their security perimeter. The source is a guest post by named platform engineers at Schneider Electric on the vendor's blog, a practitioner account rather than a launch, and its most useful figure is a sobering one: after real investment, roughly 20% of their sixty-plus AI products had an active expert annotation queue, so this is a capability that has to be driven into teams rather than one that spreads on its own.",
+      "key_properties": [
+        "The tenancy boundary is the product; one workspace spans dev, QA, pre-prod and prod",
+        "Production traces are annotated in place and pushed into regression datasets that new versions are replayed against",
+        "An environment-per-workspace split breaks the loop by separating production traces from development datasets",
+        "Requires an expert-scoped role granting annotation queues and datasets without developer surface area",
+        "Reported reach after sustained effort: about 20% of sixty-plus AI products had an active expert annotation queue"
+      ],
+      "relationships": [
+        { "target": "observability-generations", "clause": "carries that generational argument into LLM systems, where the payoff of storing rich per-interaction records is not only debugging but supplying the evaluation data that decides whether a change ships" },
+        { "target": "wide-events-single-source-of-truth", "clause": "shares the instinct that one richly-captured record should serve several consumers — here a single production trace serves debugging, regression testing and drift detection instead of being copied into a separate evaluation corpus" },
+        { "target": "llmops-maturity-gates", "clause": "supplies one of the capabilities those gates check for, since a product with no annotation queue cannot satisfy the criterion that user feedback flows back into evaluation" }
+      ],
+      "applications": "Deciding the workspace or project layout when standing up LLM observability: pick the boundary that keeps production traces and evaluation datasets joinable, and create an annotation-only role for non-engineers before asking domain experts to review anything. It is also the fix to reach for when a team already has traces and evals but no route from one to the other.",
+      "see_also": ["observability-generations", "wide-events-single-source-of-truth", "llmops-maturity-gates"]
+    },
+    {
+      "slug": "llmops-maturity-gates",
+      "title": "LLMOps maturity gates",
+      "tags": ["concept", "llmops", "platform-engineering", "governance"],
+      "definition": "**LLMOps maturity gates** are a codified maturity model over a small fixed set of LLM operational capabilities — is the product instrumented for tracing, does it have an offline evaluation suite, are online evaluators running in production, is user feedback flowing back and being reused — scored automatically by querying the observability platform's API on a schedule, and consumed by the lifecycle reviews that decide whether a use case advances from exploration to incubation to industrialization to operations.",
+      "explanation": "Two design choices carry the weight and both are about removing discretion. The first is that every criterion is a machine-checkable fact about the platform rather than a self-assessment: a scheduled job queries the observability API and renders a consolidated view of every AI product against every capability, so adoption becomes a dashboard nobody argues with instead of a survey teams answer optimistically. The second is that something consumes the score. A maturity model that only produces a report changes nothing; wiring the score into stage-gate reviews leaves an uninstrumented product unable to advance, which converts a best-practice document into a blocking condition. The pairing is what transfers — automated measurement with no gate is decoration, and a gate with no machine-checkable evidence is a rubber stamp. The account is candid about why the apparatus was needed at all: across sixty-plus AI products, adoption of tracing and evaluation took sustained work, and the teams that resisted instrumenting early were the ones later stuck debugging non-deterministic regressions from intuition. It is a practitioner guest post on a vendor blog, so the exact capability list belongs to one organisation, but the axes generalise to any portfolio where a platform team has influence and no authority.",
+      "key_properties": [
+        "Four capability axes: instrumented, offline evaluation suite, online evaluators in production, feedback flowing back",
+        "Scored automatically from the observability platform's API on a schedule, not by team self-report",
+        "Consumed by lifecycle stage gates — exploration, incubation, industrialization, operations — which is where the enforcement lives",
+        "Automated measurement without a gate is decoration; a gate without machine-checkable evidence is a rubber stamp",
+        "Reported context: sixty-plus AI products and roughly 200 platform users across engineering and domain experts"
+      ],
+      "relationships": [
+        { "target": "paved-road-mcp-platform", "clause": "is the measurement half of the same platform posture — the paved road makes the governed path the fastest one to take, and the maturity gate makes taking it a condition of shipping" },
+        { "target": "trace-to-dataset-loop", "clause": "is the capability most of these gates are really testing for, since instrumentation, evaluation suites and returning feedback are all steps of that one loop" },
+        { "target": "per-product-agent-runtime", "clause": "is the standardising counterweight to that isolation — independent runtimes drift apart unless a measured capability floor keeps pulling them back toward a common baseline" }
+      ],
+      "applications": "Driving instrumentation and evaluation adoption across a portfolio of AI products where the platform team has influence but not authority: define a handful of capabilities the platform itself can verify over an API, report them on a schedule, and attach the result to the review that lets a use case change stage.",
+      "see_also": ["paved-road-mcp-platform", "trace-to-dataset-loop", "per-product-agent-runtime"]
+    },
+    {
+      "slug": "per-product-agent-runtime",
+      "title": "Per-product agent runtime isolation",
+      "tags": ["concept", "platform-engineering", "ai-agents", "reliability"],
+      "definition": "**Per-product agent runtime isolation** is the decision to run each AI product on its own dedicated agent-runtime stack — its own server process, database and cache — instead of on one centralized runtime shared across the organisation, so every squad owns the latency, cost and incident response for its own agents and no single faulty deployment or resource exhaustion can degrade every agent at once. The price, stated rather than hidden, is more infrastructure to operate and more upgrades to coordinate.",
+      "explanation": "Two arguments motivate it and they pull the same way. The organisational one is you-build-it-you-run-it: a platform team that ships foundations and paved paths rather than a turnkey runtime keeps each squad accountable for the latency, cost and pager duty of what it built, and that accountability is only credible if the squad actually controls the runtime. The blast-radius one is that a shared agent runtime is a systemic single point of failure, where one bad deploy or one resource-hungry agent degrades every agent in the company, while per-product stacks confine an incident to a single use case. The part that keeps this from degenerating is easy to miss: every product starts from the same templated runtime configuration, carrying the allow-listed base image, the corporate certificate bundle and the standard routes, so N stacks do not become N snowflakes. Isolation without a shared template merely multiplies drift; the template is what makes the multiplication survivable. The team is straightforward that the trade-off is real and unfinished — more charts to upgrade, more versions to pin, more lifecycle to manage — and names it as their next investment. This is a practitioner account on a vendor blog, describing choices made under one enterprise's constraints of critical infrastructure, data residency and multi-cloud deployment, but the reasoning travels further than the specific stack does.",
+      "key_properties": [
+        "One runtime stack per AI product; no shared central agent runtime",
+        "Organisational rationale: squads own latency, cost and incident response for what they build",
+        "Blast-radius rationale: a central runtime turns one bad deploy into an all-agent outage",
+        "Admitted cost: more infrastructure to operate and more upgrades to coordinate, named as the next investment area",
+        "A shared templated configuration per product is what stops N runtimes becoming N snowflakes"
+      ],
+      "relationships": [
+        { "target": "paved-road-mcp-platform", "clause": "applies the same philosophy to runtimes rather than to servers — the platform ships a template that makes the governed configuration the default, instead of a shared service every team is obliged to run on" },
+        { "target": "agent-harness", "clause": "is what is being replicated here, since the runtime, its state stores and its orchestration are all harness, making this a decision about how many copies of that harness an organisation is willing to operate" },
+        { "target": "llmops-maturity-gates", "clause": "is the discipline that makes this affordable, because a measured capability floor is what keeps independently-operated runtimes from diverging into unmaintainable variants" }
+      ],
+      "applications": "Choosing between a shared agent platform and per-team runtimes once an organisation runs more than a handful of agentic products, especially where losing every agent at once is unacceptable. The paired obligation is to ship the runtime template first, so isolation buys blast-radius containment without also buying configuration drift.",
+      "see_also": ["paved-road-mcp-platform", "agent-harness", "llmops-maturity-gates"]
+    }
+  ]
+}

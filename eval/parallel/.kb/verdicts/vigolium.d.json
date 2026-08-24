@@ -1,0 +1,83 @@
+{
+  "task_id": "d3db5a0ba9ea26ff",
+  "supplier": {"class": "model-single", "id": "claude-opus-5"},
+  "concepts": [
+    {
+      "slug": "agent-budget-caps",
+      "title": "Budget caps for autonomous agents",
+      "aliases": ["Agent budget caps", "Cap-to-job-shape matching"],
+      "tags": ["concept", "agents", "operations", "cost-control"],
+      "definition": "**Budget caps for autonomous agents** are operator-set hard limits on what a self-directed agent may consume — tokens, tool calls, re-check iterations, wall-clock duration — chosen to match the shape of the job rather than fixed once globally, on the premise that an agent's output degrades in both directions: too small a budget cuts it off mid-lead and leaves a low-confidence stub, while too large a budget lets it wander, spend, and add noise.",
+      "explanation": "An agent that chooses its own next action has no internal stopping rule tied to the value of continuing, so the cap is the operator's only lever on where it stops, and which cap binds is a property of the job rather than of the agent. A time-boxed engagement or a CI run leans on the wall-clock and iteration caps, because the requirement is that the run always finishes inside a window even if it finishes incomplete. A deep investigation of a single target loosens the token cap instead, because the value there comes from the agent being able to abandon a hypothesis and re-plan, which is precisely the behaviour a tight token budget forecloses. A broad sweep across many targets needs per-target budgets rather than one pooled allowance, because a single target that turns into a rabbit hole will otherwise consume the entire run and starve every target after it. The two failure modes are worth separating because they present asymmetrically: underbudgeting fails visibly and honestly — a lead cut mid-investigation is legible as a stub — whereas overbudgeting produces plausible additional output that costs money and dilutes the genuine findings, so it is the harder error to notice from the report alone. That asymmetry is what justifies the operating rule of starting tight and loosening only when real work is demonstrably being cut off: it calibrates against the failure you can see. The source is trade-press coverage built on an interview with the author of an open-source agentic scanner, so this is a practitioner's operating judgement rather than a measured result.",
+      "key_properties": [
+        "Four distinct cap types — tokens, tool calls, re-check iterations, wall-clock duration — that bind under different job shapes",
+        "Time-boxed and CI runs lean on wall-clock and iteration caps so the run always terminates",
+        "Deep single-target work loosens the token cap, because re-planning after a dead end is what tokens buy",
+        "Broad sweeps need per-target budgets, or one rabbit-hole target eats the whole allowance",
+        "Underbudgeting fails visibly as a low-confidence stub; overbudgeting fails invisibly as cost and noise, so start tight and loosen on evidence"
+      ],
+      "relationships": [
+        {
+          "target": "agent-loop-anatomy",
+          "clause": "supplies the slot these caps fill — they are the independent termination exits that anatomy requires, expressed as resource limits rather than as goal tests"
+        },
+        {
+          "target": "evidence-recheck-triage",
+          "clause": "consumes one of these budgets directly, since re-check iterations are a capped resource — starving the triage pass turns off the check it exists to be"
+        }
+      ],
+      "applications": "Setting per-job rather than per-tool budgets when running LLM-driven scanners, research agents or batch harnesses; choosing per-target caps for fan-out workloads so one pathological target cannot starve the rest; diagnosing a disappointing agent run by asking which cap bound first.",
+      "see_also": ["agent-loop-anatomy", "evidence-recheck-triage"]
+    },
+    {
+      "slug": "evidence-recheck-triage",
+      "title": "Triage as a separate evidence pass",
+      "aliases": ["Evidence re-check pass", "Separate triage phase"],
+      "tags": ["concept", "agents", "security", "verification"],
+      "definition": "**Triage as a separate evidence pass** is the discipline of never letting the process that generates candidate findings also decide which of them are real: the generator emits candidates, and a distinct later pass re-checks each candidate against the evidence it cited, under two conservative rules — de-duplication that merges only demonstrable copies of the same issue, and uncertainty that downgrades a finding's confidence rather than dropping it.",
+      "explanation": "The failure it addresses is specific to model-driven analysis: plausible-sounding findings that do not reproduce. Separating the passes helps because generation and verification are rewarded for opposite things. A pass searching for issues is rewarded for coverage and will accept a thin chain of reasoning to reach a candidate, since a missed issue costs it and a weak one does not; a pass whose only job is to test a candidate against its own cited evidence gains nothing from that candidate surviving. Running them as one step means the same reasoning that produced the claim also grades it, which is the arrangement most likely to preserve a motivated conclusion. Separation also makes the filter inspectable — its inputs and its verdicts become an artifact someone can audit, rather than an unlogged judgement buried inside the search. The two de-duplication rules encode the same caution about which way to fail: collapsing only provable copies means the pass never makes a keep-or-kill decision on borderline findings, and downgrading rather than dropping anything it is unsure about means uncertainty reaches the operator as a low-confidence entry instead of silence. Both choices push the error toward a noisier report rather than a quietly missing vulnerability, which is the right direction when a false negative is invisible and a false positive is merely irritating. The source is trade-press coverage of an interview with an open-source scanner's author, so this is stated design intent rather than a measured false-positive reduction.",
+      "key_properties": [
+        "Generation and verification are rewarded for opposite things, so one pass cannot serve both",
+        "Each candidate is re-checked against the specific evidence it cited, as its own phase after the scan",
+        "De-duplication merges only demonstrable copies and never makes keep-or-kill calls on borderline findings",
+        "Uncertain findings are downgraded and still shown, never quietly dropped",
+        "The failure direction is chosen deliberately: a noisier report beats an invisible false negative"
+      ],
+      "relationships": [
+        {
+          "target": "agent-budget-caps",
+          "clause": "governs whether this pass can do its job at all, because re-check iterations are one of the capped resources and a starved triage phase degrades into a rubber stamp"
+        },
+        {
+          "target": "risk-tiered-agent-change-control",
+          "clause": "generalises the same separation to change pipelines — creating a change and checking it are assigned to different identities for the reason triage is given its own pass, and both leave an evidence trail someone else can reconstruct"
+        }
+      ],
+      "applications": "Structuring any LLM-driven detection pipeline — security scanning, code review, data-quality checks — as generate-then-verify rather than one combined judgement; setting dedup policy so uncertain duplicates surface downgraded instead of being collapsed away; auditing an agent's filter by reading the triage artifact rather than the final report.",
+      "see_also": ["agent-budget-caps", "risk-tiered-agent-change-control"]
+    },
+    {
+      "slug": "extension-registry-trust",
+      "title": "Extension registry trust model",
+      "aliases": ["Plugin registry trust", "Unsandboxed extension distribution"],
+      "tags": ["concept", "security", "supply-chain", "extensibility"],
+      "definition": "An **extension registry trust model** is the set of guarantees a distribution channel must supply when the extensions it distributes execute arbitrary code with no sandbox: because such a registry is in substance a channel for distributing executables, and because a signature establishes only who produced an artifact and never whether it is safe, the defensible posture is provenance plus signing, untrusted-by-default with explicit per-extension opt-in, and curation of a small vetted set rather than open submission.",
+      "explanation": "The argument turns on what signing actually buys. A signature binds an artifact to an identity, which makes attribution and revocation possible after the fact; it makes no claim whatsoever about behaviour, so a correctly signed extension from a real account with a valid key can still read every credential the host process can reach. That gap is tolerable when the runtime confines what an extension can do and intolerable when it does not — an extension engine that can execute arbitrary commands and issue session-aware HTTP requests against whatever the host is already authenticated to inherits the host's full authority, so a compromise is total rather than partial. This is why the usual marketplace defence does not transfer: scale, reputation and takedown are remedies that operate after code has run, and against a total compromise a takedown is a post-mortem. The alternative accepts a smaller ecosystem in exchange for a bounded one — nothing is trusted until an operator explicitly enables it, provenance records what was built by whom from what, and curation replaces open submission so that the vetted set stays small enough to actually vet. The position comes from the author of an open-source scanner explaining why he had not built a registry, so it is a design stance rather than a study of registry compromises; the compensating evidence is the steady record of package-registry and editor-extension compromises that keep confirming the same asymmetry.",
+      "key_properties": [
+        "Unsandboxed extensions make a registry a channel for distributing executables, not documents",
+        "Signing establishes authorship and enables revocation; it asserts nothing about behaviour",
+        "An extension with host authority and session-aware network access inherits the host's full privilege, so compromise is total",
+        "Takedown and reputation are post-execution remedies, which is the wrong timing for total compromise",
+        "Untrusted-by-default with explicit opt-in, and a small curated set in place of open submission"
+      ],
+      "relationships": [
+        {
+          "target": "exposure-first-supply-chain-defense",
+          "clause": "names editor-extension marketplaces as a live theft channel, which is the empirical case this trust model is built to refuse"
+        }
+      ],
+      "applications": "Deciding whether to open a plugin ecosystem for a tool whose extensions run unsandboxed, and what to require before doing so; evaluating an existing marketplace by asking what its signatures actually assert; arguing for a curated extension set inside an organisation rather than allowing arbitrary installs.",
+      "see_also": ["exposure-first-supply-chain-defense"]
+    }
+  ]
+}

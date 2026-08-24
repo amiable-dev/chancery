@@ -35,6 +35,7 @@ The contrast case is grep: keyword search finds string matches but cannot say wh
 
 - [[graph-vs-vector-code-retrieval]] — is the substrate whose structural queries that comparison argues beat similarity search for code reasoning
 - [[natural-language-to-cypher]] — is made accessible to non-experts by that technique, which generates the graph queries from plain questions
+- [[language-agnostic-code-graph]] — the language-agnostic code graph is the language-normalizing case of the code-knowledge-graph pattern — the same typed node/edge representation, but per-language parse trees are first mapped into one shared vocabulary before merging into a single cross-language graph.
 
 ## Applications
 

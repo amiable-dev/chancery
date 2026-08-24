@@ -1,0 +1,51 @@
+---
+title: State-authoritative agent interface
+date: 2026-08-24
+domain: ai-agents
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, agents, interface-design, state-management, domain/ai-agents, maturity/emerging, source-type/vendor-doc]
+status: draft
+sources:
+  - url: https://github.com/GoogleCloudPlatform/generative-ai/tree/main/agents/adk/new-hire-onboarding
+    class: external-primary
+---
+
+# State-authoritative agent interface
+
+## Definition
+
+A **state-authoritative interface** over an agent-backed workflow renders only transitions the backend has actually committed. A user action is posted as an external event, the interface waits for the agent's resume turn to finish and the durable state to change, and only then displays the new step — deliberately refusing the optimistic update a conventional front end would apply the instant a button is clicked. The screen is a view of persisted agent state, never a prediction of it.
+
+## Explanation
+
+Optimistic rendering is sound when the backend step is a deterministic write whose outcome the client can predict and whose failure is rare and cheaply reversed. None of that holds when the step is an agent turn: the model may refuse, it may stall against a gate whose precondition is unmet, it may take a different route than the button's label implies, and a resume out of dormancy costs a cold start plus inference, so the latency is unbounded rather than merely variable. An interface that renders ahead of the commit therefore reports progress the system has not made, and because the durable record rather than the screen is what the agent reads on its next turn, the divergence always resolves against the user. The discipline that follows is concrete: route each user action through the same event path a real external callback would take — a signature webhook, a carrier delivery notification — so the demo path and the production path are the same code; block the view on completion of that resume turn; and display the artifacts the backend actually produced, fetched by identifier, instead of client-side placeholders standing in for them. The price is visible waiting, several seconds of a click that does nothing yet. That wait is diagnostic rather than defective: it is the only way pause-and-resume behaviour becomes observable from outside, which is precisely what an interface over a long-running agent has to expose. The source is a Google Cloud sample repository for a multi-day onboarding coordinator, whose README states the constraint explicitly and calls the resulting behaviour honest; as a vendor sample it demonstrates a design with runnable code rather than offering evidence about what users prefer.
+
+## Key Properties
+
+- Every user action becomes an external event on the same resume path real-world callbacks use
+- The view blocks on the agent's resume turn and renders only committed durable state
+- Optimistic rendering is unsound because an agent turn may refuse, stall on an unmet gate, or route differently
+- Displayed artifacts are the backend's real outputs fetched by identifier, not client-side placeholders
+- Latency is made visible by design, which is what makes pause and resume observable at all
+
+## Relationships
+
+- [[agent-checkpoint-resume]] — is the backend architecture this interface is a view onto — the durable state each tool call checkpoints is exactly what the screen refuses to render ahead of
+- [[preseeded-state-evals]] — asserts the same commit-before-belief invariant offline, seeding a checkpoint and checking what the agent does next where this interface simply shows nothing until the checkpoint moves
+- [[subagent-delegation]] — can run underneath a single click in this design, since a coordinator may delegate to specialists before any state the interface is allowed to display has changed
+- [[stateful-agent-reliability]] — the state-authoritative UI pattern extends stateful-agent reliability's backend discipline up to the interface layer — a deployment that must not disturb an agent already mid-run has a matching obligation on the UI watching it: never render a transition the backend has not actually committed.
+
+## Applications
+
+Building operator consoles and customer portals over long-running agents — onboarding, claims, fulfilment — where one click can trigger minutes of agent work across a dormancy gap. Auditing an existing agent-backed UI for optimistic states that assert progress the durable record does not yet contain.
+
+## Sources
+
+- https://github.com/GoogleCloudPlatform/generative-ai/tree/main/agents/adk/new-hire-onboarding
+
+## See Also
+
+- [[agent-checkpoint-resume]]
+- [[preseeded-state-evals]]
+- [[subagent-delegation]]

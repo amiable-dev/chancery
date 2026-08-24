@@ -5,14 +5,14 @@ aliases:
   - Single source of truth telemetry
   - Observability 2.0 storage model
 date: 2026-08-24
-tags:
-  - concept
-  - observability
-  - telemetry
-  - instrumentation
+domain: observability
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, observability, telemetry, instrumentation, domain/observability, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://www.honeycomb.io/blog/one-key-difference-observability1dot0-2dot0
+    class: external-primary
 ---
 
 # Wide events as a single source of truth

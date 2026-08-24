@@ -17,5 +17,15 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:4c9361ae73663a0e7fb4e3e82197b309514fbc61fa6fc7502bb94ec701633673",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/agent-tool-ergonomics.md"
+  ]
 }

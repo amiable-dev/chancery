@@ -17,5 +17,15 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:a503cf8f6aeba4e90e60bbfdf6049b28f63ef2fc3b4186a27d567cbd7c0dd0cc",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/authorization-response-issuer-identification.md"
+  ]
 }

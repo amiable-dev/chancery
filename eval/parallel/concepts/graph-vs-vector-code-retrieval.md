@@ -36,6 +36,7 @@ Vector databases excel at finding text that resembles the query; code questions 
 
 - [[code-knowledge-graph]] — presupposes that graph as the structured index this comparison retrieves from
 - [[retrieval-augmented-generation]] — specialises RAG's non-parametric memory: the index is a typed graph returning connected subgraphs instead of a vector store returning chunks
+- [[language-agnostic-code-graph]] — the graph-versus-vector retrieval argument is the retrieval-side case that a language-agnostic code graph's structure enables — connected subgraphs of stated inheritance, dependency and call relationships are retrievable as exact traversals only because such a graph exists to traverse.
 
 ## Applications
 

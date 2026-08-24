@@ -1,0 +1,7 @@
+{
+  "task_id": "e707d074ba625004",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "assignments": [
+    {"slug": "workflows-versus-agents", "domain": "ai-agents", "maturity": "established", "source_type": "vendor-doc", "rationale": "Note states plainly this Anthropic engineering post is 'a vendor piece', but also that 'the distinction and the five patterns became the field's standard vocabulary'."}
+  ]
+}

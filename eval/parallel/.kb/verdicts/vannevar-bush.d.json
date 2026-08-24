@@ -1,0 +1,99 @@
+{
+  "task_id": "c34c461b495210f7",
+  "supplier": {"class": "model-single", "id": "claude-opus-5"},
+  "concepts": [
+    {
+      "slug": "selection-bottleneck-of-the-record",
+      "title": "Selection as the bottleneck of the record",
+      "aliases": ["Consultation bottleneck", "As We May Think"],
+      "tags": ["concept", "knowledge-management", "information-retrieval", "history"],
+      "definition": "**Selection as the bottleneck of the record** is the diagnosis that the limit on humanity's use of its accumulated knowledge is not producing or storing that knowledge but consulting it: the record can be extended cheaply and without bound, while the prime action of use is selection, so a scholar who reaches one pertinent item a week by diligent search cannot form syntheses fast enough to keep up with what is being published.",
+      "explanation": "The cause named is not scale but the artificiality of the indexes we impose on it. Material placed in storage is filed alphabetically or numerically and found, when it is found, by tracing down from subclass to subclass; an item can sit in only one place unless it is duplicated; the rules governing which path locates it are cumbersome and must be learned; and having arrived at one item, the searcher has to leave the system entirely and re-enter on a fresh path to reach the next. Human recall works the other way — one item in mind snaps to the next by association along a web of trails — which is slower to build and prone to fade but never requires exiting and re-entering. The essay separates two mechanical selection strategies that are still the two available: simple selection examines every item in a set and picks out those with specified characteristics, while class-narrowing selection, exemplified by an automatic telephone exchange, attends only to a class given by the first digit, then a subclass given by the second, and never touches most of the collection. Vannevar Bush wrote this in 1945 as a magazine essay, directed at scientists leaving wartime research, and its illustrations are microfilm, photocells and dry photography — machinery that is entirely obsolete. The diagnosis is not: every generation of catalogs, search engines, wikis and retrieval systems since has moved where the bottleneck sits without dislodging the claim that consultation, not accumulation, is what constrains use of the record.",
+      "key_properties": [
+        "The record can be extended far faster than it can be consulted; extension was never the binding constraint",
+        "The named cause is artificial indexing — one item in one place, hierarchical descent, cumbersome path rules",
+        "Every lookup terminates by leaving the system and re-entering on a new path",
+        "Simple selection scans a whole set for matching characteristics; class-narrowing selection discards most of it unexamined",
+        "A 1945 magazine essay whose microfilm machinery is obsolete and whose diagnosis has held for eighty years"
+      ],
+      "relationships": [
+        {
+          "target": "memex",
+          "clause": "is the device proposed against this diagnosis — every one of its design commitments exists to make consultation, rather than storage, the cheap operation"
+        },
+        {
+          "target": "associative-trail",
+          "clause": "is the mechanism by which that proposal attacks this bottleneck, replacing descent through an index with a link the reader laid down themselves"
+        },
+        {
+          "target": "context-rot",
+          "clause": "is the same bottleneck relocated inside a model — the input can be extended far more cheaply than the reliability with which any given part of it is actually consulted"
+        }
+      ],
+      "applications": "Diagnosing why a knowledge base with everything in it still fails its users — the question is what selection costs, not what storage holds; arguing for retrieval and linking investment over further capture; framing search, tagging and link schemes as competing answers to one durable constraint.",
+      "see_also": ["memex", "associative-trail", "context-rot"]
+    },
+    {
+      "slug": "memex",
+      "title": "Memex",
+      "aliases": ["Bush memex", "Personal record store"],
+      "tags": ["concept", "knowledge-management", "personal-knowledge", "history"],
+      "definition": "The **memex** is Vannevar Bush's 1945 specification for a personal record store: a device holding all of one individual's books, records, correspondence and notes, mechanized so that the whole collection can be consulted with speed and flexibility — in his phrase, \"an enlarged intimate supplement to his memory\" — mixing purchased material with the owner's own entries in a single store, annotatable in place, with several items projected side by side at once.",
+      "explanation": "Strip away the microfilm and what remains is a set of design commitments about personal knowledge stores, each of which is a live decision today. Capacity is deliberately designed out of the problem: at five thousand pages a day the owner would need centuries to fill the store, so entry should be profligate and the cost of capture, not the cost of holding, is what governs. Consumed and created material share one store — a longhand note or a photograph goes in through the same platen and files next to a purchased book, and marginal comments attach to either — so there is no boundary between one's library and one's notes. Several projection positions run at once, letting one item stay in view while another is called up, which is not a convenience but the precondition for joining two things. And conventional indexed lookup is kept rather than replaced: the owner can still tap a code and get a book, page through it at one, ten or a hundred pages a stroke, and jump to its index, with associative selection layered on top of that rather than substituted for it. Bush's stated aim for the whole arrangement is to let a person reacquire the privilege of forgetting whatever they do not need immediately at hand, with the assurance of finding it again if it proves important. The source is a magazine essay, not an engineering document, and everything mechanical in it — the levers, the photocell dots, the dry photography — is dead; the specification of the store is what eighty years of personal knowledge tools have been re-implementing.",
+      "key_properties": [
+        "Holds everything the owner reads and everything the owner writes, in one undivided store",
+        "Capacity is designed out of the problem, so entry should be profligate and capture cost is the real constraint",
+        "Direct entry of longhand notes and photographs, with annotation in place on any item",
+        "Several simultaneous viewing positions — the precondition for tying two items together",
+        "Conventional indexed lookup is retained; associative selection is layered on top of it, not in place of it"
+      ],
+      "relationships": [
+        {
+          "target": "selection-bottleneck-of-the-record",
+          "clause": "is the problem this device was designed against, and dictates its unusual commitments — cheap entry, mixed sources, several items in view"
+        },
+        {
+          "target": "associative-trail",
+          "clause": "is what Bush calls the essential feature of the memex — without the tying of items together the device is only a fast filing cabinet"
+        },
+        {
+          "target": "cognitive-debt",
+          "clause": "puts this design's stated aim under empirical pressure — Bush argued that offloading retention lets a person forget safely, while the cognitive-debt evidence indicates that habitually offloading mental work degrades the engagement it replaced"
+        }
+      ],
+      "applications": "A specification to check personal knowledge tools against — does capture cost nothing, do notes and sources live together, can two items be held side by side, is indexed lookup still available; and the reference point for arguing that a knowledge store should be private, complete and owner-annotated rather than a curated subset.",
+      "see_also": ["selection-bottleneck-of-the-record", "associative-trail", "cognitive-debt"]
+    },
+    {
+      "slug": "associative-trail",
+      "title": "Associative trail",
+      "aliases": ["Associative indexing", "Trail blazing"],
+      "tags": ["concept", "knowledge-management", "hypertext", "linking"],
+      "definition": "An **associative trail** is a named, persistent path through a collection built by joining items in pairs: the user brings two items into view together, names the trail, and ties them with a mutual code written into both, so that whenever either is in view the other can be summoned instantly; repeated joins accumulate into a sequence that can be run through like a book, branched with side trails, and reproduced whole for insertion into someone else's store.",
+      "explanation": "The primitive is a symmetric join, and where it is stored is the design decision that matters: the code goes into blank code spaces on each of the two items, each recording the other's index number, so the link belongs to the items rather than to a central catalog and is traversable from either end. Trails are built while working rather than planned in advance — someone comparing the short Turkish bow to the English longbow ties an encyclopedia article to a history, inserts a comment of their own into the chain, and branches onto a side trail through textbooks on elasticity when materials turn out to matter — so the path is a by-product of the inquiry, not a separate cataloguing task. Three properties make a trail more than a linked list. An item can belong to many trails at once, so paths compose rather than partition the collection the way a filing scheme does. Trails persist and do not fade, so a path built years earlier is re-enterable from its head and traversable at speed, stopping at interesting items. And a trail can be photographed out and passed to another person to link into their own store, which turns a private convenience into a shareable artifact and yields the consequences Bush drew from it: a profession of trail blazers who establish useful paths through the common record, and an inheritance from a teacher that includes the whole scaffolding of reasoning behind their conclusions rather than the conclusions alone. This is a 1945 proposal whose mechanism was microfilm and photocells; the design is the direct ancestor of hypertext and of every linked note system since.",
+      "key_properties": [
+        "The primitive is a symmetric join — a code written into both items, each pointing at the other, owned by the items and not by a catalog",
+        "Trails are named, entered from the head, and traversed forwards or backwards at variable speed",
+        "One item can sit on many trails, so paths compose instead of partitioning the collection",
+        "Side trails branch off a main line of inquiry and carry annotations of the reader's own",
+        "A trail can be copied whole into another person's store, making a path of reasoning a transferable artifact"
+      ],
+      "relationships": [
+        {
+          "target": "memex",
+          "clause": "is the store this mechanism runs on, and supplies the two preconditions it needs — items held side by side, and a permanent place on each item to write the join into"
+        },
+        {
+          "target": "selection-bottleneck-of-the-record",
+          "clause": "is the constraint this mechanism attacks, substituting a link the reader laid down for a descent through someone else's index"
+        },
+        {
+          "target": "cross-run-observational-memory",
+          "clause": "carries the same insight into agent systems — recording the path taken, not only the result reached, is what lets later work resume from prior work instead of re-deriving it"
+        }
+      ],
+      "applications": "Designing knowledge bases where the link rather than the folder is the unit of organisation, and where backlinks are reciprocal because the join lives on both items; publishing the path of an investigation alongside its conclusion so a reader can re-walk it; reading bidirectional-link note systems, hypertext and shared reading lists as implementations of an eighty-year-old specification.",
+      "see_also": ["memex", "selection-bottleneck-of-the-record", "cross-run-observational-memory"]
+    }
+  ]
+}

@@ -1,14 +1,14 @@
 ---
 title: Event-driven knowledge maintenance
 date: 2026-08-24
-tags:
-  - concept
-  - knowledge-management
-  - ai-agents
-  - automation
+domain: knowledge-management
+maturity: emerging
+source_type: practitioner
+tags: [concept, knowledge-management, ai-agents, automation, domain/knowledge-management, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://gist.github.com/rohitg00/2067ab416f7bbe447c1977edaaa681e2
+    class: external-primary
 ---
 
 # Event-driven knowledge maintenance

@@ -1,0 +1,193 @@
+{
+  "task_id": "1f7ce29a372c2734",
+  "supplier": { "class": "model-single", "id": "claude-opus-5" },
+  "concepts": [
+    {
+      "slug": "mutation-testing",
+      "title": "Mutation testing",
+      "tags": ["concept", "testing", "quality", "verification"],
+      "definition": "**Mutation testing** measures a test suite by deliberately breaking the code it covers: a tool introduces small semantic changes — flipping a comparison, altering a boundary, removing a call — and reruns the tests, treating a mutant that no test fails on as evidence that the suite executes that line without checking what it does. It answers how much of the code is actually verified, where coverage answers only how much was executed.",
+      "explanation": "The mechanism is a generate-and-kill loop. For each mutable point the tool derives variants of the program, runs the tests against each, and records whether some test failed, which kills the mutant, or none did, which leaves it surviving; the surviving set is the report, and each survivor points at a specific line whose behaviour no assertion constrains. That is a categorically different signal from coverage, which increments as soon as a line runs regardless of whether anything downstream examines the result — the reason a suite can hold high coverage and still pass no matter what the logic does. The distinction has become sharper as tests are increasingly generated rather than written, because the characteristic failure of generated tests is exactly the one coverage cannot see: a test that exercises a path but asserts nothing meaningful, or that mocks so thoroughly that the code under test is no longer in the loop. Such perpetually green tests survive refactors, survive logic inversions, and survive the bug they were nominally written to catch; mutation testing is the check that finds them, because a test with no real assertion cannot kill a mutant. The cost is the obvious one — the suite runs once per mutant, so the technique is applied to core domain logic rather than an entire repository — and the results need judgement, since some mutants are semantically equivalent to the original and can never be killed. The source is Thoughtworks' Technology Radar, an editorial assessment written from consulting engagements rather than a controlled study; its ring placement will age faster than the mechanism, which is decades old and independent of any tool.",
+      "key_properties": [
+        "Generates mutants — small semantic edits — and asks whether any test fails; survivors mark unverified behaviour",
+        "Measures verification, unlike coverage, which only measures execution",
+        "Detects perpetually green tests: missing assertions, or mocks that decouple the test from the code under test",
+        "Cost scales with mutants times suite runtime, so it is aimed at core domain logic rather than whole repositories",
+        "Equivalent mutants — variants that cannot change observable behaviour — make the raw score require interpretation"
+      ],
+      "relationships": [
+        {
+          "target": "skill-enforced-development-workflow",
+          "clause": "checks the property that workflow's test-first rule cannot guarantee — deleting code written before its test proves a test existed first, but only a surviving mutant reveals that the test never asserted anything about what the code does"
+        }
+      ],
+      "applications": "Auditing an AI-generated or inherited test suite before trusting it as a regression gate; deciding whether critical domain logic is genuinely covered before a risky refactor; replacing a coverage target that teams have learned to satisfy without writing assertions.",
+      "see_also": ["skill-enforced-development-workflow"]
+    },
+    {
+      "slug": "semantic-layer",
+      "title": "Semantic layer",
+      "tags": ["concept", "data", "analytics", "architecture"],
+      "definition": "A **semantic layer** is a shared definition tier between raw data stores and everything that consumes them — dashboards, APIs, notebooks, agents — holding the metric formulas, joins, access rules and business vocabulary in one place, so that a term like active customer or recognised revenue has exactly one computable meaning rather than one per query that happens to mention it.",
+      "explanation": "The mechanism is indirection with a single owner: consumers request a named metric along with dimensions and filters, and the layer compiles that request into the query the warehouse actually runs, applying the joins and the business rules the definition implies. What it prevents is drift by copy — without it, business logic disperses into ad-hoc warehouse tables, dashboard-local formulas and application code, each fork correct on the day it was written and quietly divergent afterwards, which is at its most damaging precisely where numbers drive decisions and two teams present different values for the same word. Agentic access has made the gap sharper rather than introducing it: a model asked to translate a question into SQL can only use rules present in the schema, so whenever the real definition lives outside the tables — revenue recognition timing, exclusions, allocation policies — naive text-to-SQL produces answers that are confidently wrong and structurally plausible, and a semantic layer is what puts those rules where a generator can be made to use them. The idea predates the modern data stack and has returned in code-first form, with cloud warehouses embedding their own versions under vendor-specific names, standalone tools offering a layer portable across engines, and a recent multi-vendor interchange specification attempting to make definitions portable between them. The cost is honest and front-loaded: it is a modelling exercise, and the recommended path is one domain at a time, because enterprise-wide rollouts tend to leave legacy reports running beside the new layer and thereby recreate the inconsistency the layer existed to remove. The source is Thoughtworks' Technology Radar, a consultancy's editorial read of its own engagements.",
+      "key_properties": [
+        "Metric formulas, joins, access rules and vocabulary are defined once and compiled into queries on demand",
+        "Consumers ask for a named metric with dimensions rather than writing the join and filter logic themselves",
+        "Removes definition drift across dashboards, ad-hoc tables and application code",
+        "Gives text-to-SQL and agent access a place to read business rules that do not exist in the schema",
+        "Costs upfront modelling; partial rollouts that leave legacy reports in parallel reintroduce the divergence"
+      ],
+      "relationships": [
+        {
+          "target": "agent-legible-architecture",
+          "clause": "extends the same argument from code to data — a model cannot reason safely about behaviour it cannot see in the source, and business rules living outside the schema are exactly such invisible behaviour until a definition layer makes them explicit"
+        }
+      ],
+      "applications": "Giving BI tools, APIs and agents one definition of the metrics a business argues about; making natural-language querying safe over a warehouse whose rules are not in its schema; consolidating a dashboard estate where the same metric name resolves differently per report.",
+      "see_also": ["agent-legible-architecture"]
+    },
+    {
+      "slug": "mcp-abstraction-tax",
+      "title": "MCP abstraction tax",
+      "tags": ["concept", "ai-agents", "integration", "mcp"],
+      "definition": "The **MCP abstraction tax** is the argument that inserting a tool protocol between an agent and an existing system is not free: every layer of translation loses fidelity relative to the underlying API, and the losses compound with the complexity of what is being wrapped — so protocol adoption should be justified by what it buys, typically structured tool contracts, an authentication boundary and governed multi-tenant access, rather than adopted as the default integration path.",
+      "explanation": "The mechanism of the loss is straightforward once stated: a protocol server must project a system's operations onto a fixed shape of named tools with declared schemas, and everything the original interface expressed that does not fit that projection — parameter combinations, error nuance, pagination behaviour, composability — is either dropped, flattened or re-encoded, at the cost of context tokens the agent spends reading the projection. For a small, well-shaped API this costs little; for a large one the wrapper becomes an incomplete reimplementation, and the agent works against the wrapper's model of the system rather than the system. The comparison that makes this concrete is that a competently built command-line tool already gives an agent most of what a protocol server would: discoverable operations through help output, structured responses it can parse, predictable error handling, and composition with everything else on the machine, without a server to run or a schema to keep synchronized. That is why the caution arrives beside the rise of skills and CLI-driven agents rather than as an isolated opinion. The claim is not that the protocol is wrong — it earns its place where interoperability across many clients, an OAuth boundary or per-tenant governance is the actual requirement — but that the question of whether protocol-level interoperability is needed at all should be asked before the wrapper is written. The source is Thoughtworks' Technology Radar placing the practice in its caution ring, an editorial judgement drawn from engagements and from named practitioner essays it cites rather than from measurement.",
+      "key_properties": [
+        "Every protocol layer between an agent and an API loses fidelity, and the loss grows with the wrapped API's complexity",
+        "The projection into named tools with fixed schemas also costs context tokens the agent must spend reading it",
+        "A CLI with good help output, structured responses and predictable errors covers many of the same needs with no server",
+        "The protocol earns its cost where multi-client interoperability, an auth boundary or multi-tenant governance is the real requirement",
+        "The stance is default-off, not rejection: ask what interoperability is needed before wrapping"
+      ],
+      "relationships": [
+        {
+          "target": "code-mode-mcp",
+          "clause": "attacks the same overhead from inside the protocol — having the model write code against tool definitions keeps the surface out of context, which is the in-protocol answer to the cost this caution answers by not adopting the protocol at all"
+        },
+        {
+          "target": "mcp-attack-surface-taxonomy",
+          "clause": "prices the other half of the decision — adopting a server by default also adopts the categories of exposure that taxonomy enumerates, so the governance benefit has to outweigh a governance burden as well as a fidelity loss"
+        }
+      ],
+      "applications": "Deciding whether to expose an internal system to agents as a protocol server or as a documented CLI; reviewing a proposed integration layer for what it actually adds over the API it wraps; trimming an agent's tool surface when context cost outweighs the convenience of a wrapper.",
+      "see_also": ["code-mode-mcp", "mcp-attack-surface-taxonomy"]
+    },
+    {
+      "slug": "retrieval-layer-access-control",
+      "title": "Access control at the retrieval layer",
+      "tags": ["concept", "security", "retrieval", "rag"],
+      "definition": "**Access control at the retrieval layer** moves authorization out of the application and into the search itself: every indexed chunk carries the roles or entitlements permitted to see it, and at query time the retriever restricts the candidate set to chunks matching the caller's authenticated identity, so unauthorized content is never retrieved, never enters the prompt, and therefore cannot be summarised, paraphrased or leaked by the model.",
+      "explanation": "The mechanism is permission metadata attached at indexing time plus filtered search at query time, which is a different placement from the obvious one. Filtering after generation is unsound because a model that has seen a document can reveal it in forms no output filter reliably recognises — a paraphrase, an aggregate, an inference — so the only durable boundary is one the content never crosses. Putting the boundary at retrieval also puts it in the one place that sees every request: an agent, a chat surface and a batch job all reach the corpus through the same query path, so one filter covers interfaces that would each need their own check at the application layer. The design constraints follow from that: entitlements must be captured when documents are indexed and re-synchronised when they change upstream, since a stale tag is a silent leak; identity must arrive with the query rather than being inferred; and the vector store must support high-performance metadata filtering, which is what made this practical at scale, as filtering after a similarity search either returns too few results or forces oversized candidate sets. The result is a zero-trust-shaped foundation for internal knowledge bases, where the retrieval index otherwise becomes the one system that has read everything and enforces nothing. The source is Thoughtworks' Technology Radar, which places the technique in its assess ring on the strength of consulting experience and now-common database capabilities rather than a study.",
+      "key_properties": [
+        "Chunks are tagged with role or entitlement metadata at indexing time",
+        "The retriever filters candidates by the caller's authenticated identity before similarity ranking returns anything",
+        "Unauthorized content never enters the context window, so it cannot be paraphrased or inferred out of the model",
+        "One enforcement point covers every consuming interface — chat, agent, batch — instead of one check per application",
+        "Depends on entitlements being re-synchronised as source permissions change; a stale tag leaks silently"
+      ],
+      "relationships": [
+        {
+          "target": "context-engineering",
+          "clause": "constrains the same assembly step from the security side — if the context window is curated at every turn from retrieved material, then the retriever is where authorization has to be enforced, because anything it returns has already become context"
+        }
+      ],
+      "applications": "Building an internal knowledge assistant over documents with mixed sensitivity; retrofitting entitlements onto a corpus already indexed for search; giving an agent a single corpus while keeping HR, finance and customer material separated by role.",
+      "see_also": ["context-engineering"]
+    },
+    {
+      "slug": "passkey-authentication",
+      "title": "Passkeys",
+      "tags": ["concept", "security", "authentication", "identity"],
+      "definition": "**Passkeys** are FIDO2 credentials that replace passwords with asymmetric cryptography: a key pair is generated per site, the private half stays in a hardware-backed secure element unlocked by biometric or PIN, and the site stores only the public half — and because the credential is bound to the origin it was created for, a lookalike domain cannot elicit a usable signature, which makes phishing resistance a structural property of the protocol rather than a matter of user vigilance.",
+      "explanation": "The mechanism turns on two facts working together. First, the secret never travels: authentication is a challenge signed on the device, so there is no shared value for a server breach, a network intercept or a convincing form to capture. Second, the browser or platform will only offer a credential whose registered relying-party identifier matches the origin actually being visited, so a proxy site that renders a perfect replica of a login page receives nothing — a difference in kind from one-time codes, whether by SMS or authenticator app, which a real-time phishing proxy simply relays. Given that phishing accounts for a large share of breaches, that structural property is the whole argument. The remaining objections have been closing: synced passkeys, once viewed as weaker because the private key is replicated through a credential manager, are now treated as meeting a mid-tier assurance level in updated US federal guidance, a portability protocol allows credentials to move between managers instead of stranding users in one vendor's ecosystem, and mainstream identity providers expose passkeys as a first-class option, which is what reduced adoption from a multi-month project to a couple of sprints. Two design cautions carry more weight than the adoption numbers. Account recovery is where the phishing resistance is usually thrown away — a fallback to SMS codes or emailed links reintroduces exactly the interceptable channel the credential eliminated — and the highest assurance tier still requires device-bound credentials on hardware keys rather than synced ones, which matters for privileged access. The scale and success-rate figures quoted alongside all this come from the alliance and the platforms themselves, so they are self-reported adoption claims rather than independent measurement.",
+      "key_properties": [
+        "Per-site key pair; the private key stays in a hardware-backed secure element unlocked by biometric or PIN",
+        "Origin binding to the relying-party domain makes phishing resistance structural, unlike OTP codes a proxy can relay",
+        "Servers store only public keys, so a credential database breach yields nothing replayable",
+        "Synced passkeys now qualify for mid-tier assurance, with an exchange protocol for portability between managers",
+        "Recovery paths and fallbacks are the weak point: an SMS or emailed link reintroduces the phishable channel",
+        "The highest assurance tier still needs device-bound credentials on hardware keys"
+      ],
+      "relationships": [],
+      "applications": "Choosing the default authentication method for a new consumer or workforce application; removing phishable fallbacks from an existing login and recovery flow; meeting regulatory mandates for phishing-resistant authentication in finance and government systems.",
+      "see_also": []
+    },
+    {
+      "slug": "temporal-fakes",
+      "title": "Temporal fakes",
+      "tags": ["concept", "testing", "simulation", "observability"],
+      "definition": "A **temporal fake** is a stand-in for an external system that holds internal state and evolves it over time the way the real system would, rather than returning fixed responses to matched requests — so a test can start a condition, watch it develop, and observe the downstream consequences unfold, instead of asserting against a snapshot the fake was told to produce.",
+      "explanation": "The difference from a conventional mock is a state machine plus a clock. A mock answers each call from a table of request-response pairs and has no notion of what happened before or what should happen next; a temporal fake models the entity — a device, a fabric, a service — and drives its readings forward through a scenario, so a fault injected now produces the metric drift, the threshold crossing, the alert and the recovery in the order and over the durations the real thing would. That is what makes it the right tool for systems whose behaviour only exists in time: alerting rules, anomaly detection, dashboards and cascading-failure paths cannot be validated against a static response, and the real conditions are often impossible to produce deliberately — the illustrative case is an observability stack for GPU data centres, where validating a thermal-throttle alert would otherwise mean overheating real hardware, so the team built fakes for the hardware telemetry and fabric domains with scenarios for throttling, error storms, link flaps and power-supply failures, parameterised by intensity and duration. Two structural details make it a pattern rather than an anecdote: a registry defines which failure scenarios are valid, and the injection interface is exposed to an agent, so the agent can trigger a fault and then verify for itself that the metric moved, the alert fired and the dashboard updated — a closed loop with no hardware and no human. The cost is fidelity risk, and it is the serious one: a fake that drifts from the system it imitates produces green pipelines that certify nothing, so the simulator itself becomes something to keep honest. Building such simulators used to be prohibitive, which is the part of the practice that changed; the source is Thoughtworks' Technology Radar reporting one team's experience rather than a controlled comparison.",
+      "key_properties": [
+        "Holds an internal state machine and advances it over time, rather than replaying fixed request-response pairs",
+        "Makes time-dependent behaviour testable: alert thresholds, anomaly detection, cascading failures, recovery",
+        "Replaces conditions that are unsafe, expensive or impossible to produce on real hardware",
+        "A scenario registry plus a machine-callable injection interface lets an agent trigger faults and verify the effects itself",
+        "Fidelity drift is the failure mode — an inaccurate fake yields confidence in a pipeline that verifies nothing"
+      ],
+      "relationships": [],
+      "applications": "Developing and testing an observability stack — alert rules, dashboards, anomaly detection — before or without the hardware it monitors; exercising failure and recovery paths against dependencies that cannot be broken on demand; giving an agent a safe environment in which to trigger faults and confirm the system reacted.",
+      "see_also": []
+    },
+    {
+      "slug": "first-pass-acceptance-rate",
+      "title": "First-pass acceptance as a productivity measure",
+      "tags": ["concept", "metrics", "ai-assisted-development", "delivery"],
+      "definition": "**First-pass acceptance** measures how often an agent's output is usable with minimal rework, and is proposed as the leading indicator to replace coding-throughput counts — lines generated, pull requests opened, tasks completed — which rise precisely when a tool produces more material that someone else must fix, and therefore reward the behaviour they were meant to detect.",
+      "explanation": "The failure of throughput metrics is mechanical, not philosophical. Generated volume is the cheap quantity in an AI-assisted workflow, so measuring it captures the step that no longer constrains delivery while missing the one that does: the residual effort to reconcile that output with a team's architecture, conventions and intent. Optimising the visible number then produces the observable pathology — a queue of insufficiently reviewed changes, reviewers as the bottleneck, longer cycle times and repeated back-and-forth — so the metric degrades the outcome it claims to track. First-pass acceptance inverts this because it can only be improved by reducing rework, and rework falls through actions that are actually available: sharper specifications, better priming documents and shared instructions, more design conversation before generation, narrower tasks. It also connects to delivery outcomes rather than floating free — low acceptance shows up downstream as a higher change failure rate, and repeated iteration cycles show up as longer lead time — which is why it is proposed alongside established delivery metrics rather than instead of them, together with related signals such as iteration cycles per task, post-merge rework, failed builds and review burden. Two cautions travel with it: it belongs at team level, since individual-level measurement recreates the incentive distortion in a new variable, and it works as a prompt for reflection in retrospectives rather than as a dashboard target. The source is Thoughtworks' Technology Radar, which places throughput measurement in its caution ring on the basis of consulting observation rather than a study.",
+      "key_properties": [
+        "Measures usability of output on the first attempt, not the volume produced",
+        "Throughput metrics reward generating more material for someone else to fix, worsening review load and cycle time",
+        "Improving acceptance requires acting on specs, priming documents and design conversation — actions teams control",
+        "Correlates with delivery outcomes: low acceptance raises change failure rate, repeated iteration extends lead time",
+        "Tracked at team level and used for reflection; individual-level targets recreate the distortion"
+      ],
+      "relationships": [
+        {
+          "target": "contract-driven-agent-development",
+          "clause": "supplies the definition of accepted this metric needs — when every task carries written acceptance criteria, first-pass acceptance becomes a check against a contract rather than against a reviewer's mood"
+        },
+        {
+          "target": "skill-enforced-development-workflow",
+          "clause": "is the kind of process investment this metric evaluates — spec-first planning and per-task review are supposed to raise first-pass acceptance, and if the measured rate does not move, the process is not paying for itself"
+        }
+      ],
+      "applications": "Replacing lines-of-code or PR-count reporting on AI adoption with a metric tied to rework; deciding whether better instructions or narrower tasks are improving agent output; pairing with delivery metrics to show whether faster generation reached faster delivery.",
+      "see_also": ["contract-driven-agent-development", "skill-enforced-development-workflow"]
+    },
+    {
+      "slug": "vlm-document-parsing",
+      "title": "Vision-language document parsing",
+      "tags": ["concept", "machine-learning", "document-processing", "ocr"],
+      "definition": "**Vision-language document parsing** replaces the conventional pipeline of layout detection, optical character recognition and post-processing scripts with a single model that takes the page image as one input and emits structured content directly, preserving reading order, tables and mathematical notation that stage-by-stage pipelines tend to lose at their seams.",
+      "explanation": "A classical pipeline decomposes the page: one stage finds regions, another recognises characters within them, a third reassembles the pieces into a document, and each stage's errors are inherited by the next with no route back — which is why multi-column layouts, nested tables and formulas are where such pipelines characteristically fail, since correct reading order is a global property of the page that a region-by-region process has already discarded. A vision-language model treats the whole image as one modality and generates the structured output in one pass, so layout, text and semantics are resolved together rather than sequentially, and the architecture collapses from several components with their own models and heuristics to one. The trade is a change in failure mode rather than its elimination: a generative model can produce fluent text that was never on the page, and a hallucinated figure in a parsed invoice or lab result is more dangerous than a garbled one, because it carries no visible sign of error. That is what keeps the decision domain-specific — low error tolerance argues for deterministic recognition or a hybrid that checks the generated output against it, while high-volume ingestion of messy documents is where replacing the pipeline pays, in both accuracy and the maintenance burden of stages nobody wants to own. The practical shift the source reports is that purpose-trained open models in this class have become small and efficient enough to run at volume rather than remaining research demonstrations; it is Thoughtworks' Technology Radar assess ring, an editorial recommendation to evaluate, not a benchmark result.",
+      "key_properties": [
+        "The page image is a single input; structure and text are produced together in one pass",
+        "Avoids the error inheritance of staged pipelines, where reading order is lost before reassembly",
+        "Handles complex layouts, tables and formulas that region-then-recognise approaches fragment",
+        "Generative output can hallucinate content that was never on the page — a silent failure, unlike garbled OCR",
+        "Low error tolerance argues for deterministic OCR or a hybrid check; high-volume messy ingestion favours the unified model"
+      ],
+      "relationships": [],
+      "applications": "Replacing a brittle multi-stage extraction pipeline for invoices, forms, scientific papers or scanned archives; parsing documents whose tables and formulas defeat conventional OCR; reducing the maintenance surface of document ingestion where accuracy can be sampled and checked.",
+      "see_also": []
+    },
+    {
+      "slug": "server-driven-ui",
+      "title": "Server-driven UI",
+      "tags": ["concept", "mobile", "architecture", "frontend"],
+      "definition": "**Server-driven UI** splits a client application into a generic renderer and a server-supplied description of what to render: the deployed binary knows how to draw a catalogue of components but not which ones appear, in what order or with what data, so screens and flows change by shipping a new payload rather than a new build.",
+      "explanation": "The mechanism is a contract between two halves. The client ships a fixed vocabulary of components and the logic to lay them out and handle their interactions; the server sends a structured document — typically JSON — naming components, their content and their actions, which the renderer walks to produce the screen. What that buys is release decoupling, and on mobile that is the whole point: every UI change would otherwise wait on an app store review and on users updating, so experiments, merchandising changes and flow adjustments move at the pace of a deploy instead of a release cycle, and one server-side definition keeps platforms consistent instead of each client re-implementing the same logic. The costs are equally structural. The payload format is now a protocol, and protocols accrete: the recognisable failure is a configuration language that has grown to express anything, understood by nobody, and impossible to change without breaking older clients still in the wild — the reason earlier judgements of the pattern were harsh. Versioning is permanent overhead, since a payload must remain renderable by every client version still installed, and debugging spans a boundary where the failing screen exists in no repository. That is why the pattern is recommended for the highly dynamic parts of an application rather than as a blanket replacement, and why the investment in a proprietary framework is justified mainly at a scale where many teams and platforms share the same surfaces. The source is Thoughtworks' Technology Radar returning the technique to its trial ring, citing patterns published by large consumer companies and its own engagements rather than measurement.",
+      "key_properties": [
+        "The client ships a component vocabulary and renderer; the server ships the structure, content and actions",
+        "UI changes deploy as payloads, bypassing app store review and user update lag",
+        "One server-side definition keeps platforms consistent instead of duplicating logic per client",
+        "The payload format becomes a long-lived protocol that must stay renderable by every installed client version",
+        "Its failure mode is an over-configurable god-protocol; scope it to the dynamic parts of an app rather than all UI"
+      ],
+      "relationships": [],
+      "applications": "Changing merchandising, onboarding or promotional flows in a mobile app without a release; running UI experiments where the release cycle is the bottleneck; keeping iOS, Android and web presentations of the same flow in step from one definition.",
+      "see_also": []
+    }
+  ]
+}

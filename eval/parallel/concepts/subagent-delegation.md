@@ -1,14 +1,14 @@
 ---
 title: Sub-agent delegation
 date: 2026-08-24
-tags:
-  - concept
-  - ai-agents
-  - architecture
-  - orchestration
+domain: ai-agents
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, ai-agents, architecture, orchestration, domain/ai-agents, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://developers.googleblog.com/build-long-running-ai-agents-that-pause-resume-and-never-lose-context-with-adk/
+    class: external-primary
 ---
 
 # Sub-agent delegation

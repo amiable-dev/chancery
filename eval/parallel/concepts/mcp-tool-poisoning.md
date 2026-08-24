@@ -5,14 +5,14 @@ aliases:
   - Tool description poisoning
   - MCP03:2025
 date: 2026-08-24
-tags:
-  - concept
-  - security
-  - mcp
-  - ai-agents
+domain: security
+maturity: emerging
+source_type: research
+tags: [concept, security, mcp, ai-agents, domain/security, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://labs.cloudsecurityalliance.org/research/csa-research-note-mcp-tool-poisoning-ai-agent-exfiltration-2/
+    class: external-primary
 ---
 
 # MCP tool poisoning

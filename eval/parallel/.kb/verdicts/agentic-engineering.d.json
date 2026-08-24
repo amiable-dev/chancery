@@ -1,0 +1,154 @@
+{
+  "task_id": "86e765f07d00026d",
+  "supplier": { "class": "model-single", "id": "claude-opus-5" },
+  "concepts": [
+    {
+      "slug": "agent-instruction-layering",
+      "title": "Agent instruction layering",
+      "aliases": ["Config files versus skills", "Always-on versus on-demand instructions"],
+      "tags": ["concept", "agents", "prompting", "context"],
+      "definition": "**Agent instruction layering** is the discipline of separating an agent's standing instructions by when they should occupy context: an always-on project configuration file holding the few rules that apply to every task, on-demand procedure files that load only when their declared trigger matches the work at hand, and the live prompt carrying whatever is unique to the current task. The split exists because every resident token competes with every other for the model's finite attention, so an instruction has to earn its residence rather than merely be true.",
+      "explanation": "An agent's system prompt comes from whoever built the harness and covers tool use and that harness's own conventions; it knows nothing about a specific project. Absent a project-level file, the model falls back on whatever was most plausible in its training data — the wrong package manager, the wrong formatter, defensive boilerplate wrapped around every change — because plausibility is what it optimises. The always-on file corrects that but pays rent on every single turn, which is why the useful version is short and specific: the tooling stack actually in use, hard limits, a few behavioural rules, and nothing generic. On-demand files invert the economics using metadata: a name and description declare when the procedure is relevant, optionally narrowed by file-path patterns, so the routing decision costs a line and the body enters context only when it applies. The evidence that this is about instruction quality rather than instruction volume comes from a skills benchmark of eighty-six tasks across eleven domains, where a small cheap model supplied with human-curated written procedures outscored the flagship model working without them — and, in the same data, letting a model generate its own procedures erased the gain entirely. Self-generated boilerplate adds tokens without adding signal, which is the exact failure mode the layering is meant to prevent. The practical consequence is to treat the always-on file as code rather than documentation: keep it short, review it when it changes, and cut anything not visibly improving outcomes. The source is a survey newsletter, guest-written and carrying sponsor placements, which synthesises published tools and linked primary studies; the benchmark numbers come from those sources, while the three-tier scheme is the author's organising frame rather than a measured result.",
+      "key_properties": [
+        "Three tiers by residence: always-on project rules, on-demand procedures gated by declared triggers, and the live task prompt",
+        "With no project file the model defaults to the most common patterns in its training data, not to the project's actual stack",
+        "On-demand files route on metadata — name, description, optional path globs — so the body costs nothing until it matches",
+        "Benchmark evidence: curated procedures let a cheap model beat a flagship without them, and model-written procedures erased the gain",
+        "The always-on file is reviewed like code and cut when it stops improving outcomes; generic content actively dilutes the rest"
+      ],
+      "relationships": [
+        {
+          "target": "context-engineering",
+          "clause": "is the loading policy that practice implies: if the window is a depleting resource curated per turn, standing instructions have to be tiered by whether they earn residence every turn or only when their trigger fires"
+        },
+        {
+          "target": "skill-enforced-development-workflow",
+          "clause": "pushes the on-demand tier to its limit by chaining procedure files into a mandatory process, which is only affordable because those files arrive at phase boundaries instead of sitting resident and diluting attention throughout the session"
+        },
+        {
+          "target": "agent-harness",
+          "clause": "supplies the tier underneath this one — the harness author's system prompt covers tool use and harness conventions and is project-blind, which is precisely the gap these layers fill"
+        }
+      ],
+      "applications": "Auditing an oversized project config file by asking which lines have ever changed an outcome; deciding whether a new instruction belongs in the always-on file, in a triggered procedure file, or in the prompt for one task; resisting the temptation to have an agent generate its own instruction files.",
+      "see_also": ["context-engineering", "skill-enforced-development-workflow", "agent-harness"]
+    },
+    {
+      "slug": "layered-agent-guardrails",
+      "title": "Layered agent guardrails",
+      "aliases": ["Defence in depth for coding agents"],
+      "tags": ["concept", "agents", "security", "guardrails"],
+      "definition": "**Layered agent guardrails** is the principle that controls around an autonomous coding agent should be selected by the failure class each one prevents rather than accumulated by convenience, producing a sequence keyed to the path a bad action travels: sandboxing bounds the blast radius when anything else fails, permission lists constrain what runs unattended, a pre-tool hook is the last point at which an assembled command can be rejected, review of externally authored input covers material the agent will treat as ground truth, and commit-time plus server-side gates catch what reaches the repository. No layer substitutes for another.",
+      "explanation": "The ordering follows a fixed path: the model decides, the harness assembles a tool call, the call executes, the result becomes a commit, the commit becomes history. Each layer sits at one of those transitions and catches something the others structurally cannot. Sandboxing is outermost and unconditional — read the project directory and system libraries, write to the project directory and a scratch directory, reach the network only through an allowlist, never read credential directories — and its value is that the walls hold whether or not the model agrees with them, so a poisoned instruction file, a successful injection and a bug in the permission list all terminate at the same boundary. Permissions address a different failure entirely: agents are not adversarial but they are reward-hacky, and a blocked path invites a creative shortcut — widening file permissions, piping a download straight into a shell, commenting out the assertion that keeps failing, force-pushing past a rejected push. A committed project-level allow list plus a user-level deny list handles the routine traffic, and a small classifier inspecting borderline calls covers the middle ground so a human is not approving every action by hand. The pre-tool hook is the only place a specific command can still be stopped after the model has committed to it and before it runs, and there a deterministic local validator beats a model judgement: it catches homoglyph hostnames and paths, insecure transport, pipe-to-shell constructions and environment manipulation — the class of thing that reads as ordinary to a human scanning a diff. Input review exists because agents treat configuration files and tool output as ground truth, so a cloned repository carrying an agent config file, or a tool server auto-loaded from inside it, is arbitrary code running with the agent's permissions from a single clone. Commit gates and continuous integration are deliberately redundant: the local one is fast and skippable, the server-side one is neither. The source is a survey newsletter, so the layer inventory is a synthesis of prevailing practice with named example tools rather than an evaluated framework — the tool names will churn considerably faster than the layering will.",
+      "key_properties": [
+        "Layers are chosen by failure class and ordered along the path from model decision to committed history",
+        "Sandboxing holds regardless of the model's cooperation, so it also bounds the failure of every layer above it",
+        "Permission lists target reward-hacky shortcuts — widened permissions, pipe-to-shell installs, deleted assertions, force pushes — rather than malice",
+        "The pre-tool hook is the last interception point for an assembled command, and a deterministic validator outperforms a model judgement there",
+        "Config files and tool output are treated by agents as ground truth, making externally authored input an execution vector rather than mere data",
+        "Local commit gates and server-side CI are redundant on purpose: one can be skipped, the other cannot"
+      ],
+      "relationships": [
+        {
+          "target": "non-text-channel-injection",
+          "clause": "generalises the failure the pre-tool hook exists to catch — a homoglyph in a shell command is the same defender-parses-less-than-the-agent-parses gap, with the terminal reading a code point and the reviewer reading a glyph"
+        },
+        {
+          "target": "risk-tiered-agent-change-control",
+          "clause": "extends this stack from the single worker to the organisation: these layers bound what one agent can do, while that plan decides which identity may authorise and deploy the result and what evidence has to survive the decision"
+        },
+        {
+          "target": "agent-harness",
+          "clause": "is where most of these layers physically live — sandbox, permission list and pre-tool hook are all harness features, so the harness chosen sets the floor on what any of them can enforce"
+        }
+      ],
+      "applications": "Reviewing an agent setup by naming, for each layer, the failure class it is the only defence against, and finding which classes are uncovered; deciding where a new check belongs — deny list, pre-tool hook, or commit gate — by asking at which transition the bad action would still be stoppable; hardening the moment a repository is cloned, before any agent reads what is inside it.",
+      "see_also": ["non-text-channel-injection", "risk-tiered-agent-change-control", "agent-harness"]
+    },
+    {
+      "slug": "structural-linting-for-agent-code",
+      "title": "Structural linting for agent-written code",
+      "aliases": ["AST-level rules for LLM code"],
+      "tags": ["concept", "agents", "code-quality", "static-analysis"],
+      "definition": "**Structural linting** applies rules to a program's syntax tree rather than to its text, matching on the shape of a construct — a function definition whose default parameter is a mutable literal, an exception handler with no exception type — instead of on characters, tokens or formatting. Its particular value for agent-written code is that language models do not make the mistakes surface linters were designed to catch: they produce syntactically perfect, correctly formatted, type-checking code whose underlying patterns are wrong.",
+      "explanation": "A text-level linter reasons about formatting, import order and naming; a structural rule engine parses first and then matches nodes — this is a function definition, these are its parameters, this default value is a list. The distinction matters because human error and model error have different shapes. Human error is typographic and inattentive, which is what the existing tooling was built around. Model error is distributional: the model rarely misspells an identifier, because predicting likely text is exactly what it is good at, but it will faithfully reproduce a pattern that appeared in its training corpus thousands of times without the caveat that makes it dangerous — a mutable default argument created once at definition and shared silently across every call, a bare handler that swallows a keyboard interrupt alongside real errors, an exception caught and discarded. All of that passes linting, passes type checking, and frequently passes the tests, because the defect is a shape rather than a spelling and nothing in the surface tooling is looking at shapes. The operational move that makes this compound is to treat a recurring anti-pattern as a rule rather than as a conversation: when the agent produces the same construct twice, encode it as a structural rule with its own tests and wire it into the commit gate and continuous integration, so the correction becomes permanent, applies to every future agent and human alike, and stops consuming attention. The source is a survey newsletter presenting the practice around a named tool; the claim about the distributional shape of model error is an argument rather than a measurement, though the specific defects it names are independently well documented.",
+      "key_properties": [
+        "Rules match syntax-tree shapes, catching defects that are valid as text and wrong as structure",
+        "Model error is distributional rather than typographic — fluent, frequently-seen patterns reproduced without their caveats",
+        "Canonical catches such as mutable default arguments and over-broad exception handlers pass linting, type checking and often the tests",
+        "Encoding a recurring anti-pattern as a tested rule converts a repeated correction into a permanent gate",
+        "Applicable wherever the language has a parser to target, and runs in the same commit and CI gates as ordinary linting"
+      ],
+      "relationships": [
+        {
+          "target": "layered-agent-guardrails",
+          "clause": "makes the commit-gate layer of that stack specific: it is the check that fires exactly when the agent's output is syntactically clean, which is the case where every earlier layer has nothing to object to"
+        },
+        {
+          "target": "risk-tiered-agent-change-control",
+          "clause": "supplies the kind of deterministic check that plan reserves for facts a machine can prove, keeping contextual judgement with the narrow reviewers and the named human approvers"
+        }
+      ],
+      "applications": "Turning a defect an agent keeps reintroducing into a tested structural rule instead of re-explaining it each session; adding an AST-level layer to a pre-commit and CI stack alongside formatting, linting and security scanning; auditing a repository of agent-written code for patterns that are locally correct and structurally unsafe.",
+      "see_also": ["layered-agent-guardrails", "risk-tiered-agent-change-control"]
+    },
+    {
+      "slug": "agent-outcome-vs-proxy-metrics",
+      "title": "Outcome versus proxy metrics for agents",
+      "aliases": ["Task complete is a claim, not a measurement"],
+      "tags": ["concept", "agents", "observability", "evaluation"],
+      "definition": "**Outcome versus proxy measurement** is the distinction between what falls out of an agent's own record — latency, token and dollar cost, tool-call counts, error counts — and evidence that the work was actually accomplished, which cannot come from the agent at all: a completion claim is produced by the very process whose success is in question, so a real outcome signal has to be anchored to artifacts the agent did not author, such as a test that passed in continuous integration, a pull request that was merged, or a deploy that was not rolled back.",
+      "explanation": "Proxy metrics are close to free once logging exists at all. A verbose append-only record of every model call with its prompt, response, latency, token count and model version, every tool call with its parameters, result and latency, every error, and one session identifier tying them together yields the entire proxy set with no additional plumbing. Those numbers genuinely catch the obvious pathologies — a session quietly running up a bill, a loop that never terminates because nothing tells it when to stop, a tool failing over and over — and they are worth having for that reason alone. What they cannot do is indicate whether the work was any good, and the trap is subtle because the agent will happily supply the missing signal: an agent whose objective is to finish reports finishing. Self-report is not measurement. Outcome anchors therefore have to be produced by systems outside the agent's authorship and preferably outside its reach, which is why merge status, CI results and rollback status are the usual candidates — they are cheap to read and expensive to fake. Wiring them up is brittle and project-specific, which is exactly why teams stop at proxies; but with no anchor at all the proxy numbers have no direction, and a cheaper, faster, more prolific agent looks like an improvement whether or not it is one. On the underlying data the recommended default is deliberately unfashionable: verbose, append-only, structured as JSON lines, keep everything and trim later, on the grounds that losing the inputs to a session with an unexplained outcome costs far more than the storage bill. The source is a survey newsletter, so the logging minimum and the metric list are practitioner advice rather than measured findings; the epistemic point about self-reported completion stands independently of it.",
+      "key_properties": [
+        "Proxy metrics fall out of the logs for free; outcome evidence must come from artifacts the agent did not produce",
+        "A completion claim is generated by the process under evaluation, so it is a claim rather than a measurement",
+        "Minimum record: every model call with prompt, response, latency, tokens and version; every tool call with parameters and result; every error; one session id",
+        "Proxies reliably catch runaway cost and non-terminating loops, and say nothing about quality",
+        "Default to verbose, append-only JSON lines and trim later — losing an unexplained session's inputs costs more than storage"
+      ],
+      "relationships": [
+        {
+          "target": "agent-loop-telemetry",
+          "clause": "supplies the recording layer this distinction consumes and marks its ceiling: a complete span-level account of how a run proceeded still contains no evidence that the run succeeded"
+        },
+        {
+          "target": "risk-tiered-agent-change-control",
+          "clause": "enforces the same rule from the security side, since the acceptance receipt counts as evidence precisely because its contents — build provenance, deterministic check results, a named human approval — originate outside the agent"
+        },
+        {
+          "target": "loop-engineering",
+          "clause": "depends on this distinction for its stopping condition: an unattended cycle can only be left running if its completion test is mechanically checkable against something other than the agent's own assertion that it is done"
+        }
+      ],
+      "applications": "Choosing what to put on an agent dashboard so cost and loop pathologies are visible without mistaking activity for success; wiring one external anchor — merge rate, CI pass rate, rollback rate — before adding more proxy charts; reviewing an agent evaluation that reports task-completion rates to check whether completion was self-declared.",
+      "see_also": ["agent-loop-telemetry", "risk-tiered-agent-change-control", "loop-engineering"]
+    },
+    {
+      "slug": "current-state-grounding",
+      "title": "Grounding agents in current state",
+      "aliases": ["Procedural knowledge versus current state"],
+      "tags": ["concept", "agents", "retrieval", "tooling"],
+      "definition": "**Current-state grounding** is the practice of dividing what an agent needs to know into what its weights already encode — how to write code, how a protocol generally behaves — and what only a live source can supply, such as the signature a library exposes this week or what a particular repository actually does, then closing the second gap with a source the agent queries during the run rather than with more instruction. The failure it addresses is silent: a model that does not know an interface does not say so, it emits a plausible call, and the error appears only at runtime.",
+      "explanation": "A model's parameters are a lossy summary of a corpus with a cutoff date. Procedural competence generalises well past that date — the idioms of a language, the shape of a protocol, how to structure a test — but facts about fast-moving external state go stale immediately, and the model has no calibrated way to signal which of the two it is drawing on. The generated call is indistinguishable in form from a correct one, which is what makes the failure expensive: it survives review, and the first thing that notices is the runtime. Prompting cannot fix this, because the missing information is not latent in the model waiting to be elicited; the fix is architectural, attaching a source the agent can query at the moment of need. Three shapes recur and are the same pattern at increasing distance from the code: current documentation for a named library, pulled into context on demand so calls are written against what exists rather than what existed; documentation generated over a specific repository, so a question about an unfamiliar codebase is answered from that code instead of from generic priors; and search designed for agent consumption, returning extracted content, highlights and summaries rather than human-facing pages the agent must chew through advertising and navigation to read. A fourth case follows the same logic — meeting notes, design documents and specifications that never passed through the agent's sessions at all, exposed as a query surface rather than pasted in. What unifies them is the economics: a queried source costs tokens only when the question is asked, so the standing context stays small while the reachable material does not. The source is a survey newsletter naming specific products; the products will churn, the division between procedural knowledge and current state will not.",
+      "key_properties": [
+        "Weights carry procedure well past the training cutoff; facts about external state go stale immediately",
+        "The model gives no signal distinguishing a recalled fact from a plausible reconstruction, so the failure surfaces at runtime",
+        "The remedy is a queryable source at run time rather than a better prompt — the information is not latent in the model",
+        "Same pattern at three distances: live library documentation, generated documentation over a specific repository, and agent-oriented search returning extracted content",
+        "Query surfaces keep standing context small because the token cost is paid per question rather than per turn"
+      ],
+      "relationships": [
+        {
+          "target": "context-engineering",
+          "clause": "shares that practice's budget logic from the retrieval side: a source queried on demand is charged only when the question is asked, which is what lets an agent reach far more material than could ever stay resident"
+        },
+        {
+          "target": "agent-instruction-layering",
+          "clause": "covers the other half of the same split — standing instruction files carry what is stable about a project, while these sources carry what changes faster than any file could be kept correct"
+        }
+      ],
+      "applications": "Diagnosing a class of agent bugs where calls to a dependency are confidently wrong, and fixing it by attaching live documentation instead of adding instructions; onboarding an agent to an unfamiliar codebase through generated repository documentation rather than a hand-written summary; exposing an organisation's existing written material to an agent as a searchable surface rather than copying it into context.",
+      "see_also": ["context-engineering", "agent-instruction-layering"]
+    }
+  ]
+}

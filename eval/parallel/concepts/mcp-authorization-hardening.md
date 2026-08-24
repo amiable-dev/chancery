@@ -35,6 +35,7 @@ The changes read as a catalogue of where MCP's deployment pattern — one client
 
 - [[mcp-stateless-core]] — hardens the authorization layer of the same release whose transport that change reshaped
 - [[remote-first-mcp-governance]] — specifies at the protocol level the OAuth alignment that architecture deploys operationally, with an identity-aware provider fronting every server
+- [[authorization-response-issuer-identification]] — MCP authorization hardening's mandatory iss validation against mix-up attacks is exactly the RFC 9207 mechanism issuer identification describes, carried down into the MCP authorization flow.
 
 ## Applications
 

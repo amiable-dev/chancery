@@ -17,5 +17,17 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:b1894f24151ba64a054b81b76d79dfff6e00a422e94b7a96e9820422335daad9",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/multi-agent-token-economics.md",
+    "concepts/outcome-based-agent-evals.md",
+    "concepts/stateful-agent-reliability.md"
+  ]
 }

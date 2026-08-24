@@ -17,5 +17,15 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:1ee53a67622989c17cff27e56a3dbcb2fe67a416e628c1074eb51be3094680dd",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/risk-tiered-agent-change-control.md"
+  ]
 }

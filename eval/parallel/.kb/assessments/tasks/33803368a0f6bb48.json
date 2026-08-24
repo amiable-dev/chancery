@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "33803368a0f6bb48",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/agentenv.md": "sha256:c43242a8676d3eccd653de6589dd1d04740ec10ee78c261373e3d6e7db6fb82c",
+      "assessment:agentenv": "sha256:d73cb09bc52083e95b1bc3bfed2406a7b9d414e9591b657a9b28d47bcfc1d897",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:8d7d470b64b79031ba2f40fe579cde9cfee170c713e8f0c259c31e8658f5bec3",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/snapshot-backed-agent-sandboxes.md"
+  ]
+}

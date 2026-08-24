@@ -1,14 +1,14 @@
 ---
 title: Hybrid search with rank fusion
 date: 2026-08-24
-tags:
-  - concept
-  - retrieval
-  - search
-  - knowledge-management
+domain: knowledge-management
+maturity: emerging
+source_type: practitioner
+tags: [concept, retrieval, search, knowledge-management, domain/knowledge-management, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://gist.github.com/rohitg00/2067ab416f7bbe447c1977edaaa681e2
+    class: external-primary
 ---
 
 # Hybrid search with rank fusion
@@ -34,6 +34,7 @@ Each stream has a characteristic blind spot the others cover: BM25 finds exact t
 - [[graph-vs-vector-code-retrieval]] — operationalizes that comparison's closing rule — structural questions want graphs, semantic ones want similarity, production needs both — by running the streams in parallel and fusing their ranks
 - [[retrieval-composition-engine]] — shares the move of composing multiple retrieval strategies per query, but fuses fixed parallel streams by rank where that engine routes predicate-gated strategies under token budgets
 - [[typed-knowledge-graph-layer]] — draws its third stream from that layer, whose typed, entity-aware edges make traversal usable as a retrieval strategy
+- [[hypothetical-document-embeddings]] — HyDE supplies a drop-in enhancement for exactly the vector-search stream hybrid search fusion combines with BM25 and graph traversal — a generated-passage vector is a better query representation for one of its three input streams.
 
 ## Applications
 

@@ -1,14 +1,14 @@
 ---
 title: Knowledge lifecycle management
 date: 2026-08-24
-tags:
-  - concept
-  - knowledge-management
-  - memory
-  - ai-agents
+domain: knowledge-management
+maturity: emerging
+source_type: practitioner
+tags: [concept, knowledge-management, memory, ai-agents, domain/knowledge-management, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://gist.github.com/rohitg00/2067ab416f7bbe447c1977edaaa681e2
+    class: external-primary
 ---
 
 # Knowledge lifecycle management
@@ -32,6 +32,7 @@ Confidence scoring turns a flat pile of equally weighted assertions into a model
 
 - [[ebbinghaus-forgetting-curve]] — borrows its decay model for machine memory — retention falls exponentially with time and every access or newly confirming source resets the curve, with the decay constant varying by claim class
 - [[llm-maintained-wiki]] — adds the layer that pattern omits: the base wiki treats all content as equally valid forever, whereas lifecycle management grades, supersedes and fades claims as evidence shifts
+- [[fitted-spaced-repetition-scheduling]] — knowledge lifecycle management applies the same decay-driven scheduling logic fitted spaced-repetition scheduling fits to a human learner's recall, instead to a knowledge base's claims — unreinforced material fading along a forgetting curve is the system-directed analogue of a personal forgetting estimate.
 
 ## Applications
 

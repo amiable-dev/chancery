@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "08515276b91931bc",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/cognitive-debt.md": "sha256:5dbee6628335cf4c6120e32e699ee44258ecc018dc7aedae0a09a41a290f5646",
+      "assessment:cognitive-debt": "sha256:1c3fa12d441843548e36a13401098cc2a65dca327f82dd3b59549608a935a562",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:f2e8c4d2b1248f09e05347d27f136b77ee07e77a6a925abc1e619c9877d90889",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/shared-mental-model-erosion.md"
+  ]
+}

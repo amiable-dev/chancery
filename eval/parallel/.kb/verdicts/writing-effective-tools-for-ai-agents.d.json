@@ -1,0 +1,36 @@
+{
+  "task_id": "cac397d1505a0081",
+  "supplier": { "class": "model-single", "id": "claude-opus-5" },
+  "concepts": [
+    {
+      "slug": "agent-tool-ergonomics",
+      "title": "Agent tool ergonomics",
+      "tags": ["concept", "ai-agents", "mcp", "tool-design"],
+      "definition": "**Agent tool ergonomics** is the design discipline for software whose caller is non-deterministic. A conventional function is a contract between deterministic systems; a tool is a contract between a deterministic system and an agent that may call it, decline to call it, call it with the wrong arguments, or misread what comes back, so it has to be designed for the agent's affordances rather than ported one-for-one from an existing API. The governing constraint is that the agent's context is scarce where computer memory is cheap, which makes a tool's job to return the smallest high-signal result the agent can act on and to absorb into its own implementation the intermediate steps a naive API would force the agent to perform in context.",
+      "explanation": "The characteristic failure is wrapping existing endpoints one-for-one. An agent handed a list-everything tool must read every record token by token — brute-force search conducted inside its own context window — where an ordinary program would iterate for free, so the fix is fewer tools shaped like workflows rather than like endpoints: one tool that finds availability and books a meeting instead of three that list users, list events and create one; a search over logs that returns matching lines with surrounding context instead of a read of the whole file; one call that compiles a customer's relevant records instead of three that fetch them separately. Consolidation buys two things at once — less context spent on intermediate output, and computation moved out of the agent's reasoning into deterministic code, which removes opportunities to err. Selection and naming matter for the same reason: overlapping or redundant tools distract an agent from efficient strategies, and namespacing by service and by resource delineates boundaries once an agent holds hundreds of tools, with the choice between prefix and suffix schemes measurably shifting results in a model-dependent way, so it should be settled by evaluation rather than taste. On the response side, return fields that inform the next action and resolve opaque identifiers into semantically meaningful ones, since agents handle natural-language names far more reliably than arbitrary UUIDs; where both are genuinely needed, a response-format enum lets the agent pick concise or detailed, which in one documented case cut token use to about a third. Quantity needs bounding by default through pagination, filtering, range selection and truncation — Claude Code caps tool responses at 25,000 tokens — and both truncation notices and error messages should be read as prompt surface, since an error that names the specific fix teaches better behaviour than an opaque code or traceback. The highest-leverage lever is the tool description itself, written the way one would brief a new hire: implicit context made explicit, parameters named unambiguously, expected shapes enforced by strict data models. None of this is tunable by intuition, which is why the method is inseparable from the principles — build a prototype, generate dozens of realistic multi-call tasks against real data rather than toy sandboxes, pair each with a verifiable outcome, run them in simple agentic loops, collect runtime, call counts, token consumption and error rates alongside accuracy, read the raw transcripts (what agents omit matters as much as what they say), then feed those transcripts back to an agent to refactor the tools, holding out a test set to catch overfitting. The source is an engineering post from the vendor whose model and protocol are the subject, and its headline result that agent-optimised tools beat expert-written ones is measured on its own internal tool suites against evaluations built on its own workspace; the mechanisms and the methodology are independently checkable, the comparative numbers are the vendor's own.",
+      "key_properties": [
+        "A tool is a contract with a non-deterministic caller — it may be skipped, mis-parameterised, or its output misread — so design targets the agent's affordances, not an existing API's shape",
+        "Consolidate around workflows: fewer tools, each absorbing a chained multi-step operation, cutting both context spent on intermediate output and chances to err",
+        "Return fields that inform the next action and resolve UUIDs into meaningful identifiers; expose a response-format enum when both concise and detailed shapes are needed",
+        "Bound response quantity by default and treat truncation notices and error messages as prompt surface that steers the agent toward cheaper strategies",
+        "Tool descriptions are the strongest lever and are only tunable against an eval — realistic multi-call tasks, verifiable outcomes, token and error metrics beside accuracy, and a held-out test set"
+      ],
+      "relationships": [
+        {
+          "target": "context-engineering",
+          "clause": "supplies the constraint this discipline optimises against — tool definitions and tool responses are themselves part of the finite context being curated, so consolidating tools and capping responses are that practice applied at the tool boundary"
+        },
+        {
+          "target": "code-mode-mcp",
+          "clause": "takes the same scarcity premise to a structural extreme: instead of making each tool's definition and response cheaper to carry, it removes tool schemas from the context window altogether by having the model write code that discovers and calls them"
+        },
+        {
+          "target": "acceptability-envelope-evals",
+          "clause": "supplies the evaluation stance this method depends on — because an agent can reach a correct outcome by several valid tool paths, verifiers must assert properties of the result rather than exact values, which is why the source warns against over-specifying the expected sequence of tool calls"
+        }
+      ],
+      "applications": "Designing or auditing an MCP server or tool suite — replacing list-everything endpoints with workflow-shaped tools, adding a response-format parameter, capping and steering long responses, and rewriting error messages into actionable guidance. Also as a specification for the evaluation harness that makes those changes measurable: realistic multi-call tasks with verifiable outcomes, token and error metrics alongside accuracy, transcript review, and a held-out test set.",
+      "see_also": ["context-engineering", "code-mode-mcp", "acceptability-envelope-evals"]
+    }
+  ]
+}

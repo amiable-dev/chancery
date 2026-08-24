@@ -17,5 +17,15 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:083e9a5e5447ad96dab58d0d883082e69bc7ea18fffb4c88f543d08f5c7697b7",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/classifier-mediated-approval.md"
+  ]
 }

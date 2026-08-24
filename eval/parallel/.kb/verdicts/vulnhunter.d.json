@@ -1,0 +1,87 @@
+{
+  "task_id": "18713b8efa81a1c2",
+  "supplier": {"class": "model-single", "id": "claude-opus-5"},
+  "concepts": [
+    {
+      "slug": "attacker-first-forward-analysis",
+      "title": "Attacker-first forward analysis",
+      "aliases": ["Forward taint analysis", "Entry-point-first analysis"],
+      "tags": ["concept", "security", "static-analysis", "agents"],
+      "definition": "**Attacker-first forward analysis** reverses the direction of vulnerability search in source code: rather than starting at dangerous sinks and reasoning backwards to a hypothetical attacker who might reach them, it starts at the surfaces an attacker demonstrably controls — public API parameters, network messages, uploaded files — and reasons forwards through the code to establish whether any of them actually arrives at a dangerous operation with attacker-controlled data intact.",
+      "explanation": "Direction determines where the expensive proof falls, and that is what shapes the false-positive profile. A sink-first search enumerates syntactic patterns — a concatenated query, a deserialization call, a shell invocation — each of which is only a hypothesis until someone shows that attacker data reaches it. Discharging that hypothesis means proving a negative about reachability across the whole program, which is costly, so tools tend to emit the unproven hypothesis as a finding and hand the proof obligation to the analyst; the resulting queue is dominated by patterns that are real but unreachable. Forward search starts from something known instead: this endpoint is exposed, this parameter is attacker-supplied. Every path it walks is anchored to a capability the attacker actually has, so the terminal question is whether the path reaches something dangerous — an existence claim, cheap to settle affirmatively — rather than whether no path exists, a universal claim that is expensive to settle at all. The trade is symmetric and worth stating plainly: forward search inherits the quality of its entry-point enumeration, so it misses sinks reached only through paths nobody enumerated — an internal caller, a second-order flow through stored data, a background job consuming a queue. The source is the README of an open-source tool released by a bank's security team and tuned for one frontier model in one coding harness; it ships a benchmarking harness against public known-vulnerable corpora, which makes its detection claims reproducible in principle, but the README itself reports no false-positive measurements.",
+      "key_properties": [
+        "Search direction reverses: entry points forward to sinks, not sinks backward to hypothetical sources",
+        "Every explored path is anchored to a capability the attacker demonstrably has, not to a syntactic pattern",
+        "Sink-first tooling ships unproven reachability hypotheses as findings, which is the origin of its noise",
+        "Forward search settles an existence claim; backward search must settle a universal one",
+        "The blind spot moves rather than disappearing — forward analysis misses whatever entry-point enumeration missed"
+      ],
+      "relationships": [
+        {
+          "target": "self-falsification-filter",
+          "clause": "is the stage normally paired after this one — forward search narrows the candidate set at its source, falsification prunes what still survives, and neither alone gets a report down to what a human will read"
+        }
+      ],
+      "applications": "Structuring a manual or agent-driven code security review by enumerating attacker-reachable entry points first and following data forward from them; explaining why a static-analysis backlog is dominated by unreachable findings; choosing between the two directions based on how completely a system's entry points are actually known.",
+      "see_also": ["self-falsification-filter"]
+    },
+    {
+      "slug": "self-falsification-filter",
+      "title": "Self-falsification as a finding filter",
+      "aliases": ["Falsification engine", "Adversarial disprove pass"],
+      "tags": ["concept", "security", "agents", "verification"],
+      "definition": "**Self-falsification as a finding filter** is the practice of following each candidate finding with a structured pass whose declared objective is to destroy it — to locate the flawed assumption, the gap in the reasoning, or the control that would block the attack — and to discard any finding that survives only on assumptions it cannot support, so that what reaches a human is what withstood a genuine attempt at refutation.",
+      "explanation": "The mechanism is objective inversion, and it only works as a distinct stage. A search process is rewarded for producing candidates and will accept the weakest chain of reasoning sufficient to reach one; asking that same process whether its finding is real invites it to defend a conclusion it has already committed to. Falsification changes the question from confirmation to refutation: instead of asking whether an exploit path exists, it asks what would have to be true for the path to fail, and enumerates the candidates — an input validator upstream of the sink, a type coercion that neutralises the payload, an authorization check between entry and sink, a deployment assumption that was asserted and never checked. What makes it a filter rather than a commentary is the disposal rule: a finding resting on an unsupported assumption is dropped, not annotated with a caveat. That is a deliberate bias toward silence, and it is correct only when the consumer's scarce resource is attention — a backlog nobody reads because it is nine-tenths noise is worse than a shorter list missing one true positive, whereas in a setting where a miss is catastrophic and reviewers are plentiful the opposite policy wins. The claim comes from a tool README rather than a measured study, so the discipline is what transfers; the note offers no numbers on how many true findings the filter costs.",
+      "key_properties": [
+        "The second pass's stated objective is refutation, not confirmation of the finding",
+        "It enumerates blockers explicitly — upstream validation, authorization, type coercion, unverified deployment assumptions",
+        "Disposal rule is discard-on-unsupported-assumption rather than annotate-and-forward",
+        "It buys precision by accepting misses, so it suits consumers whose scarce resource is attention",
+        "It must be a separate stage; the reasoning that produced a finding will defend it if asked"
+      ],
+      "relationships": [
+        {
+          "target": "evidence-recheck-triage",
+          "clause": "answers the same question with the opposite disposal rule — both interpose a second judgement between search and report, but this one discards a finding that rests on unsupported assumptions while that one downgrades it and shows it anyway, so the two encode opposite choices about which error to ship"
+        },
+        {
+          "target": "attacker-first-forward-analysis",
+          "clause": "supplies the candidates this filter consumes, and needs it, because narrowing the search direction reduces the noise floor without removing it"
+        }
+      ],
+      "applications": "Adding a disprove-your-own-finding stage to any LLM-driven detection pipeline before results reach a human; writing review checklists as refutation prompts rather than confirmation prompts; deciding explicitly, per pipeline, whether unsupported findings should be discarded or downgraded.",
+      "see_also": ["evidence-recheck-triage", "attacker-first-forward-analysis"]
+    },
+    {
+      "slug": "independent-fix-verification",
+      "title": "Independent fix verification",
+      "aliases": ["Hunt-fix-verify loop", "Read-only verifier agent"],
+      "tags": ["concept", "security", "agents", "remediation"],
+      "definition": "**Independent fix verification** closes a remediation loop with an agent that took no part in producing the fix: it reads the repository and the finding report under a tool envelope that excludes command execution, network access and writes, and emits a per-finding verdict on whether the defect is actually remediated — so a fix is established by something with no stake in the answer rather than accepted on the word of whatever produced it.",
+      "explanation": "Three design choices carry the weight. The first is separation of identity: whatever wrote a fix has already concluded the fix is correct, so asking it to verify replays the reasoning that would have produced the error, whereas a verifier starting from the report and the code without the fixing session's context has to re-derive the judgement from artifacts alone. The second is the restricted envelope, which is what makes the verdict mean anything — with no shell the verifier cannot make a test pass by re-running it or adjusting the harness, with no write access it cannot repair the code it is grading, and with no network it cannot be steered by fetched content; read-only is the integrity property of the verification, not a safety afterthought bolted on. The third is granularity: verdicts are emitted per finding rather than as one pass or fail over a batch, so partial remediation stays legible instead of collapsing into a single misleading result. Around the verifier sits the remediation discipline that gives it something to check — demonstrate the exploit, turn the demonstration into a failing security test, implement the fix until that test passes, confirm no regressions, and open a reviewable change — where the failing-then-passing test is the artifact that outlives the agent session and keeps the defect from quietly returning. The source is the README of a bank-published open-source suite whose three phases ship as prompt-defined skills for one coding harness; the loop structure and the envelope argument transfer, while the install steps and model pinning are what date the note.",
+      "key_properties": [
+        "The verifier is a separate agent that did not produce the fix and does not inherit the fixing session's context",
+        "Read-only envelope — no shell, no network, no writes — is what makes the verdict trustworthy rather than merely safe",
+        "Verdicts are emitted per finding, so partially remediated batches stay visible",
+        "The fix phase is test-first: exploit demonstration, failing security test, fix, regression check, reviewable change",
+        "The failing-then-passing security test is the durable artifact that survives the agent and blocks regression"
+      ],
+      "relationships": [
+        {
+          "target": "skill-enforced-development-workflow",
+          "clause": "is how this loop is delivered — hunt, fix and verify ship as separate skills invoked at phase boundaries, so each phase's rules arrive as mandatory instructions rather than as guidance one long session drifts away from"
+        },
+        {
+          "target": "stacked-agent-loops",
+          "clause": "hardens the verification layer of that architecture — instead of a scoring step inside the same run, the check becomes a separate agent with no shared state and no ability to alter what it is grading"
+        },
+        {
+          "target": "self-falsification-filter",
+          "clause": "guards the other end of the same pipeline — falsification decides which findings deserve a human's attention, this decides whether the fix that followed actually held"
+        }
+      ],
+      "applications": "Splitting agent-driven remediation so the fixer and the verifier are different processes with different permissions; choosing a deliberately read-only tool envelope whenever an agent's job is to judge rather than to change; making a failing security test the definition of done for a vulnerability fix regardless of who authored it.",
+      "see_also": ["skill-enforced-development-workflow", "stacked-agent-loops", "self-falsification-filter"]
+    }
+  ]
+}

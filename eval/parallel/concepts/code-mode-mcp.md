@@ -36,6 +36,7 @@ Standard MCP defines one tool per operation and ships every schema to the client
 
 - [[remote-first-mcp-governance]] — deploys at that architecture's portal layer, where progressive disclosure and audit already live
 - [[agent-skills-format]] — both apply progressive disclosure to agent capability: skills load full instructions only when a task matches, Code Mode loads tool schemas only when model-written code requests them
+- [[mcp-abstraction-tax]] — Code Mode is a specific mitigation for one of the costs the MCP abstraction tax names — collapsing the tool surface keeps the translation layer's context overhead fixed rather than compounding as servers are added.
 
 ## Applications
 

@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "70204f48d5dee093",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/remocal-development-mirrord.md": "sha256:768ca14d03c75dc1ccc193ab58d70b48d8e8921f14509c7fc7e11fa0526b513c",
+      "assessment:remocal-development-mirrord": "sha256:5f43713f8c60eaef39bb3af82b8e080881cc1e06d2619866fd16d85bd5ca4f90",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:81bc9981b97a048c7d8303e7f63ab7249a5b156244e396a81126f2097a34c301",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/remocal-development.md"
+  ]
+}

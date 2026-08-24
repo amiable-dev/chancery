@@ -35,6 +35,7 @@ Ebbinghaus quantified retention as 'savings': the reduction in time needed to re
 
 - _No relationships recorded yet._
 - [[llm-maintained-wiki]] — supplies the mechanism behind the problem the wiki pattern solves — unreviewed knowledge decays on this curve, so distillation into revisable pages replaces re-reading
+- [[fitted-spaced-repetition-scheduling]] — the Ebbinghaus forgetting curve is the empirical decay curve fitted spaced-repetition scheduling's memory model formalizes and personalizes — a fixed population-level shape in the original finding, fitted instead to one learner's own review history.
 
 ## Applications
 

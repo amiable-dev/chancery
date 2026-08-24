@@ -4,14 +4,14 @@ aliases:
   - Attention Is All You Need
   - Transformer
 date: 2026-08-24
-tags:
-  - concept
-  - machine-learning
-  - neural-networks
-  - attention
+domain: llm
+maturity: established
+source_type: research
+tags: [concept, machine-learning, neural-networks, attention, domain/llm, maturity/established, source-type/research]
 status: draft
 sources:
   - url: https://arxiv.org/abs/1706.03762
+    class: external-primary
 ---
 
 # Transformer architecture
@@ -35,6 +35,7 @@ Before this architecture, the dominant sequence models were recurrent or convolu
 ## Relationships
 
 - [[retrieval-augmented-generation]] — supplies the parametric half of RAG — the pre-trained generator (and the neural retriever's encoders) are Transformer models whose weight-bound knowledge RAG supplements with retrieved evidence
+- [[matryoshka-embeddings]] — matryoshka embeddings are a training-objective modification layered on top of representations the transformer architecture already produces — the same architecture, with an added loss term ordering information coarse-to-fine along the output dimensions.
 
 ## Applications
 

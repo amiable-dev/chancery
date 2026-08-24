@@ -1,14 +1,14 @@
 ---
 title: Evolved lightweight LLM coordinator
 date: 2026-08-24
-tags:
-  - concept
-  - multi-agent
-  - orchestration
-  - evolutionary-optimization
+domain: ai-agents
+maturity: emerging
+source_type: research
+tags: [concept, multi-agent, orchestration, evolutionary-optimization, domain/ai-agents, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://arxiv.org/abs/2512.04695
+    class: external-primary
 ---
 
 # Evolved lightweight LLM coordinator

@@ -38,6 +38,7 @@ The demo version — chunk, embed, retrieve top-k, paste — is a weekend projec
 - [[retrieval-composition-engine]] — delegates its query-time verb to that engine, which composes heterogeneous context under a token budget
 - [[golden-dataset-retrieval-evals]] — is kept honest by that harness, because its retrieval quality degrades invisibly otherwise
 - [[llm-maintained-wiki]] — contrasting substrates for agent knowledge: the wiki distils at write time into curated pages, the context layer indexes sources at read time and layers curation on top
+- [[retrieval-layer-access-control]] — a context layer is a production system whose 'permissions' constraint is exactly what retrieval-layer access control specifies the mechanism for — role and entitlement metadata carried per indexed item, checked against caller identity before anything enters the query-time token budget.
 
 ## Applications
 

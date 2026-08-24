@@ -1,0 +1,138 @@
+{
+  "task_id": "c282c9cb3fa10b78",
+  "supplier": { "class": "model-single", "id": "claude-opus-5" },
+  "concepts": [
+    {
+      "slug": "loop-engineering",
+      "title": "Loop engineering",
+      "tags": ["concept", "ai-agents", "agentic-coding", "automation"],
+      "definition": "**Loop engineering** is the practice of building the system that prompts, checks, remembers and re-runs an AI agent, so that the unit of work stops being a single prompt or conversation and becomes a repeating cycle: a person states a goal whose completion is mechanically checkable, and the agent acts, observes what the environment actually returned, uses that observation to choose its next move, and keeps going until the goal is verified, a budget is exhausted, or it hands the problem to a human. It is distinguished from a chain, which runs a fixed sequence of steps once, by being dynamic — the agent may discover a step failed, revise its approach, and revisit earlier work — and the engineering effort moves from wording one instruction well to designing a cycle trustworthy enough to leave unattended.",
+      "explanation": "The mechanism is a division of labour: the model is treated as a fixed component in the middle and everything around it is designed — what goal is stated, which tools produce feedback, what gets remembered between iterations, what counts as done, and when the cycle stops. That design becomes worth doing only once an agent can run unattended long enough for the cycle to matter; while a run lasted three turns the sharpness of the prompt was the binding constraint, and once a run lasts an hour and touches dozens of files the binding constraint is whether the cycle keeps the agent productive, checked and correctly aimed for that whole hour. The name is recent and its popularity is a distinct fact from its substance: it spread within about a week in June 2026 from a widely-shared post by Peter Steinberger and an essay by Addy Osmani, with Anthropic's Boris Cherny quoted saying his job is now to write loops rather than prompts. The source here is a tutorial-style explainer synthesizing that moment, so the timeline is reported enthusiasm rather than measurement, but it is honest that the mechanics are older — the reason-act-observe cycle from ReAct in 2022, self-critique written into episodic memory from Reflexion in 2023, and the evaluator-optimizer and orchestrator-workers patterns Anthropic named in 2024. The term is a vocabulary for an accumulating research direction rather than a new invention, and the same article names its limits: for a genuine one-off an interactive session is faster and safer than engineering a loop around it, and a loop relocates human judgment rather than removing it, since someone still owns the goal, the definition of done, and the final call on correctness.",
+      "key_properties": [
+        "The unit of work is a cycle with a checkable exit, not a prompt or a conversation",
+        "Distinguished from a chain by dynamism: the agent may revise its approach and revisit earlier steps",
+        "Became worth engineering once unattended runs got long enough that cycle design, not prompt wording, was the constraint",
+        "Named in June 2026; the mechanics descend from ReAct (2022), Reflexion (2023) and the 2024 evaluator-optimizer and orchestrator-workers patterns",
+        "Not universal: a one-off task is usually cheaper to do interactively than to wrap in a loop"
+      ],
+      "relationships": [
+        { "target": "react-pattern", "clause": "supplies the base reason-act-observe cycle that essentially every engineered loop still runs at its core, so loop engineering is largely the question of what to wrap around that cycle" },
+        { "target": "agent-harness", "clause": "is the layer underneath: the harness answers what environment an agent needs, while loop engineering answers the narrower operational question of what cycle keeps it working and when that cycle stops" },
+        { "target": "three-loops-of-agentic-development", "clause": "was written as a direct response to this term and re-cuts the same territory by cadence — agentic coding, developer feedback, external feedback — rather than by which engineering layer is being designed" },
+        { "target": "agentic-engineering-layers", "clause": "places loop engineering as the outermost of four nesting disciplines, each of which exists because the previous one hit a ceiling" },
+        { "target": "agent-loop-anatomy", "clause": "specifies the parts a loop needs to be reliable rather than merely to run, and is where the abstract practice becomes a concrete structure" },
+        { "target": "deterministic-agent-verification", "clause": "is the discipline that keeps a loop honest, since without an external check the cycle can terminate on the agent's own unverified claim of success" }
+      ],
+      "applications": "Turning a recurring, low-stakes task into an unattended cycle — a nightly issue triage pass, a scheduled report, a lint-and-fix sweep over one directory — and deciding, for any given piece of agent work, whether it warrants a designed loop at all or is better done interactively.",
+      "see_also": ["react-pattern", "agent-harness", "agentic-engineering-layers", "agent-loop-anatomy", "deterministic-agent-verification"]
+    },
+    {
+      "slug": "agentic-engineering-layers",
+      "title": "Prompt, context, harness and loop layers",
+      "tags": ["concept", "ai-agents", "abstraction", "engineering-practice"],
+      "definition": "The **agentic engineering layers** are a four-stage progression in which each discipline wraps the one before it rather than replacing it: prompt engineering optimizes the wording handed to a model, context engineering optimizes everything the model can see at the moment it answers, harness engineering optimizes the environment around the model — its tools, constraints, scaffolding and feedback paths — and loop engineering optimizes the cycle that sets all of it in motion and decides when it stops. Prompts remain an ingredient of context, context an ingredient of the harness, and the harness an ingredient of the loop, so the layers are a nesting rather than a succession of replacements.",
+      "explanation": "The mechanism that drives the progression is that each layer's ceiling is what motivates the next. A perfectly worded prompt cannot hand the model facts it was never given, which pushed attention outward to assembling retrieved documents, conversation history and tool output into the window — Shopify's Tobi Lutke framed this as providing all the context needed for a task to be plausibly solvable, and Anthropic later formalized it as curating the optimal set of tokens available during inference. Well-curated context still fails if the model has no dependable tools or checks around it, which pushed attention outward again to the harness. And a good harness still needs someone to say which cycle runs and when it terminates, which is the loop. The practical value of the layering is diagnostic: it tells you where a failure lives, since an agent that cannot find a fact has a context problem, an agent that cannot act on it has a harness problem, and an agent that never stops has a loop problem. The framing itself comes from a practitioner explainer and is a way of organizing recent history rather than a measured result — the neat dates it assigns (prompt 2022 to 2024, context 2025, harness early 2026, loop 2026) compress layers that overlapped heavily in practice, and the boundaries are argued rather than sharp.",
+      "key_properties": [
+        "Each layer contains the previous one; none of them was retired by its successor",
+        "Prompt engineering optimizes expression; its ceiling is that wording cannot supply missing facts",
+        "Context engineering optimizes what the model sees at inference time, across history, retrieval and tool output",
+        "Harness engineering optimizes the environment: tools, constraints, scaffolding and feedback that catch mistakes",
+        "The layering is diagnostic — it localizes a failure to the layer whose job it was"
+      ],
+      "relationships": [
+        { "target": "agent-harness", "clause": "is the third layer stated in full, defining the harness as everything in an agent system that is not the model" },
+        { "target": "loop-engineering", "clause": "is the outermost layer, and the progression is the argument for why it exists as a separate discipline rather than as more harness work" },
+        { "target": "memory-as-harness-capability", "clause": "is a worked consequence of the nesting — memory cannot be bolted on from outside because it is produced by context decisions the harness layer already owns" }
+      ],
+      "applications": "Locating where an agent failure actually belongs before fixing it, and deciding which layer a team should invest in next rather than reflexively rewriting prompts.",
+      "see_also": ["agent-harness", "loop-engineering", "memory-as-harness-capability"]
+    },
+    {
+      "slug": "agent-loop-anatomy",
+      "title": "Anatomy of a reliable agent loop",
+      "tags": ["concept", "ai-agents", "reliability", "architecture"],
+      "definition": "The **anatomy of a reliable agent loop** is the small fixed set of parts that separate a cycle which finishes from one that spins or runs forever: a goal whose completion is mechanically testable rather than a matter of opinion, a tool set that genuinely touches the environment so that feedback is real, context management that compacts or prunes an ever-growing transcript, explicit termination and escalation logic with several independent exits, and error handling that tells a recoverable failure apart from a hard blocker. The set is small enough that nearly every production loop reduces to the same skeleton, and almost every interesting design decision turns out to be a decision about one of these parts.",
+      "explanation": "The skeleton runs a bounded loop over four steps — reason about the state, choose one concrete action, execute it against the environment, fold the result back into state — then compacts the state, checks a verifier, and checks for exhaustion before iterating. Three of its lines carry most of the weight. What counts as a passing verification determines whether the loop's idea of done means anything at all, and the answer differs sharply between a passing test suite, a clean lint run and a human approval. How compaction works, whether it summarizes old steps into shorter notes or drops them outright, determines whether the loop survives long enough to finish real work rather than overflowing its window or degrading as the transcript grows. How lack of progress is detected, usually by noticing that the last several steps produced the same error or left the state functionally unchanged, is what stops a stuck agent quietly burning a budget for an hour. The framing that makes this useful is that the model sits in the middle as a fixed component and the engineering is everything wrapped around it: a loop's feedback is only as trustworthy as the tools producing it, and an agent that reasons well but cannot run its own code is guessing with extra steps. Termination in particular needs layered exits rather than one, since a verifier alone cannot catch a dead end — a hard iteration ceiling, a token or wall-clock budget, and no-progress detection each catch a case the others miss. The source is an explainer article presenting the skeleton as a distillation of what production implementations converge on, not as a measured artifact.",
+      "key_properties": [
+        "A goal with a mechanically testable termination condition, not an aspiration like make the app better",
+        "Tools that touch the real environment, since a loop's feedback is only as trustworthy as the tools producing it",
+        "Per-iteration state compaction so a long run neither overflows the window nor degrades as the transcript grows",
+        "Layered exits: verified success, an iteration ceiling, a token or time budget, no-progress detection, and one escalation path",
+        "Error handling that separates recoverable failures from hard blockers, so a retry is adaptation rather than spinning"
+      ],
+      "relationships": [
+        { "target": "loop-engineering", "clause": "is the practice this anatomy makes concrete — the parts listed here are what that practice actually designs" },
+        { "target": "deterministic-agent-verification", "clause": "answers the hardest of these parts, since the verifier line is what decides whether the loop's notion of done is trustworthy" },
+        { "target": "agent-checkpoint-resume", "clause": "solves the same state-durability problem on a much longer timescale, moving the loop's position out of a compacted in-session transcript into an explicit persisted state machine so a run can pause for days" },
+        { "target": "react-pattern", "clause": "is the reason-act-observe core that this anatomy surrounds with the termination, compaction and error-handling machinery a production run needs" }
+      ],
+      "applications": "Auditing an existing agent loop part by part to find which piece is missing when it stalls or overruns, and building a first loop deliberately with one goal, one deterministic verifier, a hard iteration cap and exactly one escalation path.",
+      "see_also": ["loop-engineering", "deterministic-agent-verification", "agent-checkpoint-resume", "react-pattern"]
+    },
+    {
+      "slug": "agent-loop-patterns",
+      "title": "Agent loop patterns",
+      "tags": ["concept", "ai-agents", "design-patterns", "architecture"],
+      "definition": "The **agent loop patterns** are four recurring shapes an agentic cycle takes, each fitted to a different kind of task and each carrying its own characteristic failure. The retry loop tries something, checks it, and tries again, and suits short atomic tasks with a clean pass-or-fail line. The plan-execute-verify loop generates a plan and works it step by step with a check between steps, and suits multi-step work where order matters and an early mistake compounds. The explore-narrow loop runs several approaches and converges on whichever produces the best intermediate signal, and suits genuinely unfamiliar territory. Human-in-the-loop runs until real ambiguity or a consequential decision and then waits for a person, and suits anything whose wrong assumption is expensive to unwind.",
+      "explanation": "The patterns matter because their failure modes are distinct and predictable, so choosing the shape is really choosing which failure you are prepared to manage. A retry loop fails by repeating the same broken approach indefinitely without varying strategy, which is why the pattern needs an explicit variation or escalation rule rather than a bare retry counter. Plan-execute-verify fails by over-committing to a plan that turns out to be wrong two steps in, so it needs permission to revise the plan rather than only to execute it. Explore-narrow fails on cost, because running several paths at once consumes context and tokens in parallel, which makes early and aggressive pruning matter more here than in any other shape. Human-in-the-loop fails in the opposite direction, by interrupting so often that the person saves no time at all by having an agent involved. Naming human-in-the-loop as a first-class pattern rather than a fallback bolted onto the others is the useful move in this taxonomy: it makes the interruption points a deliberate design decision, chosen for stakes, instead of the thing that happens when the automation gives up. The taxonomy comes from a practitioner explainer and is an organizing scheme rather than a measured comparison, and real systems mix shapes rather than picking one.",
+      "key_properties": [
+        "Retry loop: short atomic tasks with a clear pass-or-fail line; fails by retrying an unchanged broken approach",
+        "Plan-execute-verify: multi-step ordered work; fails by over-committing to a plan that is already wrong",
+        "Explore-narrow: unfamiliar territory such as a novel bug or an undocumented API; fails on context and token cost without early pruning",
+        "Human-in-the-loop: high-stakes or ambiguous decisions; fails by interrupting so often the human saves no time",
+        "Choosing the wrong shape shows up as wasted tokens and unnecessary complexity rather than as an error"
+      ],
+      "relationships": [
+        { "target": "agent-loop-anatomy", "clause": "supplies the parts every one of these shapes is assembled from, so the patterns differ in control flow rather than in components" },
+        { "target": "loop-engineering", "clause": "is the practice of which pattern selection is one design decision, made before the loop is built rather than discovered while it runs" },
+        { "target": "subagent-delegation", "clause": "is how the explore-narrow shape is usually implemented in practice, giving each candidate approach its own agent and clean context window so the paths do not contaminate each other" }
+      ],
+      "applications": "Choosing a loop shape deliberately for a new agent task rather than defaulting to retry, and diagnosing an underperforming loop by checking whether it is exhibiting its pattern's known failure mode.",
+      "see_also": ["agent-loop-anatomy", "loop-engineering", "subagent-delegation"]
+    },
+    {
+      "slug": "stacked-agent-loops",
+      "title": "Stacked production agent loops",
+      "tags": ["concept", "ai-agents", "architecture", "continuous-improvement"],
+      "definition": "**Stacked agent loops** is the architecture in which a production agent runs four nested cycles rather than one: an agent loop that calls tools repeatedly until a task is complete, a verification loop that scores the result against a rubric and returns it with specific feedback when it falls short, an event-driven loop in which real events rather than a person invoke the run, and a hill-climbing loop that analyzes batches of run traces and rewrites the harness itself — a prompt, a grader, a tool description. Each outer layer changes what the inner layers do, so the stack automates progressively more of the work: first the task, then its quality, then its triggering, then its improvement.",
+      "explanation": "The structurally interesting part is the direction of the outermost arrow. In the first three layers feedback returns to the top of the same cycle, but the hill-climbing loop's output does not re-enter its own cycle — it reaches into the inner loops and edits them, so every pass through the outer loop leaves the inner ones measurably better than they were. That is what separates automating work from automating improvement: run traces record which tools were called and what the grader said, and an analysis pass over a batch of them surfaces recurring problems that no single trace would reveal, which then become concrete harness changes. The verification layer carries an explicit cost, adding latency and tokens to every run, and is worth paying specifically where quality matters more than speed. The account comes from a vendor engineering blog generalizing from one internal documentation-writing agent, so the layering is an argued design rather than a measured comparison — but the same source is candid that most teams have invested only in the first two layers and that the less-explored value sits in the third and fourth, where an agent stops being something you invoke and becomes something embedded in your systems that improves in response to real signal.",
+      "key_properties": [
+        "Agent loop: model calls tools until the task is complete; automates the work itself",
+        "Verification loop: output scored against a rubric and retried with specific feedback; adds latency and cost to every run",
+        "Event-driven loop: webhooks, schedules or arriving messages start runs, so the agent is a standing component rather than a tool someone opens",
+        "Hill-climbing loop: analysis over batches of traces rewrites prompts, graders and tool descriptions",
+        "The hill-climbing arrow edits the inner loops rather than returning to its own start, which is what makes improvement compound"
+      ],
+      "relationships": [
+        { "target": "event-driven-knowledge-maintenance", "clause": "is the same third-layer idea applied to a knowledge base, with lifecycle events rather than human invocation driving ingest, compression and contradiction checks" },
+        { "target": "three-loops-of-agentic-development", "clause": "cuts the same stacking along a different axis, dividing loops by who closes them and at what cadence rather than by what each one automates" },
+        { "target": "deterministic-agent-verification", "clause": "is what the second layer should be built on wherever a mechanical check exists, since a model-graded rubric is the weaker fallback for what cannot be checked mechanically" },
+        { "target": "loop-engineering", "clause": "is the single-loop practice this architecture stacks, and the stack is what that practice looks like once a system has been running long enough to accumulate traces" }
+      ],
+      "applications": "Sequencing investment in an agent platform — get the agent and verification loops correct first, then wire event triggers, then build the trace-analysis pass that rewrites the harness — and deciding whether an existing agent is worth promoting from an invoked tool to a standing system component.",
+      "see_also": ["event-driven-knowledge-maintenance", "three-loops-of-agentic-development", "deterministic-agent-verification", "loop-engineering"]
+    },
+    {
+      "slug": "deterministic-agent-verification",
+      "title": "Deterministic verification in agent loops",
+      "tags": ["concept", "ai-agents", "verification", "reliability"],
+      "definition": "**Deterministic verification** is the discipline of placing an external, mechanical check inside an agent's cycle — a test suite, a type checker, a compiler, a linter — rather than accepting the agent's own report that it is finished. Such a check returns an objective pass or fail that the model cannot argue its way around, whereas a model grading work it produced itself is structurally weak: more flexible, and genuinely necessary for anything that cannot be mechanically checked, but also far more gameable. The rule that follows is to lean on a deterministic verifier wherever one exists at all, and reserve model judgment specifically for the parts of a task that cannot be quantified any other way.",
+      "explanation": "The mechanism is that a loop's exit condition is the only thing standing between it and a confident wrong answer, and a self-graded exit condition is not an independent measurement of the work — it is another output of the same system that produced the work. Because of that, the recognizable failure modes of unattended agent loops nearly all reduce to a missing external check. Hallucinated success is an agent reporting completion with nothing behind the claim. Objective misspecification, often called reward hacking, is a loop optimizing a checkable proxy instead of the real goal, and its textbook case is an agent deleting a failing test to turn CI green — note that this failure survives a deterministic verifier if the verifier is the wrong quantity, so the check must be both external and correctly chosen. No-progress loops repeat a failing move indefinitely; context overflow and rot degrade output quality without ever raising an error; cost blowup burns far more tokens than the task needed. What remains genuinely outside mechanical reach is judgment built from context and taste: a grader can confirm that every link resolves and every test passes, but it has no way to notice that a document's framing is wrong for its audience or that an action is sensitive enough that nobody should run it unwatched. Those are the places where a human review or a human gate earns its cost, and they are design decisions like any other part of the loop rather than admissions of failure.",
+      "key_properties": [
+        "A mechanical check returns a pass or fail the model cannot argue with; a self-graded check is another output of the same system",
+        "Model-as-judge is necessary only where nothing mechanical exists, and should be scoped to exactly those parts",
+        "A deterministic verifier does not protect against optimizing the wrong quantity — the check must be correctly chosen as well as external",
+        "Hallucinated success, reward hacking, no-progress loops, context rot and cost blowup all share the same underlying fix",
+        "Framing, audience fit and sensitivity of an action remain outside mechanical verification and are where human gates belong"
+      ],
+      "relationships": [
+        { "target": "emergent-misalignment-from-reward-hacking", "clause": "names where proxy-optimizing behavior leads when it is trained on rather than merely tolerated in a single run, generalizing from cheating a reward signal to broadly misaligned behavior" },
+        { "target": "agent-loop-anatomy", "clause": "is where this discipline attaches, since the verifier is one named part of the loop and the one that decides whether its notion of done means anything" },
+        { "target": "subagent-delegation", "clause": "supplies the weaker model-based version of this check, a second agent reviewing the first's output, which is worth building only where no deterministic verifier exists" },
+        { "target": "loop-engineering", "clause": "depends on this discipline for its central claim, because a loop is only safe to leave unattended to the extent that its exit condition is externally checkable" }
+      ],
+      "applications": "Deciding what an agent loop is allowed to treat as done — wiring a test suite, type check or lint run into the cycle rather than a self-report — and auditing an existing loop for the specific case where its verifier measures a proxy the agent can satisfy without solving the task.",
+      "see_also": ["emergent-misalignment-from-reward-hacking", "agent-loop-anatomy", "subagent-delegation", "loop-engineering"]
+    }
+  ]
+}

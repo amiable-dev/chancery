@@ -35,6 +35,8 @@ Large pre-trained models store factual knowledge in their parameters, but they c
 ## Relationships
 
 - _No relationships recorded yet._
+- [[hypothetical-document-embeddings]] — HyDE is a query-transformation technique for exactly the retrieval step RAG depends on — HyDE changes what vector searches the index while RAG's embedding model, similarity metric and generator are otherwise unchanged.
+- [[matryoshka-embeddings]] — matryoshka embeddings supply a storage and latency lever for exactly the dense vector index RAG depends on — a single matryoshka-trained embedding truncates to whatever dimensionality the index's budget allows, without retraining or separate models per size.
 
 ## Applications
 

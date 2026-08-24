@@ -1,0 +1,51 @@
+---
+title: Skill-enforced development workflow
+date: 2026-08-24
+domain: software-engineering
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, ai-agents, software-process, tdd, domain/software-engineering, maturity/emerging, source-type/vendor-doc]
+status: draft
+sources:
+  - url: https://github.com/obra/superpowers
+    class: external-primary
+---
+
+# Skill-enforced development workflow
+
+## Definition
+
+A **skill-enforced development workflow** encodes an entire software process — interrogate the request into a spec, decompose it into judgement-free tasks, implement each one test-first, review, land — as a chain of agent skills that trigger automatically at phase boundaries, so the process arrives as mandatory instructions the agent loads when it reaches each phase rather than as advice sitting in a prompt that a long session will drift away from.
+
+## Explanation
+
+The load-bearing mechanism is that process discipline lives in files the agent must consult, not in a preamble it may forget. A bootstrap instruction injected at session start — and re-injected after context compaction on harnesses that expose that hook — establishes one standing rule: check for a relevant skill before starting any task. Everything else is the skills themselves, arranged as a chain. The first refuses to write code and instead questions the request into a design document shown back in chunks short enough to actually read; the next opens an isolated worktree on a fresh branch and verifies a clean test baseline before anything is touched; the planning skill then breaks the approved design into tasks of a few minutes each, carrying exact file paths, complete code, and verification steps, written explicitly for an enthusiastic junior engineer with no judgement and no project context — which is a way of saying the plan is specified until execution requires no judgement at all. Implementation dispatches a fresh subagent per task with two-stage review, spec compliance first and code quality second, so the working context never accumulates across tasks and the plan rather than the transcript carries continuity; that is what makes hours of unattended progress possible without the drift a growing transcript produces. Test-first is enforced destructively rather than advised: code written before its failing test is deleted. Between tasks a review reports findings by severity, with critical ones blocking progress, and a finishing skill verifies the suite and offers merge, pull request or discard before cleaning up the workspace. Because the whole thing is a set of skill files, it is portable across a dozen unrelated harnesses through each one's plugin mechanism, and it is testable — the project carries a meta-skill for authoring skills and an eval harness that exercises skill behaviour, so the process is versioned and regression-checked like code. The source is the project's own README, published by a company that also sells commercial support for it, and its autonomy claims are self-reported rather than measured; what transfers regardless of the tool is the shape — spec before code, plans specified to remove judgement, fresh context per task, two-stage review, and tests that must fail before code exists.
+
+## Key Properties
+
+- A session-start bootstrap makes checking for a relevant skill mandatory before any task, so phase instructions load automatically instead of being remembered
+- No code before an approved spec, presented back in chunks short enough to review honestly
+- Plans decompose into few-minute tasks with exact paths, complete code and verification steps — specified so execution needs no judgement
+- Each task runs in a fresh subagent with two-stage review (spec compliance, then code quality), keeping implementation context from accumulating
+- Red-green-refactor is enforced by deleting code written before its test, not by recommending it
+- The process ships as skill files, making it portable across harnesses and testable by an eval harness like any other artifact
+
+## Relationships
+
+- [[agent-skills-format]] — is the packaging that makes this possible — because a skill is a folder whose description loads cheaply and whose instructions load only when relevant, an entire development methodology can be distributed as files and pulled into context exactly at the phase it governs
+- [[agent-harness]] — is what this methodology deliberately refuses to depend on — the same skill chain installs into a dozen different harnesses, so the process lives above the harness boundary while relying on harness features such as subagent spawning and post-compaction hooks
+- [[three-loops-of-agentic-development]] — supplies the cadence this workflow automates — the skill chain closes the inner agentic coding loop unattended and pins the human's steering to two explicit gates, spec approval and branch finish, instead of continuous supervision
+
+## Applications
+
+Standardizing how a team's coding agents work so every task follows the same spec-plan-test-review sequence; getting long autonomous runs that stay on plan by giving each task a fresh subagent; distributing an organization's engineering process as installable, version-controlled skills instead of a document nobody rereads.
+
+## Sources
+
+- https://github.com/obra/superpowers
+
+## See Also
+
+- [[agent-skills-format]]
+- [[agent-harness]]
+- [[three-loops-of-agentic-development]]

@@ -1,14 +1,14 @@
 ---
 title: Harness-memory lock-in
 date: 2026-08-24
-tags:
-  - concept
-  - ai-agents
-  - memory
-  - lock-in
+domain: ai-agents
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, ai-agents, memory, lock-in, domain/ai-agents, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://www.langchain.com/blog/your-harness-your-memory
+    class: external-primary
 ---
 
 # Harness-memory lock-in
@@ -34,6 +34,7 @@ The mechanism runs through context: memory is context the harness chooses to per
 - [[mcp-stateless-core]] — shows the stateless side of the same trade — protocol-level statelessness with client-held, visible handles keeps any server swappable, exactly the property server-held memory removes
 - [[agent-skills-format]] — open packaging standards are the counterweight it argues for — capabilities kept in portable files travel between harnesses instead of binding to one
 - [[context-layer]] — a build-your-own instance of the remedy — the organization owns the store that grounds its agents, so accumulated context stays an asset under its control rather than a provider's
+- [[opaque-agent-interop]] — A2A-style opaque interop and harness memory lock-in frame the identical architectural fact from opposite sides — that an agent's memory lives inside its own harness rather than being externally visible is opaque interop's deliberate feature and lock-in's risk.
 
 ## Applications
 

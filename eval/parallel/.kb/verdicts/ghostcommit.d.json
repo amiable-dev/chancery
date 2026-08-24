@@ -1,0 +1,26 @@
+{
+  "task_id": "7256e4d7fe5812df",
+  "supplier": { "class": "model-single", "id": "claude-opus-5" },
+  "concepts": [
+    {
+      "slug": "exploitability-vs-reliability-evidence",
+      "title": "Exploitability versus reliability in attack evidence",
+      "tags": ["concept", "security", "evaluation", "research-methods"],
+      "definition": "**Exploitability and reliability are two different claims** about an attack and they need different evidence. A single successful run establishes that a target is exploitable through a given interface; a rate — six of ten, ten of ten — estimates how often the attack succeeds and holds only for the fixture and configuration the trials ran under. Conflating them silently promotes a demonstration into a benchmark, so the discipline is to label every cell of a results matrix with which of the two claims it actually supports.",
+      "explanation": "Both claims routinely appear in one table. In the GhostCommit publication, sixty command-line trials — ten per model-and-effort cell — report repeated outcomes under one supplied fixture, while six desktop-application trials carry a single observation each and establish only that the attack is reachable through that interface; the authors say so explicitly rather than letting the layout imply otherwise. The distinction has consequences in three directions. Reading: an EXFIL in a one-observation cell and a 10/10 in a ten-trial cell look alike on a page and mean entirely different things, so the single observation cannot be compared against a REFUSED beside it as though a rate had been measured. Defending: an exploitability claim is already sufficient to justify a control, because one working path is all an attacker needs, whereas a reliability claim is what a risk model consumes and is also the claim that expires first, invalidated by a model version, a tool update or a changed default. Publishing: counts are fixture- and configuration-specific by construction, so a result reported without its fixture is an uninterpretable number. The second half of the discipline is the packaging that makes either claim checkable — an exact decoder giving success an objective definition, here byte-for-byte recovery of a seeded file rather than a reviewer's judgement; the fixture itself; a synthetic-canary-only reproduction protocol so a reader cannot casually point the attack at real credentials; and vendor notification before release. The source is the attack authors' own public proof-of-concept repository, deliberately kept separate from the anonymous paper artifact, so the scope statements are theirs — but the decoder and outcome definitions let a reader recompute the claim instead of accepting it.",
+      "key_properties": [
+        "One successful run proves exploitability through an interface and estimates no rate at all",
+        "Success rates are bound to the fixture, tool version and configuration that produced them",
+        "A published decoder gives success an objective criterion — exact recovery of a seeded value, not a judgement call",
+        "Exploitability alone justifies a control; reliability is what a risk model needs, and it expires faster",
+        "Canary-only fixtures, a reproduction protocol and prior vendor notification are what make the claim checkable rather than merely asserted"
+      ],
+      "relationships": [
+        { "target": "non-text-channel-injection", "clause": "is the attack whose results matrix this distinction was drawn on, since its exfiltration table mixes ten-trial cells with single-observation cells that establish only reachability" },
+        { "target": "harness-determined-injection-resistance", "clause": "depends on this distinction to state its finding correctly — a small-n comparison across harnesses can identify the deciding variable without becoming a standing safety ranking of any product" }
+      ],
+      "applications": "Reading an attack-success matrix in a disclosure without over-reading its single-observation cells; writing up red-team results so a reader can tell which findings justify a control and which support a risk estimate; fixing an objective success criterion and a canary-only fixture before trials begin, so the numbers mean something afterwards.",
+      "see_also": ["non-text-channel-injection", "harness-determined-injection-resistance"]
+    }
+  ]
+}

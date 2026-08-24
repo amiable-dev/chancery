@@ -1,0 +1,55 @@
+---
+title: Shared mental-model erosion
+aliases:
+  - Cognitive debt in engineering teams
+date: 2026-08-24
+domain: software-engineering
+maturity: emerging
+source_type: practitioner
+tags: [concept, software-engineering, cognition, engineering-management, domain/software-engineering, maturity/emerging, source-type/practitioner]
+status: draft
+sources:
+  - url: https://michellepellon.com/blog/2026-02-23-cognitive-debt
+    class: external-primary
+---
+
+# Shared mental-model erosion
+
+## Definition
+
+**Shared mental-model erosion** is the degradation of a team's collective theory of its own systems — what each component is for, why it was built this way, what was deliberately left out, and how it would have to change if requirements shifted — that accumulates when code is generated rather than reasoned into existence. It is a comprehension liability rather than a quality one, so it accrues even when the generated code is entirely correct, appears in no build log or test result, and becomes visible only later as reluctance to touch particular components, system knowledge concentrated in whoever wrote the original prompt, and modifications that cost more than they should.
+
+## Explanation
+
+The mechanism is Peter Naur's, from his 1985 argument that a program is not its source but a theory held by the people who built it, of which the code is only a partial representation — which is why a program whose theory-holders have left is effectively dead even though every line survives. AI-assisted development moves that failure earlier in the sequence: where the classic case is a theory that existed and then dispersed, the new case is a theory that was never built, so the deficit starts at the first commit. A second mechanism compounds it. Refactoring is not only structural cleanup, it is where developers consolidate their model of a system by handling it, so when generation removes the occasion to refactor, a team loses the improvement and the understanding together. The term was coined by Margaret-Anne Storey at a Thoughtworks retreat, and the source here is a technology-leadership essay assembling converging findings rather than a study of the phenomenon itself — worth holding in mind, because the studies it convenes measure different populations by different methods and the convergence is an argument rather than a meta-analysis. The individual studies are checkable: an MIT EEG study found LLM-assisted writers showed the weakest neural coupling, least ownership and poorest recall, with participants who built understanding first and used AI second outperforming on every measure; METR's randomized trial of sixteen experienced open-source developers across 246 tasks in mature codebases found them nineteen percent slower with AI tools, having predicted a twenty-four percent speedup beforehand and still believing in a twenty percent speedup afterward; GitClear's longitudinal analysis of 211 million lines found refactoring falling from a quarter of changed lines in 2021 to under a tenth by 2024 with duplication roughly quadrupling; a review of 470 pull requests found AI-co-authored code carrying 1.7 times the major issues and 2.74 times the security vulnerabilities. The METR perception gap is the one with the sharpest managerial consequence, because a team that cannot feel the slowdown will not choose to spend time on comprehension unless leadership makes that time legitimate.
+
+## Key Properties
+
+- Accrues even when the generated code is correct, because the loss is comprehension rather than quality
+- Rests on Naur's claim that a program is a theory held by its developers, of which code is a partial representation
+- AI-assisted work moves the failure earlier: the theory is never built rather than built and then lost
+- Refactoring is where mental models get consolidated, and it fell from a quarter of changed lines in 2021 to under a tenth by 2024
+- METR's trial found experienced developers nineteen percent slower with AI while still believing they were twenty percent faster
+- Its warning signs are behavioural: hesitation to touch components, an AI-first reflex when asked how something works, knowledge concentrated in the prompter, and rising change cost
+
+## Relationships
+
+- [[cognitive-debt]] — names the individual-level version of the same loss, where offloading composition weakens one person's encoding and recall, while this concept is its collective counterpart in which the missing understanding attaches to a system and its team rather than to a text and its author
+- [[comprehension-gate]] — is the sharpest available countermeasure, converting the abstract obligation to understand a change into a merge precondition that the human rather than the machine has to satisfy
+- [[first-pass-acceptance-rate]] — addresses the measurement half of the same failure, replacing throughput counts that rise precisely when a team ships more material than it understands
+- [[risk-tiered-agent-change-control]] — applies the same stakes-scaling logic on the security side, spending scrutiny according to the consequence class of what a change touches rather than uniformly across every change
+
+## Applications
+
+Setting a team's AI-assistance policy — budgeting comprehension time into estimates, protecting refactoring deliberately, and dropping percentage-of-code-generated as a success metric — and running a periodic check for the four warning signs on the systems where a failure of understanding would cost the most.
+
+## Sources
+
+- https://michellepellon.com/blog/2026-02-23-cognitive-debt
+
+## See Also
+
+- [[cognitive-debt]]
+- [[comprehension-gate]]
+- [[first-pass-acceptance-rate]]
+- [[risk-tiered-agent-change-control]]

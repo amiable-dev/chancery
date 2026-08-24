@@ -1,0 +1,33 @@
+{
+  "envelope": {
+    "task_id": "18713b8efa81a1c2",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/vulnhunter.md": "sha256:97fa38a684b36b77dec965d009322fc9b63ed805ae4758ea6d1f0a29e8e2ef85",
+      "assessment:vulnhunter": "sha256:6d4279c5d75297100052d49aa351d7e4dcbfa5cfc4bb91000f92303f2d629537",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:0676e33a8635f8c53281e9be7168817be9f6c67b8fec23d991637c39d084bf34",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/attacker-first-forward-analysis.md",
+    "concepts/self-falsification-filter.md",
+    "concepts/independent-fix-verification.md"
+  ]
+}

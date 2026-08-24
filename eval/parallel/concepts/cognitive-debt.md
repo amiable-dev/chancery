@@ -1,14 +1,14 @@
 ---
 title: Cognitive debt
 date: 2026-08-24
-tags:
-  - concept
-  - cognition
-  - learning
-  - human-ai-interaction
+domain: human-factors
+maturity: emerging
+source_type: research
+tags: [concept, cognition, learning, human-ai-interaction, domain/human-factors, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://arxiv.org/abs/2506.08872
+    class: external-primary
 ---
 
 # Cognitive debt
@@ -32,6 +32,7 @@ The term comes from a four-month MIT Media Lab EEG study of essay writing (arXiv
 ## Relationships
 
 - [[ebbinghaus-forgetting-curve]] — describes how retained material decays without review, while cognitive debt names the upstream failure — offloaded work is weakly encoded in the first place, so there is less for the curve to act on
+- [[shared-mental-model-erosion]] — cognitive debt and shared-mental-model erosion name the identical comprehension-atrophy mechanism at two scales — one person's engagement and memory formation degrading, or a team's collective systems-knowledge degrading, both accruing invisibly because the offloaded work still gets done correctly.
 
 ## Applications
 

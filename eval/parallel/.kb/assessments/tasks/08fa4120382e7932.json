@@ -1,0 +1,35 @@
+{
+  "envelope": {
+    "task_id": "08fa4120382e7932",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/monitoring-distributed-systems.md": "sha256:db19c9aaf1f6adfc7aaec2860b75f857c15de594e34bd6c02025dbb5182c34b9",
+      "assessment:monitoring-distributed-systems": "sha256:2948460609435386ce7e12e52dbd42c0818150716a409fd276828ff06667b91a",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:fe55b7d65c684470309816056aec29915849f24d17827c51e48ad18a6e11bd66",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/four-golden-signals.md",
+    "concepts/symptom-based-alerting.md",
+    "concepts/actionable-page-criteria.md",
+    "concepts/tail-latency-histograms.md",
+    "concepts/short-term-availability-tradeoff.md"
+  ]
+}

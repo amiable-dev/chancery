@@ -17,5 +17,16 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:9cfe771c6538aa006100b465d8a6145be51f3b43f83c494e0e77a94d9f2165d3",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/continuous-profiling.md",
+    "concepts/targeted-profiling-rollout.md"
+  ]
 }

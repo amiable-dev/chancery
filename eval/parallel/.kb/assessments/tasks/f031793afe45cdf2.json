@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "f031793afe45cdf2",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/all-you-need-is-wide-events.md": "sha256:b8253f7bd3e12799904c79402624e1570ac3da51170ce3f69b4dd4b1fc91bf66",
+      "assessment:all-you-need-is-wide-events": "sha256:734c0c8ef8b91fb0dc052e7f40b28ce0276cb9174fdb18e560a252de344eda0c",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:dccc9eac4b16a4d51878a423c09b7fe529758c6e63a64de094d83f4bff040f0b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/pillars-as-wide-event-projections.md"
+  ]
+}

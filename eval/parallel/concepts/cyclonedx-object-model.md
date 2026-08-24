@@ -1,14 +1,14 @@
 ---
 title: CycloneDX object model
 date: 2026-08-24
-tags:
-  - concept
-  - security
-  - supply-chain
-  - standards
+domain: standards
+maturity: established
+source_type: vendor-doc
+tags: [concept, security, supply-chain, standards, domain/standards, maturity/established, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://cyclonedx.org/specification/overview/
+    class: external-primary
 ---
 
 # CycloneDX object model
@@ -32,6 +32,7 @@ The model's reach comes from pairing an inventory with the claims made about it.
 ## Relationships
 
 - [[osv-format]] — complementary supply-chain interchange formats: OSV describes individual open source vulnerabilities with precise affected-version ranges, while CycloneDX describes whole systems and uses its vulnerabilities object to attach known or newly disclosed vulnerabilities — including VEX exploitability statements — to that component inventory
+- [[vulnerability-range-events]] — the range algorithm vulnerability range events describes is exactly the kind of fact the CycloneDX object model's vulnerabilities section is built to carry, alongside component and dependency data an advisory alone doesn't include.
 
 ## Applications
 

@@ -1,14 +1,14 @@
 ---
 title: Datasheets for datasets
 date: 2026-08-24
-tags:
-  - concept
-  - data-governance
-  - documentation
-  - ml-datasets
+domain: data
+maturity: established
+source_type: research
+tags: [concept, data-governance, documentation, ml-datasets, domain/data, maturity/established, source-type/research]
 status: draft
 sources:
   - url: https://arxiv.org/abs/1803.09010
+    class: external-primary
 ---
 
 # Datasheets for datasets

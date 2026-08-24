@@ -4,14 +4,14 @@ aliases:
   - Zero-instrumentation monitoring
   - Kernel-level Kubernetes observability
 date: 2026-08-24
-tags:
-  - concept
-  - observability
-  - kubernetes
-  - ebpf
+domain: observability
+maturity: emerging
+source_type: practitioner
+tags: [concept, observability, kubernetes, ebpf, domain/observability, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://devops.gheware.com/blog/posts/ebpf-kubernetes-observability-2026.html
+    class: external-secondary
 ---
 
 # eBPF zero-instrumentation observability

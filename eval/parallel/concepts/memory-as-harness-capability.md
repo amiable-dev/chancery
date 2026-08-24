@@ -1,14 +1,14 @@
 ---
 title: Memory as a harness capability
 date: 2026-08-24
-tags:
-  - concept
-  - agents
-  - memory
-  - context-management
+domain: ai-agents
+maturity: emerging
+source_type: practitioner
+tags: [concept, agents, memory, context-management, domain/ai-agents, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://x.com/sarahwooders/status/2040121230473457921
+    class: external-primary
 ---
 
 # Memory as a harness capability

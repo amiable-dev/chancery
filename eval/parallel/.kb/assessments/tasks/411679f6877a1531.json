@@ -17,5 +17,15 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:314f869996ed0f4863dc986ab93469c9ae1ed3e4d9ee2f172812c3680cb90a6d",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/hypothetical-document-embeddings.md"
+  ]
 }

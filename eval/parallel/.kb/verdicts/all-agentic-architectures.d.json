@@ -1,0 +1,64 @@
+{
+  "task_id": "2b3b0c59de77f26b",
+  "supplier": { "class": "model-single", "id": "claude-opus-5" },
+  "concepts": [
+    {
+      "slug": "deterministic-picker-scoring",
+      "title": "Deterministic-picker scoring",
+      "aliases": ["Deterministic picker pattern"],
+      "tags": ["concept", "agents", "evaluation", "llm-as-judge"],
+      "definition": "**Deterministic-picker scoring** is a design discipline for any place a language model is asked to judge: instead of letting the model emit a numeric score or name a winner directly, the model is required to commit to categorical features — booleans and enumerated labels — about each candidate, and ordinary program code composes those features into the deciding signal. Judgement stays with the model; the arithmetic that turns judgement into a decision moves into code, where it is reproducible, testable and inspectable.",
+      "explanation": "The pathology it escapes is that a model asked to rate something on a numeric scale returns values clustered in a narrow band: candidates of visibly different quality all come back around the same number, so the differences that would drive a ranking sit inside the model's own noise, and instructing it to be harsher shifts the band without widening its discrimination. Asking for discrete, individually checkable facts instead — does this output cite a source, is the tone formal or casual, which of four failure categories applies — puts the model on the kind of question it answers comparatively reliably, and leaves the weighting, thresholds and tie-breaking as ordinary program state. That relocation buys three things: the decision is reproducible given the same feature vector, the weights can be unit-tested and changed without re-prompting or re-validating the model, and a decision can be explained afterwards by pointing at the feature that flipped it. The cost is that the discriminating features must be named in advance, which is the actual design work the pattern demands. It is worth being precise about what the discipline does not do: it makes a judgement legible and stable, not correct — if the model misreads a feature, the composed decision is confidently wrong in a traceable way. The source is a solo-authored open-source library that adopts this as its house style and reports applying it in thirteen of its thirty-five patterns with nine more immune by construction, which is the author's own accounting rather than an independent evaluation of the technique.",
+      "key_properties": [
+        "The model commits to booleans and enums; code composes them into the deciding signal",
+        "Escapes the flat-band pathology in which numeric self-ratings cluster too tightly to rank candidates",
+        "Weights, thresholds and tie-breaks become program state — unit-testable and changeable without re-prompting",
+        "Decisions are explainable after the fact by pointing at the feature that changed the outcome",
+        "Requires naming the discriminating features up front; it makes judgement inspectable, not correct"
+      ],
+      "relationships": [
+        {
+          "target": "deterministic-agentic-capability-matrix",
+          "clause": "extends that procedure one level down: the matrix decides which workflow steps reach a model at all, and this discipline splits the steps that do into a model-judged feature part and a code-decided arithmetic part, so even a call that genuinely needs reasoning gives up its deciding logic to fixed rules"
+        },
+        {
+          "target": "interchangeable-agentic-architectures",
+          "clause": "is the scoring convention that catalog applies inside its patterns wherever one has to rank or accept a candidate, which is what makes patterns from different papers comparable on the same task suite rather than each carrying its own idiosyncratic self-rating"
+        }
+      ],
+      "applications": "Designing an LLM-as-judge, reranking or self-critique step so its ordering is reproducible; replacing an existing one-to-ten self-rating in an eval harness or agent loop with an enum-and-boolean rubric composed in code; making a routing decision auditable by keeping the routing arithmetic outside the prompt.",
+      "see_also": ["deterministic-agentic-capability-matrix", "interchangeable-agentic-architectures"]
+    },
+    {
+      "slug": "interchangeable-agentic-architectures",
+      "title": "Interchangeable agentic architectures",
+      "aliases": ["Agentic pattern catalog", "Pattern-fit failure"],
+      "tags": ["concept", "agents", "architecture", "patterns"],
+      "definition": "**Interchangeable agentic architectures** is the treatment of the named agent patterns in the literature — reflection loops, tree and Monte-Carlo search over thoughts, corrective and self-grading retrieval, tiered memory, supervisor-and-specialist teams, sandboxed tool agents — as alternative implementations of a single uniform contract: each accepts a task and returns a result of the same shape, so the pattern becomes a swappable parameter rather than an architectural commitment, and every pattern can be run against the same task suite and compared directly.",
+      "explanation": "The contract is what does the work. One entry point that takes a task, one result object carrying the output plus metadata, and the choice of pattern stops propagating into calling code — swapping a reflection loop for a search-based planner becomes a constructor change rather than a rewrite. Two consequences follow. The first is comparability: running every pattern over one shared suite yields a per-task result grid rather than a stack of per-paper claims, and the informative output is not the aggregate score but the pattern-fit failures it exposes — a tree-search pattern collapsing on arithmetic because the task has no branching structure worth searching, debate and ensemble patterns converging confidently on a wrong answer to a trick question through group-think, memory patterns failing raw-fact recall because the unit they store is a conversation turn or a workflow recipe rather than a fact. Those are mismatches between a pattern's inductive bias and a task's shape, not defects in the implementations, and they are the part that transfers: choosing an agent architecture is a fit question with predictable failure modes, not a search for the strongest pattern. The second consequence is that each entry stays traceable to its originating paper, so the collection doubles as a navigable map of the literature and its family structure. The source is a single-author open-source repository presenting itself as both a library and a runnable textbook, and its quantitative claims — test counts, provider coverage, an aggregate accuracy on a seventeen-task suite from one run on one model for roughly a dollar and a half of tokens — are a snapshot of a small benchmark, not a ranking anyone should cite. The uniform contract and the pattern-fit framing are what survive that caveat.",
+      "key_properties": [
+        "A single entry point and result shape turn a pattern into a swappable strategy rather than an architectural commitment",
+        "Every catalogued pattern is traceable to its originating paper, making the collection a map of the literature's families",
+        "A shared task suite makes patterns comparable, and the pattern-fit failures are the informative output rather than the aggregate score",
+        "Documented mismatches: search patterns on non-branching arithmetic, debate and ensembles group-thinking on trick questions, episodic memory on raw-fact recall",
+        "Its benchmark numbers are one small run on one provider — architecture evidence, not a ranking of the patterns"
+      ],
+      "relationships": [
+        {
+          "target": "react-pattern",
+          "clause": "is one entry in this catalog, and the uniform contract is precisely what lets it be exchanged for a reflection, planning or search pattern without any change to the code that calls it"
+        },
+        {
+          "target": "debate-augmented-weak-supervision",
+          "clause": "supplies another catalogued pattern, and the benchmark's group-think failure — debate and ensemble agreeing on a wrong answer to a trick question — marks one edge of where multi-agent argument stops adding signal"
+        },
+        {
+          "target": "deterministic-picker-scoring",
+          "clause": "is the house scoring discipline applied throughout this catalog, so patterns that must rank or accept candidates do so through composed categorical features rather than each inventing its own numeric self-rating"
+        }
+      ],
+      "applications": "Choosing an agent architecture by task shape rather than by reputation, and predicting how a candidate pattern will fail before building it; prototyping several patterns behind one interface so the choice can be measured instead of argued; using the pattern-to-paper mapping as a reading order into the agentic literature.",
+      "see_also": ["react-pattern", "debate-augmented-weak-supervision", "deterministic-picker-scoring"]
+    }
+  ]
+}

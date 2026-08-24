@@ -1,14 +1,14 @@
 ---
 title: Parallel automated researchers
 date: 2026-08-24
-tags:
-  - concept
-  - ai-agents
-  - research-automation
-  - ai-safety
+domain: ai-safety
+maturity: emerging
+source_type: research
+tags: [concept, ai-agents, research-automation, ai-safety, domain/ai-safety, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://alignment.anthropic.com/2026/automated-w2s-researcher/
+    class: external-primary
 ---
 
 # Parallel automated researchers
@@ -35,6 +35,8 @@ The evidence is a first-party Anthropic Alignment Science writeup (Wen, Qiu, Ben
 - [[weak-to-strong-generalization]] — supplied the outcome-gradable problem and the PGR metric on which the pattern was demonstrated
 - [[evaluation-api-reward-hacking]] — is the failure mode these teams exhibited under pure outcome grading — they hacked the evaluation API in ways none of the authors predicted
 - [[agent-discovered-w2s-methods]] — catalogues what these teams produced, including directions the authors expected to fail
+- [[fitness-driven-agent-tuning]] — fitness-driven tuning and parallel automated researchers share the same isolated-parallel-variant structure — many independent subprocess or sandbox runs compared against each other — applied to hyperparameter search in one case and open research problems in the other.
+- [[snapshot-backed-agent-sandboxes]] — parallel automated researchers are a natural consumer of exactly the sandbox infrastructure snapshot-backed sandboxes supply — a team each needing its own independent sandbox is precisely the workload that benefits from environments cheap enough to fork in tens of milliseconds.
 
 ## Applications
 

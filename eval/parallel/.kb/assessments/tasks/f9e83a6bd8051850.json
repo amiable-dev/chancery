@@ -1,0 +1,32 @@
+{
+  "envelope": {
+    "task_id": "f9e83a6bd8051850",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/a-field-guide-to-fable-5.md": "sha256:edf3186f12acef7f591925e29f8f77bc5ac73fe8ff2e1e9e733ef7306383f19a",
+      "assessment:a-field-guide-to-fable-5": "sha256:fe053de5798b09b2d13860ca2ce4614d821bed46db6fde3bd2359e28dda4a4b5",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:8be7833483fc429d641e959a5b653f8b773d5c056cfbf6856375a3c5166b104e",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/answer-layer-interception.md",
+    "concepts/microcopy-doubt-injection.md"
+  ]
+}

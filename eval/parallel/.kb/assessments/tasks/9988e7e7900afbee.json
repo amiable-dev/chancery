@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "9988e7e7900afbee",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/the-developer-credential-economy.md": "sha256:51e439d9a83f66a520f19fca68db1619a76190ef1d970fb030f16f83773a17b2",
+      "assessment:the-developer-credential-economy": "sha256:9416cfc34e7dae5f789f7ad88d6a1ea32a6fbc118960e87e3bdbda6adca6f80f",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:172a1192f3fad205a653c5313636b6dc6f529a4fe8df34672d76931bccc258ce",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/exposure-first-supply-chain-defense.md"
+  ]
+}

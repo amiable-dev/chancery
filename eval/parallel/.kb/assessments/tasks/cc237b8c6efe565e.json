@@ -1,0 +1,32 @@
+{
+  "envelope": {
+    "task_id": "cc237b8c6efe565e",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/we-put-the-exploit-in-a.md": "sha256:b3452a3e7a082cb2b2072fef4a3fd36237783b3922bc59911dbb7c5bc5e35de3",
+      "assessment:we-put-the-exploit-in-a": "sha256:6f2133e2cd8506465bae35ce940695394560714a163453a690064a731b89c81b",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:cdf08d63bfd89b96a3f24150ee978a6f3f3fb78bf604cd0e0c6b2d695a6fb7bd",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/non-text-channel-injection.md",
+    "concepts/harness-determined-injection-resistance.md"
+  ]
+}

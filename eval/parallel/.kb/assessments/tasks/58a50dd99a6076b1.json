@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "58a50dd99a6076b1",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/agentic-agile.md": "sha256:b697cf354cd37b98fb8a278ba77a94cb81b0a1fcf91632490f8e7fe2e0622e26",
+      "assessment:agentic-agile": "sha256:6e9829cbf789120aac2b1545474fc07c7ddc328911719ba3514dc5e55886b914",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:8c781e9f2c5e1dc899af51a457894b17f3d015bbc388d7d2184f301f06019072",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/contract-driven-agent-development.md"
+  ]
+}

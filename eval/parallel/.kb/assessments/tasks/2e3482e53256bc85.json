@@ -1,0 +1,22 @@
+{
+  "envelope": {
+    "task_id": "2e3482e53256bc85",
+    "verb": "link",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "concepts/answer-layer-interception.md": "sha256:3d65863f67ed4369647ffefb75687b5fc59b9a69c11e06ceeff9f5ba850e6ed1",
+      "concepts/microcopy-doubt-injection.md": "sha256:533384bfcbb5ac00918a07689d359e8f1fc5c5a2a0a586fb4548952df5fa47aa",
+      "concepts/perpetual-fallback-access.md": "sha256:3dc32ee3793982fe65b9d333fff57aeff8de0922170b22910686cd5c17ab357d",
+      "schema:link-draft.schema.json": "sha256:e713aca39f650c312adb6e8921abe1fead499fc2ae57267da2cf69356ba1661a"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

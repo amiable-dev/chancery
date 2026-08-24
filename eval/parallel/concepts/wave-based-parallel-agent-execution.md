@@ -1,0 +1,50 @@
+---
+title: Wave-based parallel agent execution
+aliases:
+  - Wave execution
+  - Agentic-Agile waves
+date: 2026-08-24
+domain: software-engineering
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, agents, software-process, parallelism, domain/software-engineering, maturity/emerging, source-type/vendor-doc]
+status: draft
+sources:
+  - url: https://github.com/microsoft/agentic-agile-template
+    class: external-primary
+---
+
+# Wave-based parallel agent execution
+
+## Definition
+
+**Wave-based parallel agent execution** is a concurrency-control discipline for running several coding agents at once: an epic is decomposed into stories that each declare exclusive ownership of a named set of files, stories with no dependency on one another are grouped into a wave, every story in the wave runs on its own branch, and no next wave starts until each pull request in the current one has cleared a single shared review gate — so non-interference is guaranteed by the decomposition at plan time rather than negotiated at merge time.
+
+## Explanation
+
+The premise is that agents at scale fail from coordination breakdown rather than model capability, so the specification is treated as the program and the coordination problem is moved forward into planning. Each story carries a fixed shape: the files it will create or modify, the interfaces it must satisfy, the invariants it must not break, testable acceptance criteria, negative constraints naming what it explicitly does not do, its dependencies, and a table asserting exclusive ownership of its files for the duration of the wave. The dependency graph then decides wave membership — only mutually independent stories share a wave — and exclusive file ownership plus one branch per story makes concurrent agents non-interfering by construction instead of by luck. Batching review at the wave boundary rather than per pull request gives the human a coherent increment to judge and a natural place to redirect before more work is built on unvalidated assumptions. What makes the loop self-correcting is that its three metrics each indict a specific part of the process: merge conflicts should be zero, and any conflict is a defect in the decomposition rather than in the agent; first-pass acceptance rate measures how well the specs were written; escaped defects measure the review gate. The source is a vendor-published starter template — a repository README, a manifesto of values, platform adapters and worked sample issues — that describes itself as an active area of investigation, and its evidence is worked examples and one team's project history, not a controlled comparison. The mechanism and the three metrics transfer regardless; the claim of production-readiness is the part a reader should test themselves.
+
+## Key Properties
+
+- Story template fixes scope, interfaces, invariants, acceptance criteria, negative constraints, dependencies and an exclusive file-ownership table
+- The dependency graph decides wave membership: only mutually independent stories run concurrently
+- One branch per story plus exclusive file ownership makes parallel agents non-interfering by construction
+- Review is a batched gate at the wave boundary, and the next wave launches only after it clears
+- Merge conflicts, first-pass acceptance rate and escaped defects read back as measures of decomposition, specification and review quality respectively
+- Negative constraints — what a story must not do — are a first-class field, bounding scope creep as explicitly as acceptance criteria bound completion
+
+## Relationships
+
+- [[paved-road-mcp-platform]] — makes the same move one layer up: where that platform ships governance inside the scaffold a team copies to build a server, this ships process governance inside the repository template a team copies to start a project, so in both cases the disciplined path is also the default one
+
+## Applications
+
+Planning a multi-agent sprint by decomposing an epic into file-disjoint stories that can be dispatched concurrently; diagnosing a parallel run that ended in merge conflicts by reading the conflict count as evidence against the decomposition rather than against the agents; writing story tickets whose acceptance criteria are precise enough to serve as the agent's exit condition.
+
+## Sources
+
+- https://github.com/microsoft/agentic-agile-template
+
+## See Also
+
+- [[paved-road-mcp-platform]]

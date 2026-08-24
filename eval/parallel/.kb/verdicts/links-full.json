@@ -1,0 +1,8 @@
+{
+  "task_id": "2e3482e53256bc85",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "links": []
+}

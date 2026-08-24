@@ -1,14 +1,14 @@
 ---
 title: Debate-augmented weak supervision
 date: 2026-08-24
-tags:
-  - concept
-  - ai-safety
-  - alignment
-  - scalable-oversight
+domain: ai-safety
+maturity: emerging
+source_type: research
+tags: [concept, ai-safety, alignment, scalable-oversight, domain/ai-safety, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://arxiv.org/html/2501.13124v1
+    class: external-primary
 ---
 
 # Debate-augmented weak supervision

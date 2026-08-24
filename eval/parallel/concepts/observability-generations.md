@@ -5,14 +5,14 @@ aliases:
   - Observability 2.0
   - Versioning observability
 date: 2026-08-24
-tags:
-  - concept
-  - observability
-  - telemetry
-  - cost-model
+domain: observability
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, observability, telemetry, cost-model, domain/observability, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://www.honeycomb.io/blog/time-to-version-observability-signs-point-to-yes
+    class: external-primary
 ---
 
 # Observability generations (1.0 vs 2.0)

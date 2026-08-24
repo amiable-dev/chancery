@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "c1893dc183da28b5",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/open-source-vulnerability-format-open-source.md": "sha256:1f8dfe869a885d622be9c2cd937885d5ef32e0115d07a12f232180e020457b21",
+      "assessment:open-source-vulnerability-format-open-source": "sha256:fbcdd7404f7ebeda78bc5191ff3ec9a9bcc1bf99e035d73042edf309b2444e8a",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:d0af0f2290cf9433cb2dc971abaaea23ab6b3aaac62ac0a5926e3673afcce15c",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/vulnerability-range-events.md"
+  ]
+}

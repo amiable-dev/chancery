@@ -1,0 +1,130 @@
+{
+  "task_id": "332766cd9dd5028d",
+  "supplier": { "class": "model-single", "id": "claude-opus-5" },
+  "concepts": [
+    {
+      "slug": "determinism-discovery-split",
+      "title": "Tools for certainty, agents for discovery",
+      "aliases": ["Determinism and discovery split"],
+      "tags": ["concept", "agents", "architecture", "reliability"],
+      "definition": "The **determinism and discovery split** is the rule that a compound AI system should route each responsibility by what the work demands of it: anything whose value is exactness and whose mistakes are expensive to unwind belongs in a deterministic tool that does only what it was told, anything whose value is finding something nobody specified belongs in an agent that is permitted to be wrong, and any agent behaviour that recurs identically should be demoted into a rule so the model's tokens are spent on judgment rather than on arithmetic.",
+      "explanation": "The framing exists to break a false dichotomy the speaker sees in practice, where saying a system must be deterministic has become a socially acceptable way of saying no AI. Determinism is not the opposite of agency here but the ground it stands on. When a model repeatedly fumbles the same join, miscounts the same fleet or fails the same lookup, the correction is not a better prompt: it is a parametrised query, a runbook or a rule of thumb the agent invokes, which keeps the discovery capacity intact while making the mechanical part exact. The canonical instance is arithmetic delegated to code rather than expected from tokenisation. The case for tolerating wrongness on the other side of the line is stated just as plainly: an intern allowed to be wrong eight times occasionally produces the answer nobody would have specified, and an agent constrained to only pre-programmed branches forecloses that entirely. What sorts a task between the two is consequence and reversibility. A refund, a funds transfer, a reallocation of scarce compute worth millions gets a deterministic tool plus a human approval, because there a confident wrong answer is a loss rather than a lead. The corollary the talk stresses is that too little tool access is its own hazard, since a model with nothing exact to call will reason its way to a plausible number instead. This is a conference talk by an engineering leader recounting one production project, so it is a practitioner's account rather than a controlled comparison, and its organisational analogies are rhetoric — but the routing rule itself is testable in any system that has both surfaces.",
+      "key_properties": [
+        "Sorts work by consequence and reversibility, not by whether AI is fashionable in that part of the stack",
+        "Recurring agent behaviour is demoted to a rule or parametrised query, preserving discovery and buying back tokens",
+        "Reframes determinism as the grounding for agency rather than as a refusal of it",
+        "Tolerated wrongness is the price of discovery, affordable only where a wrong answer is cheap",
+        "Insufficient tool access is a hazard in itself, because the model will reason where it should have called something exact"
+      ],
+      "relationships": [
+        {
+          "target": "deterministic-agent-verification",
+          "clause": "applies the same preference for mechanical ground truth at a later point in the cycle — verification checks the agent's work after the fact, while this rule decides beforehand which work the agent should never have been handed"
+        },
+        {
+          "target": "agent-loop-patterns",
+          "clause": "supplies the loop shape this rule implies for consequential work, since the human-in-the-loop pattern is what a deterministic tool plus an approval step looks like once it is drawn as a cycle"
+        },
+        {
+          "target": "agent-archetypes",
+          "clause": "includes the archetype that keeps this split current — the consultant agent watches the running system for behaviour repetitive enough to be demoted into a deterministic rule"
+        }
+      ],
+      "applications": "Deciding which steps of an operational workflow get a tool and which get an agent; converting a recurring agent mistake into a canned query rather than a longer prompt; arguing for AI in a domain where stakeholders have already ruled it out on determinism grounds.",
+      "see_also": ["deterministic-agent-verification", "agent-archetypes", "agent-loop-patterns"]
+    },
+    {
+      "slug": "rare-context",
+      "title": "Rare context",
+      "aliases": ["Organisation-specific operational vocabulary"],
+      "tags": ["concept", "agents", "knowledge", "operations"],
+      "definition": "**Rare context** is the organisation-specific knowledge an AI system needs but could not have learned in pretraining — the local vocabulary, thresholds, conventions and worked examples that give an internal term such as a zombie node its actual operational meaning — and its absence is why a general agent dropped into a company behaves like a capable new hire nobody told what the words mean.",
+      "explanation": "The failure this names is under-specification rather than incapability, and its signature is worse than a refusal. Asked where the zombie nodes are, a model reasons plausibly from whatever metrics it can reach and produces something almost right, shaped exactly like the answer an operator wanted, which is the hardest kind of wrong to catch. The knowledge that closes the gap is rare in a precise sense: it lives in few places and none of them are the public internet — incident write-ups, the queries experienced operators actually run, the local names for failure modes, the thresholds a particular team treats as abnormal. Two consequences follow. The first is a claim about vendors: an agent that works in any company zero-shot cannot exist for operational work, because the missing ingredient is by construction not in the model, so the work is bottom-up from one team's language rather than top-down from a general capability. The second is a warning about where the context comes from. Rare context inherits the quality of wherever it was written down, and the talk is blunt that internal wikis and databases are themselves full of confident errors, so grounding an agent in company knowledge means grounding it in curated and vetted data products rather than in whatever the intranet happens to contain. This is a practitioner's account from a named production project, and the mechanism is easy to reproduce: give the same question to a general agent with and without the local examples.",
+      "key_properties": [
+        "The gap is vocabulary and thresholds, not capability, and its signature failure is a confident near-miss",
+        "By construction absent from pretraining, so no vendor agent is zero-shot competent at operational work",
+        "Supplied bottom-up as canonical queries, incident history and examples in one team's actual language",
+        "Inherits the reliability of its source, and internal wikis and databases carry their own confident errors",
+        "Argues for vetted data products rather than raw internal corpora as the grounding surface"
+      ],
+      "relationships": [
+        {
+          "target": "context-engineering",
+          "clause": "names the specific ingredient that curation must not economise away, since the smallest high-signal token set is useless if the tokens defining the local vocabulary are the ones cut"
+        },
+        {
+          "target": "unknowns-inventory-prompting",
+          "clause": "occupies that inventory's hardest quadrant — rare context is mostly unknown knowns, the criteria an expert recognises instantly and would never think to write down"
+        },
+        {
+          "target": "agent-led-elicitation",
+          "clause": "is one practical way to extract it, because interrogating the operator surfaces the local meanings faster than asking them to document knowledge they do not experience as knowledge"
+        }
+      ],
+      "applications": "Estimating what a bought-in agent will actually do on day one in an operations org; deciding what to write down first when grounding an internal assistant; explaining why a demo that impressed on public data disappoints on the company's own.",
+      "see_also": ["context-engineering", "unknowns-inventory-prompting", "agent-led-elicitation"]
+    },
+    {
+      "slug": "purpose-built-agent-hierarchy",
+      "title": "Purpose-built agent hierarchies",
+      "aliases": ["Layered narrow agents with pyramid evals"],
+      "tags": ["concept", "agents", "architecture", "evaluation"],
+      "definition": "A **purpose-built agent hierarchy** is a compound AI system assembled from deliberately narrow agents composed in layers — retrieval agents that know one query or one table, analyst agents that know what to ask about one problem, an orchestrator pursuing a goal, action agents that each do one thing — instead of one general agent holding every tool, and it is verified the way a test pyramid verifies software, with many cheap evals at the leaf level and a few expensive end-to-end evals above them.",
+      "explanation": "Accuracy comes from constraint. A retrieval agent that only turns questions into one table's queries, given a few good examples, a deliberately flat and wide schema and read-only access, is reliable in a way a general data agent is not, for the same reason a new analyst is given filters and grouping before joins. Narrowing also caps the paradox of choice: a bloated tool menu makes a model reason longer, cost more and answer worse, so the useful move is usually to remove a tool rather than to add a rule about it. Layering then buys composition, since each agent's window holds only its own job, but it also stacks error — every level multiplies the failure rate of the level beneath it, and that compounding is a first-class design constraint rather than an implementation detail. Verification mirrors the structure. Leaf evals assert that the query counting machines actually counts them, run cheaply and constantly, and use a model as judge only to accept semantically equivalent phrasings of the same answer. Middle evals behave like integration tests over several aggregated agents and cost real inference, so there are fewer. End-to-end supervisor evals are fewest and most expensive and still necessary, because the pilot that reaches eighty percent accuracy has cleared the demo bar and not the production one. The account comes from a five-month internal project whose successor an engineer rebuilt in roughly six hours once off-the-shelf protocols existed — the speaker's own evidence that the layering, not the plumbing, was the part worth keeping.",
+      "key_properties": [
+        "Constraining one agent to one table or one question raises accuracy more than improving a general prompt",
+        "Flat wide schemas and read-only access beat expressive interfaces where reliability matters",
+        "Error stacks upward: each layer multiplies the failure rate of everything beneath it",
+        "Evals follow a test pyramid — many cheap leaf checks, few costly end-to-end runs, model-as-judge for equivalence",
+        "Eighty percent accuracy is a demo threshold, not a production one"
+      ],
+      "relationships": [
+        {
+          "target": "context-engineering",
+          "clause": "explains why the narrowing works at all, since each agent's window then holds only the instructions, examples and tools for a single job and nothing competes for its attention budget"
+        },
+        {
+          "target": "deterministic-agent-verification",
+          "clause": "sets what the base of this eval pyramid should prefer — mechanical checks wherever one exists, with the model judge reserved for accepting differently worded but equivalent answers"
+        },
+        {
+          "target": "determinism-discovery-split",
+          "clause": "is the rule that decides which nodes of the hierarchy should not be agents at all, so the two compose into a system that is mostly deterministic with judgment concentrated where it is needed"
+        }
+      ],
+      "applications": "Decomposing an operational assistant into agents small enough to evaluate individually; deciding where to spend eval budget as a compound system grows layers; diagnosing a multi-agent system whose top-level answers are wrong more often than any single component is.",
+      "see_also": ["context-engineering", "deterministic-agent-verification", "determinism-discovery-split"]
+    },
+    {
+      "slug": "agent-archetypes",
+      "title": "Agent archetypes",
+      "aliases": ["Agent taxonomy by workload shape"],
+      "tags": ["concept", "agents", "taxonomy", "architecture"],
+      "definition": "**Agent archetypes** is a taxonomy of the recurring workload shapes a compound AI system decomposes into, sorted by what each is for rather than how it is built: the worker that applies a little judgment to an enormous number of near-identical items, the ruminative agent that reasons at length over exceptions from several deliberately opposed viewpoints, the middle manager that narrows others' findings into a few goal-directed recommendations, the consultant that watches the system itself for behaviour worth demoting to determinism, the tool selector that maps a request onto the right call, and the director that closes an observe-orient-decide-act loop over a constrained domain.",
+      "explanation": "The organising axis is the shape of the work, and each shape implies a different cost profile, tool set and eval. The worker archetype is what the speaker calls painting all the rocks on the beach: inspect a hundred thousand clusters for anomalous power draw, check every server against what the infrastructure code claims it should be — laborious, individually easy, each item slightly different, and historically automatable only where the difference could be written as an if-then. Stochastic systems remove that constraint, which is why this archetype covers so many previously manual jobs. The ruminative agent inverts the economics: few inputs, long reasoning, often several agents each holding a different objective such as security, cost or latency, argued out as a structured debate rather than answered once, and it does not need to sit behind a chat interface. The middle manager converges rather than explores, taking a goal and a small tool set and returning a handful of recommended actions. The consultant is the meta-observer, looking across runs for behaviour repetitive enough to be turned into a rule, which is how a system keeps applying the determinism split continuously instead of once at design time. The tool selector has largely been absorbed into agent scaffolding and protocol clients. The director is the honest edge of the taxonomy: the speaker states that nobody is running one unattended and expects it first over narrow domains as evals mature. Treat this as design vocabulary from one practitioner rather than a validated classification.",
+      "key_properties": [
+        "Sorted by workload shape: breadth at low judgment, depth at high judgment, convergence, meta-observation, routing, closed loop",
+        "The worker archetype is low intellectual effort applied at scale, previously blocked on writing the rule",
+        "Ruminative agents spend many tokens on few inputs and often run as opposed perspectives in debate",
+        "The consultant archetype is the mechanism by which recurring behaviour gets identified for demotion to code",
+        "The director archetype is explicitly aspirational — the speaker notes nobody runs one unsupervised"
+      ],
+      "relationships": [
+        {
+          "target": "purpose-built-agent-hierarchy",
+          "clause": "supplies the vocabulary for the nodes that hierarchy composes, so a layer can be chosen by the shape of its work rather than by where it happens to sit in the diagram"
+        },
+        {
+          "target": "agent-loop-patterns",
+          "clause": "classifies the same systems along a perpendicular axis — those patterns describe the shape of the cycle, these describe the shape of the job the cycle is doing"
+        },
+        {
+          "target": "determinism-discovery-split",
+          "clause": "is enforced continuously by one of these archetypes, since the consultant agent's job is to spot the repetitive behaviour that should stop being an agent at all"
+        }
+      ],
+      "applications": "Naming what kind of agent a proposed use case actually needs before choosing a framework; spotting that a job described as a chatbot is really a worker or ruminative workload that never needs a conversation.",
+      "see_also": ["purpose-built-agent-hierarchy", "agent-loop-patterns", "determinism-discovery-split"]
+    }
+  ]
+}

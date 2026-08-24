@@ -34,6 +34,7 @@ General vulnerability standards were designed for arbitrary software, and applie
 ## Relationships
 
 - _No relationships recorded yet._
+- [[vulnerability-range-events]] — vulnerability range events is the concrete range-event data model OSV's affected-ranges field actually implements — the introduced, fixed, last-affected and limit timeline is how OSV encodes affected ranges against commits or package versions instead of a prose description.
 
 ## Applications
 

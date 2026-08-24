@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "98c943b085feb383",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "411a8b28fd87f48a8c6ead277576b70b4dbe3725",
+    "input_hashes": {
+      "staging/static-analysis-results-interchange-format-sarif.md": "sha256:13d4843784e79a1975bb6537157a365e82cabe9a0d5e181d4d4c49d32b1f035c",
+      "assessment:static-analysis-results-interchange-format-sarif": "sha256:14fc110505ef0c8387c250ea93b89b05a1ab43a4fe77760d5b76c6c51010cb6c",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:582d619f2fe7271e200f3b033def82982e7232e144a8d7b3b98a4890ce5c8213",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/cross-run-result-identity.md"
+  ]
+}

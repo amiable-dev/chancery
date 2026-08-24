@@ -17,5 +17,18 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:03d67424494581946c3c2dce00281325099fe5b15423818a9a7bae3d5b7aa128",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-opus-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/determinism-discovery-split.md",
+    "concepts/rare-context.md",
+    "concepts/purpose-built-agent-hierarchy.md",
+    "concepts/agent-archetypes.md"
+  ]
 }

@@ -4,14 +4,14 @@ aliases:
   - ReAct
   - Reason + Act
 date: 2026-08-24
-tags:
-  - concept
-  - ai-agents
-  - prompting
-  - reasoning
+domain: ai-agents
+maturity: established
+source_type: research
+tags: [concept, ai-agents, prompting, reasoning, domain/ai-agents, maturity/established, source-type/research]
 status: draft
 sources:
   - url: https://arxiv.org/abs/2210.03629
+    class: external-primary
 ---
 
 # ReAct pattern

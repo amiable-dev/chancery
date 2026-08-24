@@ -4,14 +4,14 @@ aliases:
   - Matryoshka Representation Learning
   - MRL
 date: 2026-08-24
-tags:
-  - concept
-  - embeddings
-  - machine-learning
-  - retrieval
+domain: llm
+maturity: emerging
+source_type: research
+tags: [concept, embeddings, machine-learning, retrieval, domain/llm, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://arxiv.org/abs/2205.13147
+    class: external-primary
 ---
 
 # Matryoshka embeddings
@@ -37,6 +37,7 @@ The problem it solves is that representation capacity is fixed at training time 
 - [[retrieval-augmented-generation]] — the dense vector index at RAG's core can be built from truncated Matryoshka prefixes, trading recall against index size and query latency without retraining the retriever
 - [[graph-vs-vector-code-retrieval]] — sharpens the vector side of that argument on cost — nested embeddings make similarity search cheaper at a chosen fidelity — while leaving untouched the structural multi-hop weakness the graph side attacks
 - [[retrieval-composition-engine]] — gives a budgeted composition engine a per-strategy cost dial: coarse prefixes for broad candidate sweeps, full-dimension vectors for the precision passes that earn their tokens
+- [[transformer-architecture]] — matryoshka embeddings are a training-objective modification layered on top of representations the transformer architecture already produces — the same architecture, with an added loss term ordering information coarse-to-fine along the output dimensions.
 
 ## Applications
 
