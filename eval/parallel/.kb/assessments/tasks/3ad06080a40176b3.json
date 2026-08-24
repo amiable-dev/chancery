@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "3ad06080a40176b3",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "8d96320eea2de9b5daec0f3f37e801f3523b6bb9",
+    "input_hashes": {
+      "staging/evals-are-the-new-unit-tests.md": "sha256:d189d80a48572f7522d03da24210236d2d1acf0bd2129ca95ec9131c48b5b3cb",
+      "assessment:evals-are-the-new-unit-tests": "sha256:42261d27bcc7d2c7840453825209a5efe6c397453e8119677f4e3d0583b9d1a2",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:c2bf20e192351ca54454c10b130f9276870d6b6703b305748489cd7a91670bc4",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/acceptability-envelope-evals.md"
+  ]
+}

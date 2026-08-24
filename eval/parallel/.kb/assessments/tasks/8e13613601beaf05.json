@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "8e13613601beaf05",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "8d96320eea2de9b5daec0f3f37e801f3523b6bb9",
+    "input_hashes": {
+      "staging/agent-skills-overview-agent-skills.md": "sha256:10d5f95c8b6e370ee89c76d4b7281418cd13146412d47c56e2634b916617dff4",
+      "assessment:agent-skills-overview-agent-skills": "sha256:1150d98c187166ce2f3b14f24a1b5f80277e9371334fb8fddd01dc3a549e2a5c",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:77b7be8bb95b2fec4d0f122ddec12ae17bd99e8a22002cd920bad5018e1a79b3",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/agent-skills-format.md"
+  ]
+}

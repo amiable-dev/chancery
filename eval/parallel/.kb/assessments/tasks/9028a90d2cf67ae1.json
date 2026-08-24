@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "9028a90d2cf67ae1",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "8d96320eea2de9b5daec0f3f37e801f3523b6bb9",
+    "input_hashes": {
+      "staging/ai-security-event-logging.md": "sha256:6a90e1deaac6f5508f51f53cfd9a1871f8f55ccc5dfb337d4eee1c6f9a316119",
+      "assessment:ai-security-event-logging": "sha256:1df7aff3bcd254f148baa4e3f3e62a99581e41f1014cebdc9bdc63e8ddbef725",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:0a0112f5ae9ffa2c10289e9d3d933568308acf24d49d3d1cd67e98bdd863caf9",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/siem-agentic-visibility-gap.md"
+  ]
+}

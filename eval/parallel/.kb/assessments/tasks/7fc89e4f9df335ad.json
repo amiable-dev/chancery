@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "7fc89e4f9df335ad",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "8d96320eea2de9b5daec0f3f37e801f3523b6bb9",
+    "input_hashes": {
+      "staging/karpathys-llm-wiki.md": "sha256:c0187fada1d29f2469b8f692d4c48302b7065074367471891570816e3c4306db",
+      "assessment:karpathys-llm-wiki": "sha256:4cdbc409b4350fa66334180f2bd8e7d8f3bcbc790462fa1c24392dbf576aeb97",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:5ab5954be0f396b985c3b7fc8647c477e1f26ca379a35a57536f7901b2506be5",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/llm-maintained-wiki.md"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "9f80413599ead669",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "8d96320eea2de9b5daec0f3f37e801f3523b6bb9",
+    "input_hashes": {
+      "staging/alerting-on-slos.md": "sha256:245968c4cf17455be7e6a2d7f6660888cfea8adbe23361b716a353a93d63d105",
+      "assessment:alerting-on-slos": "sha256:f3a8cc18bca586dbe0590edb579295b22314068c6e31abf8c554d68137ec19ea",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:c7a7e1e5018dd35f13dc63b2961b99a89501db2d64036e6c0c13f3418e822df8",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/slo-burn-rate-alerting.md"
+  ]
+}

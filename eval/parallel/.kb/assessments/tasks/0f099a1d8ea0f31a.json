@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "0f099a1d8ea0f31a",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "8d96320eea2de9b5daec0f3f37e801f3523b6bb9",
+    "input_hashes": {
+      "staging/retrieval-augmented-generation-for-knowledge-intensive.md": "sha256:5adb122e0288bac18d82d94cb273d0956bcf615a1fa18ab378996812b165b215",
+      "assessment:retrieval-augmented-generation-for-knowledge-intensive": "sha256:1cd8579e168cf098f069b2b8785f9518fc7e2eaf4a9be1859734a5e89e22b443",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:62f237a83515a9699bb17be0a724ddd416fc6a6c99348e00d2e44fc3cc08a730",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/retrieval-augmented-generation.md"
+  ]
+}
