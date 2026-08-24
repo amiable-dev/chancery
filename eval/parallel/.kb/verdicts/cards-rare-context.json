@@ -1,0 +1,31 @@
+{
+  "task_id": "0d031aa468f68eec",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is rare context?",
+      "answer": "Organisation-specific knowledge an AI system needs but couldn't have learned in pretraining — local vocabulary, thresholds, conventions and worked examples that give internal terms (like 'zombie node') their actual operational meaning."
+    },
+    {
+      "heading": "Signature failure",
+      "question": "What does failure look like when a model lacks rare context, rather than lacking capability?",
+      "answer": "A confident near-miss, not a refusal — the model reasons plausibly from whatever it can reach and produces an answer shaped exactly like what was wanted, which is the hardest kind of wrong to catch."
+    },
+    {
+      "heading": "No zero-shot vendor agent",
+      "question": "Why can't a vendor's agent be zero-shot competent at operational work, according to rare context?",
+      "answer": "Because the missing ingredient — organisation-specific vocabulary and thresholds — is by construction absent from any pretrained model, so competence must be built bottom-up from one team's language, not delivered top-down as a general capability."
+    },
+    {
+      "heading": "Where rare context lives",
+      "question": "Where does rare context actually live?",
+      "answer": "In few places, none of them the public internet: incident write-ups, the queries experienced operators actually run, local names for failure modes, and the thresholds a particular team treats as abnormal."
+    },
+    {
+      "heading": "Quality inheritance",
+      "question": "Why does grounding an agent in a company's internal wiki risk making things worse, per rare context?",
+      "answer": "Rare context inherits the reliability of wherever it was written down, and internal wikis and databases are often full of confident errors themselves — so grounding should use curated, vetted data products, not raw internal corpora."
+    }
+  ]
+}

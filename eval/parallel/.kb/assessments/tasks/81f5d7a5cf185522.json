@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "81f5d7a5cf185522",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/shared-mental-model-erosion.md": "sha256:0fa0980592af48241808c2c838a127b36ff80819c0c4d7769db99451dd3d7afd",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/shared-mental-model-erosion.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:939b305b8db068772308f5033f79e3beb016df5393406887d4093b8610a5abd4",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/shared-mental-model-erosion.md"
+  ]
+}

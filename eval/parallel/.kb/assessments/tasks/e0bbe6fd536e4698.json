@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "e0bbe6fd536e4698",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/language-agnostic-code-graph.md": "sha256:5f5c117c762a97f19822e0ce4cab86f49d94c92e223dca8a9e033cab6bb032a3",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/language-agnostic-code-graph.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:84c332cd8e73f90417ca998a3d15eb2ba59558ec0e65c0f783b6c37b3038025d",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/language-agnostic-code-graph.md"
+  ]
+}

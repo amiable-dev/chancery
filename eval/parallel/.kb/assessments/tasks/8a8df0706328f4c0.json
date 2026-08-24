@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "8a8df0706328f4c0",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/stateless-worker-fanout.md": "sha256:9e79b0af436b0d9c2e31bdffc555f73890c1b58151b659b348ca91d13d4b24a0",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/stateless-worker-fanout.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:6e3868792c444b0d67dc463e480ac77635dec56f3f1d74847c70582c9d447432",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/stateless-worker-fanout.md"
+  ]
+}

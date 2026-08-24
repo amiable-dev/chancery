@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "5ab92b72179604b0",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/paved-road-mcp-platform.md": "sha256:1a576038984477350a6a253317951f91c5f6f7a60c188e0a0cd8110d2d5e538b",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/paved-road-mcp-platform.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:5de2f254a4d0ca2736cbe1ac639286253213b076f97040ea151bdd8e03cc3f12",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/paved-road-mcp-platform.md"
+  ]
+}

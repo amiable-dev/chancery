@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "57bed8dd0a56230e",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/mcp-authorization-hardening.md": "sha256:5a439d783225d1506e8ace23536d355c468441f8ff598c59425d74aa2590cc8b",
+      "flashcards/mcp-authorization-hardening.md": "sha256:14de143488e485e1848052c32c5e47ead62410b6a0e81e3913fc294b11682b6e",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/mcp-authorization-hardening.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:afcfe1ae4c0186ca80354107242e45c0587e0fa6ee7af41c50aa6a477ea84c8a",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/mcp-authorization-hardening.md"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "89aac5d1e66d191b",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/authorization-response-issuer-identification.md": "sha256:d0057806ac7bdd4d2dc86e04c2b5399a8b90d6ee49d280a5c965eeb724613a14",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/authorization-response-issuer-identification.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:aca4dee630d99fc640c72dcb3f5f90dea523fd1ea4cc494eb7b9777c87de63e9",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/authorization-response-issuer-identification.md"
+  ]
+}

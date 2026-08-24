@@ -1,0 +1,36 @@
+{
+  "task_id": "16e99fccea7f2026",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What principle organizes layered agent guardrails, and what follows for how the layers relate to each other?",
+      "answer": "Controls are selected by the failure class each one prevents, ordered along the path a bad action travels (sandbox, permissions, pre-tool hook, input review, commit gates) — no layer substitutes for another."
+    },
+    {
+      "heading": "Sandboxing's special role",
+      "question": "Why is sandboxing described as bounding the failure of every layer above it?",
+      "answer": "It holds regardless of whether the model cooperates — a poisoned instruction file, a successful injection, and a bug in the permission list all terminate at the same boundary, so it's the last line if everything else fails."
+    },
+    {
+      "heading": "What permissions actually guard against",
+      "question": "What kind of agent behaviour do permission lists exist to constrain — malice or something else?",
+      "answer": "Reward-hacky shortcuts, not malice — agents facing a blocked path tend to find a creative workaround, like widening file permissions, piping a download into a shell, commenting out a failing assertion, or force-pushing past a rejected push."
+    },
+    {
+      "heading": "Why deterministic beats model judgement here",
+      "question": "Why does a deterministic local validator beat a model judgement at the pre-tool-hook layer?",
+      "answer": "It's the last point a specific assembled command can still be rejected before it runs, and a deterministic validator reliably catches things like homoglyph hostnames, insecure transport and pipe-to-shell constructions — the class of thing that reads as ordinary to a human scanning a diff."
+    },
+    {
+      "heading": "Why input review is its own layer",
+      "question": "Why does externally authored input, such as config files or tool output, need its own review layer?",
+      "answer": "Because agents treat it as ground truth — a cloned repo carrying an agent config file, or a tool server it auto-loads, becomes arbitrary code running with the agent's permissions from a single clone."
+    },
+    {
+      "heading": "Why commit gates are deliberately redundant",
+      "question": "Why are local commit gates and server-side CI both kept, given they check similar things?",
+      "answer": "They're deliberately redundant — the local gate is fast but skippable, the server-side gate is neither, so it's the one that actually can't be bypassed."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "908517d3ef79ec87",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/agentic-test-layer-scoping.md": "sha256:e276b0296d9d40ac5931027e32eeace955c3266cbaf972886d8d23f0a6202c9e",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/agentic-test-layer-scoping.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:01da4544080949d374923b1d83fa0bf7aefcbff9ac8bbd77692ead0ad125d5a2",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/agentic-test-layer-scoping.md"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "0ccef72d4b37ed43",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition of an agent-maintained knowledge bundle",
+      "question": "What is an agent-maintained knowledge bundle?",
+      "answer": "A corpus of markdown files with YAML frontmatter whose frontmatter records what each document derives from, who or what confirmed it, when it goes stale, and whether it's current — with no schema registry, central authority, or required runtime."
+    },
+    {
+      "heading": "The four frontmatter families",
+      "question": "What four optional frontmatter families does the convention layer onto plain markdown?",
+      "answer": "Provenance, trust, lifecycle, and per-claim attribution — each answering one question a machine-written corpus raises that a hand-written one does not."
+    },
+    {
+      "heading": "Credibility as signals, not a score",
+      "question": "Why does provenance store per-source credibility signals instead of a single credibility score?",
+      "answer": "A score is subjective, doesn't port between consumers, and goes stale — storing signals (author, usage count, last-modified) instead lets credibility be inferred at read time rather than frozen at write time."
+    },
+    {
+      "heading": "How trust tiers are derived",
+      "question": "How are a document's trust tiers (unverified, machine-confirmed, human-reviewed) determined?",
+      "answer": "Generation and verification are kept as separate keys, and the tier is derived from whether any verifier's actor string carries the human prefix — it's inferred, not stored as a judgement."
+    },
+    {
+      "heading": "Why per-claim attribution uses stable ids",
+      "question": "Why does per-claim attribution key footnotes to a stable source id instead of a positional index?",
+      "answer": "Agents constantly rewrite these documents, and a positional reference silently misattributes the moment a list gets reordered."
+    }
+  ]
+}

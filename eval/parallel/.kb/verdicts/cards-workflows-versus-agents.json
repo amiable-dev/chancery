@@ -1,0 +1,36 @@
+{
+  "task_id": "031fc3fa2be4356a",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Workflows vs agents: definition",
+      "question": "What distinguishes a workflow from an agent in the workflows-versus-agents framework?",
+      "answer": "In a workflow, model calls and tools are orchestrated along code paths a person wrote in advance; in an agent, the model directs its own process and tool use, deciding for itself how the task gets accomplished."
+    },
+    {
+      "heading": "The augmented model building block",
+      "question": "What single building block underlies every workflow and agent pattern?",
+      "answer": "The augmented model — a language model that can issue its own search queries, select its own tools, and decide what to retain."
+    },
+    {
+      "heading": "Orchestrator-workers vs parallelization",
+      "question": "How does orchestrator-workers differ from parallelization, even though they look topologically similar?",
+      "answer": "In orchestrator-workers, subtasks are determined at runtime by a central model rather than fixed in advance — the right shape when you can't predict, say, how many files a change will touch."
+    },
+    {
+      "heading": "The add-complexity rule",
+      "question": "What rule governs when to move from a simple call to a more complex workflow or agent pattern?",
+      "answer": "Find the simplest structure that works and add complexity only where it demonstrably improves outcomes — often a single model call with retrieval and in-context examples suffices."
+    },
+    {
+      "heading": "Cost of agent autonomy",
+      "question": "What does an agent's autonomy cost, and what does that argue for?",
+      "answer": "Autonomy costs real money (more tokens spent) and compounds errors over steps — an argument for sandboxes and guardrails, not for avoiding agents altogether."
+    },
+    {
+      "heading": "Why frameworks can hurt",
+      "question": "What is the risk of using agent frameworks, according to this concept?",
+      "answer": "Abstraction layers obscure the underlying prompts and responses, make debugging harder, and make it tempting to add complexity a simpler setup would not need."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "task_id": "dc08f97308671a70",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is event-driven knowledge maintenance?",
+      "answer": "Replacing a manually-run knowledge base operating loop with hooks bound to lifecycle events (new source, session start/end, query, write, schedule) so maintenance runs automatically instead of depending on someone remembering."
+    },
+    {
+      "heading": "Event-to-action mapping",
+      "question": "Name three lifecycle events in event-driven knowledge maintenance and the action each one triggers.",
+      "answer": "A new source triggers ingest, entity extraction, and index updates; session end triggers compression into observations; a scheduled tick triggers lint, consolidation, and retention decay."
+    },
+    {
+      "heading": "Quality gate on writes",
+      "question": "What keeps automated content from filling the knowledge base with low-quality material?",
+      "answer": "Generated content is scored for structure, citations, and consistency; content below threshold is flagged or rewritten, and only content scoring above a threshold files back into the wiki."
+    },
+    {
+      "heading": "Self-healing lint",
+      "question": "How does event-driven lint differ from advisory lint?",
+      "answer": "It acts rather than just reporting: orphan pages are linked or flagged, stale claims are marked, and broken cross-references are repaired automatically."
+    },
+    {
+      "heading": "Contradiction handling",
+      "question": "How does the system resolve a contradiction detected on write, by default?",
+      "answer": "It proposes a resolution automatically based on source recency, source authority, and supporting-observation count, with a human able to override it."
+    },
+    {
+      "heading": "Crystallization",
+      "question": "What happens to a completed research or debugging thread under crystallization?",
+      "answer": "It is automatically distilled into a structured digest page (question, findings, entities, lessons), and its lessons are extracted as standalone facts."
+    }
+  ]
+}

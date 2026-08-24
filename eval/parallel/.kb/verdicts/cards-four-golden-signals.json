@@ -1,0 +1,31 @@
+{
+  "task_id": "71a108946fc3db6d",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What are the four golden signals, and what rule of thumb governs them?",
+      "answer": "Latency, traffic, errors and saturation — the minimal measurement set held to give adequate monitoring coverage of a user-facing service; if you can measure only four things about a system, measure these."
+    },
+    {
+      "heading": "Why latency is split by outcome",
+      "question": "Why must latency be measured separately for successful and failed requests rather than as one mean?",
+      "answer": "An instant error (e.g. a dropped backend connection) pulls the mean latency down and hides the failure. A slow error is worse than a fast one, so error latency is tracked separately rather than filtered out."
+    },
+    {
+      "heading": "Three kinds of errors",
+      "question": "What three kinds of failure does the errors signal need to count, beyond explicit failures like a 500?",
+      "answer": "Explicit (a 500), implicit (a 200 carrying the wrong content, caught only by end-to-end tests), and by policy (any request slower than a committed response-time budget)."
+    },
+    {
+      "heading": "Saturation target and leading indicator",
+      "question": "Why is saturation's utilization target set below 100%, and what is often its earliest indicator?",
+      "answer": "Most systems degrade before they saturate, so the target sits below full utilization; rising 99th-percentile latency over a short window is often the earliest indicator of approaching saturation."
+    },
+    {
+      "heading": "Scope of the claim",
+      "question": "What does the four golden signals framework claim about a service that measures and pages on all four?",
+      "answer": "Only that it is 'at least decently covered' — a reachable floor for monitoring, not a complete description of the system."
+    }
+  ]
+}

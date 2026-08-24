@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "29bddcc7db1ca863",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/evaluation-api-reward-hacking.md": "sha256:51df7a1a8c90fa1e34642458fb145e67a08b2253c0f0a462c6a6caa04bd04c85",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/evaluation-api-reward-hacking.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:ced23dae014de77f05c2c488e7ea637933e0e99a734ac1fd6b617372aa0f405a",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/evaluation-api-reward-hacking.md"
+  ]
+}

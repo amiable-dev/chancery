@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "8c029e857315d14b",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/risk-tiered-agent-change-control.md": "sha256:0e6d7d6ce14c2a9a5ac0f8085a98fe0b0bbd2a72302cb79b3e2fd5c1a4f1922c",
+      "flashcards/risk-tiered-agent-change-control.md": "sha256:1ddd052ec82e767ed2be20dd697849fe1661467095564396e643d64ffafb593e",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/risk-tiered-agent-change-control.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:1227f9e5579de4f8b12c64680d91a9410ac85ef17e7dc1a86f3086b07e210eec",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/risk-tiered-agent-change-control.md"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "0cc2eba71157a307",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is collector-side telemetry reduction, and where in the pipeline does the keep-or-drop decision happen?",
+      "answer": "Deciding what telemetry is worth storing inside the collector process between instrumented services and the storage backend (not at instrumentation time or query time), so spend falls with volume while every error, slow, and debug-flagged trace is still stored in full."
+    },
+    {
+      "heading": "Key mechanism: head vs. tail sampling",
+      "question": "Why can tail-based sampling keep all failed traces while head-based sampling structurally cannot?",
+      "answer": "Head-based sampling decides at the first span, before the trace's outcome is known, so it must sample failures at the same rate as successes. Tail-based sampling buffers the complete trace and decides only after it finishes, so policy can key on the actual outcome."
+    },
+    {
+      "heading": "Canonical tail-sampling policy",
+      "question": "What is the canonical tail-sampling policy shape for collector-side telemetry reduction?",
+      "answer": "Keep everything with an error status, everything above a latency threshold, and anything carrying a debug header; drop health-check/readiness routes outright; sample the routine remainder at a few percent."
+    },
+    {
+      "heading": "Other cost levers",
+      "question": "Besides trace sampling, what two other collector-side levers cut telemetry cost, and what does each target?",
+      "answer": "Attribute trimming (truncating/deleting fat span attributes like full SQL text or headers) reduces per-span size; label normalization (stripping per-instance labels, templating route names) reduces metric series cardinality, a cost driver billed separately from volume."
+    },
+    {
+      "heading": "Validation and measurement discipline",
+      "question": "How should a collector-side reduction rollout be validated and measured?",
+      "answer": "Roll out one strategy at a time, validating each with deliberate tests (trigger a known error, inject latency, check dashboards, fire a test alert) before starting the next; measure the actual reduction from the collector's own accepted-vs-exported span counters, not from next month's invoice."
+    }
+  ]
+}

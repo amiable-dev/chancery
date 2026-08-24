@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "5c25c83c5110d6e0",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/natural-language-to-cypher.md": "sha256:4c74d1541faf96f54a3606982475badabcadd9e4dd70800f59a965f4643e2f3d",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/natural-language-to-cypher.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:6e3a95bb2d66cbc50dcdf43995c15f41d928f271e7714857624081b958da5630",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/natural-language-to-cypher.md"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "35af17b844c3bc55",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/orchestration-as-provider-hedge.md": "sha256:ed24b8bcadbcbc5b75947785977cba2ccc6dcba5c0da73e25806d2d9da6ec571",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/orchestration-as-provider-hedge.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:69f69e750e23760c1e092a380d5af74216345c1e3168f000b03547b769262892",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/orchestration-as-provider-hedge.md"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "16e99fccea7f2026",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/layered-agent-guardrails.md": "sha256:c983366230f4538ed95fb36ea140063b935f0d38333f37fd385731703aec7c55",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/layered-agent-guardrails.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:5bf4b5961b238efcce823b73f2508ff0f8bdae2f2a8889acdc3331535ff045cf",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/layered-agent-guardrails.md"
+  ]
+}

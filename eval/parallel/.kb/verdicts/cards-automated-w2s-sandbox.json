@@ -1,0 +1,26 @@
+{
+  "task_id": "41ce364545fe66dc",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is the automated W2S research sandbox, and what does it provide?",
+      "answer": "An environment packaging weak-to-strong generalization (W2S) as something an AI agent can research: three datasets (chat, math, code), pre-computed baselines, an idea template, a server holding ground truth, and a Claude-powered automated researcher that proposes, implements, trains and evaluates ideas."
+    },
+    {
+      "heading": "Anti-cheating design",
+      "question": "How does the sandbox prevent an automated researcher from overfitting to or cheating on ground truth?",
+      "answer": "Ground truth is held server-side — the data-prep step strips labels from what the researcher sees, and agents submit predictions to an evaluation API that returns PGR (percentage of gap recovered) rather than exposing labels directly."
+    },
+    {
+      "heading": "Minimal contribution surface",
+      "question": "How does the sandbox keep implementing a new research idea cheap?",
+      "answer": "Each idea is a `run.py` implementing one approach against a `RunConfig`, with pre-cached weak-model artifacts already provided — so a new technique is tens of lines of code rather than a full training stack."
+    },
+    {
+      "heading": "Population framing",
+      "question": "What infrastructure treats automated researchers as a population, and what is the sandbox's dual role as a result?",
+      "answer": "A leaderboard across agents and ideas, plus a findings forum where agent workers share and read each other's results. Because of this, the sandbox doubles as a benchmark of automated-research capability itself, not just of W2S technique quality."
+    }
+  ]
+}

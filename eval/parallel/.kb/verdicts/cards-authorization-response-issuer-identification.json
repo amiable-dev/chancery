@@ -1,0 +1,31 @@
+{
+  "task_id": "89aac5d1e66d191b",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What problem does authorization response issuer identification (RFC 9207) solve, and how?",
+      "answer": "It closes the OAuth mix-up attack gap by having each authorization server include an `iss` parameter (its issuer identifier) in every authorization response, success and error alike, so a client trusting multiple servers can verify who actually responded, via string comparison against the expected issuer."
+    },
+    {
+      "heading": "Mix-up attack mechanics",
+      "question": "What is a mix-up attack, and how does the `iss` parameter defeat it?",
+      "answer": "An attacker who controls one authorization server the client trusts steers the flow so the client receives an honest server's code but redeems it at the attacker's token endpoint. Because the honest response carries its own `iss`, the client can detect the mismatch against the server it believes it contacted, and reject the response."
+    },
+    {
+      "heading": "Per-server support tracking",
+      "question": "Why must a client track whether `iss` is supported on a per-server basis, rather than just checking whether the field is present?",
+      "answer": "In mixed deployments, if the client doesn't already know a server supports `iss`, an attacker can defeat the check by simply omitting the parameter from a forged response — the client has no way to distinguish \"not supported\" from \"attacker stripped it.\""
+    },
+    {
+      "heading": "Why no integrity protection",
+      "question": "Why does RFC 9207 leave `iss` without cryptographic integrity protection, and is that a flaw?",
+      "answer": "It's deliberate: an attacker able to tamper with an honest server's response already holds the authorization code and has no need to mount a mix-up attack at all, so protecting `iss` cryptographically would guard against a threat that's already moot."
+    },
+    {
+      "heading": "Normative status and proof",
+      "question": "What kind of document is RFC 9207, and what backs its claim that `iss` defeats mix-up attacks?",
+      "answer": "An IETF Standards Track document, so the `iss` requirement is normative, not advisory. The claim was formally proven, not merely asserted, in Fett, Küsters and Schmitz's comprehensive formal security analysis of OAuth 2.0."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "502bc03fb1e4f474",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/multi-agent-orchestration-topologies.md": "sha256:2abab5f1892c326abec0a037b898292b2210fe44d74a3960f30b687abc7b0c75",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/multi-agent-orchestration-topologies.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:33d76008c1ebe792d0e0584f1350ffe6b81df4ce02bdf520be18165c91bf1589",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/multi-agent-orchestration-topologies.md"
+  ]
+}

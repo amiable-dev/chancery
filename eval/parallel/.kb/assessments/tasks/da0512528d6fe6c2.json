@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "da0512528d6fe6c2",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/slo-burn-rate-alerting.md": "sha256:38c13f39f610f2bd8192713e422bab1766fe154e259c7cddd74ac1198e08faba",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/slo-burn-rate-alerting.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:469e81cbfeb60d8ba73151f6e9c001fae9168d4be9915264f4bc452cccbc8a74",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/slo-burn-rate-alerting.md"
+  ]
+}

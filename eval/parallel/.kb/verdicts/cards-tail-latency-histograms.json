@@ -1,0 +1,31 @@
+{
+  "task_id": "c514a9d7f1b7174b",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Tail latency histograms: definition",
+      "question": "What is a tail latency histogram, and why is it preferred over recording averages?",
+      "answer": "Request counts bucketed by latency, with boundaries spaced roughly exponentially, instead of raw latencies or means — so a slow tail shows up as its own visible population instead of being absorbed into a mean that describes no request anyone actually made."
+    },
+    {
+      "heading": "Why averages hide the tail",
+      "question": "If a service averages 100ms and 1% of requests take five seconds, what does that imply about the other 99% of requests?",
+      "answer": "The remaining 99% must run about twice as fast as the average — believing most requests sit near the mean, without a measured distribution, is simply hope."
+    },
+    {
+      "heading": "Tail latency compounds across fan-out",
+      "question": "Why is tail latency a system property rather than a per-service curiosity?",
+      "answer": "When a page is assembled from several backends, one backend's 99th percentile becomes the frontend's median."
+    },
+    {
+      "heading": "Why bucketing is cheap",
+      "question": "Why does bucket-based latency collection cost the same regardless of request rate?",
+      "answer": "Each request only increments a counter in its bucket, rather than recording and storing an individual latency value."
+    },
+    {
+      "heading": "Choosing measurement resolution per signal",
+      "question": "What is the governing rule for choosing measurement resolution, according to this concept?",
+      "answer": "Pick resolution per signal against what the target actually requires — e.g. minute-resolution CPU averages hide the spikes that drive tail latency, but probing a three-nines service more than once or twice a minute buys nothing."
+    }
+  ]
+}

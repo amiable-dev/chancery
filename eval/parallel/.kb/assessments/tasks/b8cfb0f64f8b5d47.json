@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "b8cfb0f64f8b5d47",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/deterministic-agent-verification.md": "sha256:8cc919cedf91000f861c1251b4dd5f67cd17b691b2a354cd6435b289332d5a6c",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/deterministic-agent-verification.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:7dda029f572af34b29e89fb93b825b6a5a7fe6c0c470007ad3be5539c77b49c4",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/deterministic-agent-verification.md"
+  ]
+}

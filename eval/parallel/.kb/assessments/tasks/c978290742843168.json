@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "c978290742843168",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/closed-loop-secure-codegen.md": "sha256:a13d7144af41173a17f19e14b321e9fafb9ab5a772c526880d8f2cdf8700f180",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/closed-loop-secure-codegen.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:472152eb797665be1ac98ed873dbb0e575acdd4a90b296d8af3eed4a46da4d5d",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/closed-loop-secure-codegen.md"
+  ]
+}

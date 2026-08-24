@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "7390b5623e8f61c9",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/cfrg-curves-in-jose.md": "sha256:d7e33093e1fcc68925df104ff4bae0a5fc3448813b4062261803d3f1cc2f4a91",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/cfrg-curves-in-jose.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:48d4936cdabe7721073d203b3074b4f4ba4d235b19c632b5a0b72d12a8c75c2e",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/cfrg-curves-in-jose.md"
+  ]
+}

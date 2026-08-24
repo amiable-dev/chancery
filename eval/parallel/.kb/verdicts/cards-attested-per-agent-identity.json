@@ -1,0 +1,13 @@
+{
+  "task_id": "c22421a18e928b77",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "id": "f9269b",
+      "heading": "Brokering: outbound secrets held externally",
+      "question": "Where do an agent's outbound secrets live, and how does the agent authenticate to reach them?",
+      "answer": "In a credential broker, never inlined into the agent — the agent authenticates to the broker using its own attested identity, and the broker holds the actual API keys, client credentials, and delegated end-user tokens behind it.",
+      "semantic_change": true
+    }
+  ]
+}

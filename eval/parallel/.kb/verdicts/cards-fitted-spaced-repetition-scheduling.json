@@ -1,0 +1,31 @@
+{
+  "task_id": "1b818856d59d2724",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What two separable parts make up fitted spaced-repetition scheduling, replacing a hand-tuned interval heuristic?",
+      "answer": "A memory model that predicts recall probability from per-item state and elapsed time, plus an optimizer that fits the model's free parameters to one learner's own logged review history."
+    },
+    {
+      "heading": "How the interval is derived",
+      "question": "How is the next review interval derived in a fitted spaced-repetition scheduler?",
+      "answer": "It is the delay at which the memory model's predicted recall probability still equals the chosen retention target."
+    },
+    {
+      "heading": "Where personalization lives",
+      "question": "Where does the personalization in fitted spaced-repetition scheduling actually come from?",
+      "answer": "From the optimizer fitting the model's parameters so predicted recall matches one person's observed pass/lapse record — not from shared constants baked into the algorithm."
+    },
+    {
+      "heading": "Add-on incompatibility",
+      "question": "Why do interval-altering add-ons become incompatible, not just redundant, with a fitted scheduler?",
+      "answer": "The schedule is derived from the model, so anything else that modifies intervals breaks that derivation; legacy quantities like the ease factor stop carrying meaning once the model is in charge."
+    },
+    {
+      "heading": "Contrast with classic SM-2 schedulers",
+      "question": "How does a classic SM-2-lineage scheduler differ from a fitted scheduler in how it uses a learner's review record?",
+      "answer": "SM-2 multiplies intervals by a per-card ease factor and fixed global constants that no data ever updates; a fitted scheduler instead fits its model's parameters directly to that learner's full review log."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "a21f59d687c4d611",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/snapshot-backed-agent-sandboxes.md": "sha256:991ae7f55d5ef98397e3f0a98b483cdc0f8d967947e93c1a4373bd806a5cff98",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/snapshot-backed-agent-sandboxes.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:a2351e1b2a74718b102b3acc24bea2b8319f9cc0147f38fdc37e8c62ffb2ef4b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/snapshot-backed-agent-sandboxes.md"
+  ]
+}

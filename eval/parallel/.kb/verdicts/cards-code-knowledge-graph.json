@@ -1,0 +1,26 @@
+{
+  "task_id": "0b55af7a241733de",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is a code knowledge graph, and what does it represent?",
+      "answer": "A codebase represented as typed nodes (module, class, function, argument, variable, file) and typed edges (CONTAINS, CALLS, INHERITS_FROM, HAS_ARGUMENT, DEPENDS_ON) in a graph database — making structural questions answerable as exact traversals instead of text search."
+    },
+    {
+      "heading": "Contrast with grep",
+      "question": "What can a code knowledge graph answer that keyword search (grep) cannot?",
+      "answer": "Whether a function is called inside a conditional branch, which classes implement an interface, or where a third-party API is touched across layers of abstraction — questions about structure and context that string matching can't resolve."
+    },
+    {
+      "heading": "Review workflow",
+      "question": "How does the FalkorDB write-up's review workflow use the graph, and what does it replace?",
+      "answer": "Upstream callers of a changed function are queried before the first review comment, so review starts from known blast radius — replacing a reviewer holding the call chain in their head or reconstructing it from memory."
+    },
+    {
+      "heading": "Maintenance dependency",
+      "question": "What must be true for a code knowledge graph to stay valuable, and how portable is the pattern itself?",
+      "answer": "The graph must be maintained continuously to stay truthful as the code evolves. The pattern is vendor-neutral — any graph store with a query language supports it, even though this source's own implementation is not."
+    }
+  ]
+}

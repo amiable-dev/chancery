@@ -1,0 +1,31 @@
+{
+  "task_id": "94661ce64c91fe89",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What does the graph-versus-vector argument for code retrieval claim about where similarity search fails?",
+      "answer": "Similarity search over embedded chunks fails precisely at multi-hop structure (inheritance, dependency, call paths), while graph retrieval hands an LLM connected subgraphs whose relationships are stated rather than approximated."
+    },
+    {
+      "heading": "Why embeddings struggle with structure",
+      "question": "Why do code questions like 'is this change safe' or 'is this method dead' resist vector similarity search?",
+      "answer": "They depend on transitive relationships — callers-of-callers, absence of inbound edges, transitive closure — which embeddings only approximate statistically, and retrieval returns isolated chunks the model must re-stitch."
+    },
+    {
+      "heading": "What graph retrieval returns instead",
+      "question": "What does graph retrieval return that chunk-based vector retrieval cannot, for structural code questions?",
+      "answer": "A connected subgraph, so traversals surface recursive functions, unused methods, dependency chains and highly-used functions as exact answers rather than statistical approximations."
+    },
+    {
+      "heading": "Scope of the claim",
+      "question": "Where does similarity search still win over graph retrieval for code, according to this argument?",
+      "answer": "For fuzzy conceptual lookup, such as 'where do we handle retries?' — semantic questions rather than structural ones."
+    },
+    {
+      "heading": "The decision rule",
+      "question": "What is the decision rule this argument supports for choosing between graph and vector retrieval?",
+      "answer": "Structural question, retrieve by graph traversal; semantic question, retrieve by similarity search. Production systems typically need both indexes over the same corpus."
+    }
+  ]
+}

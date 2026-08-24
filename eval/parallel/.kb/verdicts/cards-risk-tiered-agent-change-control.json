@@ -1,0 +1,12 @@
+{
+  "task_id": "8c029e857315d14b",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "id": "0c95cd",
+      "heading": "Definition",
+      "question": "What is risk-tiered agent change control, in one sentence?",
+      "answer": "A security design for pipelines where agents author changes faster than humans can review them: it enforces structural separation of duties across the change lifecycle and requires verifiable evidence for every accepted change."
+    }
+  ]
+}

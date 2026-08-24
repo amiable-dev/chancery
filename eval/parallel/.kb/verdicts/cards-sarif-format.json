@@ -1,0 +1,36 @@
+{
+  "task_id": "0a29a1911ad0db34",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is SARIF?",
+      "answer": "A standardized JSON schema for static analysis tool output, letting findings from any scanner be read by any consumer without a tool-specific parser."
+    },
+    {
+      "heading": "The quadratic problem it removes",
+      "question": "What problem does a shared interchange format like SARIF remove?",
+      "answer": "Without it, every consumer (dashboard, triage queue, PR annotator, policy gate) needs a parser per tool; SARIF collapses that to one parser per consumer and one emitter per tool."
+    },
+    {
+      "heading": "Rule catalog location",
+      "question": "Where does a SARIF document's rule catalog live, and what does each rule carry?",
+      "answer": "At tool.driver.rules — each rule has an id, short/full descriptions, a default severity level, and a properties bag (conventionally a numeric security-severity score)."
+    },
+    {
+      "heading": "Result structure",
+      "question": "How does a SARIF result tie back to its rule and pinpoint its location?",
+      "answer": "Each result carries a ruleId referencing the rule catalog, a level, a message, and locations giving an artifact URI plus a region (start line and column)."
+    },
+    {
+      "heading": "Why rules and results are separate",
+      "question": "Why does SARIF separate the rule catalog from the findings list?",
+      "answer": "So remediation guidance and severity travel with the report itself, rather than living only in the tool's own documentation."
+    },
+    {
+      "heading": "Platform integration",
+      "question": "What practical consequence does SARIF have for getting a scanner's alerts onto GitHub pull requests?",
+      "answer": "Emitting SARIF is the integration path — GitHub Code Scanning has consumed SARIF uploads since 2019, so any scanner can surface alerts on PRs by producing it."
+    }
+  ]
+}

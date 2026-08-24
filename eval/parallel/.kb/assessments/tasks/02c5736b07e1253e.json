@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "02c5736b07e1253e",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/trace-to-dataset-loop.md": "sha256:9f0269281594ca11e1fb8fac1c939ab9e82ab12ec36f926c1d725a25f8e8defa",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/trace-to-dataset-loop.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:a104eebe88a469e64902a9fd0c6289068c9d1dd33d585ef70421e7bf1a98a53b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/trace-to-dataset-loop.md"
+  ]
+}

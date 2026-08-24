@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "50dde8143bb3b05a",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/short-term-availability-tradeoff.md": "sha256:ea09e20db8912e03c641dd31aa2431c633bb8fcfdbf14883b41462e1929bf84b",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/short-term-availability-tradeoff.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:130ff02c67544fa31dfc2fd8da52d7541a0f2c46e4f2ba462164938aebe801ac",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/short-term-availability-tradeoff.md"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "d905b44a7d7b4417",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is proxy-boundary session capture?",
+      "answer": "The practice of recording every LLM request/response at a transparent proxy you control, storing each message as a hashed, content-addressed node with a parent pointer — so the conversation tree survives independently of the harness."
+    },
+    {
+      "heading": "Why the proxy boundary",
+      "question": "Why does proxy-boundary session capture record at a proxy instead of inside the agent harness?",
+      "answer": "So capture doesn't share the harness's failure domain — if the harness crashes and loses its in-memory context, the proxy's recorded tree is unaffected because it sits between the application and the provider, outside the process that can die."
+    },
+    {
+      "heading": "Storage structure",
+      "question": "How is each message stored in proxy-boundary session capture?",
+      "answer": "As a content-addressed node (hashed) carrying a parent pointer, so the full conversation reconstructs exactly as a tree — e.g. a Merkle DAG in a local SQLite database."
+    },
+    {
+      "heading": "Recovery workflow",
+      "question": "How do you recover a session after a harness crash under proxy-boundary session capture?",
+      "answer": "Start a fresh session and point it at the recorded tree at the proxy; the conversation continues from where it left off — recovery is mundane, not heroic."
+    },
+    {
+      "heading": "Tool-agnostic, content addressing",
+      "question": "Is proxy-boundary session capture tied to one specific tool, and what does content addressing add?",
+      "answer": "No — any logging proxy with durable, ordered, per-message storage supports the same recovery; content addressing adds integrity (detects tampering or truncation) but isn't essential to the mechanism."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "331c19e439839a94",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is the determinism and discovery split?",
+      "answer": "A compound AI system should route work by what it demands: exactness-valued, expensive-to-unwind work goes to a deterministic tool that only does what it's told; work whose value is finding something unspecified goes to an agent permitted to be wrong; recurring agent behavior gets demoted into a rule."
+    },
+    {
+      "heading": "Key mechanism",
+      "question": "When a model repeatedly fumbles the same mechanical task (e.g. the same join or lookup), what is the correction?",
+      "answer": "Not a better prompt — demote the behavior into a parametrised query, runbook, or rule of thumb the agent invokes, keeping discovery capacity intact while making the mechanical part exact."
+    },
+    {
+      "heading": "Routing criterion",
+      "question": "What criterion decides whether a task gets a deterministic tool or an agent?",
+      "answer": "Consequence and reversibility — e.g. a refund or funds transfer gets a deterministic tool plus human approval, because a confident wrong answer there is a loss, not a lead."
+    },
+    {
+      "heading": "Why tolerate wrongness",
+      "question": "Why is tolerating agent wrongness sometimes valuable, per this rule?",
+      "answer": "An agent allowed to be wrong occasionally produces an answer nobody would have specified; restricting it to only pre-programmed branches forecloses that discovery entirely."
+    },
+    {
+      "heading": "Under-tooling hazard",
+      "question": "What hazard does giving a model too little tool access create?",
+      "answer": "A model with nothing exact to call will reason its way to a plausible-sounding number instead of getting the right one — under-tooling is a hazard in itself."
+    }
+  ]
+}

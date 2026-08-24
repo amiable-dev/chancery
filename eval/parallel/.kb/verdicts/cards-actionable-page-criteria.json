@@ -1,0 +1,31 @@
+{
+  "task_id": "1e4f84fd98eb9cd4",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "The four page-worthiness tests",
+      "question": "What four tests must an alert pass before it's allowed to page a human, per actionable page criteria?",
+      "answer": "It detects an otherwise-undetected condition that's urgent, actionable, and actively or imminently user-visible; the responder can act on it now; the response needs judgement rather than a rote script; and nobody else is already being paged for the same thing."
+    },
+    {
+      "heading": "Why treat paging as a budget",
+      "question": "Why does actionable page criteria treat paging as a budget rather than a style guide?",
+      "answer": "Because the cost is cumulative — a responder can react with genuine urgency only a few times a day before fatigue sets in, after which real pages get masked by noise and outages run longer."
+    },
+    {
+      "heading": "Rote response means automate it",
+      "question": "What should happen to a page whose response is purely algorithmic (rote)?",
+      "answer": "It should become a script instead of a page; a team unwilling to automate a rote page is signalling distrust of its own follow-through, which is itself worth escalating rather than an alerting decision."
+    },
+    {
+      "heading": "Subcritical conditions go on a dashboard",
+      "question": "Where should subcritical, non-paging conditions be surfaced instead of an email alert?",
+      "answer": "On a dashboard, optionally paired with a log for historical correlation — email alerts are judged of very limited value and prone to becoming spam nobody reads."
+    },
+    {
+      "heading": "Source treats this as aspirational",
+      "question": "How solved does Google SRE's monitoring chapter consider this philosophy to be, even inside Google itself?",
+      "answer": "Partly aspirational — it's offered as a checklist for writing or reviewing an alert, not as a description of an already-solved problem."
+    }
+  ]
+}

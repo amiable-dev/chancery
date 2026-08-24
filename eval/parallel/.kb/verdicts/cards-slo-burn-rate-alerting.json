@@ -1,0 +1,31 @@
+{
+  "task_id": "da0512528d6fe6c2",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What does SLO burn-rate alerting alert on, instead of raw error counts or instantaneous error rates?",
+      "answer": "The rate at which the error budget is being consumed, evaluated over multiple time windows simultaneously."
+    },
+    {
+      "heading": "Four evaluation attributes",
+      "question": "What four attributes does the SRE Workbook chapter use to evaluate any alerting strategy?",
+      "answer": "Precision (fraction of alerts marking significant events), recall (fraction of significant events alerted), detection time, and reset time."
+    },
+    {
+      "heading": "Why naive strategies fail",
+      "question": "Why do the two naive alerting strategies — alerting on instantaneous error rate, and alerting only when the whole budget is exhausted — each fail?",
+      "answer": "Instantaneous error rate is noisy (low precision); waiting until the whole budget is gone detects problems far too late."
+    },
+    {
+      "heading": "What burn rate means",
+      "question": "What does a burn rate of exactly 1 mean, and why does normalizing consumption against the budget matter?",
+      "answer": "A burn rate of 1 spends exactly the allotted budget over the SLO window; normalizing consumption against the budget lets alert thresholds map directly to time-to-exhaustion, rather than being an arbitrary error-count cutoff."
+    },
+    {
+      "heading": "Multiwindow design",
+      "question": "Why does mature burn-rate alerting pair a long window with a short window (e.g., one hour and five minutes)?",
+      "answer": "So alerts fire quickly on genuine spikes via the short window while resetting promptly once the problem clears via the long window; a slower, lower-burn-rate pair is also layered beneath the paging pair for ticket-severity issues."
+    }
+  ]
+}

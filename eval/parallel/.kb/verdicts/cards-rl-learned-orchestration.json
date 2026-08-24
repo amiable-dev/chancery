@@ -1,0 +1,36 @@
+{
+  "task_id": "6db056e214c0e136",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is RL-learned agent orchestration?",
+      "answer": "Training a dedicated coordinator model with reinforcement learning to discover how a pool of worker LLMs should collaborate, instead of hand-designing the multi-agent workflow."
+    },
+    {
+      "heading": "Conductor's action space",
+      "question": "In the Conductor architecture, what does the coordinator decide at inference time?",
+      "answer": "The design of the collaboration itself: it composes a communication topology over the available workers and writes focused instructions for each one."
+    },
+    {
+      "heading": "Training signal",
+      "question": "What signal trains the conductor, and why does that matter?",
+      "answer": "End-to-end task reward alone — coordination strategies emerge from reward maximization rather than being specified by a human-designed workflow."
+    },
+    {
+      "heading": "Portability via randomized pools",
+      "question": "Why does the conductor train over randomized agent pools rather than a fixed roster?",
+      "answer": "So the learned policy adapts to arbitrary mixes of open- and closed-source workers instead of overfitting to one specific roster."
+    },
+    {
+      "heading": "Headline result",
+      "question": "How did the trained conductor's performance compare to its individual worker LLMs?",
+      "answer": "A 7B conductor outperformed every individual worker in its pool, reaching state-of-the-art results on LiveCodeBench and GPQA."
+    },
+    {
+      "heading": "Recursive topology",
+      "question": "What happens when the conductor is allowed to select itself as a worker?",
+      "answer": "It produces recursive topologies — a form of dynamic test-time scaling through online iterative adaptation."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "31ce674aa1adb5e7",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is harness-memory lock-in, and why does it follow from memory being a harness capability rather than a plugin?",
+      "answer": "Managing context (what loads at session start, what survives compaction, how long-term stores work) is the harness's core job, so whoever controls the harness controls the memory. Running a closed or API-hosted harness converts accumulated interaction state into switching cost held by the provider, not an asset held by the builder."
+    },
+    {
+      "heading": "Why memory can't be swapped in standalone",
+      "question": "Why can't memory currently be swapped in as a standalone service, independent of the harness?",
+      "answer": "Memory is context the harness chooses to persist and re-inject — the harness decides how memory files load, what survives compaction, and whether interactions are stored queryably — so no mature harness-independent memory abstraction exists."
+    },
+    {
+      "heading": "The ownership gradient",
+      "question": "What is the ownership gradient of memory lock-in, from least to most severe?",
+      "answer": "Stateful provider APIs (thread state held on provider servers, can't swap models mid-thread), then closed-source harnesses (memory artifacts of undocumented, non-transferable shape), then fully API-hosted harnesses (accumulated long-term memory invisible and unexportable entirely)."
+    },
+    {
+      "heading": "Why providers are incentivized toward lock-in",
+      "question": "Why are providers incentivized to push toward the API-hosted end of the memory ownership gradient?",
+      "answer": "Accumulated interaction state personalizes an agent and compounds into a proprietary dataset that is forfeited on switching — it restores the lock-in that stateless, interchangeable model APIs had removed."
+    },
+    {
+      "heading": "The due-diligence rule",
+      "question": "What is the practical rule for evaluating a harness or stateful API feature before adopting it?",
+      "answer": "Establish where session and long-term state physically lives and whether it exports — before adopting, not after."
+    }
+  ]
+}

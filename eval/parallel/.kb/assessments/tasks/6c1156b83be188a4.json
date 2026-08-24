@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "6c1156b83be188a4",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/agentic-engineering-layers.md": "sha256:524ff0c7ab348c0a0caa56fe90ad5c1e08e9ee012c163cc5025c752855576707",
+      "flashcards/agentic-engineering-layers.md": "sha256:9f5d0ae87273d9b58d2144522ac34dc7e4bdf08a104edc2813752899060a0da1",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/agentic-engineering-layers.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:755fdc62f87b8af997a65cc7e7db9960bd1b8231ed0009d14697493020af4d68",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/agentic-engineering-layers.md"
+  ]
+}

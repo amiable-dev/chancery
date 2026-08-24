@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "a182f46eeec95ccc",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/fitness-driven-agent-tuning.md": "sha256:014cda6e7b9e7c19c871ae78a6db074ca95fe44c7c1a44b91f9b4041e54102c4",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/fitness-driven-agent-tuning.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:3e3e51238ab0379414c7df36a4b5b84147581018addab1685be7f461f9986784",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/fitness-driven-agent-tuning.md"
+  ]
+}

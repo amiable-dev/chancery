@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "bf5b99b7e99abb13",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/partitioned-edit-consistency-debt.md": "sha256:71b24eb1a69da1acd84a8fc4a5592051cd1852b25d11a707e2a5a21d7cd3bf30",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/partitioned-edit-consistency-debt.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:ad2ad25eff3c69310e42f7a8538aeee4df902bc4f999109e851b71922a55b514",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/partitioned-edit-consistency-debt.md"
+  ]
+}

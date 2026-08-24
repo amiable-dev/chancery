@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "82b2c493b496c30b",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/ebpf-zero-instrumentation-observability.md": "sha256:ca2aee7ece7bd9ec3384a17cd62d6b11982898586237c245a3862d24d2fafbfa",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/ebpf-zero-instrumentation-observability.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:111720f5b0420d02ccd1821e1ef1fd5f30b445dd0e2b2ef434a9a946ea270fb8",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/ebpf-zero-instrumentation-observability.md"
+  ]
+}

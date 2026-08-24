@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "9fe35c0854b1be16",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/agent-context-drift.md": "sha256:72537d0f9025f6a2357906f5b28b34f79258fa305dc94e3b7e8fda9708d20b01",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/agent-context-drift.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:22a9264e7a5da6831ec32b6b4619ab53de1d93b1c8d0d0dbba8db074d2d309f2",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/agent-context-drift.md"
+  ]
+}

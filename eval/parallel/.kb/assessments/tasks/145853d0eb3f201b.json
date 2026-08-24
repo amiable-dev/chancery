@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "145853d0eb3f201b",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/evidence-recheck-triage.md": "sha256:789c9122063c594ccd0b7802811bd928308278e3728272e82e7c60caf3b81bcc",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/evidence-recheck-triage.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:355198c24e2250c1144fdf77582084d7cad98d629bfcf48d4812a79fbd19bd1a",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/evidence-recheck-triage.md"
+  ]
+}

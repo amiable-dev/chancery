@@ -1,0 +1,31 @@
+{
+  "task_id": "c3bd2763234490ac",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What does HyDE embed at query time instead of the user's raw question?",
+      "answer": "A short passage an LLM generates that would answer the question in the corpus's register — that generated passage's vector, not the question's, is used to search the index. Index, embedding model, similarity metric and top-k stay unchanged."
+    },
+    {
+      "heading": "The geometric argument",
+      "question": "What geometric mismatch does HyDE correct for, and how?",
+      "answer": "Dense retrievers place semantically similar text close together but were never trained to place a question near its answer. Generating an answer-shaped passage turns the comparison into answer-vs-answer instead of question-vs-answer."
+    },
+    {
+      "heading": "Why hallucination is tolerable",
+      "question": "Why doesn't factual hallucination in the hypothetical passage break HyDE?",
+      "answer": "The passage functions only as a retrieval representation, not as evidence — it needs the right vocabulary and register to pull the vector into the right neighbourhood, not factual correctness."
+    },
+    {
+      "heading": "The architectural safety boundary",
+      "question": "What must never happen for HyDE to stay safe, and what goes wrong if it does?",
+      "answer": "The hypothetical passage must never enter the generation context as though it were retrieved evidence — if it leaks in, the fabrication reaches the user."
+    },
+    {
+      "heading": "When not to adopt it",
+      "question": "Name two situations where HyDE is not worth adopting.",
+      "answer": "Any two of: latency is tight (it adds an LLM call on the read path); queries already carry strong identifiers or error codes; keyword or hybrid search already retrieves well; or there's enough labelled data to fine-tune the retriever directly."
+    }
+  ]
+}

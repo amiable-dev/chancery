@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "88614c7fcbdf0f53",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/frontier-advisor-harness.md": "sha256:aae68d2caccb35b567cfd5e2bdebd4169567e12232884454f33c15abbced4350",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/frontier-advisor-harness.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:2c4f8bc2c26f272170619120efc38bf513930f164469c2bd318b70fb35702f17",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/frontier-advisor-harness.md"
+  ]
+}

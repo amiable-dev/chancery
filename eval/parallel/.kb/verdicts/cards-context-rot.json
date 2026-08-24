@@ -1,0 +1,36 @@
+{
+  "task_id": "051f5f7f0e8e8e16",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is context rot?",
+      "answer": "The finding that a language model's reliability falls as its input grows longer even when the task is held constant — the ten-thousandth token is not processed as dependably as the hundredth. The decline is non-uniform: it steepens when the question matches its answer semantically rather than lexically, when related distractors sit nearby, and, counter to intuition, when the surrounding text is logically coherent rather than shuffled."
+    },
+    {
+      "heading": "Key mechanism: isolating length from difficulty",
+      "question": "What methodological move isolates context rot from ordinary task-difficulty scaling seen in most long-context benchmarks?",
+      "answer": "Holding task complexity fixed and varying only input length — reusing the same needle, question, and judge while changing only the volume of surrounding irrelevant text. Most long-context benchmarks confound the two (e.g. graph traversal gets harder as the graph grows), so a score drop there cannot be attributed to length alone."
+    },
+    {
+      "heading": "Semantic vs. lexical similarity",
+      "question": "Does context rot steepen under lexical-match or semantic-match retrieval, and why does this matter for benchmarks?",
+      "answer": "It steepens as question-to-answer semantic similarity falls (lower cosine similarity means a steeper decline). Lexical-match, exact-keyword benchmarks flatter a model that will face ambiguous, semantically phrased questions in production."
+    },
+    {
+      "heading": "Distractors compound unevenly",
+      "question": "How do distractors affect context-rot degradation, and do all model families fail the same way?",
+      "answer": "A single topically related distractor lowers accuracy and four compound it, with individual distractors pulling unequally. Model families fail differently: some abstain under ambiguity, others answer confidently and wrongly."
+    },
+    {
+      "heading": "Counterintuitive coherence effect",
+      "question": "What effect did shuffling the haystack to destroy local coherence have on model performance, and across how many models?",
+      "answer": "It consistently improved scores, across all eighteen models tested — suggesting input structure interacts with attention in ways not yet explained."
+    },
+    {
+      "heading": "Practical implication: focused vs. full history",
+      "question": "What is context rot's most operationally direct result comparing focused context to full conversation history?",
+      "answer": "The same questions answered from roughly three hundred focused tokens beat the same questions answered from a full hundred-thousand-token session, because the long version silently adds a retrieval step to what should be a reasoning task."
+    }
+  ]
+}

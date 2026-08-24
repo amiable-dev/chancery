@@ -1,0 +1,39 @@
+{
+  "task_id": "c0041197cbbf26c9",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "cards": [
+    {
+      "heading": "Temporal fake: definition",
+      "question": "What is a temporal fake?",
+      "answer": "A stand-in for an external system that holds internal state and evolves it over time like the real system, so a test can watch a condition develop and observe downstream consequences — rather than asserting against a fixed snapshot."
+    },
+    {
+      "heading": "Temporal fake vs conventional mock",
+      "question": "What distinguishes a temporal fake from a conventional mock?",
+      "answer": "A state machine plus a clock: a mock answers each call from a fixed request-response table with no memory of past or future, while a temporal fake models the entity and drives its readings forward through a scenario over time."
+    },
+    {
+      "heading": "Why time-dependent systems need temporal fakes",
+      "question": "Why can't alerting rules, anomaly detection, dashboards, and cascading-failure paths be validated against a static mocked response?",
+      "answer": "Their behaviour only exists in time — a fault must produce metric drift, a threshold crossing, an alert, and a recovery in the order and durations the real system would, which a fixed snapshot response cannot express."
+    },
+    {
+      "heading": "Temporal fakes: illustrative use case",
+      "question": "What real-world example motivates temporal fakes, and what conditions do they replace?",
+      "answer": "An observability stack for GPU data centres: validating a thermal-throttle alert would otherwise mean overheating real hardware, so fakes for hardware telemetry and fabric were built with scenarios for throttling, error storms, link flaps, and power-supply failures."
+    },
+    {
+      "heading": "Temporal fakes and agent-driven testing",
+      "question": "What two structural details let an agent close the testing loop with a temporal fake, without hardware or a human?",
+      "answer": "A registry defining which failure scenarios are valid, and an injection interface exposed to the agent — so the agent can trigger a fault and then verify for itself that the metric moved, the alert fired, and the dashboard updated."
+    },
+    {
+      "heading": "Temporal fakes: fidelity risk",
+      "question": "What is the serious failure mode of a temporal fake?",
+      "answer": "Fidelity drift — if the fake no longer matches the real system it imitates, it produces green pipelines that certify nothing, so the simulator itself must be kept honest."
+    }
+  ]
+}

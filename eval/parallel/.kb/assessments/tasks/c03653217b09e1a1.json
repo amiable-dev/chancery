@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "c03653217b09e1a1",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/first-pass-acceptance-rate.md": "sha256:4b1466caad3eb7fa325faa90699001a23e66d0d1680e067e003f70e94eaf7fe0",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/first-pass-acceptance-rate.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:006c69e3ed06964d3874abfb54d1e5540f90222d2f35f443e2009e5d8e71dcad",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/first-pass-acceptance-rate.md"
+  ]
+}

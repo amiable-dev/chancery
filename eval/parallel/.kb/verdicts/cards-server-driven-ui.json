@@ -1,0 +1,36 @@
+{
+  "task_id": "8141fcecb42f71d3",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is server-driven UI?",
+      "answer": "An architecture that splits the client into a generic renderer plus a component vocabulary, while the server supplies a payload describing which components appear, in what order, and with what data — so screens change via payload, not a new build."
+    },
+    {
+      "heading": "The client/server contract",
+      "question": "What does each half of the client-server contract carry in server-driven UI?",
+      "answer": "The client ships a fixed component vocabulary plus layout/interaction logic; the server sends a structured document (typically JSON) naming components, their content and their actions, which the renderer walks to produce the screen."
+    },
+    {
+      "heading": "Why it matters most on mobile",
+      "question": "Why does release decoupling matter most on mobile specifically?",
+      "answer": "Otherwise every UI change waits on app store review and on users updating; server-driven UI lets experiments, merchandising and flow changes move at deploy speed instead of release-cycle speed."
+    },
+    {
+      "heading": "Protocol accretion failure",
+      "question": "What is the recognizable failure mode of a server-driven UI payload format over time?",
+      "answer": "It accretes into a configuration language that can express anything, is understood by nobody, and can't be changed without breaking older clients still in the wild."
+    },
+    {
+      "heading": "Versioning overhead",
+      "question": "Why is versioning a permanent overhead in server-driven UI, and where does debugging get harder?",
+      "answer": "A payload must stay renderable by every client version still installed, and debugging spans a boundary where the failing screen exists in no single repository."
+    },
+    {
+      "heading": "Recommended scope",
+      "question": "How is server-driven UI recommended to be scoped, and why?",
+      "answer": "To the highly dynamic parts of an app rather than as a blanket replacement for all UI — the protocol and versioning costs are real, and a proprietary framework investment pays off mainly at a scale where many teams and platforms share the same surfaces."
+    }
+  ]
+}

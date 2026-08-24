@@ -1,0 +1,36 @@
+{
+  "task_id": "5a73365d0bf1169c",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is a context layer?",
+      "answer": "The production system behind the \"company brain\" idea: it continuously maps source systems into normalized, typed context items, indexes them multiple specialized ways, composes the right subset into a token budget at query time, learns from curation and usage, and acts on the sources it describes — with tenancy, permissions, freshness, and cost as first-class constraints."
+    },
+    {
+      "heading": "Key mechanism: datamap-driven reconciliation",
+      "question": "What drives ingestion in a context layer, and why does the process never terminate?",
+      "answer": "A declarative datamap — a typed hierarchy of what exists in each source (e.g. warehouse: connection to database to schema to table to column) — drives a reconciliation loop whose coverage queries continuously find what is missing or stale, so one mining engine serves many sources without vendor branching."
+    },
+    {
+      "heading": "Idempotent identity",
+      "question": "What makes context-layer ingestion operations idempotent under retries and crashes?",
+      "answer": "Item identity derives deterministically from the triple (tenant, type, path)."
+    },
+    {
+      "heading": "Truth store vs. rebuildable projections",
+      "question": "In a context layer, what holds ground truth, and what are the keyword index, vector collections, and knowledge graph?",
+      "answer": "Ground truth lives in a per-tenant relational store. The keyword index, vector collections, and knowledge graph are all rebuildable projections of it — \"search indexes are caches, the database is the truth.\""
+    },
+    {
+      "heading": "Physical isolation and final ACL check",
+      "question": "How does a context layer enforce tenant isolation and access control before content reaches a prompt?",
+      "answer": "Isolation is physical: a separate schema, index, collection, and graph per tenant. The relational store performs the final ACL check; search indexes act only as permissive prefilters, because a forgotten filter fails open while a wrong index name fails closed."
+    },
+    {
+      "heading": "Conflict resolution",
+      "question": "When curated human knowledge conflicts with mined metadata in a context layer, which one wins?",
+      "answer": "Curated human knowledge outranks mined metadata on conflict."
+    }
+  ]
+}

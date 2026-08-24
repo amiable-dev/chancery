@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "1b818856d59d2724",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/fitted-spaced-repetition-scheduling.md": "sha256:8e64416620b067f2cab0e448b5935b8b1462e157bda644996ed357656b1a5d05",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/fitted-spaced-repetition-scheduling.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:506d866b6cfec50bcde6622669024c93fa52201c984b93dbef02338af9449670",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/fitted-spaced-repetition-scheduling.md"
+  ]
+}

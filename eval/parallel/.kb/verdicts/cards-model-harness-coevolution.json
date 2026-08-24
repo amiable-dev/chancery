@@ -1,0 +1,31 @@
+{
+  "task_id": "7601a5758391a901",
+  "supplier": { "class": "model-single", "id": "claude-sonnet-5" },
+  "cards": [
+    {
+      "heading": "Model-harness co-evolution — definition",
+      "question": "What is model-harness co-evolution?",
+      "answer": "The feedback loop where vendors post-train models with their own harness in the loop, improving the model at operations the harness emphasizes, then folding harness-discovered primitives into the next model generation's training."
+    },
+    {
+      "heading": "Co-evolution — which operations get trained",
+      "question": "What kinds of operations do harness designers typically choose to post-train models on, per this concept?",
+      "answer": "Operations the harness emphasizes — e.g. filesystem manipulation, bash execution, planning, and parallelizing subagents."
+    },
+    {
+      "heading": "Co-evolution — overfitting symptom",
+      "question": "What concrete symptom shows a model has overfit to its home harness's tool conventions?",
+      "answer": "OpenAI's Codex prompting guide documents that deviating from the trained apply_patch tool logic degrades file-editing performance — a truly general model would shrug off a patch-format change."
+    },
+    {
+      "heading": "Co-evolution — benchmark implication",
+      "question": "What does model-harness co-evolution imply about how to read agent benchmark leaderboards?",
+      "answer": "Scores attach to model-plus-harness pairs, not to models alone — the Terminal Bench 2.0 leaderboard showed a frontier model jump from Top 30 to Top 5 just from changing the harness."
+    },
+    {
+      "heading": "Co-evolution — harness as performance lever",
+      "question": "What actionable conclusion follows from model-harness co-evolution about choosing a harness for a task?",
+      "answer": "Harness optimization is an independent performance lever — the harness a model was trained with is not automatically the best harness for a given task."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "7aa7d88f587b3e63",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/mcp-abstraction-tax.md": "sha256:42e6df9cf3b60ac7d57107be961e3d53f7aed210a481d6d8b4ff5cea77c6d6d2",
+      "flashcards/mcp-abstraction-tax.md": "sha256:47c3681018f839dd741f62965d54c3457099d11320e127c181e3c0fc3eb538ab",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/mcp-abstraction-tax.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:1a0a2b0e7897e7b708dd70f3c9bfdd5cb618e2973a22cd15c3697621e3cad25b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/mcp-abstraction-tax.md"
+  ]
+}

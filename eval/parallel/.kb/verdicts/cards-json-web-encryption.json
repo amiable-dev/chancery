@@ -1,0 +1,31 @@
+{
+  "task_id": "c70c9d71758fa278",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What does JWE define, and under which RFC?",
+      "answer": "RFC 7516 — the IETF standard for representing encrypted and integrity-protected content as JSON-based data structures; a symmetric Content Encryption Key encrypts the payload under an authenticated encryption algorithm, delivered to recipients via one of five key management modes."
+    },
+    {
+      "heading": "The two-part design",
+      "question": "What are the two separately-varying concerns in every JWE?",
+      "answer": "Bulk encryption of the content under a symmetric CEK (always the same mechanism), and delivery of that CEK to each recipient, which varies across the five key management modes."
+    },
+    {
+      "heading": "Header integrity",
+      "question": "How does JWE protect its header from tampering, including algorithm downgrade?",
+      "answer": "The base64url-encoded protected header (plus an optional AAD value in the JSON serialization) is passed to the AEAD as Additional Authenticated Data, so tampering with the header invalidates the authentication tag."
+    },
+    {
+      "heading": "Telling JWE and JWS apart",
+      "question": "How can you cheaply tell a Compact-serialized JWE apart from a JWS?",
+      "answer": "By dot count — a JWE compact serialization has five base64url segments joined by four dots; a JWS has three segments and two dots."
+    },
+    {
+      "heading": "Avoiding a decryption oracle",
+      "question": "What must be true of how a JWE recipient handles a malformed encrypted key, and why?",
+      "answer": "Format, padding and length errors must be reported identically (e.g. substitute a randomly generated CEK and continue) — otherwise an attacker who flips the key-management algorithm header and observes a distinguishable error can recover the CEK, turning the recipient into a decryption oracle."
+    }
+  ]
+}

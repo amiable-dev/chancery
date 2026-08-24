@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "84ac25d291a4089e",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/debate-augmented-weak-supervision.md": "sha256:b5cbd1a49a55341c67fc57483a17f91f41a9482eb8b451c2a6c1065c1c6f2728",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/debate-augmented-weak-supervision.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:1e36c8fcaa8531aad120134efd4b0cc3f212db7f0656b88dffa9ab37dc6d4e66",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/debate-augmented-weak-supervision.md"
+  ]
+}

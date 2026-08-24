@@ -1,0 +1,31 @@
+{
+  "task_id": "ec5aee15dc44157b",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is the extension registry trust model?",
+      "answer": "The set of guarantees a distribution channel must supply when its extensions execute arbitrary code unsandboxed: provenance plus signing, untrusted-by-default with explicit opt-in, and curation of a small vetted set rather than open submission."
+    },
+    {
+      "heading": "What a signature actually proves",
+      "question": "What does a code-signing signature establish, and what does it not establish?",
+      "answer": "It binds an artifact to an identity, enabling attribution and revocation after the fact; it makes no claim about the artifact's behavior or safety."
+    },
+    {
+      "heading": "Why compromise is total",
+      "question": "Why is a compromised unsandboxed extension a total compromise rather than a partial one?",
+      "answer": "An extension that can execute arbitrary commands and make session-aware HTTP requests inherits the full authority and network access of the host process it runs in."
+    },
+    {
+      "heading": "Why takedown doesn't help",
+      "question": "Why don't reputation and takedown mechanisms work as a defense against unsandboxed extension compromise?",
+      "answer": "They are remedies that operate after code has already run; against a total compromise, a takedown is only a post-mortem."
+    },
+    {
+      "heading": "The trade-off accepted",
+      "question": "What trade-off does the untrusted-by-default, curated posture accept compared to an open marketplace?",
+      "answer": "A smaller ecosystem in exchange for a bounded one: nothing is trusted until an operator explicitly enables it."
+    }
+  ]
+}

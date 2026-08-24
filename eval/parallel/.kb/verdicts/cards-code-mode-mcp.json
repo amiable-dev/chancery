@@ -1,0 +1,26 @@
+{
+  "task_id": "b5b652d4951dac0b",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What does Code Mode replace a large MCP tool surface with, and how?",
+      "answer": "Two tools instead of many: a search tool where the model writes code to explore available tool definitions, and an execute tool where it writes code that calls them — so tool schemas never enter the context window wholesale."
+    },
+    {
+      "heading": "Measured effect",
+      "question": "What reduction did Cloudflare measure by applying Code Mode, and what's the structurally important part of the result?",
+      "answer": "52 tools from four internal servers, costing ~9,400 tokens in definitions, collapsed to 2 portal tools at ~600 tokens — a 94% reduction. The structurally important part: this fixed cost does not grow as more servers connect."
+    },
+    {
+      "heading": "Execution mechanism",
+      "question": "What actually happens when the model uses the execute tool?",
+      "answer": "The model writes one program, run in a sandboxed environment, where each upstream MCP tool is a callable function — chaining operations, filtering results, and handling errors in code, rather than making many separate round-trip tool calls."
+    },
+    {
+      "heading": "General principle",
+      "question": "What general principle does Code Mode illustrate beyond MCP specifically?",
+      "answer": "For large tool or operation surfaces, give the model a programmable interface to the catalogue rather than the catalogue itself — let code do the composition that would otherwise take many round-trips."
+    }
+  ]
+}

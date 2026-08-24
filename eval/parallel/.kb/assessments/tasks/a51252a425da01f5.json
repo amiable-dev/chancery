@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "a51252a425da01f5",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/kernel-enforced-agent-sandbox.md": "sha256:224150ac14e2f0da38d4c13c607ffc1581777c0390b2cd8c6b2f651d3b1b9953",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/kernel-enforced-agent-sandbox.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:a8667ab252bfc67f86a30a0ba0d3fcdd01137e9abe7d01602a4d22fb1cc99403",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/kernel-enforced-agent-sandbox.md"
+  ]
+}

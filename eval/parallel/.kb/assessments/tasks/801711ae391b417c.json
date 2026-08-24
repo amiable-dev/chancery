@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "801711ae391b417c",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/exposure-first-supply-chain-defense.md": "sha256:9702780bc5938373dbc4a3f206d0161d235db5bbfdda1a4ef4a94dd153592dd1",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/exposure-first-supply-chain-defense.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:250e1e805a62db71c2697c881ee139330f5f4b54becf54c35df7e260f303c69d",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/exposure-first-supply-chain-defense.md"
+  ]
+}

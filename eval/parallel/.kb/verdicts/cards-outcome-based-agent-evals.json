@@ -1,0 +1,31 @@
+{
+  "task_id": "5185453b904b31c7",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is outcome-based agent evaluation, and why does it depart from step-by-step evaluation?",
+      "answer": "A methodology that asserts an agent reached a correct final outcome by a reasonable process — not that it followed prescribed steps — because agents have no fixed execution path: identical inputs can legitimately produce different valid trajectories."
+    },
+    {
+      "heading": "Start small",
+      "question": "Why is starting with roughly 20 real-usage queries enough in early agent evaluation?",
+      "answer": "Early development effect sizes are enormous — a prompt change can move success rates by tens of points — so a small query set is enough to detect a change; waiting for a hundreds-case suite costs more in delayed iteration than it buys in precision."
+    },
+    {
+      "heading": "One judge beats several",
+      "question": "Why did a single rubric-scored model judge outperform several specialized judges?",
+      "answer": "For free-form outputs with no single correct answer, one model call scoring against a rubric (factual accuracy, citation accuracy, completeness, source quality, tool efficiency) proved more consistent and better aligned with human graders than decomposing the rubric across specialized judges."
+    },
+    {
+      "heading": "What humans catch that rubrics miss",
+      "question": "What kind of failure did manual human testing catch that automated rubric judging missed?",
+      "answer": "A systematic source-quality bias — agents preferring search-engine-optimized content farms over authoritative but lower-ranked sources — a failure class no rubric written in advance would have thought to ask about."
+    },
+    {
+      "heading": "Evaluating state-mutating agents",
+      "question": "How should agents that mutate state (write to real systems) be evaluated, and why?",
+      "answer": "By judging the end state at discrete checkpoints where specific state changes should have occurred, rather than validating every intermediate step — because each action changes the environment for the next, making step-by-step validation brittle and beside the point."
+    }
+  ]
+}

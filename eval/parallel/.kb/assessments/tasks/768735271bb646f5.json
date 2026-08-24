@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "768735271bb646f5",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/stateful-agent-reliability.md": "sha256:ec7fe73b8467c6a7e746b8202845ce99dc1ac44fd65be3e4264e350d3bcefe93",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/stateful-agent-reliability.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:1d81896b4bc3a9a4665a600e665a52a71b47dd66a39c563949e823ec5673ecec",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/stateful-agent-reliability.md"
+  ]
+}

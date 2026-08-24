@@ -1,0 +1,13 @@
+{
+  "task_id": "669d288b829226d5",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "id": "08ac41",
+      "heading": "Relation to context-engineering",
+      "question": "What scarcity argument does agent-legible architecture share with context-engineering?",
+      "answer": "Both argue what the model can see cheaply and unambiguously sets the ceiling on what it can do reliably — context-engineering makes the case about the context window, agent-legible architecture makes it about the codebase.",
+      "semantic_change": true
+    }
+  ]
+}

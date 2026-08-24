@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "d905b44a7d7b4417",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/proxy-boundary-session-capture.md": "sha256:566e9699a235836a950ab1eb0b713901da578210c56987e4622f6d3f5e1082bb",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/proxy-boundary-session-capture.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:94d89a4b5b3e12dc8dff9b72d0e8b6e719d49e428cc4921b177f8adb56197078",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/proxy-boundary-session-capture.md"
+  ]
+}

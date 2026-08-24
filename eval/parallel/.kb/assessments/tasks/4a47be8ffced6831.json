@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "4a47be8ffced6831",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/deterministic-picker-scoring.md": "sha256:90eec875444cdb2190b57d58b61ffa1820c8580735d9463ec8d179380b3f2ea5",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/deterministic-picker-scoring.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:3e5345cfadb68edecd9f3198cbaf691f3197d783d40157ad2a1b7d7e1914934e",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/deterministic-picker-scoring.md"
+  ]
+}

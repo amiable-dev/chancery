@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "2085803439bd7bab",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/sleeper-agent-backdoors.md": "sha256:93bbb888be921ad788675c06dc65ccab34882438b22db43a4188818653be159d",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/sleeper-agent-backdoors.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:5849d6866644f1f25994691d414a36d750eb0f06ef0114d07a3481717be5abf1",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/sleeper-agent-backdoors.md"
+  ]
+}

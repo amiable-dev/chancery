@@ -1,0 +1,13 @@
+{
+  "task_id": "91aeac57f1066fe6",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "id": "10d7d3",
+      "heading": "Error handling: recoverable vs hard blocker",
+      "question": "What must an agent loop's error handling distinguish, and why does it matter?",
+      "answer": "A recoverable failure from a hard blocker, so a retry is deliberate adaptation to a transient problem rather than the loop spinning uselessly on one it cannot fix.",
+      "semantic_change": true
+    }
+  ]
+}

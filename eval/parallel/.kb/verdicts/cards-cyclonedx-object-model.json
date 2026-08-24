@@ -1,0 +1,31 @@
+{
+  "task_id": "fb9b9630e9f439a9",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is the CycloneDX object model?",
+      "answer": "The schema at the core of the OWASP CycloneDX BOM standard: a modular, extensible object model for stating what a software system is made of and what is claimed about it, serialized as XML, JSON or Protocol Buffers."
+    },
+    {
+      "heading": "Key mechanism",
+      "question": "What gives the CycloneDX object model its reach, per the spec?",
+      "answer": "Pairing an inventory (components, services, dependencies) with claims made about that inventory (vulnerabilities, formulation, definitions/declarations)."
+    },
+    {
+      "heading": "Compositions",
+      "question": "What do 'compositions' declare in a CycloneDX BOM?",
+      "answer": "How complete the inventory claims to be: complete, incomplete, incomplete first-party-only, incomplete third-party-only, or unknown."
+    },
+    {
+      "heading": "Dependency graph scope",
+      "question": "Besides direct component-to-component edges, what else can CycloneDX's dependency graph represent?",
+      "answer": "Transitive dependencies, plus component-to-service and service-to-service dependencies."
+    },
+    {
+      "heading": "Definitions vs. declarations",
+      "question": "In CycloneDX, how do 'definitions' differ from 'declarations'?",
+      "answer": "Definitions express standards (e.g. OWASP ASVS, MASVS) machine-readably; declarations attach attestations, claims, evidence and signatures against those definitions — the basis for compliance-as-code."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "6583a2955db1f426",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/mcp-stateless-core.md": "sha256:e25e5892533d47bac3023d20dec87a7a8b1b9e64cfbf152f2bdd46f96560b0e3",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/mcp-stateless-core.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:4656b3e38f285214a01194afe5ff9c72f08c87deff0fd34b85e75e29ab48855b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/mcp-stateless-core.md"
+  ]
+}

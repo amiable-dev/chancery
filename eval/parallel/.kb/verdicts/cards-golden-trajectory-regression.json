@@ -1,0 +1,31 @@
+{
+  "task_id": "e43b0d5fe26755cd",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is a golden trajectory, and what is it used as a baseline for?",
+      "answer": "A validated recording of an agent's complete execution — reasoning chain, every model call, tool invocations with arguments, decision gates, and captured state — retained as the baseline for behavioural regression testing."
+    },
+    {
+      "heading": "Why trajectories beat output comparison",
+      "question": "Why does comparing an agent's trajectory work as a regression test where comparing its final output does not?",
+      "answer": "A nondeterministic system can produce different but equally acceptable outputs to the same input, making output-equality assertions flaky or vacuous. The route an agent takes is far more stable than the prose it emits, and failures like wrong tool arguments or skipped gates are visible in the route but invisible in the answer."
+    },
+    {
+      "heading": "Prerequisite infrastructure",
+      "question": "What is the prerequisite infrastructure for golden trajectory regression testing, and what is a 'golden' in that context?",
+      "answer": "Tracing instrumentation that records spans for model and tool calls; a golden is simply a blessed production trace promoted to a fixture."
+    },
+    {
+      "heading": "The threshold trade-off",
+      "question": "What is the central design problem in golden trajectory comparison, and what trade-off does it embody?",
+      "answer": "Setting the deviation threshold: too tight and every rephrasing fails the suite, too loose and genuine drift passes through undetected. Comparison is graded rather than exact for this reason."
+    },
+    {
+      "heading": "Response to deviation",
+      "question": "What happens automatically when a replayed trajectory deviates from its golden past the threshold?",
+      "answer": "The artifact change (e.g. to a prompt or tool manifest) that produced the deviation is automatically rolled back."
+    }
+  ]
+}

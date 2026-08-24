@@ -1,0 +1,31 @@
+{
+  "task_id": "88614c7fcbdf0f53",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is a frontier advisor harness, and how does it decide when to call the expensive model?",
+      "answer": "It runs the agent loop on a cheaper open-weights worker model and exposes a stronger model as a callable tool. The worker itself decides mid-trajectory, at its own points of uncertainty, when to escalate — there is no external router."
+    },
+    {
+      "heading": "Asymmetric trace signature",
+      "question": "What asymmetric signature does this pattern leave in execution traces?",
+      "answer": "Advisor calls are sparse (about 0.83 per task in the reported run), while the worker's turn count rises noticeably downstream of each call — the strong model steers rather than writes."
+    },
+    {
+      "heading": "Why it's a cost dial, not a dependency",
+      "question": "Why does self-invoked escalation turn the frontier model into a per-workload cost dial rather than a load-bearing component?",
+      "answer": "The expensive model is billed for a few short steering turns rather than the whole trajectory, so the advisor call rate can be tuned up for complex workloads and down for routine ones."
+    },
+    {
+      "heading": "Reported benchmark result",
+      "question": "In the Fireworks/Harvey reported benchmark, how did the open worker plus frontier advisor compare to running the frontier model end to end?",
+      "answer": "18/100 all-pass for $368, versus 14/100 all-pass for $954 running the frontier model end to end (the worker alone scored 12/100 for $121)."
+    },
+    {
+      "heading": "Strength of the evidence",
+      "question": "How strong is the statistical evidence behind the reported margin over the frontier-only baseline?",
+      "answer": "Weak in size but consistent in direction: the benchmark's all-pass standard error is about 2.5 tasks per 100, so the 4-task margin over the frontier baseline is roughly one standard error."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "331c19e439839a94",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/determinism-discovery-split.md": "sha256:9d0765ac5a7911c48f0c5a8d3cbd221eeec2f6bf5fe459a8e360a5a98c61abf1",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/determinism-discovery-split.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:3b0ffa412bbec3eca8b8e312d7f1798ea9a04b4f837c9a9ffa9e00e180bc1a0b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/determinism-discovery-split.md"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "351df8bd99356cde",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/targeted-profiling-rollout.md": "sha256:b4f12df4e2b9e74544156085017f915fdfca95de831d9cbafb07642d041be804",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/targeted-profiling-rollout.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:b5214c0d5d55b115aee215ea25c495bb1ba6afcf7d682189233fc36f40f47d5a",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/targeted-profiling-rollout.md"
+  ]
+}

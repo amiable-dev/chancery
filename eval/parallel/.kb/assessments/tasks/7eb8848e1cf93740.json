@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "7eb8848e1cf93740",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/mcp-tool-poisoning.md": "sha256:f7b02934048f26b138fb4f5f0dd864ce1429c7586241356fb2aeb11df4427fbd",
+      "flashcards/mcp-tool-poisoning.md": "sha256:4cf84522eb8c9bd43f86abb6fab29c6348e76077622de1168ae63b10bce07167",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/mcp-tool-poisoning.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:09056d8e8b7cde047d5e70173125e22deaadfe1ec8671b9a6574c1c86c72349f",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/mcp-tool-poisoning.md"
+  ]
+}

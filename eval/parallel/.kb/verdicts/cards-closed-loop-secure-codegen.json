@@ -1,0 +1,31 @@
+{
+  "task_id": "c978290742843168",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What does closed-loop secure code generation move, and where does it move it to?",
+      "answer": "It moves security guidance out of documents developers are asked to follow and into the instruction files and shared skills a coding agent loads automatically every session — so a rule shapes code at the moment it's written, not after the fact."
+    },
+    {
+      "heading": "What closes the loop",
+      "question": "What makes this practice a \"loop\" rather than just automated guidance delivery?",
+      "answer": "Every newly discovered bug class is treated as an edit to the instructions themselves — remediation is not just the patch, but writing the finding back into the instruction that produced the vulnerable code, so it becomes a standing control against recurrence."
+    },
+    {
+      "heading": "Concurrent review",
+      "question": "How has the review step evolved beyond running as the agent's last action before opening a pull request?",
+      "answer": "A security-guidance plugin can now run concurrently with generation, reading the conversation and code as they're produced and repairing issues in the same session — collapsing the discover-and-fix interval to nothing."
+    },
+    {
+      "heading": "Enforcement placement",
+      "question": "What are the three points at which this control can be enforced, from weakest to strongest?",
+      "answer": "An instructed step the agent may skip; a hard pre-tool-use gate that blocks until review runs; or a gate held further downstream in CI."
+    },
+    {
+      "heading": "Dual-edged channel",
+      "question": "Why is the same auto-loading channel that makes this control reliable also a liability?",
+      "answer": "A convention file shapes generated code just as reliably when an attacker, rather than the security team, is the one who wrote it — the channel's reliability is exactly what makes it worth attacking."
+    }
+  ]
+}

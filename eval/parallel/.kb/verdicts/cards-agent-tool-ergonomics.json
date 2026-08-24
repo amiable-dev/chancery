@@ -1,0 +1,36 @@
+{
+  "task_id": "ec65482352a7430d",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "id": "5b3e7b",
+      "heading": "Definition: agent tool ergonomics",
+      "question": "What is agent tool ergonomics, and what governing constraint does it design against?",
+      "answer": "The design discipline for software whose caller is non-deterministic — it treats the agent's context as the scarce resource, so a tool must return the smallest high-signal result rather than mirror an existing API's shape."
+    },
+    {
+      "id": "9fe019",
+      "heading": "Workflow-shaped consolidation",
+      "question": "What is the characteristic tool-design failure, and what fix does agent tool ergonomics prescribe?",
+      "answer": "Wrapping existing endpoints one-for-one, which forces the agent to brute-force search inside its own context — the fix is fewer, workflow-shaped tools that absorb multi-step operations into deterministic code instead of agent reasoning."
+    },
+    {
+      "id": "2a7743",
+      "heading": "Response shaping: identifiers & format",
+      "question": "What two response-shaping techniques does agent tool ergonomics recommend for tool output?",
+      "answer": "Resolve opaque UUIDs into semantically meaningful names, and expose a response-format enum (concise vs. detailed) when both are genuinely needed — one documented case cut token use to about a third."
+    },
+    {
+      "id": "d39ce2",
+      "heading": "Bounding response quantity",
+      "question": "How should tool responses be bounded by default, and how should truncation notices or errors be written?",
+      "answer": "By default via pagination, filtering, range selection and truncation (Claude Code caps at 25,000 tokens) — and truncation notices and errors should read as prompt surface, naming the fix rather than an opaque code."
+    },
+    {
+      "id": "1398ce",
+      "heading": "Tuning tool descriptions",
+      "question": "Why is the tool description called the highest-leverage lever, and how is it tuned?",
+      "answer": "It's the most direct instruction surface, written like briefing a new hire — and it's only tunable against an eval harness: realistic multi-call tasks with verifiable outcomes, scored on tokens, errors and accuracy together."
+    }
+  ]
+}

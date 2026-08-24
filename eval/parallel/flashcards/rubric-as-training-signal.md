@@ -1,0 +1,40 @@
+---
+tags: [flashcards, evaluation, post-training, fine-tuning, domain/llm, maturity/emerging, source-type/vendor-doc]
+sr-due: 2026-08-24
+sr-interval: 1
+sr-ease: 250
+---
+
+# Evaluation rubric as training signal — Flashcards
+
+#flashcards/evaluation
+
+## Definition <!-- kb:card:bad963 -->
+What is "evaluation rubric as training signal"?
+?
+Reusing a benchmark's own grading rubric as the supervision for improving a model against it, rather than training a separate reward model or running a human relabelling pass.
+
+## Supervised form <!-- kb:card:ddd45b -->
+How does the rejection-sampling supervised form work?
+?
+Generate completions with the base model, keep only the ones that pass every rubric criterion, and fine-tune on those survivors.
+
+## Reinforcement form <!-- kb:card:2433bb -->
+How does the reinforcement fine-tuning form differ from the supervised form?
+?
+It calls the rubric's evaluators during training so each criterion contributes its own reward, instead of filtering pre-generated completions.
+
+## Ceiling of rejection sampling <!-- kb:card:0e0ef3 -->
+Why can't rejection-sampling supervised fine-tuning teach criteria the base model never satisfies?
+?
+Because there are no passing samples of those criteria to imitate — the method can only reinforce behavior the model already sometimes produces.
+
+## Reading the reported result <!-- kb:card:0b056d -->
+In the reported run, why did the strict all-criteria-pass count (11 to 15 of 100) matter more than the mean pass rate (0.863 to 0.876)?
+?
+A small mean lift with a large strict-metric jump signals a model that learned to close tasks out cleanly, not one that got broadly smarter — the two metrics have to be read together.
+
+## Structural hazard <!-- kb:card:602c82 -->
+What is the structural hazard of training directly against the rubric's own evaluators?
+?
+It optimizes what the rubric measures — a proxy — rather than the actual goal the rubric stands in for.

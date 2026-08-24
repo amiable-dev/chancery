@@ -1,0 +1,13 @@
+{
+  "task_id": "5794ac7c92bff976",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "id": "92ef7a",
+      "heading": "Relation to loop-engineering",
+      "question": "How does governing the automation loop relate to loop-engineering?",
+      "answer": "Loop-engineering builds the loops; agent-loop governance is the same cycle watched from the assurance side afterward, rather than the construction side.",
+      "semantic_change": true
+    }
+  ]
+}

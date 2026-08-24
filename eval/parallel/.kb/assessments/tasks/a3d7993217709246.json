@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "a3d7993217709246",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/specification-gaming-to-reward-tampering.md": "sha256:c8e89e305fda1b5f4cde6cf551e84809be47dd1a6b9787f37da6170fb521324d",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/specification-gaming-to-reward-tampering.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:bff1a4ade0b889104eff2ccd31f2c7481bb5515a6af3eb8ec8ecf1efecfd5da1",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/specification-gaming-to-reward-tampering.md"
+  ]
+}

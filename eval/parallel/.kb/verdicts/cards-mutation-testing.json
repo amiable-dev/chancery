@@ -1,0 +1,31 @@
+{
+  "task_id": "ffe914a5e80802ba",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What does mutation testing measure, and how does that differ from code coverage?",
+      "answer": "Whether tests actually detect deliberate small code changes (mutants) — it measures verification. Coverage only measures execution: that a line ran, not that anything checked its result."
+    },
+    {
+      "heading": "The generate-and-kill loop",
+      "question": "How does mutation testing's core mechanism work?",
+      "answer": "For each mutable point, the tool creates a mutant with one small semantic edit (e.g. flip a comparison), reruns the test suite against it, and records whether a test fails (killed) or none does (survives)."
+    },
+    {
+      "heading": "Catching perpetually green tests",
+      "question": "What kind of broken test does mutation testing catch that coverage cannot?",
+      "answer": "'Perpetually green' tests that execute code but assert nothing meaningful, or that mock so thoroughly the code under test is no longer really exercised. They keep passing through refactors and logic inversions, but leave mutants alive."
+    },
+    {
+      "heading": "Cost trade-off",
+      "question": "Why is mutation testing typically applied only to core domain logic rather than a whole repository?",
+      "answer": "Cost scales with the number of mutants times the suite's runtime, since the whole test suite reruns once per mutant — too expensive to apply everywhere."
+    },
+    {
+      "heading": "Equivalent mutants",
+      "question": "What is an equivalent mutant, and why does it complicate reading the mutation score?",
+      "answer": "A mutant whose edit can never change observable behavior, so no test can ever kill it. It survives despite being harmless, so a raw survivor count needs human judgement, not a literal read as uncaught defects."
+    }
+  ]
+}

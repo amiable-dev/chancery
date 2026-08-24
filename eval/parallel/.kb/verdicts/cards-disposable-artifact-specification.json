@@ -1,0 +1,31 @@
+{
+  "task_id": "f1e6a09c9971a13a",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is 'disposable artifacts as specification'?",
+      "answer": "Having a model produce cheap, throwaway concretions — divergent mockups with fake data, a single-file prototype, a plan ordered by likely change — meant to be reacted to and discarded, because judgment people can't state in advance reliably appears once they see a candidate in front of them."
+    },
+    {
+      "heading": "Key mechanism",
+      "question": "Why does the technique deliberately produce several divergent options rather than one?",
+      "answer": "Divergent options elicit preference; a single option only elicits acquiescence."
+    },
+    {
+      "heading": "Economics of discovery timing",
+      "question": "Why is discovering a criterion against a throwaway mock cheaper than discovering it mid-implementation?",
+      "answer": "A small spec change can imply a drastically different implementation, and an agent that has already built the wrong thing reverts it poorly — so the same criterion costs minutes against a mock but costs the implementation if found later."
+    },
+    {
+      "heading": "Code as reference",
+      "question": "Why is existing source code a stronger reference for desired behaviour than a screenshot or description?",
+      "answer": "Code carries structure and semantics rather than just appearance, even across languages."
+    },
+    {
+      "heading": "Review plan ordering",
+      "question": "How should a review plan be ordered, and why?",
+      "answer": "By likelihood of change — front-loading decisions like data models, type interfaces and user-facing flows, and burying mechanical work — so review attention lands where changing your mind is still cheap."
+    }
+  ]
+}

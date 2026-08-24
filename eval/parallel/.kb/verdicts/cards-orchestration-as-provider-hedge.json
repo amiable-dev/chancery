@@ -1,0 +1,31 @@
+{
+  "task_id": "35af17b844c3bc55",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is the 'orchestration as a provider hedge' argument?",
+      "answer": "That frontier capability should live in a coordinator model routing work across a swappable pool of third-party LLMs, rather than depending directly on one provider's model — so losing a model (export control, policy change, deprecation) becomes a pool-membership change, not a product outage."
+    },
+    {
+      "heading": "Why pool members are swappable",
+      "question": "What makes pool members swappable in the provider-hedge architecture?",
+      "answer": "The coordinator is a model trained to orchestrate — deciding whether to answer directly or assemble a team of expert models, delegate sub-tasks, check their work, and synthesize a reply — rather than a hand-wired router, so new models can be folded into the pool as they appear."
+    },
+    {
+      "heading": "Real overhead costs",
+      "question": "What real costs does provider-hedge orchestration add over a direct model call?",
+      "answer": "Routing, fan-out, verification and synthesis add latency and tokens — which is why such products ship as a low-latency default tier plus a separate quality tier that accepts the overhead."
+    },
+    {
+      "heading": "Dependency relocates, doesn't vanish",
+      "question": "Does orchestration as a provider hedge eliminate vendor dependency, or just move it?",
+      "answer": "It relocates it — the coordinator and whoever maintains it become the new concentration point. Notably, the ability to remove specific models from the pool for compliance is sometimes offered only on the cheaper tier, not the quality tier regulated buyers would need it on."
+    },
+    {
+      "heading": "Reading parity claims cautiously",
+      "question": "Why should benchmark parity claims for these orchestration systems be read cautiously?",
+      "answer": "Figures are typically vendor-reported, and claimed parity is often with models that are, by the vendor's own admission, absent from the pool and unreproducible by anyone outside the vendor's access perimeter."
+    }
+  ]
+}

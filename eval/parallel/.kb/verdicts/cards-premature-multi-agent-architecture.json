@@ -1,0 +1,36 @@
+{
+  "task_id": "f66f9b8ceb432bc3",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is premature multi-agent architecture?",
+      "answer": "Designing toward hierarchical orchestrators or peer-to-peer agent collaboration before anyone has measured where a single well-scoped agent actually breaks down — paying coordination overhead in tokens, latency, and debugging difficulty for capability nobody has shown is needed."
+    },
+    {
+      "heading": "The mirror-image failure",
+      "question": "What is the mirror-image failure to premature multi-agent architecture?",
+      "answer": "The overloaded single agent: one configuration carrying many tools, sprawling instructions, and responsibility for unrelated task types — it underperforms on all of them because optimizing for one kind of input degrades the others."
+    },
+    {
+      "heading": "The decision procedure",
+      "question": "What decision procedure resolves whether to split a single agent into multiple agents?",
+      "answer": "Narrow-before-split: first reduce a single agent's responsibility until it does one kind of task with a matched tool set. Only if that well-scoped single agent still fails do you have a real case for adding another agent — narrowing is cheap and reversible, splitting is neither."
+    },
+    {
+      "heading": "Cascading errors across agents",
+      "question": "What failure mode does multi-agent coordination introduce that doesn't exist in a single-agent loop?",
+      "answer": "One agent's bad output can cascade through several downstream agents before producing any visible symptom, which makes attribution back to the original failure genuinely hard."
+    },
+    {
+      "heading": "Three questions before splitting",
+      "question": "What three questions should be answered before splitting a single agent into multiple agents?",
+      "answer": "Whether a single agent with better tools already solves the problem; where the single-agent approach was actually measured to break; and whether the business value covers the added token cost and complexity."
+    },
+    {
+      "heading": "Routing as the alternative",
+      "question": "What alternative to splitting into coordinating agents often captures the same benefit without the coordination cost?",
+      "answer": "Routing — sending each class of input to a differently specialized configuration — buys separation of concerns without paying for inter-agent coordination."
+    }
+  ]
+}

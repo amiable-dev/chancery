@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "6292bbc16b5fa70b",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/llm-maintained-wiki.md": "sha256:c5524410d046e5eda5d4ab163d29a0553dda88763f9a6ef05e7af957dc2b6574",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/llm-maintained-wiki.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:3724b5e6e7d0f10820cbf9ddd7ce24e1f6ff86759f4c2373a69c7b890557c159",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/llm-maintained-wiki.md"
+  ]
+}

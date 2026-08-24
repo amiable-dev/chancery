@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "0cc2eba71157a307",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/collector-side-telemetry-reduction.md": "sha256:110e55552ca1cf63830ed741eb4be37740b91a60e2d710459bf196083e25a5c7",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/collector-side-telemetry-reduction.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:2de22de92d13e4473eb81d14940850b3184929528a6e185558deace62d3024aa",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/collector-side-telemetry-reduction.md"
+  ]
+}

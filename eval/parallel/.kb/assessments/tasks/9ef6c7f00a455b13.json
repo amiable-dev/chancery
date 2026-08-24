@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "9ef6c7f00a455b13",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/symptom-based-alerting.md": "sha256:6402e716fcd1f0bd21371d4b8e3e29b828423dc343dd202881028f6b9072ae41",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/symptom-based-alerting.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:5e773ba6ad3b7468eadd3bd1bb1c7b49dcaca28bd282c14672afd6987b3ed345",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/symptom-based-alerting.md"
+  ]
+}

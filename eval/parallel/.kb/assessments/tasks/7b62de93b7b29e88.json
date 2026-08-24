@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "7b62de93b7b29e88",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/siem-agentic-visibility-gap.md": "sha256:8806368956dd6b6906db5a8c2ce9b3cf25fd542e10bfff54a9ce53acce3d7eda",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/siem-agentic-visibility-gap.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:2f1640742c78c31f0469179edec1f2a36cb7c6dceb73acb90f26369b2c97c99d",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/siem-agentic-visibility-gap.md"
+  ]
+}

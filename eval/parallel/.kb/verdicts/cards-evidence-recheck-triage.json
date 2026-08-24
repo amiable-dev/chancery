@@ -1,0 +1,31 @@
+{
+  "task_id": "145853d0eb3f201b",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is triage as a separate evidence pass?",
+      "answer": "The discipline of never letting the process that generates candidate findings also decide which of them are real: a distinct later pass re-checks each candidate against the evidence it cited."
+    },
+    {
+      "heading": "Why generation can't self-verify",
+      "question": "Why must finding-generation and finding-verification be separate passes rather than one step?",
+      "answer": "They are rewarded for opposite things: generation is rewarded for coverage and accepts thin reasoning to reach a candidate, while verification gains nothing from a candidate surviving, so combining them risks the same reasoning grading its own claim."
+    },
+    {
+      "heading": "De-duplication rule",
+      "question": "What is the de-duplication rule in evidence-recheck triage, and why is it conservative?",
+      "answer": "Merge only demonstrable copies of the same issue; the pass never makes a keep-or-kill call on borderline findings."
+    },
+    {
+      "heading": "Uncertainty rule",
+      "question": "What happens to a finding the triage pass is unsure about?",
+      "answer": "It is downgraded in confidence and still shown to the operator as a low-confidence entry, never silently dropped."
+    },
+    {
+      "heading": "Chosen failure direction",
+      "question": "Which error does evidence-recheck triage deliberately favor, and why?",
+      "answer": "A noisier report over an invisible false negative, because a missed vulnerability is invisible while a false positive is merely irritating."
+    }
+  ]
+}

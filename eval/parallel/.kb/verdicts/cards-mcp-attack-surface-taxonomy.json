@@ -1,0 +1,36 @@
+{
+  "task_id": "b96982364cd16524",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is the MCP attack surface taxonomy?",
+      "answer": "OWASP's MCP Top 10 — a ten-category enumeration of security risks specific to deploying MCP servers and the agents that call them, meant to be used as a design checklist and audit frame, not a one-time ranking."
+    },
+    {
+      "heading": "What unifies the ten categories",
+      "question": "What three things does MCP concentrate at a single boundary that used to be separate, unifying all ten risk categories?",
+      "answer": "Credentials for downstream systems, an instruction channel the model will obey, and an execution path into shells and APIs — each category is a way one of those three escapes."
+    },
+    {
+      "heading": "Tool poisoning sub-techniques",
+      "question": "What are the three named sub-techniques of tool poisoning in this taxonomy?",
+      "answer": "Rug pulls (a malicious update to an already-trusted tool), schema poisoning (corrupting an interface definition to mislead the model), and tool shadowing (a fake or duplicate tool intercepting interactions)."
+    },
+    {
+      "heading": "Why typed JSON doesn't stop injection",
+      "question": "Why is command injection still a risk even though tool arguments arrive as typed JSON?",
+      "answer": "The schema describes structure but says nothing about whether a value is safe to hand to a shell, so developers trust arguments whose safety was never actually validated."
+    },
+    {
+      "heading": "Shadow MCP servers",
+      "question": "What is a \"shadow MCP server\" in this taxonomy?",
+      "answer": "An MCP server spun up outside governance with default credentials and permissive configuration — the MCP-specific form of shadow IT, treated as a first-class risk category rather than a governance footnote."
+    },
+    {
+      "heading": "Citation caveat",
+      "question": "What caveat applies to citing this taxonomy by its numeric MCPxx identifiers?",
+      "answer": "It is an OWASP community project at v0.1 beta with drafting seams still visible; the categories are durable but the numbering and titles are not yet stable, so cite category names instead."
+    }
+  ]
+}

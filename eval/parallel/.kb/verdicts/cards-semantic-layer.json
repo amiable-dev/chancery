@@ -1,0 +1,31 @@
+{
+  "task_id": "49050ccb147e0c17",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is a semantic layer?",
+      "answer": "A shared definition tier between raw data stores and their consumers (dashboards, APIs, agents) that holds metric formulas, joins, access rules and vocabulary in one place, so a term has exactly one computable meaning."
+    },
+    {
+      "heading": "How it compiles requests",
+      "question": "How does a semantic layer turn a consumer's request into a warehouse query?",
+      "answer": "Consumers request a named metric with dimensions and filters; the layer compiles that into the actual query, applying the joins and business rules the definition implies."
+    },
+    {
+      "heading": "What it prevents",
+      "question": "What failure mode does a semantic layer prevent?",
+      "answer": "Definition drift — business logic forking into ad-hoc tables, dashboard-local formulas and application code that are each correct on the day written but quietly diverge afterward."
+    },
+    {
+      "heading": "Why agentic access sharpens the need",
+      "question": "Why does agent-driven text-to-SQL make the lack of a semantic layer more dangerous, not less?",
+      "answer": "A model translating a question into SQL can only use rules present in the schema; when the real definition (e.g. revenue recognition timing) lives outside the tables, it produces answers that are confidently wrong and structurally plausible."
+    },
+    {
+      "heading": "Rollout cost and pitfall",
+      "question": "What is the cost of adopting a semantic layer, and what mistake reintroduces the problem it solves?",
+      "answer": "It requires upfront modelling work; rolling it out one domain at a time is recommended, because enterprise-wide rollouts tend to leave legacy reports running in parallel, recreating the inconsistency the layer was meant to remove."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "02629e3d5d0e7308",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/principle-of-least-agency.md": "sha256:564e18fa7f9a6c1d9fd44ac5b7e33104f09787518734e0b2d1778bdfb7978e9b",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/principle-of-least-agency.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:f1bd87df6dc2148d2f9183e71828b9a1964cf742c61ccadb87465e282ed6e010",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/principle-of-least-agency.md"
+  ]
+}

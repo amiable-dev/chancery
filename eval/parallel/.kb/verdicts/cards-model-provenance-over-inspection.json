@@ -1,0 +1,31 @@
+{
+  "task_id": "be0a29074410d0a7",
+  "supplier": { "class": "model-single", "id": "claude-sonnet-5" },
+  "cards": [
+    {
+      "heading": "Model provenance over inspection — claim",
+      "question": "What is the 'model provenance over inspection' position?",
+      "answer": "Trust in a machine-learning model can't come from examining the artifact — it must come from its lineage (training data, filtering, fine-tuning, hosting), attested by parties independent of the producer, because published weights can't be reverse engineered into a description of behavior the way a compiled binary can."
+    },
+    {
+      "heading": "Provenance — poisoning scale finding",
+      "question": "How many poisoned pretraining samples does it take to install a persistent triggered backdoor, and how does this count scale with model size?",
+      "answer": "A small, roughly constant number suffices — the count does not rise with model or dataset size, so scale doesn't dilute the risk."
+    },
+    {
+      "heading": "Provenance — Thompson's trusting-trust analogy",
+      "question": "What argument does model provenance over inspection borrow from Ken Thompson's 1984 Turing lecture, and what's the model analogue?",
+      "answer": "A compiler modified to insert a backdoor into everything it compiles (including its own successors) with nothing wrong visible in readable source. The analogue: a model can inherit behavior from earlier in its lineage that no inspection of the final weights would surface."
+    },
+    {
+      "heading": "Provenance — why benchmarks don't help",
+      "question": "Why don't benchmark scores serve as evidence of a model's integrity?",
+      "answer": "Because a model can be fine-tuned specifically to pass benchmarks, so passing them says nothing about hidden, lineage-inherited behavior."
+    },
+    {
+      "heading": "Provenance — binaries vs weights",
+      "question": "Why can a suspicious compiled binary be vetted in a way a released model's weights cannot?",
+      "answer": "A binary yields to disassembly — with enough effort an analyst can arrive at a total description of its behavior — while mechanistic interpretability of model weights is still a research program, not a deployable inspection tool."
+    }
+  ]
+}

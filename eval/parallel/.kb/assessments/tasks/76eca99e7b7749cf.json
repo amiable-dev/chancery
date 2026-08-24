@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "76eca99e7b7749cf",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/agent-tool-ergonomics.md": "sha256:bb1fc765d6eb6ab8c706dee47e04d81e96c0297273222a8135f21b2c014bd8d3",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/agent-tool-ergonomics.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:20112a507cf3adef88a8c1c03b30499496d8a4d2259e361dec9606a1726cb7e1",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/agent-tool-ergonomics.md"
+  ]
+}

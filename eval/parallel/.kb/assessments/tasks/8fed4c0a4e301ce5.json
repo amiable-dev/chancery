@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "8fed4c0a4e301ce5",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/selection-bottleneck-of-the-record.md": "sha256:70647bf6eda16208b906aa4dce180cdef7032b0e6b6b5bd84edbc36cb8d83443",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/selection-bottleneck-of-the-record.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:78291b01511c1e58980713a78993c0d21bfe56cb70d464c5f2ccf9fba69db5e3",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/selection-bottleneck-of-the-record.md"
+  ]
+}

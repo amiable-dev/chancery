@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "e50ae5d7193c5df6",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/build-time-generation-governance.md": "sha256:ec9b1c9ec3434f9a3d570262826d8e5c64d0a8a4a84125b30f48ab5ea2f3dc07",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/build-time-generation-governance.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:8aaac9820a13a99b928f9f5754606bbd13f4bd4a5a1a946c07ff61481b102d81",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/build-time-generation-governance.md"
+  ]
+}

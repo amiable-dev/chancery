@@ -1,0 +1,31 @@
+{
+  "task_id": "6292bbc16b5fa70b",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is the LLM-maintained wiki pattern?",
+      "answer": "An LLM incrementally builds and maintains a persistent wiki as its knowledge substrate — writing and revising pages as material arrives — instead of retrieving over raw documents each session."
+    },
+    {
+      "heading": "Write-time distillation",
+      "question": "What is the core mechanism behind the LLM-maintained wiki pattern?",
+      "answer": "It moves the work to write time: the model distils incoming material into named, linked pages and revises them as understanding changes, so future sessions read consolidated pages instead of re-deriving from raw sources."
+    },
+    {
+      "heading": "Contrast with RAG",
+      "question": "How does the LLM-maintained wiki pattern differ from retrieval-augmented generation?",
+      "answer": "RAG searches unprocessed source documents at query time, so nothing accumulates; the wiki pattern distills material into revisable pages at write time, so knowledge compounds."
+    },
+    {
+      "heading": "Legibility advantage",
+      "question": "What advantage does a maintained wiki have over an embedding index?",
+      "answer": "It is human-legible and correctable — a person can inspect and fix a page — unlike an embedding index."
+    },
+    {
+      "heading": "Trade-off accepted",
+      "question": "What cost does the wiki pattern accept in exchange for compounding knowledge?",
+      "answer": "Maintenance cost and the risk of distillation errors, traded for persistence, legibility, and curation."
+    }
+  ]
+}

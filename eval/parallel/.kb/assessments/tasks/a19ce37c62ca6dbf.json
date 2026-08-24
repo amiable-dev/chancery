@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "a19ce37c62ca6dbf",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/agentic-artifacts-as-code.md": "sha256:df353b935082edc9036937e4de73f222c519ca9fa3a12dea385d77ac3f9428d6",
+      "flashcards/agentic-artifacts-as-code.md": "sha256:bd00258745057efb6ff8b81b609739dfb1946d13c4f3534ca956ce62b559d4c5",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/agentic-artifacts-as-code.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:fb81283002c7fffe45d9b7be9aaf40011dca084af64bf5c5e655522e47e3f93b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/agentic-artifacts-as-code.md"
+  ]
+}

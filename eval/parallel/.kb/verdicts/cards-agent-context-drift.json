@@ -1,0 +1,31 @@
+{
+  "task_id": "9fe35c0854b1be16",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Context drift: definition",
+      "question": "What is context drift in long-running agent tasks?",
+      "answer": "The failure where accumulated context silently stops describing the world being acted on — early tool outputs are retained verbatim, the underlying data changes, and the model has no way to tell which remembered observations have expired."
+    },
+    {
+      "heading": "Drift vs. context rot",
+      "question": "How does context drift differ from a model's declining reliability over long inputs (context rot), and how do the two interact?",
+      "answer": "Context rot is a property of the model; drift is a property of the run — stale content in the window also makes the still-valid facts harder to attend to, so the two compound."
+    },
+    {
+      "heading": "Why drift happens: append-only context",
+      "question": "Why does agent context drift happen mechanically?",
+      "answer": "Agent context is append-only by default while the environment is not — every tool call adds a snapshot timestamped nowhere useful, and nothing in the transcript marks a result as superseded, so a stale observation keeps its original authority."
+    },
+    {
+      "heading": "Three bounding mitigations",
+      "question": "What three mitigations bound context drift?",
+      "answer": "Clearing stale tool results as token limits approach (while preserving the conversational thread), extracting only the fields actually needed from a tool response, and capping the size of any single tool output."
+    },
+    {
+      "heading": "A design condition, not an edge case",
+      "question": "Why should drift bounds be set at design time rather than discovered during incident review?",
+      "answer": "Because for agents designed to run long, drift is a normal operating condition, not an edge case — so the bounds belong in the design."
+    }
+  ]
+}

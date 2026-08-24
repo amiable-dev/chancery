@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "ae91596cf7853533",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/agent-write-permission-separation.md": "sha256:08d2e37b49540a3dae61d4586a29852f983531ef7096a791fdd51f9d2eff6217",
+      "flashcards/agent-write-permission-separation.md": "sha256:3d5f435ab98285c9e63797a616a27e4a0c6899736151d7b1c434104d3c75b688",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/agent-write-permission-separation.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:6233bb19ba5ec710d891dd1a5590478008898621469447d168947bb1e0896a9f",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/agent-write-permission-separation.md"
+  ]
+}

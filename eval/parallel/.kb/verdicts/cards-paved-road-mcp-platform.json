@@ -1,0 +1,31 @@
+{
+  "task_id": "5ab92b72179604b0",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is a paved-road MCP platform?",
+      "answer": "A platform that bakes governance into the template a team copies to ship a server: after approval, an engineer scaffolds from a shared monorepo template and inherits default-deny write controls, audit logging, CI/CD, and secrets management for free — the governed way to deploy is also the fastest way."
+    },
+    {
+      "heading": "Why centralizing the template works",
+      "question": "Why does centralizing MCP server scaffolding into one template solve the governance problem, given the problem isn't malice?",
+      "answer": "The problem is variance — every hand-rolled implementation makes its own security decisions and review can't keep pace. A shared template inverts the economics: standing up a governed server becomes minutes of scaffolding, so teams take the paved road because it's genuinely easier, and controls come along invisibly."
+    },
+    {
+      "heading": "What stays human",
+      "question": "In a paved-road MCP platform, what step stays human rather than being automated?",
+      "answer": "The approval step — an AI-governance team gates what gets exposed. Everything after approval (write controls, audit logging, CI/CD, secrets management) is inherited defaults."
+    },
+    {
+      "heading": "The transferable design rule",
+      "question": "What is the transferable design rule behind the paved-road pattern, when adoption speed and control appear to trade off?",
+      "answer": "Move the control into the artifact that makes people fast — so compliance stops being a tax and becomes a side effect of taking the easiest path."
+    },
+    {
+      "heading": "Evidence of success",
+      "question": "What evidence does Cloudflare's write-up give that the paved-road pattern worked?",
+      "answer": "Company-wide adoption spread beyond engineering, because governance was baked into the platform itself rather than imposed as a separate step — the adoption speed showed governance had stopped being the bottleneck."
+    }
+  ]
+}

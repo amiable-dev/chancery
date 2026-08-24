@@ -1,0 +1,31 @@
+{
+  "task_id": "32596a7ac1b7ff19",
+  "supplier": { "class": "model-single", "id": "claude-sonnet-5" },
+  "cards": [
+    {
+      "heading": "Memory as harness capability — claim",
+      "question": "What is the core claim of 'memory as a harness capability'?",
+      "answer": "An agent's memory cannot be added as an external plugin, because it emerges from decisions only the agent harness controls — what loads into context, what survives compaction, whether the agent can rewrite its own instructions/state, and whether interactions are stored queryably."
+    },
+    {
+      "heading": "What part of memory IS pluggable",
+      "question": "According to this claim, what is the one part of agent memory that genuinely can be a plugin, and how significant is it?",
+      "answer": "Retrieval (RAG) over past session data — but it's a small part of memory overall, and hard to beat grep at."
+    },
+    {
+      "heading": "Memory-as-harness — driving analogy",
+      "question": "What analogy does Sarah Wooders use for the idea of 'plugging memory into an agent'?",
+      "answer": "It's like asking to plug driving into a car — memory is a product of the harness's own context management, not a separable component."
+    },
+    {
+      "heading": "MemGPT as evidence",
+      "question": "How does MemGPT's history support the memory-as-harness-capability claim?",
+      "answer": "MemGPT's memory emerged from tools for rewriting prompts and managing external state combined with the harness's context management — yet it was routinely mistaken for a pluggable RAG tool."
+    },
+    {
+      "heading": "Harness memory checklist",
+      "question": "Name three of the invisible harness decisions this concept lists as constituting an agent's 'memory.'",
+      "answer": "How instruction files (e.g. AGENTS.md) are loaded, whether the agent may modify its own system instructions, and what survives context compaction."
+    }
+  ]
+}

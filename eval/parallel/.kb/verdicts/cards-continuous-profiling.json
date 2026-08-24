@@ -1,0 +1,31 @@
+{
+  "task_id": "77a594ad2127c2bf",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is continuous profiling?",
+      "answer": "Always-on statistical sampling of a fleet's stack traces, taken from outside the process so no application code changes and every language is covered equally, aggregated over time into flamegraphs that answer which functions a service actually spends its CPU on."
+    },
+    {
+      "heading": "Key mechanism: sampling economics",
+      "question": "How does a continuous profiler sample process stacks, and why does this make always-on collection affordable?",
+      "answer": "A per-node agent samples the stack of every running process at a low fixed rate (around 19 samples per second per logical CPU), shipping aggregates to a central store as time series. It is affordable because the output is a distribution, not a ledger: missing samples cost precision, not correctness — unlike per-request tracing at the same coverage."
+    },
+    {
+      "heading": "Profiles vs. traces",
+      "question": "What is the difference between what a profile answers and what a trace answers?",
+      "answer": "A trace follows one request across services with timing and context, answering why that request was slow. A profile describes aggregate on-CPU behaviour, answering where a service's compute goes overall. Neither substitutes for the other."
+    },
+    {
+      "heading": "Latency and CPU cost decouple",
+      "question": "How can latency and CPU cost decouple in a profile's view of a service, in both directions?",
+      "answer": "A slow request can have a cheap profile if it spent its time waiting on I/O, and a fast request can have an expensive profile if it is CPU-bound well inside its latency budget."
+    },
+    {
+      "heading": "Semantic limit",
+      "question": "What does a profile fail to tell you, and whose job is it to supply that missing context?",
+      "answer": "A profile knows a symbol, not who owns it, what it costs, or which user-facing objective it threatens — that context remains the job of deliberate instrumentation and its metadata. Kernel-side collection extends instrumentation rather than replacing it."
+    }
+  ]
+}

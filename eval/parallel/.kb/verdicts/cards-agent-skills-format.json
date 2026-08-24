@@ -1,0 +1,26 @@
+{
+  "task_id": "4859224ca9e6890f",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition of Agent Skills",
+      "question": "What is the Agent Skills format?",
+      "answer": "An open format for packaging agent capabilities as a folder containing a SKILL.md file (name/description metadata plus task instructions), optionally bundling scripts, templates and reference material, portable across any skills-compatible agent."
+    },
+    {
+      "heading": "The three stages of progressive disclosure",
+      "question": "What are the three stages of progressive disclosure through which a skill's content loads?",
+      "answer": "Discovery (only the name and description load at startup), activation (a matching task pulls the full SKILL.md into context), and execution (the agent follows the instructions, running bundled code or reading referenced files as needed)."
+    },
+    {
+      "heading": "Why the standing context cost stays small",
+      "question": "Why can an agent hold many skills without a large standing context footprint?",
+      "answer": "Because full instructions load only on demand at activation — at startup, each skill contributes just its name and description."
+    },
+    {
+      "heading": "Origin and standardization",
+      "question": "Who originated the Agent Skills format, and what is its adoption status?",
+      "answer": "Anthropic originated it, but it was released as an open standard with multi-product adoption beyond its originator."
+    }
+  ]
+}

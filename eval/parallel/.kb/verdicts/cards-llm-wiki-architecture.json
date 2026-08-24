@@ -1,0 +1,36 @@
+{
+  "task_id": "33a5b93b76ee1ab4",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Three owned layers",
+      "question": "What three layers make up the LLM wiki architecture?",
+      "answer": "Immutable raw sources the model reads but never edits; a wiki of model-generated interlinked markdown pages the model owns entirely; and a schema document (CLAUDE.md/AGENTS.md-style) encoding structure, conventions and workflows."
+    },
+    {
+      "heading": "Lint operation",
+      "question": "What does the periodic \"lint\" operation check for in the LLM wiki architecture?",
+      "answer": "Contradictions, superseded claims, orphan pages, concepts lacking pages, and missing cross-references."
+    },
+    {
+      "heading": "Ingest integrates, not indexes",
+      "question": "What does \"ingest\" do beyond simply indexing a new source for later retrieval?",
+      "answer": "It integrates the source into the wiki: writing a summary page, updating the index, and revising the entity and concept pages the source touches — often 10-15 pages per source."
+    },
+    {
+      "heading": "Query and filing back",
+      "question": "How does the query operation work, and what happens to a good answer afterward?",
+      "answer": "It reads the index first, drills into relevant pages, and synthesizes a cited answer; answers worth keeping are filed back into the wiki as pages, so exploration compounds like ingestion does."
+    },
+    {
+      "heading": "Navigation: index.md vs log.md",
+      "question": "What are index.md and log.md for in the LLM wiki architecture?",
+      "answer": "index.md is a categorized catalog updated on every ingest and read first at query time — enough for roughly a hundred sources without embedding-based retrieval. log.md is an append-only, grep-parseable timeline of ingests, queries and lint passes."
+    },
+    {
+      "heading": "Economic rationale",
+      "question": "Why does this architecture claim to avoid the usual reason human-maintained wikis get abandoned?",
+      "answer": "Humans abandon wikis because bookkeeping grows faster than value; moving the summarizing, filing and consistency work to the model prices maintenance near zero, leaving humans to source, direct and question."
+    }
+  ]
+}

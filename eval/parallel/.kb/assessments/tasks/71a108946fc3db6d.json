@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "71a108946fc3db6d",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/four-golden-signals.md": "sha256:776b8749ff58aceb01c474a507f17934a4f6da70b96e4d1aa015e6e2f0940f2e",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/four-golden-signals.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:8392543fbe4b32303c3b2c8f2c604b27fb1bb4c953cfcdd407f137923f4d9820",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/four-golden-signals.md"
+  ]
+}

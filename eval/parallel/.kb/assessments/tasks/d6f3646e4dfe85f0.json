@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "d6f3646e4dfe85f0",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/agent-led-elicitation.md": "sha256:cc3ab62653bec1060e0255beba790dfd6a709100ddc2c59365100142df60f4c3",
+      "flashcards/agent-led-elicitation.md": "sha256:75e56241b80f5f22113886cd6026b9a98954de43a76bae5414832a1cac437931",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/agent-led-elicitation.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:feac6b895c047273458b4d914e46614f23bf430b42c7e7d8a41dcd9d6524f8ae",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/agent-led-elicitation.md"
+  ]
+}

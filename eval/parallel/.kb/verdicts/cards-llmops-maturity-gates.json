@@ -1,0 +1,31 @@
+{
+  "task_id": "1999f1bae6ce1138",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What are LLMOps maturity gates?",
+      "answer": "A codified maturity model over a small fixed set of LLM operational capabilities, scored automatically from the observability platform's API, and consumed by lifecycle reviews that decide whether a use case advances stages."
+    },
+    {
+      "heading": "Four capability axes",
+      "question": "What four capability axes make up LLMOps maturity gates?",
+      "answer": "Instrumented for tracing; has an offline evaluation suite; has online evaluators running in production; user feedback is flowing back and being reused."
+    },
+    {
+      "heading": "Machine-checkable scoring",
+      "question": "How is a product's maturity score determined, and why does that matter?",
+      "answer": "Automatically, by a scheduled job querying the observability platform's API — not by team self-report — so adoption becomes a dashboard nobody argues with instead of an optimistic survey."
+    },
+    {
+      "heading": "Enforcement via stage gates",
+      "question": "What makes the maturity model actually change behavior rather than just report it?",
+      "answer": "The score is wired into lifecycle stage-gate reviews (exploration, incubation, industrialization, operations), so an uninstrumented product cannot advance to the next stage."
+    },
+    {
+      "heading": "Why both halves are required",
+      "question": "Why is neither automated measurement alone nor a stage gate alone sufficient?",
+      "answer": "Automated measurement without a gate is decoration; a gate without machine-checkable evidence is a rubber stamp. The pairing of both is what transfers to other portfolios."
+    }
+  ]
+}

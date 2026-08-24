@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "94661ce64c91fe89",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/graph-vs-vector-code-retrieval.md": "sha256:f12b58df9755ea0d229d77de3d198430f38de0f0a852a5c2aa5a4ccd84ff1319",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/graph-vs-vector-code-retrieval.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:ccebdec9d40fc97c3a0f8fe6a6df92e161c962e15898751f578cb5642f7ddb60",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/graph-vs-vector-code-retrieval.md"
+  ]
+}

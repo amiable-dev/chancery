@@ -1,0 +1,36 @@
+{
+  "task_id": "2fd488824d3b383a",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is a \"skill-enforced development workflow,\" and how does it differ from process guidance placed in a prompt?",
+      "answer": "A software process (spec, decompose into judgement-free tasks, implement test-first, review, land) encoded as a chain of agent skills that trigger automatically at phase boundaries — mandatory files the agent must consult when it reaches each phase, rather than prompt-based advice that a long session drifts away from."
+    },
+    {
+      "heading": "Bootstrap mechanism",
+      "question": "What single standing rule does the session-start bootstrap instruction establish, and when is it re-injected?",
+      "answer": "Check for a relevant skill before starting any task; on harnesses that expose the hook, it is re-injected after context compaction too."
+    },
+    {
+      "heading": "Planning skill granularity",
+      "question": "How granular are the tasks the planning skill produces, and who are they written for?",
+      "answer": "Tasks of a few minutes each, carrying exact file paths, complete code, and verification steps — written explicitly for \"an enthusiastic junior engineer with no judgement and no project context,\" i.e. specified until execution requires no judgement at all."
+    },
+    {
+      "heading": "Fresh subagent per task",
+      "question": "Why does implementation dispatch a fresh subagent per task with two-stage review, rather than one continuous session?",
+      "answer": "So working context never accumulates across tasks — the plan, not the transcript, carries continuity, enabling hours of unattended progress without transcript drift. The two review stages check spec compliance first, then code quality."
+    },
+    {
+      "heading": "Test-first enforcement",
+      "question": "How is test-first development enforced in this workflow, as opposed to merely recommended?",
+      "answer": "Destructively: any code written before its failing test exists is deleted."
+    },
+    {
+      "heading": "Portability across harnesses",
+      "question": "Why is this methodology portable across many different agent harnesses?",
+      "answer": "The whole process ships as a set of skill files rather than harness-specific code, so it installs into a dozen unrelated harnesses through each one's own plugin mechanism, and it is testable via a meta-skill for authoring skills plus an eval harness that exercises skill behaviour."
+    }
+  ]
+}

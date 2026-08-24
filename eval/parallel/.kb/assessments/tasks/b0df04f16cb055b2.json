@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "b0df04f16cb055b2",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/perpetual-fallback-access.md": "sha256:da26704e15cad9d8e0f0cb83c2a1f5bc79be79ced6076c37b6fc75b7389b31ac",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/perpetual-fallback-access.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:07b0ea68e1e4fbad2c9743983ec044da57b823990d948293a996cc081f7bae07",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/perpetual-fallback-access.md"
+  ]
+}

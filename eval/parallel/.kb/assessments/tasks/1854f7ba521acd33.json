@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "1854f7ba521acd33",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/agent-outcome-vs-proxy-metrics.md": "sha256:6e5f01a1f56819917b29a503f0f1ecfa290a9434544546a439075a90f610c929",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/agent-outcome-vs-proxy-metrics.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:5c1d97b832503bfd6825237afc004fa11d861473c887ba784952c518133dd165",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/agent-outcome-vs-proxy-metrics.md"
+  ]
+}

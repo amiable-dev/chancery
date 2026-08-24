@@ -1,0 +1,31 @@
+{
+  "task_id": "17935cb1d3575e92",
+  "supplier": { "class": "model-single", "id": "claude-sonnet-5" },
+  "cards": [
+    {
+      "heading": "Memex — definition",
+      "question": "What is Vannevar Bush's memex (1945), in one sentence?",
+      "answer": "A mechanized personal device holding all of one individual's books, records, correspondence and notes, consultable with speed and flexibility — 'an enlarged intimate supplement to his memory.'"
+    },
+    {
+      "heading": "Memex — capacity design choice",
+      "question": "How does the memex treat storage capacity, and what does that make the real constraint on use?",
+      "answer": "Capacity is deliberately designed out of the problem (centuries to fill at 5,000 pages/day), so entry should be profligate — the real constraint is the cost of capture, not the cost of holding."
+    },
+    {
+      "heading": "Memex — one undivided store",
+      "question": "In the memex, how do purchased material and the owner's own notes relate to each other in storage?",
+      "answer": "They share a single undivided store — a handwritten note or photograph enters through the same platen and files alongside a purchased book, with annotation possible on either."
+    },
+    {
+      "heading": "Memex — simultaneous viewing",
+      "question": "Why does the memex support several simultaneous projection positions rather than just one?",
+      "answer": "Because viewing multiple items at once is the precondition for tying two items together — not merely a convenience."
+    },
+    {
+      "heading": "Memex — indexed lookup vs association",
+      "question": "Does the memex replace conventional indexed lookup with associative selection, or add to it?",
+      "answer": "It retains conventional indexed lookup (tap a code, page through, jump to an index) and layers associative selection on top of it rather than substituting for it."
+    }
+  ]
+}

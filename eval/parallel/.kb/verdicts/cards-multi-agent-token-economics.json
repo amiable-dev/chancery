@@ -1,0 +1,31 @@
+{
+  "task_id": "69dd33de10c3ca8e",
+  "supplier": { "class": "model-single", "id": "claude-sonnet-5" },
+  "cards": [
+    {
+      "heading": "Multi-agent token economics — thesis",
+      "question": "What is the core finding of multi-agent token economics about where an orchestrator-plus-workers architecture's performance gain comes from?",
+      "answer": "Mainly from spending more tokens across separate context windows — parallel subagents each hold their own context and return compressed findings — not from any coordination magic."
+    },
+    {
+      "heading": "Token economics — variance decomposition",
+      "question": "In the browsing-benchmark study behind this concept, roughly what share of performance variance did token usage alone explain?",
+      "answer": "Roughly 80% (about 95% combined with tool-call count and model choice)."
+    },
+    {
+      "heading": "Token economics — cost multiples",
+      "question": "Roughly how many times more tokens do (a) a single agent and (b) a multi-agent system use compared to a plain chat exchange?",
+      "answer": "Roughly 4 times for a single agent, and roughly 15 times for a multi-agent system."
+    },
+    {
+      "heading": "Token economics — fit test",
+      "question": "What task profile justifies the cost of a multi-agent system, and what kind of work is a poor fit?",
+      "answer": "It fits breadth-first work with independent directions, heavy tool use, and information exceeding one context. It's a poor fit for work requiring shared context or dependence on each other's intermediate results — which is why most coding tasks don't suit it."
+    },
+    {
+      "heading": "Token economics — where budget leaks",
+      "question": "What two prompting failures waste a multi-agent system's token budget, per this concept?",
+      "answer": "Vague delegation (causing duplicated work and coverage gaps) and missing effort ceilings (causing agents to misjudge scale) — both are prompting problems, not architecture problems."
+    }
+  ]
+}

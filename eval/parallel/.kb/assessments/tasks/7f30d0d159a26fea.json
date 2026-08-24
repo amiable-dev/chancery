@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "7f30d0d159a26fea",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/stacked-agent-loops.md": "sha256:b3647514c5092a5214492e6369f3a5176f74ffad086dcff19c290c81c77058f8",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/stacked-agent-loops.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:f5eae35ea82752367686547058b12b7a2dba59a1e5c125d48491e3ba533b8f32",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/stacked-agent-loops.md"
+  ]
+}

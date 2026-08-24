@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "3971ca9412be8fb1",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/vulnerability-range-events.md": "sha256:223c089b7bd96a899154c6b2e758a10ee014f08b7de58c88b9e0278f6d2dae65",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/vulnerability-range-events.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:1f0bb7a3bf6a52d4dfb5d46e7d22a89d51ff1993c60bfe967abe8338e85454c0",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/vulnerability-range-events.md"
+  ]
+}

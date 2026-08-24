@@ -1,0 +1,31 @@
+{
+  "task_id": "105caa0bb4587db5",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is split-payload prompt injection, and why does it defeat automated code review?",
+      "answer": "An attack that splits a malicious instruction into a bland-looking pointer (e.g., a repo convention file) and a payload placed in a channel the reviewer never parses (e.g., text rendered inside a referenced image) — so no single reviewed artifact is incriminating, and the exfiltration happens later, in an unrelated session."
+    },
+    {
+      "heading": "Ghostcommit mechanism",
+      "question": "In the Ghostcommit demonstration, where did the pointer live and where did the actual exfiltration procedure live?",
+      "answer": "The pointer was a harmless-reading convention file asking the agent to derive a build constant from a referenced PNG; the actual procedure (read the environment file byte by byte, encode as ASCII integers) was rendered as text inside that PNG — invisible to text-diff review, and one widely used reviewer excludes PNGs from review by default."
+    },
+    {
+      "heading": "Why the exfil format evades scanners",
+      "question": "Why does encoding stolen secrets as integer sequences help the attack evade detection after the code merges?",
+      "answer": "Secret scanners match string patterns; a numeric sequence isn't credential-shaped, so it slips past scanning even though it decodes byte-for-byte into the original secret."
+    },
+    {
+      "heading": "Harness-dependence finding",
+      "question": "What did testing across eleven tool-and-model combinations reveal about what actually determines whether the attack succeeds?",
+      "answer": "The outcome tracked the surrounding agent harness far more than the underlying model — identical Sonnet weights leaked the file under one agent and refused under another, showing the injection defense lives in the harness, not just the model."
+    },
+    {
+      "heading": "Prototype defense",
+      "question": "What made the researchers' prototype defense effective, and what were its reported results?",
+      "answer": "It was multimodal by construction — invisible-character detection, code-shape analysis, and model passes over both convention text and embedded images — catching 49 of 50 attacks with no false positives on thirty benign pull requests, running on a small open model on a single 4GB GPU."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "fbea92b3c965dc99",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition of agent loop telemetry",
+      "question": "What is agent loop telemetry?",
+      "answer": "A passive observation layer around an autonomous agent loop that records each iteration as a span (duration, outcome, token cost, tool calls, files touched) without ever gating, pausing, or steering the loop."
+    },
+    {
+      "heading": "Why the observability gap exists",
+      "question": "Why does a context-resetting agent loop leave behind so little record of how its result was produced?",
+      "answer": "Each pass re-runs with a fresh context window and keeps state only in the filesystem and commits — the amnesia makes the loop robust, but destroys each iteration's reasoning the moment it ends, so only a diff survives."
+    },
+    {
+      "heading": "Observer, not controller",
+      "question": "How does agent loop telemetry interact with the loop it watches?",
+      "answer": "It sits interposed between the loop and the model as a pure observer — recording without gating, approving, or interrupting — so the agent code itself is unmodified."
+    },
+    {
+      "heading": "Per-iteration attribution",
+      "question": "What does agent loop telemetry attribute to each individual iteration?",
+      "answer": "Count, duration, success or failure, cost by model, tool mix, and files touched."
+    },
+    {
+      "heading": "The cost-per-iteration trade-off",
+      "question": "What did the author's instrumented comparison reveal about a cheaper model versus a stronger one on the same task?",
+      "answer": "The cheaper model needed about 44% more iterations and 12% more input tokens, yet still cost roughly 63% less overall — a trade-off invisible without measurement."
+    }
+  ]
+}

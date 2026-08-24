@@ -1,0 +1,24 @@
+{
+  "task_id": "6c1156b83be188a4",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "id": "963e69",
+      "heading": "Definition: the four agentic layers",
+      "question": "What are the four agentic engineering layers, and how do they relate to each other structurally?",
+      "answer": "Prompt (wording), context (everything the model can see), harness (tools, constraints, scaffolding, feedback), and loop (the cycle that runs it and decides when it stops) — each layer wraps the one before it rather than replacing it."
+    },
+    {
+      "id": "665688",
+      "heading": "Why the layers progress outward",
+      "question": "What mechanism drives the progression from prompt engineering to context to harness to loop?",
+      "answer": "Each layer's ceiling motivates the next: a prompt can't supply facts the model was never given (→ context), curated context still fails without dependable tools or checks (→ harness), and a good harness still needs someone to decide which cycle runs and when it stops (→ loop)."
+    },
+    {
+      "id": "1a5757",
+      "heading": "Caveat: a narrative, not a measurement",
+      "question": "What limitation does the concept note about the layering's historical framing, including the dates it assigns?",
+      "answer": "It's a practitioner's way of organizing recent history, not a measured result — the dates it assigns (prompt 2022–2024, context 2025, harness/loop 2026) compress periods that overlapped heavily, and its boundaries are argued rather than sharp."
+    }
+  ]
+}

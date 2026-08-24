@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "8de4fcbe0558b437",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "145b336eab3370f0afb3b2e0fa8a50340c28e99a",
+    "input_hashes": {
+      "concepts/ebbinghaus-forgetting-curve.md": "sha256:757feac99d7c475ec34ad9905f05ea4d3b4788c801249b7bb5e4f9d6937aad7d",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/ebbinghaus-forgetting-curve.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:5f943497b37a14dac756718e33d445989a3cd23c178814c860beebb52661707c",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/ebbinghaus-forgetting-curve.md"
+  ]
+}

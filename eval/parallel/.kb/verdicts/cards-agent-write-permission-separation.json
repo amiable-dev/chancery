@@ -1,0 +1,36 @@
+{
+  "task_id": "ae91596cf7853533",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "id": "91c6ab",
+      "heading": "Definition: read/write permission separation",
+      "question": "Why must an agent's read operations and write operations be governed differently from the start?",
+      "answer": "Reads and writes are different risk categories — a wrong read just wastes a run, but a write to production or a message to a real user can't be undone, so guardrails sit between the agent's output and any state-changing action."
+    },
+    {
+      "id": "7f2e61",
+      "heading": "Why the agent can't self-gate its writes",
+      "question": "Why can't an agent's own confidence be used to decide whether one of its writes is safe to execute?",
+      "answer": "Confidence and correctness are uncorrelated in a model's output — it can reason incorrectly yet answer with high confidence, so nothing in its own reasoning distinguishes a good write from a bad one."
+    },
+    {
+      "id": "88a287",
+      "heading": "Permission boundaries drawn per tool",
+      "question": "How should permission boundaries be assigned across an agent's tools, under this principle?",
+      "answer": "Per tool, by the consequence of that tool being misused — not granted broadly on trust — giving a graded design where a read needs no gate, a scoped write needs validation, and an irreversible action needs a human in the path."
+    },
+    {
+      "id": "1cb745",
+      "heading": "Where validation must sit",
+      "question": "Where must output validation sit to function as a real control, and why can't it live in the prompt?",
+      "answer": "Between the model's proposal and the effect, not inside the prompt — instructions the model is merely asked to follow are not a control over the model, so validation must structurally intercept the action."
+    },
+    {
+      "id": "c664f3",
+      "heading": "Scope constraints do the daily work",
+      "question": "What does limiting what an agent can reach (scope constraints) accomplish in day-to-day practice?",
+      "answer": "It converts many potential incidents into merely failed calls — because the agent physically cannot reach the sensitive target, an incorrect write attempt fails harmlessly instead of executing."
+    }
+  ]
+}

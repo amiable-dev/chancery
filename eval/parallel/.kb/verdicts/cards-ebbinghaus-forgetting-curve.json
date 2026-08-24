@@ -1,0 +1,31 @@
+{
+  "task_id": "8de4fcbe0558b437",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is the Ebbinghaus forgetting curve?",
+      "answer": "The empirical finding, first measured by Hermann Ebbinghaus (1885) via self-experiments on nonsense syllables, that memory retention decays steeply with time when no attempt is made to retain it — newly learned material roughly halves within days or weeks absent review."
+    },
+    {
+      "heading": "Key mechanism",
+      "question": "How did Ebbinghaus quantify retention in his experiments?",
+      "answer": "As 'savings' — the reduction in time needed to relearn material compared with the time needed to learn it the first time — fitted with a logarithmic decay formula."
+    },
+    {
+      "heading": "Shape of the curve",
+      "question": "What shape does retention loss take over time, per the Ebbinghaus curve?",
+      "answer": "Steepest immediately after learning, then flattening out over time."
+    },
+    {
+      "heading": "Replication",
+      "question": "How did a 2015 replication of Ebbinghaus's 1885 self-experiment turn out?",
+      "answer": "It reproduced results similar to the original data — notable durability for a 140-year-old self-experiment."
+    },
+    {
+      "heading": "Scope of the original finding",
+      "question": "Did Ebbinghaus's original work study the effect of spaced review, or only the forgetting itself?",
+      "answer": "Only the forgetting itself. Spaced repetition — scheduling review at increasing intervals to counteract the curve — is a derivative practice that came later, built on his curve as its empirical foundation."
+    }
+  ]
+}

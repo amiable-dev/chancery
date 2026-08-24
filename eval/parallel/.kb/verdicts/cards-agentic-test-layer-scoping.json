@@ -1,0 +1,31 @@
+{
+  "task_id": "908517d3ef79ec87",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition: three testing layers",
+      "question": "What are the three architectural layers that layered testing of agentic systems scopes each test to?",
+      "answer": "A deterministic system shell (APIs, integrations, tool implementations), an orchestration layer that assembles the runtime prompt (deterministic given its inputs), and a black-box inference core reachable only through prompt and state."
+    },
+    {
+      "heading": "Why layering works: most of the app is deterministic",
+      "question": "What insight does the layering exploit to make testing a nondeterministic agentic system tractable?",
+      "answer": "Most of an agentic application is not actually nondeterministic — splitting the stack localizes the nondeterminism to one layer, the inference core, and lets conventional testing keep working everywhere else."
+    },
+    {
+      "heading": "Orchestration bugs are never model faults",
+      "question": "Why can a wrong prompt (unresolved placeholder, stale state, truncated history) be caught deterministically and never blamed on the model?",
+      "answer": "Because prompt construction is a pure function of template, state, and user input at the orchestration layer, so a wrong prompt is a deterministic bug in that function, not a model failure."
+    },
+    {
+      "heading": "Inference core: relational, not exact assertions",
+      "question": "What kinds of assertions replace exact-value checks at the black-box inference core?",
+      "answer": "Metamorphic tests (a defined input change should produce a defined output change), property tests (invariants across generated inputs), and behavioural harnesses (mock APIs and injected failures observing task-completion order and tool-selection consistency)."
+    },
+    {
+      "heading": "Adversarial checks are resilience, not correctness",
+      "question": "How are adversarial suites — prompt-injection resistance, tool-failure handling — scoped within this framework?",
+      "answer": "As resilience testing, not correctness testing — they probe whether the system degrades safely under attack or failure, not whether its output is the 'right' one."
+    }
+  ]
+}

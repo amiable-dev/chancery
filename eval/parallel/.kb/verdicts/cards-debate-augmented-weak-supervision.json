@@ -1,0 +1,31 @@
+{
+  "task_id": "84ac25d291a4089e",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is debate-augmented weak supervision?",
+      "answer": "A hybrid alignment technique: before a weak supervisor labels training data for a strong student, two instances of the strong model debate opposing answers, and the transcript is appended to the weak model's training inputs — letting it extract trustworthy signal from a more capable but untrustworthy model."
+    },
+    {
+      "heading": "Key mechanism",
+      "question": "What principle makes debate transcripts useful signal for the weak supervisor?",
+      "answer": "It is harder to lie than to refute a lie — a debater arguing a falsehood exposes flaws its opponent can convincingly point out, giving the weak model exploitable context."
+    },
+    {
+      "heading": "Ensemble diversity",
+      "question": "Why do four-member weak-model ensembles varying by debate seed outperform single weak models or finetune-seed ensembles?",
+      "answer": "Three-turn transcripts are long relative to weak-model capacity, so varying the debate sampling seed adds useful diversity — transcript diversity, not finetuning noise, is the active ingredient."
+    },
+    {
+      "heading": "Debate length trade-off",
+      "question": "What happened when the debate was extended past three turns?",
+      "answer": "Accuracy fell — debaters lost the thread of the longer transcripts."
+    },
+    {
+      "heading": "Benchmark result",
+      "question": "By how much did debate-augmented weak supervision raise performance-gap-recovered on SciQ over the auxiliary-confidence-loss baseline?",
+      "answer": "From 41.2% to 76.5%, using Qwen-7B as the weak supervisor and Qwen-14B as the strong student."
+    }
+  ]
+}

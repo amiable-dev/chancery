@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "e43b0d5fe26755cd",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "75b9e8dd7cb3c01fa2d01106bb1617c9d957c350",
+    "input_hashes": {
+      "concepts/golden-trajectory-regression.md": "sha256:41312b4c443a382be30cb95d638433d7fc274575a635c243123558bfef7301c6",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/golden-trajectory-regression.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:0a663f91c46c3259f46932a1c72a544d44013b2d7d3679d9e5e1d1ab7dc18bbf",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/golden-trajectory-regression.md"
+  ]
+}

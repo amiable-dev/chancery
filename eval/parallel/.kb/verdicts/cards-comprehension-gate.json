@@ -1,0 +1,31 @@
+{
+  "task_id": "43839cff7671b03b",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is a comprehension gate?",
+      "answer": "A merge precondition satisfied by the human rather than the machine: before a model-authored change lands, the person accountable for it must demonstrate understanding of it, canonically by passing a model-generated quiz about the change's behaviour."
+    },
+    {
+      "heading": "Canonical form and pass bar",
+      "question": "What is the canonical form of a comprehension gate, and why must the score be perfect?",
+      "answer": "A model-generated explainer plus a quiz about the change's behaviour, which the reviewer must pass perfectly. A partial pass would identify the misunderstanding but merge it anyway, so the bar is deliberately set at a perfect score."
+    },
+    {
+      "heading": "Motivation: diffs under-represent behaviour",
+      "question": "Why is reading a diff not sufficient evidence of understanding a change?",
+      "answer": "A diff shows only the lines that moved; whether those lines behave as intended depends on the surrounding system and untouched code paths, which the reviewer must hold in their head and typically does not — especially after a long agentic session that outran what its operator tracked."
+    },
+    {
+      "heading": "Limitation: accountability, not correctness",
+      "question": "What does a comprehension gate fail to verify, and why?",
+      "answer": "It does not verify correctness — a quiz written by the same model that wrote the code shares its blind spots. It verifies only that a human can answer for what is shipping."
+    },
+    {
+      "heading": "Dual use as reviewer pitch",
+      "question": "Besides gating the change's author, what second purpose does the explainer-plus-quiz artifact serve?",
+      "answer": "It doubles as the reviewer-facing pitch: outside reviewers start with the same unknowns the author began with, so the same artifact accelerates their approval and shows that the failure modes an expert would ask about were considered."
+    }
+  ]
+}

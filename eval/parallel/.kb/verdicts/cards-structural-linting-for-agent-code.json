@@ -1,0 +1,31 @@
+{
+  "task_id": "6669fe470f419f10",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Structural linting: definition",
+      "question": "What does structural linting match on, as opposed to a text-level linter?",
+      "answer": "The shape of a construct in the syntax tree (e.g. a function whose default parameter is a mutable literal), instead of characters, tokens, or formatting."
+    },
+    {
+      "heading": "Why agent code needs structural linting",
+      "question": "Why is structural linting particularly valuable for agent-written code rather than human-written code?",
+      "answer": "Models rarely make typographic mistakes; instead they faithfully reproduce syntactically perfect, fluent patterns from training data that lack the caveat making them dangerous — a defect of shape, not spelling, that surface linters don't check for."
+    },
+    {
+      "heading": "Why these defects slip through",
+      "question": "Why do canonical structural defects (e.g. mutable default arguments, over-broad exception handlers) go undetected by existing tooling?",
+      "answer": "They pass linting, type checking, and often the tests, because the defect is a shape rather than a spelling and nothing in surface tooling looks at shapes."
+    },
+    {
+      "heading": "Turning a pattern into a permanent rule",
+      "question": "What is the operational move that makes structural linting compound over time?",
+      "answer": "When the agent produces the same bad construct twice, encode it as a structural rule with its own tests wired into the commit gate and CI, so the correction becomes permanent and applies to every future agent and human."
+    },
+    {
+      "heading": "Where structural linting applies",
+      "question": "What does structural linting require to be applicable to a language, and where does it run?",
+      "answer": "A parser to target for that language; it runs in the same commit and CI gates as ordinary linting."
+    }
+  ]
+}

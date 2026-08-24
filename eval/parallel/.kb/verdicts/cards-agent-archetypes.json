@@ -1,0 +1,31 @@
+{
+  "task_id": "6df7541b8fac7ea2",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Organizing axis: purpose, not build",
+      "question": "What is the organizing axis for the agent-archetypes taxonomy of compound AI system workloads?",
+      "answer": "What each workload shape is for — sorted by breadth/depth of judgment, convergence, meta-observation, routing, or closed-loop control — rather than by how the agent is built."
+    },
+    {
+      "heading": "Worker archetype",
+      "question": "What is the 'worker' archetype, and what previously blocked this kind of work from being automated?",
+      "answer": "Applying a little judgment to an enormous number of near-identical items (e.g. inspecting every cluster or server against a spec); previously automatable only where the difference between items could be written as an if-then rule."
+    },
+    {
+      "heading": "Ruminative agent",
+      "question": "How does the ruminative agent archetype's resource profile differ from the worker's, and how is it often structured?",
+      "answer": "Inverted economics: few inputs but long reasoning — often several agents each holding a different objective (security, cost, latency) arguing it out as a structured debate rather than answering once."
+    },
+    {
+      "heading": "Consultant archetype",
+      "question": "What does the 'consultant' archetype do, and why does that matter for keeping a system efficient?",
+      "answer": "It is the meta-observer that watches the system's own runs for behaviour repetitive enough to demote to a fixed rule — the mechanism for continuously applying the determinism split rather than deciding it once at design time."
+    },
+    {
+      "heading": "Director archetype is aspirational",
+      "question": "What is the status of the 'director' archetype (closing an OODA loop over a constrained domain), per the source?",
+      "answer": "Explicitly aspirational — the speaker states nobody is running one unattended, and expects it first over narrow domains as evals mature."
+    }
+  ]
+}

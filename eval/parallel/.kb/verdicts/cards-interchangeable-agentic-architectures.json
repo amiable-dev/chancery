@@ -1,0 +1,31 @@
+{
+  "task_id": "95f9bf99b74daea9",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What does treating agentic architectures as 'interchangeable' mean?",
+      "answer": "Named agent patterns (reflection, tree/Monte-Carlo search, corrective retrieval, tiered memory, supervisor-specialist teams, sandboxed tool agents) are treated as alternative implementations of one uniform contract — same task in, same result shape out — so the pattern becomes a swappable parameter rather than an architectural commitment."
+    },
+    {
+      "heading": "What the contract enables",
+      "question": "What does the uniform contract make possible that separate per-paper implementations don't?",
+      "answer": "Running every pattern against the same shared task suite, producing a per-task result grid directly comparable across patterns, rather than a stack of incomparable per-paper claims."
+    },
+    {
+      "heading": "What the benchmark actually shows",
+      "question": "What is the informative output of running the patterns against a shared suite — the aggregate score or something else?",
+      "answer": "The pattern-fit failures it exposes — mismatches between a pattern's inductive bias and a task's shape — not the aggregate accuracy score."
+    },
+    {
+      "heading": "Documented pattern-fit failures",
+      "question": "Give two documented pattern-fit failures from the benchmark.",
+      "answer": "Any two of: tree-search patterns collapsing on arithmetic tasks with no branching structure to search; debate/ensemble patterns confidently converging on a wrong answer to a trick question via group-think; memory patterns failing raw-fact recall because they store conversation turns or workflow recipes, not facts."
+    },
+    {
+      "heading": "Evidence caveat",
+      "question": "What should the catalog's quantitative benchmark numbers NOT be read as?",
+      "answer": "A ranking of the patterns — they come from one run on one model over a small task suite for about a dollar and a half of tokens, a snapshot rather than a rigorous evaluation."
+    }
+  ]
+}
