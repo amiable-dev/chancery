@@ -22,3 +22,19 @@
 | 16 | Process: D2's spec returns through council before the D1 tripwire can fire | **Adopted** — packet 8 reserved for the eval-set spec. |
 | 17 | Minority REJECTs on D4/D5 (badge fatigue; false precision) | **Recorded, not adopted.** The majority's presentation-discipline fixes address the substance; deleting rendering re-opens the legibility gap D4 exists to close. |
 | 18 | Council member's local-ONNX suggestion | **Rejected** (with the council majority): running a model inside `kb` violates the CLI-never-calls-a-model contract regardless of locality. |
+
+---
+
+# Packet 8 dispositions — query eval-set spec
+
+*Verdict ACCEPT-WITH-CHANGES (unanimous); per the chairman's process note, changes are adopted inline and no further packet gates the build — the first run's report returns with packet 9 alongside D1.*
+
+**Adopted in full:** B1–B8 (blocking before D1 adjudication), G1–G4 (blocking before score-gating), R1–R10 (required with the build) — the spec is rewritten around them ([../../design/query-eval-set.md](../../design/query-eval-set.md), v2). Highlights of what changed and why: the false claim that all labels predate the rankers is struck and replaced by the freeze→pool→blind-judge→freeze-qrels→score sequence with the label store split a-priori vs pooled (B1); blinded, seeded, rubric-versioned judging with test–retest self-agreement and an independent second-supplier sample (B2); the vacuous repeat-run noise band replaced by three separated quantities — determinism test, bootstrap-over-items uncertainty, named policy tolerance (B4); as-of comparison views, item immutability with supersede-by-id, one eval-set hash, a delta ledger with a published post-hoc-favorable-delta count, and a freeze window during adjudication (B6); the holdout redesigned around the council's sharpest finding — feedback granularity, not readability, is the leak — with aggregate-only outputs enforced by lint, a holdout-absent CI proof of non-dependence, salted commitment manifest, exhaustive qrels at seal, reveal-and-burn rotation, and a published look-count (B7); a preregistered decision rule with exact McNemar (B8); the two-tier vocab-mismatch reoperationalization with `lexical_hard` as a computed behavioral field and `alias_repairable` routing evidence to D9 rather than to an unearned graph stage (R1); curator items excluded (not discounted) from headlines with the seed arithmetic corrected (R2); the exhaustive audit slice and attested no-answer scans that a 212-concept corpus makes affordable (R4).
+
+**Adopted with bounds:**
+- Holdout encryption-at-rest + key escrow (part of B7's list): adopted as *optional hardening* — the deletion-proof CI job and aggregate-only lint are the mechanical seals; encryption defends against stray tooling, not the maintainer, as the spec now states plainly for the whole sealing regime.
+- `no-answer` abstention contract (R5): defined rather than deferred — a challenger abstains when no candidate clears a declared score cutoff; the cutoff lives in the policy hash.
+
+**Recorded, not adopted:** the minority proposal to move the ratchet off the holdout onto the public set — per the chairman, that is a D2 amendment which returns to council only if implementation shows the holdout cannot be both CI-gating and meaningfully sealed.
+
+**Chairman's non-negotiables noted as such:** B4, B6, B7.

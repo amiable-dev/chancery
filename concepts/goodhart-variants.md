@@ -8,6 +8,10 @@ tags: [concept, evaluation, governance, metrics, domain/governance, maturity/est
 status: draft
 sources:
   - url: https://arxiv.org/abs/1803.04585
+    hash: sha256:7a0d21abcfbf8c5c5daa61350561eba47b8035bdcd6c6a7df09c9fa3f0cb6eb3
+    retrieved: 2026-08-24
+    class: external-primary
+    reachability: ok
 ---
 
 # Goodhart's law variants

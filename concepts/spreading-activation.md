@@ -8,6 +8,10 @@ tags: [concept, retrieval, graphs, cognitive-science, domain/llm, maturity/estab
 status: draft
 sources:
   - url: https://en.wikipedia.org/wiki/Spreading_activation
+    hash: sha256:68fc945b83abc8f64922e06c00c3f9f30347b122b27728877283ff339e262ada
+    retrieved: 2026-08-24
+    class: external-secondary
+    reachability: ok
 ---
 
 # Spreading activation

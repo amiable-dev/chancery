@@ -8,6 +8,10 @@ tags: [concept, evaluation, statistics, methodology, domain/data, maturity/estab
 status: draft
 sources:
   - url: https://arxiv.org/abs/1411.2664
+    hash: sha256:d8c3c81625e520c02b8fe2f2a567d26edde0648c12d3fbd2834f73584406821d
+    retrieved: 2026-08-24
+    class: external-primary
+    reachability: ok
 ---
 
 # Adaptive data analysis

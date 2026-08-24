@@ -8,6 +8,10 @@ tags: [concept, evaluation, retrieval, history, domain/knowledge-management, mat
 status: draft
 sources:
   - url: https://en.wikipedia.org/wiki/Cranfield_experiments
+    hash: sha256:c86b6c49167cdf802bd315c1f367e92b0f1f721699ead8efac66604841f2aeb4
+    retrieved: 2026-08-24
+    class: external-secondary
+    reachability: ok
 ---
 
 # Cranfield paradigm

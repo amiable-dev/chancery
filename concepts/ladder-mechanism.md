@@ -8,6 +8,10 @@ tags: [concept, evaluation, statistics, leaderboards, domain/data, maturity/esta
 status: draft
 sources:
   - url: https://arxiv.org/abs/1502.04585
+    hash: sha256:63a51ee651c8c523ee6a8fa158cd1b47c1b5d2856efa7610f22bdc4123434b13
+    retrieved: 2026-08-24
+    class: external-primary
+    reachability: ok
 ---
 
 # The Ladder mechanism

@@ -1,0 +1,20 @@
+{
+  "envelope": {
+    "task_id": "746613a0de2d46d0",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "ec6d0419a220285647c31f46a415579b52e1a3e0",
+    "input_hashes": {
+      "concepts/vocabulary-mismatch.md": "sha256:63ca2fd40abaada6699c5e94273e804ffb6af55da9e6d784b8a6078e4b673307",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/vocabulary-mismatch.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

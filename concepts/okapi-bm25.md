@@ -8,6 +8,10 @@ tags: [concept, retrieval, ranking, lexical-search, domain/llm, maturity/establi
 status: draft
 sources:
   - url: https://en.wikipedia.org/wiki/Okapi_BM25
+    hash: sha256:48bf2561dbfb0e1e3aef732fae8cd21c27cfe7e816209adfc28f07a43a682bc2
+    retrieved: 2026-08-24
+    class: external-secondary
+    reachability: ok
 ---
 
 # Okapi BM25

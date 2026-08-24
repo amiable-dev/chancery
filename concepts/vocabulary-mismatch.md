@@ -8,6 +8,10 @@ tags: [concept, retrieval, language, evaluation, domain/llm, maturity/establishe
 status: draft
 sources:
   - url: https://en.wikipedia.org/wiki/Vocabulary_mismatch
+    hash: sha256:fe7654eed10df4e0037378c8312044a5ce00f9a7093e933b6ad545be242a06f6
+    retrieved: 2026-08-24
+    class: external-secondary
+    reachability: ok
 ---
 
 # Vocabulary mismatch

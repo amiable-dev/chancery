@@ -1,0 +1,20 @@
+{
+  "envelope": {
+    "task_id": "8ab26695af0cbc50",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "ec6d0419a220285647c31f46a415579b52e1a3e0",
+    "input_hashes": {
+      "concepts/spreading-activation.md": "sha256:6102631eb29d4744c5edc3a8aa25ae480eba000c8a42d9528824a05abde274b2",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/spreading-activation.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

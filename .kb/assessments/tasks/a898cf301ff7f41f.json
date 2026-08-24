@@ -1,0 +1,20 @@
+{
+  "envelope": {
+    "task_id": "a898cf301ff7f41f",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "ec6d0419a220285647c31f46a415579b52e1a3e0",
+    "input_hashes": {
+      "concepts/adaptive-data-analysis.md": "sha256:b5c3c6b3742e70e645985a7f7a5a658d3f906424a08356de803b01de04b7ad98",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/adaptive-data-analysis.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

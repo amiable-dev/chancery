@@ -8,6 +8,10 @@ tags: [concept, evaluation, retrieval, institutions, domain/knowledge-management
 status: draft
 sources:
   - url: https://trec.nist.gov/overview.html
+    hash: sha256:daa148a7fcfc31355c1934db839e3c27a77c8dccd2360bc220e1426d643d35b2
+    retrieved: 2026-08-24
+    class: external-primary
+    reachability: ok
 ---
 
 # TREC (Text REtrieval Conference)

@@ -8,6 +8,10 @@ tags: [concept, ranking, graphs, algorithms, domain/llm, maturity/established, s
 status: draft
 sources:
   - url: https://en.wikipedia.org/wiki/PageRank
+    hash: sha256:79a1b92f4e40267c5fb66d00c7edc819162c7b967e4225dd3b535e237cea840d
+    retrieved: 2026-08-24
+    class: external-secondary
+    reachability: ok
 ---
 
 # PageRank
