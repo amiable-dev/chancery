@@ -65,6 +65,10 @@ Per run: recall@k and success@k against `required`; precision@k against pooled q
 - 4 `no-answer`.
 External-reader items accrue as they arrive; the 50%-external promotion trigger is expected to take months, and that is fine — the set is honest before it is large.
 
+## Corpus grounding
+
+The spec's methodology now stands on corpus concepts rather than bare prose — each admitted through the gate with hashed evidence: [[cranfield-paradigm]] and [[trec]] (where fixed-judgment evaluation and the qrels/pooling vocabulary come from, including the 30%+ expert-judge disagreement that motivates pooled rather than assumed ground truth), [[vocabulary-mismatch]] (the quantified case for the vocab-mismatch subset: ~80% naming divergence, query terms absent from 30–40% of relevant documents), [[okapi-bm25]] (the seed-stage function and null-hypothesis baseline), [[pagerank]] and [[spreading-activation]] (the graph-rank design space the D1 bake-off spans, with the small-graph caveats stated as properties), [[goodhart-variants]] (the failure family the anti-gaming controls resist), and [[adaptive-data-analysis]] + [[ladder-mechanism]] (why sealed holdouts deplete under adaptive consultation and why the reporting channel — ratchets, noise bands — is part of the mechanism).
+
 ## Out of scope
 
 Ranking implementations (D1 bake-off — after packet 8 and only when the tripwire fires); embeddings in any read path; any model call inside the harness.
