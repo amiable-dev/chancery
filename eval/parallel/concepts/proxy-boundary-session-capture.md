@@ -8,6 +8,10 @@ tags: [concept, observability, ai-agents, reliability, domain/observability, mat
 status: draft
 sources:
   - url: https://briandouglas.me/posts/2026/03/04/claude-failed-mid-session-tapes-brought-it-back/
+    hash: sha256:14b1a8ad23aa4a8fff32a3738ad44026e969539a497dc130a04583da656118b1
+    retrieved: 2026-08-24
+    class: external-primary
+    reachability: ok
 ---
 
 # Proxy-boundary session capture
