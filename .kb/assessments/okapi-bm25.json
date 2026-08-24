@@ -1,0 +1,49 @@
+{
+  "target": "staging/okapi-bm25.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/okapi-bm25.md",
+    "task_id": "6a0fe998374a7cf8",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Reference or research material, not an announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "hybrid-search-fusion covers fusing lexical with vector channels; it presumes BM25 rather than explaining it — complementary, not duplicate."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Published, cited material; claims checkable at the linked source."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The standard lexical ranking function for four decades — probabilistic relevance framework, explicit formula, named parameters (k1, b), stable variants (BM25F)."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "The scoring function is given in full and is directly implementable; it is the exact function our retrieval design names as the seed stage."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One function and its variants."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/spreading-activation.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/spreading-activation.md",
+    "task_id": "a9a34821ef268c39",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Reference or research material, not an announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No graph-propagation retrieval concept exists; the retrieval ADR names this as a bake-off candidate with no backing note."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Published, cited material; claims checkable at the linked source."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "A decades-old associative-search method — seed labeling, weighted decaying propagation, termination on path convergence — with roots in cognitive psychology and a documented IR application."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "The mechanism is described operationally: seeds, weights, decay, marker passing; enough to implement a bounded variant."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One method."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/vocabulary-mismatch.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/vocabulary-mismatch.md",
+    "task_id": "ccc0cd5efd03c8a1",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Reference or research material, not an announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No vocabulary-mismatch concept exists; the eval spec's vocab-mismatch subset currently cites nothing."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Published, cited material; claims checkable at the linked source."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Quantified, replicated phenomenon: ~80% naming divergence between experts (Furnas 1987); an average query term absent from 30-40% of relevant documents (Zhao & Callan 2010)."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Carries concrete remedies with effect sizes: stemming/lemmatization, term-weight prediction (50-80% gains), CNF expansion (50-300%)."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One phenomenon with its measurements and remedies."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

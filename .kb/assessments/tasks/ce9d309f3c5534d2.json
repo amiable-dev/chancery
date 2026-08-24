@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "ce9d309f3c5534d2",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "84280f150d204cd7b866baac31bd516cd7a8dbf8",
+    "input_hashes": {
+      "staging/categorizing-variants-of-goodharts-law.md": "sha256:909e0596cd9a616b6bdad9e680826c539fd9056dd26248aa36d7d6ed31c4635b",
+      "rubric:promotion": "sha256:d0d257c237770d067f3d0cc334cf3c3b174661f4b054475af770484d513e076d",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:07b1b4459129f840e084a87be8fc2d288806654f147acaa683bc41b8442727ed",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/categorizing-variants-of-goodharts-law.json"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/categorizing-variants-of-goodharts-law.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/categorizing-variants-of-goodharts-law.md",
+    "task_id": "ce9d309f3c5534d2",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Reference or research material, not an announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "agent-outcome-vs-proxy-metrics covers proxy gaming in agent evals; this is the general taxonomy underneath it, not a duplicate."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Published, cited material; claims checkable at the linked source."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "A taxonomy of metric-overoptimization failure modes is conceptual work that ages well; the paper explicitly targets ML and alignment where proxy pressure is highest."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The staged note carries the abstract: the taxonomy's existence and framing, not its mechanisms — the full paper is one link deeper."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One thesis: distinct Goodhart mechanisms deserve distinct names."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

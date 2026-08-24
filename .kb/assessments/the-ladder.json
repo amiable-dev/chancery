@@ -1,0 +1,49 @@
+{
+  "target": "staging/the-ladder.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/the-ladder.md",
+    "task_id": "3ba6aceaec1dccb5",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Reference or research material, not an announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Sibling of the adaptive-data-analysis paper staged alongside it, but the leaderboard/holdout instance is its own contribution — related, not duplicate."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Published, cited material; claims checkable at the linked source."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Leaderboard overfitting from adaptive resubmission is a permanent mechanism, and the Ladder's guarantee-carrying answer (with a parameter-free variant) is the reference design."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The abstract names the properties and the existence of a deployable variant, not the procedure itself."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One problem, one algorithm."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

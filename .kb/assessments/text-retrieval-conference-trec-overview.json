@@ -1,0 +1,49 @@
+{
+  "target": "staging/text-retrieval-conference-trec-overview.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/text-retrieval-conference-trec-overview.md",
+    "task_id": "45adedf3637e2daa",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Reference or research material, not an announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The Cranfield note covers the paradigm's origin; this covers its industrial-scale institutionalization — adjacent, not duplicate."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Published, cited material; claims checkable at the linked source."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "TREC institutionalized large-collection retrieval evaluation from 1992 — the infrastructure model (shared collections, open forum, measured tech transfer) outlives any single track list."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Institutional overview: goals and structure, not methodology detail — pooling and qrels specifics live a level deeper than this page."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One institution and its purpose."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

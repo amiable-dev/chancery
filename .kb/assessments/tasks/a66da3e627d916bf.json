@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "a66da3e627d916bf",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "84280f150d204cd7b866baac31bd516cd7a8dbf8",
+    "input_hashes": {
+      "staging/preserving-statistical-validity-in-adaptive-data.md": "sha256:e662845538813242c4dc2e77da238f2b6e766a4aeb9a0140f1e325269ceb9d96",
+      "assessment:preserving-statistical-validity-in-adaptive-data": "sha256:d25da6b5c7f054283445b23283f02b45986e24f9cf7d6719e8beb653ae23f7c3",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:2771529f0a8f333d871786187bdd80b533aeb60ae66c973339bb995069dc077a",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/adaptive-data-analysis.md"
+  ]
+}

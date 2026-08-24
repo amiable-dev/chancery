@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "45adedf3637e2daa",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "84280f150d204cd7b866baac31bd516cd7a8dbf8",
+    "input_hashes": {
+      "staging/text-retrieval-conference-trec-overview.md": "sha256:f96a53a035e00dea8d87cf39073f10856ea9663faef1e30d591ab8d515117e45",
+      "rubric:promotion": "sha256:d0d257c237770d067f3d0cc334cf3c3b174661f4b054475af770484d513e076d",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:f0955bf5ffe54270bf124cfcc0137984cfb38a4fa2f9d861ef3a992e9fddca4c",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/text-retrieval-conference-trec-overview.json"
+  ]
+}

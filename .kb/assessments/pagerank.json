@@ -1,0 +1,49 @@
+{
+  "target": "staging/pagerank.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/pagerank.md",
+    "task_id": "fb83505939720be6",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Reference or research material, not an announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Nothing in the corpus covers link-analysis ranking; the retrieval ADR references it but no concept holds it."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Published, cited material; claims checkable at the linked source."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Link-analysis ranking by recursive importance with damping — the founding web-graph algorithm, patents expired, variants (personalized/topic-sensitive) documented."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "The algorithm, damping factor, and iterative computation are specified concretely enough to implement and to critique."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One algorithm with its variants and known manipulation modes."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

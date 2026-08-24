@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "a9a34821ef268c39",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "84280f150d204cd7b866baac31bd516cd7a8dbf8",
+    "input_hashes": {
+      "staging/spreading-activation.md": "sha256:dae4d5915595589f429ccb55929f8f64e9bbbb0269c2b14a11d2b9ddc20ec76f",
+      "rubric:promotion": "sha256:d0d257c237770d067f3d0cc334cf3c3b174661f4b054475af770484d513e076d",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:6245784c795907e90bd156c6f903c585b52716d3c276e9429c96a5a912f6e949",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/spreading-activation.json"
+  ]
+}

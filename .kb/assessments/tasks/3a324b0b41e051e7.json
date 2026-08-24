@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "3a324b0b41e051e7",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "84280f150d204cd7b866baac31bd516cd7a8dbf8",
+    "input_hashes": {
+      "staging/pagerank.md": "sha256:14ace6537bc370767341e1b9febe98c1cc4b11e0301cee20fb1e1021534eef56",
+      "assessment:pagerank": "sha256:a1ce9b1484ab585259c42572119e85e3b32ddb780ced0afe7053c82c96df2f0c",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:95cd1bd0de79ea65124d966bfe801bb571027727c57e939079a77ebdceb9ad34",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/pagerank.md"
+  ]
+}

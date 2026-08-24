@@ -1,0 +1,49 @@
+{
+  "target": "staging/preserving-statistical-validity-in-adaptive-data.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/preserving-statistical-validity-in-adaptive-data.md",
+    "task_id": "295e0522265f64df",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Reference or research material, not an announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No adaptive-analysis or holdout-validity concept exists."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Published, cited material; claims checkable at the linked source."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The foundational result that adaptive reuse of a dataset invalidates classical inference guarantees, and that privacy-style perturbation restores them — the theory underneath every reusable-holdout design."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Abstract-level: the mechanism is named (perturb and coordinate estimates) but not procedural in the note."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One problem and one result."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

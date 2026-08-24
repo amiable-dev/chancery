@@ -1,0 +1,42 @@
+{
+  "envelope": {
+    "task_id": "314f46a404fafe2d",
+    "verb": "facets",
+    "task_class": "classification",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "84280f150d204cd7b866baac31bd516cd7a8dbf8",
+    "input_hashes": {
+      "concepts/adaptive-data-analysis.md": "sha256:313419ccec07ae9eaebae2515c1bdceef679b0f79f0b8ffbdb64411ac6151de6",
+      "concepts/cranfield-paradigm.md": "sha256:80832f201b7a3aa882036412c6ac7603e9f0221c674ed37cdf160fcf03f89982",
+      "concepts/goodhart-variants.md": "sha256:619c1e6cb1bd07176debabe60b19bfc4f687c94754b3cb54fbae7a8776635fa3",
+      "concepts/ladder-mechanism.md": "sha256:1ca55ebad56616e0fa9f30164073a11b9ada91157cbe703976bee45c96669e16",
+      "facets.yml": "sha256:62afa0cbf3f4eec64d0b866a21315734ee58eaf77627ea84f4c8a97c1aeb511c",
+      "schema:facet-draft.schema.json": "sha256:5d6d1031e7ab526fc47f1cadbf47c4ed614474265875721fdddab2d5672a1e40"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:b4fa34ecb6f943af2b545bc8b26a3e3260a7c96084a5805fee0f866f4b91c3e9",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/goodhart-variants.md",
+    "concepts/cranfield-paradigm.md",
+    "concepts/okapi-bm25.md",
+    "concepts/pagerank.md",
+    "concepts/adaptive-data-analysis.md",
+    "concepts/spreading-activation.md",
+    "concepts/trec.md",
+    "concepts/ladder-mechanism.md",
+    "concepts/vocabulary-mismatch.md"
+  ]
+}

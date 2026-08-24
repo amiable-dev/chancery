@@ -1,0 +1,49 @@
+{
+  "target": "staging/cranfield-experiments.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/cranfield-experiments.md",
+    "task_id": "5fb113229142cd8f",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Reference or research material, not an announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No retrieval-evaluation history exists in the corpus; golden-dataset-retrieval-evals is the practice, not the origin."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Published, cited material; claims checkable at the linked source."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The founding paradigm of retrieval evaluation — fixed collection, queries, relevance judgments — plus the historically load-bearing detail that expert judges rejected 30%+ of each other's relevance calls."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "History and paradigm, not procedure; its value is as the model every later eval (TREC, ours) instantiates."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One subject: the experiments and the paradigm they created."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "a8d2b4ea56b5a8de",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "84280f150d204cd7b866baac31bd516cd7a8dbf8",
+    "input_hashes": {
+      "staging/spreading-activation.md": "sha256:dae4d5915595589f429ccb55929f8f64e9bbbb0269c2b14a11d2b9ddc20ec76f",
+      "assessment:spreading-activation": "sha256:412e7413b72aaef8979f8e0ca8a358bac3cbcbdce08e7bfe01db4b534ef2f72c",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:2ee6056ec5a404edc4fe5bdb28bf2e107c349a0cca3cc21e96cd1561adb7cc89",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/spreading-activation.md"
+  ]
+}

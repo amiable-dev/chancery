@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "fb83505939720be6",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "84280f150d204cd7b866baac31bd516cd7a8dbf8",
+    "input_hashes": {
+      "staging/pagerank.md": "sha256:14ace6537bc370767341e1b9febe98c1cc4b11e0301cee20fb1e1021534eef56",
+      "rubric:promotion": "sha256:d0d257c237770d067f3d0cc334cf3c3b174661f4b054475af770484d513e076d",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:4c18a5fb31e073f26bde23487904a749de05e482b346852bd7b16b0870e34d6e",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/pagerank.json"
+  ]
+}

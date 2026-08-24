@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "872040fa8352143a",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "84280f150d204cd7b866baac31bd516cd7a8dbf8",
+    "input_hashes": {
+      "staging/okapi-bm25.md": "sha256:d44979f0c13c283e8169c70d1ca501c47cf23f36806d0dd3cae9d149e7ac441b",
+      "assessment:okapi-bm25": "sha256:1a15a7d0d87e14aca8bb2bf01e1089d69ad429041f3fc2bc2f737970f329f354",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:e5e6cd57db2a0f8c0f2137427f4d40609dbc36491a8055625a85fb2f646d52c1",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/okapi-bm25.md"
+  ]
+}

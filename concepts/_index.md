@@ -7,6 +7,7 @@ All concept notes in this repo, alphabetical order.
 | [[acceptability-envelope-evals\|Acceptability-envelope evals]] | llm, evaluation, testing, domain/llm, maturity/emerging, source-type/practitioner |
 | [[retrieval-layer-access-control\|Access control at the retrieval layer]] | security, retrieval, rag, domain/security, maturity/emerging, source-type/practitioner |
 | [[actionable-page-criteria\|Actionable page criteria]] | alerting, on-call, sre, domain/reliability, maturity/established, source-type/practitioner |
+| [[adaptive-data-analysis\|Adaptive data analysis]] | evaluation, statistics, methodology, domain/data, maturity/established, source-type/research |
 | [[agent-archetypes\|Agent archetypes]] | agents, taxonomy, architecture, domain/ai-agents, maturity/emerging, source-type/practitioner |
 | [[agent-harness\|Agent harness]] | ai-agents, architecture, context, domain/ai-agents, maturity/emerging, source-type/vendor-doc |
 | [[agent-instruction-layering\|Agent instruction layering]] | agents, prompting, context, domain/ai-agents, maturity/emerging, source-type/practitioner |
@@ -51,6 +52,7 @@ All concept notes in this repo, alphabetical order.
 | [[context-rot\|Context rot]] | llm, long-context, evaluation, domain/llm, maturity/emerging, source-type/research |
 | [[continuous-profiling\|Continuous profiling]] | observability, performance, profiling, domain/observability, maturity/emerging, source-type/practitioner |
 | [[contract-driven-agent-development\|Contract-driven agent development]] | agents, software-process, specification, domain/software-engineering, maturity/emerging, source-type/vendor-doc |
+| [[cranfield-paradigm\|Cranfield paradigm]] | evaluation, retrieval, history, domain/knowledge-management, maturity/established, source-type/research |
 | [[cross-run-observational-memory\|Cross-run observational memory]] | ai-agents, memory, observability, domain/ai-agents, maturity/emerging, source-type/practitioner |
 | [[cross-run-result-identity\|Cross-run result identity and baselining]] | static-analysis, security, tooling, domain/standards, maturity/established, source-type/vendor-doc |
 | [[cyclonedx-object-model\|CycloneDX object model]] | security, supply-chain, standards, domain/standards, maturity/established, source-type/vendor-doc |
@@ -85,6 +87,7 @@ All concept notes in this repo, alphabetical order.
 | [[gateway-channel-ownership\|Gateway-owned channel architecture]] | architecture, agents, messaging, protocol-design, domain/ai-agents, maturity/emerging, source-type/vendor-doc, topic/protocols |
 | [[golden-trajectory-regression\|Golden trajectory regression testing]] | agents, testing, observability, domain/ai-agents, maturity/emerging, source-type/practitioner |
 | [[golden-dataset-retrieval-evals\|Golden-dataset retrieval evals]] | llm, evaluation, retrieval, domain/llm, maturity/emerging, source-type/practitioner |
+| [[goodhart-variants\|Goodhart's law variants]] | evaluation, governance, metrics, domain/governance, maturity/established, source-type/research |
 | [[agent-loop-governance\|Governing the automation loop]] | security, governance, ai-native-sdlc, domain/security, maturity/emerging, source-type/vendor-doc |
 | [[graph-vs-vector-code-retrieval\|Graph vs vector retrieval for code]] | llm, retrieval, code-analysis, domain/llm, maturity/emerging, source-type/vendor-doc |
 | [[current-state-grounding\|Grounding agents in current state]] | agents, retrieval, tooling, domain/ai-agents, maturity/emerging, source-type/practitioner |
@@ -135,11 +138,13 @@ All concept notes in this repo, alphabetical order.
 | [[observability-generations\|Observability generations (1.0 vs 2.0)]] | observability, telemetry, cost-model, domain/observability, maturity/emerging, source-type/vendor-doc |
 | [[observability-pipeline-control-point\|Observability pipeline as a control point]] | observability, data-pipeline, architecture, vendor-strategy, domain/observability, maturity/emerging, source-type/vendor-doc |
 | [[observe-and-confine-sandboxing\|Observe-and-confine sandboxing]] | agents, security, observability, domain/security, maturity/emerging, source-type/practitioner |
+| [[okapi-bm25\|Okapi BM25]] | retrieval, ranking, lexical-search, domain/llm, maturity/established, source-type/research |
 | [[opaque-agent-interop\|Opaque agent interoperability]] | ai-agents, protocols, interoperability, domain/standards, maturity/emerging, source-type/vendor-doc |
 | [[orchestration-as-provider-hedge\|Orchestration as a provider hedge]] | orchestration, vendor-risk, ai-strategy, domain/ai-agents, maturity/emerging, source-type/practitioner |
 | [[osv-format\|OSV format]] | security, supply-chain, standards, domain/security, maturity/established, source-type/practitioner |
 | [[agent-outcome-vs-proxy-metrics\|Outcome versus proxy metrics for agents]] | agents, observability, evaluation, domain/ai-agents, maturity/emerging, source-type/practitioner |
 | [[outcome-based-agent-evals\|Outcome-based agent evaluation]] | evaluation, ai-agents, llm-as-judge, domain/ai-agents, maturity/emerging, source-type/vendor-doc |
+| [[pagerank\|PageRank]] | ranking, graphs, algorithms, domain/llm, maturity/established, source-type/research |
 | [[parallel-automated-researchers\|Parallel automated researchers]] | ai-agents, research-automation, ai-safety, domain/ai-safety, maturity/emerging, source-type/research |
 | [[partitioned-edit-consistency-debt\|Partitioned-edit consistency debt]] | ai-agents, software-maintenance, correctness, domain/software-engineering, maturity/emerging, source-type/practitioner |
 | [[passkey-authentication\|Passkeys]] | security, authentication, identity, domain/security, maturity/emerging, source-type/practitioner |
@@ -186,6 +191,7 @@ All concept notes in this repo, alphabetical order.
 | [[spec-driven-slo-generation\|Spec-driven SLO rule generation]] | reliability, observability, sre, domain/reliability, maturity/emerging, source-type/practitioner |
 | [[specification-gaming-to-reward-tampering\|Specification gaming to reward tampering]] | ai-safety, alignment, reinforcement-learning, domain/ai-safety, maturity/emerging, source-type/research |
 | [[split-payload-prompt-injection\|Split-payload prompt injection]] | security, prompt-injection, supply-chain, domain/security, maturity/emerging, source-type/practitioner |
+| [[spreading-activation\|Spreading activation]] | retrieval, graphs, cognitive-science, domain/llm, maturity/established, source-type/research |
 | [[mcp-oauth-discovery-ssrf\|SSRF via MCP OAuth discovery]] | security, mcp, oauth, ssrf, domain/security, maturity/emerging, source-type/vendor-doc, topic/mcp |
 | [[stacked-agent-loops\|Stacked production agent loops]] | ai-agents, architecture, continuous-improvement, domain/ai-agents, maturity/emerging, source-type/practitioner |
 | [[state-authoritative-agent-ui\|State-authoritative agent interface]] | agents, interface-design, state-management, domain/ai-agents, maturity/emerging, source-type/vendor-doc |
@@ -199,6 +205,7 @@ All concept notes in this repo, alphabetical order.
 | [[temporal-fakes\|Temporal fakes]] | testing, simulation, observability, domain/software-engineering, maturity/emerging, source-type/practitioner |
 | [[ai-coding-maintainability-gap\|The AI coding maintainability gap]] | ai-coding, code-quality, technical-debt, software-engineering, domain/software-engineering, maturity/emerging, source-type/research, topic/agentic-coding |
 | [[four-golden-signals\|The four golden signals]] | observability, monitoring, sre, domain/observability, maturity/established, source-type/practitioner |
+| [[ladder-mechanism\|The Ladder mechanism]] | evaluation, statistics, leaderboards, domain/data, maturity/established, source-type/research |
 | [[three-loops-of-agentic-development\|Three loops of agentic development]] | agentic-coding, product-development, feedback-loops, domain/software-engineering, maturity/emerging, source-type/practitioner |
 | [[threshold-signed-software-updates\|Threshold-signed software update security]] | security, supply-chain, cryptography, software-distribution, domain/standards, maturity/established, source-type/vendor-doc, topic/supply-chain |
 | [[tiered-execution-gating-for-ai-agents\|Tiered execution gating for AI agents]] | security, ai-agents, agent-harness, domain/security, maturity/emerging, source-type/vendor-doc |
@@ -207,10 +214,12 @@ All concept notes in this repo, alphabetical order.
 | [[trace-to-dataset-loop\|Trace-to-dataset evaluation loop]] | llmops, observability, evaluation, domain/observability, maturity/emerging, source-type/practitioner |
 | [[short-term-availability-tradeoff\|Trading short-term availability for long-term health]] | reliability, on-call, sre, domain/reliability, maturity/established, source-type/practitioner |
 | [[transformer-architecture\|Transformer architecture]] | machine-learning, neural-networks, attention, domain/llm, maturity/established, source-type/research |
+| [[trec\|TREC (Text REtrieval Conference)]] | evaluation, retrieval, institutions, domain/knowledge-management, maturity/established, source-type/research |
 | [[evidence-recheck-triage\|Triage as a separate evidence pass]] | agents, security, verification, domain/security, maturity/emerging, source-type/practitioner |
 | [[typed-knowledge-graph-layer\|Typed knowledge graph layer]] | knowledge-management, knowledge-graph, ai-agents, domain/knowledge-management, maturity/emerging, source-type/practitioner |
 | [[unknowns-inventory-prompting\|Unknowns inventory in prompting]] | prompting, human-ai-interaction, software-engineering, domain/software-engineering, maturity/emerging, source-type/vendor-doc |
 | [[vlm-document-parsing\|Vision-language document parsing]] | machine-learning, document-processing, ocr, domain/llm, maturity/emerging, source-type/practitioner |
+| [[vocabulary-mismatch\|Vocabulary mismatch]] | retrieval, language, evaluation, domain/llm, maturity/established, source-type/research |
 | [[vulnerability-range-events\|Vulnerability range events]] | security, supply-chain, standards, domain/standards, maturity/established, source-type/vendor-doc |
 | [[wave-based-parallel-agent-execution\|Wave-based parallel agent execution]] | agents, software-process, parallelism, domain/software-engineering, maturity/emerging, source-type/vendor-doc |
 | [[weak-to-strong-generalization\|Weak-to-strong generalization]] | ai-safety, alignment, evaluation, domain/ai-safety, maturity/established, source-type/research |

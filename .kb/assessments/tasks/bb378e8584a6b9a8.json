@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "bb378e8584a6b9a8",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "84280f150d204cd7b866baac31bd516cd7a8dbf8",
+    "input_hashes": {
+      "staging/vocabulary-mismatch.md": "sha256:16eae3ef686dc08754e58b8b1335b2ebd5d06f03a6d171c2a149388ff152fc26",
+      "assessment:vocabulary-mismatch": "sha256:2b9f16cc84625d674548bf895c0e4d5debb1f1192cfae1622aefb4851de582bb",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:f762abbc819dc6383beb5367e8448616275be85624e29fa30dbe1c493afa705c",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/vocabulary-mismatch.md"
+  ]
+}
