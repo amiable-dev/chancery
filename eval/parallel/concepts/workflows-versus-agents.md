@@ -8,7 +8,10 @@ tags: [concept, ai-agents, design-patterns, architecture, domain/ai-agents, matu
 status: draft
 sources:
   - url: https://www.anthropic.com/engineering/building-effective-agents
+    hash: sha256:a1f2257ff438964f64caa04bbfd0b5cc1f93f3236202a67412a5990369e3433a
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Workflows versus agents

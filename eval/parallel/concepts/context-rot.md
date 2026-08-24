@@ -10,7 +10,10 @@ tags: [concept, llm, long-context, evaluation, domain/llm, maturity/emerging, so
 status: draft
 sources:
   - url: https://www.trychroma.com/research/context-rot
+    hash: sha256:cd9d6d56edb0206ddd7946e8b9790771413425b7c29ded3afdffdb5b46253ecf
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Context rot

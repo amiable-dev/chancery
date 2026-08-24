@@ -10,7 +10,10 @@ tags: [concept, code-intelligence, static-analysis, graphs, domain/software-engi
 status: draft
 sources:
   - url: https://rustic-ai.github.io/codeprism/blog/graph-based-code-analysis-engine/
+    hash: sha256:fb3cf4c1bd3b300fba4466a61ab25448831226b68ca4474d9755d88d02801c75
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Language-agnostic code graph

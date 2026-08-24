@@ -8,7 +8,10 @@ tags: [concept, security, identity, ai-agents, domain/security, maturity/emergin
 status: draft
 sources:
   - url: https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview
+    hash: sha256:3f69bd4a488f7bfbb8b1555cae63f01cadcf3f144f9c663fac893c106b5f9bfc
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Attested per-agent identity

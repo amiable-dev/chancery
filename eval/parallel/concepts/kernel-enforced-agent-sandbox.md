@@ -8,7 +8,10 @@ tags: [concept, security, agents, sandboxing, domain/security, maturity/emerging
 status: draft
 sources:
   - url: https://omnigent.ai/docs/omnibox
+    hash: sha256:7e4aba8c51ff366e2cf6e0bd1a77e87934aba7268222a0f6ccaeb57f8ed0d987
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Kernel-enforced agent sandbox

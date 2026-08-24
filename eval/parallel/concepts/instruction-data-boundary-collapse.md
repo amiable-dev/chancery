@@ -10,7 +10,10 @@ tags: [concept, security, llm, prompt-injection, domain/security, maturity/emerg
 status: draft
 sources:
   - url: https://www.oreilly.com/radar/context-as-code/
+    hash: sha256:36f3b757baaa836f0f6e1f54a9b603b618a1fdb5f731a93fa19abb4ddb351653
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Instruction and data boundary collapse

@@ -8,7 +8,10 @@ tags: [concept, llmops, observability, evaluation, domain/observability, maturit
 status: draft
 sources:
   - url: https://www.langchain.com/blog/how-schneider-electric-built-their-llmops-foundations-at-enterprise-scale-with-langsmith
+    hash: sha256:b70cceb0c9160a06c6b908b66adb6d4c4e9b1f47a2707c6d0b423b589b4d5186
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Trace-to-dataset evaluation loop

@@ -8,7 +8,10 @@ tags: [concept, security, agents, identity, domain/security, maturity/emerging, 
 status: draft
 sources:
   - url: https://claude.com/blog/how-anthropic-secures-its-ai-native-software-development-lifecycle
+    hash: sha256:74aebfb7eebcacc72db2e90756c8dfbedfd5e19d6b5953495895d850ef2aec64
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Principle of least agency

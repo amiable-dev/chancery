@@ -8,7 +8,10 @@ tags: [concept, orchestration, vendor-risk, ai-strategy, domain/ai-agents, matur
 status: draft
 sources:
   - url: https://theplanettools.ai/blog/sakana-ai-fugu-multi-llm-orchestration-routes-around-export-controls-2026
+    hash: sha256:2f7dcd689493377bb0099809fb4fb4222f55fa4b9ea509699eaae7a7fd8bb560
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Orchestration as a provider hedge

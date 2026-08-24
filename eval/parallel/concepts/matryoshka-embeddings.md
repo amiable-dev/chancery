@@ -11,7 +11,10 @@ tags: [concept, embeddings, machine-learning, retrieval, domain/llm, maturity/em
 status: draft
 sources:
   - url: https://arxiv.org/abs/2205.13147
+    hash: sha256:6e4c7f8bd71a3650d88a52545ef7ea9e7683d0f2c07cedb669ed2c3429cee59c
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Matryoshka embeddings

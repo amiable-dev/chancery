@@ -8,7 +8,10 @@ tags: [concept, security, ai-native-sdlc, agents, domain/security, maturity/emer
 status: draft
 sources:
   - url: https://claude.com/blog/how-anthropic-secures-its-ai-native-software-development-lifecycle
+    hash: sha256:74aebfb7eebcacc72db2e90756c8dfbedfd5e19d6b5953495895d850ef2aec64
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Closed-loop secure code generation

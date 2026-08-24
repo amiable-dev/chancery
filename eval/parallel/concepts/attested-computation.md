@@ -8,7 +8,10 @@ tags: [concept, provenance, agents, data, domain/standards, maturity/emerging, s
 status: draft
 sources:
   - url: https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md
+    hash: sha256:b87f2d7b1524b0ab81d0ad27f756210e51d42613fcf2dde17b4842b06be11824
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Attested computation

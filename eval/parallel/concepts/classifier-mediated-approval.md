@@ -8,7 +8,10 @@ tags: [concept, ai-agents, security, autonomy, domain/security, maturity/emergin
 status: draft
 sources:
   - url: https://www.anthropic.com/engineering/claude-code-auto-mode
+    hash: sha256:007aedd98b3ecc44545bb1bc7a7b9a1ed5a0ccb9a9d732a3fd49a373a52a7762
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Classifier-mediated action approval

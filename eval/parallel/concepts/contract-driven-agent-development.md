@@ -11,7 +11,10 @@ tags: [concept, agents, software-process, specification, domain/software-enginee
 status: draft
 sources:
   - url: https://developer.microsoft.com/blog/agentic-agile-why-agent-development-needs-agile-not-just-prompts/
+    hash: sha256:48cbeb1d2cba082fd5540d215f39ae992c00da84156ad65c22a798933b87a9e0
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Contract-driven agent development

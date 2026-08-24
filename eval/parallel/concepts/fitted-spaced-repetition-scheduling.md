@@ -8,7 +8,10 @@ tags: [concept, learning, spaced-repetition, memory, domain/knowledge-management
 status: draft
 sources:
   - url: https://github.com/open-spaced-repetition/fsrs4anki
+    hash: sha256:6d1092c4fd7833b4d894a343cc0b7ea08ab276eb7ca1852e76f457ad3d0c4c46
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Fitted spaced-repetition scheduling

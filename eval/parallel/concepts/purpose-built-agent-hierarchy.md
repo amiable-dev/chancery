@@ -10,7 +10,10 @@ tags: [concept, agents, architecture, evaluation, domain/ai-agents, maturity/eme
 status: draft
 sources:
   - url: https://www.infoq.com/presentations/reliable-ai-platforms/
+    hash: sha256:fa755eebcd198b9755000bc27e7269c2f02dba5c2d230183ad305e6338d1dc28
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Purpose-built agent hierarchies

@@ -12,7 +12,10 @@ tags: [concept, observability, telemetry, instrumentation, domain/observability,
 status: draft
 sources:
   - url: https://www.honeycomb.io/blog/one-key-difference-observability1dot0-2dot0
+    hash: sha256:1136900266428aa3d3329400016f0fa6caf281d37028f6aadb384b9f780087b3
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Wide events as a single source of truth

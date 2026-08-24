@@ -8,7 +8,10 @@ tags: [concept, knowledge-management, ai-agents, memory, domain/knowledge-manage
 status: draft
 sources:
   - url: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+    hash: sha256:38e4f6b3bc571142fda8122633d849887afb108c2ab5b84251a024bab995c2dc
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # LLM wiki architecture

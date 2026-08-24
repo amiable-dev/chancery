@@ -11,7 +11,10 @@ tags: [concept, agents, security, verification, domain/security, maturity/emergi
 status: draft
 sources:
   - url: https://www.helpnetsecurity.com/2026/05/27/vigolium-open-source-vulnerability-scanner/
+    hash: sha256:db47a3a23c8db34574379ae1c5cfd4ced48717fb33c56242b3fea87efae9620d
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Triage as a separate evidence pass

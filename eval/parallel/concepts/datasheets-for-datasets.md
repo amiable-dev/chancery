@@ -8,7 +8,10 @@ tags: [concept, data-governance, documentation, ml-datasets, domain/data, maturi
 status: draft
 sources:
   - url: https://arxiv.org/abs/1803.09010
+    hash: sha256:9ff6df06168cdfe7df1effb4e4aefc9f36a6aff4decd24ff3dd678f6bdc4ab70
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Datasheets for datasets

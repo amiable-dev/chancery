@@ -11,7 +11,10 @@ tags: [concept, agents, software-process, parallelism, domain/software-engineeri
 status: draft
 sources:
   - url: https://github.com/microsoft/agentic-agile-template
+    hash: sha256:64857da5c308c877599a647aa9e657a9765030ef7df2e7a8f04cd62680e3c1db
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Wave-based parallel agent execution

@@ -8,7 +8,10 @@ tags: [concept, observability, sampling, cost-control, domain/observability, mat
 status: draft
 sources:
   - url: https://oneuptime.com/blog/post/2026-02-06-reduce-observability-costs-intelligent-sampling/view
+    hash: sha256:53c73ced4f7a44f08bddf01b5f767be8e4b6bd76220c1ce2b96ecd1ecf3035aa
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Collector-side telemetry reduction

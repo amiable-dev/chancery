@@ -8,7 +8,10 @@ tags: [concept, security, mcp, threat-modeling, domain/security, maturity/emergi
 status: draft
 sources:
   - url: https://owasp.org/www-project-mcp-top-10/
+    hash: sha256:57598df87fe74be083d15fdc7f89c224b5aa0dacf8cdd0cf20bab6e2ef01f252
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # MCP attack surface taxonomy

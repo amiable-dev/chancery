@@ -10,7 +10,10 @@ tags: [concept, observability, telemetry, architecture, domain/observability, ma
 status: draft
 sources:
   - url: https://opentelemetry.io/docs/collector/
+    hash: sha256:0eb96678cc804084a4b6ac3e22d54e2946189f1e163c2e18cffd258c1e3dee86
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Telemetry collector pipeline

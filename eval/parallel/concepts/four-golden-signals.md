@@ -8,7 +8,10 @@ tags: [concept, observability, monitoring, sre, domain/observability, maturity/e
 status: draft
 sources:
   - url: https://sre.google/sre-book/monitoring-distributed-systems/
+    hash: sha256:0b46517deadbdc47994f359966cc29ba0390ef5eee4f68988a189a49c73c2f3b
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # The four golden signals

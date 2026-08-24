@@ -8,7 +8,10 @@ tags: [concept, multi-agent, orchestration, reinforcement-learning, domain/ai-ag
 status: draft
 sources:
   - url: https://arxiv.org/abs/2512.04388
+    hash: sha256:5a0ce48b04e65d556cfc31be2c78c6aeb94dd1b2e5228242e2b1541a3b25e974
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # RL-learned agent orchestration

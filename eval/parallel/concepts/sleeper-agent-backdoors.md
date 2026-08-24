@@ -10,7 +10,10 @@ tags: [concept, ai-safety, alignment, security, domain/ai-safety, maturity/emerg
 status: draft
 sources:
   - url: https://arxiv.org/abs/2401.05566
+    hash: sha256:b22a094c703fc7cc972f977e6d3a939d7a1561dda4df5ebf757ededd6223a872
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Sleeper agent backdoors

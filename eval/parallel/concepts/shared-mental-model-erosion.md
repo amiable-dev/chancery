@@ -10,7 +10,10 @@ tags: [concept, software-engineering, cognition, engineering-management, domain/
 status: draft
 sources:
   - url: https://michellepellon.com/blog/2026-02-23-cognitive-debt
+    hash: sha256:45c02480f03fa97e1c9dcb7225980e50f05fac623acbff5278d61cb87165417d
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Shared mental-model erosion

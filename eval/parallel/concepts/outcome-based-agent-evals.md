@@ -8,7 +8,10 @@ tags: [concept, evaluation, ai-agents, llm-as-judge, domain/ai-agents, maturity/
 status: draft
 sources:
   - url: https://www.anthropic.com/engineering/multi-agent-research-system
+    hash: sha256:af479a5cbb0b52add5efe63a066a1f713ef4c068d7ff6ad6c9c4bc09b496f026
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Outcome-based agent evaluation

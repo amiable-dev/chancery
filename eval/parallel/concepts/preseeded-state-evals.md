@@ -8,7 +8,10 @@ tags: [concept, ai-agents, evaluation, testing, domain/ai-agents, maturity/emerg
 status: draft
 sources:
   - url: https://developers.googleblog.com/build-long-running-ai-agents-that-pause-resume-and-never-lose-context-with-adk/
+    hash: sha256:c71be0b8db2abdbf5f6dad012142dbc2b8b812ebecc05f9a910be08fe53f245f
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Pre-seeded-state agent evals

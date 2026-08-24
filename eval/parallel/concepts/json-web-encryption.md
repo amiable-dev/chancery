@@ -8,7 +8,10 @@ tags: [concept, cryptography, standards, jose, domain/standards, maturity/establ
 status: draft
 sources:
   - url: https://www.rfc-editor.org/info/rfc7516/
+    hash: sha256:e3a2f83f8161f9f694d606c9cfea3ecbae5b4c66004417791a8156fe7a4c0858
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # JSON Web Encryption (JWE)

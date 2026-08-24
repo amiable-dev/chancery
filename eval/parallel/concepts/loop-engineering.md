@@ -8,7 +8,10 @@ tags: [concept, ai-agents, agentic-coding, automation, domain/ai-agents, maturit
 status: draft
 sources:
   - url: https://machinelearningmastery.com/an-introduction-to-loop-engineering/
+    hash: sha256:12827ca9008a2072a0862a8e34e4579b436864264922dd498d14c36456ee2ab3
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Loop engineering

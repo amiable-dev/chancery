@@ -8,7 +8,10 @@ tags: [concept, agentic-coding, product-development, feedback-loops, domain/soft
 status: draft
 sources:
   - url: https://x.com/AndrewYNg/status/2071988145667928442
+    hash: sha256:7164c37b668f26c389f12ec9464292410010389f028521a64da7c984d85d1582
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Three loops of agentic development

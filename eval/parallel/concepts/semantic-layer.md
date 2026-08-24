@@ -8,7 +8,10 @@ tags: [concept, data, analytics, architecture, domain/data, maturity/emerging, s
 status: draft
 sources:
   - url: https://www.thoughtworks.com/radar/techniques
+    hash: sha256:52b9aa4d85844d1297a66a66f03904fc0d72fc860de4eb0fb9196fe3e6f1e8c7
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Semantic layer

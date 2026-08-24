@@ -8,7 +8,10 @@ tags: [concept, ai-agents, architecture, scaling, domain/ai-agents, maturity/eme
 status: draft
 sources:
   - url: https://machinelearningmastery.com/stateful-vs-stateless-agent-design-tradeoffs-for-scalable-agentic-systems/
+    hash: sha256:89d984d4ba5d9c18c0f1dac5c761c91ab5ed41ac9a4d00410d00106e52503068
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Agent state residence

@@ -8,7 +8,10 @@ tags: [concept, llm, prompting, reasoning, domain/llm, maturity/emerging, source
 status: draft
 sources:
   - url: https://outcomeschool.com/blog/how-does-chain-of-thought-prompting-work
+    hash: sha256:a1f8a13671098cdc50e22770f53c31857d1809e52fd5d92f4714335b6aa3a434
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Chain-of-thought prompting

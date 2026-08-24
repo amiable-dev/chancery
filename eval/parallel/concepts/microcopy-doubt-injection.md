@@ -8,7 +8,10 @@ tags: [concept, ux-writing, conversion, product-design, domain/human-factors, ma
 status: draft
 sources:
   - url: https://www.theaimarketers.ai/guidetofable5/
+    hash: sha256:4407852af47b2bd452276f789b7ad23bb1374093994e758c8bb26c73ce6c31b8
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Microcopy doubt injection

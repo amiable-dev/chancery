@@ -11,7 +11,10 @@ tags: [concept, security, supply-chain, ai-governance, domain/security, maturity
 status: draft
 sources:
   - url: https://semgrep.dev/blog/2026/ai-supply-chain-problem/
+    hash: sha256:b130f856114455884ee99d5a470063f08cf3ac888b4db423b37ef72dd34343ee
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Model provenance over inspection

@@ -8,7 +8,10 @@ tags: [concept, cryptography, standards, jose, domain/standards, maturity/establ
 status: draft
 sources:
   - url: https://www.rfc-editor.org/info/rfc8037/
+    hash: sha256:0221989629445da9d84b713dfca6c57cc7830cb21534b01b841a97aa6f168b58
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # CFRG curves in JOSE (OKP key type)

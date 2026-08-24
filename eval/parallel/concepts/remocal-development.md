@@ -8,7 +8,10 @@ tags: [concept, developer-experience, kubernetes, tooling, domain/infrastructure
 status: draft
 sources:
   - url: https://metalbear.com/mirrord/docs/use-cases/local-development
+    hash: sha256:59f54f7530103a938a5849999c5ac271d23b032a985e645442af6c00c3087eb2
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Remocal development

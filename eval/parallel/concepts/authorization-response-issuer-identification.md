@@ -8,7 +8,10 @@ tags: [concept, oauth, security, protocols, domain/standards, maturity/establish
 status: draft
 sources:
   - url: https://www.rfc-editor.org/info/rfc9207/
+    hash: sha256:91a74b48d7f71f0584288b2291d2d4b79077bdd071c0bde20683be9c54bd0e37
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Authorization response issuer identification

@@ -838,10 +838,15 @@ async function sources(argv) {
         // A 403/429 means "this host blocks bots", not "this citation rotted".
         // Keeping the reason is what lets revalidate tell permanently
         // unverifiable sources apart from genuinely dead ones.
+        // Carry curator-set metadata through the rewrite: an observation updates
+        // what we fetched, never what a human (or judged pass) recorded about
+        // the source. Dropping `class` here cost 157 classifications once.
+        const keep = {};
+        for (const k of ['title', 'class']) if (s[k] !== undefined) keep[k] = s[k];
         return r.unreachable
-          ? { url: s.url, unreachable: true, reachability: r.reachability, reason: r.reason, checked: r.checked,
+          ? { url: s.url, ...keep, unreachable: true, reachability: r.reachability, reason: r.reason, checked: r.checked,
               ...(r.archive ? { archive: r.archive } : {}) }
-          : { url: s.url, hash: r.hash, retrieved: r.retrieved, reachability: 'ok' };
+          : { url: s.url, ...keep, hash: r.hash, retrieved: r.retrieved, reachability: 'ok' };
       });
       if (!changed) continue;
 

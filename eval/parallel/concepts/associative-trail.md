@@ -11,7 +11,10 @@ tags: [concept, knowledge-management, hypertext, linking, domain/knowledge-manag
 status: draft
 sources:
   - url: https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/
+    hash: sha256:28c572172262c598333158c6daa83099ad11bc508da840e49d1bb4f5a6470e77
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Associative trail

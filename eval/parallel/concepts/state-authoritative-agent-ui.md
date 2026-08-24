@@ -8,7 +8,10 @@ tags: [concept, agents, interface-design, state-management, domain/ai-agents, ma
 status: draft
 sources:
   - url: https://github.com/GoogleCloudPlatform/generative-ai/tree/main/agents/adk/new-hire-onboarding
+    hash: sha256:f49c7bfe31dd6f5fa6dc4a026178734188583098aebf71e823b8539c1263e04b
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # State-authoritative agent interface

@@ -8,7 +8,10 @@ tags: [concept, ai-agents, architecture, context, domain/ai-agents, maturity/eme
 status: draft
 sources:
   - url: https://www.langchain.com/blog/the-anatomy-of-an-agent-harness
+    hash: sha256:ec5b45fc8e270eeaa1a074e13524209f6fff056e41c93584127f32fa5aad1c50
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Agent harness

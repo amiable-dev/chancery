@@ -8,7 +8,10 @@ tags: [concept, ai-agents, orchestration, parallelism, domain/ai-agents, maturit
 status: draft
 sources:
   - url: https://briandouglas.me/posts/2026/03/15/sweeper-why-agent-infrastructure-matters/
+    hash: sha256:5d5840265dd039f68b02b7b1f8435c3f04f7323eab1f4b8ccf982079197a0c1c
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Stateless worker fan-out

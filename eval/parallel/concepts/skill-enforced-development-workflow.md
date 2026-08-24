@@ -8,7 +8,10 @@ tags: [concept, ai-agents, software-process, tdd, domain/software-engineering, m
 status: draft
 sources:
   - url: https://github.com/obra/superpowers
+    hash: sha256:a70b7bc4235926af13c32fdc37ac3b3e880afa0fa407ef91f3c2f82e12223600
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Skill-enforced development workflow

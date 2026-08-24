@@ -11,7 +11,10 @@ tags: [concept, retrieval, rag, embeddings, domain/knowledge-management, maturit
 status: draft
 sources:
   - url: https://www.freecodecamp.org/news/what-is-hyde-how-to-improve-rag-with-hypothetical-documents/
+    hash: sha256:d59ea369771cd5bfe0b93bb44fd54463db4940df0c36a9a9705412fb7d16e4ee
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Hypothetical document embeddings (HyDE)

@@ -8,7 +8,10 @@ tags: [concept, cognition, learning, human-ai-interaction, domain/human-factors,
 status: draft
 sources:
   - url: https://arxiv.org/abs/2506.08872
+    hash: sha256:3cef7ceaf33d3d4112df7561818aa70c7ca4b27fd17b1e98b54c9cdccb2c9506
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Cognitive debt

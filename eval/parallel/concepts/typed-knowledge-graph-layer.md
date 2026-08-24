@@ -8,7 +8,10 @@ tags: [concept, knowledge-management, knowledge-graph, ai-agents, domain/knowled
 status: draft
 sources:
   - url: https://gist.github.com/rohitg00/2067ab416f7bbe447c1977edaaa681e2
+    hash: sha256:9cec05f1dcdf4fc0162cfd801b68c448df9b7ee1fa4ee94c17c5c607909ab3ff
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Typed knowledge graph layer

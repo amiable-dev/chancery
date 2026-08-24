@@ -10,7 +10,10 @@ tags: [concept, agents, security, guardrails, domain/security, maturity/emerging
 status: draft
 sources:
   - url: https://newsletter.systemdesign.one/p/agentic-engineering
+    hash: sha256:4348e1666b2fd47113aea3b3b5bceb8dfcaf370266ef152e866b36e38742d0d4
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Layered agent guardrails

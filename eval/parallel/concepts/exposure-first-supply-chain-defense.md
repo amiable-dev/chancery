@@ -11,7 +11,10 @@ tags: [concept, security, supply-chain, ci-cd, domain/security, maturity/emergin
 status: draft
 sources:
   - url: https://www.tenable.com/blog/the-developer-credential-economy-exposure-data-is-the-new-front-line-in-the-supply-chain-war
+    hash: sha256:90bb4653f3a3692717197e7fefda5a33986f31bbccebc55ffd681341224d7951
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Exposure-first supply chain defense

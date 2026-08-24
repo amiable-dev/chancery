@@ -8,7 +8,10 @@ tags: [concept, ai-safety, alignment, reinforcement-learning, domain/ai-safety, 
 status: draft
 sources:
   - url: https://www.anthropic.com/research/reward-tampering
+    hash: sha256:a5d1c7f01366bc877803cd81eab3161994e45b46b8a48f346e33c11580eadb47
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Specification gaming to reward tampering

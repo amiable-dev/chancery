@@ -12,7 +12,10 @@ tags: [concept, security, mcp, ai-agents, domain/security, maturity/emerging, so
 status: draft
 sources:
   - url: https://labs.cloudsecurityalliance.org/research/csa-research-note-mcp-tool-poisoning-ai-agent-exfiltration-2/
+    hash: sha256:a9c83f36bdc1aaced60755dcc0023fcafa2ab7a98c86c824207814684c71689f
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # MCP tool poisoning

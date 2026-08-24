@@ -11,7 +11,10 @@ tags: [concept, observability, performance, profiling, domain/observability, mat
 status: draft
 sources:
   - url: https://fatihkoc.net/posts/ebpf-parca-observability/
+    hash: sha256:674f28b20265746a4cef528f99068cf25a3376b210896056770ed879fd8a482e
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Continuous profiling

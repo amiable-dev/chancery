@@ -8,7 +8,10 @@ tags: [concept, ai-safety, alignment, machine-learning, domain/ai-safety, maturi
 status: draft
 sources:
   - url: https://alignment.anthropic.com/2026/automated-w2s-researcher/
+    hash: sha256:5567b945ccf5cd78e6bff8c93b57d1e0634b1ea13f52ddf626de822348ceb86a
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Agent-discovered weak-to-strong methods

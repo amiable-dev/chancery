@@ -8,7 +8,10 @@ tags: [concept, evaluation, post-training, fine-tuning, domain/llm, maturity/eme
 status: draft
 sources:
   - url: https://fireworks.ai/blog/open-source-agents-frontier-advisors
+    hash: sha256:148a5559a58c809a52b24f443ab8cb1191ad6feba057c76fd81d7f075da93269
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Evaluation rubric as training signal

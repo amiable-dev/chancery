@@ -8,7 +8,10 @@ tags: [concept, static-analysis, security, tooling, domain/standards, maturity/e
 status: draft
 sources:
   - url: https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html
+    hash: sha256:518a9c7ebe692d6e0a9c962798af0b62b90615380c966de369521ebedda741a0
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Cross-run result identity and baselining

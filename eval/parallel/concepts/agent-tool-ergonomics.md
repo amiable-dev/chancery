@@ -8,7 +8,10 @@ tags: [concept, ai-agents, mcp, tool-design, domain/ai-agents, maturity/emerging
 status: draft
 sources:
   - url: https://www.anthropic.com/engineering/writing-tools-for-agents
+    hash: sha256:5bce9bf3c33fd92faf6d1a9b6d7d681d209ca37bd227070edd7a44da930f9735
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Agent tool ergonomics

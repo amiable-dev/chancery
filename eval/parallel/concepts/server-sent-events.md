@@ -8,7 +8,10 @@ tags: [concept, web-platform, protocols, streaming, domain/standards, maturity/e
 status: draft
 sources:
   - url: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events
+    hash: sha256:2d2d309ccb34f7a3ef44cbdcbb53f50fe6ede47dcdfa05e2b318657d878e193f
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Server-sent events

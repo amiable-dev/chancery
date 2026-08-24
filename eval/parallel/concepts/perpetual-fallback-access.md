@@ -8,7 +8,10 @@ tags: [concept, licensing, software-business, desktop-software, domain/software-
 status: draft
 sources:
   - url: https://keyforge.dev/blog/perpetual-fallback-desktop-apps
+    hash: sha256:3d6ce62de0108536db9e430a85462f1112d063ac93f65849a6cdb47057a8a0df
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Perpetual fallback access

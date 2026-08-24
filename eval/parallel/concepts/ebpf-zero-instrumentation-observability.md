@@ -11,7 +11,10 @@ tags: [concept, observability, kubernetes, ebpf, domain/observability, maturity/
 status: draft
 sources:
   - url: https://devops.gheware.com/blog/posts/ebpf-kubernetes-observability-2026.html
+    hash: sha256:7914b748dc238ee8c518794c7172368c174ef5e5fa05e06b387ab507761bc702
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # eBPF zero-instrumentation observability

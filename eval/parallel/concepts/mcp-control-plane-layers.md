@@ -8,7 +8,10 @@ tags: [concept, security, mcp, architecture, domain/security, maturity/emerging,
 status: draft
 sources:
   - url: https://www.infoq.com/articles/securing-mcp-production-gateway/
+    hash: sha256:48f95cc7f93a3f008e28566a19e75ba14e2a7f2e4ba57881285db52984ac3488
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # MCP control-plane layers

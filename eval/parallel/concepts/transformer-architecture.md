@@ -11,7 +11,10 @@ tags: [concept, machine-learning, neural-networks, attention, domain/llm, maturi
 status: draft
 sources:
   - url: https://arxiv.org/abs/1706.03762
+    hash: sha256:4a2f60095ef3b5ffb5b2bdb13941331531d8a7ca3d61dede0fad24920dacfec7
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Transformer architecture

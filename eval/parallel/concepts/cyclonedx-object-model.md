@@ -8,7 +8,10 @@ tags: [concept, security, supply-chain, standards, domain/standards, maturity/es
 status: draft
 sources:
   - url: https://cyclonedx.org/specification/overview/
+    hash: sha256:d20b6e29f73a8885ae9cdc4e55f168a33d68b48f2e9b8055edf5d1b7a6173447
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # CycloneDX object model

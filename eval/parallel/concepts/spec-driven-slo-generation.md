@@ -8,7 +8,10 @@ tags: [concept, reliability, observability, sre, domain/reliability, maturity/em
 status: draft
 sources:
   - url: https://github.com/slok/sloth
+    hash: sha256:d68c7bc39a3d4ad595ce5b27274cd979b433a75602ca4b7a7350c581ab2ba7c7
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Spec-driven SLO rule generation

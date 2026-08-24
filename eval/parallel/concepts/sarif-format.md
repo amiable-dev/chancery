@@ -11,7 +11,10 @@ tags: [concept, security, static-analysis, standards, domain/standards, maturity
 status: draft
 sources:
   - url: https://dev.to/shivasurya/unlocking-the-power-of-sarif-the-backbone-of-modern-static-analysis-9lc
+    hash: sha256:b6d1f3a65cf2193b48f8e02153e830d4d68a04c1896c66372967d85df1afdb1d
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # SARIF format

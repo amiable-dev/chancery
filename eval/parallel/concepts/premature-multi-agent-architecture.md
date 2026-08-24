@@ -8,7 +8,10 @@ tags: [concept, ai-agents, architecture, anti-patterns, domain/ai-agents, maturi
 status: draft
 sources:
   - url: https://machinelearningmastery.com/building-ai-agents-here-are-some-anti-patterns-to-avoid/
+    hash: sha256:98569296763f146a6a01b895405a16ace647694b25d45fc669dcf276959a559b
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Premature multi-agent architecture

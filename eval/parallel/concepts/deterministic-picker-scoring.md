@@ -10,7 +10,10 @@ tags: [concept, agents, evaluation, llm-as-judge, domain/ai-agents, maturity/eme
 status: draft
 sources:
   - url: https://github.com/FareedKhan-dev/all-agentic-architectures
+    hash: sha256:07f425aa4ca08f762dd08aefa3fe8286aff870ecee87b832d3e90b232671ea88
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Deterministic-picker scoring

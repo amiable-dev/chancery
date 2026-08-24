@@ -8,7 +8,10 @@ tags: [concept, security, prompt-injection, supply-chain, domain/security, matur
 status: draft
 sources:
   - url: https://cybersecuritynews.com/ghostcommit-attack-hides-prompts/
+    hash: sha256:1d5356c6b862c509b3cfd51f070a4eb616dff0e006d941c1fd6d242efe8830c6
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Split-payload prompt injection

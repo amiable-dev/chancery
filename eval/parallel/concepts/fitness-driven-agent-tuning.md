@@ -8,7 +8,10 @@ tags: [concept, ai-agents, evaluation, optimization, domain/ai-agents, maturity/
 status: draft
 sources:
   - url: https://briandouglas.me/posts/2026/03/10/what-i-learned-running-10-pokemon-bots-in-36-seconds/
+    hash: sha256:2bd9427d79700b79360d8369e00d6b75afbd881d8ea6dc1c14c88a83a3bade6a
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Fitness-driven agent tuning

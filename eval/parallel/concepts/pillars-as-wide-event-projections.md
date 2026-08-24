@@ -8,7 +8,10 @@ tags: [concept, observability, telemetry, instrumentation, domain/observability,
 status: draft
 sources:
   - url: https://isburmistrov.substack.com/p/all-you-need-is-wide-events-not-metrics
+    hash: sha256:b612b95b3dc7603595166f262bbfad4cf1d6c4e46ae064c9df4ab171d62a0572
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Metrics, logs and traces as wide-event projections

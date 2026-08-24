@@ -10,7 +10,10 @@ tags: [concept, agents, llm, prompting, domain/ai-agents, maturity/emerging, sou
 status: draft
 sources:
   - url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+    hash: sha256:afe8cb4270cce6ee7104903471226f908b70ad751336a80844ebe7b45832641a
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Context engineering

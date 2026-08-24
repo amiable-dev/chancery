@@ -12,7 +12,10 @@ tags: [concept, observability, telemetry, cost-model, domain/observability, matu
 status: draft
 sources:
   - url: https://www.honeycomb.io/blog/time-to-version-observability-signs-point-to-yes
+    hash: sha256:bbb44491850eca4b17dac1e9e9d7291ac013763fe8221b273408832634419d7e
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Observability generations (1.0 vs 2.0)

@@ -8,7 +8,10 @@ tags: [concept, ai-agents, protocols, interoperability, domain/standards, maturi
 status: draft
 sources:
   - url: https://github.com/a2aproject/A2A
+    hash: sha256:36485094246969fd98c7aefaafb29265226126d3bc32572bf114f02e976ceeba
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Opaque agent interoperability

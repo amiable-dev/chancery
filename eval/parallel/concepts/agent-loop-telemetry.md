@@ -11,7 +11,10 @@ tags: [concept, agents, observability, telemetry, domain/observability, maturity
 status: draft
 sources:
   - url: https://briandouglas.me/posts/2026/01/18/for-every-ralph-there-needs-to-be-a-super-nintendo/
+    hash: sha256:1042591b7db9d21e26f131dbe3f4e809607283acf37b11e9838d4a8b084aafa7
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Agent loop telemetry

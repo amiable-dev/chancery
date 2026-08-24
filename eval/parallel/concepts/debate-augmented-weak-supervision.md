@@ -8,7 +8,10 @@ tags: [concept, ai-safety, alignment, scalable-oversight, domain/ai-safety, matu
 status: draft
 sources:
   - url: https://arxiv.org/html/2501.13124v1
+    hash: sha256:7b4b443c5825516b27c75a613a757a238bffc0ad95a4f3f47966935babb4f743
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Debate-augmented weak supervision

@@ -8,7 +8,10 @@ tags: [concept, multi-agent, orchestration, evolutionary-optimization, domain/ai
 status: draft
 sources:
   - url: https://arxiv.org/abs/2512.04695
+    hash: sha256:cc8d59184e820e3a0c0924eb0dec3762b452fa565c57039da1179887f1fd002b
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Evolved lightweight LLM coordinator

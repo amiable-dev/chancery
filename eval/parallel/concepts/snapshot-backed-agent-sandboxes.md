@@ -8,7 +8,10 @@ tags: [concept, infrastructure, virtualization, ai-agents, domain/infrastructure
 status: draft
 sources:
   - url: https://github.com/kvcache-ai/AgentENV
+    hash: sha256:5eca0fc6e7da97b89c0bee500f88126eba43ef1551e651479f0e8a807c41dfa8
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Snapshot-backed agent sandboxes

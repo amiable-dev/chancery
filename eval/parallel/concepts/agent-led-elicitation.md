@@ -8,7 +8,10 @@ tags: [concept, prompting, requirements, human-ai-interaction, domain/software-e
 status: draft
 sources:
   - url: https://claude.com/blog/a-field-guide-to-claude-fable-finding-your-unknowns
+    hash: sha256:ddab0eb45dd176c5a5d118c577770304f076a84b2d8a65d68ed5670f43f44198
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Agent-led elicitation

@@ -11,7 +11,10 @@ tags: [concept, ai-agents, prompting, reasoning, domain/ai-agents, maturity/esta
 status: draft
 sources:
   - url: https://arxiv.org/abs/2210.03629
+    hash: sha256:6647efd97d0edb6a43e061367516bf5ba51ba8e96dc22c23fe8b570e768e47e2
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # ReAct pattern

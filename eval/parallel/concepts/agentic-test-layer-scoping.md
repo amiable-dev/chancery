@@ -8,7 +8,10 @@ tags: [concept, agents, testing, architecture, domain/software-engineering, matu
 status: draft
 sources:
   - url: https://www.infoq.com/articles/prompts-to-production-playbook-for-agentic-development/
+    hash: sha256:7380d808df58d13eab6825b0abb44ce95b2e7e379a8882cd80acaee96625d7be
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Layered testing of agentic systems

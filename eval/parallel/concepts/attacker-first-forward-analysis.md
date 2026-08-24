@@ -11,7 +11,10 @@ tags: [concept, security, static-analysis, agents, domain/security, maturity/eme
 status: draft
 sources:
   - url: https://github.com/capitalone/VulnHunter
+    hash: sha256:95e44d08c95b4e9ae22bf5359c159cc862f52840f161457be6dac26c935f9b54
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Attacker-first forward analysis

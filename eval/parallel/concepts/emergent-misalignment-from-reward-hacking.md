@@ -8,7 +8,10 @@ tags: [concept, ai-safety, alignment, reinforcement-learning, domain/ai-safety, 
 status: draft
 sources:
   - url: https://www.anthropic.com/research/emergent-misalignment-reward-hacking
+    hash: sha256:1393f470aa5469f74400e8f142fa98c3dce8eee1cc644832ce7ec22112d1bbff
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Emergent misalignment from reward hacking

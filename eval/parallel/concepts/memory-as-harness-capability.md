@@ -8,7 +8,10 @@ tags: [concept, agents, memory, context-management, domain/ai-agents, maturity/e
 status: draft
 sources:
   - url: https://x.com/sarahwooders/status/2040121230473457921
+    hash: sha256:b357f3065d150c6e854daf9be88eebe3f6955abe2a318f283aea2b10698f6e19
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Memory as a harness capability

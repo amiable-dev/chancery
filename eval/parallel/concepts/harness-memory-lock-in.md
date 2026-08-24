@@ -8,7 +8,10 @@ tags: [concept, ai-agents, memory, lock-in, domain/ai-agents, maturity/emerging,
 status: draft
 sources:
   - url: https://www.langchain.com/blog/your-harness-your-memory
+    hash: sha256:b4beea2f09ed958a24d9e2115c68f79ada87fe196542096a8c2cefaa07f6fa09
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Harness-memory lock-in

@@ -11,7 +11,10 @@ tags: [concept, security, agents, software-process, domain/security, maturity/em
 status: draft
 sources:
   - url: https://www.nxcode.io/resources/news/ai-native-sdlc-security-controls-playbook-2026
+    hash: sha256:a14e7d7476dc9d542a1e822c0a3adc77ca6d3aca013c1d786c83397bd233525b
+    retrieved: 2026-08-24
     class: external-secondary
+    reachability: ok
 ---
 
 # Risk-tiered control of agent-authored change

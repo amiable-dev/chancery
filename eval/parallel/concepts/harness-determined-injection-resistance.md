@@ -8,7 +8,10 @@ tags: [concept, security, ai-agents, agent-harness, prompt-injection, domain/sec
 status: draft
 sources:
   - url: https://asset-group.github.io/disclosures/ghostcommit/
+    hash: sha256:6acadb4edc4aea84f43355ca9a0cc2325fd2a7158bfc637832f85591744d078b
+    retrieved: 2026-08-24
     class: external-primary
+    reachability: ok
 ---
 
 # Harness-determined injection resistance
