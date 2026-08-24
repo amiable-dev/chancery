@@ -16,5 +16,15 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:b0fde1c8ea3c66fc44137e07d87982103fd4f7741eecdd33d7248d5f12e453ed",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/vocabulary-mismatch.md"
+  ]
 }

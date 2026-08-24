@@ -16,5 +16,15 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:84a06e554a8506a5ae9c1103d8eb10ea18f9d1763671580d66e6522bdeff7ee3",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/cranfield-paradigm.md"
+  ]
 }

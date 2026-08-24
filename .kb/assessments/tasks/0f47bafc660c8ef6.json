@@ -16,5 +16,15 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:985ee32682ffab1c9d15bcbf15bcef6b2793e5dfe8ef40fd99fd44bb825922aa",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/ladder-mechanism.md"
+  ]
 }

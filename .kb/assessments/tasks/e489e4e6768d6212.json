@@ -16,5 +16,15 @@
     ],
     "untrusted_payload": true
   },
-  "status": "open"
+  "status": "applied",
+  "answer_digest": "sha256:3fbcc1148fda8dddb2d253b9c6f6b494cba14bb2668c278e47beebf39c0345e0",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/okapi-bm25.md"
+  ]
 }
