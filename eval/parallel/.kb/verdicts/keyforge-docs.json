@@ -1,0 +1,10 @@
+{"rubric":"promotion@3","target":"staging/keyforge-docs.md","task_id":"c043240e6f38e65f",
+"disqualifiers":{
+"pure-announcement":{"triggered":false,"rationale":"Product documentation, not an announcement."},
+"duplicate":{"triggered":false,"rationale":"No licensing concept exists in this corpus."},
+"unfalsifiable":{"triggered":false,"rationale":"The token mechanism is documented with reproducible API calls."}},
+"dimensions":{
+"durability":{"rating":"weak","rationale":"The transferable mechanism — offline license validation via a signed JWT verified client-side, with online activation and periodic refresh — is one paragraph; the rest is product-specific dashboard and endpoint steps that churn."},
+"actionability":{"rating":"weak","rationale":"Actionable only inside this vendor's product; the general pattern is not developed enough here to implement independently."},
+"atomicity":{"rating":"strong","rationale":"One topic: license tokens."}},
+"supplier":{"class":"model-single","id":"claude-fable-5"}}

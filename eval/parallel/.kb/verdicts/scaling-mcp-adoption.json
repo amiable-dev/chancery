@@ -1,0 +1,10 @@
+{"rubric":"promotion@3","target":"staging/scaling-mcp-adoption.md","task_id":"07d1f8091120ca71",
+"disqualifiers":{
+"pure-announcement":{"triggered":false,"rationale":"Two product launches are embedded, but the piece is a reference architecture write-up grounded in the company's own deployment."},
+"duplicate":{"triggered":false,"rationale":"No MCP-governance concept exists in this corpus."},
+"unfalsifiable":{"triggered":false,"rationale":"The architecture is described concretely and its OWASP-cited risk rationale is linked."}},
+"dimensions":{
+"durability":{"rating":"strong","rationale":"The patterns — remote-first MCP servers as a supply-chain control, governance baked into a template platform (default-deny writes, audit, CI/CD, secrets for free), and gateway-level shadow-MCP detection — survive the product names they are demonstrated on."},
+"actionability":{"rating":"strong","rationale":"A reference architecture with the deployment sequence and controls named; portable to other stacks at the architecture level."},
+"atomicity":{"rating":"fail","rationale":"Bundles at least four separable ideas: remote-first MCP governance, the governed template platform, Code Mode's token economics, and shadow-MCP detection."}},
+"supplier":{"class":"model-single","id":"claude-fable-5"}}

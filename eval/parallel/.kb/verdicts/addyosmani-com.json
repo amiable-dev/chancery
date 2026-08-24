@@ -1,0 +1,10 @@
+{"rubric":"promotion@3","target":"staging/addyosmani-com.md","task_id":"5b188d332a033493",
+"disqualifiers":{
+"pure-announcement":{"triggered":false,"rationale":"Not an announcement — it is a personal homepage."},
+"duplicate":{"triggered":false,"rationale":"Nothing comparable exists in this corpus."},
+"unfalsifiable":{"triggered":false,"rationale":"Biographical and bibliographic claims are checkable."}},
+"dimensions":{
+"durability":{"rating":"fail","rationale":"A bio and book catalogue carries no idea that transfers; roles and book lists churn, and the page makes no claim a concept could preserve."},
+"actionability":{"rating":"fail","rationale":"There is nothing here a reader can apply — it is a directory of a person's work, not a practice or mechanism."},
+"atomicity":{"rating":"strong","rationale":"One subject throughout."}},
+"supplier":{"class":"model-single","id":"claude-fable-5"}}

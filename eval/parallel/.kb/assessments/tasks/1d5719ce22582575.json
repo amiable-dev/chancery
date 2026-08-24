@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "1d5719ce22582575",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "b061ae61b607089b896a9a315a3db4affe04133e",
+    "input_hashes": {
+      "staging/forgetting-curve.md": "sha256:6bdb31bf5dc35f7a126faba8b36800fcb9302abe6f4a298db132c0ca95b8e7bb",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:fe3992c9c029d4f5cb018e85f2e717151edad802bc3cfc8affbcc04c79528100",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/forgetting-curve.json"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/how-to-build-a-context-layer.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\",\"weak\"],\"actionability\":[\"strong\"],\"atomicity\":[\"fail\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "fail"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/how-to-build-a-context-layer.md",
+    "task_id": "2ec1901d64e44132",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "A practitioner architecture essay grounded in a production system."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No context-layer or ingestion concept exists in this corpus."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Mechanism arguments (deletion channels, identity resolution ordering) are checkable by construction; the production system is linked."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The content is distributed-systems mechanics — reconciliation loops, opposite deletion semantics for bounded collections versus unbounded streams, identity resolution as a correctness precondition — none of it tied to a product version."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Each section is a concrete architectural decision with its failure mode named; a builder can apply these directly."
+      },
+      "atomicity": {
+        "rating": "fail",
+        "rationale": "At least four separable mechanisms — the datamap ontology, deletion semantics, identity-resolution-before-mining, and connection-health state machines — each promotable on its own; one note would bury them."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

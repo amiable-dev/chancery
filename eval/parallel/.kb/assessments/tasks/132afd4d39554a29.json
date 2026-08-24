@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "132afd4d39554a29",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "b061ae61b607089b896a9a315a3db4affe04133e",
+    "input_hashes": {
+      "staging/ai-security-event-logging.md": "sha256:6a90e1deaac6f5508f51f53cfd9a1871f8f55ccc5dfb337d4eee1c6f9a316119",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:0a4ba24140c9d4d618f7ef57c464736e058c4a852ea082556bb7e92aa823439f",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/ai-security-event-logging.json"
+  ]
+}

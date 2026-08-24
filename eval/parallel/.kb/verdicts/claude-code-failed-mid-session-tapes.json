@@ -1,0 +1,10 @@
+{"rubric":"promotion@3","target":"staging/claude-code-failed-mid-session-tapes.md","task_id":"1649f74973e3ddf5",
+"disqualifiers":{
+"pure-announcement":{"triggered":false,"rationale":"A first-person experience report, not a release note."},
+"duplicate":{"triggered":false,"rationale":"No session-capture or proxy-logging concept exists in this corpus."},
+"unfalsifiable":{"triggered":false,"rationale":"The tool and its storage model are public; the recovery workflow is reproducible."}},
+"dimensions":{
+"durability":{"rating":"weak","rationale":"The durable principle — capture conversation state at a proxy boundary you control, content-addressed, so recovery does not depend on the harness that crashed — is real, but the piece is a single-tool war story wrapped around it."},
+"actionability":{"rating":"strong","rationale":"The workflow (run a recording proxy; on failure, point a fresh session at the recorded tree and resume) is directly reproducible with any equivalent logger."},
+"atomicity":{"rating":"strong","rationale":"One narrative, one mechanism."}},
+"supplier":{"class":"model-single","id":"claude-fable-5"}}

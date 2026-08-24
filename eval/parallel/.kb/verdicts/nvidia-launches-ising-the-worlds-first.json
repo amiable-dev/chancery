@@ -1,0 +1,10 @@
+{"rubric":"promotion@3","target":"staging/nvidia-launches-ising-the-worlds-first.md","task_id":"7d3b8efe23f5c8c7",
+"disqualifiers":{
+"pure-announcement":{"triggered":true,"rationale":"This is the vendor's own launch press release — news-summary bullets, adoption logos, a market forecast and a CEO quote; the underlying technique (learned decoders and calibration models for quantum error correction) exists independently in the literature, but this document is solely the announcement of a product family."},
+"duplicate":{"triggered":false,"rationale":"Nothing comparable in this corpus."},
+"unfalsifiable":{"triggered":false,"rationale":"Performance claims are attributed, though vendor-benchmarked."}},
+"dimensions":{
+"durability":{"rating":"weak","rationale":"Launch-day performance multipliers and adopter lists age immediately; rated for completeness though the disqualifier decides."},
+"actionability":{"rating":"weak","rationale":"Points at model downloads; no transferable procedure."},
+"atomicity":{"rating":"strong","rationale":"One announcement."}},
+"supplier":{"class":"model-single","id":"claude-fable-5"}}

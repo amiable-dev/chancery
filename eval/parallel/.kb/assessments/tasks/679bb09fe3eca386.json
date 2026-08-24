@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "679bb09fe3eca386",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "b061ae61b607089b896a9a315a3db4affe04133e",
+    "input_hashes": {
+      "staging/alerting-on-slos.md": "sha256:245968c4cf17455be7e6a2d7f6660888cfea8adbe23361b716a353a93d63d105",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:cc232ef8e471168d89d61d869e70d7b7d87b06a68ce96a0e3c09991a7c58fd4b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/alerting-on-slos.json"
+  ]
+}

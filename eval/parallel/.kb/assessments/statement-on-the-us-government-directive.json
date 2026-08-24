@@ -1,0 +1,49 @@
+{
+  "target": "staging/statement-on-the-us-government-directive.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/statement-on-the-us-government-directive.md",
+    "task_id": "d731272c5b506ea2",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "A position statement documenting a governance event, not a product launch."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No model-governance concept exists in this corpus."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Primary source from the affected party; the directive, timeline and cited policies are stated on the record."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "A primary record of a precedent-setting action — an export-control directive suspending a deployed frontier model — plus conceptual distinctions that transfer: universal versus non-universal jailbreaks, defense-in-depth as the stated alternative to perfect jailbreak resistance, and the argued standard for government deployment-blocking."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Nothing to apply; it informs governance reasoning rather than practice."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One event and the position taken on it."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

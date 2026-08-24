@@ -1,0 +1,49 @@
+{
+  "target": "staging/getting-to-know-the-open-source.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/getting-to-know-the-open-source.md",
+    "task_id": "2df46d5903016f57",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Explains the design and rationale of an interchange format, not a product release."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No OSV or vulnerability-format concept exists in this corpus."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Schema, adopters and the CVE 5.0 influence are all linked primary sources."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The mechanism — describing vulnerabilities by git commit hash or package-manager version in a minimal JSON schema — is a design decision that outlives the adoption counts quoted; the format underpins osv.dev and informed CVE 5.0."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "A reader building advisory tooling can adopt the schema, query osv.dev, or emit OSV records today."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One idea: the OSV format and why it exists."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

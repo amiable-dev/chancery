@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "1caa9e43c34cb043",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "b061ae61b607089b896a9a315a3db4affe04133e",
+    "input_hashes": {
+      "staging/ai-powered-pentester-attacks-apps-in.md": "sha256:b76dee3c6e948d6ff474477889f0dd24b34be5151e8e9a0e12f5040a929ea130",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:863eae3561833492c09ff5bafcf589d5a31348de11dacdebcef9bdc438388c4b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/ai-powered-pentester-attacks-apps-in.json"
+  ]
+}

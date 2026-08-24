@@ -1,0 +1,49 @@
+{
+  "target": "staging/karpathys-llm-wiki.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/karpathys-llm-wiki.md",
+    "task_id": "7f60fe6ba92033bd",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Coverage of a durable pattern, which the rubric explicitly does not disqualify."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No agent-maintained-wiki concept exists in this corpus."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The pattern traces to Karpathy's public gist, which the piece links."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The pattern itself — an LLM incrementally building and maintaining a persistent wiki as compounding memory, instead of per-session retrieval — is architecture-level and stands independent of who popularised it."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "Secondhand coverage wrapped in course marketing; the primary gist is the actionable artifact and this summary adds little procedure."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One pattern throughout."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

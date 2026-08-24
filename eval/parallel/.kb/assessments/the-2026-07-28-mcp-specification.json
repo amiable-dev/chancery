@@ -1,0 +1,49 @@
+{
+  "target": "staging/the-2026-07-28-mcp-specification.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\",\"weak\"],\"actionability\":[\"strong\"],\"atomicity\":[\"fail\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "fail"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/the-2026-07-28-mcp-specification.md",
+    "task_id": "94fb56e2acca3c02",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Announces a release candidate, but the body is protocol mechanism — topology, routing, caching semantics — which transfers."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No MCP specification concept exists in this corpus."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The specification and its SEPs are public and linked."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The stateless protocol core defines the protocol's shape going forward; before/after topology and the deprecation policy are reference-grade record, not ephemera."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Tells operators exactly what changes in production: plain load balancing, Mcp-Method header routing, ttlMs-governed client caching."
+      },
+      "atomicity": {
+        "rating": "fail",
+        "rationale": "A spec-revision digest bundling the stateless core, the extensions framework with MCP Apps, Tasks, authorization alignment, and the deprecation policy — each a separate reference concept."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

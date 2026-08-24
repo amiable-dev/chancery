@@ -1,0 +1,10 @@
+{"rubric":"promotion@3","target":"staging/codegraph.md","task_id":"29e75f97914311e0",
+"disqualifiers":{
+"pure-announcement":{"triggered":false,"rationale":"Vendor blog, but organised around a representation pattern rather than a release."},
+"duplicate":{"triggered":false,"rationale":"No code-graph or GraphRAG concept exists in this corpus."},
+"unfalsifiable":{"triggered":false,"rationale":"The schema and queries are shown and reproducible against the linked open tooling."}},
+"dimensions":{
+"durability":{"rating":"strong","rationale":"Typed code-entity graphs (CALLS, INHERITS_FROM, DEPENDS_ON edges queryable via Cypher) and the argument that structured relationships beat vector-only retrieval for multi-hop code reasoning are representation-level ideas that outlast the vendor."},
+"actionability":{"rating":"strong","rationale":"The node/edge schema and worked Cypher queries are directly reusable, demo-booking pitch aside."},
+"atomicity":{"rating":"weak","rationale":"Bundles three separable ideas: the code-graph representation, the GraphRAG-versus-vector-RAG claim, and natural-language-to-Cypher querying."}},
+"supplier":{"class":"model-single","id":"claude-fable-5"}}
