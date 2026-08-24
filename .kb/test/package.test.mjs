@@ -90,6 +90,14 @@ check('nothing leaked into the package dir', !fs.existsSync(path.join(pkg, 'conc
   check('adapters generated for the fresh repo', fs.existsSync(path.join(fresh, '.claude', 'skills', 'kb-verify', 'SKILL.md')));
   const again = run(['init', '--format', 'json'], fresh);
   check('re-init inside a root is refused', again.code === 1 && JSON.parse(again.out).ok === false);
+  const nested = path.join(fresh, 'eval-root');
+  fs.mkdirSync(nested, { recursive: true });
+  const refused = run(['init', '--format', 'json'], nested);
+  check('nested init refuses without --force', refused.code === 1);
+  const forced = run(['init', '--force', '--format', 'json'], nested);
+  check('nested init proceeds with --force', forced.code === 0 && JSON.parse(forced.out).ok === true);
+  const nv = JSON.parse(run(['verify', '--format', 'json'], nested).out);
+  check('nested root self-governs cleanly', nv.ok === true && nv.summary.warnings === 0);
 }
 
 fs.rmSync(work, { recursive: true, force: true });

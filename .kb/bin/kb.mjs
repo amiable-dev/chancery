@@ -1025,10 +1025,19 @@ function init(argv) {
   const target = process.cwd();
 
   const existing = discoverRoot();
-  if (existing) {
+  if (existing && existing !== target && !argv.force) {
+    // Deliberate nesting (an eval root inside a governed repo, a monorepo
+    // sub-corpus) is legitimate: --force proceeds when the cwd itself is
+    // uninitialised. Accidental re-init of an existing root still refuses.
     console.log(format === 'json'
-      ? JSON.stringify({ ok: false, error: { command: 'init', message: `already inside a Chancery root: ${existing}` } }, null, 2)
-      : `REFUSED — already inside a Chancery root: ${existing}`);
+      ? JSON.stringify({ ok: false, error: { command: 'init', message: `already inside a Chancery root: ${existing}`, remedy: 'pass --force to create a deliberately nested root here' } }, null, 2)
+      : `REFUSED — already inside a Chancery root: ${existing}\n         pass --force to create a deliberately nested root here`);
+    return 1;
+  }
+  if (existing === target) {
+    console.log(format === 'json'
+      ? JSON.stringify({ ok: false, error: { command: 'init', message: `this directory is already a Chancery root` } }, null, 2)
+      : 'REFUSED — this directory is already a Chancery root');
     return 1;
   }
 

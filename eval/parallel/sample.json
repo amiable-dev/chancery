@@ -1,0 +1,226 @@
+{
+  "selected": 25,
+  "ok": 22,
+  "degraded": 3,
+  "sample": [
+    {
+      "url": "https://medium.com/lets-code-further/30-core-agentic-engineering-concepts-every-developer-should-know-5066b3117f69",
+      "domain": "ai-agents",
+      "reach": "ok",
+      "kpm_concepts": [
+        "commit-gates"
+      ]
+    },
+    {
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "domain": "ai-agents",
+      "reach": "ok",
+      "kpm_concepts": [
+        "plugin-marketplace"
+      ]
+    },
+    {
+      "url": "https://openssf.org/blog/2023/05/02/getting-to-know-the-open-source-vulnerability-osv-format/",
+      "domain": "security",
+      "reach": "ok",
+      "kpm_concepts": [
+        "osv-advisory-database"
+      ]
+    },
+    {
+      "url": "https://cybersecuritynews.com/apex-ai-penetration-testing-agent/",
+      "domain": "security",
+      "reach": "ok",
+      "kpm_concepts": [
+        "ai-assisted-penetration-testing"
+      ]
+    },
+    {
+      "url": "https://agentskills.io/home",
+      "domain": "standards",
+      "reach": "ok",
+      "kpm_concepts": [
+        "agent-skills-open-standard"
+      ]
+    },
+    {
+      "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/",
+      "domain": "standards",
+      "reach": "ok",
+      "kpm_concepts": [
+        "mcp-extensions-architecture",
+        "mcp-oauth-mixup-hardening",
+        "mcp-otel-trace-context-interlock",
+        "mcp-stateless-protocol",
+        "model-context-protocol"
+      ]
+    },
+    {
+      "url": "https://predictionguard.com/blog/ai-security-event-logging-the-siem-gap-in-agentic-ai-governance",
+      "domain": "observability",
+      "reach": "ok",
+      "kpm_concepts": [
+        "siem-integrated-ai-governance"
+      ]
+    },
+    {
+      "url": "https://briandouglas.me/posts/2026/03/04/claude-failed-mid-session-tapes-brought-it-back/",
+      "domain": "observability",
+      "reach": "ok",
+      "kpm_concepts": [
+        "tapes-agent-observability"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2005.11401",
+      "domain": "llm",
+      "reach": "ok",
+      "kpm_concepts": [
+        "retrieval-augmented-generation"
+      ]
+    },
+    {
+      "url": "https://zoyathinks.substack.com/p/evals-are-the-new-unit-tests-2c91f51399d6",
+      "domain": "llm",
+      "reach": "ok",
+      "kpm_concepts": [
+        "genai-eval-envelope",
+        "llm-as-a-judge"
+      ]
+    },
+    {
+      "url": "https://addyosmani.com",
+      "domain": "software-engineering",
+      "reach": "ok",
+      "kpm_concepts": [
+        "comprehension-debt"
+      ]
+    },
+    {
+      "url": "https://www.falkordb.com/blog/code-graph/",
+      "domain": "software-engineering",
+      "reach": "ok",
+      "kpm_concepts": [
+        "ast-based-code-analysis",
+        "blast-radius-dependency-tracing",
+        "codebase-knowledge-graphs"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Forgetting_curve",
+      "domain": "knowledge-management",
+      "reach": "ok",
+      "kpm_concepts": [
+        "retention-decay-knowledge"
+      ]
+    },
+    {
+      "url": "https://www.aibuilderclub.com/blog/karpathy-llm-wiki",
+      "domain": "knowledge-management",
+      "reach": "ok",
+      "kpm_concepts": [
+        "wiki-navigation-scaffold"
+      ]
+    },
+    {
+      "url": "https://github.com/safety-research/automated-w2s-research",
+      "domain": "ai-safety",
+      "reach": "ok",
+      "kpm_concepts": [
+        "automated-alignment-researchers",
+        "weak-to-strong-supervision"
+      ]
+    },
+    {
+      "url": "https://docs.keyforge.dev/addons/license-token-no-sdk",
+      "domain": "software-distribution",
+      "reach": "ok",
+      "kpm_concepts": [
+        "licensing-as-a-service"
+      ]
+    },
+    {
+      "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "domain": "governance",
+      "reach": "ok",
+      "kpm_concepts": [
+        "ai-sovereignty"
+      ]
+    },
+    {
+      "url": "https://blog.cloudflare.com/enterprise-mcp/",
+      "domain": "infrastructure",
+      "reach": "ok",
+      "kpm_concepts": [
+        "ai-llm-gateway",
+        "mcp-code-mode",
+        "mcp-server-portal",
+        "network-layer-ai-security",
+        "platform-baked-governance",
+        "shadow-mcp-detection"
+      ]
+    },
+    {
+      "url": "https://sre.google/workbook/alerting-on-slos/",
+      "domain": "reliability",
+      "reach": "ok",
+      "kpm_concepts": [
+        "slo-based-alerting"
+      ]
+    },
+    {
+      "url": "https://www.economist.com/science-and-technology/2025/07/16/will-ai-make-you-stupid",
+      "domain": "human-factors",
+      "reach": "ok",
+      "kpm_concepts": [
+        "cognitive-debt",
+        "cognitive-offloading",
+        "neural-dimming"
+      ]
+    },
+    {
+      "url": "https://towardsdatascience.com/how-to-build-a-context-layer-and-a-company-brain/",
+      "domain": "data",
+      "reach": "ok",
+      "kpm_concepts": [
+        "claim-check-pattern",
+        "context-layer-architecture",
+        "curated-over-mined-precedence",
+        "datamap-pattern",
+        "retrieval-composition-engine"
+      ]
+    },
+    {
+      "url": "https://nvidianews.nvidia.com/news/nvidia-launches-ising-the-worlds-first-open-ai-models-to-accelerate-the-path-to-useful-quantum-computers",
+      "domain": "quantum-computing",
+      "reach": "ok",
+      "kpm_concepts": [
+        "nvidia-ising"
+      ]
+    },
+    {
+      "url": "https://backstage.io/",
+      "domain": "governance",
+      "reach": "js-required",
+      "kpm_concepts": [
+        "platform-baked-governance"
+      ]
+    },
+    {
+      "url": "https://www.iso.org/standard/81118.html",
+      "domain": "software-engineering",
+      "reach": "blocked-4xx",
+      "kpm_concepts": [
+        "agentic-sdlc"
+      ]
+    },
+    {
+      "url": "https://docs.snyk.io/scan-using-snyk/snyk-open-source/manage-vulnerabilities/reachability-analysis",
+      "domain": "security",
+      "reach": "dead-no-archive",
+      "kpm_concepts": [
+        "reachability-aware-vulnerability-scanning"
+      ]
+    }
+  ]
+}
