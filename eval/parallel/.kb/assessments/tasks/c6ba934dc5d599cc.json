@@ -1,0 +1,33 @@
+{
+  "envelope": {
+    "task_id": "c6ba934dc5d599cc",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "d050b42bf21f348dd4a3770f1ef54fc9af94c860",
+    "input_hashes": {
+      "staging/codegraph.md": "sha256:e172f2a64e8aa45555ea917d40f10fb6c7106ee59cede0614c246a66253718f4",
+      "assessment:codegraph": "sha256:74574a9b0a10a8aef99ef844323c4762325d43ff360af0bc0e9ae0e582da0ee9",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:d84039e61926e572b40025094fd48ffab3c0e67207aeae987daaabc08fdf381b",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/code-knowledge-graph.md",
+    "concepts/graph-vs-vector-code-retrieval.md",
+    "concepts/natural-language-to-cypher.md"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "envelope": {
+    "task_id": "8de47dd167d8b90e",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "d050b42bf21f348dd4a3770f1ef54fc9af94c860",
+    "input_hashes": {
+      "staging/automated-w2s-research.md": "sha256:401ee29b5c9fa8f2b6c48e487f9c412c2584ee853f3060fa77fb9164429f9a42",
+      "assessment:automated-w2s-research": "sha256:4fac167c2fb52051a384822f8a4570dfed0bdac32d3a3a72f9fe32dea6b29e73",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:0e5d569ee56a91b82efed675fcc63bad842b341284775e71572613a24f9b5f09",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/weak-to-strong-generalization.md",
+    "concepts/automated-w2s-sandbox.md"
+  ]
+}

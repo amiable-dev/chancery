@@ -1,0 +1,34 @@
+{
+  "envelope": {
+    "task_id": "df8c604ecd6f9b7d",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "d050b42bf21f348dd4a3770f1ef54fc9af94c860",
+    "input_hashes": {
+      "staging/how-to-build-a-context-layer.md": "sha256:61b8082e42e3cd400b1d600b63e981eaf1d96fef9fbdc49ae31647abd1e3a6b5",
+      "assessment:how-to-build-a-context-layer": "sha256:1ed1ba9e55e85fddd090d66e656bacbf7c25827dbde6bd1e17793ccf85ac390b",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:2f2d10f8397500978e001109d3f10da095b496ad7f937bb355e1f99074cc1a84",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/context-layer.md",
+    "concepts/sync-deletion-semantics.md",
+    "concepts/retrieval-composition-engine.md",
+    "concepts/golden-dataset-retrieval-evals.md"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "envelope": {
+    "task_id": "5a00291528d7380a",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "d050b42bf21f348dd4a3770f1ef54fc9af94c860",
+    "input_hashes": {
+      "staging/scaling-mcp-adoption.md": "sha256:b6fcb7c5866d50214ebecc1ed9ea42c3a1287a969b0bb11f9d06603f6ba77495",
+      "assessment:scaling-mcp-adoption": "sha256:54ea44b4c0e24b4f14b4954ed8e122aa138feb5d7a3f4904113befc6e2969309",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:b61471ae522d871ca6f12087142d3f100ae9b269dd9d93f779fad16c228c0d6d",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/remote-first-mcp-governance.md",
+    "concepts/paved-road-mcp-platform.md",
+    "concepts/code-mode-mcp.md",
+    "concepts/shadow-mcp-detection.md"
+  ]
+}
