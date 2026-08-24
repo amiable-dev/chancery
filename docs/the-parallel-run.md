@@ -22,7 +22,7 @@ The predecessor admitted all 25 — by construction, since each backs a shipped 
 
 The two discards earn their verdicts. A personal homepage — a bio and book list, citable by the predecessor as evidence for a concept about comprehension debt — fails durability and actionability outright: there is no idea in a bio page for a concept to preserve. And a vendor's product-launch press release hit the `pure-announcement` knockout. The knockout is absolute; no dimension score can average it away.
 
-The four queued sources are the subtler behaviour. Each rated some mix of weak-but-not-failing (a marketplace README, a product-coverage piece, a single-tool war story, a vendor how-to), and the routing table has **no rule** for those combinations — deliberately. The rubric refuses to guess and parks them for the owner. The predecessor had no "park it" state: everything became a concept. The queue is where honest uncertainty goes to be a recorded decision instead of a silent admission.
+The four queued sources are the subtler behaviour. Each rated some mix of weak-but-not-failing (a marketplace README, a product-coverage piece, a single-tool war story, a vendor how-to), and the routing table has **no rule** for those combinations — deliberately. The rubric refuses to guess and parks them for the owner. The predecessor had no "park it" state: everything became a concept. The queue is where honest uncertainty goes to be a recorded decision instead of a silent admission. *(Update, same day: the owner dispositioned all four — three declined, one admitted by recorded override. The override is itself a signed judgment in the log, not an edit around the gate; the run's numbers above measure the gate unaided.)*
 
 ## Where the processes agree: what's composite
 
@@ -40,7 +40,7 @@ The honest asterisk: the baselines were re-accepted on 2026-08-21, when the evid
 
 ## What the records show
 
-Every number above is reproducible from the eval directory: 20 assessments with per-dimension rationales, 6 drafting envelopes, facet and link verdicts, the evidence store, and a queue holding four open judgments with the reason each one is parked. Supplier attestation (`model-single`, proposer overlap disclosed) travels in every record. That inventory — not the concept prose — is the deliverable. The predecessor produced 37 concepts from these 20 sources and cannot say why any of them was admitted; the parallel corpus can produce, for all 26 of its concepts, the verdict that admitted the source, the rating that shaped its structure, and the hash of the evidence it stands on.
+Every number above is reproducible from the eval directory: 20 assessments with per-dimension rationales, 6 drafting envelopes, facet and link verdicts, the evidence store, and a queue whose four judgments each carry the reason they were parked and, now, the owner's recorded disposition. Supplier attestation (`model-single`, proposer overlap disclosed) travels in every record. That inventory — not the concept prose — is the deliverable. The predecessor produced 37 concepts from these 20 sources and cannot say why any of them was admitted; the parallel corpus can produce, for all 26 of its concepts, the verdict that admitted the source, the rating that shaped its structure, and the hash of the evidence it stands on.
 
 A full-corpus run (275 sources) stays gated on a recorded trigger, per the method note — the sample's picture is stable enough that spending the supplier budget needs a reason, not an itch.
 

@@ -23,6 +23,7 @@ All concept notes in this repo, alphabetical order.
 | [[osv-format\|OSV format]] | security, supply-chain, standards, domain/security, maturity/established, source-type/practitioner |
 | [[paved-road-mcp-platform\|Paved-road MCP platform]] | infrastructure, governance, platform-engineering, domain/infrastructure, maturity/established, source-type/vendor-doc |
 | [[protocol-deprecation-policy\|Protocol feature lifecycle policy]] | standards, governance, protocols, domain/standards, maturity/emerging, source-type/vendor-doc |
+| [[proxy-boundary-session-capture\|Proxy-boundary session capture]] | observability, ai-agents, reliability, domain/observability, maturity/emerging, source-type/practitioner |
 | [[remote-first-mcp-governance\|Remote-first MCP governance]] | infrastructure, security, mcp, domain/infrastructure, maturity/emerging, source-type/vendor-doc |
 | [[retrieval-composition-engine\|Retrieval as composition]] | llm, retrieval, orchestration, domain/llm, maturity/emerging, source-type/practitioner |
 | [[retrieval-augmented-generation\|Retrieval-Augmented Generation (RAG)]] | llm, retrieval, architecture, domain/llm, maturity/established, source-type/research |

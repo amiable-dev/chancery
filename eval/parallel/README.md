@@ -84,7 +84,14 @@ evidence in `.kb/evidence/`.
   (durability and actionability `fail`) and a vendor launch press release
   (`pure-announcement` knockout). The 4 queue entries are (weak, weak, strong)
   or (weak, strong, strong) rating combinations with no routing rule — the
-  rubric refuses to guess and parks them for the owner, where they remain open.
+  rubric refuses to guess and parks them for the owner.
+  *Disposition (2026-08-24, owner):* three declined (plugin directory README,
+  Apex coverage, Keyforge docs — each with the primary source noted as the
+  better future ingest); one admitted by recorded override (`kb promote
+  --force`): the proxy-capture war story, rated (weak, strong, strong), drafted
+  principle-first as `proxy-boundary-session-capture`. The parallel corpus is
+  27 concepts; the run's own funnel numbers above are unchanged — they measure
+  the gate unaided, and the override is the owner layer doing its job.
 
 **Structuring.** The 14 admitted sources produced 26 concepts (9× 1→1, 1→2,
 1→3, two 1→4, 1→4). The same 20 staged sources back 37 distinct concepts in the
