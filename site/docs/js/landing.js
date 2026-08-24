@@ -1,23 +1,15 @@
 /* chancery landing interactions (design_handoff_chancery_brand):
    gate terminal (380ms type-in, replay), the two-phase stepper.
-   Data is the handoff's final copy, with commands corrected to the
-   published package (@amiable-dev/chancery) and renamed repo. */
+   Terminal lines come from js/terminal-capture.js — REAL captured CLI
+   output (ADR-012 §5); regenerate with site/capture/capture-terminal.mjs. */
 (function () {
   function init() {
     // ---- terminal ----
     var termBody = document.getElementById('kbl-term-body');
     if (termBody) {
-      var LINES = [
-        ['$ ', '#53d6c2', 'kb verify', '#e8ecf4'],
-        ['  ✓ ', '#33d6c2', 'schema      480 files', '#c5d0e2'],
-        ['  ✓ ', '#33d6c2', 'links       1,912 graph edges', '#c5d0e2'],
-        ['  ✓ ', '#33d6c2', 'index       244 concepts, regenerated clean', '#c5d0e2'],
-        ['  ✓ ', '#33d6c2', 'cards       1,240 stable ids', '#c5d0e2'],
-        ['  ✗ ', '#ff7a8a', 'citations   2 sources drifted since ingest', '#c5d0e2'],
-        ['', '#fff', ' ', '#c5d0e2'],
-        ['', '#fff', 'verify: FAIL (exit 1) — evidence drifted, not just links dead', '#ff7a8a'],
-        ['→ ', '#53d6c2', 'kb revalidate   · deterministic · no model · no network', '#7f8ba0'],
-      ];
+      var CAP = window.KBL_TERMINAL;
+      if (!CAP || !CAP.lines) return; // no capture generated: leave the noscript text
+      var LINES = CAP.lines;
       var timer = null;
       function render(n) {
         termBody.innerHTML = '';

@@ -65,13 +65,13 @@ hide:
 <div class="kbl-section">
   <span class="kbl-kicker">the gate</span>
   <h2>See it gate</h2>
-  <p class="kbl-lead">verify doesn't hand you prose to parse. Evidence drift is caught mechanically — which claims, not just which links. <em>The transcript below is an illustration of a drift failure, not a live capture.</em></p>
+  <p class="kbl-lead">verify doesn't hand you prose to parse. Evidence drift is caught mechanically — which claims, not just which links. <em>The transcript below is real captured output: the gate on this repository, then genuine drift against a source whose content changes every fetch (<a href="https://github.com/amiable-dev/chancery/blob/main/site/capture/capture-terminal.mjs">capture harness</a>).</em></p>
   <div class="kbl-term">
     <div class="kbl-term-bar"><span class="dots"><span></span><span></span><span></span></span>
-      kb verify — illustrative transcript (a drift failure)
+      captured output — kb verify · kb revalidate
       <button id="kbl-term-replay">replay</button>
     </div>
-    <div class="kbl-term-body" id="kbl-term-body"><noscript><div class="ln">$ kb verify … citations: 2 sources drifted → verify: FAIL (exit 1). Enable JavaScript for the animated transcript.</div></noscript></div>
+    <div class="kbl-term-body" id="kbl-term-body"><noscript><div class="ln">$ kb verify → PASS · $ kb revalidate → DRIFT, queued for review. Enable JavaScript for the captured transcript.</div></noscript></div>
   </div>
 </div>
 

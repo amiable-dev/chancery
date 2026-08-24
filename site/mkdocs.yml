@@ -34,6 +34,7 @@ extra_css:
   - stylesheets/landing.css
 
 extra_javascript:
+  - js/terminal-capture.js
   - js/landing.js
 
 markdown_extensions:
