@@ -1,0 +1,1007 @@
+{
+  "total_unique": 275,
+  "sampled": 25,
+  "residual": 250,
+  "urls": [
+    {
+      "url": "http://anthropic.com/news/context-management",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://adversa.ai/blog/top-mcp-security-resources-march-2026/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://agenticresourcediscovery.io/",
+      "last_reachability": "dns-transient"
+    },
+    {
+      "url": "https://agenticresourcediscovery.org/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://agenticresourcediscovery.org/how_to_publish/#step-1-create-the-manifest-ai-catalogjson",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://agentskills.io/specification.md",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://alignment.anthropic.com/2025/recommended-directions/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://alignment.anthropic.com/2026/automated-w2s-researcher/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://anystack.sh/docs/integrations/tauri",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://anystack.sh/tauri-applications",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/1706.03762",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/1803.09010",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2205.13147",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2210.03629",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2401.05566",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2501.09434",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2506.08872",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2512.04388",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2512.04695",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2602.12670",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://arxiv.org/abs/2606.21228",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://arxiv.org/html/2501.13124v1",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://asset-group.github.io/disclosures/ghostcommit/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://attack.mitre.org/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://baselinelabs.ai/blog/llms-txt-google-search",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://blockchain.news/news/langchain-ai-agent-memory-lock-in-warning",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://blog.cloudflare.com/code-mode-mcp/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://blog.langchain.com/the-anatomy-of-an-agent-harness/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://blog.langchain.com/your-harness-your-memory/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://blog.modelcontextprotocol.io/posts/2025-12-19-mcp-transport-future/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://briandouglas.me/posts/2026/01/18/for-every-ralph-there-needs-to-be-a-super-nintendo/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://briandouglas.me/posts/2026/01/31/long-term-care-for-agent-sessions/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://briandouglas.me/posts/2026/03/10/what-i-learned-running-10-pokemon-bots-in-36-seconds/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://briandouglas.me/posts/2026/03/15/sweeper-why-agent-infrastructure-matters/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://cdn.openai.com/papers/weak-to-strong-generalization.pdf",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://charonhub.deeplearning.ai/three-key-loops-for-building-great-software/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://claude.com/blog/a-field-guide-to-claude-fable-finding-your-unknowns",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://claude.com/blog/how-anthropic-secures-its-ai-native-software-development-lifecycle",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://code.claude.com/docs/en/discover-plugins",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://code.claude.com/docs/en/overview",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://code.claude.com/docs/en/plugin-marketplaces",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://crates.io/crates/tauri-plugin-better-auth-license",
+      "last_reachability": "js-required"
+    },
+    {
+      "url": "https://cribl.io/resources/rpt/2026-trends-and-predictions-report/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://cybersecuritynews.com/ghostcommit-attack-hides-prompts/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://cybersecuritynews.com/metatron-ai-penetration-testing/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://cybersecuritynews.com/owasp-cve-lite-cli-tool/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://cybersecuritynews.com/pentest-ai-agents-tool/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://cyclonedx.org/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://cyclonedx.org/specification/overview/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://datasciencedojo.com/blog/llm-wiki-tutorial/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://dev.to/shivasurya/unlocking-the-power-of-sarif-the-backbone-of-modern-static-analysis-9lc",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://dev.to/x4nent/opentelemetry-ebpf-instrumentation-obi-the-complete-guide-kubecon-eu-2026-beta-launch-5e2o",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/all-things-azure/agentic-devops-practices-principles-strategic-direction/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://developer.microsoft.com/blog/agentic-agile-why-agent-development-needs-agile-not-just-prompts",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/nvidia-ising-introduces-ai-powered-workflows-to-build-fault-tolerant-quantum-systems/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://developers.cloudflare.com/ai-gateway/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://developers.cloudflare.com/cloudflare-one/access-controls/ai-controls/mcp-portals/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://developers.cloudflare.com/cloudflare-one/access-controls/ai-controls/mcp-portals/#code-mode",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://developers.cloudflare.com/cloudflare-one/tutorials/detect-mcp-traffic-gateway-logs/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://developers.googleblog.com/announcing-the-agentic-resource-discovery-specification/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://developers.googleblog.com/build-long-running-ai-agents-that-pause-resume-and-never-lose-context-with-adk/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://devops.gheware.com/blog/posts/ebpf-kubernetes-observability-2026.html",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://discord.com/invite/clawd",
+      "last_reachability": "js-required"
+    },
+    {
+      "url": "https://dl.acm.org/doi/10.1145/1228677.1228686",
+      "last_reachability": "blocked-4xx"
+    },
+    {
+      "url": "https://dl.acm.org/doi/10.1145/1571941.1572114",
+      "last_reachability": "blocked-4xx"
+    },
+    {
+      "url": "https://docs.anthropic.com/en/about-claude/pricing",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.cloud.google.com/agent-registry/overview",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.dependencytrack.org/datasources/osv/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.fallow.tools",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/code-scanning/integrating-with-code-scanning/sarif-support-for-code-scanning",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/rest/copilot/copilot-usage-metrics?apiVersion=2026-03-10#get-copilot-usage-records-for-an-enterprise",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.github.com/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.keyforge.dev/addons/payment/setup/one-time",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.langchain.com/langsmith/home",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.llamaindex.ai/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.npmjs.com/cli/v10/commands/npm-audit",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/sarif-v2.1.0.html",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.openclaw.ai",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.ragas.io/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://docs.rs/antislop/latest/antislop/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://e2b.dev/docs/agents/claude-managed-agents",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://fatihkoc.net/posts/ebpf-parca-observability/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://fireworks.ai/blog/open-source-agents-frontier-advisors",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://gist.github.com/rohitg00/2067ab416f7bbe447c1977edaaa681e2",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-07-03-copilot-agent-session-streaming-is-now-in-public-preview/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/FareedKhan-dev/all-agentic-architectures",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/GoogleCloudPlatform/generative-ai/tree/main/agents/adk/new-hire-onboarding",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/ards-project/ard-spec",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/ards-project/ard-spec/blob/main/spec/schemas/ai-catalog.schema.json",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/asset-group/ghostcommit",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/capitalone/VulnHunter",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/fallow-rs/fallow",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/google-a2a/A2A",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/jason8745/llm-agent-trader",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/kvcache-ai/AgentENV",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/microsoft/agentic-agile-template",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/microsoft/agentic-agile-template/blob/main/MANIFESTO.md",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1766",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/obra/superpowers",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/omnigent-ai/omnigent",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/open-spaced-repetition/fsrs4anki",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/open-telemetry/semantic-conventions/releases/tag/v1.42.0",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/openclaw/openclaw",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/ossf/osv-schema",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/papercomputeco/stereOS",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/perplexityai/bumblebee",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/rohitg00/agentmemory",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/skew202/antislop",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/slok/sloth",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/tirth8205/code-review-graph",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/vercel-labs/deepsec/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://github.com/vigolium/vigolium",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://grafana.com/blog/2025/05/07/opentelemetry-ebpf-instrumentation-beyla-donation/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://grafana.com/blog/pyroscope-2-0-release/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://isburmistrov.substack.com/p/all-you-need-is-wide-events-not-metrics",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://john-hodge.com/blog/opentelemetry-genai-semantic-conventions/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/0963721409359277",
+      "last_reachability": "blocked-4xx"
+    },
+    {
+      "url": "https://keyforge.dev/blog/perpetual-fallback-desktop-apps",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://keyforge.dev/guides/how-to-license-tauri-app",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://keygen.sh/for-tauri-apps/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-mcp-tool-poisoning-ai-agent-exfiltration-2/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://langchain-ai.github.io/langgraph/concepts/multi_agent/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://langfuse.com/docs",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://levelup.gitconnected.com/beyond-rag-how-andrej-karpathys-llm-wiki-pattern-builds-knowledge-that-actually-compounds-31a08528665e",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://licenseseat.com/licensing-for-tauri-apps",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://limy.ai/blog/llms.txt-in-2026-the-full-guide",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://machinelearningmastery.com/an-introduction-to-loop-engineering/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://machinelearningmastery.com/building-ai-agents-here-are-some-anti-patterns-to-avoid/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://machinelearningmastery.com/effective-context-engineering-for-ai-agents-a-developers-guide/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://machinelearningmastery.com/stateful-vs-stateless-agent-design-tradeoffs-for-scalable-agentic-systems/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://martinfowler.com/articles/exploring-gen-ai/local-models-for-coding-experiences.html",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://medium.com/@Koukyosyumei/hacking-mcp-servers-in-ai-systems-the-rug-pull-tool-changes-after-approval-b4f1841da410",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://medium.com/@kaispriestersbach/the-llms-txt-is-dead-more-precisely-a-dud-ab7bee4f469c",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://medium.com/lets-code-future/30-core-agentic-engineering-concepts-every-developer-should-know-5066b3117f69",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://metalbear.com/mirrord/docs/use-cases/local-development",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://michellepellon.com/blog/2026-02-23-cognitive-debt",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://modelcontextprotocol.io/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/concepts/tools",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://neuralcoretech.com/agent-skills-open-standard-ai-agents/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://newsletter.pragmaticengineer.com/p/observability-the-present-and-future",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://newsletter.systemdesign.one/p/agentic-engineering",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://omnigent.ai/docs/omnibox",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://omnigent.ai/docs/policies/builtin#cost-control",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://omnigent.ai/docs/policies/overview",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://omnigent.ai/quickstart/collaborate",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://oneuptime.com/blog/post/2026-02-06-reduce-observability-costs-intelligent-sampling/view",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://openslo.com/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://opentelemetry.io/blog/2025/obi-announcing-first-release/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://opentelemetry.io/blog/2026/genai-observability/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://opentelemetry.io/docs/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://opentelemetry.io/docs/collector/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://opentelemetry.io/docs/specs/semconv/gen-ai/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://ossf.github.io/osv-schema/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://osv.dev/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://outcomeschool.com/blog/how-does-chain-of-thought-prompting-work",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://owasp.org/www-project-mcp-top-10/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/prompt-caching",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://promethium.ai/guides/ai-agent-data-governance-enterprise-playbook-2026/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://research.trychroma.com/context-rot",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://rustic-ai.github.io/codeprism/blog/graph-based-code-analysis-engine/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://sakana.ai/fugu-release/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://semgrep.dev/blog/2026/ai-supply-chain-problem/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://slsa.dev",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://snyk.io/lp/state-of-agentic-ai-adoption/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://thenewstack.io/paper-compute-agent-infrastructure/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://theplanettools.ai/blog/sakana-ai-fugu-multi-llm-orchestration-routes-around-export-controls-2026",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://thequantuminsider.com/2026/04/14/nvidia-launches-ising-the-worlds-first-open-ai-models-to-accelerate-the-path-to-useful-quantum-computers/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://towardsdatascience.com/building-an-ai-agent-to-detect-and-handle-anomalies-in-time-series-data/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://tree-sitter.github.io/tree-sitter/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://v2.tauri.app/plugin/updater/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://venturebeat.com/data/the-rag-era-is-ending-for-agentic-ai-a-new-compilation-stage-knowledge-layer-is-what-comes-next",
+      "last_reachability": "rate-limited"
+    },
+    {
+      "url": "https://vercel.com/blog/introducing-deepsec-find-and-fix-vulnerabilities-in-your-code-base",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.agensi.io/learn/agent-skills-open-standard",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/news/building-effective-agents",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/news/context-management",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/news/model-context-protocol",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/research",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/research/automated-alignment-researchers",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/research/building-effective-agents",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/research/emergent-misalignment-reward-hacking",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.anthropic.com/research/reward-tampering",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.atlassian.com/blog/state-of-teams-2026",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.bain.com/insights/the-three-layers-of-an-agentic-ai-platform/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.bain.com/insights/why-agentic-ai-demands-a-new-architecture/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.cloudflare.com/developer-platform/products/ai-gateway/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.cloudflare.com/learning/ai/prompt-injection/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.dama.org/cpages/body-of-knowledge",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.forbes.com/sites/stevemcdowell/2026/04/09/dynatrace-moves-upstream-bindplane-acquisition-targets-data-control/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.freecodecamp.org/news/from-manufacturing-to-microservices-universal-lessons-about-reliability/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.freecodecamp.org/news/what-is-hyde-how-to-improve-rag-with-hypothetical-documents/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.greadme.com/blog/seo/is-llms-txt-worth-it-for-ai-search",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.helpnetsecurity.com/2026/05/27/vigolium-open-source-vulnerability-scanner/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.honeycomb.io/blog/one-key-difference-observability1dot0-2dot0",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.honeycomb.io/blog/time-to-version-observability-signs-point-to-yes",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.infoq.com/articles/prompts-to-production-playbook-for-agentic-development/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.infoq.com/articles/securing-mcp-production-gateway/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/05/anthropic-claude-code-auto-mode/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.infoq.com/presentations/reliable-ai-platforms/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.infosecurity-magazine.com/news/cost-of-a-data-breach-5m-ibm/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.infoworld.com/article/4190721/five-tools-to-bolster-your-ai-coding-stack.html",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.jetbrains.com/store/terms/license_personal.html",
+      "last_reachability": "dead-no-archive"
+    },
+    {
+      "url": "https://www.langchain.com/blog/how-schneider-electric-built-their-llmops-foundations-at-enterprise-scale-with-langsmith",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.marktechpost.com/2026/05/23/perplexity-open-sources-bumblebee-a-read-only-supply-chain-scanner-for-developer-endpoints/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.marktechpost.com/2026/06/13/databricks-open-sources-omnigent-a-meta-harness-that-composes-governs-and-shares-ai-agents-across-claude-code-codex-and-pi/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.marktechpost.com/2026/06/16/google-cloud-introduces-open-knowledge-format-okf-a-vendor-neutral-markdown-spec-for-giving-ai-agents-curated-context/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.marktechpost.com/2026/07/27/kimi-ai-and-kvcache-ai-open-sources-agentenv/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.nist.gov/privacy-framework",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.npmjs.com/package/@crabnebula/better-auth-license",
+      "last_reachability": "blocked-4xx"
+    },
+    {
+      "url": "https://www.nxcode.io/resources/news/ai-native-sdlc-security-controls-playbook-2026",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.oreilly.com/library/view/observability-engineering/9781492076438/",
+      "last_reachability": "blocked-4xx"
+    },
+    {
+      "url": "https://www.oreilly.com/radar/context-as-code/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.perplexity.ai/hub/blog/perplexity-is-open-sourcing-bumblebee",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.polarsignals.com/blog/posts/2026/03/26/opentelemetry-profiling-goes-alpha",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.practical-devsecops.com/mcp-security-statistics-2026-report/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.qodo.ai/resources/the-ai-coding-paradox/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc7516",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc8037",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9207",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1364661316300985",
+      "last_reachability": "blocked-4xx"
+    },
+    {
+      "url": "https://www.scirp.org/reference/referencespapers?referenceid=3977439",
+      "last_reachability": "blocked-4xx"
+    },
+    {
+      "url": "https://www.sigstore.dev",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.tenable.com/blog/the-developer-credential-economy-exposure-data-is-the-new-front-line-in-the-supply-chain-war",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.theaimarketers.ai/guidetofable5/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.thoughtworks.com/radar/techniques/paved-road",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://www.xda-developers.com/claude-md-helping-your-projects-is-myth/",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://x.com/AndrewYNg/status/2071988145667928442",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2065494480837583297",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://x.com/karpathy/status/1937902205765607626",
+      "last_reachability": "ok"
+    },
+    {
+      "url": "https://x.com/sarahwooders/status/2040121230473457921",
+      "last_reachability": "ok"
+    }
+  ]
+}
