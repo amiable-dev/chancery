@@ -16,9 +16,12 @@ metrics below may not be reframed around the results.
   allowlist-closure test guarantees it cannot ship.
 - The engine is the repository's own working copy (`node ../../.kb/bin/kb.mjs`),
   i.e. current `main` — the dogfood is the current build.
-- The supplier for every judgment is one model (attested in each C6 record,
-  `proposer_overlap: true` throughout — the same agent stages, judges, and
-  drafts, disclosed as the envelope requires).
+- The supplier for every judgment is attested in each C6 record with
+  `proposer_overlap: true` throughout. *Amendment (2026-08-24, full run):* the
+  sample and all full-run assessments were supplied by claude-fable-5;
+  mid-run the owner paused and switched suppliers for cost — residual concept
+  drafting is claude-opus-5, classification/links/cards claude-sonnet-5. Each
+  record names its own supplier, so the mix is auditable per artifact.
 
 ## Sample
 
