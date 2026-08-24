@@ -133,3 +133,24 @@ Execution is fanned out to subagents per stage — ingest, assess, draft,
 facets, links — each judgment still travelling in its own envelope with
 supplier attestation; applies serialize on the root's lock. The swap itself
 is a separately reviewed change, not part of the run.
+
+## Full-corpus run (2026-08-24, results)
+
+The armed run processed all 250 residual sources: **235 total assessed
+(including the sample) → 72 promote / 31 split / 85 queue / 47 discard →
+184 concepts**, gate at 0 errors / 0 warnings. Links: isolated 45→3, median
+inbound 1→2. Suppliers per amendment above, attested per record. Dogfood
+catch: `sources --apply` was found dropping curator-set source metadata on
+first observation (157 provenance classes silently lost, restored from git);
+fixed in the engine the same day.
+
+**Queue strategy (owner decision, 2026-08-24).** A proposed rubric-v4 rule —
+(weak durability ∧ weak actionability) → discard, covering 55 of the 81
+assessed queue entries — was **rejected by the owner**: a weak source does
+not invalidate the concept it gestures at. Adopted instead: a
+**source-strengthening pass** — for each parked item, extract the durable
+kernel named in its assessment rationale, search for a stronger primary
+source, and re-enter it through the normal loop (ingest → fresh assessment
+→ promote only if the better source clears the bar). Items with no better
+source get resolved with that finding on record. The queue is worked off by
+improving evidence, not by lowering or mechanising the bar.
