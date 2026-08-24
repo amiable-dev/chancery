@@ -99,6 +99,9 @@ jobs:
         with:
           node-version-file: .nvmrc
       - run: node .kb/bin/check-pr-writes.mjs ${{ github.event.pull_request.base.sha }}
+      # log check needs the engine's runtime deps (yaml); scripts stay off per
+      # the supply-chain posture. Latent until the first real PR exercised it.
+      - run: npm ci --ignore-scripts
       - name: Log append-only + coupling (KB019)
         run: node .kb/bin/kb.mjs log check --base ${{ github.event.pull_request.base.sha }}
 
