@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "37358fe71c2d8817",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/slsa-levels.md": "sha256:e97de22aad79b0ea00814aa2eb07a3b360dada4036be54f07db89a43e7bc50a8",
+      "assessment:slsa-levels": "sha256:7752964fba23ace82b9a366de3aa6a075feafbda683d7965a03dde47544c9d3a",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:eb999f0ae35678629900fdb07f24181e4a16e042f9c662a36c89c9ed9bac0e29",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/slsa-build-provenance-levels.md"
+  ]
+}

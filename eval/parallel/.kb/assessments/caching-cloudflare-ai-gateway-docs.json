@@ -1,0 +1,49 @@
+{
+  "target": "staging/caching-cloudflare-ai-gateway-docs.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/caching-cloudflare-ai-gateway-docs.md",
+    "task_id": "7dfdd6a2a1e24ed0",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This documents the mechanism of an existing, standing feature, not a launch, release note, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Automatic prefix caching (RadixAttention) reuses KV-cache computation for shared prompt prefixes inside an inference engine; this note is about exact-match, full-response caching at a gateway/proxy layer keyed on provider+endpoint+model+auth+body — a reader of one learns nothing about the other."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is Cloudflare's own documentation of its own product's mechanism, checkable directly against observed behavior (the cf-aig-cache-status header)."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The genuine mechanism — exact-match caching on the full request body, hashed with SHA-256 — is real, but roughly half the note is Cloudflare-specific procedure that will churn: dashboard click-paths, API token scopes, and named headers (cf-aig-skip-cache, cf-aig-cache-ttl, cf-aig-cache-key) rather than a vendor-independent pattern."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It changes a build decision that holds even off Cloudflare: response caching for LLM calls defaults to exact-match on the full request, so anything less than byte-identical input is a miss, and a caching layer needs an explicit override path (custom key, TTL, skip) to be useful for real traffic."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One idea — default exact-match response caching keyed on the full request, with three per-request override mechanisms — states cleanly in a paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    }
+  }
+}

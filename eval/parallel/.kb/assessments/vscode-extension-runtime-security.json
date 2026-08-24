@@ -1,0 +1,49 @@
+{
+  "target": "staging/vscode-extension-runtime-security.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "task_id": "2de7279fbfbf1b6e",
+    "rubric": "promotion@3",
+    "target": "staging/vscode-extension-runtime-security.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Official, evergreen documentation of a long-standing security architecture (publisher trust since v1.97, marketplace scanning long predating that), not a launch or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "extension-registry-trust argues closed curation is the only defensible posture given no sandbox and explicitly calls scale/reputation/takedown remedies 'the wrong timing'; this note is the concrete operational counter-example — a real, major marketplace that chose open submission plus a specific layered-scanning-and-monitoring stack instead, with mechanisms (dynamic clean-room VM analysis, per-publisher trust propagation to dependencies, name-squat prevention, block-list-triggered auto-uninstall) none of which appear in the existing concept."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Official first-party VS Code documentation, directly checkable against the product and Marketplace policy, with a linked Microsoft DevBlogs post giving further detail."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Describes a stable security architecture (permission model, scanning stack, trust-prompt UX) that has been in place for years, not a version number or pricing detail that will churn."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Gives a concrete, checkable set of measures — signature verification, publish-time scanning, verified-publisher badges, block-lists — that directly informs how someone would design or audit an extension distribution channel's trust model."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Every section serves one thesis stated cleanly in a paragraph: because extensions run unsandboxed, the marketplace compensates with layered publish-time, identity, and post-publish controls gated behind per-publisher user consent — a structure comparable to the already-promoted layered-agent-guardrails concept's multiple-mechanisms-under-one-principle shape."
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/e2b.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/e2b.md",
+    "task_id": "ddf0629cd4dcdce8",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is persistent quickstart documentation, not a launch or release note, but it also carries no idea beyond literal SDK usage."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The content is too shallow (install commands, API key setup, a self-hosting cloud-provider list) to substantively overlap with snapshot-backed-agent-sandboxes or request-level-sandbox-isolation; there is no real idea here to be a duplicate of."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The instructions are concrete and directly verifiable (install command, API call, self-hosting repo link), just not a durable idea."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The note is entirely getting-started mechanics — package names, an API-key flow, a cloud-provider support list — and never actually reaches the session-to-sandbox routing architecture (control plane vs data plane) this hunt was looking for; it will date with the next SDK revision like any quickstart."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It tells a reader the literal commands to start a sandbox, which is not the same as giving a decision-relevant architectural pattern to build against."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "It is one coherent, if shallow, idea (how to install and start an E2B sandbox) rather than several bundled unrelated ideas."
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "369d1225816d9a44",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/how-knip-works.md": "sha256:93b9d1d6159032d81002367b0ce817214f9f96541e9441218e58aecbefe43525",
+      "assessment:how-knip-works": "sha256:41cc2f1f0029ae5d2079e50427e42232645ba89e97d96dbe51cd28dc8eeadaa0",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:01162ffe5bcced14bd8baf28f0980966b7d27d2ed93ba39c05017f8bfc263d87",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/reachability-based-dead-code-detection.md"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/agent-memory-dev.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "task_id": "46382e3d37fe5e06",
+    "rubric": "promotion@3",
+    "target": "staging/agent-memory-dev.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Beneath the marketing framing there is a transferable pipeline shape — hook-driven auto-capture, session-stop consolidation into semantic memory, budget-gated hybrid recall — that a reader could replicate outside this product."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concept, knowledge-lifecycle-management, covers claim confidence, supersession and decay once knowledge already exists in the base; it says nothing about the hook-based auto-capture mechanism or budget-gated injection at session start that this note centers on, so a reader learns something new here even though the consolidation step overlaps."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The pipeline shape (12 lifecycle hooks, LLM-driven consolidation on session stop, hybrid BM25+vector+graph recall) is described as a concrete, checkable mechanism, not an unsourced claim."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "This landing page is dominated by exactly the perishable categories the original source was parked for — a pinned version (v0.9.29), port numbers, test counts, a competitor benchmark table, and Product Hunt testimonials — with the durable pipeline shape present but a small fraction of the text, so it does not clear the bar the original source failed."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "A reader can replicate the concrete architecture regardless of this product: wire capture to agent lifecycle events, consolidate raw observations into semantic memory with dedup and decay on session end, and inject top-ranked results under a token budget at the next session start."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The capture-consolidate-recall pipeline is one coherent mechanism statable in a single paragraph, independent of the page's feature-by-feature marketing framing."
+      }
+    }
+  }
+}

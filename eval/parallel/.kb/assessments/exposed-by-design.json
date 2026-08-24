@@ -1,0 +1,49 @@
+{
+  "target": "staging/exposed-by-design.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "task_id": "314c7715350e5acf",
+    "rubric": "promotion@3",
+    "target": "staging/exposed-by-design.md",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a peer-reviewable arXiv security-measurement paper with a named methodology and framework, not a launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "remote-first-mcp-governance prescribes an enterprise fix, mcp-oauth-discovery-ssrf and mcp-attack-surface-taxonomy name mechanisms and categories, but none of them is the empirical prevalence finding this paper contributes — an internet-scale measured baseline of how internet-facing MCP servers actually stand today."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Backed by a stated methodology (passive discovery across eleven data sources plus active dynamic testing via an open-sourced framework, 34 test modules over 10 vulnerability classes, four measurement runs) that is independently reproducible."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The claim is structural, not a stat that ages out: internet-facing MCP servers are exposed by design because deployment velocity currently outpaces security review, evidenced by an open-sourced, reusable scanning methodology rather than a one-off vendor count."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It substantiates urgency and names the failure modes empirically (auth absence, unrestricted shell tools, days-long deployment churn) but does not hand the reader a new mitigation technique beyond the obvious 'turn on auth, restrict tools' already covered elsewhere."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One coherent idea — internet-facing MCP servers are measurably exposed by design, evidenced by a purpose-built dynamic-scanning methodology across a real-world sample — stateable in one paragraph."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    }
+  }
+}

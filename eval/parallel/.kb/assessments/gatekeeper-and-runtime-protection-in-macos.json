@@ -1,0 +1,49 @@
+{
+  "target": "staging/gatekeeper-and-runtime-protection-in-macos.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/gatekeeper-and-runtime-protection-in-macos.md",
+    "task_id": "181add856d5a8457",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is Apple's own explainer of a standing OS security mechanism, not a launch, release note, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts cover prompt-injection boundaries, agent sandboxing, and UI/licensing patterns; none describe macOS's developer-signature-plus-notarization trust check for distributed software."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is Apple's own primary documentation of Gatekeeper's mechanism, directly verifiable against observed macOS behavior."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Describes the mechanism itself — signature plus notarization check, first-run consent, quarantine of downloaded code, plug-in isolation — with no version numbers or pricing to go stale."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It explains what Gatekeeper checks and why unsigned software gets blocked, which justifies a shipping decision, but it is a user-facing security explainer, not a step-by-step guide to signing or notarizing an app."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One coherent idea — Gatekeeper's layered trust check on downloaded software — statable in a paragraph, with the brief runtime-protection note as a minor adjacent fact rather than a second concept."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/tradingagents.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/tradingagents.md",
+    "task_id": "36674cb0a4104d19",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a research paper reporting a novel multi-agent decision architecture and its empirical backtest results, not a release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "premature-multi-agent-architecture and workflows-versus-agents address whether to use multiple agents at all; neither describes this specific decision pipeline of specialist analysts feeding an adversarial bull/bear debate through a risk-management gate into a synthesis decision."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is an arXiv paper (Oral at a multi-agent workshop) with a public reference implementation and reported quantitative backtest metrics (Sharpe ratio, cumulative returns, max drawdown vs baselines) that a reader can check."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The decision-pipeline pattern - specialist analysis feeding a structured adversarial debate, gated by risk review, resolved by a synthesis step - is a general architecture for LLM-driven decisions under uncertainty, independent of any specific model version or market."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It gives a concrete template to copy for any LLM decision system: assign specialist roles, force an explicit two-sided debate before deciding, gate the outcome through a dedicated risk check, then synthesize debate output with raw data in a separate final step, rather than letting one LLM call decide directly."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The whole idea - structuring an LLM decision as specialist analysis, adversarial debate, risk gate, then synthesis - is stated in one paragraph independent of the paper's trading-specific framing and experiments."
+      }
+    }
+  }
+}

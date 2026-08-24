@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "348d5d7e7bded493",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/gh-actions-security-hardening.md": "sha256:b403329e8f6bf3434176de9107da7abbd4b144c842b581a208ff3f9347e528de",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:75c77be3dd137d96baa3d759cb5862ae5a3de3ce4c734b65a5784b3959e14706",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/gh-actions-security-hardening.json"
+  ]
+}

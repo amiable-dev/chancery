@@ -1,0 +1,49 @@
+{
+  "target": "staging/architecture-overview-model-context-protocol.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "weak",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "task_id": "76b40dcda1b88604",
+    "rubric": "promotion@3",
+    "target": "staging/architecture-overview-model-context-protocol.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "A technical architecture overview, not a launch, release note or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "mcp-stateless-core covers the session/handshake removal specifically; this note's bulk — the host/client/server participant model, the data/transport layer split, the full primitive taxonomy, and notification subscriptions — is not substantively covered by any single existing MCP concept."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Official protocol documentation with reproducible, checkable claims (method names, transport mechanisms, deprecation notices)."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Even the undated entry URL canonicalizes to the dated 2026-07-28 revision, and the page itself documents active internal churn — sampling and logging are marked deprecated as of this very release — so the primitive set it teaches is mid-restructuring rather than settled."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It is a landscape tour of participants, layers and primitives with a worked example, and explicitly defers anything actionable to the language-specific SDK docs and the full specification."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "Bundles at least four separable ideas — host/client/server topology, the data/transport layer split, the primitive taxonomy with its current deprecations, and the notification/subscription mechanism — under one architecture-overview umbrella."
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "2b1b1bf56917aafb",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/opa-docs.md": "sha256:31ebd39a236a895aabd99eb7ebd3acc561ddf0727269b53651606e177f69ccde",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:e3b00757b129ff41622e5391b9d3ade25192e4c8a05e1eae422bb4e18917b288",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/opa-docs.json"
+  ]
+}

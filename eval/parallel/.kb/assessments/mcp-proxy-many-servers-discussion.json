@@ -1,0 +1,49 @@
+{
+  "target": "staging/mcp-proxy-many-servers-discussion.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "task_id": "24569cf481c3c554",
+    "rubric": "promotion@3",
+    "target": "staging/mcp-proxy-many-servers-discussion.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is an ongoing protocol-design discussion among maintainers and implementers, not a launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts (mcp-control-plane-layers, mcp-authorization-hardening) argue where enforcement should sit and how OAuth should be hardened; neither covers this thread's proxy-of-servers namespacing mechanics or the session/authority-boundary design constraints (immutable upstream routing tuples, per-tenant session isolation, hop-by-hop reverse-direction authorization)."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is a real, attributed GitHub discussion with linked PRs, issues, and a cited TSC meeting — independently checkable, not a bare claim."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The thread is dominated by unresolved bikeshedding — the TSC's own consensus was that namespacing stays 'a documented best practice... not a mandatory protocol requirement,' and several sub-threads are explicit speculation ('hard to speculate at this stage') or client-specific regex bugs (Claude Code/Cursor) that will change independently of the protocol."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "The closing comment gives a builder concrete constraints for a proxy-of-servers — keep an immutable upstream ID separate from the display name, scope sessions to the effective principal not just the upstream connection, treat reverse-direction requests as independently authorized hops, version the proxy manifest rather than mutating capabilities silently."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "It bundles several separable ideas — tool-name namespacing syntax, a Plan-9-inspired mounting proposal, client-specific character-limit bugs, and the session/authority-boundary principle — rather than one idea statable in a paragraph."
+      }
+    }
+  }
+}

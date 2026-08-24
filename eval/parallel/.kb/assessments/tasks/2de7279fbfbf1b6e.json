@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "2de7279fbfbf1b6e",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/vscode-extension-runtime-security.md": "sha256:2bf2bdd4be3274c370b85db4f14b86b202adadff57ddd4e32876000b0223a257",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:0ef92715ba3f8ac1dba3cc2b3ab324024d01e5d4bd43d0cc13182240cf7a8c96",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/vscode-extension-runtime-security.json"
+  ]
+}

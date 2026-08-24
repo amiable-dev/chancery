@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "4d3b8e62651c531b",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/tuf-specification.md": "sha256:caf74450f4008f7191f67c797dc4df8032d9feea9d3209640a0b6c457b79f76b",
+      "assessment:tuf-specification": "sha256:6c2575bb1dd1c5f4535856dd800b7a27cae78bef0d286135f5ec6a24d9bf287d",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:175c8e651615e8eb6fad10ee732fcc073fa0dc9be74217bc0d57dbcbd953ba48",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/threshold-signed-software-updates.md"
+  ]
+}

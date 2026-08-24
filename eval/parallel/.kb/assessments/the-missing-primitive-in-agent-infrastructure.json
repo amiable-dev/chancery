@@ -1,0 +1,49 @@
+{
+  "target": "staging/the-missing-primitive-in-agent-infrastructure.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "task_id": "fcbb2b37ca9bb6c1",
+    "rubric": "promotion@3",
+    "target": "staging/the-missing-primitive-in-agent-infrastructure.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "The post argues a general architectural claim (confinement and observability are not actually in tension once capture is durable and happens inside the sandbox boundary) with reasoning and a concrete failure scenario, not just that a product shipped."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The capture-mechanism portion substantively overlaps the existing proxy-boundary-session-capture concept (same transparent-proxy, content-addressed design, same source family), but the note's distinct argument — that isolation and observability reinforce rather than trade off once capture sits inside the sandbox boundary — is not covered by that concept or by any other nearest concept, so a reader still learns something new."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The mechanism is described concretely (transparent proxy, content-addressable hashing, sandboxed runtime with replay inside the sandbox) by the company building it, with a public repo and quickstart linked."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The claim that confinement and observability reinforce each other once capture happens durably inside the sandbox boundary, rather than being a forced tradeoff, is a general infrastructure-design principle independent of this vendor's roadmap or version."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It directly informs a build decision: place session capture inside/beneath the sandbox boundary rather than bolting observability on outside it, so isolating an agent does not require sacrificing full-fidelity visibility into what it did."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The note bundles a capture mechanism that duplicates an existing concept, a sandboxed-orchestration synthesis that is genuinely new, and a speculative self-healing roadmap that is not elaborated as a mechanism — the finding is to extract only the one durable, non-duplicate idea rather than promote the note as a whole."
+      }
+    }
+  }
+}

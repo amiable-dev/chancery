@@ -1,0 +1,55 @@
+{
+  "target": "staging/agentic-artificial-intelligence-ai.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/agentic-artificial-intelligence-ai.md",
+    "task_id": "2d13650a5085169d",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is an academic survey proposing and defending a taxonomy from cited prior systems, not a launch, release or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest existing concepts (react-pattern, evolved-llm-coordinator, workflows-versus-agents, rl-learned-orchestration, multi-agent-orchestration-topologies, outcome-based-agent-evals) each cover one specific pattern or mechanism; none give the overall six-part decomposition (Perception, Brain, Planning, Action, Tool Use, Collaboration) this note proposes as a shared vocabulary for comparing systems."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is a cited academic survey (with a bibliography of prior systems and papers) rather than an assertion, and is exactly the kind of evidence-grounded alternative this hunt was sent to find in place of an unsupported consultancy framing."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Unlike the original consultancy piece, this taxonomy is derived from a systematic review of published agent architectures rather than an asserted market observation, and a categorisation scheme for what an agent system must do (perceive, reason, plan, act, use tools, collaborate) does not depend on any vendor's product cycle."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It gives a structural checklist for designing or evaluating an agent platform — treat perception, reasoning, planning, action, tool use and collaboration as separable concerns to be deliberately designed, rather than an undifferentiated agent loop — which changes how someone would decompose a build."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The source is a 99KB survey bundling the taxonomy together with several other separable ideas (the shift to native inference-time reasoning models, MCP/tool-use standardisation, evaluation practice, specific failure modes like prompt injection); the taxonomy itself is one coherent paragraph-statable idea, but the note as a whole is not."
+      }
+    },
+    "proposed_concepts": [
+      {
+        "title": "Six-part agentic AI architecture taxonomy",
+        "definition": "A unified taxonomy for describing an agentic AI system by decomposing it into six architectural concerns — Perception (taking in state from the environment), Brain (the LLM-based reasoning core), Planning (decomposing a goal into a sequence of actions), Action (executing a step and observing its effect), Tool Use (invoking external capabilities, increasingly through standardised protocols rather than one-off API integrations), and Collaboration (coordinating with other agents or humans) — giving a common vocabulary for comparing systems ranging from a single reasoning loop to hierarchical multi-agent deployments."
+      }
+    ]
+  }
+}

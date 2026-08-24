@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "3d76694af7413336",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/sandboxes-concepts-guide-signadot.md": "sha256:5b9a9a7bdf0022dbcc70d29466c93cb7822b154dce17de896490943c9c1be126",
+      "assessment:sandboxes-concepts-guide-signadot": "sha256:538f10eacca584d72d15a0570b05ec88ea3cc66a48bdb62e9b868d0b471ea308",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:ab0721106a536f9c65f0092416f3d25fdb4a067202a7c2c405e5915d4ce36fd9",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/request-level-sandbox-isolation.md"
+  ]
+}

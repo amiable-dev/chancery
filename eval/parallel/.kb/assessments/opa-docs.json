@@ -1,0 +1,49 @@
+{
+  "target": "staging/opa-docs.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "task_id": "2b1b1bf56917aafb",
+    "rubric": "promotion@3",
+    "target": "staging/opa-docs.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "OPA's own architecture and getting-started documentation for a project that has existed since 2016 and graduated CNCF in 2021, not a launch or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Nearest concepts address a different axis — which pipeline stage catches which failure class (layered-agent-guardrails), or tool-call ergonomics — not the internal expressiveness of the decision mechanism itself; layered-agent-guardrails even names a static allow/deny list as one of its layers, which this concept would let someone upgrade."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Primary project documentation with a live public playground, open-source implementation, and runnable examples — directly checkable, not merely asserted."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The decouple-decision-from-enforcement architecture and arbitrary-structured-output model have been stable since 2016 and are the de facto standard for policy-as-code (Kubernetes admission control, API gateways, CI/CD) — a durable mechanism, not a pricing or version detail."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Gives a concrete adoptable pattern — query a decoupled engine with structured input plus external data, receive structured (not just allow/deny) decisions — that directly enables encoding budgets, rate limits, or computed risk scores as policy conditions, changing how someone would design an authorization layer."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The note bundles the architectural claim with a full hands-on Rego syntax tutorial (variables, rules, functions, imports, a worked network-policy example) and CLI installation instructions — several separable ideas beyond the one durable architectural principle."
+      }
+    }
+  }
+}

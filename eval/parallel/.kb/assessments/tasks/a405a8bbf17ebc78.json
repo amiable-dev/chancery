@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "a405a8bbf17ebc78",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/ard-specification-agenticresourcediscovery-org.md": "sha256:31c3fb69571f6e3bf5c5773089b656fc38c06225b31e4fe90fc637d26275bd67",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:9ff912c9dbb0c978ee4f503a23c46d831317f259cca754e922c30fcda289f94f",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/ard-specification-agenticresourcediscovery-org.json"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "bbe191e0ae813dd6",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/fast-and-expressive-llm-inference-with.md": "sha256:0cf75d0a0e456e14b1c78e3acadd0dc4ad769d9b3e4bdcd87288e220bad7f123",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:8a762c748b6cfa70fa0ed5ae7bd137ea5f01ac67aae76171fc5881252832de63",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/fast-and-expressive-llm-inference-with.json"
+  ]
+}

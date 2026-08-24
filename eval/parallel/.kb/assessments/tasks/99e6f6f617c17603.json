@@ -1,0 +1,21 @@
+{
+  "envelope": {
+    "task_id": "99e6f6f617c17603",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/fast-and-expressive-llm-inference-with.md": "sha256:0cf75d0a0e456e14b1c78e3acadd0dc4ad769d9b3e4bdcd87288e220bad7f123",
+      "assessment:fast-and-expressive-llm-inference-with": "sha256:6b7fea6b343e1372bd46bafa8423f614bccb2cd5ecef319c740643d3861e081a",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

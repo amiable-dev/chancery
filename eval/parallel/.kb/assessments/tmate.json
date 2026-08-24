@@ -1,0 +1,49 @@
+{
+  "target": "staging/tmate.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "fail",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "task_id": "1b2a0b7ee9d3414e",
+    "rubric": "promotion@3",
+    "target": "staging/tmate.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Not framed as a launch or funding announcement — just an extremely minimal project description with no promotional framing."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "No existing concept overlaps with terminal/session-sharing tools; nearest neighbours (CycloneDX object model, gateway channel ownership, retry escalation ladder) are unrelated."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "What little is stated (tmux fork, BSD license) is trivially true and checkable — the problem is that there is no substantive claim here at all, not that a claim is unverifiable."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The two facts given (tmux fork, BSD license) will still be true in twelve months, but the note carries essentially no substantive content — closer to a name-drop than a described mechanism or trade-off."
+      },
+      "actionability": {
+        "rating": "fail",
+        "rationale": "There is nothing to act on: no mechanism, no design choice, no security claim, no guidance — the GitHub landing page's extractable text was only a two-line description and a license note, missing the write-access-equals-execution point the kernel was chasing entirely."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Trivially: the entire note is already under one sentence, so whatever thin idea it carries is stated in far less than one paragraph."
+      }
+    }
+  }
+}

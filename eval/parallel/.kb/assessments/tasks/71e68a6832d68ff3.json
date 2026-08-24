@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "71e68a6832d68ff3",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/introducing-the-mcp-registry.md": "sha256:a508555a2f3278be72a6d7a9a7a8d12b1b8e0c39a47b33fb7745291099f1d985",
+      "assessment:introducing-the-mcp-registry": "sha256:500df2dfb7b728c24ed3a4bcc6aa70ec393e39c1ae98f269e6acb164e237cddb",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:7f50da152cbe26e3e1ac1b26cb588c605c555df68404ea48fe8a1a95eb02fae6",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/mcp-registry-federation.md"
+  ]
+}

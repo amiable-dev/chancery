@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "cf377f42425e6bd7",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/opa-docs.md": "sha256:31ebd39a236a895aabd99eb7ebd3acc561ddf0727269b53651606e177f69ccde",
+      "assessment:opa-docs": "sha256:f4b44050fb1bee12c5c369672a69b80b0483704f0d5778ca2a668014d044f33f",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:bfb277a5083d41a5efb63d7041be093d7f4c2fb8ae396a51ee4f17a2e7bad1f4",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/decoupled-policy-decision-engines.md"
+  ]
+}

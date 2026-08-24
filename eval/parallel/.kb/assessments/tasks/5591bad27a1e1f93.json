@@ -1,0 +1,32 @@
+{
+  "envelope": {
+    "task_id": "5591bad27a1e1f93",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/security-best-practices-model-context-protocol.md": "sha256:9b6dc60d8b180f2f98038f2ece7f7bb0619e7844ccd7eea8bfc3680f7a7c2cda",
+      "assessment:security-best-practices-model-context-protocol": "sha256:c9fecab3800507466b8b2e9ad0b01fa2df2de785b5d8f10c2f1889cfa9166d93",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:67c8b8c74840048224da28758ea09d9babd8b6cc150928141b4e9a1b73564a5c",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/mcp-confused-deputy-token-passthrough.md",
+    "concepts/mcp-oauth-discovery-ssrf.md"
+  ]
+}

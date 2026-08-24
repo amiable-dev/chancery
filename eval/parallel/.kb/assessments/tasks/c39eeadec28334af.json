@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "c39eeadec28334af",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/gatekeeper-and-runtime-protection-in-macos.md": "sha256:15e7472a831bb89d2ac23fb05dbfefdfe8ac24c7e967a2fbca2879227112c190",
+      "assessment:gatekeeper-and-runtime-protection-in-macos": "sha256:e340c2ef560f302db6ac5cb7b4a448e572d9b53c6a7b089822264b98c5ab9433",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:60de84a5538ba1d9a9c10dad314bb9ff0a9b86bcf01c939792932245c15626fe",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/macos-gatekeeper.md"
+  ]
+}

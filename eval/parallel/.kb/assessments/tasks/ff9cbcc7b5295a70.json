@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "ff9cbcc7b5295a70",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/pentest-ai-agents.md": "sha256:066dacab97a4109c63b9295f1bafc264241780525d3008c65944f3a6a98d71ec",
+      "assessment:pentest-ai-agents": "sha256:f547c89edb50050064caa0f8edfd7f6a230f4865827fc90bf576abafb74a1054",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:03d884a611fa07da7ea437f0e77300e9c3adac920f786774ce24ba147fedcf51",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/tiered-execution-gating-for-ai-agents.md"
+  ]
+}

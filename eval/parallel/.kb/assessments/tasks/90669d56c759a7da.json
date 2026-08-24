@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "90669d56c759a7da",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/openclaw-architecture.md": "sha256:617a25ab593c1d96d54840efffb82310e367f4cbbaa2199e529c3d144361c1ad",
+      "assessment:openclaw-architecture": "sha256:b01867d0a8b512c31c4ca85eb2b4032b81337e4218d14addb274e0136d67e5b6",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:1e401505776d81b00031c7f0c6f0ee5bca7fb2fe94c1f4f61572f71de414c4aa",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/gateway-channel-ownership.md"
+  ]
+}

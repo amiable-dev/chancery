@@ -1,0 +1,49 @@
+{
+  "target": "staging/slsa-levels.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "task_id": "7835c241eba4baec",
+    "rubric": "promotion@3",
+    "target": "staging/slsa-levels.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "A ratified specification page defining concrete, prescriptive levels, not a launch or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Nearest concepts address adjacent but distinct territory — immutable-reference-pinning is one specific technique that could help satisfy a requirement, not the broader graduated framework itself; exposure-first-supply-chain-defense and risk-tiered-agent-change-control address different specific mechanisms (credential theft, SDLC identity separation) — none describe a cumulative, leveled taxonomy for grading build-provenance trustworthiness."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "This is the primary specification itself, versioned and governed under OpenSSF, with each level's requirements stated prescriptively and checkably."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "SLSA reached v1.0 specifically to ratify and freeze the Build track's four-level structure; it is governed under OpenSSF and is now the reference framework major ecosystems and vendors cite for build-provenance maturity — a stable taxonomy, not a churning version number."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Each level states concrete, checkable requirements (consistent build process, provenance existence, signed provenance from a hosted platform, run isolation and inaccessible signing keys) that directly tell a producer what to change and a consumer what to check for."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One coherent, cumulative idea — four progressive levels of a single build track, each requiring everything the previous level requires plus more — not several unrelated ideas bundled together."
+      }
+    }
+  }
+}

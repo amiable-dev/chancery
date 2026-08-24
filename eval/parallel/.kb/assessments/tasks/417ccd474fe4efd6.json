@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "417ccd474fe4efd6",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/full-text-of-dtic-ad0770768.md": "sha256:03ba550ed1a787e4bf6011899db0209541d04458f1cfc8ab122934ef453870bf",
+      "assessment:full-text-of-dtic-ad0770768": "sha256:7952c045eff4b27a10268443387614f2fa86409e6eb252a2bac59733c2a80823",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:e2f89efa49f29c4820f74c1780c62a7b1a196c8972c58006c34af322e72dafe1",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/bell-lapadula-confidentiality-model.md"
+  ]
+}

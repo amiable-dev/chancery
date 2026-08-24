@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "501e47716ab3c145",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/exposed-by-design.md": "sha256:62d188493cb2ebd1eab67cef68824e528366a641ad231ceac16c95961a3e444d",
+      "assessment:exposed-by-design": "sha256:a149341b0c5dad3c42eb78fbb301e516638ec7d1a764ae7b91cc31733bc5d5fa",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:970dc74f420a272763a79d9744dad8d4ecf5a6e5156d9378465131434acf7d8e",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/mcp-exposed-by-design.md"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/https-www-rfc-editor-org-rfc.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/https-www-rfc-editor-org-rfc.md",
+    "task_id": "8783b7bca8bad4a5",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is the formal IETF Standards Track RFC itself, not a launch, release note, or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The existing JSON Web Encryption concept only mentions JWT in passing, as one thing JWE can encrypt (nested JWTs); it does not cover JWT's own claims structure, registered claim names, or the signed-versus-encrypted choice, so a reader of it learns nothing about what this note defines."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is the primary standard itself — the maximally checkable source, since it is what conformance is measured against."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "A decade-old IETF Standards Track RFC with no version numbers, pricing, or vendor feature matrix to churn — the format and its registered claim semantics are the stable reference point implementations converge on."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Defines exactly which claim names are already standardized (iss, sub, aud, exp, nbf, iat, jti) and the signed-versus-encrypted structural choice, letting a reader implement offline-verifiable, self-contained tokens directly from off-the-shelf libraries rather than inventing token semantics from scratch."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One idea — a compact, URL-safe JSON claims format that can be signed and/or encrypted for offline verification — stated in a paragraph; the registered claims and security considerations are facets of that one format, not separate standalone concepts the way an unrelated policy catalog would be."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    }
+  }
+}

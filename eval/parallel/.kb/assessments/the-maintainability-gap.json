@@ -1,0 +1,49 @@
+{
+  "target": "staging/the-maintainability-gap.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "task_id": "f62ecbbc46208a9c",
+    "rubric": "promotion@3",
+    "target": "staging/the-maintainability-gap.md",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a primary research report with a measured methodology and mechanism, not a product launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (shared-mental-model-erosion, agent-loop-telemetry, short-term-availability-tradeoff, agent-tool-ergonomics, code-mode-mcp, closed-loop-secure-codegen) cover the specific mechanism of AI-coding's atomic-task incentive eroding duplication, refactoring, connectivity and legacy-upkeep signals."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Claims are backed by a stated methodology measuring seven code-quality signals across a multi-year, multi-hundred-million-line dataset, with specific reproducible metrics per signal."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The claim is a structural mechanism (AI's atomic-completion incentive trades off against long-term maintainability work) shown as a widening multi-year trend across four independent signals, not a single point-in-time percentage."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "The report ends in five concrete practices a team can adopt directly: budget refactoring/legacy time, add duplicate-block tripwires, review for error-masking, coach where judgment is thin, and measure structure rather than volume."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The core idea reduces to one coherent paragraph: today's default AI coding workflow rewards shipping atomic units while taxing invisible maintenance work, producing a measurable and widening maintainability gap that explicit tripwires and budgets can counteract."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    }
+  }
+}

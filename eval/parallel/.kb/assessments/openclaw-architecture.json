@@ -1,0 +1,49 @@
+{
+  "target": "staging/openclaw-architecture.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/openclaw-architecture.md",
+    "task_id": "a2546fe6620f4c12",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a design/reference document about protocol architecture and invariants, not a launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts (mcp-authorization-hardening, attested-per-agent-identity, mcp-stateless-core) address MCP-server authorization and identity, not this gateway's channel-ownership architecture or its client/node protocol split - different mechanism and scope."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The claims are the project's own design invariants and wire-protocol description, directly checkable against openclaw's own repository."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The core pattern - one long-lived process owning every channel connection, exposing a typed schema-validated protocol to separate client and node roles, with trust escalating from auto-approved local connects to explicit device pairing off-host - is an architecture decision that outlives the specific port number, event names and library choices (Baileys, grammY) mixed into the same page."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "A reader designing a similar system gets concrete decisions to copy: give one process sole ownership of each external session, validate every inbound frame against a schema, require idempotency keys on side-effecting calls, and grade trust by connection origin - these are actionable design choices, not a landscape description."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The gateway-ownership-plus-typed-protocol-plus-tiered-trust pattern is one coherent idea statable in a paragraph; the wire-format, codegen and remote-access specifics illustrate that one idea rather than introducing separate unrelated ones."
+      }
+    }
+  }
+}

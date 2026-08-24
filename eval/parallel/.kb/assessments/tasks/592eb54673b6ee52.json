@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "592eb54673b6ee52",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/vscode-extension-runtime-security.md": "sha256:2bf2bdd4be3274c370b85db4f14b86b202adadff57ddd4e32876000b0223a257",
+      "assessment:vscode-extension-runtime-security": "sha256:353aa683083a21fd2182684f9607c8694269b4b2b5fd3fc8ef99649cdfdde82e",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:f6bb73d8b4ed2379c83fc6d799d6b5a96aef29540670c13ad26638b97ff3ea0c",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/unsandboxed-extension-marketplace-defenses.md"
+  ]
+}

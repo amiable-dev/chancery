@@ -1,0 +1,389 @@
+{
+ "items": [
+  {
+   "queue_id": "e899312c",
+   "slug": "dynatrace-moves-upstream",
+   "original_url": "https://www.forbes.com/sites/stevemcdowell/2026/04/09/dynatrace-moves-upstream-bindplane-acquisition-targets-data-control/",
+   "kernel": "The durable kernel (whoever controls collection, normalization and routing determines what data arrives) is buried under deal-close timing, TAM speculation and a vendor competitive matrix that will read as stale within a year.",
+   "actionability_note": "It describes the observability market landscape and Dynatrace's positioning rather than giving a builder or buyer anything to do beyond 'consider this vendor combination'."
+  },
+  {
+   "queue_id": "6ef2ec20",
+   "slug": "prompt-caching",
+   "original_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+   "kernel": "The underlying prefix-caching mechanism ages well, but everything actually captured \u2014 the `cache_control` parameter name and the 5-minute/1-hour TTL values \u2014 is vendor feature-matrix detail that can change under the reader.",
+   "actionability_note": "The one-sentence capture names a product knob to turn but carries none of the trade-offs (minimum cacheable lengths, pricing multipliers, invalidation rules) a builder would need to actually decide an"
+  },
+  {
+   "queue_id": "960f3d62",
+   "slug": "claude-managed-agents-e2b-docs",
+   "original_url": "https://docs.e2b.dev/agents/claude-managed-agents",
+   "kernel": "The session-to-sandbox router split has some life, but the note is dominated by template names, port numbers, console URLs and log paths that will rot with the next product revision.",
+   "actionability_note": "The steps are E2B-product-specific (start this template, register this webhook), and the ingest dropped the actual commands, leaving several step headings with no code under them."
+  },
+  {
+   "queue_id": "189a27c1",
+   "slug": "the-average-cost-of-a-data",
+   "original_url": "https://www.infosecurity-magazine.com/news/cost-of-a-data-breach-5m-ibm/",
+   "kernel": "The note is dominated by single-year survey figures \u2014 $4.99m average, 12% rise, 41% reputation-extortion rate, sector rankings \u2014 that the 2027 edition of the same report will supersede wholesale.",
+   "actionability_note": "Its only guidance is IBM's boilerplate (monitor data flows, adopt zero trust), which changes no concrete build or buy decision for a reader."
+  },
+  {
+   "queue_id": "892ec901",
+   "slug": "rust",
+   "original_url": "https://docs.rs/antislop/latest/antislop/",
+   "kernel": "The bulk is a version-pinned rustdoc module/struct index that churns with releases; only the four-part slop taxonomy (placeholder, deferral, hedging, stub) would still matter in a year.",
+   "actionability_note": "The only action available is adopting this specific crate \u2014 product-only steps with no transferable guidance on how or when to lint for AI slop."
+  },
+  {
+   "queue_id": "45c3ea72",
+   "slug": "the-three-layers-of-an-agentic",
+   "original_url": "https://www.bain.com/insights/the-three-layers-of-an-agentic-ai-platform/",
+   "kernel": "Like the llms.txt exemplar, it is a proposed framing with no measured adoption behind it \u2014 one consultancy's snapshot claim that the market is 'converging', wrapped around concerns generic enough to stay true but not to stay useful.",
+   "actionability_note": "It is precisely a landscape description \u2014 a checklist of what a mature platform 'should' have \u2014 with no trade-offs, decision rules or concrete steps a builder could act on."
+  },
+  {
+   "queue_id": "4e5146c5",
+   "slug": "the-ai-coding-paradox",
+   "original_url": "https://www.qodo.ai/resources/the-ai-coding-paradox/",
+   "kernel": "The note's substance is four percentages from a single 2026 vendor survey (89% incidents, 40% outages, 41% review time, 95% scrutiny) \u2014 point-in-time adoption figures that will be stale within a survey cycle.",
+   "actionability_note": "It is a 'what you'll learn' teaser that withholds the report's actual findings, leaving a reader with a described landscape and no concrete practice to adopt beyond an implied nod toward automated gat"
+  },
+  {
+   "queue_id": "7aa06789",
+   "slug": "mcp-security-statistics-2026",
+   "original_url": "https://www.practical-devsecops.com/mcp-security-statistics-2026-report/",
+   "kernel": "The substance is adoption counts, scan percentages and CVE lists pinned to 2025\u20132026 \u2014 a snapshot that will be stale within a year, even though the attack-class taxonomy and the adoption-outpaced-security pattern persist.",
+   "actionability_note": "It describes the threat landscape in numbers but prescribes nothing beyond buying the vendor's certification; a builder gets urgency from it, not a practice."
+  },
+  {
+   "queue_id": "7ba0c576",
+   "slug": "top-mcp-security-resources-march-2026",
+   "original_url": "https://adversa.ai/blog/top-mcp-security-resources-march-2026/",
+   "kernel": "A March-2026 monthly roundup keyed to counts like '30 CVEs in 60 days' and '38% of 500 scanned servers' is a snapshot built to be superseded by the next month's digest.",
+   "actionability_note": "Its own guidance amounts to one generic closing paragraph (restrict privileges, add timeouts and cost controls); anything a builder could act on lives in the linked resources, not in this note."
+  },
+  {
+   "queue_id": "8f516c7b",
+   "slug": "why-agentic-ai-demands-a-new",
+   "original_url": "https://www.bain.com/insights/why-agentic-ai-demands-a-new-architecture/",
+   "kernel": "Its load-bearing evidence is 2026 survey percentages (80% met expectations, 23% measurable value) \u2014 exactly the pass-rate/adoption-stat material that is stale in twelve months \u2014 while the durable kernel (AgentOps extending MLOps/LLMOps) gets only a passing definition.",
+   "actionability_note": "It is executive case-making that explicitly defers the 'what to build' to later posts in the series, leaving a reader with an exhortation to invest but no mechanism, trade-off or step to act on."
+  },
+  {
+   "queue_id": "4d0dd7b1",
+   "slug": "inside-claude-code-auto-mode",
+   "original_url": "https://www.infoq.com/news/2026/05/anthropic-claude-code-auto-mode/",
+   "kernel": "The note is pinned to one product's launch-state behavior \u2014 red-spinner UI, a classifier Anthropic says it is still iterating on \u2014 and sketches the transferable pattern in only a few sentences, so much of it will read as dated feature news in twelve months.",
+   "actionability_note": "It describes what the product does rather than how to build the pattern \u2014 no design detail beyond a fast filter escalating uncertain cases \u2014 leaving a reader with product awareness, not a usable techn"
+  },
+  {
+   "queue_id": "c4f3dd4e",
+   "slug": "ringkasan-agent-registry",
+   "original_url": "https://docs.cloud.google.com/agent-registry/overview?hl=id",
+   "kernel": "The content is a vendor feature summary of one Google Cloud product \u2014 three marketing pillars plus resource names tied to the current API surface \u2014 and the durable registry-as-governance idea appears only at bullet depth.",
+   "actionability_note": "It describes what the product does and links to setup elsewhere; there is no mechanism, trade-off, or decision guidance a reader could act on beyond knowing the catalog exists."
+  },
+  {
+   "queue_id": "5b25e706",
+   "slug": "sakana-fugu-technical-report",
+   "original_url": "https://arxiv.org/abs/2606.21228",
+   "kernel": "The abstract's substance is product-shaped \u2014 two named model SKUs and SOTA claims across a benchmark list that will be surpassed well within a year \u2014 while its durable mechanism content largely restates the group's Conductor and Trinity papers.",
+   "actionability_note": "The concrete step a reader can take is to use the Fugu models \u2014 a product-only action \u2014 since replicating the training paradigm requires frontier-lab fine-tuning, evolutionary, and RL infrastructure."
+  },
+  {
+   "queue_id": "991c96b4",
+   "slug": "how-to-add-license-keys-to",
+   "original_url": "https://keyforge.dev/guides/how-to-license-tauri-app",
+   "kernel": "The workflow is expressed entirely in Keyforge endpoint URLs, SDK function names, and its current payment-provider list (Stripe, Lemon Squeezy, Polar) - a vendor feature surface that will drift, leaving only a thin generic activate/validate/offline-JWT skeleton.",
+   "actionability_note": "The steps are product-only - create a Keyforge product, call Keyforge activate/validate, enable Keyforge tokens - and do not transfer to anyone not adopting that specific service."
+  },
+  {
+   "queue_id": "80390d3b",
+   "slug": "licensing-for-tauri-apps",
+   "original_url": "https://licenseseat.com/licensing-for-tauri-apps",
+   "kernel": "The note is dominated by LicenseSeat config keys, SDK feature tables and prices ($99/year Apple, $300-600 EV certs) that churn, with only a few embedded principles (validate in the Rust layer, offline grace periods, sign or lose conversions) that age well.",
+   "actionability_note": "Nearly every step is a product-only instruction for one vendor's SDK \u2014 install the plugin, paste the API key, call activate() \u2014 rather than transferable guidance for building licensing."
+  },
+  {
+   "queue_id": "fb81fe36",
+   "slug": "perplexity-open-sources-bumblebee",
+   "original_url": "https://www.marktechpost.com/2026/05/23/perplexity-open-sources-bumblebee-a-read-only-supply-chain-scanner-for-developer-endpoints/",
+   "kernel": "Much of the note is v0.1-bound specifics \u2014 unsupported bun.lockb, exact config filename lists, Go 1.25 requirement, current ecosystem matrix \u2014 that will churn, even though the dev-endpoint blind-spot framing is durable.",
+   "actionability_note": "The concrete steps are product-specific (install command, scan profiles, catalog format); the transferable never-execute-installers principle is real but stated in passing rather than developed into g"
+  },
+  {
+   "queue_id": "f50a25b2",
+   "slug": "overview-cloudflare-ai-gateway-docs",
+   "original_url": "https://developers.cloudflare.com/ai-gateway/",
+   "kernel": "It is a vendor feature list ('analytics, caching, rate limiting, model fallback', 'one line of code', 'available on all plans') \u2014 exactly the matrix-and-pitch content that dates, with no mechanism behind it.",
+   "actionability_note": "It sketches what an AI gateway buys you but gives no steps, trade-offs or decision criteria \u2014 a landscape description that ends in navigation cards."
+  },
+  {
+   "queue_id": "709fa7e5",
+   "slug": "databricks-open-sources-omnigent",
+   "original_url": "https://www.marktechpost.com/2026/06/13/databricks-open-sources-omnigent-a-meta-harness-that-composes-governs-and-shares-ai-agents-across-claude-code-codex-and-pi/",
+   "kernel": "The note leans on the current state of an alpha project \u2014 the specific harness roster, install commands, credential types, unshipped roadmap items \u2014 which will churn even if the meta-harness idea persists.",
+   "actionability_note": "Its concrete steps are all Omnigent-specific (curl install, omni setup, product YAML), while the transferable patterns like harness-layer budget policies and egress-proxy secret injection are describe"
+  },
+  {
+   "queue_id": "e07578e5",
+   "slug": "agile-system-development-lifecycle-for-ai",
+   "original_url": "https://arxiv.org/abs/2501.09434",
+   "kernel": "This is self-described 'initial work' proposing that decision science could enhance agile SDLC, a single-paper framework with no demonstrated adoption, so like an unadopted convention it may never harden into something a reader relies on.",
+   "actionability_note": "The captured note is an abstract plus arXiv page boilerplate; beyond the general suggestion to describe decisions and their architecture before automating them, it gives a builder no method concrete e"
+  },
+  {
+   "queue_id": "ff83af21",
+   "slug": "langchain-warns-ai-agent-memory-lock",
+   "original_url": "https://blockchain.news/news/langchain-ai-agent-memory-lock-in-warning",
+   "kernel": "The three-level lock-in spectrum is a reusable framing, but this secondhand write-up leans on current product shapes (Responses API, Claude Managed Agents, Codex summaries) and a sloppy aggregator's retelling that even misdescribes LangChain as a blockchain company.",
+   "actionability_note": "It tells a builder to weigh memory portability when picking a harness but offers no evaluation method beyond 'use the open-source alternative' the covered vendor sells."
+  },
+  {
+   "queue_id": "698ce584",
+   "slug": "mcp-server-portals-cloudflare-one-docs",
+   "original_url": "https://developers.cloudflare.com/cloudflare-one/access-controls/ai-controls/mcp-portals/",
+   "kernel": "Dominated by dashboard paths, API field names, current limits (40 servers, 24-hour sessions) and already-churned surfaces (the 'Agents Gateway' rename, the deprecated allow_code_mode field) that will shift well inside twelve months.",
+   "actionability_note": "Thoroughly actionable, but almost entirely as Cloudflare-specific dashboard, API and Terraform steps rather than decisions that transfer to other stacks."
+  },
+  {
+   "queue_id": "5d7e8019",
+   "slug": "kimi-ai-and-kvcache-ai-open",
+   "original_url": "https://www.marktechpost.com/2026/07/27/kimi-ai-and-kvcache-ai-open-sources-agentenv/",
+   "kernel": "The note leans on vendor-reported v0 specifics \u2014 sub-50 ms resume, a 16-child fork cap, kernel 6.8+/Ubuntu 24.04 prerequisites, a control plane documented as prototype \u2014 that will drift, even though the fork-amortizes-setup pattern endures.",
+   "actionability_note": "Its concrete steps are AgentENV deployment paths; the decision-level guidance for anyone building agentic RL infrastructure (choose microVM fork over container pools, keep E2B API compatibility) stays"
+  },
+  {
+   "queue_id": "8fadbf3b",
+   "slug": "agentic-resource-discovery-specification-agenticresourcediscovery-org",
+   "original_url": "https://agenticresourcediscovery.org/",
+   "kernel": "ARD is an early working-group proposal whose weight here rests on a vendor logo wall rather than settled adoption \u2014 like the llms.txt exemplar, whether this specific protocol matters in twelve months is genuinely uncertain even though the discovery-layer idea itself is sound.",
+   "actionability_note": "The page orients \u2014 discovery sits before invocation, there is no central catalog \u2014 but contains no schema, endpoint, or protocol mechanics, so a builder cannot act on this note without going to the sp"
+  },
+  {
+   "queue_id": "9f5778bc",
+   "slug": "code-security",
+   "original_url": "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support",
+   "kernel": "The bulk is GitHub's supported-property matrix, upload size limits and severity-score thresholds \u2014 a vendor feature matrix pinned to SARIF 2.1.0 \u2014 even though the partialFingerprints dedup mechanism inside it ages well.",
+   "actionability_note": "The concrete steps (populate partialFingerprints, keep filepaths consistent, set security-severity, resolve symlinks) only matter for complying with GitHub code scanning's ingestion pipeline \u2014 product"
+  },
+  {
+   "queue_id": "b7eba03e",
+   "slug": "five-tools-to-bolster-your-ai",
+   "original_url": "https://www.infoworld.com/article/4190721/five-tools-to-bolster-your-ai-coding-stack.html",
+   "kernel": "The piece leans on 2025-2026 survey percentages (96% distrust, 89% incident rates, 3.6 hours saved) and current vendor rosters \u2014 exactly the adoption-snapshot content that dates within a year, even though the generic advice underneath survives.",
+   "actionability_note": "It only describes the landscape \u2014 naming categories and vendors to 'review' (mirrord, Signadot, SAST, SCA, AI gateways) with vendor-executive quotes \u2014 and gives no mechanism a reader could build or de"
+  },
+  {
+   "queue_id": "54a1b4e2",
+   "slug": "enterprise-cloud-latest",
+   "original_url": "https://docs.github.com/en/enterprise-cloud@latest/rest/copilot/copilot-usage-metrics?apiVersion=2026-03-10",
+   "kernel": "It is an endpoint-by-endpoint reference pinned to API version 2026-03-10, including a public-preview endpoint explicitly 'subject to change' and date-bound availability windows (reports from 2025-10-10, 1-year retention, per_page max 25).",
+   "actionability_note": "The actions are curl calls and token scopes against one vendor's product endpoints; nothing here transfers beyond retrieving GitHub Copilot report files."
+  },
+  {
+   "queue_id": "a2906081",
+   "slug": "tauri-auto-updater-for-private-applications",
+   "original_url": "https://anystack.sh/docs/integrations/tauri",
+   "kernel": "It is pinned to Tauri v1's tauri.conf.json updater block (already superseded by Tauri v2's plugin-based updater) and to Anystack's dist.anystack.sh endpoint URLs and filename conventions.",
+   "actionability_note": "Every step is Anystack-plus-Tauri product configuration; only the thin idea of passing a license key as an Authorization header on the update check transfers beyond these two products."
+  },
+  {
+   "queue_id": "a28b1a63",
+   "slug": "cyclonedx-bill-of-materials-standard-cyclonedx",
+   "original_url": "https://cyclonedx.org/",
+   "kernel": "The page is dominated by adoption boasts ('260 tools', 'trusted by medical device manufacturers and world governments') that are exactly the adoption-list content that ages badly; the durable substance is one sentence of scope.",
+   "actionability_note": "It only asserts that CycloneDX exists and is trusted \u2014 no mechanism, trade-off or guidance that would change how someone builds or decides."
+  },
+  {
+   "queue_id": "ed613dc5",
+   "slug": "what-is-the-model-context-protocol",
+   "original_url": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+   "kernel": "Beyond the one-sentence definition, the content is a USB-C analogy, benefit bullets per audience, and a client adoption list (Claude, ChatGPT, VS Code, Cursor) \u2014 exactly the adoption-list material that ages badly.",
+   "actionability_note": "It describes what MCP is and who supports it without any mechanism, trade-off or guidance that would change how someone builds or decides."
+  },
+  {
+   "queue_id": "0313d6d9",
+   "slug": "pentest-ai-agents-28-claude-code",
+   "original_url": "https://cybersecuritynews.com/pentest-ai-agents-tool/",
+   "kernel": "The genuine idea (two-tier execution gating) survives, but the note's substance is ephemeral product inventory \u2014 28 named subagents, 150+ tool wrappers, a lite Haiku mode, an install one-liner \u2014 that will date quickly.",
+   "actionability_note": "The only explicit actions are product-only steps (curl-install, --project, --global --lite); the transferable design pattern is sketched in two sentences rather than given as guidance a reader can bui"
+  },
+  {
+   "queue_id": "186bd835",
+   "slug": "updater",
+   "original_url": "https://v2.tauri.app/plugin/updater/",
+   "kernel": "The mandatory-signature update model (pinned public key, unlosable private key) endures, but the note is pinned to v2 config keys \u2014 one of which it says will be removed in v3 \u2014 plus Rust version floors and permission identifiers.",
+   "actionability_note": "The steps are entirely Tauri-product-specific \u2014 this config key, this CLI command, this permission set \u2014 with nothing that transfers to update systems generally."
+  },
+  {
+   "queue_id": "012d1617",
+   "slug": "contextual-policies-omnigent",
+   "original_url": "https://omnigent.ai/docs/policies/overview",
+   "kernel": "The transferable insight (session-stateful policies can express budgets, rate limits and risk scores that static allowlists cannot) is durable, but most of the note is Omnigent-specific config syntax, level names and REST endpoints that will churn with the product.",
+   "actionability_note": "Every concrete step (YAML policy blocks, `-c` server config, settings panel) applies only inside Omnigent; a reader building elsewhere gets a design principle to reconstruct, not directly usable guida"
+  },
+  {
+   "queue_id": "b6ab8b5b",
+   "slug": "tutorial",
+   "original_url": "https://omnigent.ai/quickstart/collaborate",
+   "kernel": "Railway deploy clicks, `omni login`/`omni host` commands and UI buttons are product-and-provider specifics that churn quickly; the only enduring line is that co-driving a shared session grants code execution on the host machine.",
+   "actionability_note": "Entirely product-only steps, useful to an Omnigent user today but transferring nothing to anyone building or deciding outside that product."
+  },
+  {
+   "queue_id": "40753b98",
+   "slug": "discover-and-install-prebuilt-plugins-through",
+   "original_url": "https://code.claude.com/docs/en/discover-plugins",
+   "kernel": "The page is dominated by version-gated behavior (v2.1.195/.203/.221/.232 caveats), cache-refresh mechanics and command flags that churn release to release; the durable residue (marketplaces as trusted catalogs with scoped installs) is thin.",
+   "actionability_note": "It is all product-only steps \u2014 slash commands, CLI flags and settings \u2014 actionable solely inside Claude Code rather than shaping how anyone builds or decides elsewhere."
+  },
+  {
+   "queue_id": "55a7eee7",
+   "slug": "create-and-distribute-a-plugin-marketplace",
+   "original_url": "https://code.claude.com/docs/en/plugin-marketplaces",
+   "kernel": "The marketplace.json schema, six source types and their behaviors are pinned to specific releases (v2.1.193/.224/.229/.239 caveats) and will churn; the genuinely durable bits (SHA-pinned sources, append-only rename history, explicit user acceptance of command sources) are buried product mechanics.",
+   "actionability_note": "Every step is a Claude Code config field or CLI invocation \u2014 highly actionable inside the product, transferring little to anyone building or deciding elsewhere."
+  },
+  {
+   "queue_id": "8d881d91",
+   "slug": "supply-chain-levels-for-software-artifacts",
+   "original_url": "https://slsa.dev/",
+   "kernel": "The framework it names is durable, but the capture holds only marketing copy \u2014 that SLSA exists, has four unspecified levels, and has industry backers \u2014 with none of the level requirements that would stay useful in a year.",
+   "actionability_note": "It orients a reader toward using SLSA levels as a common yardstick but contains no requirement, control or step \u2014 every actionable detail lives behind its 'read the specifications' links."
+  },
+  {
+   "queue_id": "e1f2e90f",
+   "slug": "welcome-to-llamaindex",
+   "original_url": "https://developers.llamaindex.ai/python/framework/",
+   "kernel": "The bulk is a vendor feature matrix and navigation index \u2014 LlamaCloud plans, 10,000 free monthly credits, ecosystem project lists \u2014 that churns with every docs reorg, leaving only one-paragraph definitions of RAG-adjacent terms as stable content.",
+   "actionability_note": "Its only concrete guidance is product-bound setup (pip install llama-index, the 5-line quickstart, sign up for LlamaCloud), which informs adoption of this vendor but not how to build or decide in gene"
+  },
+  {
+   "queue_id": "617e67ed",
+   "slug": "tree-sitter",
+   "original_url": "https://tree-sitter.github.io/tree-sitter/",
+   "kernel": "The four design properties (general, per-keystroke fast, error-robust, dependency-free C11) are tree-sitter's enduring identity, but the bulk of the capture is binding and parser adoption lists the page itself warns may be incomplete or out of date.",
+   "actionability_note": "It supports at most the decision to pick tree-sitter and find a binding; every how-to (grammars, queries, incremental editing API) lives in later chapters this capture does not include."
+  },
+  {
+   "queue_id": "4aab7657",
+   "slug": "how-the-open-knowledge-format-can",
+   "original_url": "https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/",
+   "kernel": "This is a just-published v0.1 spec of single-vendor origin with adoption that is entirely aspirational ('we expect the ecosystem to grow') \u2014 the same shape as the llms.txt weak exemplar: a proposed convention with no standards-body backing and no committed external consumers yet.",
+   "actionability_note": "It advocates adopting a format and points the reader to the spec, repo and reference agent, but the note itself withholds the actionable specifics (field definitions, conformance criteria) and mostly "
+  },
+  {
+   "queue_id": "4d9ad535",
+   "slug": "the-state-of-teams-2026-inside",
+   "original_url": "https://www.atlassian.com/blog/state-of-teams-2026",
+   "kernel": "The one durable kernel \u2014 individual AI speedups shift the bottleneck to team coordination \u2014 is buried under 2026-vintage survey percentages ($161B, 89%, 5.6x) that will be superseded by next year's edition.",
+   "actionability_note": "It tells a reader that coordination matters but gives no mechanism or practice to adopt \u2014 the concrete 'new ways of working' are withheld behind the full report."
+  },
+  {
+   "queue_id": "bbc2380b",
+   "slug": "openclaw-docs",
+   "original_url": "https://docs.openclaw.ai/",
+   "kernel": "Most of the concrete content is release-sensitive setup detail \u2014 Node 26/22.22.3+/24.15+ support ranges, npm 11.16 flag differences, port 18789, the current channel roster \u2014 that will drift within months, leaving only a thin architecture sketch.",
+   "actionability_note": "Its instructions are purely product operation (npm install -g openclaw, openclaw onboard, openclaw dashboard, allowFrom config), which helps someone run this tool but transfers no build-or-decide guid"
+  },
+  {
+   "queue_id": "7cae0003",
+   "slug": "builtin-policies-omnigent",
+   "original_url": "https://omnigent.ai/docs/policies/builtin",
+   "kernel": "A per-product parameter matrix (handler paths, defaults, YAML shapes) that will churn with releases, even though embedded patterns like rolling-window thrashing detection and no-write-down containment age well.",
+   "actionability_note": "Rich configuration guidance, but almost all of it is Omnigent-specific policy wiring; the transferable design rules (visibility before restriction, heuristic error windows) appear as asides inside pro"
+  },
+  {
+   "queue_id": "f2d04e3f",
+   "slug": "dama-data-management-body-of-knowledge",
+   "original_url": "https://dama.org/learning-resources/dama-data-management-body-of-knowledge-dmbok/",
+   "kernel": "The DMBOK framework itself endures, but this page carries none of its content \u2014 only edition-specific marketing (2nd-edition bullets, 3.0 project status, order links) that the next revision cycle obsoletes.",
+   "actionability_note": "The only action available to a reader is to order the book or pursue CDMP certification; the page conveys no data-management practice one could apply."
+  },
+  {
+   "queue_id": "2de8bba7",
+   "slug": "openclaw",
+   "original_url": "https://github.com/openclaw/openclaw",
+   "kernel": "The bulk is install commands pinned to specific Node/npm versions and a link farm into fast-moving docs; only the coarse Gateway-plus-channels architecture sketch and the product's existence will still hold in twelve months.",
+   "actionability_note": "Every step is product-only \u2014 curl the installer, run `openclaw onboard`, open the dashboard \u2014 useful solely to someone adopting OpenClaw, not to how anyone builds or decides beyond it."
+  },
+  {
+   "queue_id": "46584b5b",
+   "slug": "fallow-codebase-intelligence-for-typescript-and",
+   "original_url": "https://docs.fallow.tools/",
+   "kernel": "The captured content is dominated by a vendor feature matrix (dead code, duplication, complexity, feature-flag branches, hot/cold paths) with mostly empty section headers, and only a thin durable kernel \u2014 the static-vs-runtime deletion-confidence trade-off \u2014 survives twelve months.",
+   "actionability_note": "As captured it mostly says 'use fallow to find X'; the transferable decision (confirm static dead-code findings against runtime coverage before deleting) is present only as a one-line teaser, not deve"
+  },
+  {
+   "queue_id": "eca12e1c",
+   "slug": "llm-agent-trader",
+   "original_url": "https://github.com/jason8745/llm-agent-trader",
+   "kernel": "The note is almost entirely quick-start mechanics \u2014 make targets, .env key switching between Azure OpenAI and Gemini, Windows caveats \u2014 and the one lasting idea (an LLM as the decision engine inside a backtest loop) exists only as an unexplained flowchart.",
+   "actionability_note": "Its only actions are product-only steps for this specific repo (make install, cp .env, make run); it offers no design guidance a reader could apply to their own trading or backtesting system."
+  },
+  {
+   "queue_id": "34cfab7a",
+   "slug": "stereos",
+   "original_url": "https://github.com/papercomputeco/stereOS",
+   "kernel": "The transferable pattern (run agents in minimal hardened VMs with a restricted agent user) gets two sentences while the bulk is churn-prone specifics: build attribute names, a flake pinned to nixos-26.05, zstd flags, and a one-row mixtape table for a very young project.",
+   "actionability_note": "Every concrete step is stereOS-specific (which Nix attribute to build, which option to set); a reader not adopting this exact distro takes away only the general isolation idea."
+  },
+  {
+   "queue_id": "d4712d31",
+   "slug": "ard-spec",
+   "original_url": "https://github.com/ards-project/ard-spec",
+   "kernel": "Only the one-sentence definition of ARD as a federated discovery standard survives; the v0.9-draft status, repo layout and contribution policy that fill the rest of the note will churn.",
+   "actionability_note": "The note is a table of contents for content that is not captured \u2014 a reader gains awareness that a discovery standard exists but nothing to build or decide with until they fetch spec/ard.md itself."
+  },
+  {
+   "queue_id": "62f086ad",
+   "slug": "npm-audit-npm-docs",
+   "original_url": "https://docs.npmjs.com/cli/v10/commands/npm-audit/",
+   "kernel": "The note is pinned to CLI v10 behaviour \u2014 endpoint paths, flag defaults, version-specific history ('as of version 7', 'versions 5 and 6 scrubbed') and a long config matrix \u2014 with the metavulnerability concept the only piece likely to outlive it.",
+   "actionability_note": "Its guidance is product-only command invocations (npm audit fix, --audit-level gating in CI) rather than transferable build or design decisions."
+  },
+  {
+   "queue_id": "2ae7f87a",
+   "slug": "openai-api",
+   "original_url": "https://developers.openai.com/api/docs/guides/prompt-caching",
+   "kernel": "It is dominated by vendor- and generation-specific mechanics \u2014 GPT-5.6-vs-earlier behaviour matrices, 0.1x read and 1.25x write pricing, per-model retention lists, 1,024-token minimums and 15-rpm key limits \u2014 that OpenAI can and does change; the stable-prefix-first principle is the small durable kernel.",
+   "actionability_note": "Its steps are product-only parameters (prompt_cache_key, prompt_cache_breakpoint, prompt_cache_options.ttl) rather than provider-independent guidance, though the static-content-first ordering advice t"
+  },
+  {
+   "queue_id": "156c192a",
+   "slug": "omnigent",
+   "original_url": "https://github.com/omnigent-ai/omnigent",
+   "kernel": "The bulk is alpha-status product mechanics \u2014 installer extras lists, gateway base-URL tables, per-OS sandboxing caveats, upgrade and uninstall flows, a deploy-target menu \u2014 exactly the feature-matrix material that churns, with the durable meta-harness and layered-policy ideas stated only briefly.",
+   "actionability_note": "Nearly every step is a product-only command for this tool (curl installer, omnigent claude, omni upgrade); the one design idea a reader could reuse, policies stacked at server, agent and session level"
+  },
+  {
+   "queue_id": "d04cc855",
+   "slug": "agentmemory",
+   "original_url": "https://github.com/rohitg00/agentmemory",
+   "kernel": "The note is dominated by content the rubric names as perishable \u2014 benchmark pass rates, competitor star counts, model pricing at 2026-05-23, an engine pinned to v0.11.2, port tables, and workarounds for open upstream issues \u2014 with the durable memory-pipeline ideas a small fraction of it.",
+   "actionability_note": "Nearly every instruction is wiring this product into one of thirty hosts; the transferable design guidance (capture via lifecycle hooks, compress, inject under a token budget) is present only as featu"
+  },
+  {
+   "queue_id": "1af6f8f0",
+   "slug": "semantic-conventions-genai",
+   "original_url": "https://github.com/open-telemetry/semantic-conventions-genai",
+   "kernel": "Its one fact \u2014 GenAI semantic conventions now live in a dedicated repo extending core semconv via Weaver \u2014 should persist, but the note is early-stage scaffolding whose schema URL is literally TODO, so its specifics are likely to churn.",
+   "actionability_note": "It only tells an instrumentation author where the conventions and reference implementations now live; no actual convention content a builder could apply appears in the note itself."
+  },
+  {
+   "queue_id": "23745b06",
+   "slug": "github-veteran-brian-douglas-launches-paper",
+   "original_url": "https://thenewstack.io/paper-compute-agent-infrastructure/",
+   "kernel": "The piece is dominated by launch-time specifics \u2014 company formation, hires, monetization sketches, and a six-month enterprise-adoption prediction \u2014 with the durable observe-and-confine pattern present but thin.",
+   "actionability_note": "It describes what the two products do and one demo's guardrails but gives a reader no mechanism or decision procedure beyond knowing these tools exist."
+  },
+  {
+   "queue_id": "e71ade2b",
+   "slug": "fallow",
+   "original_url": "https://github.com/fallow-rs/fallow",
+   "kernel": "The durable kernel (prove-a-negative dead-code analysis over a whole-repo graph) is drowned by tool-specific matter that ages fast \u2014 version numbers (3.5.0, 2.100.0, v3.17.0), benchmark timings, exit-code tables, command and flag lists, and pricing for the paid runtime layer.",
+   "actionability_note": "Almost every actionable step is a product-only invocation (npx fallow ...), so a reader can act only by adopting this specific binary, not by applying a portable practice."
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "245c5f46b7b74080",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/toward-securing-ai-agents-like-operating.md": "sha256:4445cd543db7fe0a8a443481b959a2f055c8f2c0ac9ca7533f70c0c416fbe93b",
+      "assessment:toward-securing-ai-agents-like-operating": "sha256:1d622b8e267cf515e58bbc4a5e484736e1b6d35d7f41e6137a230d769f37b8b0",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:4d1a8ce19c8b7c8052f82e52a01bbb0603dcb7166950fafd3a49c6f53d410d41",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/agent-security-as-os-security.md"
+  ]
+}

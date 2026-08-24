@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "7db35c409abc2e4b",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/the-dama-dmbok-wheel-dama-phoenix.md": "sha256:64544e7e1ac9fa3302722c866a1e114f2c615015f94e583f45d2b48f54b46399",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:51aa622d8b1d4f350dc21fd40944352cb3e8b32f5957c36cfabc2a7604d46acd",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/the-dama-dmbok-wheel-dama-phoenix.json"
+  ]
+}

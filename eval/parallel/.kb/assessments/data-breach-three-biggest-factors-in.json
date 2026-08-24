@@ -1,0 +1,49 @@
+{
+  "target": "staging/data-breach-three-biggest-factors-in.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/data-breach-three-biggest-factors-in.md",
+    "task_id": "024aedef8372416b",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is an analysis of study findings, not a launch, release or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest existing concepts (shared-mental-model-erosion, multi-agent-token-economics, siem-agentic-visibility-gap, tail-latency-histograms, agent-outcome-vs-proxy-metrics, agent-loop-governance) cover breach-cost drivers."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Claims are attributed to a named, reproducible annual methodology (IBM/Ponemon Institute, 524 breaches studied) even though this hunt could not independently re-verify the raw figures."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Even IBM's own analysis of its own study is carried almost entirely by single-study-year dollar figures and percentages (USD 2.45M vs 6.03M, a 200-day threshold, 61% first-year cost accrual, 19% cloud-misconfiguration share) drawn from the 2020 edition specifically, already six years stale and superseded by every later edition of the same report — the same problem the original source had, not solved by moving to IBM's own analysis of its own data."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It does name concrete, non-obvious levers a security budget-holder could act on: invest in security automation and a trained/tested incident-response team specifically because they shorten detection-to-containment time, and budget for breach costs across multiple years rather than assuming they land in year one."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "It bundles several distinct claims (automation's cost impact, incident-response-team readiness, breach-lifecycle length, multi-year cost accrual varying by industry regulation, cloud misconfiguration as a breach cause) under one 'factors in cost' umbrella without reducing to a single independent paragraph."
+      }
+    }
+  }
+}

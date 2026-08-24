@@ -1,0 +1,49 @@
+{
+  "target": "staging/copilot.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "task_id": "3c8197c05e9f7742",
+    "rubric": "promotion@3",
+    "target": "staging/copilot.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is interpretive guidance for reading a metrics dashboard, not a launch or release announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "It has substantial content beyond the existing proxy-vs-outcome and first-pass-acceptance concepts — specific cohort/phase mechanics, DAU/WAU thresholds, and ROI-vs-payroll comparison caveats — so a reader of those concepts would still learn something new here."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "First-party GitHub documentation describing checkable, reproducible dashboard behaviour and defined metrics."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "Most of the content documents a specific, recently-launched dashboard feature (adoption phases/cohorts shipped roughly three months before this was written per GitHub's own changelog, plus named chat modes and 'recommendation card' UI) — exactly the vendor feature matrix the rubric expects to date within a year; the durable epistemic core (engagement is not productivity, control for confounds) is real but thin next to the dashboard-specific bulk."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Each signal pairs with a concrete suggested action — verify license/IDE setup, share internal demos, cross-reference cohort distribution, hold the compensation band constant when comparing periods."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "Bundles at least seven distinct interpretation heuristics (DAU/WAU thresholds, chat-mode balance, model adoption, language usage, adoption cohorts, adoption multiplier, ROI-vs-payroll) under a loose 'how to read this dashboard' umbrella rather than one statable idea."
+      }
+    }
+  }
+}

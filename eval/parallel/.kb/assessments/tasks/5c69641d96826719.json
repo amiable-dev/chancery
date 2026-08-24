@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "5c69641d96826719",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/toward-securing-ai-agents-like-operating.md": "sha256:4445cd543db7fe0a8a443481b959a2f055c8f2c0ac9ca7533f70c0c416fbe93b",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:233cbf9a823599063e2937bc0ffaaa635ffd86b9bd6f9fd6dfa5f41425757eb7",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/toward-securing-ai-agents-like-operating.json"
+  ]
+}

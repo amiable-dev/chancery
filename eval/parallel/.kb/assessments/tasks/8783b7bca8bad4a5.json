@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "8783b7bca8bad4a5",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/https-www-rfc-editor-org-rfc.md": "sha256:2c445242bbdcdb1e6ba6eb646e0ee724bcf42610df590a3cf9a28290db7598e3",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:5bde783615ede3675b2165cc6a57ef7c29479e5a8505ce16495a09883ea453cf",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/https-www-rfc-editor-org-rfc.json"
+  ]
+}

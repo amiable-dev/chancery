@@ -1,0 +1,49 @@
+{
+  "target": "staging/ard-spec-document.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "task_id": "361556ee094fc31b",
+    "rubric": "promotion@3",
+    "target": "staging/ard-spec-document.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is a full technical specification with a data model, identifier format rationale, REST API, and formal schemas, not a launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (agent-maintained-knowledge-bundle, agent-tool-ergonomics, sarif-format, authorization-response-issuer-identification, attested-computation, opaque-agent-interop) cover federated resource cataloging and discovery outside the LLM context window."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is the canonical spec repository with CDDL/JSON Schema/OpenAPI definitions and an official conformance-test CLI — concrete and independently checkable."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "It is explicitly 'v0.9 (Draft)' with 'Status: Proposal,' and the note says outright that the IANA media types central to its artifact-agnostic envelope are pending registration and 'the format may change' — a real multi-vendor author and contributor list makes this more than a logo wall, but whether this specific protocol (versus a competing framework, or no framework at all) is what a builder relies on in twelve months is still genuinely open."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Unlike the landing page, this gives a builder the actual manifest schema, the domain-anchored URN identifier format with rationale, the well-known-URI/robots.txt/DNS discovery mechanisms, the REST search/explore/list endpoints with request and response shapes, and a runnable conformance-test tool."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One coherent idea — a federated catalog-and-search layer that keeps resource descriptions out of the LLM context window and delegates artifact-specific schema to a type field — elaborated in depth rather than mixing unrelated ideas."
+      }
+    }
+  }
+}

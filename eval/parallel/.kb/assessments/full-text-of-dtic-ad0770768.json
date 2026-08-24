@@ -1,0 +1,49 @@
+{
+  "target": "staging/full-text-of-dtic-ad0770768.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/full-text-of-dtic-ad0770768.md",
+    "task_id": "7d51d8248fa18f5f",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is the original 1973 MITRE/Air Force technical report establishing a formal mathematical model of computer security, not a product launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest existing concepts (agent security as OS security, datasheets for datasets, current-state grounding, shared mental-model erosion, agent tool ergonomics, answer-layer interception) cover multi-level confidentiality access control or a no-write-down/no-read-up rule; this is a distinct idea."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The model is a rigorous mathematical formalization with explicit definitions and proofs that a reader can check directly, not an unsourced claim."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The confidentiality access-control model this report founded in 1973 (formalizing 'security' and 'compromise') has remained the standard reference for multi-level security for over five decades and is still directly implemented in production systems today, including the very product (Omnigent) whose docs cited it implicitly."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It specifies a concrete, implementable access rule set (a subject may not write information to an object at a lower classification than material it has read) that a builder can apply directly when designing any confinement or data-leak-prevention mechanism."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The extractable core idea — once a session has read protected material, its subsequent writes are confined to that same protection scope — is statable in one paragraph independent of this report's general-systems-theory framing."
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/tuf-specification.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "task_id": "31eed5174ed0c511",
+    "rubric": "promotion@3",
+    "target": "staging/tuf-specification.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "A formal engineering specification defining a security framework (RFC 2119 normative language), not a product launch or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Nearest concepts cover JOSE curve key bindings and agent SDLC change-control tiers; none address key-compromise-resilient signing for software update distribution."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "This is the primary formal specification itself, publicly maintained under CNCF with a public reference implementation and conformance test suite — directly checkable, not merely cited."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The role-separated, threshold-signed key model has been stable since TUF's 2009 origin, is CNCF-graduated, and underpins production systems (PyPI/pip, Uptane automotive OTA, container registries) — it is a mechanism and trade-off, not a version number or price."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Gives a concrete adoptable design — offline root key, threshold/quorum trust per role, explicit revocation and re-signing procedure — that directly shapes how someone would build or evaluate a secure updater, not just describe the landscape."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The full spec bundles the key-compromise-resilience model together with several separable concerns — delegation semantics, mirror consistency, specific metadata file formats, and a five-plus-item attack taxonomy (rollback, freeze, fast-forward, mix-and-match, endless-data) — each substantial enough to be its own concept."
+      }
+    }
+  }
+}

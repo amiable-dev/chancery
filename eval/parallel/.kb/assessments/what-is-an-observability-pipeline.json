@@ -1,0 +1,55 @@
+{
+  "target": "staging/what-is-an-observability-pipeline.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/what-is-an-observability-pipeline.md",
+    "task_id": "d1c4c77812e8c98b",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is Cribl's definitional/educational explainer of the observability-pipeline pattern, not a launch or release note; the product pitch appears only as a closing section, not the substance."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "telemetry-collector-pipeline covers the OTel Collector's technical receiver/processor/exporter architecture and adoption cost; this note's central idea — that decoupling sources from destinations makes whoever operates the pipeline the control point over collection, normalization and routing, with concrete leverage (multi-destination fan-out, volume/cost control, on-demand granularity) — is not present there."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The note is itself a primary source (Cribl's own explainer, attributing the coined term to Tyler Treat) and names a reproducible reference architecture (schema normalization, routing, stream processing, centralized state) a reader could build from open-source components, per its own FAQ."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The core claim — a pipeline layer between sources and destinations gives its operator control over what is collected, how it's normalized, and where it's routed — is an architectural pattern independent of Cribl's product, version numbers or pricing, and will still hold in twelve months."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Gives concrete decision guidance: when to consolidate collection agents, what a vendor-neutral reference architecture needs (schema normalization, routing, stream processing, centralized state), and why to route one source to multiple destinations rather than picking one — a builder can act on this directly."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The three 'problems' the source walks through (agent fatigue, capacity anxiety, the foresight trap) are facets of one move — inserting a pipeline layer that decouples producers from consumers — so the core idea reduces to a single paragraph independent of the source's marketing framing."
+      }
+    },
+    "proposed_concepts": [
+      {
+        "title": "Observability pipeline as a control point",
+        "definition": "Because all telemetry passes through a pipeline layer inserted between sources and destinations, whoever operates that layer controls what data exists downstream: which sources are consolidated (collection), what common shape the data is forced into (normalization), and which destinations receive which subset (routing) — turning an architectural position into leverage over cost, vendor choice and visibility."
+      }
+    ]
+  }
+}

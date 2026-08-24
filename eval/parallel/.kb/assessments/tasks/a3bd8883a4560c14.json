@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "a3bd8883a4560c14",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/find-and-bury-dead-code.md": "sha256:b4ce55ea2553a1644463c4f7a4f57d8b40dee37fd05637bf40dcfd8db64531ef",
+      "assessment:find-and-bury-dead-code": "sha256:0654cedf6a0ebbe33c0c91953429e352214893aa4cc34efa757806e7296c4a9d",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:9434b7878e009e004d1c8d8caa3fe5aca87c85beeb874f073380d9bc55f2b612",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/dead-code-deletion-confidence.md"
+  ]
+}

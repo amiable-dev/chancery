@@ -1,0 +1,49 @@
+{
+  "target": "staging/the-dama-dmbok-wheel-dama-phoenix.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/the-dama-dmbok-wheel-dama-phoenix.md",
+    "task_id": "7db35c409abc2e4b",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This describes an enduring analytical framework (the DAMA Wheel and its knowledge areas), not a product launch or release."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest existing concepts (rare-context, agent-harness, mcp-abstraction-tax, cyclonedx-object-model, paved-road-mcp-platform, semantic-layer) touch data-management taxonomy."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The wheel and its ten knowledge areas are DAMA International's own published taxonomy, verifiable against the DMBOK2R book and DAMA's site."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The wheel's structure - governance at the center coordinating ten stable knowledge-area disciplines - has held since DMBOK2 (2017) through its 2024 revision and names no version-specific detail."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It names the ten disciplines and their governance-centric relationship but stops at taxonomy - it does not show how to apply any single knowledge area, only that a complete program should cover all of them."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The whole idea - one governance hub coordinating ten interconnected data-management disciplines - is stated in a single paragraph independent of the source's marketing framing."
+      }
+    }
+  }
+}

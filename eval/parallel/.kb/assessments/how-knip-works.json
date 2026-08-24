@@ -1,0 +1,49 @@
+{
+  "target": "staging/how-knip-works.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/how-knip-works.md",
+    "task_id": "36e5d4b8e6890eac",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It is an explanations page describing a mental model and mechanism, with no release, version or launch framing at all."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts (code-knowledge-graph, language-agnostic-code-graph, typed-knowledge-graph-layer) use a code graph as a retrieval/understanding index for LLMs; this note uses a graph to prove non-reachability for deletion, a different central idea a reader of those notes would not already have."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The mechanism (build a graph from entry files, query it for reachability) is stated precisely enough to check against the open-source, ISC-licensed implementation, and is independently verifiable by running the tool."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The claim is a mechanism-and-trade-off statement — accuracy is bounded by entry-point completeness, not tool version — with no version numbers, pricing or feature-matrix content to go stale."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It gives a transferable debugging decision: when a reachability tool flags a surprising false positive, the fix is to widen the graph's roots (add the missing entry, resolve the dynamic import, list the dependency), not to suppress the finding, and to read cascading results root-down rather than chasing each leaf."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "Every section — build/query phases, entry files bounding the graph, cascading findings, diagnosing surprises — is one facet of a single mental model (reachability from declared roots), statable in one paragraph, unlike the original note's bundle of unrelated product facets."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    }
+  }
+}

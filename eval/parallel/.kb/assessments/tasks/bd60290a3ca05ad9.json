@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "bd60290a3ca05ad9",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/tradingagents.md": "sha256:8e41007f9d82e743402f4115819d6cf75c42a61a9a1ad12a76dd91ea5d80054b",
+      "assessment:tradingagents": "sha256:d9d2bba2e3bcc344d068270288b3a661401777bf5ab590c319bbbf851e8d0d8d",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:cbe34e8c5b6fa417228519d5c0acdcf1f3cc44ce3ab5b2bdaf27a411a6a01ac2",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/debate-gated-decision-pipeline.md"
+  ]
+}

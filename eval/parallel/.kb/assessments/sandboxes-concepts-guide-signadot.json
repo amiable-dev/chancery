@@ -1,0 +1,49 @@
+{
+  "target": "staging/sandboxes-concepts-guide-signadot.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "task_id": "d6c1f0bbe8c222bb",
+    "rubric": "promotion@3",
+    "target": "staging/sandboxes-concepts-guide-signadot.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a technical concepts guide explaining an isolation mechanism, not a launch or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "remocal-development covers process-level syscall interception joining a local process to one remote pod; this note covers request-level routing across a shared cluster via routing-key headers and context propagation — a distinct mechanism a remocal-development reader would not learn."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "First-party technical documentation naming the concrete, checkable mechanism: routing-key headers, OpenTelemetry-based context propagation, and Istio/DevMesh-sidecar routing."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Request routing plus header-based context propagation is a general architectural pattern for shared-cluster test isolation, independent of Signadot's pricing or feature roadmap."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "A reader gets the two concrete primitives needed to build request-scoped isolation themselves — routing-key headers and OpenTelemetry context propagation — plus the real trade-off between service-mesh and sidecar-based routing."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One idea throughout: how isolation is achieved for a request-scoped sandbox on a shared cluster; routing and propagation are two halves of that single mechanism, not separate topics."
+      }
+    }
+  }
+}

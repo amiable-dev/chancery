@@ -1,0 +1,49 @@
+{
+  "target": "staging/introducing-the-mcp-registry.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "task_id": "0412c1a04c850fc0",
+    "rubric": "promotion@3",
+    "target": "staging/introducing-the-mcp-registry.md",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "Beyond the launch framing it explains a transferable federation architecture — one canonical source-of-truth registry with public and private sub-registries built on top — not merely that a product shipped."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts cover a canonical-registry-plus-federated-sub-registries pattern; extension-registry-trust is the closest by theme but argues the contrasting position of curated-by-default for unsandboxed extensions, not this registry's open self-report plus reactive moderation model."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Describes an actually-shipped, open-source system with a published OpenAPI spec and a documented moderation policy, independently checkable."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The source-of-truth-plus-federated-sub-registries pattern, and reactive community moderation as its governance backstop, are architectural choices that outlive this specific preview launch."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "It shows the shape of a working architecture and the reasoning for federating rather than centralizing everything, but stops short of prescriptive trade-off guidance for someone designing a similar registry."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One coherent idea stateable in a paragraph: a canonical, openly-governed registry as source of truth, with public and private sub-registries layering curation on top, moderated reactively by community flagging."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    }
+  }
+}

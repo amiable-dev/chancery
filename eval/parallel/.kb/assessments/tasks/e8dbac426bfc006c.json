@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "e8dbac426bfc006c",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/https-www-rfc-editor-org-rfc.md": "sha256:2c445242bbdcdb1e6ba6eb646e0ee724bcf42610df590a3cf9a28290db7598e3",
+      "assessment:https-www-rfc-editor-org-rfc": "sha256:c2f4d8287de651072f4fb34395f3e9a9ad8619636d5ed7b57669c2e4cbed150f",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:505f2f42f025295cc42df5b2c1747cc48cf58f488c5e777cebd055fc0cc1e0fe",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/json-web-token.md"
+  ]
+}

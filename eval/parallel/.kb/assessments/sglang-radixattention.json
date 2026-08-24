@@ -1,0 +1,49 @@
+{
+  "target": "staging/sglang-radixattention.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "task_id": "326b39d98df0b213",
+    "rubric": "promotion@3",
+    "target": "staging/sglang-radixattention.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a systems research paper describing an architecture (RadixAttention) and its evaluation, not a product launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest existing concepts (chain-of-thought-prompting, workflows-versus-agents, agent-tool-ergonomics, matryoshka-embeddings, language-agnostic-code-graph, multi-agent-token-economics) address KV-cache reuse or prefix caching."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The mechanism is described precisely (radix-tree indexed KV cache, LRU-style eviction, cache-aware scheduling) with a public reference implementation and reproducible benchmarks, so a reader can verify the claims."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Automatic prefix reuse via a radix-tree KV-cache index is a foundational serving-systems mechanism, now adopted well beyond this one paper's implementation, and it is not pinned to any vendor's version numbers or pricing."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "A reader designing multi-call LLM programs or a serving system can directly apply the guidance: structure calls to maximize shared literal prefixes (stable content before variable content) so the radix-tree matcher finds a longer common prefix and reuses more cache, and can implement the tree-plus-LRU-eviction design themselves."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "The core idea — a radix tree over token sequences lets a serving system automatically detect and reuse KV cache across calls sharing a prefix — is a single coherent mechanism statable in one paragraph, independent of the paper's broader frontend-language framing."
+      }
+    }
+  }
+}

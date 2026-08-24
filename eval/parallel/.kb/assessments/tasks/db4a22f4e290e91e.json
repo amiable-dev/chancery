@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "db4a22f4e290e91e",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/what-is-an-observability-pipeline.md": "sha256:ed766a16ae577b00fef496db7ce4282324df8f8d4e29a6acc951ddd1d5615e6c",
+      "assessment:what-is-an-observability-pipeline": "sha256:312b32f7ccbe90df41e01ec7c85cebeabf5e5bc186f7d86619b6981f6a47238b",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:104a4f8412d68017918706e2698453282163f398f24e51ccc8c88832aafb82cb",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/observability-pipeline-control-point.md"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "target": "staging/gh-actions-security-hardening.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "task_id": "348d5d7e7bded493",
+    "rubric": "promotion@3",
+    "target": "staging/gh-actions-security-hardening.md",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "An evergreen, comprehensive security reference doc that has existed for years, not a launch or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Nearest concepts address different specific mechanisms in the same broad domain — exposure-first-supply-chain-defense is about credential theft via install hooks and long-lived tokens, unsandboxed-extension-marketplace-defenses is about marketplace-side scanning for open submission — neither covers pinning consumption to an immutable content hash versus trusting a mutable, repointable reference."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Official first-party GitHub documentation with a concrete, independently verifiable mechanism (SHA-1 collision resistance) and links to real enforcement policy configuration."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Pinning to an immutable content hash instead of trusting a mutable, repointable reference is a foundational supply-chain practice that predates and outlives GitHub Actions specifically (the same principle underlies Docker image digests, Go's go.sum, Nix's content-addressed store) — a mechanism, not a version number."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Gives a directly adoptable practice — pin to full commit SHA, verify it against the real upstream repo not a fork, enforce it via repo/org policy — that changes exactly how someone would configure a CI pipeline or any registry-consumption workflow."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The full note is a comprehensive security reference bundling many unrelated topics — secrets handling, script-injection mitigation, untrusted checkout risk, CODEOWNERS, OpenID Connect, Dependabot updates, self-hosted runner hardening, vulnerability screening — of which SHA-pinning against mutable references is only one section among many separable ideas."
+      }
+    }
+  }
+}

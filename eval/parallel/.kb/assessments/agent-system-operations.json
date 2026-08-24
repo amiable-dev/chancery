@@ -1,0 +1,49 @@
+{
+  "target": "staging/agent-system-operations.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "task_id": "02a098b547b69de7",
+    "rubric": "promotion@3",
+    "target": "staging/agent-system-operations.md",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is an academic survey paper proposing a formal framework and anomaly taxonomy, not a launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest concepts (evolved-llm-coordinator, mcp-tool-poisoning, datasheets-for-datasets, transformer-architecture, code-mode-mcp, agentic-artifacts-as-code) cover an operational framework for agent-system monitoring, anomaly detection, root-cause localization and resolution."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is a systematic, citable academic survey with a formally defined categorization scheme (intra-agent vs inter-agent anomalies) and named framework stages, reviewable and falsifiable by the discipline it addresses."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "An operational discipline defined by a stage structure and anomaly taxonomy is a mechanism/pattern in the rubric's sense, not a version number or feature matrix, and is likely to outlive any single vendor's tooling."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The abstract names the four stages and the anomaly split as a structuring framework, which is useful for organizing agent-ops work, but does not itself supply the how — implementation technique lives in the paper's body, not in what is captured here."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One coherent idea stateable in a paragraph: AgentOps is an operational framework for agent systems built on an anomaly taxonomy and a four-stage monitor/detect/localize/resolve lifecycle."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    }
+  }
+}

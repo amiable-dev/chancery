@@ -1,0 +1,49 @@
+{
+  "target": "staging/toward-securing-ai-agents-like-operating.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "weak",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/toward-securing-ai-agents-like-operating.md",
+    "task_id": "5c69641d96826719",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a security research paper with a survey, an attack-vector analysis and an empirical case study, not a product announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "mcp-attack-surface-taxonomy catalogs MCP-specific attack surfaces; this note's broader claim, that agent security should be approached via the OS-security lens of resource isolation, privilege separation and mediated communication, is a different framing not covered there."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is a peer-review-track arXiv cs.CR paper reporting an empirical case study against four real agents, checkable and sourced."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "Treating agent security as an OS security problem, and naming resource isolation, privilege separation and mediated communication as the three primitives to get right, is a general framing independent of any specific agent product or version."
+      },
+      "actionability": {
+        "rating": "weak",
+        "rationale": "The captured abstract names the three security primitives to design for but the paper's actual enumerated mitigations sit in the full text, not in what was captured, so as captured it names the checklist without fully developing each item."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One idea - apply the established OS-security lens of resource isolation, privilege separation and mediated communication to agent architectures, since doing so is shown to mitigate many though not all agent vulnerabilities - is stated in one paragraph independent of the paper's survey and case-study framing."
+      }
+    }
+  }
+}

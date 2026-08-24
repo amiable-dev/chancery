@@ -1,0 +1,49 @@
+{
+  "target": "staging/find-and-bury-dead-code.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "promote",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\",\"weak\"],\"atomicity\":[\"strong\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/find-and-bury-dead-code.md",
+    "task_id": "9b99b5df4fad83c2",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a practitioner's own reasoning about a technique, not a product launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "reachability-based-dead-code-detection covers only the static reachability-graph technique and its entry-point failure mode; it says nothing about confirming a static finding against runtime execution evidence before deleting, which is this note's core point."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "The reasoning is checkable against the named static tools (debride, unused) and dynamic tools (coverband, scythe) and is a verifiable technical argument, not an unsourced claim."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The trade-off itself - static analysis is cheap and fast but imprecise, dynamic analysis is accurate but costly and only as good as its observation window - is a methodological point about program analysis independent of which specific tools (debride, coverband, scythe) implement it, so it will outlast any one tool."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "It gives a concrete decision rule for the moment of deleting flagged code: do not trust a static-only finding, and do not trust a dynamic-only absence-of-execution reading until it has run long enough to rule out rarely-used-but-live paths."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One idea - static flags cheaply but imprecisely, dynamic confirms accurately but needs sufficient observation time, so deletion confidence requires both - is stated independently of the specific Ruby tools used to illustrate it."
+      }
+    }
+  }
+}

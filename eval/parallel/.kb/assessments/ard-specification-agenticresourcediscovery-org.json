@@ -1,0 +1,49 @@
+{
+  "target": "staging/ard-specification-agenticresourcediscovery-org.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/ard-specification-agenticresourcediscovery-org.md",
+    "task_id": "a405a8bbf17ebc78",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is a substantive draft technical specification defining a protocol and its design rationale, not a release or funding announcement."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The nearest concepts (agent-tool-ergonomics, opaque-agent-interop, attested-computation) address tool-description design, interop mechanics and computation attestation respectively; none describe replacing context-window tool-stuffing with federated search-based discovery, nor the domain-anchored URN identity rationale."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is a public draft standard with named authors from named organizations, a formal CDDL/JSON-Schema/OpenAPI definition, and a reference conformance-testing tool, all directly checkable."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The core patterns here, search-first discovery replacing pre-installation once capability counts exceed the context window, and domain-anchored identifiers that decouple logical discovery identity from both network location and cryptographic security identity, are architectural ideas that would outlast this specific v0.9 draft even if ARD itself is revised or superseded, unlike the specific media-type strings and endpoint paths that will churn."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Each idea changes a concrete design decision: move capability selection out of the LLM's context window into an external search service once the tool count is large, and anchor a federated identifier to a verifiable domain rather than reusing a URL or letting the discovery key double as the security principal."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The note carries at least two independently valuable, separable ideas, the search-first discovery philosophy and the URN identity-design rationale, each of which stands alone without the other, rather than one idea elaborated with supporting detail, so it should be split rather than promoted as one broad concept."
+      }
+    }
+  }
+}

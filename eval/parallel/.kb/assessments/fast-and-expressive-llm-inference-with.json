@@ -1,0 +1,55 @@
+{
+  "target": "staging/fast-and-expressive-llm-inference-with.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/fast-and-expressive-llm-inference-with.md",
+    "task_id": "bbe191e0ae813dd6",
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    },
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "It introduces a system, but the substance is a transferable technique — automatic KV cache reuse across generation calls via a radix tree with LRU eviction — not just a release note about a product."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "None of the nearest existing concepts (chain-of-thought-prompting, language-agnostic-code-graph, matryoshka-embeddings, agent-state-residence, context-engineering, workflows-versus-agents) cover KV-cache reuse or prefix caching."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is the authors' own primary write-up with a linked tech report (arXiv 2312.07104), open-source code, and reported benchmark methodology — reproducible, not unsourced."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "The mechanism — reusing KV cache across requests via a radix tree keyed by token sequence, with LRU eviction and cache-aware scheduling — is a systems pattern independent of SGLang's own version or benchmarks, and is the same idea now underlying automatic prefix caching in other serving engines."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Gives a concrete, implementable design (radix-tree prefix index over paged KV tensors, LRU eviction of leaf nodes, cache-aware scheduling) that changes how someone would design or evaluate an LLM-serving system's cache layer, not just describe the landscape."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The note bundles two separable contributions under one title — the RadixAttention backend caching mechanism and the SGLang frontend DSL for structured LLM programs — and a reader cannot compress both into one paragraph without losing one of them."
+      }
+    },
+    "proposed_concepts": [
+      {
+        "title": "Automatic prefix caching via radix-tree KV cache reuse",
+        "definition": "A KV-cache management technique that retains the key/value tensors of prior generation calls in a radix tree keyed by token sequence, so any new request sharing a prefix with a cached sequence reuses that prefix's cache instead of recomputing it, with an LRU eviction policy reclaiming the least-recently-used leaves under GPU memory pressure."
+      }
+    ]
+  }
+}

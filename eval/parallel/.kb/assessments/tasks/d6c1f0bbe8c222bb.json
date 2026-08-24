@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "d6c1f0bbe8c222bb",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/sandboxes-concepts-guide-signadot.md": "sha256:5b9a9a7bdf0022dbcc70d29466c93cb7822b154dce17de896490943c9c1be126",
+      "rubric:promotion": "sha256:a802b14a95af152602962fe052eb92741949c67d097a20c084ca32be1b938366",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:8c4a29cec6ab35563ecf10a83a6ed85e3129441dd1e2d45a9e19f74d99cecec2",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/sandboxes-concepts-guide-signadot.json"
+  ]
+}

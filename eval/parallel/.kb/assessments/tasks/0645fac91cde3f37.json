@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "0645fac91cde3f37",
+    "verb": "promote",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "61fff721a2df081c57aac830ada5045929427ce9",
+    "input_hashes": {
+      "staging/agent-system-operations.md": "sha256:eae250bda7958058f4e2fbae91e2f01bacbf3b45cb29311e492611690fa56a50",
+      "assessment:agent-system-operations": "sha256:a8c2a4add48ded3370da3e981827e138ffa9eb5116adfd7b821d4b72c4cc35b1",
+      "schema:concept-draft.schema.json": "sha256:d5b67763c3b464428850c6da56022a89b3f02c91571f0521d58d94eaa7d78de6"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:4f263ce7435a681f516ba0cab8d9d97bbaa01243062b174493f76f25a0e8ad3a",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/agentops.md"
+  ]
+}

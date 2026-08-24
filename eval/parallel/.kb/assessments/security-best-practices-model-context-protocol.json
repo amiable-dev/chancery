@@ -1,0 +1,49 @@
+{
+  "target": "staging/security-best-practices-model-context-protocol.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-24",
+  "action": "split",
+  "reason": "matched {\"durability\":[\"strong\"],\"actionability\":[\"strong\"],\"atomicity\":[\"weak\"]}",
+  "ratings": {
+    "durability": "strong",
+    "actionability": "strong",
+    "atomicity": "weak"
+  },
+  "verdict": {
+    "task_id": "123c661c424ee158",
+    "rubric": "promotion@3",
+    "target": "staging/security-best-practices-model-context-protocol.md",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "This is the protocol's own dedicated security-considerations document, not a launch or release note."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "Its mix-up-attack section overlaps mcp-authorization-hardening, but confused deputy, token passthrough, SSRF via OAuth discovery, state handle hijacking, local server compromise, authorization-URL validation, stdio proxy escalation and scope minimization are mechanisms neither mcp-authorization-hardening nor mcp-attack-surface-taxonomy details — a reader of both existing concepts still learns substantial new mechanism here."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "It is the official spec's own security document, cross-referencing specific RFCs (9207, 9068, 9728) with reproducible attack flows and MUST/SHOULD-level protocol requirements."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "strong",
+        "rationale": "These are protocol-level attack mechanisms and their structural mitigations, not version numbers or a feature matrix, so they hold up the way a threat model holds up rather than the way a stat holds up."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Nearly every attack class ends in explicit MUST/SHOULD engineering requirements a builder can implement directly, not a described landscape."
+      },
+      "atomicity": {
+        "rating": "weak",
+        "rationale": "The note bundles roughly nine largely independent attack mechanisms (confused deputy, token passthrough, SSRF, state handle hijacking, local server compromise, OAuth URL validation, stdio proxy escalation, mix-up attacks, scope minimization) rather than one core idea stateable in a paragraph — it should be split, and only the mechanisms not already covered by mcp-authorization-hardening or mcp-attack-surface-taxonomy are worth extracting."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-sonnet-5"
+    }
+  }
+}
