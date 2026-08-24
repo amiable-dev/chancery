@@ -40,6 +40,7 @@ The argument turns on what signing actually buys. A signature binds an artifact 
 - [[exposure-first-supply-chain-defense]] — names editor-extension marketplaces as a live theft channel, which is the empirical case this trust model is built to refuse
 - [[model-provenance-over-inspection]] — the extension-registry trust model and model provenance over inspection make the identical argument about neighbouring artifact classes — a registry signature proves only who produced an extension, published weights cannot be reverse engineered into a description of behaviour, so trust in both cases has to come from attested lineage, not inspection.
 - [[mcp-attack-surface-taxonomy]] — the extension-registry trust model supplies the concrete trust posture for the MCP attack surface taxonomy's dependency-provenance category — provenance plus signing, untrusted-by-default, and curation of a small vetted set.
+- [[mcp-registry-federation]] — argues that curation of a small vetted set is the only defensible posture once what a registry distributes executes unsandboxed — the opposite choice this federation model makes for MCP servers, which publishes self-reported entries openly and moderates only reactively.
 
 ## Applications
 

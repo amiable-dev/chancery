@@ -40,6 +40,7 @@ The framework originates from 2009 research (Cappos and Samuel) that found the s
 
 - [[cfrg-curves-in-jose]] — both are open specifications governing signature key material, though CFRG-curves-in-JOSE standardises key encoding for web tokens while this concept governs the trust hierarchy that decides which keys get to sign anything at all
 - [[risk-tiered-agent-change-control]] — shares the same refusal to let one credential hold unilateral shipping authority, applied to update distribution's root-of-trust instead of a code-review pipeline's deploy identity
+- [[slsa-build-provenance-levels]] — verifies that an already-built artifact was signed by a trusted key; these levels grade one layer upstream of that check — how trustworthy the build process that produced the thing being signed actually was.
 
 ## Applications
 

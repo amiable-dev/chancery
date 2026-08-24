@@ -1,0 +1,160 @@
+{
+  "task_id": "7d88940a0ec22260",
+  "supplier": { "class": "model-single", "id": "claude-sonnet-5" },
+  "links": [
+    {
+      "from": "json-web-token",
+      "target": "json-web-encryption",
+      "clause": "JWE is one of the two ways a JWT's claims can be secured — encrypting them for confidentiality, where a bare signed JWT only protects integrity — so the choice between the two is a JWT design decision, not a separate technology.",
+      "reciprocal": true,
+      "reciprocal_clause": "is the encrypted-payload half of the design decision this format's own spec leaves to a JWT implementer — a bare signed JWT only protects integrity, and reaching for this format instead is how confidentiality gets added."
+    },
+    {
+      "from": "json-web-token",
+      "target": "cfrg-curves-in-jose",
+      "clause": "CFRG curves in JOSE define an elliptic-curve key type a JWT's signature algorithm can select, extending the signing-algorithm choice this format leaves open to implementations.",
+      "reciprocal": true,
+      "reciprocal_clause": "supplies one concrete signature-algorithm choice — EdDSA over an OKP key — for the open-ended signing-algorithm slot this token format leaves to implementations."
+    },
+    {
+      "from": "json-web-token",
+      "target": "authorization-response-issuer-identification",
+      "clause": "solves the same problem, confirming who actually produced what a party received, at a different layer: this format's iss claim travels inside a signed or encrypted token, while RFC 9207's iss is a separate, unprotected OAuth redirect parameter a client checks before ever reaching a token.",
+      "reciprocal": true,
+      "reciprocal_clause": "checks who answered before a client ever reaches a token — the same issuer-confirmation problem this format's own iss claim solves once a token exists, but running one protocol step earlier as an unprotected redirect parameter."
+    },
+    {
+      "from": "macos-gatekeeper",
+      "target": "unsandboxed-extension-marketplace-defenses",
+      "clause": "runs the same signature-plus-automated-scan-plus-first-use-consent pattern this marketplace layers for its own unsandboxed extensions — a Developer ID signature and Apple's notarization scan stand in for package signing and publish-time behavioral analysis, and the first-launch warning stands in for the per-publisher trust prompt.",
+      "reciprocal": true,
+      "reciprocal_clause": "is an operating-system-level instance of the same layered pattern this marketplace assembles for extensions — a Developer ID signature plus an automated notarization scan plus a first-launch confirmation, applied to any downloaded app instead of one editor's plugin ecosystem."
+    },
+    {
+      "from": "macos-gatekeeper",
+      "target": "slsa-build-provenance-levels",
+      "clause": "checks who signed a finished app and that it passed an automated malware scan, which is exactly the consumer-facing trust question that stops at identity — it says nothing about how trustworthy the build process behind that signature actually was, the gap these levels grade.",
+      "reciprocal": true,
+      "reciprocal_clause": "is a concrete, deployed instance of the identity-versus-build-trust gap these levels formalize — a Developer ID signature and notarization scan establish who signed an app and that it passed a malware check, but neither says anything about the build platform that produced it, which is exactly what climbing from L1 toward L3 would add."
+    },
+    {
+      "from": "mcp-confused-deputy-token-passthrough",
+      "target": "mcp-authorization-hardening",
+      "clause": "hardens an adjacent seam in the same authorization flow — where authorization hardening fixes iss validation and credential-issuer binding, this concept covers the proxy-as-confused-deputy and token-forwarding failures those SEPs do not address.",
+      "reciprocal": true,
+      "reciprocal_clause": "leaves open exactly the seam this concept names — mandatory iss validation and issuer-bound credentials harden mix-up and cross-issuer reuse, but say nothing about a proxy that mediates for many clients under one static identity or forwards a token without checking its audience."
+    },
+    {
+      "from": "mcp-confused-deputy-token-passthrough",
+      "target": "mcp-attack-surface-taxonomy",
+      "clause": "gives mechanism-level depth to the taxonomy's insufficient-authentication-and-authorization category, the same expansion pattern mcp-tool-poisoning already provides for the tool-trust category.",
+      "reciprocal": true,
+      "reciprocal_clause": "names insufficient authentication and authorization as one of its ten categories at a level this concept fills in with mechanism — a proxy trusted as one principal when it mediates for many, exploited through consent-cookie replay or unchecked token audience."
+    },
+    {
+      "from": "mcp-confused-deputy-token-passthrough",
+      "target": "authorization-response-issuer-identification",
+      "clause": "issuer identification stops a different confusion, which authorization server actually answered, while this concept stops the proxy itself from being tricked into acting as an unwitting go-between for a party it never validated.",
+      "reciprocal": true,
+      "reciprocal_clause": "stops a client from trusting the wrong authorization server's response; this concept stops a proxy sitting downstream of that same response from being tricked into acting as an unwitting go-between for a party it never validated."
+    },
+    {
+      "from": "mcp-registry-federation",
+      "target": "remote-first-mcp-governance",
+      "clause": "solves a complementary half of the same discovery-and-trust problem — where remote-first governance moves servers out of local, shadow deployment into managed infrastructure, the registry federation model is how a client finds and selects which managed server to connect to in the first place.",
+      "reciprocal": true,
+      "reciprocal_clause": "moves servers out of local, shadow deployment into managed infrastructure; this federation model is the complementary half of the same problem — how a client finds and selects which managed server to connect to once it exists."
+    },
+    {
+      "from": "mcp-registry-federation",
+      "target": "mcp-exposed-by-design",
+      "clause": "names exactly the population this registry's self-report-then-moderate-reactively model does not vet before publication — an entry can be listed the moment a publisher submits it, so the registry's discoverability gain does not by itself close the exposure that study measured among already-running servers.",
+      "reciprocal": true,
+      "reciprocal_clause": "measures the exposed, ungoverned population that this registry's self-report-then-moderate-reactively model does not vet before publication — a server can be listed the moment its publisher submits it, so registry discoverability does not by itself close the exposure this study found."
+    },
+    {
+      "from": "mcp-registry-federation",
+      "target": "extension-registry-trust",
+      "clause": "reaches the opposite conclusion this trust model draws for the same kind of artifact — where that model argues open submission is indefensible once what's distributed executes with no sandbox, this federation model documents itself as exactly that: self-reported publication, open by default, with community flagging and retroactive denylisting as the only gate.",
+      "reciprocal": true,
+      "reciprocal_clause": "argues that curation of a small vetted set is the only defensible posture once what a registry distributes executes unsandboxed — the opposite choice this federation model makes for MCP servers, which publishes self-reported entries openly and moderates only reactively."
+    },
+    {
+      "from": "observability-pipeline-control-point",
+      "target": "telemetry-collector-pipeline",
+      "clause": "covers the same physical layer from the opposite angle — that concept describes the OTel Collector's receiver/processor/exporter mechanics and adoption cost, while this one describes the strategic consequence of occupying that position once built.",
+      "reciprocal": true,
+      "reciprocal_clause": "supplies the receiver/processor/exporter mechanics and adoption cost of the physical layer this note treats strategically — the same position described here as a control point over collection, normalization and routing."
+    },
+    {
+      "from": "observability-pipeline-control-point",
+      "target": "collector-side-telemetry-reduction",
+      "clause": "is one concrete tactic this control point enables — deciding what to sample, drop or aggregate happens inside the pipeline precisely because collection and routing are already centralized there.",
+      "reciprocal": true,
+      "reciprocal_clause": "is enabled by exactly the centralization this note describes — sampling and dropping telemetry inside the pipeline only works as a single policy because collection and routing already pass through one control point."
+    },
+    {
+      "from": "observe-and-confine-sandboxing",
+      "target": "proxy-boundary-session-capture",
+      "clause": "supplies one workable placement for the capture layer this pattern requires — a transparent proxy recording every provider request and response — though the synthesis further requires that placement to sit inside the sandbox boundary, which the proxy concept alone does not address.",
+      "reciprocal": true,
+      "reciprocal_clause": "is the general principle the proxy placement described here is one instance of, requiring further that the capture point sit inside or beneath the sandbox boundary specifically, so containment and the durable record are enforced by the same boundary."
+    },
+    {
+      "from": "observe-and-confine-sandboxing",
+      "target": "kernel-enforced-agent-sandbox",
+      "clause": "names the concrete kind of boundary this pattern's thesis is about — a kernel-enforced boundary is exactly the sandbox capture must sit inside or beneath for tightening isolation to never cost visibility.",
+      "reciprocal": true,
+      "reciprocal_clause": "is the boundary this pattern's thesis fits precisely — placing capture inside or beneath a kernel-enforced sandbox, rather than bolting it on from outside, is what would let the confinement described here and the visibility its sibling note treats as a separate concern be enforced by the same boundary."
+    },
+    {
+      "from": "perpetual-fallback-access",
+      "target": "json-web-token",
+      "clause": "is the concrete token format this design's offline licence check is built on — reading a distinct active, fallback or unlicensed state locally from a signed token with no server round trip is exactly the signed software license and entitlement token use this format's own spec names.",
+      "reciprocal": true,
+      "reciprocal_clause": "names signed software license and entitlement tokens as one of its offline-verifiable applications; this licensing design is a worked example — an active, fallback or unlicensed state read locally from a signed token with no server round trip."
+    },
+    {
+      "from": "perpetual-fallback-access",
+      "target": "server-driven-ui",
+      "clause": "gates features the same way that architecture gates screens — a licence check returning a distinct active, fallback or unlicensed state is a server-supplied signal the client applies as a feature set, the same resent-signal-drives-client-behaviour move applied to entitlements instead of layout.",
+      "reciprocal": true,
+      "reciprocal_clause": "applies the same resent-signal-drives-client-behaviour move this architecture uses for layout to entitlements instead — a licence check returning a distinct third state lets the same deployed binary apply a different feature set without shipping a new build."
+    },
+    {
+      "from": "request-level-sandbox-isolation",
+      "target": "remocal-development",
+      "clause": "both isolate a slice of a Kubernetes cluster for one developer's changes, but remocal-development binds a local process to one remote pod's traffic while request-level sandbox isolation instead runs the changed services in-cluster and routes tagged requests to them, letting many sandboxes coexist on the same shared cluster.",
+      "reciprocal": true,
+      "reciprocal_clause": "isolates a slice of a Kubernetes cluster the opposite way — binding a local process to one remote pod's traffic rather than running changed services in-cluster and routing tagged requests to them, which is what lets many sandboxes in this pattern coexist on one shared cluster."
+    },
+    {
+      "from": "request-level-sandbox-isolation",
+      "target": "snapshot-backed-agent-sandboxes",
+      "clause": "solves the same N-concurrent-environments-without-N-times-duplication problem through a different mechanism — header-borne routing into services already sharing one baseline cluster, where this concept instead forks a snapshotted microVM per environment.",
+      "reciprocal": true,
+      "reciprocal_clause": "solves the same N-concurrent-environments-without-N-times-duplication problem this pattern solves through microVM fork, but by routing header-tagged requests into changed services already sharing one baseline cluster instead of forking a snapshot per environment."
+    },
+    {
+      "from": "slsa-build-provenance-levels",
+      "target": "immutable-reference-pinning",
+      "clause": "is one concrete technique that helps satisfy SLSA's build-input integrity concerns — pinning a dependency to an immutable content hash is part of what lets a build's provenance honestly claim its inputs were exactly what it says they were.",
+      "reciprocal": true,
+      "reciprocal_clause": "is one concrete technique that helps a build's provenance honestly claim its inputs were exactly what it says they were — pinning a dependency to an immutable content hash rather than a repointable name or tag."
+    },
+    {
+      "from": "slsa-build-provenance-levels",
+      "target": "threshold-signed-software-updates",
+      "clause": "operates one layer downstream of the same trust chain — that concept is about how a client verifies an already-built artifact was signed by a trusted key, while SLSA's levels grade how trustworthy the build process that produced the thing being signed actually was.",
+      "reciprocal": true,
+      "reciprocal_clause": "verifies that an already-built artifact was signed by a trusted key; these levels grade one layer upstream of that check — how trustworthy the build process that produced the thing being signed actually was."
+    },
+    {
+      "from": "slsa-build-provenance-levels",
+      "target": "exposure-first-supply-chain-defense",
+      "clause": "targets the same build-pipeline attack surface from the opposite direction — that concept is about removing what an attacker can steal from a CI runner, while SLSA's levels grade how hard it is to forge or tamper with what the runner claims it produced.",
+      "reciprocal": true,
+      "reciprocal_clause": "removes what an attacker can steal from a CI runner; these levels target the same build-pipeline attack surface from the opposite direction, grading how hard it is to forge or tamper with what the runner claims it produced."
+    }
+  ]
+}

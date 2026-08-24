@@ -40,6 +40,7 @@ GitHub's own guidance for third-party Actions states that pinning to a full-leng
 
 - [[unsandboxed-extension-marketplace-defenses]] — addresses a different point in the same supply chain — that concept catalogs what a marketplace does to vet what it distributes, while this one is what a consumer does to keep receiving exactly the content they already vetted, regardless of what the marketplace allows
 - [[exposure-first-supply-chain-defense]] — is a sibling CI/CD supply-chain hardening practice defending against a different specific threat — that concept closes the credential-theft path through install hooks and long-lived tokens, this one closes the silent-substitution path through a repointable dependency reference
+- [[slsa-build-provenance-levels]] — is one concrete technique that helps a build's provenance honestly claim its inputs were exactly what it says they were — pinning a dependency to an immutable content hash rather than a repointable name or tag.
 
 ## Applications
 

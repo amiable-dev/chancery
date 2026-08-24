@@ -36,6 +36,7 @@ The design choice being made explicit here is federation over centralization: ra
 
 - [[remote-first-mcp-governance]] — solves a complementary half of the same discovery-and-trust problem — where remote-first governance moves servers out of local, shadow deployment into managed infrastructure, the registry federation model is how a client finds and selects which managed server to connect to in the first place
 - [[mcp-exposed-by-design]] — names exactly the population this registry's self-report-then-moderate-reactively model does not vet before publication — an entry can be listed the moment a publisher submits it, so the registry's discoverability gain does not by itself close the exposure that study measured among already-running servers
+- [[extension-registry-trust]] — reaches the opposite conclusion this trust model draws for the same kind of artifact — where that model argues open submission is indefensible once what's distributed executes with no sandbox, this federation model documents itself as exactly that: self-reported publication, open by default, with community flagging and retroactive denylisting as the only gate.
 
 ## Applications
 

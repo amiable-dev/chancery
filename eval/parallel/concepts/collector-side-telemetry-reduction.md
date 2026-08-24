@@ -39,6 +39,7 @@ The load-bearing distinction is head versus tail. Head-based sampling decides at
 - [[slo-burn-rate-alerting]] — constrains what may be sampled away, because error-budget alerting has to key on signals that survive the pipeline, so anything an alert derives from must be counted before the sampler or exempted from it
 - [[ebpf-zero-instrumentation-observability]] — makes this necessary at a scale nobody opted into, since collecting telemetry for every process on a node without developers wiring anything in produces volume that has to be priced somewhere, and the collector is where
 - [[telemetry-collector-pipeline]] — collector-side telemetry reduction describes a specific policy the telemetry collector runs — the keep-or-drop sampling decision happens inside the hand-off point a collector occupies, buffering a complete trace before deciding rather than sampling at instrumentation time.
+- [[observability-pipeline-control-point]] — is enabled by exactly the centralization this note describes — sampling and dropping telemetry inside the pipeline only works as a single policy because collection and routing already pass through one control point.
 
 ## Applications
 

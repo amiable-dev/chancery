@@ -35,6 +35,7 @@ The mechanism has two halves that must both hold for isolation to work. Request 
 ## Relationships
 
 - [[remocal-development]] — both isolate a slice of a Kubernetes cluster for one developer's changes, but remocal-development binds a local process to one remote pod's traffic while request-level sandbox isolation instead runs the changed services in-cluster and routes tagged requests to them, letting many sandboxes coexist on the same shared cluster
+- [[snapshot-backed-agent-sandboxes]] — solves the same N-concurrent-environments-without-N-times-duplication problem through a different mechanism — header-borne routing into services already sharing one baseline cluster, where this concept instead forks a snapshotted microVM per environment.
 
 ## Applications
 

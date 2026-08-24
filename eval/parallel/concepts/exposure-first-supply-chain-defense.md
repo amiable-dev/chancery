@@ -39,6 +39,7 @@ Three properties of the build layer make execution-layer detection structurally 
 
 - [[siem-agentic-visibility-gap]] — is the same class of argument at a different layer — that gap is semantic, where monitoring records events it cannot interpret, while this one is spatial, where monitoring is absent from the environment the attack occurs in
 - [[model-provenance-over-inspection]] — extends the same reasoning down the toolchain — both hold that inspecting the finished artifact or watching it run cannot substitute for controlling the pipeline that produced it
+- [[slsa-build-provenance-levels]] — removes what an attacker can steal from a CI runner; these levels target the same build-pipeline attack surface from the opposite direction, grading how hard it is to forge or tamper with what the runner claims it produced.
 
 ## Applications
 

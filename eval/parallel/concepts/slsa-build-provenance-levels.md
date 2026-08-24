@@ -42,6 +42,7 @@ Provenance in SLSA's sense means a verifiable record of what entity built an art
 - [[threshold-signed-software-updates]] — operates one layer downstream of the same trust chain — that concept is about how a client verifies an already-built artifact was signed by a trusted key, while SLSA's levels grade how trustworthy the build process that produced the thing being signed actually was
 - [[immutable-reference-pinning]] — is one concrete technique that helps satisfy SLSA's build-input integrity concerns — pinning a dependency to an immutable content hash is part of what lets a build's provenance honestly claim its inputs were exactly what it says they were
 - [[exposure-first-supply-chain-defense]] — targets the same build-pipeline attack surface from the opposite direction — that concept is about removing what an attacker can steal from a CI runner, while SLSA's levels grade how hard it is to forge or tamper with what the runner claims it produced
+- [[macos-gatekeeper]] — is a concrete, deployed instance of the identity-versus-build-trust gap these levels formalize — a Developer ID signature and notarization scan establish who signed an app and that it passed a malware check, but neither says anything about the build platform that produced it, which is exactly what climbing from L1 toward L3 would add.
 
 ## Applications
 

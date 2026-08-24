@@ -35,6 +35,7 @@ An OKP key carries exactly four things: kty set to OKP, a mandatory crv naming t
 ## Relationships
 
 - [[json-web-encryption]] — supplies the key representation that encryption format consumes on its agreement path — X25519 and X448 OKP keys are what make ECDH-ES over CFRG curves available to JWE's Direct Key Agreement and Key Agreement with Key Wrapping modes
+- [[json-web-token]] — supplies one concrete signature-algorithm choice — EdDSA over an OKP key — for the open-ended signing-algorithm slot this token format leaves to implementations.
 
 ## Applications
 

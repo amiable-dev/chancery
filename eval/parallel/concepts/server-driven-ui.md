@@ -36,6 +36,7 @@ The mechanism is a contract between two halves. The client ships a fixed vocabul
 
 - _No relationships recorded yet._
 - [[agent-state-residence]] — server-driven UI and state residence share a resent-not-remembered architecture applied at different layers — a stateless renderer trades a per-request payload for no persistence tier on the receiving side, the same way a caller-resends design keeps a service instance stateless.
+- [[perpetual-fallback-access]] — applies the same resent-signal-drives-client-behaviour move this architecture uses for layout to entitlements instead — a licence check returning a distinct third state lets the same deployed binary apply a different feature set without shipping a new build.
 
 ## Applications
 

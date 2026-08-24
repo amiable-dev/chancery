@@ -40,6 +40,7 @@ The design starts from the shape of agent workloads: an environment spends most 
 - [[agent-harness]] — supplies the isolated execution surface that framing lists as a harness capability, turning sandboxing from a per-agent concern into fleet infrastructure
 - [[remocal-development]] — remocal development and snapshot-backed sandboxes share a decouple-execution-from-environment-state logic — code running locally while its data and traffic stay remote parallels an environment's complete state moving independently of which machine executes it.
 - [[stateless-worker-fanout]] — snapshot-backed sandboxes and stateless worker fan-out share a cheap-to-spin-up-many-independent-units logic applied to different resources — microVM state in one case, worker processes in the other — so fleet capacity becomes a function of how cheaply a fresh isolated unit can be created, not how many machines are kept warm.
+- [[request-level-sandbox-isolation]] — solves the same N-concurrent-environments-without-N-times-duplication problem this pattern solves through microVM fork, but by routing header-tagged requests into changed services already sharing one baseline cluster instead of forking a snapshot per environment.
 
 ## Applications
 

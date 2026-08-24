@@ -37,6 +37,7 @@ Local MCP servers put the security decision in each employee's hands: unvetted s
 - [[shadow-mcp-detection]] — is completed by that control, which finds the servers this governance did not capture
 - [[code-mode-mcp]] — gains a cost rationale from that pattern, since portals are also where tool schemas collapse into two calls
 - [[mcp-authorization-hardening]] — specifies at the protocol level the OAuth alignment that architecture deploys operationally, with an identity-aware provider fronting every server
+- [[mcp-registry-federation]] — moves servers out of local, shadow deployment into managed infrastructure; this federation model is the complementary half of the same problem — how a client finds and selects which managed server to connect to once it exists.
 
 ## Applications
 

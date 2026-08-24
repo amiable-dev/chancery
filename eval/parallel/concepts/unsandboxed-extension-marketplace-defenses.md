@@ -39,6 +39,7 @@ Visual Studio Code's extension host runs with exactly the same permissions as th
 
 - [[extension-registry-trust]] — is the concrete operational counter-example to that concept's argument — where extension-registry-trust holds that closed curation is the only defensible posture given no sandbox, this catalogs what a real, major marketplace does instead by accepting open submission and compensating with layered scanning, verification, and monitoring
 - [[layered-agent-guardrails]] — shares the same design instinct — no single control substitutes for another, so distinct failure classes (a malicious package, a spoofed identity, a name-squat) each get their own dedicated layer rather than one gate being asked to catch everything
+- [[macos-gatekeeper]] — is an operating-system-level instance of the same layered pattern this marketplace assembles for extensions — a Developer ID signature plus an automated notarization scan plus a first-launch confirmation, applied to any downloaded app instead of one editor's plugin ecosystem.
 
 ## Applications
 

@@ -36,6 +36,7 @@ Every JWE separates two concerns: bulk encryption of the content under a symmetr
 
 - _No relationships recorded yet._
 - [[cfrg-curves-in-jose]] — JWE is one of the three JOSE specifications the CFRG-curves-in-JOSE binding extends — the OKP key type it introduces is usable directly inside JWE's key-management modes, not only in JWS and JWK.
+- [[json-web-token]] — is the encrypted-payload half of the design decision this format's own spec leaves to a JWT implementer — a bare signed JWT only protects integrity, and reaching for this format instead is how confidentiality gets added.
 
 ## Applications
 

@@ -37,6 +37,8 @@ The gap it closes is structural rather than cryptographic. The OAuth 2.0 authori
 - [[mcp-authorization-hardening]] — supplies the mechanism that hardening profile only names — the profile mandates iss validation for MCP clients, while this concept carries the mix-up mechanics and the exact comparison procedure that make the mandate meaningful
 - [[attested-per-agent-identity]] — per-agent attestation and issuer identification are complementary halves of mutual identity assurance in agent-to-service calls — attestation establishes which agent is calling, issuer identification establishes which authorization server actually answered.
 - [[mcp-attack-surface-taxonomy]] — issuer identification supplies the concrete mix-up-attack mitigation for the MCP attack surface taxonomy's identity-verification category — a server naming itself in every response is the mechanical check that category otherwise leaves abstract.
+- [[json-web-token]] — checks who answered before a client ever reaches a token — the same issuer-confirmation problem this format's own iss claim solves once a token exists, but running one protocol step earlier as an unprotected redirect parameter.
+- [[mcp-confused-deputy-token-passthrough]] — stops a client from trusting the wrong authorization server's response; this concept stops a proxy sitting downstream of that same response from being tricked into acting as an unwitting go-between for a party it never validated.
 
 ## Applications
 

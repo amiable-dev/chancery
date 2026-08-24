@@ -1,0 +1,67 @@
+{
+  "envelope": {
+    "task_id": "7d88940a0ec22260",
+    "verb": "link",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "19337491fcb9a1d4650f42a5d5dd534232278250",
+    "input_hashes": {
+      "concepts/answer-layer-interception.md": "sha256:a4056405426bc72b903722fc331831607a23a00b73697d0c548560f93dac74fd",
+      "concepts/dama-dmbok-wheel.md": "sha256:580680a2b345cd3b56283ddd06c8ae94714e54e1201e251b2e7b2d6438a4c7eb",
+      "concepts/gateway-channel-ownership.md": "sha256:eaf06b8e0812af78a9071519679a698351150be45f963c3205dec0addf26afcc",
+      "concepts/json-web-token.md": "sha256:3c563863d912e067e667cac3ad955e1966e771db379de8f971c9087d28fa89cb",
+      "concepts/macos-gatekeeper.md": "sha256:b24c963924afb99af93cc551194b61d8b1886bf2ee4adbf4b4378ce7326cc968",
+      "concepts/mcp-confused-deputy-token-passthrough.md": "sha256:d360c2ba31d9a5158c47cc70ee634755f864c9194e06753fe08fe3bb9154d722",
+      "concepts/mcp-registry-federation.md": "sha256:3c9c1df628f9c552387785f4d4e86958f87da7200f5c66fa0df2e44c36036398",
+      "concepts/microcopy-doubt-injection.md": "sha256:69b8028d83d8ddc804b4aba42f6c4d9f54bef35473a1a10f54ed60ff1aa1d80a",
+      "concepts/observability-pipeline-control-point.md": "sha256:db60141072475d3ba6970e5f71a3cfb93e66a67265d1ca08bc8955d251bb8b3f",
+      "concepts/observe-and-confine-sandboxing.md": "sha256:1c424dae7ad26b14528fd13e6c0af76755c60db18cbed2922ea80fed6a7d0e8c",
+      "concepts/perpetual-fallback-access.md": "sha256:da26704e15cad9d8e0f0cb83c2a1f5bc79be79ced6076c37b6fc75b7389b31ac",
+      "concepts/request-level-sandbox-isolation.md": "sha256:023e3e0d2e821468f134d34a003141489e9b1477a103ea59b54e4ed851eaf5ce",
+      "concepts/slsa-build-provenance-levels.md": "sha256:22a1a951789eb476d79eca49b2af7f8c979118300471247f6ca911ae7914d034",
+      "schema:link-draft.schema.json": "sha256:e713aca39f650c312adb6e8921abe1fead499fc2ae57267da2cf69356ba1661a"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:a2c6e4d24a6305546bd272e1549825d9e85d62d05931dc7707ff3c5dd44a13d1",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/json-web-token.md",
+    "concepts/json-web-encryption.md",
+    "concepts/cfrg-curves-in-jose.md",
+    "concepts/authorization-response-issuer-identification.md",
+    "concepts/macos-gatekeeper.md",
+    "concepts/unsandboxed-extension-marketplace-defenses.md",
+    "concepts/slsa-build-provenance-levels.md",
+    "concepts/mcp-authorization-hardening.md",
+    "concepts/mcp-attack-surface-taxonomy.md",
+    "concepts/mcp-registry-federation.md",
+    "concepts/remote-first-mcp-governance.md",
+    "concepts/mcp-exposed-by-design.md",
+    "concepts/extension-registry-trust.md",
+    "concepts/telemetry-collector-pipeline.md",
+    "concepts/collector-side-telemetry-reduction.md",
+    "concepts/observe-and-confine-sandboxing.md",
+    "concepts/proxy-boundary-session-capture.md",
+    "concepts/kernel-enforced-agent-sandbox.md",
+    "concepts/perpetual-fallback-access.md",
+    "concepts/server-driven-ui.md",
+    "concepts/request-level-sandbox-isolation.md",
+    "concepts/remocal-development.md",
+    "concepts/snapshot-backed-agent-sandboxes.md",
+    "concepts/immutable-reference-pinning.md",
+    "concepts/threshold-signed-software-updates.md",
+    "concepts/exposure-first-supply-chain-defense.md"
+  ]
+}

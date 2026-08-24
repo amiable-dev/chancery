@@ -39,6 +39,7 @@ What unifies the ten is that MCP concentrates three things at a single boundary 
 - [[remote-first-mcp-governance]] — is the posture that answers this taxonomy's shadow-server entry, because ungoverned servers appear precisely where an organisation offers teams no sanctioned path to register a server instead
 - [[authorization-response-issuer-identification]] — issuer identification supplies the concrete mix-up-attack mitigation for the MCP attack surface taxonomy's identity-verification category — a server naming itself in every response is the mechanical check that category otherwise leaves abstract.
 - [[extension-registry-trust]] — the extension-registry trust model supplies the concrete trust posture for the MCP attack surface taxonomy's dependency-provenance category — provenance plus signing, untrusted-by-default, and curation of a small vetted set.
+- [[mcp-confused-deputy-token-passthrough]] — names insufficient authentication and authorization as one of its ten categories at a level this concept fills in with mechanism — a proxy trusted as one principal when it mediates for many, exploited through consent-cookie replay or unchecked token audience.
 
 ## Applications
 

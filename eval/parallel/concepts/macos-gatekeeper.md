@@ -38,6 +38,8 @@ Gatekeeper's check fires the first time a downloaded file executes, keyed off th
 ## Relationships
 
 - _No relationships recorded yet._
+- [[unsandboxed-extension-marketplace-defenses]] — runs the same signature-plus-automated-scan-plus-first-use-consent pattern this marketplace layers for its own unsandboxed extensions — a Developer ID signature and Apple's notarization scan stand in for package signing and publish-time behavioral analysis, and the first-launch warning stands in for the per-publisher trust prompt.
+- [[slsa-build-provenance-levels]] — checks who signed a finished app and that it passed an automated malware scan, which is exactly the consumer-facing trust question that stops at identity — it says nothing about how trustworthy the build process behind that signature actually was, the gap these levels grade.
 
 ## Applications
 

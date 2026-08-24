@@ -37,6 +37,7 @@ The finding comes from combining passive discovery — crawling certificate tran
 - [[remote-first-mcp-governance]] — supplies the empirical baseline that architecture's local-server risk case argues from — this is the measured state of the ungoverned, internet-exposed population that governance moves servers out of
 - [[mcp-attack-surface-taxonomy]] — confirms at internet scale that the taxonomy's insufficient-authentication-and-authorization category is not a theoretical risk but the majority condition of already-deployed servers
 - [[mcp-oauth-discovery-ssrf]] — SSRF against cloud metadata endpoints is one of the vulnerabilities this measurement study actually found in the wild, giving that mechanism an empirical prevalence rather than only a described attack path
+- [[mcp-registry-federation]] — measures the exposed, ungoverned population that this registry's self-report-then-moderate-reactively model does not vet before publication — a server can be listed the moment its publisher submits it, so registry discoverability does not by itself close the exposure this study found.
 
 ## Applications
 

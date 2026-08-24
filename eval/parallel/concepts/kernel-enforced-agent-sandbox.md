@@ -39,6 +39,7 @@ The mechanism is placement: the enforcement point sits underneath the agent inst
 - [[siem-agentic-visibility-gap]] — is the complementary half of the problem — this bounds what an agent is able to do, while that concerns whether anyone can afterwards see what it did
 - [[layered-agent-guardrails]] — the kernel-enforced sandbox is the concrete mechanism behind layered agent guardrails' first layer — 'sandboxing bounds the blast radius when anything else fails' is exactly what kernel primitives enforce, beneath every other guardrail in the sequence.
 - [[principle-of-least-agency]] — the kernel-enforced sandbox supplies the enforcement mechanism for the access boundary least agency prescribes — kernel primitives make the boundary structurally impossible to negotiate around, rather than merely specified in policy.
+- [[observe-and-confine-sandboxing]] — is the boundary this pattern's thesis fits precisely — placing capture inside or beneath a kernel-enforced sandbox, rather than bolting it on from outside, is what would let the confinement described here and the visibility its sibling note treats as a separate concern be enforced by the same boundary.
 
 ## Applications
 

@@ -35,6 +35,8 @@ The mechanism is a change in the lapsed user's option set. A hard cutoff makes t
 ## Relationships
 
 - _No relationships recorded yet._
+- [[json-web-token]] — is the concrete token format this design's offline licence check is built on — reading a distinct active, fallback or unlicensed state locally from a signed token with no server round trip is exactly the signed software license and entitlement token use this format's own spec names.
+- [[server-driven-ui]] — gates features the same way that architecture gates screens — a licence check returning a distinct active, fallback or unlicensed state is a server-supplied signal the client applies as a feature set, the same resent-signal-drives-client-behaviour move applied to entitlements instead of layout.
 
 ## Applications
 

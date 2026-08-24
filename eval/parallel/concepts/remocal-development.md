@@ -37,6 +37,7 @@ What distinguishes the pattern from the obvious alternatives is where the interc
 - [[ebpf-zero-instrumentation-observability]] — shares the instinct to interpose beneath the application rather than modify it, but inverts the purpose — eBPF observes syscalls read-only from inside the kernel for every pod on a node, while this pattern rewrites one process's syscalls to redirect its actual I/O elsewhere
 - [[three-loops-of-agentic-development]] — targets the innermost of those loops, since an agent that must deploy before it can test cannot close its write-test-fix cycle at the minutes cadence that loop assumes
 - [[snapshot-backed-agent-sandboxes]] — remocal development and snapshot-backed sandboxes share a decouple-execution-from-environment-state logic — code running locally while its data and traffic stay remote parallels an environment's complete state moving independently of which machine executes it.
+- [[request-level-sandbox-isolation]] — isolates a slice of a Kubernetes cluster the opposite way — binding a local process to one remote pod's traffic rather than running changed services in-cluster and routing tagged requests to them, which is what lets many sandboxes in this pattern coexist on one shared cluster.
 
 ## Applications
 

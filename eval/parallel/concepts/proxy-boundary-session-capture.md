@@ -35,6 +35,7 @@ The motivating failure is ordinary: an agent harness crashes mid-session and tak
 ## Relationships
 
 - [[siem-agentic-visibility-gap]] — applies the same instinct to reliability that the SIEM argument applies to security: agent interactions must be recorded in infrastructure you control, because the tool itself is not a trustworthy custodian of its own record
+- [[observe-and-confine-sandboxing]] — is the general principle the proxy placement described here is one instance of, requiring further that the capture point sit inside or beneath the sandbox boundary specifically, so containment and the durable record are enforced by the same boundary.
 
 ## Applications
 

@@ -36,6 +36,7 @@ The classic tension arises because the two goals pull toward opposite designs wh
 - [[proxy-boundary-session-capture]] — supplies one workable placement for the capture layer this pattern requires — a transparent proxy recording every provider request and response — though the synthesis further requires that placement to sit inside the sandbox boundary, which the proxy concept alone does not address
 - [[agent-checkpoint-resume]] — is the capability this pattern's durable, in-boundary capture makes safe to build: resuming from a recorded state only avoids reintroducing risk if that state was captured without punching a hole in the sandbox to get it
 - [[siem-agentic-visibility-gap]] — names the security-side version of the same placement problem — visibility that lives outside infrastructure you control is not trustworthy record-keeping, which is why this pattern insists capture sit inside the boundary already enforced
+- [[kernel-enforced-agent-sandbox]] — names the concrete kind of boundary this pattern's thesis is about — a kernel-enforced boundary is exactly the sandbox capture must sit inside or beneath for tightening isolation to never cost visibility.
 
 ## Applications
 

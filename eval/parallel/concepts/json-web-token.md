@@ -40,6 +40,7 @@ The token's power is in what it moves out of band: because the signature or encr
 - [[json-web-encryption]] — JWE is one of the two ways a JWT's claims can be secured — encrypting them for confidentiality, where a bare signed JWT only protects integrity — so the choice between the two is a JWT design decision, not a separate technology.
 - [[cfrg-curves-in-jose]] — CFRG curves in JOSE define an elliptic-curve key type a JWT's signature algorithm can select, extending the signing-algorithm choice this format leaves open to implementations.
 - [[authorization-response-issuer-identification]] — solves the same problem, confirming who actually produced what a party received, at a different layer: this format's iss claim travels inside a signed or encrypted token, while RFC 9207's iss is a separate, unprotected OAuth redirect parameter a client checks before ever reaching a token.
+- [[perpetual-fallback-access]] — names signed software license and entitlement tokens as one of its offline-verifiable applications; this licensing design is a worked example — an active, fallback or unlicensed state read locally from a signed token with no server round trip.
 
 ## Applications
 

@@ -40,6 +40,7 @@ The mechanism is a three-stage pipeline of receivers, processors and exporters, 
 - [[collector-side-telemetry-reduction]] — is the highest-value use this pipeline is put to once it exists, moving the keep-or-drop decision into the processor stage where a complete trace can be judged rather than deciding at instrumentation or query time
 - [[observability-generations]] — is the axis this component stays neutral on, since a collector will faithfully deliver the same telemetry into separate pillar stores or into a single wide-event store, so deploying one settles the transport question without settling the storage one
 - [[pillars-as-wide-event-projections]] — describes a data model the processor stage can be used to converge on, normalising separately-emitted signals into one event stream before anything reaches storage
+- [[observability-pipeline-control-point]] — supplies the receiver/processor/exporter mechanics and adoption cost of the physical layer this note treats strategically — the same position described here as a control point over collection, normalization and routing.
 
 ## Applications
 
