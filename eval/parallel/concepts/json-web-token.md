@@ -12,6 +12,9 @@ tags:
 status: draft
 sources:
   - url: https://www.rfc-editor.org/rfc/rfc7519.html
+    hash: sha256:336850ef67428b27e0bfd8d2d87a8018fe27bd017135fc2bce8ea7d618b1667c
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # JSON Web Token (JWT)

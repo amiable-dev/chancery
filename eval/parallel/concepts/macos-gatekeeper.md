@@ -12,6 +12,9 @@ tags:
 status: draft
 sources:
   - url: https://support.apple.com/guide/security/gatekeeper-and-runtime-protection-sec5599b66df/web
+    hash: sha256:5bf83ab4fc3796714a77c97d79511b4fc170b5846f0b21f07f9d44cd17f3fff6
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # macOS Gatekeeper

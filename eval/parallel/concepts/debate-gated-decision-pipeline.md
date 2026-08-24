@@ -9,7 +9,13 @@ tags:
 status: draft
 sources:
   - url: https://arxiv.org/abs/2412.20138
+    hash: sha256:7f27bef7beace6d5a86d6cb018313f59132b2528d81a19b508b309ec37a24603
+    retrieved: 2026-08-24
+    reachability: ok
   - url: https://github.com/TauricResearch/TradingAgents
+    hash: sha256:b4a050d5a95472de864f275ebdff7ec360976680a3ea2e80b922b23b970b9dda
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Debate-gated decision pipeline

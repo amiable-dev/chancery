@@ -12,6 +12,9 @@ tags:
 status: draft
 sources:
   - url: https://code.visualstudio.com/docs/configure/extensions/extension-runtime-security
+    hash: sha256:e79271c9f795bbddacc027ef672dfede0e75029d1e0ab049280e0986d5028108
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Defense-in-depth for unsandboxed extension marketplaces

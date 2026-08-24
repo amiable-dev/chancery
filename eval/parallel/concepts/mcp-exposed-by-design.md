@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://arxiv.org/abs/2608.00150
+    hash: sha256:38df306a356d49a17afe64579db68f258349452f80da0f097ad4ac7be6e6af67
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Internet-facing MCP servers are exposed by design

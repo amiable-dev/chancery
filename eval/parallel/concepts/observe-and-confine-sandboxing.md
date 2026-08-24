@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://papercompute.com/blog/missing-primitive-agent-infrastructure/
+    hash: sha256:7c30e106f52bbf2744e05bfd75a552f88c7bb9dc79592054e5aa5b787fd7f3e9
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Observe-and-confine sandboxing

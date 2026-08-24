@@ -10,6 +10,9 @@ tags:
 status: draft
 sources:
   - url: https://arxiv.org/abs/2606.01581
+    hash: sha256:0e169a29e35759b9ec2a01aba2dda059173a6c163e47e7ecdb48f4d859c8d1b6
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # AgentOps

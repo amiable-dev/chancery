@@ -12,6 +12,9 @@ tags:
 status: draft
 sources:
   - url: https://github.com/0xSteph/pentest-ai-agents
+    hash: sha256:602d85b76769be1bb9695ad4a31a136dd54e3bb02b45e23dde5e04114b859dea
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Tiered execution gating for AI agents

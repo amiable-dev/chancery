@@ -10,6 +10,9 @@ tags:
 status: draft
 sources:
   - url: https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/
+    hash: sha256:f15ef88b943310223523d5d834f6df2fc91cdb85d76fd19341ac20fd77ff11bc
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # MCP Registry federation model

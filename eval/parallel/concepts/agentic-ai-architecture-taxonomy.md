@@ -10,6 +10,9 @@ tags:
 status: draft
 sources:
   - url: https://arxiv.org/html/2601.12560v1
+    hash: sha256:123890ffbf9fe61b2c8fa71280ab0aee1aa68fa42cbdb55dc6eeb7a226624410
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Six-part agentic AI architecture taxonomy

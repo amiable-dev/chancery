@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://arxiv.org/html/2312.07104v2
+    hash: sha256:96d7b2c47d0d9289efb9b0556028509ccfddc44e9492badb8ffb57c737ab67c6
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Automatic prefix caching (RadixAttention)

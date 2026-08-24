@@ -9,7 +9,13 @@ tags:
 status: draft
 sources:
   - url: https://dama-phoenix.org/education/the-dama-dmbok-wheel/
+    hash: sha256:adfd234db3870c4314fec9a6b3417f0cd0702470c6f491f76f65151313f5444d
+    retrieved: 2026-08-24
+    reachability: ok
   - url: https://dama.org/learning-resources/dama-data-management-body-of-knowledge-dmbok/
+    hash: sha256:b367b6a851307c80082ab9666b3b895328bf7604320016c6281f5fe58857f657
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # DAMA-DMBOK Wheel

@@ -10,6 +10,9 @@ tags:
 status: draft
 sources:
   - url: https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices
+    hash: sha256:9abbd1c6117bd8dbe9f7d7a238cb7ced0c0640937ccb82a7fe35e90d1ace12a2
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # MCP confused-deputy and token-passthrough risk

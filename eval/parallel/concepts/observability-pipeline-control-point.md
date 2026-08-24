@@ -10,6 +10,9 @@ tags:
 status: draft
 sources:
   - url: https://cribl.io/blog/the-observability-pipeline/
+    hash: sha256:523e23562fe3eef312c027e4f37ceae93da59e3300b61d50dbd36743825bb418
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Observability pipeline as a control point

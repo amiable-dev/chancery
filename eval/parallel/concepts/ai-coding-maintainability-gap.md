@@ -10,7 +10,13 @@ tags:
 status: draft
 sources:
   - url: https://www.gitclear.com/the_ai_code_quality_maintainability_gap
+    hash: sha256:e758eb66ee66697b71210de61185008ccfe2084b4f4219eb46859317089b1d32
+    retrieved: 2026-08-24
+    reachability: ok
   - url: https://www.gitclear.com/ai_assistant_code_quality_2025_research
+    hash: sha256:e09f93b846114d6ec1a362d3f995cd862f39206b1758fd870491b47b91e90cbb
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # The AI coding maintainability gap

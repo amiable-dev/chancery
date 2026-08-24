@@ -14,6 +14,9 @@ tags:
 status: draft
 sources:
   - url: https://theupdateframework.github.io/specification/latest/
+    hash: sha256:d83dd59ecf0d1fe845c6b3e67da54729d457681078bab6b9f90faae8fc8bc0ba
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Threshold-signed software update security

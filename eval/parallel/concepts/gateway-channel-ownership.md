@@ -10,7 +10,13 @@ tags:
 status: draft
 sources:
   - url: https://github.com/openclaw/openclaw/blob/main/docs/concepts/architecture.md
+    hash: sha256:d4dd3b0e11762ee79ca16fcc3197aac5756974f3747085ca3302c554cc85ffb1
+    retrieved: 2026-08-24
+    reachability: ok
   - url: https://github.com/openclaw/openclaw
+    hash: sha256:e82740ebd0118a825fc031e4b060923cca6570fb72f27ec6f8322c55db86ff6d
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Gateway-owned channel architecture

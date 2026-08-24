@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://kevinjalbert.com/find-and-bury-dead-code/
+    hash: sha256:a5f58ec2554214623cd6f2c897b94bc2bb57cfd910738f0ec813bef65c9d8c11
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Deletion confidence for dead code

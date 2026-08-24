@@ -13,6 +13,9 @@ tags:
 status: draft
 sources:
   - url: https://docs.github.com/en/actions/reference/security/secure-use
+    hash: sha256:31daa96f5d8355bc4207e3888958095e9ce8d5e28d1471347cb0c8ca31cce988
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Immutable reference pinning against mutable-name substitution

@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://knip.dev/explanations/how-knip-works
+    hash: sha256:11e97a5e0e1f164e706bc0a1e43c79670cb74f2793183a93f039e47427784327
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Reachability-based dead code detection

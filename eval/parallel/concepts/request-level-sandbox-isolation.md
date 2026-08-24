@@ -12,6 +12,9 @@ tags:
 status: draft
 sources:
   - url: https://www.signadot.com/docs/concepts/sandbox
+    hash: sha256:790b085cf3ae53f09aaa27a75c662e5784ec27c652994989fb4dd04d6a3af794
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Request-level sandbox isolation

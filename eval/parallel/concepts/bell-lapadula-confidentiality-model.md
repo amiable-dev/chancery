@@ -13,7 +13,13 @@ tags:
 status: draft
 sources:
   - url: https://archive.org/stream/DTIC_AD0770768/DTIC_AD0770768_djvu.txt
+    hash: sha256:9f2ad13986eec855ae17ceb709cdeee809dde1908b213b57efeb7b8db16e32f0
+    retrieved: 2026-08-24
+    reachability: ok
   - url: https://archive.org/details/DTIC_AD0770768
+    hash: sha256:8c6031ebd7b71a55925e42d1d41bf4e8b6d0672e083dff41090e9217c226157d
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Bell-LaPadula confidentiality model

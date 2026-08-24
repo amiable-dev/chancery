@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://arxiv.org/abs/2605.14932
+    hash: sha256:e5d0fadfdd375cf8d07e44bb7ff74c4918735f157660f2d0938403fa2cb34a7b
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Agent security as OS security

@@ -14,6 +14,9 @@ tags:
 status: draft
 sources:
   - url: https://www.openpolicyagent.org/docs
+    hash: sha256:86f243f04e33e8d7a372cb86dda0bde94d85c89e00b64b4f66dd2019f9685301
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Decoupled policy decision engines
