@@ -1,51 +1,35 @@
 ---
-sr-due: 2026-04-14
-sr-ease: 250
+tags: [flashcards, cognition, learning, human-ai-interaction, domain/human-factors, maturity/emerging, source-type/research]
+sr-due: 2026-08-24
 sr-interval: 1
-tags:
-- flashcards
-- cognitive-debt
-- cognitive-science
-- ai
-- learning
+sr-ease: 250
 ---
 
+# Cognitive debt — Flashcards
 
-# Cognitive Debt — Flashcards
-
-#flashcards/cognitive-debt
-
+#flashcards/cognition
 
 ## Definition <!-- kb:card:f0b729 -->
 What is cognitive debt?
 ?
-The cumulative degradation of cognitive skills and neural capacity from habitual delegation of thinking to AI tools. Coined by MIT Media Lab researchers (2025). Each AI-assisted task where the human doesn't engage deeply represents a small deficit in the skills not exercised — deficits that compound over time.
+The accumulating deficit in a person's own cognitive engagement, memory formation, and sense of ownership that builds when mental work is habitually offloaded to an external aid like an LLM — the work gets done, but the capacity that would have exercised it goes under-used, and the shortfall compounds across sessions.
 
-## Origin <!-- kb:card:d335a5 -->
-Which study coined the term "cognitive debt" and what did it find?
+## EEG ordering <!-- kb:card:780c35 -->
+In the source study, how did brain connectivity during writing order across the three tool conditions?
 ?
-MIT Media Lab (Kosmyna et al., arXiv:2506.08872, 2025). EEG study with 54 participants across 4 sessions. LLM users showed progressively weaker brain connectivity than search-engine or brain-only writers. When LLM users switched to unaided writing, their neural engagement was *lower than the baseline control group* — evidence of accumulated cognitive debt.
+Brain-only strongest, search-engine intermediate, LLM weakest — cognitive activity scaled down in proportion to how much external support was used.
 
-## The Paradox <!-- kb:card:021c21 -->
-Why is cognitive debt particularly insidious?
+## Ownership evidence <!-- kb:card:7c0dc8 -->
+Besides EEG connectivity, what behavioral evidence pointed to weaker encoding among LLM users?
 ?
-AI-assisted outputs often score *well externally* (high marks from human teachers and AI judges), masking the internal cognitive cost. The debt is invisible in the short term — you produce good work while your own capability quietly degrades.
+LLM users produced more homogeneous essays, reported the lowest ownership of their own text, and often failed to quote sentences they had just written.
 
-## Analogy <!-- kb:card:a6d011 -->
-What is the "technical debt" analogy for cognitive debt?
+## Crossover result <!-- kb:card:eb34fb -->
+What did the fourth-session crossover show, and why does that make this "debt" rather than a transient mode?
 ?
-Just as cutting corners in code creates future maintenance burden, cutting corners on thinking creates future cognitive burden. Small individual instances of AI-offloading seem harmless; the accumulation is the problem. Like technical debt, cognitive debt can theoretically be "repaid" — but only with deliberate effort.
+Participants who wrote with the LLM first and then lost it stayed under-engaged; participants who worked unaided first and then got the LLM showed higher recall and engagement, comparable to search users. The deficit persisting after the tool is removed is what makes it debt, and ordering matters — unaided effort first builds capacity that tool-first work never establishes.
 
-## Reversibility <!-- kb:card:c42686 -->
-Is cognitive debt reversible?
+## Evidence caveat <!-- kb:card:8ff32e -->
+How strong is the evidence base for cognitive debt, and why should that qualify how it's used?
 ?
-Probably yes, partially — like muscle atrophy. If you stop exercising a cognitive skill, it weakens, but it can rebuild with practice. The open questions are how deep debt can accumulate before recovery becomes difficult, and whether skills developed in youth recover differently from adult-learned skills.
-
-## Mitigation <!-- kb:card:fb2207 -->
-How can individuals or organisations mitigate cognitive debt accumulation?
-?
-- Write drafts *before* consulting AI, then compare
-- Practise problem-solving without AI assistance periodically (deliberate cognitive exercise)
-- Review AI outputs critically rather than accepting them
-- Design assessments that test the cognitive *process* (oral exams, live problem-solving), not just the artefact
-- At org level: maintain deep expertise through deliberate practice even as AI handles routine tasks
+One arXiv preprint from a four-month MIT Media Lab study with 54 participants (18 in the crossover session) — suggestive, not a replicated or settled literature, so it should inform hypotheses rather than be treated as established fact.

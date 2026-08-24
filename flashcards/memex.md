@@ -1,6 +1,6 @@
 ---
-tags: [flashcards, knowledge-management, pkm, history, hypertext]
-sr-due: 2026-07-08
+tags: [flashcards, knowledge-management, personal-knowledge, history, domain/knowledge-management, maturity/established, source-type/practitioner]
+sr-due: 2026-08-24
 sr-interval: 1
 sr-ease: 250
 ---
@@ -9,29 +9,27 @@ sr-ease: 250
 
 #flashcards/knowledge-management
 
-## Definition <!-- kb:card:7d02cd -->
-What is the Memex?
+## Memex — definition <!-- kb:card:0a4fdb -->
+What is Vannevar Bush's memex (1945), in one sentence?
 ?
-A hypothetical personal knowledge device described by Vannevar Bush in his 1945 essay "As We May Think." A desk-sized machine storing an individual's entire document collection on microfilm, navigable via *associative trails* — user-defined chains of linked documents that mirror the mind's association-based thinking. Widely recognised as the conceptual ancestor of hypertext and the LLM Wiki pattern.
+A mechanized personal device holding all of one individual's books, records, correspondence and notes, consultable with speed and flexibility — 'an enlarged intimate supplement to his memory.'
 
-## Core innovation <!-- kb:card:c797ad -->
-What was Vannevar Bush's key insight about human cognition and information retrieval?
+## Memex — capacity design choice <!-- kb:card:658c23 -->
+How does the memex treat storage capacity, and what does that make the real constraint on use?
 ?
-The mind operates by association, not by alphabetical or numerical indexing. One thought triggers another, and the trail can be traversed again. Existing library indexing systems were fundamentally misaligned with this. Bush designed the Memex to support associative trails — chains of linked documents that can be created, named, and shared — rather than forcing human memory into hierarchical catalogs.
+Capacity is deliberately designed out of the problem (centuries to fill at 5,000 pages/day), so entry should be profligate — the real constraint is the cost of capture, not the cost of holding.
 
-## The unsolved problem <!-- kb:card:68cd13 -->
-What did Bush's Memex vision fail to solve, and how?
+## Memex — one undivided store <!-- kb:card:9c8f17 -->
+In the memex, how do purchased material and the owner's own notes relate to each other in storage?
 ?
-Who builds and maintains all the associative trails? Bush assumed the human would do this work — linking documents, updating trails, resolving contradictions — but at scale this maintenance burden becomes overwhelming. In practice, this is why human wikis fail: maintenance cost grows faster than value. The Memex remained hypothetical partly because no one could absorb the upkeep.
+They share a single undivided store — a handwritten note or photograph enters through the same platen and files alongside a purchased book, with annotation possible on either.
 
-## LLM connection <!-- kb:card:9d8186 -->
-How do LLMs complete the Memex vision?
+## Memex — simultaneous viewing <!-- kb:card:227c26 -->
+Why does the memex support several simultaneous projection positions rather than just one?
 ?
-LLMs absorb the maintenance burden Bush couldn't solve: they create and update associative links (wikilinks), resolve contradictions, update cross-references, and touch 15 pages in one pass without getting bored. Karpathy: *"The part he couldn't solve was who does the maintenance. The LLM handles that."* The LLM wiki pattern is a practical Memex with the maintenance problem solved.
+Because viewing multiple items at once is the precondition for tying two items together — not merely a convenience.
 
-## Historical influence <!-- kb:card:a0f6e2 -->
-Name two direct descendants of the Memex concept.
+## Memex — indexed lookup vs association <!-- kb:card:0aa4f5 -->
+Does the memex replace conventional indexed lookup with associative selection, or add to it?
 ?
-1. **Ted Nelson's Xanadu (1960s):** Hypermedia with bidirectional links and transclusion — a software Memex
-2. **Tim Berners-Lee's World Wide Web (1989):** Unidirectional hyperlinks at global scale — public rather than personal, but the linking paradigm derives from Bush's associative trails
-Also: Douglas Engelbart's NLS (mouse, windows, hyperlinks) and modern tools like Obsidian, Roam, Logseq.
+It retains conventional indexed lookup (tap a code, page through, jump to an index) and layers associative selection on top of it rather than substituting for it.

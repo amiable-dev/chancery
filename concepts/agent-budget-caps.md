@@ -1,86 +1,54 @@
 ---
-title: "Agent Budget Caps"
-date: 2026-05-29
+title: Budget caps for autonomous agents
+aliases:
+  - Agent budget caps
+  - Cap-to-job-shape matching
+date: 2026-08-24
 domain: ai-agents
 maturity: emerging
 source_type: practitioner
-topics: [patterns, cost-control]
-tags: [concept, ai-agents, architecture, patterns, resource-governance, autonomy, cost-control, domain/ai-agents, maturity/emerging, source-type/practitioner, topic/patterns, topic/cost-control]
+tags: [concept, agents, operations, cost-control, domain/ai-agents, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://www.helpnetsecurity.com/2026/05/27/vigolium-open-source-vulnerability-scanner/
     hash: sha256:db47a3a23c8db34574379ae1c5cfd4ced48717fb33c56242b3fea87efae9620d
-    retrieved: 2026-08-21
-    class: unclassified
-    reachability: ok
-  - url: https://github.com/vigolium/vigolium
-    hash: sha256:b387e7b00f9203a8583c50ca541e01a95adb04047570713a6348e741874e2e12
-    retrieved: 2026-08-21
-    class: unclassified
+    retrieved: 2026-08-24
+    class: external-secondary
     reachability: ok
 ---
 
-# Agent Budget Caps
+# Budget caps for autonomous agents
 
 ## Definition
-Agent Budget Caps are explicit, configurable upper bounds placed on the resource consumption of an autonomous AI agent across one or more dimensions — typically: token count (LLM inference cost), tool-call count (action breadth), triage iterations (re-planning cycles), and wall-clock duration (elapsed time). When any cap is reached, the agent halts and returns whatever it has accumulated, rather than running indefinitely.
+
+**Budget caps for autonomous agents** are operator-set hard limits on what a self-directed agent may consume — tokens, tool calls, re-check iterations, wall-clock duration — chosen to match the shape of the job rather than fixed once globally, on the premise that an agent's output degrades in both directions: too small a budget cuts it off mid-lead and leaves a low-confidence stub, while too large a budget lets it wander, spend, and add noise.
 
 ## Explanation
-Autonomous agents that run without resource limits exhibit two failure modes: they may run indefinitely when chasing a difficult lead, burning cost proportional to the complexity of the target; or they may produce diminishing-returns output after a certain depth, adding noise without new signal.
 
-Budget caps are the mechanism that makes agentic automation **production-safe**. Rather than trusting the agent to know when to stop, the system imposes external boundaries and the agent works within them.
-
-Vigolium, an open-source agentic vulnerability scanner, exposes four caps:
-
-| Cap Type | Controls |
-|---|---|
-| **Token budget** | Total LLM inference cost per scan |
-| **Tool-call budget** | Maximum number of actions/modules invoked |
-| **Triage iteration cap** | How many re-plan cycles the agent can run |
-| **Wall-clock cap** | Maximum elapsed time before forced stop |
-
-Jessie Ho (Vigolium author) describes two clear failure modes from miscalibration:
-- **Under-budget:** Agent is cut mid-investigation; outputs are low-confidence stubs that look complete but aren't
-- **Over-budget:** Agent wanders, burns spend, and adds noise — more output doesn't mean more signal
-
-His calibration heuristic: **start tight, loosen only when genuine work is getting cut off**. The signal for "too tight" is a specific finding that was truncated; the signal for "too loose" is repetitive or low-quality output filling the gap.
-
-Different job shapes call for different cap profiles:
-- **Time-boxed CI runs:** lean on wall-clock + iteration caps (always finishes)
-- **Deep-dive single target:** loosen tokens, let the agent re-plan
-- **Broad sweeps:** keep per-target budgets tight (one rabbit-hole target eats everything)
+An agent that chooses its own next action has no internal stopping rule tied to the value of continuing, so the cap is the operator's only lever on where it stops, and which cap binds is a property of the job rather than of the agent. A time-boxed engagement or a CI run leans on the wall-clock and iteration caps, because the requirement is that the run always finishes inside a window even if it finishes incomplete. A deep investigation of a single target loosens the token cap instead, because the value there comes from the agent being able to abandon a hypothesis and re-plan, which is precisely the behaviour a tight token budget forecloses. A broad sweep across many targets needs per-target budgets rather than one pooled allowance, because a single target that turns into a rabbit hole will otherwise consume the entire run and starve every target after it. The two failure modes are worth separating because they present asymmetrically: underbudgeting fails visibly and honestly — a lead cut mid-investigation is legible as a stub — whereas overbudgeting produces plausible additional output that costs money and dilutes the genuine findings, so it is the harder error to notice from the report alone. That asymmetry is what justifies the operating rule of starting tight and loosening only when real work is demonstrably being cut off: it calibrates against the failure you can see. The source is trade-press coverage built on an interview with the author of an open-source agentic scanner, so this is a practitioner's operating judgement rather than a measured result.
 
 ## Key Properties
-- **Multi-dimensional:** Effective budgeting constrains multiple axes simultaneously; a single token cap is insufficient if the agent can make unlimited tool calls
-- **Soft vs hard caps:** Some systems implement soft caps (agent warned, asked to conclude) before hard cutoffs (forced stop) to improve output quality
-- **Start tight:** Default caps should be conservative; expand based on observed truncation, not upfront speculation
-- **Failure mode asymmetry:** Under-budgeting produces silent, low-confidence stubs; over-budgeting produces noisy, verbose output — both look like "results" at a glance
-- **Job-shape dependency:** Optimal caps are a function of the task type (broad vs deep), not a universal setting
+
+- Four distinct cap types — tokens, tool calls, re-check iterations, wall-clock duration — that bind under different job shapes
+- Time-boxed and CI runs lean on wall-clock and iteration caps so the run always terminates
+- Deep single-target work loosens the token cap, because re-planning after a dead end is what tokens buy
+- Broad sweeps need per-target budgets, or one rabbit-hole target eats the whole allowance
+- Underbudgeting fails visibly as a low-confidence stub; overbudgeting fails invisibly as cost and noise, so start tight and loosen on evidence
 
 ## Relationships
-- Related to [[constrained-agent-actions]]: both limit what agents can do, but in different dimensions — constrained actions limit output *vocabulary*; budget caps limit resource *consumption*
-- Related to [[human-in-the-loop-pattern]]: budget caps can trigger HITL escalation when the agent halts with low confidence
-- Related to [[agentic-pipeline-verification]]: budget caps are a prerequisite for predictable pipeline runtimes
-- Complements [[two-tier-agent-execution-model]]: tier routing can pre-assign different budget profiles based on task sensitivity
-- Related to [[attention-budget]]: attention-budget is a model-level concept (context window); agent-budget-caps operate at the orchestration/system level
+
+- [[agent-loop-anatomy]] — supplies the slot these caps fill — they are the independent termination exits that anatomy requires, expressed as resource limits rather than as goal tests
+- [[evidence-recheck-triage]] — consumes one of these budgets directly, since re-check iterations are a capped resource — starving the triage pass turns off the check it exists to be
 
 ## Applications
-- **Security scanning:** Cap scan jobs so they always complete within a CI pipeline window, even against complex targets
-- **Code review agents:** Token budgets prevent over-analysis of large PRs; wall-clock caps keep review latency predictable
-- **Research agents:** Iteration caps prevent recursive rabbit-holes when crawling references
-- **Customer support bots:** Tool-call caps limit how many APIs an agent can invoke per conversation, bounding both cost and blast radius
-- **Any autonomous background agent:** Budget caps are the primary mechanism for preventing runaway spend in unattended LLM jobs
 
-## Study
-- Flashcards: [[flashcards/agent-budget-caps|Practice this concept]]
+Setting per-job rather than per-tool budgets when running LLM-driven scanners, research agents or batch harnesses; choosing per-target caps for fan-out workloads so one pathological target cannot starve the rest; diagnosing a disappointing agent run by asking which cap bound first.
 
 ## Sources
-- [Vigolium: Open-source vulnerability scanner](https://www.helpnetsecurity.com/2026/05/27/vigolium-open-source-vulnerability-scanner/) — primary source; author describes budget cap design and calibration heuristics
-- [Vigolium GitHub](https://github.com/vigolium/vigolium) — implementation reference
+
+- https://www.helpnetsecurity.com/2026/05/27/vigolium-open-source-vulnerability-scanner/
 
 ## See Also
-- [[constrained-agent-actions]]
-- [[human-in-the-loop-pattern]]
-- [[agentic-pipeline-verification]]
-- [[attention-budget]]
-- [[react-agent-pattern]]
+
+- [[agent-loop-anatomy]]
+- [[evidence-recheck-triage]]

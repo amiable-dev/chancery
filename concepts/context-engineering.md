@@ -1,91 +1,57 @@
 ---
-title: "Context Engineering"
-date: 2026-04-29
-domain: llm
+title: Context engineering
+aliases:
+  - Attention budget curation
+date: 2026-08-24
+domain: ai-agents
 maturity: emerging
-source_type: practitioner
-topics: [context-engineering]
-tags: [concept, ai-agents, llm, architecture, prompt-engineering, context, domain/llm, maturity/emerging, source-type/practitioner, topic/context-engineering]
+source_type: vendor-doc
+tags: [concept, agents, llm, prompting, domain/ai-agents, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
     hash: sha256:afe8cb4270cce6ee7104903471226f908b70ad751336a80844ebe7b45832641a
-    retrieved: 2026-08-21
-    class: unclassified
-    reachability: ok
-  - url: https://x.com/karpathy/status/1937902205765607626
-    hash: sha256:2f3a8e2639a2bb861836247163c5fd3d5108eceaee814bb7a1e92329bece1e52
-    retrieved: 2026-08-21
-    class: unclassified
+    retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 
-# Context Engineering
+# Context engineering
 
 ## Definition
-**Context engineering** is the practice of curating and maintaining the optimal set of tokens available to an LLM at inference time — including system instructions, tools, external data, message history, and MCP connections — to maximise the likelihood of a desired outcome. It supersedes prompt engineering by treating the *entire context state* as the engineering surface, not just the text of individual prompts.
+
+**Context engineering** is the practice of treating a model's context window as a finite, depleting resource and curating, at every turn of inference rather than once at authoring time, the smallest set of high-signal tokens that will produce the behaviour you want — spanning system instructions, tool definitions, examples, retrieved data and accumulated message history alike, rather than the prompt text alone.
 
 ## Explanation
-Prompt engineering focuses on *what to write* in a system prompt — it was sufficient when most LLM use cases were one-shot classification or text generation tasks. Context engineering emerges as the natural progression when building multi-turn agents that operate over longer time horizons.
 
-The shift is subtle but important: in a multi-turn agentic loop, a model generates new data every inference step — tool outputs, intermediate reasoning, observations — all of which could be relevant for the next step. The engineering challenge is deciding *what* from this constantly evolving universe of possible information to include in the next inference call.
-
-Context engineering is therefore **iterative and continuous** rather than a discrete one-time task. It answers the question: *"Given what this agent is trying to do, what is the minimal, highest-signal set of tokens that should be in context right now?"*
-
-### Key principles (from Anthropic)
-- **System prompts at the right altitude:** Avoid brittle hardcoded if-else logic (too specific) and vague hand-wavy guidance (too general). Find the Goldilocks zone: specific enough to guide behaviour, flexible enough for model heuristics to operate.
-- **Minimal viable tools:** Tool bloat is a top failure mode. Overlapping or ambiguous tools degrade performance. If a human can't decide which tool to use, neither can the model.
-- **Tight, informative context:** Every component — prompts, tools, examples, message history — should carry high signal relative to its token cost.
-- **Just-in-time retrieval over pre-loading:** Fetch data at runtime rather than stuffing everything upfront.
-- **Compaction for long-horizon tasks:** Summarise and reinitialise context windows as they fill.
+The discipline follows from one constraint rather than being a collection of tips. Self-attention lets every token attend to every other, so an input of n tokens carries on the order of n squared pairwise relationships, and training corpora contain far more short sequences than long ones, leaving models with less experience of context-wide dependency. The result is a performance gradient, not a cliff: a model stays capable at length but loses precision, so attention behaves like a budget that every added token draws down. Everything else is a consequence. System prompts should sit at the right altitude, between hardcoded if-else logic that is brittle to maintain and guidance so vague it assumes shared context the model does not have. Tool sets should be minimal and non-overlapping, on the test that if a human engineer cannot say which tool applies in a situation, an agent will not do better. Examples should be a few diverse canonical cases rather than an exhaustive catalogue of edge cases. Retrieval shifts from pre-computing everything into the prompt toward just-in-time loading, where the agent holds lightweight identifiers — file paths, stored queries, links — and pulls data through tools at runtime, which buys progressive disclosure and the metadata signal carried by names, sizes and timestamps at the cost of slower exploration and the need for good navigation tools. When a task outruns the window entirely, three levers apply: compaction, which summarises the history and reinitialises, tuned by maximising recall first and then trimming for precision, with clearing of stale tool results as its safest form; structured note-taking to files that live outside the window and are read back after a reset; and sub-agent isolation, where a subagent spends tens of thousands of tokens exploring and returns one or two thousand tokens of distillate. The source is an Anthropic engineering post, so its worked examples double as descriptions of the vendor's own products and the strength of the advice should be judged on the mechanism rather than the demonstrations.
 
 ## Key Properties
-- **Iterative** — context curation happens each inference step, not once at design time
-- **Holistic** — encompasses system prompts, tools, examples, message history, retrieved data, and MCP connections simultaneously
-- **Token-budget-aware** — treats context as a finite resource with diminishing marginal returns (see [[attention-budget]])
-- **Signal-to-noise optimisation** — the goal is always the smallest set of highest-signal tokens for the task at hand
+
+- Context is a depleting attention budget, not a container: quadratic pairwise cost means every added token dilutes the rest
+- Curation is per-turn and covers prompts, tools, examples, retrieved data and history — not the prompt alone
+- Right altitude: specific enough to steer, general enough not to be brittle; minimal does not mean short
+- Just-in-time retrieval holds identifiers and loads through tools, trading latency for relevance and metadata signal
+- Three long-horizon levers — compaction, notes persisted outside the window, and sub-agents that return summaries
 
 ## Relationships
-- Evolves from [[prompts-as-infrastructure]]: prompt engineering is a component of context engineering, not the whole picture
-- Constrained by [[attention-budget]]: the n² attention mechanism makes every added token a real cost
-- Degrades due to [[context-rot]]: longer contexts reduce recall accuracy across all models
-- Implemented via [[just-in-time-context]]: runtime retrieval is a core context engineering strategy
-- Extended by [[context-compaction]]: compaction handles the case where context windows fill up
-- Extended by [[agentic-note-taking]]: persistent notes let agents maintain coherence across context resets
-- Governs [[minimal-viable-tool-set]]: tool design is a context engineering concern, not just a UX one
-- Related to [[multi-agent-systems]]: distributing context across specialised agents is an advanced context engineering strategy
-- [[prompt-context-harness-loop-stack]] — occupies one rung of the prompt to context to harness to loop progression, not the whole of it
+
+- [[context-rot]] — is the measured phenomenon this practice exists to manage — the finding that reliability declines with input length is why context is treated as a scarce budget rather than a container to fill
+- [[subagent-delegation]] — is one of its long-horizon levers, used here specifically as context isolation: the subagent's exploration never enters the coordinator's window, only its distilled result does
+- [[memory-as-harness-capability]] — shares its premise from the architecture side, since what survives compaction and what gets written to durable notes are exactly the curation decisions this practice makes explicit
+- [[agent-harness]] — is where these decisions are implemented — the harness owns the prompt assembly, tool set, compaction step and retrieval path that context engineering tunes
+- [[automatic-prefix-caching]] — ordering unchanging system instructions and tool schemas before per-request content, as this practice prescribes, is exactly what maximizes prefix-cache hit rate here.
 
 ## Applications
-- **Agent design:** When building any agent, treat context state as the primary design artefact — not just the system prompt
-- **Debugging agent failures:** Most agent failures are context problems — too much noise, stale data, ambiguous tools, or lost state
-- **Long-horizon tasks:** Use compaction and structured note-taking to maintain coherence across hours of work
-- **Coding agents:** Hybrid approach — upfront project config (CLAUDE.md / AGENTS.md) + on-demand file retrieval (grep, glob)
 
-## Study
-- Flashcards: [[flashcards/context-engineering|Practice this concept]]
+Deciding what belongs in an agent's system prompt, tool set and retrieval path; choosing between compaction, external notes and sub-agents when a task outruns the window; diagnosing an agent whose quality decays over a long session.
 
 ## Sources
-- [Effective context engineering for AI agents — Anthropic Engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — primary source; Anthropic's definitive guide
-- [Context engineering vs. prompt engineering — Andrej Karpathy](https://x.com/karpathy/status/1937902205765607626) — the framing of context engineering as "art and science"
+
+- https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 
 ## See Also
-- [[attention-budget]]
+
 - [[context-rot]]
-- [[just-in-time-context]]
-- [[context-compaction]]
-- [[agentic-note-taking]]
-- [[minimal-viable-tool-set]]
-- [[prompt-altitude]]
-- [[progressive-disclosure-agents]]
-- [[prompts-as-infrastructure]]
-- [[multi-agent-systems]]
-- [[context-compilation-pattern]]
-- [[loop-engineering]]: context engineering is one of the primary levers for improving the [[agentic-coding-loop|agentic coding loop]] — better context means fewer iterations
-- [[context-advantage]]: the human's context advantage over AI is what context engineering aims to systematically encode and transmit to agents
-- [[llm-wiki-pattern]]: the wiki is a durable context layer; context engineering decides what to inject from it into the active prompt
-- [[compilation-stage-knowledge-layer]]: complements context engineering — optimises what knowledge is available to retrieve before injection decisions are made
-- [[metadata-as-code]]: provides a stable, versioned source of curated context for injection
-- [[open-knowledge-format]]: OKF bundles are a primary source of the curated context that context engineering injects into agent prompts
-- [[memory-as-harness]]: long-term memory stores are a key input to context engineering decisions
-- [[agent-harness]]: harnesses that handle context injection automatically (Claude Code, OpenClaw) give context engineering benefits without per-application changes
+- [[subagent-delegation]]
+- [[agent-harness]]

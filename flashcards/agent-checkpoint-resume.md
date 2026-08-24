@@ -1,40 +1,35 @@
 ---
-tags: [flashcards, ai-agents, infrastructure, persistence, resilience, long-running]
-sr-due: 2026-05-31
+tags: [flashcards, ai-agents, architecture, reliability, domain/ai-agents, maturity/emerging, source-type/vendor-doc]
+sr-due: 2026-08-24
 sr-interval: 1
 sr-ease: 250
 ---
 
-# Agent Checkpoint-Resume — Flashcards
+# Checkpoint-and-resume agents — Flashcards
 
 #flashcards/ai-agents
 
-## Definition <!-- kb:card:ceb1bc -->
-What is agent checkpoint-resume?
+## State lives in a machine, not history <!-- kb:card:15015f -->
+In checkpoint-and-resume agent architecture, what holds the agent's position instead of accumulated conversation history?
 ?
-The infrastructure capability allowing an AI agent to save complete execution state to durable storage at each workflow step (checkpoint) and later restore that state to resume execution exactly where it paused — surviving container restarts, cold starts, crashes, and arbitrary idle periods without loss of progress.
+An explicit, durably persisted state machine — the current state is injected into the system prompt on every call, and each tool call atomically advances (checkpoints) that state.
 
-## Problem <!-- kb:card:17d2b1 -->
-Why is in-memory session state insufficient for long-running agents in cloud environments?
+## Three stateless failure modes fixed <!-- kb:card:1db633 -->
+What three failure modes does checkpoint-and-resume fix that the stateless replay-history pattern suffers over multi-day workflows?
 ?
-Containerised environments (Cloud Run, serverless, Kubernetes) are ephemeral: processes can be killed by the scheduler, restart after crashes, and scale to zero during idle periods. Any in-memory state — including conversation history — is lost when the process dies. For workflows spanning days or weeks, this is a critical reliability failure.
+Prompt context pollution (history grows until the model loses track), token-cost growth from replaying every turn, and hallucinated intermediate steps (remembering approvals never given) after a long pause.
 
-## Mechanism <!-- kb:card:b53f8f -->
-How does ADK's DatabaseSessionService provide checkpoint-resume?
+## Sleeping, not polling <!-- kb:card:ceff7e -->
+How does a checkpoint-and-resume agent handle idle time and external events, instead of polling?
 ?
-Every `ToolContext.state` write is automatically persisted to a configured database (SQLite or Cloud SQL). It's a single configuration change: pass a `session_service_uri` to `get_fast_api_app`. Kill the server, restart it, load the session ID — the agent resumes from the last checkpoint with all state intact.
+It sleeps; when a real-world event completes, a webhook hydrates the persisted session and applies an atomic state delta before the model's next call, so the agent wakes already knowing the transition happened.
 
-## Atomicity <!-- kb:card:c87827 -->
-Why must checkpoint writes be atomic?
+## Tool calls double as checkpoints <!-- kb:card:beacbc -->
+Why does making every tool call an atomic state transition matter for reliability?
 ?
-To prevent partial state corruption. If a tool updates new hire details but crashes before updating `current_step`, the next run would see inconsistent state. Atomic writes ensure either the full checkpoint is saved or nothing is — guaranteeing a consistent state to resume from.
+Each tool call functions as a checkpoint, so a crash after any action resumes from the exact written state rather than losing progress or replaying history.
 
-## Scaling <!-- kb:card:cfbce5 -->
-What changes when scaling from SQLite to production?
+## Session state lives in a database <!-- kb:card:1776e4 -->
+Where does session state live in this architecture, and what does that enable?
 ?
-Replace the SQLite URI with a Cloud SQL (PostgreSQL) connection string — the API is identical. Cloud SQL is required for horizontal scaling where multiple agent processes must share session state. SQLite only works for single-process/single-host deployments.
-
-## Relationship <!-- kb:card:0d7dac -->
-How does checkpoint-resume differ from agent session distillation?
-?
-Checkpoint-resume keeps *in-progress* sessions alive across process deaths — it's about durability of ongoing work. Session distillation mines *completed* sessions for reusable knowledge (skills, patterns) — it's about learning from finished work. Both treat session data as a first-class asset, but at different lifecycle stages.
+In a database rather than process memory, so a crash, restart, or scale-to-zero costs nothing — the process can pause indefinitely and resume exactly where it stopped.

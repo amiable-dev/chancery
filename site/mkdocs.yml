@@ -51,8 +51,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting started:
-      - Installation: getting-started/installation.md
-      - Quick Start: getting-started/quickstart.md
+      - Your first corpus: getting-started/first-corpus.md
       - Configuration: getting-started/configuration.md
   - Guides:
       - Gated promotion: guides/gated-promotion.md

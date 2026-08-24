@@ -168,3 +168,14 @@ the recorded verdict, since re-litigating identical content is the
 rating-shopping the idempotent-task design exists to prevent. Corpus after
 the pass: 212 concepts; open queue entries: 37 (26 hand-review patterns,
 2 called-off, 9 resolved-adjacent remainders).
+
+---
+
+**Promotion (2026-08-24).** The generated corpus — 212 concepts, 212 decks,
+1,112 cards — was promoted to the repository root, replacing the imported
+example corpus, together with all of its records: assessments, evidence
+store, queue (history and open entries), and log entries (appended to the
+root shard). This directory retains the method note and the deterministic
+inputs (`select-sample.mjs`, `sample.json`, `residual.json`,
+`hunt-items.json`); everything else now lives at the root, and the
+pre-promotion state is preserved in git history.
