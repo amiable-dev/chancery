@@ -1,42 +1,35 @@
 ---
-tags: [flashcards, rag, ai-agents, knowledge-management]
-sr-due: 2026-04-15
+tags: [flashcards, llm, retrieval, architecture, domain/llm, maturity/established, source-type/research]
+sr-due: 2026-08-24
 sr-interval: 1
 sr-ease: 250
 ---
 
 # Retrieval-Augmented Generation (RAG) — Flashcards
 
-#flashcards/ai-agents
+#flashcards/llm
 
 ## Definition <!-- kb:card:5f2103 -->
 What is Retrieval-Augmented Generation (RAG)?
 ?
-An architectural pattern that augments LLM generation by first retrieving relevant documents from an external store, then injecting them into the prompt as grounding context. RAG decouples parametric knowledge (fixed at training) from retrieved knowledge (updatable anytime), enabling grounded, current, domain-specific responses.
+An architecture (Lewis et al., NeurIPS 2020) combining a pre-trained generative model's parametric memory with a non-parametric memory — a dense vector index of documents accessed via a neural retriever — so generation conditions on retrieved evidence, not weights alone.
 
-## Pipeline <!-- kb:card:a46739 -->
-What are the five steps of a standard RAG pipeline?
+## Two memories <!-- kb:card:be99a9 -->
+What are the two memories RAG combines?
 ?
-1. **Ingestion** — chunk documents, embed them, store in vector DB
-2. **Query embedding** — embed the user's query with the same model
-3. **Retrieval** — nearest-neighbour search finds semantically similar chunks
-4. **Augmentation** — inject retrieved chunks into the prompt as context
-5. **Generation** — LLM responds grounded in the retrieved context
+Parametric memory (the seq2seq generator's trained weights) and non-parametric memory (a dense vector index of documents accessed through a neural retriever).
 
-## Failure Modes <!-- kb:card:6a6740 -->
-What are the three common RAG failure modes?
+## RAG-Sequence vs. RAG-Token <!-- kb:card:6260b0 -->
+What is the difference between RAG-Sequence and RAG-Token?
 ?
-1. **Retrieval miss** — the right document exists but wasn't retrieved (embedding mismatch, poor chunking)
-2. **Context stuffing** — too many chunks dilute signal; LLMs attend poorly to middle-context items
-3. **Faithfulness failure** — model ignores retrieved context and hallucates from parametric memory
+RAG-Sequence conditions the entire generated output on one retrieved set of passages; RAG-Token can draw on different retrieved passages for each generated token.
 
-## Relationship <!-- kb:card:b49692 -->
-How does RAG relate to fine-tuning?
+## Empirical result <!-- kb:card:d454d9 -->
+How did RAG perform on open-domain QA compared to baselines?
 ?
-They're complementary: **RAG** for factual grounding on current/private data (no retraining needed, updatable); **fine-tuning** for behaviour/style/domain adaptation. Use RAG first for knowledge; fine-tune only when style or reasoning patterns need to change.
+It beat both parametric-only seq2seq baselines and retrieve-and-extract pipelines, while producing more specific and more factual language.
 
-## Application <!-- kb:card:977d3d -->
-When would you use Agentic RAG vs standard RAG?
+## Lasting architectural claim <!-- kb:card:7168eb -->
+What is RAG's lasting architectural contribution, beyond the specific benchmark results?
 ?
-**Standard RAG**: always retrieve on every turn, single-pass. Simple; works for Q&A.
-**Agentic RAG**: a ReAct agent decides *when* to retrieve and issues multiple targeted queries. Better for complex multi-hop questions where one retrieval isn't enough, or where some queries don't need retrieval at all.
+Externalising knowledge into a swappable index gives provenance and updatability that model parameters cannot — knowledge updates by swapping the index, not retraining the model.

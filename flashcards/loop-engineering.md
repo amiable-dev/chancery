@@ -1,37 +1,40 @@
 ---
-tags: [flashcards, ai-agents, engineering, agentic-coding]
-sr-due: 2026-07-04
+tags: [flashcards, ai-agents, agentic-coding, automation, domain/ai-agents, maturity/emerging, source-type/practitioner]
+sr-due: 2026-08-24
 sr-interval: 1
 sr-ease: 250
 ---
 
-# Loop Engineering — Flashcards
+# Loop engineering — Flashcards
 
 #flashcards/ai-agents
 
 ## Definition <!-- kb:card:728aaa -->
 What is loop engineering?
 ?
-A software development discipline focused on designing and optimising the nested feedback loops through which AI coding agents iterate toward a working product. Rather than manually prompting an agent, the developer engineers the *program that prompts the agent* — structuring autonomous iteration at multiple timescales. Popularised by Boris Cherny (Claude Code) and Peter Steinberger (OpenClaw).
+Building the system that prompts, checks, remembers and re-runs an AI agent, so the unit of work becomes a repeating cycle — act, observe, choose the next move — until the goal is verified, a budget is exhausted, or it hands off to a human.
 
-## Structure <!-- kb:card:44823d -->
-What are the three nested loops in Andrew Ng's loop engineering framework, and at what timescales do they operate?
+## Loop vs. chain <!-- kb:card:137a44 -->
+How does a loop differ from a chain?
 ?
-1. **Agentic coding loop** (seconds–minutes): agent writes, tests, iterates autonomously
-2. **Developer feedback loop** (tens of minutes–hours): developer reviews, steers, updates spec
-3. **External feedback loop** (hours–weeks): real users provide signal that informs developer vision
+A chain runs a fixed sequence of steps once; a loop is dynamic — the agent can discover a step failed, revise its approach, and revisit earlier work.
 
-## Key Shift <!-- kb:card:632105 -->
-What is the fundamental shift that loop engineering represents compared to prompt-driven coding agent use?
+## What gets designed <!-- kb:card:b88027 -->
+If the model is treated as a fixed component, what does loop engineering actually design around it?
 ?
-Moving from: developer-as-QA (manually finding bugs, prompting fixes) to: developer-as-product-steerer (making higher-level product decisions) — because the inner loop now handles autonomous testing and iteration. The developer's attention is liberated from bug-finding and directed toward higher-leverage decisions.
+What goal is stated, which tools produce feedback, what gets remembered between iterations, what counts as done, and when the cycle stops.
 
-## Tooling Investment <!-- kb:card:6bd881 -->
-Which loop is the primary target of loop engineering tooling investment, and why?
+## Why it matters at scale <!-- kb:card:6bbd22 -->
+Why does cycle design only become the binding constraint once agent runs get long?
 ?
-The agentic coding loop (inner loop) — because it runs most frequently (every few minutes) and every improvement compounds across all iterations. Tools like test runners, browser access, and evals reduce latency and increase the agent's ability to self-assess, directly improving product velocity.
+During a three-turn run, prompt wording was the binding constraint; once a run lasts an hour and touches dozens of files, whether the cycle keeps the agent productive, checked and correctly aimed for the whole run becomes the constraint instead.
 
-## Spec Role <!-- kb:card:2e1609 -->
-What is the role of the product specification in loop engineering?
+## Older mechanics <!-- kb:card:de00d7 -->
+What earlier techniques does loop engineering's mechanics descend from?
 ?
-The spec is the interface between the developer feedback loop and the agentic coding loop. It is the agent's termination criterion (iterate until spec is satisfied), the primary source of iteration efficiency (precise specs reduce iteration count), and the main artefact evolved by the developer during review cycles.
+ReAct's reason-act-observe cycle (2022), Reflexion's self-critique written into episodic memory (2023), and Anthropic's 2024 evaluator-optimizer and orchestrator-workers patterns.
+
+## Stated limits <!-- kb:card:a3e8b3 -->
+What are loop engineering's stated limits?
+?
+For a genuine one-off task, an interactive session is faster and safer than engineering a loop; and a loop relocates human judgment rather than removing it — someone still owns the goal, the definition of done, and the final correctness call.

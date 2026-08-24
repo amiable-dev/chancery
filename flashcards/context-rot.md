@@ -1,38 +1,40 @@
 ---
-tags: [flashcards, context-rot, ai-agents, llm]
-sr-due: 2026-04-29
+tags: [flashcards, llm, long-context, evaluation, domain/llm, maturity/emerging, source-type/research]
+sr-due: 2026-08-24
 sr-interval: 1
 sr-ease: 250
 ---
 
-# Context Rot — Flashcards
+# Context rot — Flashcards
 
-#flashcards/ai-agents
+#flashcards/llm
 
 ## Definition <!-- kb:card:9b6929 -->
 What is context rot?
 ?
-The phenomenon where a language model's ability to accurately recall and reason over information in its context window degrades as total token count increases. It is a performance gradient (not a hard cliff) — models remain capable at longer contexts but show measurably reduced precision for retrieval and long-range reasoning.
+The finding that a language model's reliability falls as its input grows longer even when the task is held constant — the ten-thousandth token is not processed as dependably as the hundredth. The decline is non-uniform: it steepens when the question matches its answer semantically rather than lexically, when related distractors sit nearby, and, counter to intuition, when the surrounding text is logically coherent rather than shuffled.
 
-## Cause <!-- kb:card:b494f2 -->
-What is the architectural root cause of context rot?
+## Key mechanism: isolating length from difficulty <!-- kb:card:8120f3 -->
+What methodological move isolates context rot from ordinary task-difficulty scaling seen in most long-context benchmarks?
 ?
-Transformer self-attention scales as n² — every token attends to every other token, creating n² pairwise relationships. As context grows, the model's fixed attention capacity spreads across exponentially more relationships. Trained attention patterns also developed on shorter sequences, giving the model less specialised capability for very long contexts.
+Holding task complexity fixed and varying only input length — reusing the same needle, question, and judge while changing only the volume of surrounding irrelevant text. Most long-context benchmarks confound the two (e.g. graph traversal gets harder as the graph grows), so a score drop there cannot be attributed to length alone.
 
-## Universality <!-- kb:card:0ad654 -->
-Is context rot specific to certain models?
+## Semantic vs. lexical similarity <!-- kb:card:95dbaf -->
+Does context rot steepen under lexical-match or semantic-match retrieval, and why does this matter for benchmarks?
 ?
-No — it affects all transformer-based LLMs regardless of context window size. Some models degrade more gracefully than others, but none are immune. Techniques like position encoding interpolation partially address it but introduce their own trade-offs.
+It steepens as question-to-answer semantic similarity falls (lower cosine similarity means a steeper decline). Lexical-match, exact-keyword benchmarks flatter a model that will face ambiguous, semantically phrased questions in production.
 
-## Mitigation <!-- kb:card:44368e -->
-What are the primary practical mitigations for context rot?
+## Distractors compound unevenly <!-- kb:card:32f6ca -->
+How do distractors affect context-rot degradation, and do all model families fail the same way?
 ?
-1. Tool result clearing — drop raw tool outputs from deep history once their value is extracted (lowest overhead)
-2. Context compaction — summarise and restart the context window before rot significantly impacts performance
-3. Just-in-time context — load data only when needed, keeping the context window lean
-4. Progressive disclosure — let agents explore incrementally rather than loading everything upfront
+A single topically related distractor lowers accuracy and four compound it, with individual distractors pulling unequally. Model families fail differently: some abstain under ambiguity, others answer confidently and wrongly.
 
-## Application <!-- kb:card:84d04f -->
-When debugging unexpected agent behaviour, what context rot factor should you check?
+## Counterintuitive coherence effect <!-- kb:card:fb0b9b -->
+What effect did shuffling the haystack to destroy local coherence have on model performance, and across how many models?
 ?
-Whether the relevant context was present *and recent enough* to be reliably attended to. A fact loaded many turns ago may have effectively "rotted" out of the model's active attention — even if it's technically still in context.
+It consistently improved scores, across all eighteen models tested — suggesting input structure interacts with attention in ways not yet explained.
+
+## Practical implication: focused vs. full history <!-- kb:card:c23982 -->
+What is context rot's most operationally direct result comparing focused context to full conversation history?
+?
+The same questions answered from roughly three hundred focused tokens beat the same questions answered from a full hundred-thousand-token session, because the long version silently adds a retrieval step to what should be a reasoning task.

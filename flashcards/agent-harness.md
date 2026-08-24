@@ -1,43 +1,35 @@
 ---
-sr-due: 2026-04-14
-sr-ease: 250
+tags: [flashcards, ai-agents, architecture, context, domain/ai-agents, maturity/emerging, source-type/vendor-doc]
+sr-due: 2026-08-24
 sr-interval: 1
-tags:
-- flashcards
-- ai-agents
-- architecture
-- agent-harness
+sr-ease: 250
 ---
 
-
-# Agent Harness — Flashcards
+# Agent harness — Flashcards
 
 #flashcards/ai-agents
 
-
-## Definition <!-- kb:card:b065ff -->
-What is an agent harness?
+## Agent = model + harness <!-- kb:card:beed2e -->
+What is the 'agent = model + harness' boundary rule, and what counts as harness?
 ?
-The system of scaffolding that surrounds an LLM, enabling it to interact with tools, manage context, persist memory, and execute multi-step tasks. It is the runtime environment that transforms a bare model into a functioning agent.
-<!--SR:!2026-04-15,1,230-->
+The model supplies raw intelligence; everything else — system prompts, tools and their descriptions, bundled infrastructure (filesystems, sandboxes, browsers), orchestration logic, and hooks/middleware for deterministic steps — is harness.
 
-## Scale <!-- kb:card:d23a65 -->
-How large is Claude Code's agent harness?
+## Design method: derive from a missing behavior <!-- kb:card:a7f54a -->
+What design method does the harness framing force when building an agent system?
 ?
-512,000 lines of code — evidence that harnesses are substantial, non-trivial engineering that model improvements alone cannot replace.
+Start from a behaviour the raw model cannot produce (e.g. durable state, code execution, knowledge past training cutoff) and derive the harness feature that supplies it.
 
-## Persistence <!-- kb:card:60b629 -->
-Will agent harnesses disappear as models improve?
+## Filesystem as foundational primitive <!-- kb:card:1d83ab -->
+Why is the filesystem called the foundational harness primitive?
 ?
-No. The type of scaffolding needed changes (simple 2023 RAG chains have been absorbed), but the harness persists. Agents always require a system to orchestrate tool calls, manage context, and handle memory — that system is the harness.
+It serves as workspace, context offload, cross-session persistence, and a coordination surface for multiple agents and humans working together.
 
-## Memory <!-- kb:card:f7bf92 -->
-What role does the harness play in memory?
+## Bash over pre-built tools <!-- kb:card:42917d -->
+Why do harnesses favor a general-purpose bash/code-execution tool over pre-building every specific tool?
 ?
-The harness is responsible for all memory management: loading instruction files, compacting context, reading/writing long-term memory, and determining what survives between sessions. Memory is not a plugin — it is a core harness function.
+Code execution is the general-purpose action, so the harness author doesn't need to anticipate and pre-build every capability in advance.
 
-## Application <!-- kb:card:3a4980 -->
-What should you consider when choosing an agent platform?
+## Context management is core harness work <!-- kb:card:2b544b -->
+What three context-rot countermeasures does a harness typically supply?
 ?
-Harness openness, not just model quality. A closed harness locks your agent's memory to that platform. Open-source harnesses (Deep Agents, Pi/OpenClaw) keep memory portable and under your control.
-<!--SR:!2026-04-15,1,230-->
+Compaction when the window nears full, offloading bulky tool outputs to disk, and progressive disclosure of skill instructions.

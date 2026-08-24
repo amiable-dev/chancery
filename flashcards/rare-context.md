@@ -1,25 +1,35 @@
 ---
-tags: [flashcards, ai-agents]
-sr-due: 2026-07-13
+tags: [flashcards, agents, knowledge, operations, domain/knowledge-management, maturity/emerging, source-type/practitioner]
+sr-due: 2026-08-24
 sr-interval: 1
 sr-ease: 250
 ---
 
-# Rare Context — Flashcards
+# Rare context — Flashcards
 
-#flashcards/ai-agents
+#flashcards/agents
 
-## Definition <!-- kb:card:a144a1 -->
-What is "rare context" in the context of AI agent deployment?
+## Definition <!-- kb:card:681008 -->
+What is rare context?
 ?
-The company-specific, tacit vocabulary, examples, and operational knowledge a domain expert holds but that generic LLMs — and "zero-shot, works anywhere" agent products — cannot access without explicit training or in-context supply. It's what turns an unbriefed generalist model into a genuinely useful specialist.
+Organisation-specific knowledge an AI system needs but couldn't have learned in pretraining — local vocabulary, thresholds, conventions and worked examples that give internal terms (like 'zombie node') their actual operational meaning.
 
-## Application <!-- kb:card:1bf7de -->
-An ops team asks an agent "where are the zombie nodes?" and gets a plausible but wrong answer. What concept explains this failure, and what's the fix?
+## Signature failure <!-- kb:card:d1a8d0 -->
+What does failure look like when a model lacks rare context, rather than lacking capability?
 ?
-Rare context — the agent doesn't know the company's specific meaning of "zombie node" and guesses from generic signals, like "an angry intern." The fix is two-part: constrain the agent's task/access (read-only, flat schemas, simple queries) AND explicitly supply the missing company-specific vocabulary and examples.
+A confident near-miss, not a refusal — the model reasons plausibly from whatever it can reach and produces an answer shaped exactly like what was wanted, which is the hardest kind of wrong to catch.
 
-## Relationship <!-- kb:card:ed657e -->
-How does rare context relate to Context Advantage (Andrew Ng's framing)?
+## No zero-shot vendor agent <!-- kb:card:b26f77 -->
+Why can't a vendor's agent be zero-shot competent at operational work, according to rare context?
 ?
-Context Advantage is the general information-asymmetry framing of why humans remain necessary alongside AI. Rare context is the specific, company-vocabulary instance of that advantage in an enterprise/operational setting — the tacit jargon and tribal knowledge a generic model has no way to have seen.
+Because the missing ingredient — organisation-specific vocabulary and thresholds — is by construction absent from any pretrained model, so competence must be built bottom-up from one team's language, not delivered top-down as a general capability.
+
+## Where rare context lives <!-- kb:card:77b43c -->
+Where does rare context actually live?
+?
+In few places, none of them the public internet: incident write-ups, the queries experienced operators actually run, local names for failure modes, and the thresholds a particular team treats as abnormal.
+
+## Quality inheritance <!-- kb:card:541530 -->
+Why does grounding an agent in a company's internal wiki risk making things worse, per rare context?
+?
+Rare context inherits the reliability of wherever it was written down, and internal wikis and databases are often full of confident errors themselves — so grounding should use curated, vetted data products, not raw internal corpora.

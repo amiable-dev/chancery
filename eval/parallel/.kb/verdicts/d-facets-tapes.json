@@ -1,3 +1,0 @@
-{"task_id":"7553a304b62baa87","supplier":{"class":"model-single","id":"claude-fable-5"},"assignments":[
-{"slug":"proxy-boundary-session-capture","domain":"observability","maturity":"emerging","source_type":"practitioner",
- "rationale":"young pattern documented through a first-person practitioner war story"}]}

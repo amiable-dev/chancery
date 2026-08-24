@@ -1,46 +1,40 @@
 ---
-tags: [flashcards, security, static-analysis, standards, ci-cd]
-sr-due: 2026-06-07
+tags: [flashcards, security, static-analysis, standards, domain/standards, maturity/established, source-type/practitioner]
+sr-due: 2026-08-24
 sr-interval: 1
 sr-ease: 250
 ---
 
-# SARIF Format — Flashcards
+# SARIF format — Flashcards
 
 #flashcards/security
 
-## Definition <!-- kb:card:37b448 -->
-What is SARIF, and what problem does it solve?
+## Definition <!-- kb:card:89401b -->
+What is SARIF?
 ?
-SARIF (Static Analysis Results Interchange Format) is an OASIS standard JSON schema (version 2.1.0) for expressing static analysis tool outputs in a vendor-neutral, machine-readable format. It solves the fragmentation problem where every scanner had its own output format, requiring custom parsers for every CI/IDE integration. Any SARIF-emitting tool now works with any SARIF-consuming platform (GitHub Code Scanning, VS Code, Azure DevOps, SonarQube).
+A standardized JSON schema for static analysis tool output, letting findings from any scanner be read by any consumer without a tool-specific parser.
 
-## Structure <!-- kb:card:1b31f4 -->
-What are the four key SARIF structural elements and what does each represent?
+## The quadratic problem it removes <!-- kb:card:7c8513 -->
+What problem does a shared interchange format like SARIF remove?
 ?
-- `run`: a single invocation of the analysis tool (one scan = one run)
-- `rule`: a named finding type (maps to a CVE ID or advisory in security tools)
-- `result`: a specific instance of a rule triggering (one vulnerability finding)
-- `location`: where in the codebase the finding was found (file + line number)
+Without it, every consumer (dashboard, triage queue, PR annotator, policy gate) needs a parser per tool; SARIF collapses that to one parser per consumer and one emitter per tool.
 
-## Application <!-- kb:card:8c8910 -->
-How do you integrate a SARIF-producing security scanner into GitHub Code Scanning?
+## Rule catalog location <!-- kb:card:d8bd5d -->
+Where does a SARIF document's rule catalog live, and what does each rule carry?
 ?
-```yaml
-- name: Run scanner
-  run: cve-lite . --sarif > results.sarif
-- name: Upload to GitHub Code Scanning
-  uses: github/codeql-action/upload-sarif@v3
-  with:
-    sarif_file: results.sarif
-```
-GitHub then shows findings as inline PR annotations, Security tab alerts, and can block PR merges on new findings.
+At tool.driver.rules — each rule has an id, short/full descriptions, a default severity level, and a properties bag (conventionally a numeric security-severity score).
 
-## Fingerprinting <!-- kb:card:3246ae -->
-What is a SARIF fingerprint and why does it matter for deduplication?
+## Result structure <!-- kb:card:bf869d -->
+How does a SARIF result tie back to its rule and pinpoint its location?
 ?
-A fingerprint is a stable hash uniquely identifying a specific finding — computed from the rule, location, and result content. Across repeated scans, the same vulnerability at the same location produces the same fingerprint. This lets CI systems track a finding's lifecycle (introduced in PR #X, still open in PR #Y, fixed in PR #Z) without re-alerting on known issues.
+Each result carries a ruleId referencing the rule catalog, a level, a message, and locations giving an artifact URI plus a region (start line and column).
 
-## AI Usage <!-- kb:card:b23b65 -->
-How does SARIF benefit AI-assisted security workflows?
+## Why rules and results are separate <!-- kb:card:a0e7bb -->
+Why does SARIF separate the rule catalog from the findings list?
 ?
-SARIF gives LLMs structured, rich finding data: rule descriptions, severity levels, precise file/line locations, help URLs, and fix suggestions — all in a standard format. A code review agent consuming SARIF from multiple tools (vulnerability scanner + linter + type checker) can synthesise a unified, prioritised triage plan without needing custom parsers per tool.
+So remediation guidance and severity travel with the report itself, rather than living only in the tool's own documentation.
+
+## Platform integration <!-- kb:card:38910a -->
+What practical consequence does SARIF have for getting a scanner's alerts onto GitHub pull requests?
+?
+Emitting SARIF is the integration path — GitHub Code Scanning has consumed SARIF uploads since 2019, so any scanner can surface alerts on PRs by producing it.

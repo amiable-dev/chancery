@@ -1,42 +1,35 @@
 ---
-tags: [flashcards, mcp, security, enterprise, network-monitoring]
-sr-due: 2026-04-15
+tags: [flashcards, infrastructure, security, observability, domain/infrastructure, maturity/emerging, source-type/vendor-doc]
+sr-due: 2026-08-24
 sr-interval: 1
 sr-ease: 250
 ---
 
-# Shadow MCP Detection — Flashcards
+# Shadow MCP detection — Flashcards
 
-#flashcards/mcp
+#flashcards/infrastructure
 
-## Definition <!-- kb:card:d6fff4 -->
-What is Shadow MCP Detection?
+## Definition <!-- kb:card:16768e -->
+What is shadow MCP detection?
 ?
-The practice of identifying and controlling employee use of unauthorised remote MCP servers by inspecting network traffic for MCP protocol signatures using a Secure Web Gateway. It is the AI-era equivalent of Shadow IT detection.
+Discovering unauthorized MCP servers in use by a workforce by scanning egress traffic at a secure web gateway for selectors that identify MCP protocol use outside the sanctioned portal path.
 
-## Why MCP Is Detectable <!-- kb:card:eeaa2d -->
-Why is MCP traffic fingerprint-able at the network boundary?
+## Why the authorized path isn't enough <!-- kb:card:53db7d -->
+Why is governing the authorized MCP path not sufficient on its own?
 ?
-MCP uses JSON-RPC over HTTP/HTTPS, and every request contains a `"method"` field with predictable values (`tools/call`, `initialize`, `tools/list`, etc.). These method names appear in the HTTP body and are specific enough to detect via DLP body inspection regex, even when the URL contains no MCP signals.
+Employees can point MCP clients directly at any remote server on the internet, re-creating the ungoverned risk the sanctioned platform was built to remove.
 
-## Three Detection Layers <!-- kb:card:07a6a1 -->
-What are the three layers of Shadow MCP detection?
+## Choke point and selectors <!-- kb:card:d93812 -->
+What choke point does shadow MCP detection rely on, and what selectors does it scan with?
 ?
-1. **Hostname matching** — known MCP server hostnames (e.g., `mcp.stripe.com`) and wildcard `mcp.*` subdomain patterns
-2. **URI path matching** — paths like `/mcp` and `/mcp/sse`
-3. **DLP body inspection** — regex on JSON-RPC method fields (`"method": "tools/call"`, `"initialize"`, etc.)
+Secure web gateway egress traffic, scanned with host selectors for known MCP endpoints plus protocol and DLP selectors for MCP-shaped traffic.
 
-## Response Options <!-- kb:card:212b36 -->
-What can an organisation do once Shadow MCP traffic is detected?
+## Response to a discovery <!-- kb:card:3c09b3 -->
+What are the two possible responses once a shadow MCP server is discovered?
 ?
-Log only (inventory), alert (notify security team), block (prevent connection), or redirect (route through the sanctioned MCP portal). Most organisations start with log-only to build an inventory before enforcement.
+Block it, or triage it into the governed catalogue if there's legitimate demand for it.
 
-## Supply Chain Risk <!-- kb:card:9fa024 -->
-Why is shadow MCP a supply chain risk, not just a policy violation?
+## Blind spot <!-- kb:card:50782b -->
+What is the blind spot of gateway-based shadow MCP detection?
 ?
-Unvetted public MCP server packages may contain malicious code — undisclosed data exfiltration, tool poisoning, or supply chain attacks. An employee connecting to an unreviewed MCP server may be running adversarial code against corporate resources, not just violating policy.
-
-## Relationship to MCP Portal <!-- kb:card:807643 -->
-How do Shadow MCP Detection and MCP Server Portals complement each other?
-?
-The portal provides governed access to sanctioned tools (the "yes" path). Shadow MCP detection enforces the boundary around unsanctioned tools (the "no" path). Together they implement a complete governed MCP posture: all access flows through the portal, and bypass attempts are detected at the network boundary.
+It only works insofar as the gateway sees the traffic — unmanaged devices and off-network use are invisible to it.
