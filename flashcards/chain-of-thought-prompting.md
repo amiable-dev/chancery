@@ -1,40 +1,35 @@
 ---
-tags: [flashcards, chain-of-thought-prompting, llm, prompt-engineering, reasoning]
-sr-due: 2026-07-13
+tags: [flashcards, llm, prompting, reasoning, domain/llm, maturity/emerging, source-type/practitioner]
+sr-due: 2026-08-24
 sr-interval: 1
 sr-ease: 250
 ---
 
-# Chain-of-Thought (CoT) Prompting — Flashcards
+# Chain-of-thought prompting — Flashcards
 
 #flashcards/llm
 
-## Definition <!-- kb:card:bfc7a5 -->
-What is Chain-of-Thought (CoT) prompting?
+## Mechanism <!-- kb:card:a474b1 -->
+Why does asking a model to show its reasoning before answering actually change its output, given autoregressive generation?
 ?
-A technique where a language model is instructed — via a trigger phrase or worked examples — to generate its intermediate reasoning steps before giving a final answer, rather than emitting the answer directly. Each "thought" builds on the previous one so the answer rests on a visible chain of correct steps instead of a single guess.
+Every token is conditioned on tokens already emitted, so reasoning written into the output becomes part of the input for everything after it. The model composes its final answer from visible, already-committed intermediate steps instead of predicting it straight from the question.
 
-## Why it works <!-- kb:card:9c2d88 -->
-Why does Chain-of-Thought prompting improve accuracy on multi-step problems?
+## Zero-shot vs few-shot <!-- kb:card:0843a1 -->
+What is the difference between zero-shot and few-shot chain-of-thought prompting?
 ?
-LLMs generate text autoregressively — one token at a time, each conditioned on everything written before it. Written-out reasoning steps become part of the context the model reads next, so the final answer is built on top of visible, correct intermediate steps rather than guessed cold. It also decomposes a hard problem into small steps, which plays to the model's strength at simple, local predictions rather than requiring one large reasoning leap.
+Zero-shot triggers the behavior with a single instruction like "think step by step" — short prompt, minimal effort. Few-shot supplies two or three worked examples showing full reasoning, which the model imitates — longer prompt, more effort, worth it when the reasoning style itself needs demonstrating.
 
-## Zero-shot vs few-shot <!-- kb:card:0846ee -->
-What is the difference between zero-shot CoT and few-shot CoT?
+## When it doesn't help <!-- kb:card:bab4e6 -->
+What kind of problem does chain-of-thought prompting fail to help with, and why?
 ?
-Zero-shot CoT gives no examples — it just appends a trigger phrase like "Let's think step by step" and the model reasons on its own; best for quick/common problems. Few-shot CoT shows 1–2 fully solved examples with reasoning included, so the model copies the step-by-step style; the prompt is longer and takes more effort to write, but works better for harder or unusual problems.
+A single-fact lookup — it has no steps to decompose into, so CoT buys nothing but extra tokens. The technique only helps where an answer decomposes into a sequence of easier sub-inferences.
 
-## Application <!-- kb:card:8c64d4 -->
-When should you use CoT prompting versus skipping it?
+## Not proof of correctness <!-- kb:card:c91043 -->
+Why can't a chain-of-thought output be trusted as evidence that the final answer is correct?
 ?
-Use it for problems needing several linked steps: math word problems, logic puzzles, multi-step questions, decision-making, and reading comprehension. Skip it for single-fact questions (e.g., "capital of France") — there is nothing to decompose, and it only adds unnecessary tokens, time, and cost.
+A written chain can read as correct at every line and still reach a wrong answer — so for consequential work, the reasoning must be checked, not accepted as proof.
 
-## Caveat <!-- kb:card:1fc5e3 -->
-Why can't you blindly trust a Chain-of-Thought reasoning trace?
+## Cost and trend <!-- kb:card:0c3b67 -->
+What does chain-of-thought prompting cost, and how are newer reasoning models changing its role?
 ?
-The reasoning can *look* correct step-by-step while still reaching a wrong final answer. Visible reasoning is inspectable, not verified — for important tasks the steps must be checked, not trusted blindly. This is the same principle underlying the [[genai-eval-envelope]] and multi-model verification approaches like council-verify.
-
-## Relationship <!-- kb:card:2855e4 -->
-How does Chain-of-Thought prompting relate to native "reasoning" behaviour in newer models?
-?
-Newer large reasoning models are trained to produce CoT-like reasoning traces by default, without needing an explicit trigger phrase in the prompt. CoT-the-prompting-technique is the manual precursor to CoT-as-a-trained-behaviour — and it's the conceptual basis for reasoning on/off toggles: turn it on for multi-step problems, off for single-fact/cost-sensitive queries.
+It costs extra output tokens, latency, and money on every call. Newer reasoning models are trained to produce these steps unprompted, moving the technique out of deliberate prompt engineering and into the model's default behavior.

@@ -1,39 +1,35 @@
 ---
-tags: [flashcards, ai-agents, resource-governance, autonomy]
-sr-due: 2026-05-29
+tags: [flashcards, agents, operations, cost-control, domain/ai-agents, maturity/emerging, source-type/practitioner]
+sr-due: 2026-08-24
 sr-interval: 1
 sr-ease: 250
 ---
 
-# Agent Budget Caps — Flashcards
+# Budget caps for autonomous agents — Flashcards
 
-#flashcards/ai-agents
+#flashcards/agents
 
-## Definition <!-- kb:card:f8afa7 -->
-What are Agent Budget Caps?
+## Definition and the two-sided premise <!-- kb:card:f2cf84 -->
+What are budget caps for autonomous agents, and what premise justifies sizing them per job rather than fixing them globally?
 ?
-Explicit, configurable upper bounds on an autonomous AI agent's resource consumption — typically across token count (LLM cost), tool-call count (action breadth), triage iterations (re-planning cycles), and wall-clock duration (elapsed time). When any cap is reached, the agent halts and returns what it has accumulated.
+Operator-set hard limits on tokens, tool calls, re-check iterations, and wall-clock duration; sized per job because output degrades in both directions — too small cuts the agent off as a low-confidence stub, too large lets it wander, spend, and add noise.
 
-## Failure Modes <!-- kb:card:6f60bd -->
-What are the two failure modes of miscalibrated agent budget caps?
+## Time-boxed and CI runs <!-- kb:card:1423ad -->
+Which caps matter most for a time-boxed engagement or CI run, and why?
 ?
-**Under-budget:** Agent is cut mid-investigation; outputs are low-confidence stubs that *look* complete but aren't.
-**Over-budget:** Agent wanders, burns spend, and adds noise — more output doesn't mean more signal.
+Wall-clock and iteration caps — the requirement is that the run always finishes inside a window, even if it finishes incomplete.
 
-## Calibration <!-- kb:card:4d1b60 -->
-What is the recommended starting heuristic for setting agent budget caps?
+## Deep single-target work <!-- kb:card:881cba -->
+Why does a deep investigation of a single target loosen the token cap rather than tighten it?
 ?
-Start tight, loosen only when genuine work is getting cut off. The signal for "too tight" is a specific finding that was truncated; the signal for "too loose" is repetitive or low-quality output filling the budget.
+Because the value comes from the agent being able to abandon a hypothesis and re-plan — behaviour a tight token budget would foreclose.
 
-## Job Shapes <!-- kb:card:94d941 -->
-How should budget cap profiles differ by job type?
+## Broad sweeps need per-target budgets <!-- kb:card:f638f4 -->
+Why does a broad sweep across many targets need per-target budgets instead of one pooled allowance?
 ?
-- **Time-boxed CI runs:** lean on wall-clock + iteration caps (guarantees completion)
-- **Deep-dive single target:** loosen tokens, let the agent re-plan
-- **Broad sweeps:** keep per-target budgets tight (one rabbit-hole target eats all resources)
+A single target that turns into a rabbit hole would otherwise consume the entire run and starve every target after it.
 
-## Relationship <!-- kb:card:2a2b50 -->
-How do agent budget caps differ from constrained agent actions?
+## Asymmetric failure modes <!-- kb:card:1c1ba1 -->
+Why is overbudgeting a harder error to notice than underbudgeting, and what operating rule follows from that?
 ?
-**Constrained agent actions** limit the output *vocabulary* — restricting what decisions an agent can express.
-**Agent budget caps** limit resource *consumption* — restricting how much inference, time, and tooling an agent can use. Both constrain autonomy but in orthogonal dimensions.
+Underbudgeting fails visibly as a legible low-confidence stub, while overbudgeting produces plausible extra output that costs money and dilutes genuine findings — so start tight and loosen only when real work is demonstrably being cut off.

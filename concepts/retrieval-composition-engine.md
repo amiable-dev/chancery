@@ -1,57 +1,52 @@
 ---
-title: "Retrieval Composition Engine"
-date: 2026-08-01
+title: Retrieval as composition
+aliases: ["Retrieval as composition"]
+date: 2026-08-24
 domain: llm
 maturity: emerging
 source_type: practitioner
-topics: [rag, orchestration]
-tags: [concept, ai-agents, architecture, rag, retrieval, observability, domain/llm, maturity/emerging, source-type/practitioner, topic/rag, topic/orchestration]
+tags: [concept, llm, retrieval, orchestration, domain/llm, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://towardsdatascience.com/how-to-build-a-context-layer-and-a-company-brain/
     hash: sha256:b20520de2900c93455d4757c6d6ed3ab57f2a8351623246c60ee9dbfe22da7ef
-    retrieved: 2026-08-21
-    class: unclassified
+    retrieved: 2026-08-24
     reachability: ok
+    class: external-primary
 ---
 
-# Retrieval Composition Engine
+# Retrieval as composition
 
 ## Definition
-A **retrieval composition engine** runs retrieval as a dynamic graph of strategies, each guarded by a firing predicate ("run when entity phrases exist and no warehouse candidates do"), rather than as a single fixed pipeline. The graph's shape emerges per query — different queries trigger different subsets of strategies — and the executed graph is logged as a diagram on every run, turning "why didn't it know about X?" from archaeology into a five-minute trace read.
+
+**Retrieval as composition** replaces 'retrieve top-k and paste' with an orchestration engine: scope is resolved before any search, then a dynamic graph of predicate-gated strategies runs in parallel, contributions are merged under explicit token budgets, and the executed graph is logged so every answer's provenance is a readable trace.
 
 ## Explanation
-A fixed RAG pipeline (embed query → vector search → rerank → generate) treats every query identically, but real queries have very different retrieval needs: a query naming a specific table (`dim_customers_v3`) needs lexical search, not semantic similarity; a query about "our biggest customer last quarter" needs warehouse-aware SQL-shaped retrieval; a query mentioning a named entity needs entity resolution before anything else runs.
 
-Rather than hand-coding branches for every combination, a composition engine expresses each retrieval strategy as a node with a firing predicate. At query time, the engine evaluates which predicates match and executes only the matching subgraph — the graph's shape (which nodes ran, in what order, feeding what into what) *emerges* from the query rather than being pre-declared for that query type.
-
-This has a critical operational payoff: because the executed graph is a runtime artifact (which nodes fired, what each retrieved, what got dropped), it can be logged as a diagram for every single query. When a user asks "why didn't it know about the Q3 numbers," debugging stops being a search through logs and code paths and becomes reading one diagram: which strategies fired, what each one found, and where the composition step decided the item didn't make the cut.
-
-The engine also decides *when to call an LLM at all* — a cheap, deterministic decision at each stage based on candidate count. A handful of candidates gets fetched wholesale (no ranking needed); hundreds get a cheap LLM relevance filter; thousands get vector search plus a reranker first. This count-based routing keeps the expensive LLM call reserved for the cases that actually need judgment.
+Heterogeneous context breaks single-strategy retrieval: one revenue question may need a warehouse schema, a validated SQL example, a wiki definition, and a thread about a known data issue — different levels of different hierarchies in different indexes. Scope comes first: users configure bundles ('skills' — a slice of the map packaged with instructions for a purpose), compiled once into an authoritative filter clause reused by every retrieval path and re-checked on the way out, since rules referencing deleted assets must match nothing and out-of-scope items sneak in through graph traversals. Retrieval itself is a strategy graph: each strategy declares a firing predicate ('entity phrases exist and no warehouse candidates do') and contributes candidates; hierarchy gates route on counts; repair strategies fetch a parent when only orphaned children matched. Two disciplines govern cost: know when *not* to call an LLM (count thresholds route stages — few candidates fetched wholesale, hundreds get an LLM filter, thousands get vector search plus reranker first), and budget tokens at every layer with graceful degradation (full metadata → summary → name only). 'Was the right item retrieved?' and 'did it survive into the tokens the model read?' are different failures needing different metrics; logging the executed graph turns 'why didn't it know X?' into a five-minute trace read.
 
 ## Key Properties
-- **Per-query emergent shape** — the executed subgraph is not fixed per query type; it is determined by which firing predicates match at runtime
-- **Firing predicates, not hard-coded branches** — new retrieval strategies are added as new predicate-gated nodes, not as new if/else branches in a monolithic pipeline
-- **Self-documenting via execution trace** — the graph that actually ran on a given query is loggable as a diagram, making retrieval failures directly debuggable
-- **Count-gated LLM usage** — the decision to invoke an LLM (vs. deterministic fetch, vs. vector search + reranker) is itself a function of candidate volume at each stage
-- **Composes with a scope filter**: retrieval strategies operate inside an authoritative filter clause compiled once from the query's *skill* (permission + purpose scope), not as an afterthought check
+
+- Scope resolution precedes search; one compiled filter clause, enforced in and out
+- Strategies are predicate-gated and parallel; the graph's shape emerges per query
+- Count thresholds decide when an LLM is worth calling; token budgets degrade detail gracefully
+- Retrieved versus survived-the-budget are distinct failure modes
+- The executed graph is logged as the answer's provenance
 
 ## Relationships
-- Composes [[context-layer-architecture]]: this is the "retrieval" pillar of a context layer — composition, not a single pipeline
-- Extends [[retrieval-augmented-generation]]: RAG's "Agentic RAG" variant lets an agent decide *when* to retrieve; a composition engine generalizes this to *which combination of strategies* fires per query, evaluated by predicates rather than agent judgment alone
-- Related to [[hybrid-search-reciprocal-rank-fusion]]: RRF merges multiple result sets into one ranking; a composition engine is the layer above that decides *which* retrieval streams should even run for a given query, of which RRF-fused hybrid search may be one node
-- Related to [[tapes-agent-observability]] and [[ai-agent-activity-streaming]]: logging the executed retrieval graph as a diagram is the same instinct as tracing agent execution — make the runtime decision path inspectable, not just the final output
+
+- [[context-layer]] — implements the composition verb of that architecture at query time
+- [[retrieval-augmented-generation]] — generalises RAG's single retrieve-then-generate step into an orchestrated portfolio of retrieval strategies
 
 ## Applications
-- **Debugging "why didn't it retrieve X" complaints**: with an execution-graph log, this becomes reading which nodes fired and what they returned, rather than re-running the query with debug logging added after the fact
-- **Cost control at scale**: count-gated LLM invocation keeps relevance filtering cheap for small candidate sets and reserves expensive reranking for genuinely ambiguous large sets
-- **Adding a new retrieval strategy without touching existing ones**: because strategies are predicate-gated nodes, a new source type or query pattern gets a new node rather than a new branch threaded through an existing pipeline
+
+Retrieval layers over heterogeneous corpora; debugging retrieval by reading executed strategy graphs; cost control by routing on candidate counts before invoking models.
 
 ## Sources
-- [How to Build a Context Layer and a Company Brain — Towards Data Science](https://towardsdatascience.com/how-to-build-a-context-layer-and-a-company-brain/) — Tomer Mesika; described in the retrieval section as "a composition engine, not a pipeline"
+
+- https://towardsdatascience.com/how-to-build-a-context-layer-and-a-company-brain/
 
 ## See Also
-- [[context-layer-architecture]]
+
+- [[context-layer]]
 - [[retrieval-augmented-generation]]
-- [[hybrid-search-reciprocal-rank-fusion]]
-- [[datamap-pattern]]

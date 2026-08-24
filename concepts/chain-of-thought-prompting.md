@@ -1,78 +1,55 @@
 ---
-title: "Chain-of-Thought (CoT) Prompting"
-aliases: ["Chain-of-Thought (CoT) Prompting"]
-date: 2026-07-13
+title: Chain-of-thought prompting
+date: 2026-08-24
 domain: llm
-maturity: established
-source_type: research
-topics: [context-engineering]
-tags: [concept, llm, prompt-engineering, reasoning, fundamentals, domain/llm, maturity/established, source-type/research, topic/context-engineering]
+maturity: emerging
+source_type: practitioner
+tags: [concept, llm, prompting, reasoning, domain/llm, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://outcomeschool.com/blog/how-does-chain-of-thought-prompting-work
     hash: sha256:a1f8a13671098cdc50e22770f53c31857d1809e52fd5d92f4714335b6aa3a434
-    retrieved: 2026-08-21
-    class: unclassified
+    retrieved: 2026-08-24
+    class: external-secondary
     reachability: ok
 ---
 
-# Chain-of-Thought (CoT) Prompting
+# Chain-of-thought prompting
 
 ## Definition
-**Chain-of-Thought (CoT) prompting** is a technique where a language model is instructed — explicitly (via a trigger phrase) or implicitly (via worked examples) — to generate its intermediate reasoning steps before producing a final answer, rather than emitting the answer directly. Each "thought" in the chain is a small reasoning step that builds on the previous one, so the final answer rests on a visible sequence of correct intermediate steps instead of being guessed in one shot.
+
+**Chain-of-thought prompting** asks a model to write out its intermediate reasoning steps before stating a final answer, rather than requesting the answer alone. The mechanism follows directly from autoregressive generation: every token is conditioned on the tokens already emitted, so reasoning written into the output becomes part of the input for everything after it, and the model composes its conclusion from visible, already-committed steps instead of predicting a final answer straight from the question.
 
 ## Explanation
-LLMs generate text autoregressively: one token at a time, with each new token conditioned on everything written so far. This has a specific consequence for reasoning tasks. If a model is forced to commit to a final answer immediately (e.g., "give only the final number"), it has no mechanism to correct an early mistake — the answer is produced cold, with no intermediate scratch space. On multi-step problems this produces avoidable errors even though each individual step is easy for the model.
 
-CoT prompting fixes this by asking the model to "think out loud": write out the reasoning steps first, then give the answer. Because those written reasoning tokens become part of the context the model reads next, the final answer is now built *on top of* visible, checkable steps rather than guessed from nothing. This is sometimes described as giving the model "paper to write on." A second, independent benefit: decomposing a hard problem into a sequence of small steps plays directly to what autoregressive models are actually good at — easy, local, single-step predictions — rather than requiring one large leap in reasoning ability. The model isn't smarter with CoT; it simply has structured room to think, and the problem has been reshaped into a form the model's underlying mechanism handles well.
-
-**Worked example (apple problem):**
-- Without CoT: `Q: A shop has 12 apples, sells 5, buys 8 more. How many now? Give only the final number.` → the model jumps straight to a number, and on harder variants this jump is often wrong.
-- With CoT: append `Let's think step by step.` → the model responds: *"We start with 12 apples. After selling 5, we have 12 − 5 = 7. After buying 8 more, we have 7 + 8 = 15. So the final answer is 15."* Each thought explicitly uses the result of the prior thought — that chaining of dependent steps is why it's called a *chain* of thought.
-
-### Zero-shot CoT vs. Few-shot CoT
-| | Zero-shot CoT | Few-shot CoT |
-|---|---|---|
-| Examples given | None | 1–2 fully worked examples with reasoning shown |
-| Trigger mechanism | A line like *"Let's think step by step"* | The model pattern-matches the step-by-step style from the examples and copies it |
-| Prompt length | Short | Longer |
-| Effort to write | Minimal | More — you must author solved examples |
-| Best for | Quick, common problem types | Harder or unusual problems where an explicit trigger phrase alone isn't reliable |
+A language model produces one token at a time, each conditioned on the prompt plus everything it has already written. Demand only the final number and the model must commit to it in a single step, with no intermediate quantities in context to condition on and no mechanism for revising a wrong token once it is emitted — the mistake is already part of the input to whatever follows. Instructing the model to show its work changes what is present in context at the moment the answer is produced: intermediate results sit there as text, so the final step becomes a short inference from adjacent facts rather than a long one from the original question. A second effect compounds the first — decomposition turns one hard prediction into a sequence of easy ones, and models are reliable at easy steps. The model has not become more capable; it has been given room to work, the way a person doing arithmetic on paper outperforms the same person doing it in their head. Two modes exist. Zero-shot triggers the behaviour with a single instruction such as asking it to think step by step, keeping the prompt short and the effort near zero. Few-shot supplies two or three worked examples that show full reasoning, and the model imitates the demonstrated pattern — a longer prompt and real authoring effort, worth it when the reasoning style itself needs demonstrating on unusual problems. Three limits matter. The technique only helps where an answer decomposes: a single-fact lookup has no steps, so it buys nothing but tokens. A written chain is not proof — steps can read as correct at every line and still reach a wrong answer, so for consequential work the reasoning must be checked rather than trusted as evidence that the answer is right. And it costs output tokens, latency and money on every call. Newer reasoning models are trained to produce these steps unprompted, which moves the technique out of prompt engineering and into the model's default behaviour. The source is an educational blog post by a training-course founder with course promotion interleaved and no citations to the original literature; every claim in it is directly reproducible by running the prompts it supplies, so treat it as a clear tutorial rather than as evidence.
 
 ## Key Properties
-- **Autoregression-grounded** — the mechanism only makes sense because LLMs generate token-by-token, conditioning each token on prior tokens; CoT works by manipulating what's already "on the page" for the model to condition on
-- **Decomposition, not augmentation** — CoT doesn't add model capability; it reshapes a hard single-leap problem into a chain of easy local steps
-- **Two invocation modes** — zero-shot (trigger phrase only) and few-shot (worked examples establish the pattern)
-- **Task-dependent value** — helps most on problems with several linked steps (math, logic, multi-step decisions); adds nothing for single-fact lookups ("capital of France")
-- **Visible but not verified** — the reasoning trace is inspectable, but a plausible-looking chain can still land on a wrong final answer; visibility is not the same as correctness
-- **Cost trade-off** — more output tokens (reasoning text) means more latency and inference cost, generally an acceptable trade for improved accuracy on multi-step tasks
-- **Increasingly native in newer models** — large reasoning models are trained to emit reasoning steps by default, without requiring an explicit CoT trigger in the prompt
+
+- Mechanism is autoregressive conditioning — emitted reasoning becomes input for the tokens that follow it
+- Zero-shot triggers the behaviour with an instruction; few-shot demonstrates it with worked examples at greater prompt length
+- Helps only on problems that decompose; single-fact questions gain nothing but added tokens
+- A chain that reads as correct can still reach a wrong answer, so the steps must be verified rather than trusted
+- Costs output tokens, latency and money, and newer reasoning models emit the steps without being asked
 
 ## Relationships
-- Foundational precursor to [[llm-as-a-judge]] and eval-time reasoning: many judge prompts rely on the model producing a rationale (a CoT trace) before a verdict, so the judgment itself can be inspected
-- Connects to the **[[genai-eval-envelope]]** caveat that visible reasoning still requires external checking — CoT traces "look right" but must be verified, not trusted blindly, for important tasks; this is the same "verify, don't blindly trust" principle underlying `council-verify`
-- Related to [[show-dont-tell-prompting]]: both are prompt-engineering techniques for getting a model to do the *right kind* of work rather than jumping to output — show-don't-tell supplies a structural reference, CoT supplies reasoning scaffolding
-- Distinguished from native reasoning in large reasoning models: those models produce CoT-like traces without needing the prompt-level trigger — CoT-the-prompting-technique is the manual precursor to CoT-as-a-trained-behaviour
-- Practical basis for OpenClaw's `/reasoning` toggle: turning reasoning "on" gives the model the same step-by-step room CoT prompting manually elicits; turning it "off" is appropriate for single-fact, cost-sensitive queries where CoT would add nothing (mirrors the local-model note's finding that long reasoning chains can stall small/local coding models — reasoning isn't free and isn't always the right call)
+
+- [[react-pattern]] — extends this technique into an environment, since a ReAct thought is a reasoning step whose successor is conditioned on an observation returned by a tool rather than only on the model's own preceding tokens
+- [[agent-error-compounding]] — is the same conditioning mechanism running the wrong way — written steps shape everything after them, which helps while the steps are right and propagates the fault once an early one is wrong
+- [[context-engineering]] — counts the cost this technique incurs, because intermediate reasoning consumes the same finite context budget that curation is trying to spend well
+- [[hypothetical-document-embeddings]] — chain-of-thought prompting and HyDE share a generate-an-intermediate-artifact-to-improve-a-downstream-step pattern with opposite persistence choices — CoT's reasoning stays in context to condition the final answer, HyDE's hypothetical passage is discarded the moment its embedding is taken.
+- [[agent-context-drift]] — chain-of-thought prompting explains the mechanism by which committed reasoning becomes durable context — exactly the durability that, unrevisited over a long task, is what context drift describes going stale.
 
 ## Applications
-- **Math word problems and arithmetic chains** — where the answer depends on several sequential calculations
-- **Logic puzzles** — where one wrong step invalidates the whole answer
-- **Multi-step / multi-fact questions** — where the answer depends on combining several earlier facts
-- **Decision-making tasks** — weighing multiple options before choosing
-- **Reading comprehension** — connecting information across different parts of a passage
-- **Not needed for single-fact lookups** — trivial factual questions have nothing to decompose; adding CoT is pure overhead
-- **When to actually turn it on/off** — use it (or enable a reasoning toggle) for multi-step/harder problems; skip it for quick, cheap, single-fact queries
 
-## Study
-- Flashcards: [[flashcards/chain-of-thought-prompting|Practice this concept]]
+Math word problems, logic puzzles, multi-hop questions, decisions that weigh several options, and reading comprehension that must connect separated parts of a passage — anywhere the answer is not a single retrievable fact. Also a debugging aid, since a written chain shows which step went wrong when the answer is wrong.
 
 ## Sources
-- [How does Chain-of-Thought (CoT) Prompting work?](https://outcomeschool.com/blog/how-does-chain-of-thought-prompting-work) — Amit Shekhar, Outcome School. Beginner-friendly explainer grounding CoT in autoregression, with zero-shot/few-shot comparison and worked examples.
+
+- https://outcomeschool.com/blog/how-does-chain-of-thought-prompting-work
 
 ## See Also
-- [[show-dont-tell-prompting]]
-- [[genai-eval-envelope]]
-- [[llm-as-a-judge]]
-- [[prompt-altitude]]
-- [[openclaw]]
+
+- [[react-pattern]]
+- [[agent-error-compounding]]
+- [[context-engineering]]

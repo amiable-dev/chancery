@@ -1,38 +1,35 @@
 ---
-tags: [flashcards, context-engineering, ai-agents, llm]
-sr-due: 2026-04-29
+tags: [flashcards, agents, llm, prompting, domain/ai-agents, maturity/emerging, source-type/vendor-doc]
+sr-due: 2026-08-24
 sr-interval: 1
 sr-ease: 250
 ---
 
-# Context Engineering — Flashcards
+# Context engineering — Flashcards
 
-#flashcards/ai-agents
+#flashcards/agents
 
 ## Definition <!-- kb:card:cb288f -->
 What is context engineering?
 ?
-The practice of curating and maintaining the optimal set of tokens available to an LLM at inference time — including system prompts, tools, external data, message history, and MCP connections — to maximise the likelihood of a desired outcome. It treats the entire context state as the engineering surface, not just individual prompts.
+Treating a model's context window as a finite, depleting resource and curating, at every turn of inference (not just once at authoring time), the smallest set of high-signal tokens that produce the wanted behaviour — spanning system instructions, tool definitions, examples, retrieved data, and accumulated message history.
 
-## Distinction <!-- kb:card:9543d7 -->
-How does context engineering differ from prompt engineering?
+## Key mechanism: why context degrades <!-- kb:card:099ed4 -->
+Why does model precision degrade as context grows, mechanistically?
 ?
-Prompt engineering focuses on writing effective prompts (a discrete, one-time task). Context engineering is iterative — it happens at every inference step and manages the full context state dynamically. Prompt engineering is a component of context engineering, not the whole picture.
+Self-attention lets every token attend to every other, so n tokens carry on the order of n-squared pairwise relationships, and training corpora contain far more short sequences than long ones, leaving models less experienced with context-wide dependency. The result is a performance gradient, not a cliff: attention behaves like a budget every added token draws down.
 
-## Core constraint <!-- kb:card:355da2 -->
-What is the fundamental constraint that makes context engineering necessary?
+## Right altitude for system prompts <!-- kb:card:2f89e5 -->
+What is the "right altitude" for a system prompt in context engineering?
 ?
-The transformer attention mechanism creates n² pairwise relationships for n tokens. This means context is a finite resource with diminishing marginal returns — adding tokens always costs attention capacity, and as context grows, the model's ability to recall and reason over information degrades (context rot).
+Between hardcoded if-else logic, which is brittle to maintain, and guidance so vague it assumes shared context the model does not have — specific enough to steer, general enough not to be brittle.
 
-## Right altitude <!-- kb:card:acf013 -->
-What does "right altitude" mean in the context of system prompt design?
+## Just-in-time retrieval trade-off <!-- kb:card:a5a1ed -->
+How does just-in-time retrieval differ from pre-computing everything into the prompt, and what does it trade?
 ?
-The Goldilocks zone between two failure modes: overly specific (brittle if-else hardcoded logic that creates fragility) and overly vague (hand-wavy guidance that fails to give the model concrete signals). The right altitude provides specific heuristics while leaving room for model flexibility.
+The agent holds lightweight identifiers (file paths, stored queries, links) and pulls data through tools at runtime instead of pre-loading it all. This buys progressive disclosure and the metadata signal carried by names, sizes, and timestamps, at the cost of slower exploration and a need for good navigation tools.
 
-## Application <!-- kb:card:b442e1 -->
-What are the four core context engineering strategies for long-horizon tasks?
+## Three long-horizon levers <!-- kb:card:2a87d6 -->
+What three levers does context engineering use when a task outruns the context window?
 ?
-1. Compaction — summarise and reinitialise context windows near their limit
-2. Structured note-taking — agent writes persistent notes outside the context window
-3. Just-in-time retrieval — maintain references, fetch content on demand
-4. Multi-agent architectures — distribute context across specialised agents
+Compaction (summarise history and reinitialise, tuned for recall first then trimmed for precision — clearing stale tool results is its safest form); structured note-taking to files that live outside the window and are read back after a reset; and sub-agent isolation, where a sub-agent explores at length but returns only a small distillate.

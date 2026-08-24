@@ -1,103 +1,56 @@
 ---
-title: "Memex"
-date: 2026-07-08
+title: Memex
+aliases:
+  - Bush memex
+  - Personal record store
+date: 2026-08-24
 domain: knowledge-management
 maturity: established
-source_type: research
-topics: [pkm, memory]
-tags: [concept, knowledge-management, pkm, history, vannevar-bush, associative-memory, hypertext, domain/knowledge-management, maturity/established, source-type/research, topic/pkm, topic/memory]
+source_type: practitioner
+tags: [concept, knowledge-management, personal-knowledge, history, domain/knowledge-management, maturity/established, source-type/practitioner]
 status: draft
 sources:
   - url: https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/
     hash: sha256:28c572172262c598333158c6daa83099ad11bc508da840e49d1bb4f5a6470e77
-    retrieved: 2026-08-21
-    class: unclassified
-    reachability: ok
-  - url: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
-    hash: sha256:38e4f6b3bc571142fda8122633d849887afb108c2ab5b84251a024bab995c2dc
-    retrieved: 2026-08-21
-    class: unclassified
-    reachability: ok
-  - url: https://datasciencedojo.com/blog/llm-wiki-tutorial/
-    hash: sha256:15f81041e9b663581be27027adc0b7a7e3c1b82248c37c6346357837512d0801
-    retrieved: 2026-08-21
-    class: unclassified
+    retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 
 # Memex
 
 ## Definition
-The Memex (Memory Extender) is a hypothetical personal knowledge device described by Vannevar Bush in his 1945 essay "As We May Think" — a desk-sized machine that stores an individual's entire collection of books, records, and communications on microfilm and allows navigation through the collection via *associative trails*: user-defined chains of linked documents that mirror the human mind's natural association-based thinking. The Memex is widely recognised as the conceptual ancestor of hypertext, personal computing, and — most directly — the [[llm-wiki-pattern|LLM Wiki pattern]].
+
+The **memex** is Vannevar Bush's 1945 specification for a personal record store: a device holding all of one individual's books, records, correspondence and notes, mechanized so that the whole collection can be consulted with speed and flexibility — in his phrase, "an enlarged intimate supplement to his memory" — mixing purchased material with the owner's own entries in a single store, annotatable in place, with several items projected side by side at once.
 
 ## Explanation
-Vannevar Bush's central observation in 1945 was that existing indexing systems — alphabetical, numerical — do not match how the human mind works. The mind operates by association: one thought triggers another, and that path can be traversed again. Bush's vision was a machine that would let individuals build and traverse their own associative trails through a personal corpus of knowledge.
 
-### The Core Memex Architecture
-- **Personal corpus:** The user stores books, articles, notes, and records — all microfilmed for rapid access
-- **Associative trails:** The user can link any two documents with a named trail. Following the trail steps through the chain of associations
-- **Trail sharing:** Trails can be extracted and shared with others, allowing communities to collectively build associative knowledge maps
-- **Marginalia:** The user can annotate any document; annotations are part of the trail
-
-### What Bush Got Right
-The Memex vision anticipated:
-- **Personal information management** distinct from library systems
-- **Non-linear navigation** through associative links (hypertext, Wikilinks)
-- **Knowledge as a network**, not a hierarchy
-- **The curation layer:** the Memex is useful because the *human curates the associations*, not just the content
-
-### What Bush Couldn't Solve
-Bush assumed the human would build and maintain all the associative trails. In practice, this is the fatal bottleneck — the same maintenance burden that kills human wikis. Building a 1,000-node Memex would require an enormous ongoing time investment to create and maintain trails, update links when documents change, and resolve contradictions.
-
-This is precisely the gap that LLMs fill. Karpathy's observation: *"The part he couldn't solve was who does the maintenance. The LLM handles that."*
-
-### The LLM Completion of the Memex Vision
-The [[llm-wiki-pattern]] is, in effect, a practical Memex:
-- **Personal corpus** → the `raw/` sources directory (immutable originals)
-- **Associative trails** → `Wikilinks` between concept and entity pages, maintained by the LLM
-- **Curation layer** → the human curates sources and high-level editorial direction; the LLM does all the cross-referencing
-- **Trail sharing** → the wiki is a git repo, shareable and forkable
-- **Marginalia** → LLM-added annotations, source citations, and contradiction flags on every page
-
-The critical difference from Bush's vision: the human's role shrinks from "maintaining all the trails" to "curating sources and asking good questions." The maintenance burden — the part that made the Memex impractical — is absorbed by the LLM.
-
-### Historical Influence
-The Memex directly influenced:
-- **Ted Nelson's Xanadu (1960s):** Hypermedia with bidirectional links and transclusion — a software Memex
-- **Douglas Engelbart's NLS/oN-Line System (1960s):** Collaborative hypertext with the mouse, windows, and hyperlinks
-- **Tim Berners-Lee's World Wide Web (1989):** Unidirectional hyperlinks at global scale — a public, not personal, Memex
-- **Obsidian, Roam, Logseq (2020s):** Personal knowledge tools with wikilink graphs — closer to Bush's vision but still human-maintained
-
-The irony is that the Web — the most successful descendant — went in the opposite direction from the Memex: public, not personal; crawled, not curated; stateless search, not associative trails.
+Strip away the microfilm and what remains is a set of design commitments about personal knowledge stores, each of which is a live decision today. Capacity is deliberately designed out of the problem: at five thousand pages a day the owner would need centuries to fill the store, so entry should be profligate and the cost of capture, not the cost of holding, is what governs. Consumed and created material share one store — a longhand note or a photograph goes in through the same platen and files next to a purchased book, and marginal comments attach to either — so there is no boundary between one's library and one's notes. Several projection positions run at once, letting one item stay in view while another is called up, which is not a convenience but the precondition for joining two things. And conventional indexed lookup is kept rather than replaced: the owner can still tap a code and get a book, page through it at one, ten or a hundred pages a stroke, and jump to its index, with associative selection layered on top of that rather than substituted for it. Bush's stated aim for the whole arrangement is to let a person reacquire the privilege of forgetting whatever they do not need immediately at hand, with the assurance of finding it again if it proves important. The source is a magazine essay, not an engineering document, and everything mechanical in it — the levers, the photocell dots, the dry photography — is dead; the specification of the store is what eighty years of personal knowledge tools have been re-implementing.
 
 ## Key Properties
-- **Associative, not hierarchical:** Navigation follows conceptual links, not folder structures or indexes
-- **Personal:** The corpus and trails reflect one individual's knowledge, not a public library
-- **Persistent:** Trails built today are traversable years later — unlike episodic memory
-- **Curated:** Value derives from the *quality of associations*, not just the volume of stored material
-- **Maintenance-intensive:** Bush's original vision required enormous human effort for trail-building and upkeep
+
+- Holds everything the owner reads and everything the owner writes, in one undivided store
+- Capacity is designed out of the problem, so entry should be profligate and capture cost is the real constraint
+- Direct entry of longhand notes and photographs, with annotation in place on any item
+- Several simultaneous viewing positions — the precondition for tying two items together
+- Conventional indexed lookup is retained; associative selection is layered on top of it, not in place of it
 
 ## Relationships
-- Conceptual ancestor of [[llm-wiki-pattern]]: the LLM wiki is a practical implementation of the Memex vision
-- Realised by [[knowledge-compounding]]: compounding is what makes the LLM-maintained Memex more valuable than Bush imagined possible
-- Precedes modern [[retrieval-augmented-generation]]: RAG represents the "library card catalog" school of information retrieval that Bush was explicitly arguing against
-- Anticipates [[wiki-navigation-scaffold]]: index.md and log.md are the engineered equivalents of Bush's catalog system
-- Related to [[codebase-knowledge-graphs]]: knowledge graphs encode the associative structure Bush envisioned, though in typed form
+
+- [[selection-bottleneck-of-the-record]] — is the problem this device was designed against, and dictates its unusual commitments — cheap entry, mixed sources, several items in view
+- [[associative-trail]] — is what Bush calls the essential feature of the memex — without the tying of items together the device is only a fast filing cabinet
+- [[cognitive-debt]] — puts this design's stated aim under empirical pressure — Bush argued that offloading retention lets a person forget safely, while the cognitive-debt evidence indicates that habitually offloading mental work degrades the engagement it replaced
 
 ## Applications
-- **Historical framing:** When pitching an LLM-maintained wiki to stakeholders, the Memex analogy explains why this is the right model: *"This is what Bush imagined in 1945, and LLMs are finally making it practical"*
-- **Design principle:** "Would Bush recognise this as a Memex trail?" is a useful heuristic when deciding whether a wikilink connection is genuine or superficial
-- **Research into knowledge tools:** Any system that claims to solve personal knowledge management should be evaluated against the Memex's core desiderata: associative, personal, persistent, curated
-- **This vault:** The staging → concept pipeline, cross-linking, and graph view in Obsidian are together a Memex implementation; the [[wiki-lint-operation]] is the maintenance layer Bush couldn't provide
+
+A specification to check personal knowledge tools against — does capture cost nothing, do notes and sources live together, can two items be held side by side, is indexed lookup still available; and the reference point for arguing that a knowledge store should be private, complete and owner-annotated rather than a curated subset.
 
 ## Sources
-- [Vannevar Bush — As We May Think (1945)](https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/) — The Atlantic, July 1945. Original articulation of the Memex
-- [Andrej Karpathy — LLM Wiki Gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) — explicit connection between the LLM wiki pattern and the Memex
-- [Data Science Dojo — LLM Wiki Tutorial](https://datasciencedojo.com/blog/llm-wiki-tutorial/) — modern tutorial explaining the Memex lineage
+
+- https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/
 
 ## See Also
-- [[llm-wiki-pattern]]
-- [[knowledge-compounding]]
-- [[wiki-lint-operation]]
-- [[wiki-navigation-scaffold]]
-- [[retrieval-augmented-generation]]
+
+- [[selection-bottleneck-of-the-record]]
+- [[associative-trail]]
+- [[cognitive-debt]]

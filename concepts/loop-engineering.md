@@ -1,121 +1,60 @@
 ---
-title: "Loop Engineering"
-date: 2026-07-04
+title: Loop engineering
+date: 2026-08-24
 domain: ai-agents
 maturity: emerging
 source_type: practitioner
-topics: [agentic-coding, workflow, orchestration]
-tags: [concept, ai-agents, engineering, workflow, agentic-coding, product-development, domain/ai-agents, maturity/emerging, source-type/practitioner, topic/agentic-coding, topic/workflow, topic/orchestration]
+tags: [concept, ai-agents, agentic-coding, automation, domain/ai-agents, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
-  - url: https://x.com/AndrewYNg/status/2071988145667928442
-    hash: sha256:7164c37b668f26c389f12ec9464292410010389f028521a64da7c984d85d1582
-    retrieved: 2026-08-21
-    class: unclassified
-    reachability: ok
-  - url: https://charonhub.deeplearning.ai/three-key-loops-for-building-great-software/
-    hash: sha256:6093802d561dc863784dcd1e8cc51936a0a3fad5d34c61abec541f36cb8437ca
-    retrieved: 2026-08-21
-    class: unclassified
+  - url: https://machinelearningmastery.com/an-introduction-to-loop-engineering/
+    hash: sha256:12827ca9008a2072a0862a8e34e4579b436864264922dd498d14c36456ee2ab3
+    retrieved: 2026-08-24
+    class: external-secondary
     reachability: ok
 ---
 
-# Loop Engineering
+# Loop engineering
 
 ## Definition
 
-A software development discipline focused on designing, optimising, and nesting the feedback loops through which AI coding agents iterate toward a working product. Rather than manually prompting an agent for each change, the developer engineers *the program that prompts the agent* — structuring autonomous iteration at multiple timescales so that agents can work productively with minimal human intervention at the innermost loop.
-
-Coined/popularised by Boris Cherny (Claude Code) and Peter Steinberger (OpenClaw); synthesised as a product-development framework by Andrew Ng in The Batch (June 2026).
+**Loop engineering** is the practice of building the system that prompts, checks, remembers and re-runs an AI agent, so that the unit of work stops being a single prompt or conversation and becomes a repeating cycle: a person states a goal whose completion is mechanically checkable, and the agent acts, observes what the environment actually returned, uses that observation to choose its next move, and keeps going until the goal is verified, a budget is exhausted, or it hands the problem to a human. It is distinguished from a chain, which runs a fixed sequence of steps once, by being dynamic — the agent may discover a step failed, revise its approach, and revisit earlier work — and the engineering effort moves from wording one instruction well to designing a cycle trustworthy enough to leave unattended.
 
 ## Explanation
 
-Before loop engineering, developer workflows with coding agents looked like extended conversations: prompt → review output → prompt again → review → repeat. The developer was effectively the QA function — manually finding bugs and feeding corrections back to the agent. The loop was tight but slow, gated entirely by human attention.
-
-Loop engineering is the discipline of changing that topology. The key shift: **make the agent responsible for its own inner iteration loop**, so the developer's attention is freed for higher-level, higher-leverage decisions.
-
-**The three nested loops (Andrew Ng's framework):**
-
-```
-┌─────────────────────────────────────────────────────────┐
-│  External Feedback Loop  (hours → weeks)                │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │  Developer Feedback Loop  (mins → hours)          │  │
-│  │  ┌─────────────────────────────────────────────┐  │  │
-│  │  │  Agentic Coding Loop  (seconds → minutes)   │  │  │
-│  │  │  agent writes → tests → iterates           │  │  │
-│  │  └─────────────────────────────────────────────┘  │  │
-│  │  developer reviews → steers agent                 │  │
-│  └───────────────────────────────────────────────────┘  │
-│  alpha users, A/B tests → informs vision               │
-└─────────────────────────────────────────────────────────┘
-```
-
-The innermost [[agentic-coding-loop]] operates at sub-minute to minute resolution: the agent writes code, tests it (including opening a browser to check its own output), and iterates autonomously. This is where most tooling investment currently pays off.
-
-The middle [[developer-feedback-loop]] operates at 10 minute–hour resolution: the developer reviews the product, makes product-level decisions, and re-steers the agent. This is where "taste" or [[context-advantage]] is injected.
-
-The outer [[external-feedback-loop]] operates at hour–week resolution: real users, alpha testers, A/B tests. Informs the developer vision, which drives the spec, which drives the agent.
-
-**"Closing the loop"** — the phrase that originally sparked the buzzword — specifically refers to the inner loop: giving agents tools (test runners, browsers, linters) so they can observe their own outputs and iterate to completion without human intervention.
-
-**Why timescales matter:**
-Each loop runs at a different clock speed. Confusing which loop you're in leads to misallocated effort. Loop engineering is partly the discipline of recognising which loop a given activity belongs to and investing in tooling proportional to that loop's frequency.
+The mechanism is a division of labour: the model is treated as a fixed component in the middle and everything around it is designed — what goal is stated, which tools produce feedback, what gets remembered between iterations, what counts as done, and when the cycle stops. That design becomes worth doing only once an agent can run unattended long enough for the cycle to matter; while a run lasted three turns the sharpness of the prompt was the binding constraint, and once a run lasts an hour and touches dozens of files the binding constraint is whether the cycle keeps the agent productive, checked and correctly aimed for that whole hour. The name is recent and its popularity is a distinct fact from its substance: it spread within about a week in June 2026 from a widely-shared post by Peter Steinberger and an essay by Addy Osmani, with Anthropic's Boris Cherny quoted saying his job is now to write loops rather than prompts. The source here is a tutorial-style explainer synthesizing that moment, so the timeline is reported enthusiasm rather than measurement, but it is honest that the mechanics are older — the reason-act-observe cycle from ReAct in 2022, self-critique written into episodic memory from Reflexion in 2023, and the evaluator-optimizer and orchestrator-workers patterns Anthropic named in 2024. The term is a vocabulary for an accumulating research direction rather than a new invention, and the same article names its limits: for a genuine one-off an interactive session is faster and safer than engineering a loop around it, and a loop relocates human judgment rather than removing it, since someone still owns the goal, the definition of done, and the final call on correctness.
 
 ## Key Properties
 
-- **Nested structure** — three loops operating at orders-of-magnitude different timescales
-- **Tool-dependence at the inner loop** — the agentic coding loop requires the agent to have test runners, browser access, linters, or evals to observe its own output
-- **Human "context injection" at the middle loop** — the developer's job shifts from QA to product steering; their value is [[context-advantage]] over the AI
-- **Spec as interface** — the product specification is the handoff artifact from developer to agent; improving spec quality is a lever on every inner-loop iteration
-- **Active area of invention** — mechanisms for engineering more effective inner loops (evals, harnesses, test scaffolds) are rapidly evolving
+- The unit of work is a cycle with a checkable exit, not a prompt or a conversation
+- Distinguished from a chain by dynamism: the agent may revise its approach and revisit earlier steps
+- Became worth engineering once unattended runs got long enough that cycle design, not prompt wording, was the constraint
+- Named in June 2026; the mechanics descend from ReAct (2022), Reflexion (2023) and the 2024 evaluator-optimizer and orchestrator-workers patterns
+- Not universal: a one-off task is usually cheaper to do interactively than to wrap in a loop
 
 ## Relationships
 
-- Contains [[agentic-coding-loop]]: the innermost loop that loop engineering primarily optimises
-- Contains [[developer-feedback-loop]]: the middle loop where developer "context injection" happens
-- Contains [[external-feedback-loop]]: the outermost loop that grounds product vision in user reality
-- Related to [[context-advantage]]: the human's irreplaceable role at the developer feedback loop is explained by context advantage, not ineffable "taste"
-- Related to [[spec-driven-development]]: the product specification is the primary interface between developer and agent loops
-- Related to [[agentic-sdlc]]: ASDLC provides the full lifecycle governance; loop engineering is its execution-time rhythm
-- Related to [[agent-harness]]: the tooling infrastructure that makes the inner loop autonomous
-- Related to [[context-engineering]]: the practice of shaping agent context at each loop iteration
-- [[prompt-context-harness-loop-stack]] — is the top layer of the prompt to context to harness to loop progression
+- [[react-pattern]] — supplies the base reason-act-observe cycle that essentially every engineered loop still runs at its core, so loop engineering is largely the question of what to wrap around that cycle
+- [[agent-harness]] — is the layer underneath: the harness answers what environment an agent needs, while loop engineering answers the narrower operational question of what cycle keeps it working and when that cycle stops
+- [[three-loops-of-agentic-development]] — was written as a direct response to this term and re-cuts the same territory by cadence — agentic coding, developer feedback, external feedback — rather than by which engineering layer is being designed
+- [[agentic-engineering-layers]] — places loop engineering as the outermost of four nesting disciplines, each of which exists because the previous one hit a ceiling
+- [[agent-loop-anatomy]] — specifies the parts a loop needs to be reliable rather than merely to run, and is where the abstract practice becomes a concrete structure
+- [[deterministic-agent-verification]] — is the discipline that keeps a loop honest, since without an external check the cycle can terminate on the agent's own unverified claim of success
+- [[workflows-versus-agents]] — loop engineering is the engineering practice behind the workflows-versus-agents split's 'agent' pole — a dynamic loop that can discover a failed step and revise its approach is what it means, in implementation terms, for a model to direct its own process.
+- [[agentic-ai-architecture-taxonomy]] — names Planning and Action as the architectural concerns this practice's act-observe-decide cycle actually implements at runtime.
 
 ## Applications
 
-**Engineering a better inner loop:**
-- Give the agent test-running tools, browser access, and linters so it can observe its own outputs
-- Write evals (test datasets + expected outputs) for recurring failure patterns; the agent uses these as a self-grading mechanism
-- Prefer short tests that run quickly; slow test suites increase inner-loop latency
-- Keep the spec precise: vague specs increase the number of inner-loop iterations needed
-
-**Engineering a better developer feedback loop:**
-- Make product state visible at a glance so reviews are quick — screenshots, hosted previews, structured diffs
-- Explicitly separate your QA activity (finding bugs) from product steering (deciding what to build next); the former should shrink as the inner loop improves
-- Use AI assistance to summarise usage data, customer feedback, and competitive signals so product decisions are better-informed
-
-**Engineering a better external feedback loop:**
-- Ship to real users earlier than feels comfortable; the inner loop can fix bugs fast once you know what's wrong
-- A/B test product decisions rather than relying solely on developer intuition
-- Build feedback collection into the product so signal flows back to the developer automatically
-
-## Study
-- Flashcards: [[flashcards/loop-engineering|Practice this concept]]
-- Lab: Building Verification Loops In Claude Code With Skills — practical treatment of the *verification* loop specifically, with a hands-on skill smoke test and four reusable deployment patterns (standalone/embedded/chained/CI)
+Turning a recurring, low-stakes task into an unattended cycle — a nightly issue triage pass, a scheduled report, a lint-and-fix sweep over one directory — and deciding, for any given piece of agent work, whether it warrants a designed loop at all or is better done interactively.
 
 ## Sources
 
-- [Andrew Ng, The Batch — "Three Key Loops for Building 0-to-1 Products" (June 2026)](https://x.com/AndrewYNg/status/2071988145667928442) — primary source; defines the three-loop framework for product development with coding agents
-- [The Batch (deeplearning.ai)](https://charonhub.deeplearning.ai/three-key-loops-for-building-great-software/) — full letter text
+- https://machinelearningmastery.com/an-introduction-to-loop-engineering/
 
 ## See Also
 
-- [[agentic-coding-loop]]
-- [[developer-feedback-loop]]
-- [[external-feedback-loop]]
-- [[context-advantage]]
-- [[spec-driven-development]]
-- [[agentic-sdlc]]
+- [[react-pattern]]
 - [[agent-harness]]
-- [[context-engineering]]
+- [[agentic-engineering-layers]]
+- [[agent-loop-anatomy]]
+- [[deterministic-agent-verification]]
