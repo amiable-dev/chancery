@@ -1,0 +1,65 @@
+{
+  "envelope": {
+    "task_id": "2f8394df166ad2e9",
+    "verb": "link",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/agentic-ai-architecture-taxonomy.md": "sha256:5d3a20e196d74caff80098aacafcffa05fe42685a2ad5a331d8da2912a8f9d4b",
+      "concepts/agentops.md": "sha256:f83a20b08fd34814d73fe26af325f8293d10572151298840c57db0316bb7449c",
+      "concepts/ai-coding-maintainability-gap.md": "sha256:977a1d75644441c34f865003e8d487099503d2a184dc1cbb24ca966f262114d7",
+      "concepts/answer-layer-interception.md": "sha256:a4056405426bc72b903722fc331831607a23a00b73697d0c548560f93dac74fd",
+      "concepts/automatic-prefix-caching.md": "sha256:457024ae54b661b6afbf1fb538692cf77cb202f2788c72eb000c8ce7bdd8499b",
+      "concepts/bell-lapadula-confidentiality-model.md": "sha256:bb80de9eb3e51949333c62b3b556fc5b6cde1e34a83959ee63c8c6218e5d2cc8",
+      "concepts/dama-dmbok-wheel.md": "sha256:580680a2b345cd3b56283ddd06c8ae94714e54e1201e251b2e7b2d6438a4c7eb",
+      "concepts/dead-code-deletion-confidence.md": "sha256:39a8d777d9149e8c8c6d282fdf995f5416111235dc22e2dda4e78a1fd3521d9d",
+      "concepts/debate-gated-decision-pipeline.md": "sha256:cd17f61278b5ba960bcbac3054200764258262a93eb1417b17caf9959eb68b00",
+      "concepts/decoupled-policy-decision-engines.md": "sha256:29b9d4943cb6d67500974bd2cfa96d7503a3956049d00d30bec4db5864c47b27",
+      "schema:link-draft.schema.json": "sha256:e713aca39f650c312adb6e8921abe1fead499fc2ae57267da2cf69356ba1661a"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:f6af4b159fd9b54cd1e2b2a9d50753d998ddb78b4059229c1f3c71e5e39333d5",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/agentic-ai-architecture-taxonomy.md",
+    "concepts/react-pattern.md",
+    "concepts/multi-agent-orchestration-topologies.md",
+    "concepts/agentops.md",
+    "concepts/loop-engineering.md",
+    "concepts/agent-error-compounding.md",
+    "concepts/stateful-agent-reliability.md",
+    "concepts/stacked-agent-loops.md",
+    "concepts/agent-context-drift.md",
+    "concepts/ai-coding-maintainability-gap.md",
+    "concepts/shared-mental-model-erosion.md",
+    "concepts/first-pass-acceptance-rate.md",
+    "concepts/automatic-prefix-caching.md",
+    "concepts/context-engineering.md",
+    "concepts/agent-instruction-layering.md",
+    "concepts/agent-state-residence.md",
+    "concepts/bell-lapadula-confidentiality-model.md",
+    "concepts/agent-security-as-os-security.md",
+    "concepts/instruction-data-boundary-collapse.md",
+    "concepts/reachability-based-dead-code-detection.md",
+    "concepts/debate-gated-decision-pipeline.md",
+    "concepts/debate-augmented-weak-supervision.md",
+    "concepts/evidence-recheck-triage.md",
+    "concepts/decoupled-policy-decision-engines.md",
+    "concepts/layered-agent-guardrails.md",
+    "concepts/agent-write-permission-separation.md",
+    "concepts/tiered-execution-gating-for-ai-agents.md"
+  ]
+}

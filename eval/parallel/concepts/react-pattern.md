@@ -39,6 +39,7 @@ The pattern repairs complementary failure modes. Chain-of-thought reasoning alon
 
 - [[retrieval-augmented-generation]] — generalizes RAG's grounding move from architecture to policy — instead of one retrieval step wired before generation, the model decides when and what to retrieve as actions inside its reasoning loop
 - [[code-mode-mcp]] — established the thought-action-observation loop whose act step Code Mode later optimizes, replacing schema-per-tool calls with model-written code over a tool catalogue
+- [[agentic-ai-architecture-taxonomy]] — situates this pattern's thought-action-observation loop within the Brain, Planning and Action concerns of a six-part agent architecture taxonomy.
 
 ## Applications
 

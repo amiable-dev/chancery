@@ -41,6 +41,7 @@ The mechanism is a division of labour: the model is treated as a fixed component
 - [[agent-loop-anatomy]] — specifies the parts a loop needs to be reliable rather than merely to run, and is where the abstract practice becomes a concrete structure
 - [[deterministic-agent-verification]] — is the discipline that keeps a loop honest, since without an external check the cycle can terminate on the agent's own unverified claim of success
 - [[workflows-versus-agents]] — loop engineering is the engineering practice behind the workflows-versus-agents split's 'agent' pole — a dynamic loop that can discover a failed step and revise its approach is what it means, in implementation terms, for a model to direct its own process.
+- [[agentic-ai-architecture-taxonomy]] — names Planning and Action as the architectural concerns this practice's act-observe-decide cycle actually implements at runtime.
 
 ## Applications
 

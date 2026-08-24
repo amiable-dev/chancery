@@ -39,6 +39,7 @@ In the client-held arrangement the handler rebuilds the message list from scratc
 - [[memory-as-harness-capability]] — argues the deeper version of this decision — where state lives is only the first of the context-management choices that produce an agent's memory, and none of them can be bolted on from outside the harness
 - [[opaque-agent-interop]] — the peer-opacity A2A-style opaque interop guarantees is exactly about not exposing whichever state-residence choice — resent each turn or held behind a session id — an interoperating agent has made internally.
 - [[server-driven-ui]] — server-driven UI and state residence share a resent-not-remembered architecture applied at different layers — a stateless renderer trades a per-request payload for no persistence tier on the receiving side, the same way a caller-resends design keeps a service instance stateless.
+- [[automatic-prefix-caching]] — this technique's cache-hit rate is a concrete consequence of the state-residence choice described here — whether resent history stays byte-identical across turns.
 
 ## Applications
 

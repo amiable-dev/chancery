@@ -1,17 +1,16 @@
 ---
 title: Observability pipeline as a control point
 date: 2026-08-24
-tags:
-  - concept
-  - observability
-  - data-pipeline
-  - architecture
-  - vendor-strategy
+domain: observability
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, observability, data-pipeline, architecture, vendor-strategy, domain/observability, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://cribl.io/blog/the-observability-pipeline/
     hash: sha256:523e23562fe3eef312c027e4f37ceae93da59e3300b61d50dbd36743825bb418
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 

@@ -1,0 +1,31 @@
+{
+  "task_id": "8e23f75024f1d639",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Pipeline stages",
+      "question": "What sequence of roles does a debate-gated decision pipeline use instead of a single model call?",
+      "answer": "Independent analyst agents (narrow reads) -> two adversarial researcher agents (opposing interpretations/debate) -> a risk-review agent (checks exposure limits) -> a synthesis agent (final decision)."
+    },
+    {
+      "heading": "Why force a debate",
+      "question": "What problem does forcing two agents to argue opposing sides address, versus one model deciding alone?",
+      "answer": "A single LLM call asked to weigh many signals tends to average or under-argue the tension between them; forcing explicit two-sided debate turns that tension into an inspectable artifact instead of a hidden internal weighting."
+    },
+    {
+      "heading": "Risk gate placement",
+      "question": "Where does the risk-review stage sit in a debate-gated decision pipeline, and why does that placement matter?",
+      "answer": "Between the debate and the final decision, so an aggressive debate conclusion can still be vetoed or scaled back against exposure limits — keeping strategy generation and risk control as separate agents."
+    },
+    {
+      "heading": "Synthesis step",
+      "question": "Does the final synthesis agent in this pipeline just pick the debate's winning side?",
+      "answer": "No — it recombines the debate's conclusion with the original underlying data, so the decision reflects both the qualitative argument and the quantitative record."
+    },
+    {
+      "heading": "Empirical result",
+      "question": "How did this decomposed pipeline perform against a single-model or ungated multi-agent baseline in trading backtests?",
+      "answer": "It outperformed both, suggesting the gain comes from the pipeline's structure itself rather than simply adding more agents."
+    }
+  ]
+}

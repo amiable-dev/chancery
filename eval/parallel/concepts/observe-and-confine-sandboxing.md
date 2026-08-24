@@ -1,16 +1,16 @@
 ---
 title: Observe-and-confine sandboxing
 date: 2026-08-24
-tags:
-  - concept
-  - agents
-  - security
-  - observability
+domain: security
+maturity: emerging
+source_type: practitioner
+tags: [concept, agents, security, observability, domain/security, maturity/emerging, source-type/practitioner]
 status: draft
 sources:
   - url: https://papercompute.com/blog/missing-primitive-agent-infrastructure/
     hash: sha256:7c30e106f52bbf2744e05bfd75a552f88c7bb9dc79592054e5aa5b787fd7f3e9
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 

@@ -1,16 +1,17 @@
 ---
 title: Automatic prefix caching (RadixAttention)
 date: 2026-08-24
-tags:
-  - concept
-  - llm-inference
-  - caching
-  - performance
+domain: llm
+maturity: established
+source_type: research
+topics: [cost-control]
+tags: [concept, llm-inference, caching, performance, domain/llm, maturity/established, source-type/research, topic/cost-control]
 status: draft
 sources:
   - url: https://arxiv.org/html/2312.07104v2
     hash: sha256:96d7b2c47d0d9289efb9b0556028509ccfddc44e9492badb8ffb57c737ab67c6
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 
@@ -34,6 +35,9 @@ SGLang's RadixAttention implementation organizes the KV cache as a radix tree ke
 ## Relationships
 
 - _No relationships recorded yet._
+- [[context-engineering]] — this note's own guidance to order unchanging content before per-request content is a direct application of the token-curation discipline described here.
+- [[agent-instruction-layering]] — the always-on layer described here, being identical across turns and requests, is precisely the stable literal prefix this technique indexes and reuses.
+- [[agent-state-residence]] — the state-location choice described here determines whether the bytes reaching the inference server stay byte-identical across turns, the precondition this technique's cache hits depend on.
 
 ## Applications
 

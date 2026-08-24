@@ -1,20 +1,22 @@
 ---
 title: Debate-gated decision pipeline
 date: 2026-08-24
-tags:
-  - concept
-  - ai-agents
-  - multi-agent
-  - design-patterns
+domain: ai-agents
+maturity: emerging
+source_type: research
+topics: [multi-agent, patterns]
+tags: [concept, ai-agents, multi-agent, design-patterns, domain/ai-agents, maturity/emerging, source-type/research, topic/multi-agent, topic/patterns]
 status: draft
 sources:
   - url: https://arxiv.org/abs/2412.20138
     hash: sha256:7f27bef7beace6d5a86d6cb018313f59132b2528d81a19b508b309ec37a24603
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
   - url: https://github.com/TauricResearch/TradingAgents
     hash: sha256:b4a050d5a95472de864f275ebdff7ec360976680a3ea2e80b922b23b970b9dda
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 
@@ -38,6 +40,8 @@ The pattern's premise is that a single LLM call asked to weigh many signals and 
 ## Relationships
 
 - _No relationships recorded yet._
+- [[debate-augmented-weak-supervision]] — uses the same two-adversarial-instance debate mechanism this pipeline does, on the principle that a lie is harder to sustain than to refute, applied to training labels rather than a live decision.
+- [[evidence-recheck-triage]] — the risk-review agent's separate check against exposure limits is a specific instance of this discipline's rule that the generating process must never also be the deciding one.
 
 ## Applications
 

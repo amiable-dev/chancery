@@ -1,0 +1,26 @@
+{
+  "task_id": "73a2c6ebb5468033",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is a gateway-owned channel architecture?",
+      "answer": "An architecture where one long-lived process holds sole ownership of every external channel connection, and every other participant must reach those channels only through the gateway's own typed, schema-validated protocol."
+    },
+    {
+      "heading": "Why single ownership",
+      "question": "What problem does giving exactly one process ownership of each external channel eliminate?",
+      "answer": "Races between multiple clients trying to hold the same platform connection at once, which would violate a platform's single-session assumption."
+    },
+    {
+      "heading": "Idempotency keys",
+      "question": "Why do side-effecting requests to the gateway carry idempotency keys?",
+      "answer": "So a client can safely retry a request after a dropped connection without double-executing the action."
+    },
+    {
+      "heading": "Trust grading",
+      "question": "How is connection trust graded in a gateway-owned channel architecture?",
+      "answer": "By connection origin, not uniformly: same-host/local connections can auto-approve, while every remote or new-device connection must complete an explicit pairing handshake and is issued a device token."
+    }
+  ]
+}

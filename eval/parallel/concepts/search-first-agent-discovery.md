@@ -1,21 +1,22 @@
 ---
 title: Search-first discovery for agentic resources
 date: 2026-08-24
-tags:
-  - concept
-  - ai-agents
-  - mcp
-  - architecture
-  - discovery
+domain: ai-agents
+maturity: emerging
+source_type: vendor-doc
+topics: [mcp]
+tags: [concept, ai-agents, mcp, architecture, discovery, domain/ai-agents, maturity/emerging, source-type/vendor-doc, topic/mcp]
 status: draft
 sources:
   - url: https://agenticresourcediscovery.org/spec/
     hash: sha256:d8b14ff11ae7f3d4fe9bb90bf2a90c59974f6e1487764055fa6966348b9417d2
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
   - url: https://github.com/ards-project/ard-spec
     hash: sha256:5d59906e06c45cedb9b70eb9d2a07df69059f40dd76d0f2583dc6e22a5cc6fb8
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 

@@ -41,6 +41,7 @@ The mechanism is Peter Naur's, from his 1985 argument that a program is not its 
 - [[comprehension-gate]] — is the sharpest available countermeasure, converting the abstract obligation to understand a change into a merge precondition that the human rather than the machine has to satisfy
 - [[first-pass-acceptance-rate]] — addresses the measurement half of the same failure, replacing throughput counts that rise precisely when a team ships more material than it understands
 - [[risk-tiered-agent-change-control]] — applies the same stakes-scaling logic on the security side, spending scrutiny according to the consequence class of what a change touches rather than uniformly across every change
+- [[ai-coding-maintainability-gap]] — this note's structural cost — rising duplication, falling refactoring — compounds the comprehension-side erosion described here, both invisible to correctness checks.
 
 ## Applications
 

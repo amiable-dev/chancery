@@ -3,17 +3,17 @@ title: JSON Web Token (JWT)
 aliases:
   - JWT
 date: 2026-08-24
-tags:
-  - concept
-  - jose
-  - claims-based-authentication
-  - offline-verification
-  - licensing
+domain: standards
+maturity: established
+source_type: vendor-doc
+topics: [licensing]
+tags: [concept, jose, claims-based-authentication, offline-verification, licensing, domain/standards, maturity/established, source-type/vendor-doc, topic/licensing]
 status: draft
 sources:
   - url: https://www.rfc-editor.org/rfc/rfc7519.html
     hash: sha256:336850ef67428b27e0bfd8d2d87a8018fe27bd017135fc2bce8ea7d618b1667c
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 

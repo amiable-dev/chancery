@@ -1,0 +1,67 @@
+{
+  "envelope": {
+    "task_id": "5b5159a10a2611aa",
+    "verb": "facets",
+    "task_class": "classification",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/agent-security-as-os-security.md": "sha256:c109208706fceac2a7a65738a4331920607f30d9ade83fd19911e9b179615d01",
+      "concepts/agentic-ai-architecture-taxonomy.md": "sha256:ef4c4d82eb373140094f36870868d902351b4078cc4701b7de229c402e651dd2",
+      "concepts/agentops.md": "sha256:7841d9b3f5052f726f46b6520bab7f640990b5d8f061cb66af4598134f80dbb0",
+      "concepts/ai-coding-maintainability-gap.md": "sha256:36f2883177e6408a3706163a81c65c8d7bd151b76afeab4a68f66820fbf50a7d",
+      "concepts/automatic-prefix-caching.md": "sha256:a8197804b6659bc1162fabe44ba6baa274129ecdcaa86fc9f3765ed0adcd516b",
+      "concepts/bell-lapadula-confidentiality-model.md": "sha256:b8c75b61ec193af78988fca2466865651a8743896af6cc5434e5839009eae88b",
+      "concepts/dama-dmbok-wheel.md": "sha256:dfde5cd8a2f195d50152e52ef3f3cf7d18a7120b60e29f802b7e5821f40d10e0",
+      "concepts/dead-code-deletion-confidence.md": "sha256:3057a9f512d1e924b75efeaadbd19bcac9a7ce5f688b05f336745896fcd4c7e0",
+      "concepts/debate-gated-decision-pipeline.md": "sha256:e96edade022a60fdadfc2fe347028e847c6c2cbae2accae8e64cc474e896e159",
+      "concepts/decoupled-policy-decision-engines.md": "sha256:eeef45b025b256c967af8aeebe525e65c8fd7b6a64849798c88a7725cf41a951",
+      "concepts/domain-anchored-federated-identifiers.md": "sha256:df01f46794af8e9c14050ed74a7e8487492024a1b44a4ca9dfa44426e9378be6",
+      "concepts/gateway-channel-ownership.md": "sha256:3d12ed9c84056fa490e766533fbf03cc576933ae6d7ff68680673791826bffe0",
+      "concepts/immutable-reference-pinning.md": "sha256:745da52000985ea10557a3a017cd79b13c6614626b7343ca1eaf3326d6a3204c",
+      "concepts/json-web-token.md": "sha256:cbceaf4af3db2d8b6f2cfeca8709101c8fb8812ded9c373a2de76aad8e7cd320",
+      "concepts/macos-gatekeeper.md": "sha256:062e5363353299499dbe52f99de8474b5bb3fa6769d53a7f1593a4368fa3eaea",
+      "concepts/mcp-confused-deputy-token-passthrough.md": "sha256:992b20c980019d38e3112cd14858badc916b50c572ef8eb05ad297dd1a4fc1c3",
+      "concepts/mcp-exposed-by-design.md": "sha256:acc404a4f67bf129d3cda2e2bf6155b36e91c0f46b1b4a80ef051d2cb4d79436",
+      "concepts/mcp-oauth-discovery-ssrf.md": "sha256:340ea90145357bebfdcd00436d42cc3bbbd3b1892b5db4ed97f3c1a262a17255",
+      "concepts/mcp-registry-federation.md": "sha256:f2df6852796a9819c0433d80a13b8ff80ec1ff0ed97843406dc97f62b393a2bd",
+      "facets.yml": "sha256:62afa0cbf3f4eec64d0b866a21315734ee58eaf77627ea84f4c8a97c1aeb511c",
+      "schema:facet-draft.schema.json": "sha256:5d6d1031e7ab526fc47f1cadbf47c4ed614474265875721fdddab2d5672a1e40"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:38f34871ef6c8512a782d675eeff07f848c67754722e06414eb729b5f7cb8fab",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/agent-security-as-os-security.md",
+    "concepts/agentic-ai-architecture-taxonomy.md",
+    "concepts/agentops.md",
+    "concepts/ai-coding-maintainability-gap.md",
+    "concepts/automatic-prefix-caching.md",
+    "concepts/bell-lapadula-confidentiality-model.md",
+    "concepts/dama-dmbok-wheel.md",
+    "concepts/dead-code-deletion-confidence.md",
+    "concepts/debate-gated-decision-pipeline.md",
+    "concepts/decoupled-policy-decision-engines.md",
+    "concepts/domain-anchored-federated-identifiers.md",
+    "concepts/gateway-channel-ownership.md",
+    "concepts/immutable-reference-pinning.md",
+    "concepts/json-web-token.md",
+    "concepts/macos-gatekeeper.md",
+    "concepts/mcp-confused-deputy-token-passthrough.md",
+    "concepts/mcp-exposed-by-design.md",
+    "concepts/mcp-oauth-discovery-ssrf.md",
+    "concepts/mcp-registry-federation.md"
+  ]
+}

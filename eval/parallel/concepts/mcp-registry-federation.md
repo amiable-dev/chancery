@@ -1,17 +1,17 @@
 ---
 title: MCP Registry federation model
 date: 2026-08-24
-tags:
-  - concept
-  - mcp
-  - registries
-  - governance
-  - discovery
+domain: standards
+maturity: emerging
+source_type: announcement
+topics: [mcp]
+tags: [concept, mcp, registries, governance, discovery, domain/standards, maturity/emerging, source-type/announcement, topic/mcp]
 status: draft
 sources:
   - url: https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/
     hash: sha256:f15ef88b943310223523d5d834f6df2fc91cdb85d76fd19341ac20fd77ff11bc
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 

@@ -1,0 +1,33 @@
+{
+  "envelope": {
+    "task_id": "0d285c35456ad27a",
+    "verb": "facets",
+    "task_class": "classification",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/observability-pipeline-control-point.md": "sha256:867f010ba328d7cea87b9adc2f22b0105af09397df11babbabbffe59f73aee01",
+      "concepts/observe-and-confine-sandboxing.md": "sha256:569236f34c3bf9885605b64e6c531cf3961cfcbf7d4b6d26c6b7fba8a32abaaf",
+      "facets.yml": "sha256:62afa0cbf3f4eec64d0b866a21315734ee58eaf77627ea84f4c8a97c1aeb511c",
+      "schema:facet-draft.schema.json": "sha256:5d6d1031e7ab526fc47f1cadbf47c4ed614474265875721fdddab2d5672a1e40"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:960fe48c83e9973f664f329bdb96476ead8860ec87b7d52cb5641d93bcb4c527",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/observability-pipeline-control-point.md",
+    "concepts/observe-and-confine-sandboxing.md"
+  ]
+}

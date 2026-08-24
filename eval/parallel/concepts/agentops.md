@@ -1,17 +1,17 @@
 ---
 title: AgentOps
 date: 2026-08-24
-tags:
-  - concept
-  - agent-ops
-  - observability
-  - multi-agent-systems
-  - reliability
+domain: observability
+maturity: emerging
+source_type: research
+topics: [multi-agent]
+tags: [concept, agent-ops, observability, multi-agent-systems, reliability, domain/observability, maturity/emerging, source-type/research, topic/multi-agent]
 status: draft
 sources:
   - url: https://arxiv.org/abs/2606.01581
     hash: sha256:0e169a29e35759b9ec2a01aba2dda059173a6c163e47e7ecdb48f4d859c8d1b6
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 
@@ -35,6 +35,11 @@ Agent systems inherit the operational hazards of traditional distributed softwar
 ## Relationships
 
 - _No relationships recorded yet._
+- [[agentic-ai-architecture-taxonomy]] — names the Brain and Collaboration concerns whose intra- and inter-agent anomalies this discipline's monitoring stage is built to detect.
+- [[agent-error-compounding]] — names the specific failure mode — state-carried faults whose blast radius grows with each step — that this discipline's anomaly-detection stage exists to catch.
+- [[stateful-agent-reliability]] — requires exactly the interaction-structure tracing this discipline's monitoring stage is built to produce, following from the same errors-compound premise.
+- [[stacked-agent-loops]] — the hill-climbing loop's trace analysis is a concrete implementation of this discipline's root-cause-localization and resolution stages.
+- [[agent-context-drift]] — context drift is a specific instance of the intra-agent anomaly class this discipline's monitoring stage is designed to detect.
 
 ## Applications
 

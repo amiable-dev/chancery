@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "73a2c6ebb5468033",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/gateway-channel-ownership.md": "sha256:3d12ed9c84056fa490e766533fbf03cc576933ae6d7ff68680673791826bffe0",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/gateway-channel-ownership.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:ca34a61139e73fab7157bc766b9be1b028d2bbcd623eebd127ec7c1dc648769f",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/gateway-channel-ownership.md"
+  ]
+}

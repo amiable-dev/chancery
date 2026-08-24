@@ -39,6 +39,7 @@ The mechanism is that confidence and correctness are uncorrelated in a model's o
 - [[agent-harness]] — is where the boundary is actually enforced, because permission scoping and pre-write validation are properties of the tools an agent is given rather than of the model calling them
 - [[principle-of-least-agency]] — least agency is the general principle the read/write permission split narrows to one axis — the boundary drawn around what an agent can access and do, applied to the one split that cannot be undone once crossed.
 - [[classifier-mediated-approval]] — classifier-mediated approval is a concrete mechanism for enforcing the guardrail the read/write permission split calls for — a model judging each proposed action before it executes is where output and write path get separated.
+- [[decoupled-policy-decision-engines]] — this note's decoupled policy engine is a natural mechanism for implementing the write-gating guardrails described here before an irreversible action proceeds.
 
 ## Applications
 

@@ -1,0 +1,36 @@
+{
+  "task_id": "03e86132fcf7b15b",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is search-first discovery for agentic resources?",
+      "answer": "Treating callable AI capabilities (tools, MCP servers, skills, agents) as things a client discovers dynamically via external search at the moment needed, rather than as a fixed list pre-loaded into the model's context."
+    },
+    {
+      "heading": "Scaling failure it solves",
+      "question": "Why does listing every tool description in the context window break down as tool count grows?",
+      "answer": "The token cost becomes prohibitive, and a model's ability to pick correctly among many similar descriptions degrades well before the context window itself fills up."
+    },
+    {
+      "heading": "Where selection moves",
+      "question": "Where does capability selection happen under search-first discovery, instead of inside the model?",
+      "answer": "In a dedicated external search or index service that indexes capability descriptions ahead of time and returns a short, ranked list matching a query."
+    },
+    {
+      "heading": "Richer signals",
+      "question": "What richer selection signals can an external index carry that a short in-context tool description cannot?",
+      "answer": "Representative example queries, publisher identity, and usage patterns."
+    },
+    {
+      "heading": "Historical analogy",
+      "question": "What earlier shift in web technology is search-first agent discovery analogous to?",
+      "answer": "The shift from hand-curated web directories, which don't scale past a few hundred entries, to search engines, where relevance ranking rather than exhaustive enumeration selects the right entry."
+    },
+    {
+      "heading": "Companion naming scheme",
+      "question": "What does search-first discovery need alongside a search/index service to keep results portable across federated indexes?",
+      "answer": "A stable naming scheme, domain-anchored federated identifiers, so discovered capabilities can be named consistently across independent registries."
+    }
+  ]
+}

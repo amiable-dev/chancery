@@ -1,19 +1,17 @@
 ---
 title: Request-level sandbox isolation
 date: 2026-08-24
-tags:
-  - concept
-  - developer-experience
-  - kubernetes
-  - testing
-  - domain/infrastructure
-  - maturity/emerging
-  - source-type/vendor-doc
+domain: infrastructure
+maturity: emerging
+source_type: vendor-doc
+topics: [devops]
+tags: [concept, developer-experience, kubernetes, testing, domain/infrastructure, maturity/emerging, source-type/vendor-doc, topic/devops]
 status: draft
 sources:
   - url: https://www.signadot.com/docs/concepts/sandbox
     hash: sha256:790b085cf3ae53f09aaa27a75c662e5784ec27c652994989fb4dd04d6a3af794
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 

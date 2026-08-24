@@ -1,16 +1,17 @@
 ---
 title: Deletion confidence for dead code
 date: 2026-08-24
-tags:
-  - concept
-  - dead-code-detection
-  - static-analysis
-  - testing
+domain: software-engineering
+maturity: established
+source_type: practitioner
+topics: [static-analysis]
+tags: [concept, dead-code-detection, static-analysis, testing, domain/software-engineering, maturity/established, source-type/practitioner, topic/static-analysis]
 status: draft
 sources:
   - url: https://kevinjalbert.com/find-and-bury-dead-code/
     hash: sha256:a5f58ec2554214623cd6f2c897b94bc2bb57cfd910738f0ec813bef65c9d8c11
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 

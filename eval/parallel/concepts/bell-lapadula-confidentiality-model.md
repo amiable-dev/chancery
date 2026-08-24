@@ -5,20 +5,21 @@ aliases:
   - BLP model
   - clearance-classification dominance
 date: 2026-08-24
-tags:
-  - concept
-  - security
-  - access-control
-  - confidentiality
+domain: security
+maturity: established
+source_type: research
+tags: [concept, security, access-control, confidentiality, domain/security, maturity/established, source-type/research]
 status: draft
 sources:
   - url: https://archive.org/stream/DTIC_AD0770768/DTIC_AD0770768_djvu.txt
     hash: sha256:9f2ad13986eec855ae17ceb709cdeee809dde1908b213b57efeb7b8db16e32f0
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
   - url: https://archive.org/details/DTIC_AD0770768
     hash: sha256:8c6031ebd7b71a55925e42d1d41bf4e8b6d0672e083dff41090e9217c226157d
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 
@@ -42,6 +43,7 @@ The report frames the problem in general-systems-theory terms and works out this
 ## Relationships
 
 - [[agent-security-as-os-security]] — Bell-LaPadula's clearance/classification dominance test is the original, formally specified instance of the mediated-access mechanism that agent-security-as-os-security argues agent security should borrow from decades of OS access-control design.
+- [[instruction-data-boundary-collapse]] — names the exact absence, inside an LLM's context, of the privilege-level dominance test this model formalizes between subjects and objects.
 
 ## Applications
 

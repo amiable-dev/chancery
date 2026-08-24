@@ -1,17 +1,16 @@
 ---
 title: Six-part agentic AI architecture taxonomy
 date: 2026-08-24
-tags:
-  - concept
-  - agents
-  - architecture
-  - taxonomy
-  - llm
+domain: ai-agents
+maturity: emerging
+source_type: research
+tags: [concept, agents, architecture, taxonomy, llm, domain/ai-agents, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://arxiv.org/html/2601.12560v1
     hash: sha256:123890ffbf9fe61b2c8fa71280ab0aee1aa68fa42cbdb55dc6eeb7a226624410
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 
@@ -37,6 +36,8 @@ The value of the taxonomy is comparative: two systems built with completely diff
 - [[react-pattern]] — is one concrete, widely-used instantiation of this taxonomy's Brain, Planning and Action axes as a single interleaved perceive-reason-act loop
 - [[workflows-versus-agents]] — cuts across this taxonomy's Planning axis specifically — a workflow fixes the plan in code ahead of time, while an agent exercises Planning at runtime inside the Brain concern
 - [[multi-agent-orchestration-topologies]] — is a concrete design space for this taxonomy's Collaboration axis once more than one agent is coordinating on the same goal
+- [[agentops]] — operationalizes monitoring for this taxonomy's concerns directly, splitting anomalies into intra-agent (Brain) and inter-agent (Collaboration) classes.
+- [[loop-engineering]] — formalizes as a practitioner discipline the goal-directed act-observe-decide cycle this taxonomy's Planning and Action concerns compose into at runtime.
 
 ## Applications
 

@@ -1,0 +1,36 @@
+{
+  "task_id": "08ff9a9260cce5de",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Core framing",
+      "question": "What structural framing does 'agent security as OS security' apply to securing an autonomous LLM agent's execution?",
+      "answer": "The same framing an OS uses for any untrusted process: isolate resources, separate privileges, and mediate every communication path — not treat safety as a property of the model's judgment alone."
+    },
+    {
+      "heading": "Three structural problems",
+      "question": "What three structural problems does this framing say an LLM agent and an OS process both face?",
+      "answer": "Resource isolation (what can it read/write), privilege separation (what is it allowed to do), and mediated communication (how does it talk to anything else)."
+    },
+    {
+      "heading": "OS mechanisms mapped",
+      "question": "What established OS mechanisms map onto each of the three structural problems?",
+      "answer": "Process/namespace isolation for resource isolation, least-privilege restricted accounts for privilege separation, gated IPC and network egress control for mediated communication."
+    },
+    {
+      "heading": "Empirical validation",
+      "question": "What did the empirical case study against real deployed agents find about the attacker capability needed to defeat existing protections?",
+      "answer": "Only modest attacker capability was needed to defeat several agents' existing protections — showing default configurations are not enough."
+    },
+    {
+      "heading": "Limits of the fix",
+      "question": "Does applying established OS security techniques to agents close every security gap?",
+      "answer": "No — some agentic capabilities remain insecure by design even after applying every established OS technique; it narrows the attack surface rather than closing it."
+    },
+    {
+      "heading": "Deployment audit questions",
+      "question": "What three audit questions does this framing suggest for evaluating an agent deployment?",
+      "answer": "Does it run under its own restricted, non-privileged identity; is its resource access scoped to only what the task needs; and is every outbound effect forced through a mediation point that can inspect or block it?"
+    }
+  ]
+}

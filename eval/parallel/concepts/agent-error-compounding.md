@@ -38,6 +38,7 @@ The mechanism is the reasoning loop itself, which is also the source of an agent
 - [[agent-loop-anatomy]] — supplies the structural answers to this problem, particularly no-progress detection and error handling that separates a recoverable failure from a hard blocker
 - [[risk-tiered-agent-change-control]] — applies the same reasoning at the pipeline level, sizing the checks a change must clear to the consequence class of what it touches rather than to how large it looks
 - [[agent-context-drift]] — agent error compounding names in general terms the failure context drift is one instance of — a stale memory entry steering a later decision is retained-but-expired context doing precisely that compounding damage.
+- [[agentops]] — the compounding failure this note describes is the specific target of this discipline's anomaly-detection and root-cause-localization stages.
 
 ## Applications
 

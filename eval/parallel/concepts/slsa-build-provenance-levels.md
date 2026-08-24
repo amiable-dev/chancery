@@ -5,17 +5,17 @@ aliases:
   - Supply chain Levels for Software Artifacts
   - SLSA build track
 date: 2026-08-24
-tags:
-  - concept
-  - security
-  - supply-chain
-  - ci-cd
-  - standards
+domain: standards
+maturity: established
+source_type: vendor-doc
+topics: [supply-chain]
+tags: [concept, security, supply-chain, ci-cd, standards, domain/standards, maturity/established, source-type/vendor-doc, topic/supply-chain]
 status: draft
 sources:
   - url: https://slsa.dev/spec/v1.0/levels
     hash: sha256:abebc0f3b99150d819c84b397120e5220b01202f1983ea05d0751a0eb53e7c39
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 

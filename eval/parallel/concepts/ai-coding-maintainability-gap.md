@@ -1,21 +1,22 @@
 ---
 title: The AI coding maintainability gap
 date: 2026-08-24
-tags:
-  - concept
-  - ai-coding
-  - code-quality
-  - technical-debt
-  - software-engineering
+domain: software-engineering
+maturity: emerging
+source_type: research
+topics: [agentic-coding]
+tags: [concept, ai-coding, code-quality, technical-debt, software-engineering, domain/software-engineering, maturity/emerging, source-type/research, topic/agentic-coding]
 status: draft
 sources:
   - url: https://www.gitclear.com/the_ai_code_quality_maintainability_gap
     hash: sha256:e758eb66ee66697b71210de61185008ccfe2084b4f4219eb46859317089b1d32
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
   - url: https://www.gitclear.com/ai_assistant_code_quality_2025_research
     hash: sha256:e09f93b846114d6ec1a362d3f995cd862f39206b1758fd870491b47b91e90cbb
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 
@@ -41,6 +42,7 @@ GitClear's multi-year analysis of open-source commit history — tracking seven 
 - [[short-term-availability-tradeoff]] — names the general trade-off pattern this concept instantiates specifically for AI-assisted coding — atomic-task velocity traded for the invisible maintenance work that keeps a codebase cheap to own
 - [[agent-outcome-vs-proxy-metrics]] — the report's own closing recommendation to measure structure rather than volume is this distinction applied to code health — commit volume and velocity are the proxy, structural signals like duplication and connectivity are the outcome that actually predicts long-term cost
 - [[shared-mental-model-erosion]] — falling cross-file connectivity and forgotten legacy code are exactly the conditions under which a team's shared mental model of the system erodes fastest
+- [[first-pass-acceptance-rate]] — is proposed as a corrective metric precisely because throughput counts reward the same ship-fast-over-maintain behaviour this note identifies as the cause.
 
 ## Applications
 

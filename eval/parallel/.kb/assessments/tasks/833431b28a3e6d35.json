@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "833431b28a3e6d35",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/dead-code-deletion-confidence.md": "sha256:3057a9f512d1e924b75efeaadbd19bcac9a7ce5f688b05f336745896fcd4c7e0",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/dead-code-deletion-confidence.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:cc01f6d544af224625663e911d8d45a05eec0be7eedaedaa14849514ed18f923",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/dead-code-deletion-confidence.md"
+  ]
+}

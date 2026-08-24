@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "52677a8a87d3c98c",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/agentic-ai-architecture-taxonomy.md": "sha256:ef4c4d82eb373140094f36870868d902351b4078cc4701b7de229c402e651dd2",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/agentic-ai-architecture-taxonomy.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:19180376ce1a037be128c6e5d796617ac5e29649dc8c75c7ae18852a6f00a8d6",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/agentic-ai-architecture-taxonomy.md"
+  ]
+}

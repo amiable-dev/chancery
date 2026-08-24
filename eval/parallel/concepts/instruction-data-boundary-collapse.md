@@ -40,6 +40,7 @@ Outside the model the boundary is intact, which is exactly what makes the collap
 - [[build-time-generation-governance]] — is the mitigation this collapse motivates, since a boundary that must survive hostile context has to be enforced by a deterministic check outside the model rather than asserted by one inside it
 - [[principle-of-least-agency]] — instruction-data boundary collapse supplies the manipulation mechanism least agency's access boundary is built to contain — because attacker-supplied text can become a de facto instruction with no privilege separation, the enforceable limit has to sit at what an agent can access, not at what it was told to do.
 - [[retrieval-layer-access-control]] — retrieval-layer access control supplies the retrieval-side mitigation for exactly the problem instruction-data boundary collapse describes — since no privilege level survives once retrieved text reaches the context window, the only defensible control point is upstream, filtering unauthorized chunks out first.
+- [[bell-lapadula-confidentiality-model]] — this model's clearance/classification dominance test is precisely the privilege boundary an LLM's context is shown here to lack entirely.
 
 ## Applications
 

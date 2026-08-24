@@ -1,0 +1,36 @@
+{
+  "task_id": "b542797038137c9a",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Core design",
+      "question": "What makes threshold-signed software update security different from a single signing key model?",
+      "answer": "No single key is powerful enough to compromise a client: an offline root key authorizes trust rather than signing updates, and day-to-day roles operate under a threshold or quorum of keys instead of one."
+    },
+    {
+      "heading": "Root key's role",
+      "question": "What does the offline root key do in this model, and what does it not do?",
+      "answer": "It decides which other keys are trusted; it does not sign day-to-day update metadata itself."
+    },
+    {
+      "heading": "Origin of the framework",
+      "question": "What 2009 research finding motivated the design of TUF (The Update Framework)?",
+      "answer": "Cappos and Samuel found the same key-management flaw across nearly every popular Linux package manager: a single compromised signing key could push arbitrary trusted software to every client, with no recovery short of manual out-of-band re-trust."
+    },
+    {
+      "heading": "What makes it different from plain signing",
+      "question": "What design element distinguishes TUF's model from plain update signing?",
+      "answer": "TUF explicitly designs for the day a key is lost or stolen — every role has a documented revocation-and-re-signing procedure — rather than treating key compromise as an unrecoverable disaster."
+    },
+    {
+      "heading": "Single-vendor updaters as simplified instance",
+      "question": "How does a typical application auto-updater, with a pinned public key and a signature check that cannot be disabled, relate to TUF's model?",
+      "answer": "It's a simplified, single-vendor instance of the same model but without threshold/quorum protection — trustworthy updates for every installed copy rest on that one key pair never being lost or leaked, the single point of failure TUF's design removes."
+    },
+    {
+      "heading": "Real-world adoption",
+      "question": "Beyond its original Python-packaging use case, where has TUF's role-and-threshold model been adopted?",
+      "answer": "PyPI's package-signing effort and Uptane's automotive over-the-air update security."
+    }
+  ]
+}

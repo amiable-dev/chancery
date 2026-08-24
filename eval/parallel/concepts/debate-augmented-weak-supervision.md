@@ -36,6 +36,7 @@ The pipeline (arXiv 2501.13124, a research paper on open Qwen models) has three 
 
 - [[weak-to-strong-generalization]] — extends its standard pipeline at the supervisor end — instead of taking the weak teacher as fixed, debate transcripts from the strong model improve the weak labels before the student trains
 - [[automated-w2s-sandbox]] — supplies exactly the kind of label-improvement recipe the sandbox exists to implement and score against its baselines and held-out evaluation API
+- [[debate-gated-decision-pipeline]] — this technique's debate-for-trustworthy-signal mechanism is the same one this pipeline applies to a live decision instead of a training label.
 
 ## Applications
 

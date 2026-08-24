@@ -1,0 +1,31 @@
+{
+  "envelope": {
+    "task_id": "dc8e72d84e02801e",
+    "verb": "facets",
+    "task_class": "classification",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/tiered-execution-gating-for-ai-agents.md": "sha256:a01426a992ee776e2293ecf5dbaba6d9d5cf994fb7aafa5d26b47707228bda66",
+      "facets.yml": "sha256:62afa0cbf3f4eec64d0b866a21315734ee58eaf77627ea84f4c8a97c1aeb511c",
+      "schema:facet-draft.schema.json": "sha256:5d6d1031e7ab526fc47f1cadbf47c4ed614474265875721fdddab2d5672a1e40"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:c03adc3c215bdfabd07527dfa8a422ed0ed4ec21650f0f1032069a27009644d8",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/tiered-execution-gating-for-ai-agents.md"
+  ]
+}

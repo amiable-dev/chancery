@@ -1,0 +1,14 @@
+{
+  "task_id": "0e5719772d36f796",
+  "supplier": { "class": "model-single", "id": "claude-sonnet-5" },
+  "assignments": [
+    {
+      "slug": "unsandboxed-extension-marketplace-defenses",
+      "domain": "security",
+      "maturity": "established",
+      "source_type": "vendor-doc",
+      "topics": ["supply-chain"],
+      "rationale": "VS Code's own docs describing a settled defense-in-depth practice for distribution channels that cannot sandbox what they distribute."
+    }
+  ]
+}

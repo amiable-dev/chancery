@@ -5,17 +5,16 @@ aliases:
   - Open Policy Agent
   - OPA
 date: 2026-08-24
-tags:
-  - concept
-  - security
-  - agents
-  - authorization
-  - policy-as-code
+domain: security
+maturity: established
+source_type: vendor-doc
+tags: [concept, security, agents, authorization, policy-as-code, domain/security, maturity/established, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://www.openpolicyagent.org/docs
     hash: sha256:86f243f04e33e8d7a372cb86dda0bde94d85c89e00b64b4f66dd2019f9685301
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 
@@ -40,6 +39,8 @@ Open Policy Agent (OPA), a CNCF-graduated project used for admission control in 
 
 - [[layered-agent-guardrails]] — gives the permissions layer that guardrail ordering treats as a static allow/deny list a strictly more expressive alternative — the same position in the pipeline, evaluated by a program against supplied state instead of a fixed list
 - [[risk-tiered-agent-change-control]] — is a general mechanism for exactly the kind of consequence- and context-sensitive gating that tiered change control calls for, letting the gate condition on computed risk rather than only on a hand-authored tier table
+- [[agent-write-permission-separation]] — the write-gating guardrails this note describes are a natural enforcement point where a decoupled policy engine gets queried before an irreversible action proceeds.
+- [[tiered-execution-gating-for-ai-agents]] — the per-command scope validation this note describes is a concrete instance of the decoupled-policy-engine pattern, checking each command against a declared authorized scope.
 
 ## Applications
 

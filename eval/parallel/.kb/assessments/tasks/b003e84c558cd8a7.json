@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "b003e84c558cd8a7",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/bell-lapadula-confidentiality-model.md": "sha256:b8c75b61ec193af78988fca2466865651a8743896af6cc5434e5839009eae88b",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/bell-lapadula-confidentiality-model.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:6753744df921079e28d164ee651826c99b7b0553b8c608661e010a6ff46d5755",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/bell-lapadula-confidentiality-model.md"
+  ]
+}

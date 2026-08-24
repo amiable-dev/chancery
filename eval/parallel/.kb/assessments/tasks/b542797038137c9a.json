@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "b542797038137c9a",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/threshold-signed-software-updates.md": "sha256:d1988c83bb6d20a00846b832f1897ee7a76238f37f4b9ee3abe466661152fedf",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/threshold-signed-software-updates.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:0de73e4a7934f2d705f48f10e3c4691fb292fb5ea7818d9803e0e64d17838472",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/threshold-signed-software-updates.md"
+  ]
+}

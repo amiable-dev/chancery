@@ -1,0 +1,31 @@
+{
+  "task_id": "b003e84c558cd8a7",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Secure state definition",
+      "question": "What does the original 1973 Bell-LaPadula report define a 'secure state' as?",
+      "answer": "A state where every current access relationship satisfies one dominance test: the subject's clearance dominates the object's classification and covers its need-to-know category."
+    },
+    {
+      "heading": "Compromise and security",
+      "question": "What is a 'compromise' in Bell-LaPadula, and when is a system defined as 'secure'?",
+      "answer": "A compromise is any state where some access pair fails the dominance test; a system is secure if and only if no reachable state is ever a compromise."
+    },
+    {
+      "heading": "Two access axes",
+      "question": "What two axes is access graded on in the Bell-LaPadula model?",
+      "answer": "A hierarchical clearance/classification level, plus non-hierarchical need-to-know categories."
+    },
+    {
+      "heading": "Original scope vs later refinement",
+      "question": "Did the original 1973 Bell-LaPadula report split its dominance test by access mode (read vs. write)?",
+      "answer": "No — it stated one mode-independent test applied uniformly across read, write, copy, append, owner and control. The read/write-asymmetric refinement ('no write-down') came later in the same MITRE project."
+    },
+    {
+      "heading": "Why the refinement was needed",
+      "question": "What gap in the original mode-independent test did the later 'no write-down' refinement close?",
+      "answer": "Nothing in a single mode-independent test stops a subject cleared to access protected data from copying or writing it into a less-protected object — that read and that write could each individually satisfy the same undifferentiated test."
+    }
+  ]
+}

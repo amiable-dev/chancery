@@ -38,6 +38,7 @@ Each requirement traces back to a property ordinary services do not have. Errors
 - [[agent-harness]] — is where every one of these obligations lands — checkpointing, retry logic, tracing and deployment strategy are scaffolding concerns, and no model improvement removes them
 - [[multi-agent-token-economics]] — is what makes these obligations urgent rather than tidy, because the more a single trajectory costs the less acceptable it becomes to throw one away and start again
 - [[state-authoritative-agent-ui]] — the state-authoritative UI pattern extends stateful-agent reliability's backend discipline up to the interface layer — a deployment that must not disturb an agent already mid-run has a matching obligation on the UI watching it: never render a transition the backend has not actually committed.
+- [[agentops]] — this discipline's monitoring stage is what supplies the interaction-structure tracing this note requires for production reliability.
 
 ## Applications
 

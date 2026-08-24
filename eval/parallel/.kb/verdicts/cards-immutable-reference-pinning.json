@@ -1,0 +1,31 @@
+{
+  "task_id": "44e6ee0a18d5bce9",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is immutable reference pinning?",
+      "answer": "Making a dependency, action, or plugin source resolve to an exact, content-addressed identifier (a full commit SHA) instead of a mutable branch or tag name, so the content consumed cannot change without the pin itself changing."
+    },
+    {
+      "heading": "Why SHA beats a tag",
+      "question": "Why can't a full commit SHA be silently repointed to different content, unlike a tag or branch?",
+      "answer": "Forging content behind an existing SHA would require generating a SHA-1 collision for a valid Git object payload, not merely gaining push access to the repository — which is all it takes to move a tag or branch."
+    },
+    {
+      "heading": "Stakes in CI",
+      "question": "Why does immutable pinning matter disproportionately in CI/CD?",
+      "answer": "A compromised action inherits access to every secret configured on the repository and can write back through the workflow's own token, so a single repointed dependency is not a contained failure."
+    },
+    {
+      "heading": "Provenance caveat",
+      "question": "What is the sharp caveat to immutable reference pinning?",
+      "answer": "A pin is only as good as its provenance — a SHA copied from a fork or a compromised mirror pins just as confidently to the wrong content, so it must be verified against the genuine upstream repository before it's trusted."
+    },
+    {
+      "heading": "Cross-ecosystem pattern",
+      "question": "Name two ecosystems besides CI actions that independently arrived at the same content-hash pinning discipline.",
+      "answer": "Container images pinned by @sha256 digest instead of a floating :latest tag, and Go modules locked to a content hash via go.sum (Nix store paths are also content-addressed by construction)."
+    }
+  ]
+}

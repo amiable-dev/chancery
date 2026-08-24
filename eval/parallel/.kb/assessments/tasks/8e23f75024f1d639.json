@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "8e23f75024f1d639",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/debate-gated-decision-pipeline.md": "sha256:e96edade022a60fdadfc2fe347028e847c6c2cbae2accae8e64cc474e896e159",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/debate-gated-decision-pipeline.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:3eaa3cc5eddb6ee0879e336263bf2464d795f949fa99cb380fcab5ce09eb13e4",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/debate-gated-decision-pipeline.md"
+  ]
+}

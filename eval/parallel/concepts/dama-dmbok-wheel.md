@@ -1,20 +1,21 @@
 ---
 title: DAMA-DMBOK Wheel
 date: 2026-08-24
-tags:
-  - concept
-  - data-management
-  - governance
-  - taxonomy
+domain: data
+maturity: established
+source_type: vendor-doc
+tags: [concept, data-management, governance, taxonomy, domain/data, maturity/established, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://dama-phoenix.org/education/the-dama-dmbok-wheel/
     hash: sha256:adfd234db3870c4314fec9a6b3417f0cd0702470c6f491f76f65151313f5444d
     retrieved: 2026-08-24
+    class: external-secondary
     reachability: ok
   - url: https://dama.org/learning-resources/dama-data-management-body-of-knowledge-dmbok/
     hash: sha256:b367b6a851307c80082ab9666b3b895328bf7604320016c6281f5fe58857f657
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 

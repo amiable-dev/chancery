@@ -1,0 +1,31 @@
+{
+  "task_id": "fed70fc0eecec3dd",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What does macOS Gatekeeper check before letting downloaded software run?",
+      "answer": "That the code carries a signature from an identified Apple Developer ID, has been notarized by Apple's automated malware scan, and has not been altered since signing."
+    },
+    {
+      "heading": "Trigger mechanism",
+      "question": "What triggers Gatekeeper's check on a downloaded file?",
+      "answer": "The quarantine attribute macOS attaches to any file that arrived over the network."
+    },
+    {
+      "heading": "Default policy",
+      "question": "What happens by default when software fails Gatekeeper's signature or notarization check?",
+      "answer": "It is blocked or flagged with a generic, alarming warning on first launch that most users will not click through."
+    },
+    {
+      "heading": "Notarization vs App Store review",
+      "question": "Is Apple notarization the same as full App Store review?",
+      "answer": "No — notarization is Apple's automated scan for known malicious content, not full App Store review."
+    },
+    {
+      "heading": "Randomized launch locations",
+      "question": "Why does Gatekeeper open apps from randomized read-only locations?",
+      "answer": "So a malicious plug-in bundled with a legitimate app cannot load unnoticed."
+    }
+  ]
+}

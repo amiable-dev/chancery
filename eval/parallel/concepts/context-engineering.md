@@ -40,6 +40,7 @@ The discipline follows from one constraint rather than being a collection of tip
 - [[subagent-delegation]] — is one of its long-horizon levers, used here specifically as context isolation: the subagent's exploration never enters the coordinator's window, only its distilled result does
 - [[memory-as-harness-capability]] — shares its premise from the architecture side, since what survives compaction and what gets written to durable notes are exactly the curation decisions this practice makes explicit
 - [[agent-harness]] — is where these decisions are implemented — the harness owns the prompt assembly, tool set, compaction step and retrieval path that context engineering tunes
+- [[automatic-prefix-caching]] — ordering unchanging system instructions and tool schemas before per-request content, as this practice prescribes, is exactly what maximizes prefix-cache hit rate here.
 
 ## Applications
 

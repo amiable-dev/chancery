@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "9f1c3e27120dc9d2",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/observe-and-confine-sandboxing.md": "sha256:569236f34c3bf9885605b64e6c531cf3961cfcbf7d4b6d26c6b7fba8a32abaaf",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/observe-and-confine-sandboxing.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:ac7682d4320dece663cea6abcd66c9fd5a1b147bb01bafa77029ce3201d2060f",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/observe-and-confine-sandboxing.md"
+  ]
+}

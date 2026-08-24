@@ -1,0 +1,31 @@
+{
+  "task_id": "833431b28a3e6d35",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Core practice",
+      "question": "What does 'deletion confidence for dead code' treat a static analyzer's dead-code finding as?",
+      "answer": "A candidate, not a verdict — to be confirmed against dynamic evidence before deletion."
+    },
+    {
+      "heading": "Static tool limitation",
+      "question": "Why can static dead-code tools produce false positives?",
+      "answer": "They examine source text without running it, so they can't see code reachable via metaprogramming, dynamic dispatch, or undeclared entry points."
+    },
+    {
+      "heading": "Dynamic tool limitation",
+      "question": "What limits the trustworthiness of a dynamic (runtime-observation) 'unused' finding?",
+      "answer": "The length of the observation window — a path exercised once a quarter looks identically dead to a truly dead one until the tool has watched long enough to catch it."
+    },
+    {
+      "heading": "Combined confidence rule",
+      "question": "When does this practice say it's safe to delete a flagged piece of code?",
+      "answer": "Only once static analysis flags it and a sufficiently long dynamic observation window has also failed to exercise it."
+    },
+    {
+      "heading": "Sizing the observation window",
+      "question": "How should the dynamic observation window's length be chosen?",
+      "answer": "As a judgment call tied to the code's own usage cadence — e.g. quarterly billing logic needs a longer window than a request handler hit every second — not a fixed default."
+    }
+  ]
+}

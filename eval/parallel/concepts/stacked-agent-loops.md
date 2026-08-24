@@ -38,6 +38,7 @@ The structurally interesting part is the direction of the outermost arrow. In th
 - [[three-loops-of-agentic-development]] — cuts the same stacking along a different axis, dividing loops by who closes them and at what cadence rather than by what each one automates
 - [[deterministic-agent-verification]] — is what the second layer should be built on wherever a mechanical check exists, since a model-graded rubric is the weaker fallback for what cannot be checked mechanically
 - [[loop-engineering]] — is the single-loop practice this architecture stacks, and the stack is what that practice looks like once a system has been running long enough to accumulate traces
+- [[agentops]] — this discipline's root-cause-localization and resolution stages are what the hill-climbing loop described here concretely implements.
 
 ## Applications
 

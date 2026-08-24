@@ -1,16 +1,16 @@
 ---
 title: Agent security as OS security
 date: 2026-08-24
-tags:
-  - concept
-  - security
-  - ai-agents
-  - architecture
+domain: security
+maturity: emerging
+source_type: research
+tags: [concept, security, ai-agents, architecture, domain/security, maturity/emerging, source-type/research]
 status: draft
 sources:
   - url: https://arxiv.org/abs/2605.14932
     hash: sha256:e5d0fadfdd375cf8d07e44bb7ff74c4918735f157660f2d0938403fa2cb34a7b
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 
@@ -34,6 +34,7 @@ The argument follows from noticing that a tool-using LLM agent and an OS process
 ## Relationships
 
 - _No relationships recorded yet._
+- [[bell-lapadula-confidentiality-model]] — the subject-clearance and mediated-access formalism established here is the formal ancestor this note's isolate-and-mediate framing draws its structure from.
 
 ## Applications
 

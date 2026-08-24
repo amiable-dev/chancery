@@ -40,6 +40,7 @@ The failure it addresses is specific to model-driven analysis: plausible-soundin
 - [[agent-budget-caps]] — governs whether this pass can do its job at all, because re-check iterations are one of the capped resources and a starved triage phase degrades into a rubber stamp
 - [[risk-tiered-agent-change-control]] — generalises the same separation to change pipelines — creating a change and checking it are assigned to different identities for the reason triage is given its own pass, and both leave an evidence trail someone else can reconstruct
 - [[independent-fix-verification]] — independent fix verification applies the identical separation-of-roles principle evidence-recheck triage states for finding triage — generator and checker must be different processes — to the fix side of the same pipeline: whoever proposed the remediation cannot be who confirms it worked.
+- [[debate-gated-decision-pipeline]] — this discipline's separate-pass rule is what the risk-review agent described here specifically implements, checking the debate's output against exposure limits before it is acted on.
 
 ## Applications
 

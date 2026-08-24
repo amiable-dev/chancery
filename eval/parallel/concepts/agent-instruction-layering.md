@@ -41,6 +41,7 @@ An agent's system prompt comes from whoever built the harness and covers tool us
 - [[skill-enforced-development-workflow]] — pushes the on-demand tier to its limit by chaining procedure files into a mandatory process, which is only affordable because those files arrive at phase boundaries instead of sitting resident and diluting attention throughout the session
 - [[agent-harness]] — supplies the tier underneath this one — the harness author's system prompt covers tool use and harness conventions and is project-blind, which is precisely the gap these layers fill
 - [[current-state-grounding]] — instruction layering names the alternative current-state grounding argues against for closing the same knowledge gap — layering more standing instructions into context, rather than querying a live source at the moment the gap opens.
+- [[automatic-prefix-caching]] — this technique rewards keeping the always-on layer described here byte-identical across turns, since that stability is what makes it cacheable.
 
 ## Applications
 

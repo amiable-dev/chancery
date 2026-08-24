@@ -1,16 +1,17 @@
 ---
 title: Reachability-based dead code detection
 date: 2026-08-24
-tags:
-  - concept
-  - static-analysis
-  - dead-code-detection
-  - dependency-graph
+domain: software-engineering
+maturity: established
+source_type: vendor-doc
+topics: [static-analysis]
+tags: [concept, static-analysis, dead-code-detection, dependency-graph, domain/software-engineering, maturity/established, source-type/vendor-doc, topic/static-analysis]
 status: draft
 sources:
   - url: https://knip.dev/explanations/how-knip-works
     hash: sha256:11e97a5e0e1f164e706bc0a1e43c79670cb74f2793183a93f039e47427784327
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 
@@ -36,6 +37,7 @@ The build phase is separate from the query phase: a graph is constructed once by
 - [[code-knowledge-graph]] — both represent a codebase as a graph of code relationships, but code-knowledge-graph answers arbitrary structural retrieval queries while this technique answers only one question — is this node reachable from a declared root — to prove code safe to delete.
 - [[graph-vs-vector-code-retrieval]] — shares the premise that graph structure over code beats flat text matching, but applies it to proving non-reachability for deletion rather than to retrieving relevant context for an LLM.
 - [[attacker-first-forward-analysis]] — both trace forward from a declared set of roots through a code graph rather than reasoning backward from a target, but attacker-first analysis follows attacker-controlled entries to find reachable danger while this technique follows program entries to find the unreachable, and therefore deletable, remainder.
+- [[dead-code-deletion-confidence]] — this technique's static finding is exactly the candidate, not verdict, that the confirmation discipline described here requires dynamic evidence to corroborate.
 
 ## Applications
 

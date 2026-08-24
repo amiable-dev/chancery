@@ -36,6 +36,7 @@ The failure of throughput metrics is mechanical, not philosophical. Generated vo
 
 - [[contract-driven-agent-development]] — supplies the definition of accepted this metric needs — when every task carries written acceptance criteria, first-pass acceptance becomes a check against a contract rather than against a reviewer's mood
 - [[skill-enforced-development-workflow]] — is the kind of process investment this metric evaluates — spec-first planning and per-task review are supposed to raise first-pass acceptance, and if the measured rate does not move, the process is not paying for itself
+- [[ai-coding-maintainability-gap]] — this note identifies the structural pattern — throughput counts rewarding shipped-but-unmaintained code — that the metric proposed here exists to correct for.
 
 ## Applications
 

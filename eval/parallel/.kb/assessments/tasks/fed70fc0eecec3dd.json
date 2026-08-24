@@ -1,0 +1,30 @@
+{
+  "envelope": {
+    "task_id": "fed70fc0eecec3dd",
+    "verb": "cards",
+    "task_class": "drafting",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/macos-gatekeeper.md": "sha256:062e5363353299499dbe52f99de8474b5bb3fa6769d53a7f1593a4368fa3eaea",
+      "deck:none": "sha256:140bedbf9c3f6d56a9846d2ba7088798683f4da0c248231336e6a05679e4fdfe",
+      "schema:card-draft.schema.json": "sha256:bced18eb3f34b13cf8da55e5880c1fb462b05c0ae0853e56c9e0f1db4b74b62a"
+    },
+    "allowed_writes": [
+      "flashcards/macos-gatekeeper.md"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:b94c38854815fed1b94bd0b7d53b4be58fc8a661af678c4c86e8fc48d62188e8",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "flashcards/macos-gatekeeper.md"
+  ]
+}

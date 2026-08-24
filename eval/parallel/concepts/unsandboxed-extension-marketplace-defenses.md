@@ -4,16 +4,17 @@ aliases:
   - Extension runtime security
   - Marketplace defense-in-depth
 date: 2026-08-24
-tags:
-  - concept
-  - security
-  - supply-chain
-  - extensibility
+domain: security
+maturity: established
+source_type: vendor-doc
+topics: [supply-chain]
+tags: [concept, security, supply-chain, extensibility, domain/security, maturity/established, source-type/vendor-doc, topic/supply-chain]
 status: draft
 sources:
   - url: https://code.visualstudio.com/docs/configure/extensions/extension-runtime-security
     hash: sha256:e79271c9f795bbddacc027ef672dfede0e75029d1e0ab049280e0986d5028108
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 

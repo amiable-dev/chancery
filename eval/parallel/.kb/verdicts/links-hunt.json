@@ -1,0 +1,153 @@
+{
+  "task_id": "2f8394df166ad2e9",
+  "supplier": { "class": "model-single", "id": "claude-sonnet-5" },
+  "links": [
+    {
+      "from": "agentic-ai-architecture-taxonomy",
+      "target": "react-pattern",
+      "clause": "ReAct's interleaved thought-action-observation loop is a concrete instantiation of this taxonomy's Brain, Planning and Action concerns running as a single cycle.",
+      "reciprocal": true,
+      "reciprocal_clause": "situates this pattern's thought-action-observation loop within the Brain, Planning and Action concerns of a six-part agent architecture taxonomy."
+    },
+    {
+      "from": "agentic-ai-architecture-taxonomy",
+      "target": "multi-agent-orchestration-topologies",
+      "clause": "enumerates the specific coordination shapes — pipeline, fan-out, supervisor, hierarchy, handoff — that instantiate this taxonomy's Collaboration concern.",
+      "reciprocal": true,
+      "reciprocal_clause": "the Collaboration concern this taxonomy names is exactly what these topologies enumerate as concrete coordination shapes."
+    },
+    {
+      "from": "agentic-ai-architecture-taxonomy",
+      "target": "agentops",
+      "clause": "operationalizes monitoring for this taxonomy's concerns directly, splitting anomalies into intra-agent (Brain) and inter-agent (Collaboration) classes.",
+      "reciprocal": true,
+      "reciprocal_clause": "names the Brain and Collaboration concerns whose intra- and inter-agent anomalies this discipline's monitoring stage is built to detect."
+    },
+    {
+      "from": "agentic-ai-architecture-taxonomy",
+      "target": "loop-engineering",
+      "clause": "formalizes as a practitioner discipline the goal-directed act-observe-decide cycle this taxonomy's Planning and Action concerns compose into at runtime.",
+      "reciprocal": true,
+      "reciprocal_clause": "names Planning and Action as the architectural concerns this practice's act-observe-decide cycle actually implements at runtime."
+    },
+    {
+      "from": "agentops",
+      "target": "agent-error-compounding",
+      "clause": "names the specific failure mode — state-carried faults whose blast radius grows with each step — that this discipline's anomaly-detection stage exists to catch.",
+      "reciprocal": true,
+      "reciprocal_clause": "the compounding failure this note describes is the specific target of this discipline's anomaly-detection and root-cause-localization stages."
+    },
+    {
+      "from": "agentops",
+      "target": "stateful-agent-reliability",
+      "clause": "requires exactly the interaction-structure tracing this discipline's monitoring stage is built to produce, following from the same errors-compound premise.",
+      "reciprocal": true,
+      "reciprocal_clause": "this discipline's monitoring stage is what supplies the interaction-structure tracing this note requires for production reliability."
+    },
+    {
+      "from": "agentops",
+      "target": "stacked-agent-loops",
+      "clause": "the hill-climbing loop's trace analysis is a concrete implementation of this discipline's root-cause-localization and resolution stages.",
+      "reciprocal": true,
+      "reciprocal_clause": "this discipline's root-cause-localization and resolution stages are what the hill-climbing loop described here concretely implements."
+    },
+    {
+      "from": "agentops",
+      "target": "agent-context-drift",
+      "clause": "context drift is a specific instance of the intra-agent anomaly class this discipline's monitoring stage is designed to detect.",
+      "reciprocal": true,
+      "reciprocal_clause": "this discipline's intra-agent anomaly class is the general category the specific failure described here belongs to."
+    },
+    {
+      "from": "ai-coding-maintainability-gap",
+      "target": "shared-mental-model-erosion",
+      "clause": "names the comprehension-side cost of AI-generated code that compounds this note's structural cost, both invisible to tests and build logs.",
+      "reciprocal": true,
+      "reciprocal_clause": "this note's structural cost — rising duplication, falling refactoring — compounds the comprehension-side erosion described here, both invisible to correctness checks."
+    },
+    {
+      "from": "ai-coding-maintainability-gap",
+      "target": "first-pass-acceptance-rate",
+      "clause": "is proposed as a corrective metric precisely because throughput counts reward the same ship-fast-over-maintain behaviour this note identifies as the cause.",
+      "reciprocal": true,
+      "reciprocal_clause": "this note identifies the structural pattern — throughput counts rewarding shipped-but-unmaintained code — that the metric proposed here exists to correct for."
+    },
+    {
+      "from": "automatic-prefix-caching",
+      "target": "context-engineering",
+      "clause": "this note's own guidance to order unchanging content before per-request content is a direct application of the token-curation discipline described here.",
+      "reciprocal": true,
+      "reciprocal_clause": "ordering unchanging system instructions and tool schemas before per-request content, as this practice prescribes, is exactly what maximizes prefix-cache hit rate here."
+    },
+    {
+      "from": "automatic-prefix-caching",
+      "target": "agent-instruction-layering",
+      "clause": "the always-on layer described here, being identical across turns and requests, is precisely the stable literal prefix this technique indexes and reuses.",
+      "reciprocal": true,
+      "reciprocal_clause": "this technique rewards keeping the always-on layer described here byte-identical across turns, since that stability is what makes it cacheable."
+    },
+    {
+      "from": "automatic-prefix-caching",
+      "target": "agent-state-residence",
+      "clause": "the state-location choice described here determines whether the bytes reaching the inference server stay byte-identical across turns, the precondition this technique's cache hits depend on.",
+      "reciprocal": true,
+      "reciprocal_clause": "this technique's cache-hit rate is a concrete consequence of the state-residence choice described here — whether resent history stays byte-identical across turns."
+    },
+    {
+      "from": "bell-lapadula-confidentiality-model",
+      "target": "agent-security-as-os-security",
+      "clause": "this note's isolate-and-mediate framing is the direct architectural descendant of the subject-clearance, object-classification and mediated-access formalism established here.",
+      "reciprocal": true,
+      "reciprocal_clause": "the subject-clearance and mediated-access formalism established here is the formal ancestor this note's isolate-and-mediate framing draws its structure from."
+    },
+    {
+      "from": "bell-lapadula-confidentiality-model",
+      "target": "instruction-data-boundary-collapse",
+      "clause": "names the exact absence, inside an LLM's context, of the privilege-level dominance test this model formalizes between subjects and objects.",
+      "reciprocal": true,
+      "reciprocal_clause": "this model's clearance/classification dominance test is precisely the privilege boundary an LLM's context is shown here to lack entirely."
+    },
+    {
+      "from": "dead-code-deletion-confidence",
+      "target": "reachability-based-dead-code-detection",
+      "clause": "is the static technique that produces the candidate finding this note insists must be corroborated with dynamic evidence before deletion.",
+      "reciprocal": true,
+      "reciprocal_clause": "this technique's static finding is exactly the candidate, not verdict, that the confirmation discipline described here requires dynamic evidence to corroborate."
+    },
+    {
+      "from": "debate-gated-decision-pipeline",
+      "target": "debate-augmented-weak-supervision",
+      "clause": "uses the same two-adversarial-instance debate mechanism this pipeline does, on the principle that a lie is harder to sustain than to refute, applied to training labels rather than a live decision.",
+      "reciprocal": true,
+      "reciprocal_clause": "this technique's debate-for-trustworthy-signal mechanism is the same one this pipeline applies to a live decision instead of a training label."
+    },
+    {
+      "from": "debate-gated-decision-pipeline",
+      "target": "evidence-recheck-triage",
+      "clause": "the risk-review agent's separate check against exposure limits is a specific instance of this discipline's rule that the generating process must never also be the deciding one.",
+      "reciprocal": true,
+      "reciprocal_clause": "this discipline's separate-pass rule is what the risk-review agent described here specifically implements, checking the debate's output against exposure limits before it is acted on."
+    },
+    {
+      "from": "decoupled-policy-decision-engines",
+      "target": "layered-agent-guardrails",
+      "clause": "is a concrete implementation choice for this guardrail sequence's permission-list and pre-tool-hook layers, letting them reference runtime state like spend or risk score.",
+      "reciprocal": true,
+      "reciprocal_clause": "this sequence's permission-list and pre-tool-hook layers are exactly where the policy-engine pattern described here can be substituted in to reference runtime state."
+    },
+    {
+      "from": "decoupled-policy-decision-engines",
+      "target": "agent-write-permission-separation",
+      "clause": "the write-gating guardrails this note describes are a natural enforcement point where a decoupled policy engine gets queried before an irreversible action proceeds.",
+      "reciprocal": true,
+      "reciprocal_clause": "this note's decoupled policy engine is a natural mechanism for implementing the write-gating guardrails described here before an irreversible action proceeds."
+    },
+    {
+      "from": "decoupled-policy-decision-engines",
+      "target": "tiered-execution-gating-for-ai-agents",
+      "clause": "the per-command scope validation this note describes is a concrete instance of the decoupled-policy-engine pattern, checking each command against a declared authorized scope.",
+      "reciprocal": true,
+      "reciprocal_clause": "this note's decoupled-policy-engine pattern is what the per-command scope validation described here concretely instantiates before allowing direct execution."
+    }
+  ]
+}

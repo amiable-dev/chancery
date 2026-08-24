@@ -1,0 +1,36 @@
+{
+  "task_id": "c684873f20a777ac",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Definition",
+      "question": "What is an observability pipeline, architecturally speaking?",
+      "answer": "A buffering layer inserted between telemetry sources and the tools that consume their data, decoupling sources from destinations."
+    },
+    {
+      "heading": "Three control levers",
+      "question": "What three decisions does whoever operates an observability pipeline control at once?",
+      "answer": "Collection (which sources are consolidated), normalization (what common shape data is forced into), and routing (which destination(s) each piece reaches)."
+    },
+    {
+      "heading": "Decoupling mechanism",
+      "question": "What mechanism lets destinations change without re-instrumenting every service?",
+      "answer": "The pipeline buffers between sources and destinations, so a source never needs to know where its data lands; adding or reshaping a destination becomes a pipeline-layer change."
+    },
+    {
+      "heading": "Fan-out routing",
+      "question": "What can centralized routing do that per-source shipping cannot?",
+      "answer": "Send full-fidelity data to cheap cold storage and a filtered subset to an expensive analytics platform simultaneously, without touching instrumentation."
+    },
+    {
+      "heading": "Symmetric leverage",
+      "question": "Why is the pipeline's control point called symmetric leverage?",
+      "answer": "It is a moat for the vendor who owns it, controlling what every downstream tool can see, but a vendor lock-in risk for the buyer who cedes it."
+    },
+    {
+      "heading": "Reading the source skeptically",
+      "question": "Why should this note's vendor-reported volume-reduction numbers be read skeptically?",
+      "answer": "The source is a pipeline vendor's own explainer and product pitch, not independent measurement — only the architectural mechanism is durable, not the figures."
+    }
+  ]
+}

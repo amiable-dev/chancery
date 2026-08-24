@@ -1,0 +1,31 @@
+{
+  "task_id": "5bd11c83486f1be6",
+  "supplier": {"class": "model-single", "id": "claude-sonnet-5"},
+  "cards": [
+    {
+      "heading": "Hub and spokes",
+      "question": "What sits at the hub of the DAMA-DMBOK Wheel, and how many other knowledge areas surround it?",
+      "answer": "Data Governance sits at the hub, with ten further knowledge areas arranged as spokes around it."
+    },
+    {
+      "heading": "The ten spokes",
+      "question": "Name the ten spoke knowledge areas of the DAMA-DMBOK Wheel.",
+      "answer": "Data Architecture, Data Modeling and Design, Data Storage and Operations, Data Security, Data Integration and Interoperability, Document and Content Management, Reference and Master Data, Data Warehousing and Business Intelligence, Metadata Management, and Data Quality Management."
+    },
+    {
+      "heading": "Silos vs interconnected",
+      "question": "Does the DAMA-DMBOK Wheel frame its disciplines as isolated silos or as interconnected functions?",
+      "answer": "Interconnected functions — each spoke both depends on and feeds back into governance at the center."
+    },
+    {
+      "heading": "Primary practical use",
+      "question": "How is the DAMA-DMBOK Wheel primarily used in practice, rather than as a diagram to memorize?",
+      "answer": "As a checklist and shared vocabulary: laying current data initiatives against the ten spokes to see which disciplines are unstaffed or ungoverned, and comparing maturity across teams."
+    },
+    {
+      "heading": "Evolved Wheel (2024)",
+      "question": "What does DAMA's 2024 Evolved Wheel variant do to the underlying hub-and-spoke structure?",
+      "answer": "It extends the same structure to newer areas (ethics, big data, data science) without changing the underlying hub-and-spoke logic."
+    }
+  ]
+}

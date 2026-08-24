@@ -40,6 +40,7 @@ The mechanism is that an agent's context is append-only by default while the env
 - [[layered-agent-memory]] — is the architectural response, moving what must persist out of the resident transcript into retrievable long-term memory and durable logs so it stops competing for window space
 - [[agent-error-compounding]] — agent error compounding names in general terms the failure context drift is one instance of — a stale memory entry steering a later decision is retained-but-expired context doing precisely that compounding damage.
 - [[chain-of-thought-prompting]] — chain-of-thought prompting explains the mechanism by which committed reasoning becomes durable context — exactly the durability that, unrevisited over a long task, is what context drift describes going stale.
+- [[agentops]] — this discipline's intra-agent anomaly class is the general category the specific failure described here belongs to.
 
 ## Applications
 

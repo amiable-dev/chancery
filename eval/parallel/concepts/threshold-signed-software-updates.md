@@ -5,17 +5,17 @@ aliases:
   - The Update Framework
   - root-key threshold signing
 date: 2026-08-24
-tags:
-  - concept
-  - security
-  - supply-chain
-  - cryptography
-  - software-distribution
+domain: standards
+maturity: established
+source_type: vendor-doc
+topics: [supply-chain]
+tags: [concept, security, supply-chain, cryptography, software-distribution, domain/standards, maturity/established, source-type/vendor-doc, topic/supply-chain]
 status: draft
 sources:
   - url: https://theupdateframework.github.io/specification/latest/
     hash: sha256:d83dd59ecf0d1fe845c6b3e67da54729d457681078bab6b9f90faae8fc8bc0ba
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 

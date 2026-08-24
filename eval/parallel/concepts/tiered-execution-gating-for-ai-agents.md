@@ -1,19 +1,16 @@
 ---
 title: Tiered execution gating for AI agents
 date: 2026-08-24
-tags:
-  - concept
-  - security
-  - ai-agents
-  - agent-harness
-  - domain/security
-  - maturity/emerging
-  - source-type/vendor-doc
+domain: security
+maturity: emerging
+source_type: vendor-doc
+tags: [concept, security, ai-agents, agent-harness, domain/security, maturity/emerging, source-type/vendor-doc]
 status: draft
 sources:
   - url: https://github.com/0xSteph/pentest-ai-agents
     hash: sha256:602d85b76769be1bb9695ad4a31a136dd54e3bb02b45e23dde5e04114b859dea
     retrieved: 2026-08-24
+    class: external-primary
     reachability: ok
 ---
 
@@ -38,6 +35,7 @@ The design solves a specific problem: an agent whose job is to run offensive sec
 
 - [[classifier-mediated-approval]] — both gate a risky agent action behind an approval step, but classifier-mediated approval delegates the decision to a trained model while tiered execution gating keeps every command in front of a human and restricts up front which agents can even reach that gate
 - [[layered-agent-guardrails]] — tiered execution gating is one concrete instance of a layered guardrail: it stacks a capability-level tier restriction, a scope-validation check, and a per-command approval prompt rather than relying on any single control
+- [[decoupled-policy-decision-engines]] — this note's decoupled-policy-engine pattern is what the per-command scope validation described here concretely instantiates before allowing direct execution.
 
 ## Applications
 

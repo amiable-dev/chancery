@@ -1,0 +1,33 @@
+{
+  "envelope": {
+    "task_id": "46e1d33ac32e7fb9",
+    "verb": "facets",
+    "task_class": "classification",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "98f691c198849a0171ee5c062663839498c5bef0",
+    "input_hashes": {
+      "concepts/reachability-based-dead-code-detection.md": "sha256:ece8ab03727e0e1458cfa8d880e325f25e57862166123c4ac235a28802d56129",
+      "concepts/request-level-sandbox-isolation.md": "sha256:6115881884f4de9313ba1af177dc37dd5ecea3c0b74d284b6361b76c54c9bb8f",
+      "facets.yml": "sha256:62afa0cbf3f4eec64d0b866a21315734ee58eaf77627ea84f4c8a97c1aeb511c",
+      "schema:facet-draft.schema.json": "sha256:5d6d1031e7ab526fc47f1cadbf47c4ed614474265875721fdddab2d5672a1e40"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:617e87531e4a9ebbe06a5fd0d1210d2033f4c04e1c6f470aebb5aa3b50349dea",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-sonnet-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "concepts/reachability-based-dead-code-detection.md",
+    "concepts/request-level-sandbox-isolation.md"
+  ]
+}

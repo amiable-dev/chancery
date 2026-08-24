@@ -42,6 +42,7 @@ The ordering follows a fixed path: the model decides, the harness assembles a to
 - [[agent-harness]] — is where most of these layers physically live — sandbox, permission list and pre-tool hook are all harness features, so the harness chosen sets the floor on what any of them can enforce
 - [[classifier-mediated-approval]] — classifier-mediated approval is a concrete implementation of layered agent guardrails' pre-tool-hook layer — a model judging each proposed action before it executes is the last point at which an assembled command can still be rejected.
 - [[kernel-enforced-agent-sandbox]] — the kernel-enforced sandbox is the concrete mechanism behind layered agent guardrails' first layer — 'sandboxing bounds the blast radius when anything else fails' is exactly what kernel primitives enforce, beneath every other guardrail in the sequence.
+- [[decoupled-policy-decision-engines]] — this sequence's permission-list and pre-tool-hook layers are exactly where the policy-engine pattern described here can be substituted in to reference runtime state.
 
 ## Applications
 

@@ -37,6 +37,7 @@ The selection rule is mechanical once the dependencies are known. Hard ordering 
 - [[react-pattern]] — is the single-agent loop these topologies compose, since each worker under a supervisor or hierarchy typically runs a reason-act-observe loop internally
 - [[rl-learned-orchestration]] — replaces the hand-selection this catalog describes by training a coordinator to discover the communication topology end-to-end from task reward
 - [[deterministic-agentic-capability-matrix]] — supplies the classified agentic steps that these topologies then coordinate
+- [[agentic-ai-architecture-taxonomy]] — the Collaboration concern this taxonomy names is exactly what these topologies enumerate as concrete coordination shapes.
 
 ## Applications
 
