@@ -1,0 +1,3357 @@
+{
+  "meta": {
+    "version": 1,
+    "nodeCount": 123,
+    "edgeCount": 266,
+    "languages": [
+      "javascript"
+    ],
+    "scopes": [
+      {
+        "prefix": "",
+        "label": "",
+        "markers": [
+          "package.json"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js",
+      "name": "support.js",
+      "kind": "file",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1-L1912",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+      "chars": 69134,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#__defNormalProp",
+      "name": "__defNormalProp",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L5-L5",
+      "signature": "__defNormalProp = (obj, key, value)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "49138b4c70a0eca33d83b86cf1537b93ec57fbe1b5893d86caf13cd99c87f733",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#__publicField",
+      "name": "__publicField",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L6-L6",
+      "signature": "__publicField = (obj, key, value)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "8a8216b6685035e4959de8fcbdd52e7eb82bd835e300a2fe70aaeb4b66919298",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#boot",
+      "name": "boot",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L150-L200",
+      "signature": "function boot(runtime, doc = document)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "7d7c4c69669989847a420461ebb39ec0103515d528ee517d448701dd3b67e990",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#boot.StandaloneRoot",
+      "name": "StandaloneRoot",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L176-L194",
+      "signature": "function StandaloneRoot()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "034e090ed7e6ffaafd19de3e01fd986dc2c451f489f9858c78a3cac9c96b8f64",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#boot.StandaloneRoot.sub",
+      "name": "sub",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L179-L179",
+      "signature": "sub = ()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "5d93d10678417dde929b9b48381f37679b7271e831c28bab29a9f69d7d3f4a2e",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#bundledBlob",
+      "name": "bundledBlob",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1136-L1140",
+      "signature": "function bundledBlob(url)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "bf8f330ac9cfeee712a5f74aa2ebb83a87f2b16832530023142bad244e9e9289",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#cdnScriptFor",
+      "name": "cdnScriptFor",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1149-L1153",
+      "signature": "function cdnScriptFor(url, sri)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "c6f5bbc5838a5f02e803bab9ff255599546086a4ff541766613df74b7691262e",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#collectProps",
+      "name": "collectProps",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L415-L444",
+      "signature": "function collectProps(node, kind, host)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "ac643ab067b8a546a13568bd4bf10a2a2f7aa65b5c98d1fb10651607735b9a72",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#compileAttr",
+      "name": "compileAttr",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L401-L412",
+      "signature": "function compileAttr(raw)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "0cdc6056e5719f8317ab5c8ee538ccdb417eaf3881dcf77ee8547a161dcd9c80",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#compileTemplate",
+      "name": "compileTemplate",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L467-L482",
+      "signature": "function compileTemplate(html, host)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "a7cf3a7c83f6189a59342667b82350a55df43e019b8a6dc44bbca78cec867b62",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#componentDidMount",
+      "name": "componentDidMount",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L831-L832",
+      "signature": "componentDidMount()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "65b4480d676953df06ed6357f8c7972a98d28e0f9f0307f7c8996da881f4873f",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#componentDidUpdate",
+      "name": "componentDidUpdate",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L833-L834",
+      "signature": "componentDidUpdate(_prevProps)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "1c22a5105f2b95404e2b3d61dc4d7573e79a606b0fc01190e4955e8d5a42fd10",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#componentWillUnmount",
+      "name": "componentWillUnmount",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L835-L836",
+      "signature": "componentWillUnmount()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "5a3f61d602a82b353cea4b4df4b2ce8cc845debf84f935f9bc6b3330be8eb6c6",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#constructor",
+      "name": "constructor",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L818-L824",
+      "signature": "constructor(props)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "6a7c44c2d8e3c01e196aced207c385153bd46e4461cc2e72880df3024f5f1423",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#contentKey",
+      "name": "contentKey",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L771-L780",
+      "signature": "function contentKey(el)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "17d02f3c52b39dbaca3c54b86cf69f0174de75ae5b4744437878e81de41f13d2",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory",
+      "name": "createComponentFactory",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L888-L1133",
+      "signature": "function createComponentFactory(registry, ensureFetched)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "2d512c7dcea6420f663e86b970598e70e709a3850f3f08462679a00c74ee54bf",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.getDC",
+      "name": "getDC",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1110-L1128",
+      "signature": "function getDC(name)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "3d8e36c74f7ba40eee7929289de9bfc87b49e4fcc8f459500e0bfb90275b9faa",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.getDC.Dispatcher",
+      "name": "Dispatcher",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1113-L1124",
+      "signature": "function Dispatcher(p)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "f6a2000fea0c39ee6b44ff83251f6b31ca97446fad74200cde8e0b74eddb8c52",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.getDC.Dispatcher.sub",
+      "name": "sub",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1116-L1116",
+      "signature": "sub = ()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "5d93d10678417dde929b9b48381f37679b7271e831c28bab29a9f69d7d3f4a2e",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "name": "StreamableComponent",
+      "kind": "class",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L891-L1107",
+      "signature": "class StreamableComponent extends React.Component",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "e9959323b0c89b29922e893e42b35744a25a2b53283b66bf50ad248affdb8f6b",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__makeLogic",
+      "name": "__makeLogic",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L940-L960",
+      "signature": "__makeLogic(Logic, prevState)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "62fc39f17f8049b760c670942f1886490b12b699835dac7890ad4b13ac6ee2f0",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null,
+      "owner": "StreamableComponent"
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__reconcileLogic",
+      "name": "__reconcileLogic",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L976-L992",
+      "signature": "__reconcileLogic()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "2bec4f6ae2f07f2ca44e51b26e49cc5670be89c462329ece7b3fa6924106bf72",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null,
+      "owner": "StreamableComponent"
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__setLogicState",
+      "name": "__setLogicState",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L967-L972",
+      "signature": "__setLogicState(update, cb)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "9e9174cbb5d191da20cf9f701c304e9b800e1e7086e42ebc50c848385d1c9304",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null,
+      "owner": "StreamableComponent"
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__userProps",
+      "name": "__userProps",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L963-L966",
+      "signature": "__userProps()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "ee0a29e0dc6a2d5d0fb8cec6fdb03338250dd15f5ce30cfe7abc030a1f9201d4",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null,
+      "owner": "StreamableComponent"
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.componentDidCatch",
+      "name": "componentDidCatch",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L931-L937",
+      "signature": "componentDidCatch(e, info)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "9e3ae889505c68a4fb04531a20c014f1dbe0ba4a9fcfae5a023e6653a30c9fdc",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null,
+      "owner": "StreamableComponent"
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.componentDidMount",
+      "name": "componentDidMount",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L993-L1000",
+      "signature": "componentDidMount()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "dbdf10e437d55cfc4451741d527cde9decbc2d348136886840fba8a2c5156015",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null,
+      "owner": "StreamableComponent"
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.componentDidUpdate",
+      "name": "componentDidUpdate",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1001-L1018",
+      "signature": "componentDidUpdate(prevProps)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "231f81ab539b7654526bfe68baa6e3fb29aee6cd444840d25bd069661a986306",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null,
+      "owner": "StreamableComponent"
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.componentWillUnmount",
+      "name": "componentWillUnmount",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1019-L1028",
+      "signature": "componentWillUnmount()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "4b09b5cd8fc41aa9ca422a00edc37a201ceac7e78793b0975e73e84105b06efb",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null,
+      "owner": "StreamableComponent"
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.constructor",
+      "name": "constructor",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L892-L924",
+      "signature": "constructor(props)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "d977ad5766cb5c66b696576f8e8ae2c18fe9ed78aa37718d13f736fd7c8c686d",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null,
+      "owner": "StreamableComponent"
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.getDerivedStateFromError",
+      "name": "getDerivedStateFromError",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L928-L930",
+      "signature": "static getDerivedStateFromError(e)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "f9f37bf566db9bdf29b3dd7da9d07faf9b738274cf9d2a21412cb342718ab837",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null,
+      "owner": "StreamableComponent"
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.render",
+      "name": "render",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1029-L1106",
+      "signature": "render()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "910e58a531a3df29d505cbba36baebfe23925176e10d39cfdc063b15336eea4e",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null,
+      "owner": "StreamableComponent"
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules",
+      "name": "createExternalModules",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1171-L1347",
+      "signature": "function createExternalModules(onResolved)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "4d725ce9cf3f3ff9be4107dc19bd699dc129dcc9f434d103e508f010bb8f6f98",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.ensureBabel",
+      "name": "ensureBabel",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1176-L1192",
+      "signature": "function ensureBabel()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "258cb1b85aaf6ea2bb73c7282704c84f0700548eaf51256e060cb625b1aba229",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.getError",
+      "name": "getError",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1341-L1345",
+      "signature": "function getError(url, name)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "ead66401b0bb41fbe1ab78b3b72e3a592aa170ba7e71878bb8c957307fcf9bd4",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.load",
+      "name": "load",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1194-L1256",
+      "signature": "function load(kind, url, after)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "f6af892a2ab0b6541aa3730de4be6ccb0f05c1635310250a3b6fa7296cfebe6c",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.resolve2",
+      "name": "resolve2",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1257-L1282",
+      "signature": "function resolve2(url, name)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "4663f9310d5dec3319c5b0b1e7286133f1f7ee6d7d2b529ffc45f66b13bdbca4",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.resolveGlobal",
+      "name": "resolveGlobal",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1307-L1340",
+      "signature": "function resolveGlobal(url, name)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "ba79f2c3829c76c3c778109a45701a7ea97e8734f2efca6e7f48e6008200ee83",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.waitForGlobal",
+      "name": "waitForGlobal",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1283-L1306",
+      "signature": "function waitForGlobal(name)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "3544a4e997bd070d58e5ca74b8f03a8d8eadda0fc172617b53970522954a4fe8",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.waitForGlobal.tick",
+      "name": "tick",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1288-L1304",
+      "signature": "tick = ()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "6cb51f965eb301351bf7751096b556fcafa8e3ada03d26695ea9c3cedfe9a829",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager",
+      "name": "createHelmetManager",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1366-L1495",
+      "signature": "function createHelmetManager(doc, isStreaming)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "10248405ab8aeaa4f8bf4e160146cbf8e4f7f23462af8a951bde35a9a5c9de4f",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.applyCanvasBg",
+      "name": "applyCanvasBg",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1379-L1383",
+      "signature": "function applyCanvasBg()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "75f19724372b2d3240bf6d225cdf7d38bee102ab8bcfece491a67de24316c74e",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.compile",
+      "name": "compile",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1420-L1493",
+      "signature": "function compile(node)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "3d94c0f0dd1dc5783883fff5be99c1300396fa4b38296f373f2276b51c9d8f26",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.postDesignMode",
+      "name": "postDesignMode",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1384-L1390",
+      "signature": "function postDesignMode(mode)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "b3faa14a455b1b28ea367bf0b50690c5a8e2723f79059014ecac944961af78f2",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.setDesignDocMode",
+      "name": "setDesignDocMode",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1391-L1406",
+      "signature": "function setDesignDocMode(mode)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "30da3ab8fae493f625a26e70cfa3810cf2d94f31fff97425069cddea60d195c6",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createPseudoSheet",
+      "name": "createPseudoSheet",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1567-L1589",
+      "signature": "function createPseudoSheet(doc)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "0caa573921b442b1ffbf2cd27da707a9d00c02dbf12ec478be60dad41f40b9e8",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createRegistry",
+      "name": "createRegistry",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1592-L1619",
+      "signature": "function createRegistry()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "729c8f1c0f3572fc9b337c75089513656ccf8c4ca61f9426f0869a6a5ec04e38",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createRegistry.bump",
+      "name": "bump",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1606-L1610",
+      "signature": "function bump(name)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "3ea2ce8cae9413162015b76a03f4c54d51e61112a3a3f462d1f670cf607691fe",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createRegistry.bumpAll",
+      "name": "bumpAll",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1615-L1617",
+      "signature": "bumpAll()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "b320c8d5c535b510bbf83f684664fb6941f3ac09d42c8989bb6f95cf5884dee7",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createRegistry.get",
+      "name": "get",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1594-L1605",
+      "signature": "function get(name)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "d0e2927024d869d06d9c886c76ac50cea2dc0dc0a1590c285a3fd349e43f0a6c",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "name": "createRuntime",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1623-L1789",
+      "signature": "function createRuntime(doc = document)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "50082581ddf42470e069d6638fb7522cf878f047e1a2a75e92cc3e90180d9abf",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.adoptParsed",
+      "name": "adoptParsed",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1760-L1767",
+      "signature": "function adoptParsed(name, parsed)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "eca35673bd513a3d47e0e664241b90a090784cebe224b2dc004fad15f4051a0c",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.dcUpdate",
+      "name": "dcUpdate",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1740-L1755",
+      "signature": "function dcUpdate(name, kind, content, streaming)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "fceba7b04abb0915ffb4535065fd067f467919d1e639d13fbebaeddd5ffae862",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.ensureFetched",
+      "name": "ensureFetched",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1642-L1685",
+      "signature": "function ensureFetched(name)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "154d321fee17d32caf8d58de73eed9eb6399084eec5509d14e7c538fa5f29221",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.setProps",
+      "name": "setProps",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1756-L1759",
+      "signature": "function setProps(name, overrides)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "f246b4be44f3d9f762a8fcae4e26298003738a2c88fe9859f92f2cb9abbc37ef",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.setStreaming",
+      "name": "setStreaming",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1725-L1739",
+      "signature": "function setStreaming(name, kind, on)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "bbea750f7ed9ee12181d2da862c5a8407aff69d38e389c92c7807e08ed22db4f",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.updateHtml",
+      "name": "updateHtml",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1687-L1700",
+      "signature": "function updateHtml(name, html)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "5f6e41ff763565c83c025de3eb756584f8cf27a2476f4a0df34fba2e1e7b2791",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.updateJs",
+      "name": "updateJs",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1701-L1724",
+      "signature": "function updateJs(name, src)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "dfb60134b5c5527625afc07ea6c27ef42c6a4be811489e2e037a387d1715c106",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker",
+      "name": "createStreamTracker",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1792-L1815",
+      "signature": "function createStreamTracker(staleMs = 6e4, now = Date.now)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "5b79d37def9073c02d8c63dd37d51bef228a5b4d004aa459a2c81d9ac210c0f3",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker.live",
+      "name": "live",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1809-L1813",
+      "signature": "live(name)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "b956a56b6c66968c3103ce4d1af3ccd727aab0a429dffbf0f409f62eed0f6260",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker.liveOne",
+      "name": "liveOne",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1794-L1802",
+      "signature": "liveOne = (n)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "25ccc0b687b53dfba9a2263c685912244f70cc841167b09f387751cfbd95ea1f",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker.push",
+      "name": "push",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1804-L1808",
+      "signature": "push(name, streaming, viewportKey)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "4bb87b8f2c76d7e39920c7a81aa4fe55cca6842d53379c680eff221a42881410",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#cssToObj",
+      "name": "cssToObj",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L391-L400",
+      "signature": "function cssToObj(css)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "e5081ad28d31889ea97ad18a1fc87002b699b48c422d2c036ab42eab2c361d97",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#dcNameFromPath",
+      "name": "dcNameFromPath",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L75-L83",
+      "signature": "function dcNameFromPath(pathname)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "5d86d34c8dfbecb4e73d3a7ea9c801c42c7b90528c0c8fb40b516abfcea0803e",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#encodeCamelAttrs",
+      "name": "encodeCamelAttrs",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L366-L371",
+      "signature": "function encodeCamelAttrs(html)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "710ded6e6c234063c9591bf7bfc2724b22798a3857b5eb6c87ecfd202132f272",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#encodeCase",
+      "name": "encodeCase",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L372-L387",
+      "signature": "function encodeCase(html)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "862332fc1f59c51129b81f70badac35dfce8b54e1d03156d5641994b167c3a7a",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#evalDcLogic",
+      "name": "evalDcLogic",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L842-L851",
+      "signature": "function evalDcLogic(src)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "3d1a55d4a3106b9447b849a69d21189f8681b5753926b94079726fc5ccea4942",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#findTopLevelEquality",
+      "name": "findTopLevelEquality",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L248-L262",
+      "signature": "function findTopLevelEquality(expr)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "c8515e5e3bd5b4815bcc534de9a331e9b7ed645f85326f1b0502bab34051e394",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#forceUpdate",
+      "name": "forceUpdate",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L828-L830",
+      "signature": "forceUpdate()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "3982e3f5afc37171292c2a7491a70a32173b35316c4f65b44cb62ae8d731ee3a",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#getReact",
+      "name": "getReact",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L9-L13",
+      "signature": "function getReact()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "c78981c748db5dd938e71a9194efe3ce2dc4834262065b5fb5e93af8e5a5259d",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#getReactDOM",
+      "name": "getReactDOM",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L14-L18",
+      "signature": "function getReactDOM()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "a6b9c3e9744273166a42c6eb2860928ef33e98237286ce4e3c2495e3530b7f28",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#hideRawTemplate",
+      "name": "hideRawTemplate",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1818-L1822",
+      "signature": "function hideRawTemplate()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "f514c284d0d837b51a3f8b1244bc86a4fbac166b38374750914dc29017f5b820",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#hintToMin",
+      "name": "hintToMin",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L883-L887",
+      "signature": "function hintToMin(hint)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "4a799cb4d101c74c1ff92f21aa3d2b074ef0d6f70489b83c78d6ec3bab29dc4c",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#hostPositionStyle",
+      "name": "hostPositionStyle",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L457-L466",
+      "signature": "function hostPositionStyle(style)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "3ce296bd204e6d317059121a70b3fbfdb76e4cd6001ffba462e945d444e178fa",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#importantify",
+      "name": "importantify",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1542-L1566",
+      "signature": "function importantify(css)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "1c136760599f46f1c6aadbaf7e5a8d3da3450b92680c658b019e53f7afebfd7b",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#init",
+      "name": "init",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1848-L1905",
+      "signature": "function init()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "0d555eef5f5797bb8ceefbdf5637977149f1806eb8c179740f1850b13f900045",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#init.notifyHost",
+      "name": "notifyHost",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1854-L1869",
+      "signature": "notifyHost = ()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "1158389a36a2ff2f5d6266125407d821b49985d26c0e169e8fb62214da11a8a5",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#isCustomElementName",
+      "name": "isCustomElementName",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1156-L1156",
+      "signature": "isCustomElementName = (n)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "180d631f8cf3615f5d7678a5a3c7a48d37cbf3329ec60efa7d25c7eef5347e03",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#isDeckMountTag",
+      "name": "isDeckMountTag",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L489-L492",
+      "signature": "function isDeckMountTag(el)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "0284f868b38e1aff901fc4377cd1bc3eefbe8cb6ff1f783126e905780a228229",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#isElementClass",
+      "name": "isElementClass",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1348-L1354",
+      "signature": "function isElementClass(g)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "c1b03827c996a340c95a0fa53c4fcbb36b35035e039253ca02b71b574a926408",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#isRenderableType",
+      "name": "isRenderableType",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1157-L1160",
+      "signature": "function isRenderableType(g)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "df791f29b6a8ec102273d2be681077c8bfe3da55a78a09d3dd680ed8b40eb30e",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#kebabToCamel",
+      "name": "kebabToCamel",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L388-L390",
+      "signature": "function kebabToCamel(s)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "e4bc05eb5779172c322ac3f827653b40046cf30cde7c0988f4f989e2f55c0a8f",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#loadReactUmd",
+      "name": "loadReactUmd",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1838-L1847",
+      "signature": "function loadReactUmd()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "ef38f53783ba9a385efd6f0499181c487d6483797025390f9f767d0cd1ba5a9f",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#loadScript",
+      "name": "loadScript",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1823-L1837",
+      "signature": "function loadScript(src, integrity)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "440ab3cad6cb4ddad8eff57e8a9ff96e5b11a8a077d8ba2ec658e9374670f2aa",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#parensWrapWhole",
+      "name": "parensWrapWhole",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L237-L247",
+      "signature": "function parensWrapWhole(expr)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "dd712c726de5858be29aac6f4ad16164b308276265e8fd6c95ddc319426480a3",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#parseDataProps",
+      "name": "parseDataProps",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L56-L74",
+      "signature": "function parseDataProps(raw)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "e65ac01d11f399300944d31c06df9713fd52544dbf6199c13d06d215a3b025f1",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#parseDcDocument",
+      "name": "parseDcDocument",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L24-L37",
+      "signature": "function parseDcDocument(doc)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "c5015498cdcdc0b8985d397ddce8dd51837a0983a78318071e8b93afd5d32cc5",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#parseDcText",
+      "name": "parseDcText",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L38-L55",
+      "signature": "function parseDcText(src)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "9c597761467a8826be1b1a088abbe9e952c0e786bbc199ff43d2b5795045944a",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#Placeholder",
+      "name": "Placeholder",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L862-L882",
+      "signature": "function Placeholder({ name, hintSize, streaming, error })",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "184ea74982a2420c0bf196139a8d2f2a8080a52378b42019faf598fb09e19d4f",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#renderDeckKids",
+      "name": "renderDeckKids",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L543-L549",
+      "signature": "function renderDeckKids(kids, kidKeys, vals, ctx)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "57bd41eaacc2747b852bcc63a6a5952e6ee01c54eeacb378e47800bb63b9bbe3",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#renderVals",
+      "name": "renderVals",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L838-L840",
+      "signature": "renderVals()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "c05331225bdceba8cb8e084902e90c1a1b23be6ce45a761bf8ccd323aa2dd5ac",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#resolve",
+      "name": "resolve",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L205-L236",
+      "signature": "function resolve(vals, src)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "c513b99cb4c996149e5b7a5dd228466398a0e61942770fa7bf6bb078fcd16466",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#resolveDottedPath",
+      "name": "resolveDottedPath",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1161-L1168",
+      "signature": "function resolveDottedPath(root, name)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "a99f7847ec303fd7c7ffbb0afc50677008b5e7c5c42b7bb257a56931bbe90d0e",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#resolvePath",
+      "name": "resolvePath",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L263-L294",
+      "signature": "function resolvePath(vals, expr)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "eea28eacb232b711aae1db11701e3057b06163643ce4f5546c417a400e9b71e1",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#rootNameForDocument",
+      "name": "rootNameForDocument",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L133-L142",
+      "signature": "function rootNameForDocument(doc, loc)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "b16b2a6b59d132e3ab28e5ff05b958094de196508ffea664fa42a57da0b1b4c0",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#safeDecode",
+      "name": "safeDecode",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L143-L149",
+      "signature": "function safeDecode(s)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "a923d3ac062158258a235e772f1583060ab1673655056dcee87624fdd17005f9",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#scanUnquotedUrl",
+      "name": "scanUnquotedUrl",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1498-L1510",
+      "signature": "function scanUnquotedUrl(css, i)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "0a4790006284fc87347818f8e3bf9424e5abd4e0b0480631b7adc8d5d88cb415",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#setState",
+      "name": "setState",
+      "kind": "method",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L825-L827",
+      "signature": "setState(update, cb)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "20afefd43a8a8aab06194eed5c4b65467f09f16a63a3f3a15c01902007c639d5",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#shallowEqual",
+      "name": "shallowEqual",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L854-L861",
+      "signature": "function shallowEqual(a, b)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "3d94f98806d19224768b2e6e4098032f6f650fdfe61c76773a49801a10c6f298",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#stripComments",
+      "name": "stripComments",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L1511-L1541",
+      "signature": "function stripComments(css)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "979df89fc820462ffcdd61be79454601f021d0cdc39830c160c08ecbaeaf4b87",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#walk",
+      "name": "walk",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L550-L561",
+      "signature": "function walk(node, host)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "f96fe9916b6d0f62a4537337d3e7224b6c8cfb027a3ce4bb2f08aae1af3086d6",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#walkChildren",
+      "name": "walkChildren",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L483-L485",
+      "signature": "function walkChildren(node, host)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "1ab1c630da394a311fbba67d7056b612e3bf565aaec5d5c00fc551aba92c2f4f",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#walkComponent",
+      "name": "walkComponent",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L661-L689",
+      "signature": "function walkComponent(el, host)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "afa148ea10cd995e30c85ebabcf5e97de2336e5e9e910c7ac5d08b14c5b65f82",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#walkDeckChildren",
+      "name": "walkDeckChildren",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L493-L542",
+      "signature": "function walkDeckChildren(el, host)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "f39862dc5f9c4c67d5e17c46ff1db41de3171a8db23ba555c3935b6016479955",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#walkElement",
+      "name": "walkElement",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L787-L814",
+      "signature": "function walkElement(el, host)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "0441d10e2316ff73fb425f54c7b530da34b4c43e25724e15268f2fd7ca8ac2ab",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#walkFor",
+      "name": "walkFor",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L611-L645",
+      "signature": "function walkFor(el, host)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "9764b4691cf6e5caea8ed6500201f55187fd78487744743fc96f8eca089f88a3",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#walkIf",
+      "name": "walkIf",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L646-L660",
+      "signature": "function walkIf(el, host)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "d2e3c7bad4c8e09007dc806f685715225426308bccc6edcc2abd45697ef9c9e3",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#walkText",
+      "name": "walkText",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L569-L610",
+      "signature": "function walkText(node)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "5b76caed4c856a041d56cf89e369b4aed5f86f0aabdf661e1eadebe70d6ff521",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "name": "walkXImport",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L690-L770",
+      "signature": "function walkXImport(el, host)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "6834926284a3534dd24b59de7614ebd05752c702debd171c440bec3d0f2949dd",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#walkXImport.evalName",
+      "name": "evalName",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L716-L720",
+      "signature": "evalName = (g, vals)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "9bcef304d41556c1339ec22bc9773531a2cf4a4dd922249bd19fd9247917f964",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#walkXImport.kindOf",
+      "name": "kindOf",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L700-L700",
+      "signature": "kindOf = (u)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "5bf973536916b6f7bb26624a5ea3870313f91919edbe803541f81ca848d77e96",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "design_handoff_chancery_brand/prototypes/support.js#warnUnresolved",
+      "name": "warnUnresolved",
+      "kind": "function",
+      "path": "design_handoff_chancery_brand/prototypes/support.js",
+      "span": "L563-L568",
+      "signature": "function warnUnresolved(ctx, what)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "78ebeaca21b3a8af5b9b6ca2998e48c0789508eec18b6e1bf7540b726eb4a14f",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "eval/parallel/select-sample.mjs",
+      "name": "select-sample.mjs",
+      "kind": "file",
+      "path": "eval/parallel/select-sample.mjs",
+      "span": "L1-L55",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "a7eee3cb72e64e94e3c236a126c32c83641cb3dcca8b2971f27439c713961e10",
+      "chars": 2663,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "eval/parallel/select-sample.mjs#sha",
+      "name": "sha",
+      "kind": "function",
+      "path": "eval/parallel/select-sample.mjs",
+      "span": "L32-L32",
+      "signature": "sha = (s)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "d49357026e831a444f4904785b4e1a0d0f6ec333d1b297bf1e3beb171f5786da",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "site/capture/capture-terminal.mjs",
+      "name": "capture-terminal.mjs",
+      "kind": "file",
+      "path": "site/capture/capture-terminal.mjs",
+      "span": "L1-L94",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "4301bc400ddfb1f7c92b6252f0461529b926340b26378a3c60fe3c745eb86ffa",
+      "chars": 4736,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "site/capture/capture-terminal.mjs#push",
+      "name": "push",
+      "kind": "function",
+      "path": "site/capture/capture-terminal.mjs",
+      "span": "L70-L70",
+      "signature": "push = (mark, markColor, text, color)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "88dc7a20dcc75353f28dd993b8ee687b73bd3fdc861ac4e3269aca5cdf528502",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "site/capture/capture-terminal.mjs#run",
+      "name": "run",
+      "kind": "function",
+      "path": "site/capture/capture-terminal.mjs",
+      "span": "L30-L36",
+      "signature": "run = (args, opts = {})",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "2fdd0a59fab03e46c606ae1216a356aedb33f10a6e14cc4ac303f8ef7902d21b",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "site/docs/js/landing.js",
+      "name": "landing.js",
+      "kind": "file",
+      "path": "site/docs/js/landing.js",
+      "span": "L1-L95",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "4fa73da83f516b1ef64f46d604c95fb6391de8ac882a5912ba2ce0386cdcda7d",
+      "chars": 5436,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "site/docs/js/landing.js#init",
+      "name": "init",
+      "kind": "function",
+      "path": "site/docs/js/landing.js",
+      "span": "L6-L91",
+      "signature": "function init()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "39778e29f3a244781bb96f4fab48ab56c4f6dca73158b813e32748ab709174a9",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "site/docs/js/landing.js#init.paint",
+      "name": "paint",
+      "kind": "function",
+      "path": "site/docs/js/landing.js",
+      "span": "L60-L86",
+      "signature": "function paint()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "3c431579d286c82513999e4770dbc56cecf667c3a5d2de5df245df227d1da3c1",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "site/docs/js/landing.js#init.play",
+      "name": "play",
+      "kind": "function",
+      "path": "site/docs/js/landing.js",
+      "span": "L26-L33",
+      "signature": "function play()",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "e6249df53b9f6178a94233c65d92ad4153ddc2d271e17ed8cd5b693aa31cf030",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "site/docs/js/landing.js#init.render",
+      "name": "render",
+      "kind": "function",
+      "path": "site/docs/js/landing.js",
+      "span": "L14-L25",
+      "signature": "function render(n)",
+      "exported": false,
+      "origin": "ast",
+      "body_hash": "25f24de9846deb49225d482a658572e48c3b83093cbd1af8d47edbf7e2c979e5",
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    },
+    {
+      "id": "site/docs/js/terminal-capture.js",
+      "name": "terminal-capture.js",
+      "kind": "file",
+      "path": "site/docs/js/terminal-capture.js",
+      "span": "L1-L60",
+      "signature": null,
+      "exported": true,
+      "origin": "ast",
+      "body_hash": "8827f1c37ba9580fd8532aeccfa361599e75541ebd2d39a79bd00f4a363c639c",
+      "chars": 1243,
+      "summary_state": "pending",
+      "summary": null,
+      "crux": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#getReact",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#hideRawTemplate",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#loadReactUmd",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#__defNormalProp",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#__publicField",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#boot",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#bundledBlob",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#cdnScriptFor",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#collectProps",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#compileAttr",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#compileTemplate",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#componentDidMount",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#componentDidUpdate",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#componentWillUnmount",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#constructor",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#contentKey",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createPseudoSheet",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRegistry",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#cssToObj",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#dcNameFromPath",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#encodeCamelAttrs",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#encodeCase",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#evalDcLogic",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#findTopLevelEquality",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#forceUpdate",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#getReact",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#getReactDOM",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#hideRawTemplate",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#hintToMin",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#hostPositionStyle",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#importantify",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#init",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#isCustomElementName",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#isDeckMountTag",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#isElementClass",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#isRenderableType",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#kebabToCamel",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#loadReactUmd",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#loadScript",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#parensWrapWhole",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#parseDataProps",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#parseDcDocument",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#parseDcText",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#Placeholder",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#renderDeckKids",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#renderVals",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#resolve",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#resolveDottedPath",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#resolvePath",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#rootNameForDocument",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#safeDecode",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#scanUnquotedUrl",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#setState",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#shallowEqual",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#stripComments",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walk",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkChildren",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkComponent",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkDeckChildren",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkElement",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkFor",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkIf",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkText",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#warnUnresolved",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#__publicField",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#__defNormalProp",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#boot",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#getReact",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#boot",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#getReactDOM",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#boot",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#parseDcDocument",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#boot",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#parseDcText",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#boot",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#rootNameForDocument",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#boot",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#boot.StandaloneRoot",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#boot.StandaloneRoot",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#boot.StandaloneRoot.sub",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#collectProps",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#compileAttr",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#collectProps",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#kebabToCamel",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#compileAttr",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#resolve",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#compileTemplate",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#encodeCase",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#compileTemplate",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkChildren",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#constructor",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#__publicField",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#__publicField",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#getReact",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.getDC",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.getDC",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.getDC.Dispatcher",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.getDC.Dispatcher",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.ensureFetched",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.getDC.Dispatcher",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.getDC.Dispatcher.sub",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__makeLogic",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__reconcileLogic",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__setLogicState",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__userProps",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.componentDidCatch",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.componentDidMount",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.componentDidUpdate",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.componentWillUnmount",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.constructor",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.getDerivedStateFromError",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.render",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__makeLogic",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__userProps",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__reconcileLogic",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__makeLogic",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__reconcileLogic",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__userProps",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__reconcileLogic",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#shallowEqual",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.componentDidUpdate",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__userProps",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.constructor",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#__publicField",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.constructor",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__makeLogic",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.constructor",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.ensureFetched",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.render",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__reconcileLogic",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.render",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.__userProps",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory.StreamableComponent.render",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#hintToMin",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.ensureBabel",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.getError",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.load",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.resolve2",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.resolveGlobal",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.waitForGlobal",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.ensureBabel",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#cdnScriptFor",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.load",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#bundledBlob",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.load",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.ensureBabel",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.load",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#getReact",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.resolveGlobal",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.waitForGlobal",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.resolveGlobal",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#isCustomElementName",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.resolveGlobal",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#isRenderableType",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.resolveGlobal",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#resolveDottedPath",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.waitForGlobal",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#isCustomElementName",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.waitForGlobal",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.waitForGlobal.tick",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.waitForGlobal.tick",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#isRenderableType",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.waitForGlobal.tick",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#resolveDottedPath",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.applyCanvasBg",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.postDesignMode",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.applyCanvasBg",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.compile",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.postDesignMode",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.setDesignDocMode",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.compile",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#bundledBlob",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.setDesignDocMode",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.applyCanvasBg",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.setDesignDocMode",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager.postDesignMode",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createPseudoSheet",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#importantify",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRegistry",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRegistry.bump",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRegistry",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRegistry.bumpAll",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRegistry",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRegistry.get",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRegistry.bump",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRegistry.get",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRegistry.bumpAll",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRegistry.bump",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createComponentFactory",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createHelmetManager",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createPseudoSheet",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRegistry",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.adoptParsed",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.dcUpdate",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.ensureFetched",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.setProps",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.setStreaming",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.updateHtml",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.updateJs",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.adoptParsed",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.updateHtml",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.adoptParsed",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.updateJs",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.dcUpdate",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.setStreaming",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.dcUpdate",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.updateHtml",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.dcUpdate",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.updateJs",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.dcUpdate",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#parseDataProps",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.ensureFetched",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#bundledBlob",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.ensureFetched",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.updateHtml",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.ensureFetched",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.updateJs",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.ensureFetched",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#parseDcText",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.updateHtml",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#compileTemplate",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createRuntime.updateJs",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#evalDcLogic",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker.live",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker.liveOne",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker.push",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker.live",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker.liveOne",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#cssToObj",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#kebabToCamel",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#encodeCase",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#encodeCamelAttrs",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#evalDcLogic",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#getReact",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#hostPositionStyle",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#cssToObj",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#importantify",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#scanUnquotedUrl",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#importantify",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#stripComments",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#init",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#boot",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#init",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createRuntime",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#init",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createStreamTracker",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#init",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#init.notifyHost",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#init",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#init.notifyHost",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#isRenderableType",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#isElementClass",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#loadReactUmd",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#cdnScriptFor",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#loadReactUmd",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#loadScript",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#loadScript",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#createExternalModules.resolve2",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#parseDcDocument",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#parseDataProps",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#parseDcText",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#parseDataProps",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#renderDeckKids",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#getReact",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#resolve",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#findTopLevelEquality",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#resolve",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#parensWrapWhole",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#resolve",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#resolve",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#resolve",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#resolvePath",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#resolvePath",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#resolve",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#rootNameForDocument",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#dcNameFromPath",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#rootNameForDocument",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#safeDecode",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#stripComments",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#scanUnquotedUrl",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walk",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkComponent",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walk",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkElement",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walk",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkFor",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walk",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkIf",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walk",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkText",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walk",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkChildren",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walk",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#collectProps",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#compileAttr",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#hostPositionStyle",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkComponent",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkChildren",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkDeckChildren",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walk",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkElement",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#collectProps",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkElement",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#contentKey",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkElement",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#cssToObj",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkElement",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#isDeckMountTag",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkElement",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#renderDeckKids",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkElement",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkChildren",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkElement",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkDeckChildren",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkFor",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#compileAttr",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkFor",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#getReact",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkFor",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkChildren",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkFor",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#warnUnresolved",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkIf",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#compileAttr",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkIf",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#getReact",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkIf",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkChildren",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkText",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#getReact",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkText",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#resolve",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkText",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#warnUnresolved",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#collectProps",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#compileAttr",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#hostPositionStyle",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#isDeckMountTag",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#renderDeckKids",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkChildren",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkDeckChildren",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkXImport.evalName",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkXImport.kindOf",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkXImport.evalName",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "design_handoff_chancery_brand/prototypes/support.js#walkXImport",
+      "target": "design_handoff_chancery_brand/prototypes/support.js#walkXImport.kindOf",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "eval/parallel/select-sample.mjs",
+      "target": "eval/parallel/select-sample.mjs#sha",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "eval/parallel/select-sample.mjs",
+      "target": "eval/parallel/select-sample.mjs#sha",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "eval/parallel/select-sample.mjs",
+      "target": "node:crypto",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "eval/parallel/select-sample.mjs",
+      "target": "node:fs",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "eval/parallel/select-sample.mjs",
+      "target": "node:path",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "eval/parallel/select-sample.mjs",
+      "target": "node:url",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "eval/parallel/select-sample.mjs",
+      "target": "yaml",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/capture/capture-terminal.mjs",
+      "target": "site/capture/capture-terminal.mjs#push",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/capture/capture-terminal.mjs",
+      "target": "site/capture/capture-terminal.mjs#run",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/capture/capture-terminal.mjs",
+      "target": "site/capture/capture-terminal.mjs#push",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/capture/capture-terminal.mjs",
+      "target": "site/capture/capture-terminal.mjs#run",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/capture/capture-terminal.mjs",
+      "target": "../../.kb/lib/promote.mjs",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/capture/capture-terminal.mjs",
+      "target": "node:child_process",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/capture/capture-terminal.mjs",
+      "target": "node:fs",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/capture/capture-terminal.mjs",
+      "target": "node:os",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/capture/capture-terminal.mjs",
+      "target": "node:path",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/capture/capture-terminal.mjs",
+      "target": "node:url",
+      "relation": "imports",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/docs/js/landing.js",
+      "target": "site/docs/js/landing.js#init",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/docs/js/landing.js",
+      "target": "site/docs/js/landing.js#init",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/docs/js/landing.js#init",
+      "target": "site/docs/js/landing.js#init.paint",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/docs/js/landing.js#init",
+      "target": "site/docs/js/landing.js#init.play",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/docs/js/landing.js#init",
+      "target": "site/docs/js/landing.js#init.paint",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/docs/js/landing.js#init",
+      "target": "site/docs/js/landing.js#init.play",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/docs/js/landing.js#init",
+      "target": "site/docs/js/landing.js#init.render",
+      "relation": "contains",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/docs/js/landing.js#init.paint",
+      "target": "site/docs/js/landing.js#init.paint",
+      "relation": "calls",
+      "confidence": "extracted"
+    },
+    {
+      "source": "site/docs/js/landing.js#init.play",
+      "target": "site/docs/js/landing.js#init.render",
+      "relation": "calls",
+      "confidence": "extracted"
+    }
+  ]
+}
