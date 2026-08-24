@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://www.anthropic.com/news/fable-mythos-access
+    hash: sha256:59403c9be01303ca40c4223ddfc1f6d2ac432cb5d287ebcfc3f46dc1bec7b36b
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Fable 5 export-control directive

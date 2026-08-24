@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://arxiv.org/abs/2005.11401
+    hash: sha256:72df6adcb0769869d4e3b2acd2cdd72495e74b49ba1c61dddeb013830df5d1e2
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Retrieval-Augmented Generation (RAG)

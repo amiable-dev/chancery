@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://predictionguard.com/blog/ai-security-event-logging-the-siem-gap-in-agentic-ai-governance
+    hash: sha256:05e623945dbd3b38e678c6324467645829e41b9ff27e58bdeb5344c35c83432c
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # SIEM visibility gap for agentic AI

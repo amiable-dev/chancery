@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://agentskills.io/home
+    hash: sha256:60403a5b54531e66647bc330f08ad149e07d1de303baf1c203deba27a79e8e1b
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Agent Skills format

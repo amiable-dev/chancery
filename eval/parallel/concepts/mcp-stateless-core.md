@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/
+    hash: sha256:41ac604fbe79fbb905ca0b2bed18394fccab871c1fd521c363c5cc913881b227
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # MCP stateless protocol core

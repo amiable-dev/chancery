@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://en.wikipedia.org/wiki/Forgetting_curve
+    hash: sha256:4909f49875e6dd6c3e8b72580e74292e0cc52ecfcffee7741f5f6036da97a6fe
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Ebbinghaus forgetting curve

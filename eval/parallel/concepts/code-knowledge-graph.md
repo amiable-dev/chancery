@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://www.falkordb.com/blog/code-graph/
+    hash: sha256:030278b97b8f98026960c39895d831f42c5f379ed85f9e5d86f8659a41e39c1a
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Code knowledge graph

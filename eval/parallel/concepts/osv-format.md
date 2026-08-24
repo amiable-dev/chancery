@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://openssf.org/blog/2023/05/02/getting-to-know-the-open-source-vulnerability-osv-format/
+    hash: sha256:f71b7112ea2e582f3cb4aebf8ff5623286ed0676ec74d8ef57b96723beea81bc
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # OSV format

@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://blog.cloudflare.com/enterprise-mcp/
+    hash: sha256:b6afb82e86c514d9d7c7684b8c129302c2647fefc41d29ee4d12e0d003bdca89
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Remote-first MCP governance

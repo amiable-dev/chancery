@@ -1,0 +1,42 @@
+{
+  "envelope": {
+    "task_id": "a85da64e8c437d3a",
+    "verb": "facets",
+    "task_class": "classification",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "eec414e2bd95910be4a791862c0d06705a14e7c5",
+    "input_hashes": {
+      "concepts/acceptability-envelope-evals.md": "sha256:07a29e3393d4a01ac1f789d3118bcec34dcb15771de96b09d9a13f446e156547",
+      "concepts/agent-skills-format.md": "sha256:832d4f835399d91ffdac3a356a7bc92e6e98d8ef23479cac33fcce90429e5458",
+      "concepts/automated-w2s-sandbox.md": "sha256:f3e6f69f3fb29f7ecded371bd03c1e60d853c57d25cd0855e1afefeb498abae3",
+      "concepts/code-knowledge-graph.md": "sha256:40b03de3c97d9b7221b49b1e689ec2abf49b27500817f651042ca22c8266f0b5",
+      "concepts/code-mode-mcp.md": "sha256:0e752ed6b3342ebeffe02c0be2411420cb14c06454a7cbdc0615871060d103e1",
+      "concepts/context-layer.md": "sha256:51c33fcb8cab559e341fd4ffcc483f41e006b57511f26b56357fecff7b298168",
+      "concepts/ebbinghaus-forgetting-curve.md": "sha256:8a210aa344dbcb0b65d0d305d344c3c4ba01ea3c75cc7185c6252d4a2f680e6b",
+      "concepts/fable-5-export-directive.md": "sha256:3fb38b80913d0ef51bcea8a49bbe0eb17fae5651f901c0d1ce80e8e4fc06de5b",
+      "concepts/golden-dataset-retrieval-evals.md": "sha256:1464d728ed069beb0ee49566308731268909b07fb4194bb9238eff79f9933292",
+      "concepts/graph-vs-vector-code-retrieval.md": "sha256:d3797c7b23bcf91813f5ee619bdafd0b162beea651c1a4f2a78a7d75192e3820",
+      "concepts/llm-maintained-wiki.md": "sha256:08e7776e388825914a6d1b3497e0ead6c05efcf116f925088470cff526a52763",
+      "concepts/mcp-authorization-hardening.md": "sha256:91f68341ce7b241c580ab37fa7f0bf6f84fa8c6e65b35c7b260c13e80266d275",
+      "concepts/mcp-extensions-framework.md": "sha256:e924dc6e487e2899adb338846e3d911f50b13b0a7b7d7c76070d78c872030c2b",
+      "concepts/mcp-stateless-core.md": "sha256:6ffb23f45dde1624d8d65fea1e1443be6d4e783f5e10b32a09c5d735c3c3c483",
+      "concepts/natural-language-to-cypher.md": "sha256:9546ddd9697f1c3996b0a4bcb03907ba5a138041fec4e408ce56b53580a41c20",
+      "concepts/osv-format.md": "sha256:9094041bc7caf4b0bb36783db3be02c9189c6520559afb0cf1ad551369519d5b",
+      "concepts/paved-road-mcp-platform.md": "sha256:c01d904cd41103c83cf489c31e59d08b039075d52db163be79096ad8b0bacd5e",
+      "concepts/protocol-deprecation-policy.md": "sha256:0e9aa55a658f892477e25fc3d89b34edc06e72ae2305d9c0765ef5dee9dad09f",
+      "concepts/remote-first-mcp-governance.md": "sha256:b926e1dd268149ff8557f8330497a9d1f63eb3d18bdaa15e347a64e76472c396",
+      "concepts/retrieval-augmented-generation.md": "sha256:64eb81c60300a34d3cf8a3feafad7a88f67697e91ecd49087f4db60c77c7fd2f",
+      "concepts/retrieval-composition-engine.md": "sha256:25a95a421cd598f34292f7e7b152c76fc749cb73efb9339dad56ea8fbcfd0469",
+      "concepts/shadow-mcp-detection.md": "sha256:1d47cff47116f4c1984668a14a75d6a4981a5daf0e119f2741510a64391442d1",
+      "facets.yml": "sha256:62afa0cbf3f4eec64d0b866a21315734ee58eaf77627ea84f4c8a97c1aeb511c",
+      "schema:facet-draft.schema.json": "sha256:5d6d1031e7ab526fc47f1cadbf47c4ed614474265875721fdddab2d5672a1e40"
+    },
+    "allowed_writes": [
+      "concepts/*.md",
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "open"
+}

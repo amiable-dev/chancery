@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://sre.google/workbook/alerting-on-slos/
+    hash: sha256:77453677a42a9a711660c69e556b5a785a41685acab57ff18667a7fba561ccde
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # SLO burn-rate alerting

@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://zoyathinks.substack.com/p/evals-are-the-new-unit-tests-2c91f51399d6
+    hash: sha256:b9b49ed9fd1f39d00c069617eedefa94865e0644c289774b5a87e1fa56ed8b29
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # Acceptability-envelope evals

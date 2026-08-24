@@ -9,6 +9,9 @@ tags:
 status: draft
 sources:
   - url: https://www.aibuilderclub.com/blog/karpathy-llm-wiki
+    hash: sha256:4018178174683320ffd5f3942cf55802c9872e851c2a539deb5c7971ae817668
+    retrieved: 2026-08-24
+    reachability: ok
 ---
 
 # LLM-maintained wiki
