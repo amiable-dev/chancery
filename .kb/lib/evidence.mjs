@@ -85,3 +85,22 @@ export function recordObservation(root, slug, obs, runId) {
   fs.appendFileSync(storePath(root, slug), `${JSON.stringify(record)}\n`);
   return record;
 }
+
+/**
+ * Freshness state for one citation (ADR-013 D5, packet 8): deterministic and
+ * date-carrying — states plus exact dates, never day-counts, so no clock
+ * enters the read path and eval diffs cannot flap. Check-recency is not
+ * validity; the state names what is actually known.
+ */
+export function freshness(latestObs, acceptedHash) {
+  if (!latestObs) return { state: 'never-checked', last_checked: null };
+  const when = latestObs.run ? latestObs.run.split(':').pop() : null;
+  const r = latestObs.reachability;
+  if (r === 'ok') {
+    const digest = latestObs.authenticity?.content_digest ?? null;
+    return { state: digest === acceptedHash ? 'hash-unchanged' : 'content-drifted', last_checked: when };
+  }
+  if (r === 'dead-no-archive' || r === 'dead-with-archive')
+    return { state: 'unverifiable', last_checked: when };
+  return { state: `unreachable:${r}`, last_checked: when };
+}

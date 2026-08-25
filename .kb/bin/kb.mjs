@@ -2421,6 +2421,16 @@ function query(argv) {
 
   const filters = { domain: argv.domain, maturity: argv.maturity };
   const hits = retrieve(notes, question, { filters, limit: argv.limit ?? 6 });
+  // D5: per-citation freshness — states with exact dates from the C5 store,
+  // never day-counts, so no clock enters the read path (packet 8).
+  for (const h of hits) {
+    const note = notes.find((n) => n.slug === h.slug);
+    const obs = evidence.latestByCite(evidence.readStore(ROOT, h.slug));
+    h.evidence = (note?.data?.sources ?? []).filter((s) => s.url).map((s) => {
+      const latest = obs.get(evidence.citeId(h.slug, s.url)) ?? null;
+      return { url: s.url, ...evidence.freshness(latest, s.hash ?? null) };
+    });
+  }
 
   // Read-only verb: the envelope is stateless — the id derives from question +
   // retrieved content, so the same query against the same corpus re-derives it

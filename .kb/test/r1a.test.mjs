@@ -15,7 +15,7 @@ import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { renderConcept } from '../lib/promote.mjs';
-import { recordObservation, readStore, citeId, canonicalUrl } from '../lib/evidence.mjs';
+import { recordObservation, readStore, citeId, canonicalUrl, freshness } from '../lib/evidence.mjs';
 
 const KB_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CLI = path.join(KB_DIR, 'bin', 'kb.mjs');
@@ -182,5 +182,22 @@ if (failures.length) {
   console.error(`r1a test FAILED:\n${failures.map((f) => `  - ${f}`).join('\n')}`);
   process.exitCode = 1;
 } else {
-  console.log('r1a test passed — never-resolved arithmetic, atomic supersession, bound support verdicts, idempotent backfill');
+  // ---- D5: freshness states — deterministic, date-carrying, no clock ----
+{
+  const ok = (d, digest) => ({ reachability: 'ok', run: `r1:${d}`, authenticity: { content_digest: digest } });
+  check('hash-unchanged when latest ok observation matches the accepted baseline',
+    freshness(ok('2026-08-24', 'sha256:aa'), 'sha256:aa').state === 'hash-unchanged'
+    && freshness(ok('2026-08-24', 'sha256:aa'), 'sha256:aa').last_checked === '2026-08-24');
+  check('content-drifted when latest digest differs from the accepted baseline',
+    freshness(ok('2026-08-24', 'sha256:bb'), 'sha256:aa').state === 'content-drifted');
+  check('unverifiable for dead sources, date carried',
+    freshness({ reachability: 'dead-no-archive', run: 'r1:2026-08-20' }, 'sha256:aa').state === 'unverifiable'
+    && freshness({ reachability: 'dead-no-archive', run: 'r1:2026-08-20' }, 'sha256:aa').last_checked === '2026-08-20');
+  check('degraded reachability surfaces as unreachable with the kind',
+    freshness({ reachability: 'blocked-4xx', run: 'r1:2026-08-21' }, 'sha256:aa').state === 'unreachable:blocked-4xx');
+  check('never observed is stated, not guessed',
+    freshness(null, 'sha256:aa').state === 'never-checked' && freshness(null, 'sha256:aa').last_checked === null);
+}
+
+console.log('r1a test passed — never-resolved arithmetic, atomic supersession, bound support verdicts, idempotent backfill');
 }
