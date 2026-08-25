@@ -27,7 +27,7 @@ This is published working software, not a product. No hosted service, no benchma
 
 ## The roadmap is a set of tripwires, not dates
 
-Everything unbuilt carries the condition that builds it: confidence tiers and lineage counting arm after 90 days and ≥50 support verdicts of real evidence *and* an adjudication-budget audit (queues that outgrow their curator are the failure mode, so affordability is proven first — with cancellation as a legitimate outcome); full-text search arms when measured recall on the query eval set degrades for two consecutive months, never at a note-count; a remote MCP surface arms at a concrete external consumer; binaries arm at distribution demand, with a byte-parity contract. Details in [SCOPE](SCOPE.md) and the [ADRs](adrs/).
+Everything unbuilt carries the condition that builds it: confidence tiers and lineage counting arm after 90 days and ≥50 support verdicts of real evidence *and* an adjudication-budget audit (queues that outgrow their curator are the failure mode, so affordability is proven first — with cancellation as a legitimate outcome); full-text/graph-rank retrieval arms when recall on the query eval set regresses against its pinned baseline across a substantive change (corpus revision, query cohort, or ranker) — never elapsed time on a fixed fixture, never a note-count; a remote MCP surface arms at a concrete external consumer; binaries arm at distribution demand, with a byte-parity contract. Details in [SCOPE](SCOPE.md) and the [ADRs](adrs/).
 
 ## Why the name
 

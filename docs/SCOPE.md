@@ -33,6 +33,8 @@ The first user is us. **Success is measured as research throughput and corpus qu
 | SaaS / hosted product; multi-tenant anything | T4: a concrete remote consumer with auth/tenancy needs — and then only scoped properly |
 | Product/category marketing ("knowledge infrastructure for AI agents" as a claim; wedge marketing; roadmap promises to outsiders) | T1/T2 evidence → **Gear 3** (§7), never asserted ahead of it |
 | Rust rewrite; distribution machinery beyond a Bun-compiled binary experiment | T5: Node-less harness, measured latency, or a real distribution play |
+| Full-text/graph-rank retrieval build (ADR-013 D1) | T7: recall on the query eval set regresses against its pinned baseline across a **substantive change** (corpus revision, query cohort, or ranker) — never elapsed time on a fixed fixture, and never a note-count. Adjudicated by the D2 harness under its preregistered rule (packet 8, B8). |
+| `kb viz` single-file graph viewer | T8: ≥2 distinct external requests recorded as issues, or selection by the #1 queue-visualisation review (ADR-013 D6 — a countable condition, not "demand"). |
 
 ## 4. Standing invariants (violating one is a design regression, not a preference)
 
