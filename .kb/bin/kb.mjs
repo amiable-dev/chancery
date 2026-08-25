@@ -33,6 +33,7 @@ import { linkGraph, oneWay, buildLinkTask, appendRelationships, loadNotes } from
 import { transformNote, tagsFile, rewriteLinks, jsonCorpus, mergeTags, TRANSFORM_VERSION, JSON_SCHEMA_VERSION } from '../lib/export-docusaurus.mjs';
 import { loadProcedures, render as renderAdapters } from './install-knowledge.mjs';
 import { retrieve, buildQueryTask, checkCitations } from '../lib/query.mjs';
+import * as evalset from '../lib/evalset.mjs';
 import * as envlib from '../lib/envelope.mjs';
 import * as evidence from '../lib/evidence.mjs';
 import { TASKS as CONTEXT_TASKS, loadAnchors, resolveAnchor, compile as compileContext, edgesFor } from '../lib/context.mjs';
@@ -2418,9 +2419,107 @@ function query(argv) {
   return 0;
 }
 
+/** ADR-013 D2 — the query eval set: hygiene gate, canonical hash, pinned-clock harness. */
+function evalsetCmd(argv) {
+  const cfg = loadConfig();
+  const format = pickFormat(argv.format);
+  const [sub] = argv.rest;
+  const dir = path.join(ROOT, 'eval', 'queries');
+  if (!fs.existsSync(dir)) {
+    console.log(format === 'json'
+      ? JSON.stringify({ ok: false, error: { command: 'evalset', message: 'no eval/queries directory' } }, null, 2)
+      : 'REFUSED — no eval/queries directory (see docs/design/query-eval-set.md)');
+    return 1;
+  }
+  const readJsonl = (f) => fs.existsSync(f)
+    ? fs.readFileSync(f, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
+  const items = readJsonl(path.join(dir, 'queries.jsonl'));
+  const apriori = readJsonl(path.join(dir, 'qrels', 'apriori.jsonl'));
+  const aliasFile = path.join(dir, 'aliases.yaml');
+  const aliases = fs.existsSync(aliasFile) ? (parseYaml(fs.readFileSync(aliasFile, 'utf8')) ?? {}) : {};
+  const config = parseYaml(fs.readFileSync(path.join(dir, 'config.yaml'), 'utf8')) ?? {};
+
+  const notes = listNotes(cfg.collections.concepts).map((n) => {
+    const { data, body } = splitFrontmatter(fs.readFileSync(n.abs, 'utf8'));
+    return { slug: n.slug, title: data?.title ?? n.slug, data, body };
+  });
+  const concepts = new Set(notes.map((n) => n.slug));
+
+  // The corpus content hash pins what the run measured — commit-independent,
+  // so a dirty tree is measured as what it is.
+  const corpusHash = 'sha256:' + crypto.createHash('sha256')
+    .update(notes.map((n) => `${n.slug}\n${n.body}`).sort().join('\x00')).digest('hex');
+
+  const surfaces = { queries: items, apriori, aliases, config };
+  const hash = evalset.evalsetHash(surfaces);
+
+  if (sub === 'hash') {
+    console.log(format === 'json' ? JSON.stringify({ ok: true, evalset_hash: hash, corpus_hash: corpusHash }, null, 2)
+      : `${hash}\n${corpusHash}`);
+    return 0;
+  }
+
+  if (sub === 'check' || sub === undefined) {
+    const findings = evalset.validateItems(items, { concepts, curatorCap: config.curator_cap ?? 0.5 });
+    const payload = { ok: findings.length === 0, evalset_hash: hash, items: items.length, findings };
+    console.log(format === 'json' ? JSON.stringify(payload, null, 2)
+      : findings.length
+        ? `FAIL — ${findings.length} finding(s)\n${findings.map((f) => `  ${f.code} ${f.id}: ${f.message}`).join('\n')}`
+        : `PASS — ${items.length} item(s), hash ${hash.slice(0, 23)}…`);
+    return findings.length ? 1 : 0;
+  }
+
+  if (sub === 'run') {
+    // The clock is pinned (packet 8 B4/D5): KB_NOW, else the HEAD commit
+    // date. Never wall time — a deterministic harness must not flap daily.
+    let now = process.env.KB_NOW;
+    if (!now) {
+      try { now = execFileSync('git', ['log', '-1', '--format=%cI'], { cwd: ROOT, stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim(); }
+      catch { /* fall through */ }
+    }
+    if (!now) {
+      console.log(format === 'json'
+        ? JSON.stringify({ ok: false, error: { command: 'evalset', message: 'no pinned clock: set KB_NOW or run inside git' } }, null, 2)
+        : 'REFUSED — no pinned clock: set KB_NOW or run inside git');
+      return 1;
+    }
+    const findings = evalset.validateItems(items, { concepts, curatorCap: config.curator_cap ?? 0.5 });
+    if (findings.length) {
+      console.log(format === 'json'
+        ? JSON.stringify({ ok: false, error: { command: 'evalset', message: 'hygiene failing; fix `kb evalset check` first', findings } }, null, 2)
+        : 'REFUSED — hygiene failing; run `kb evalset check`');
+      return 1;
+    }
+    const report = evalset.runHarness({ notes, items, aliases, config: { ...config, now } });
+    report.corpus_hash = corpusHash;
+    const outDir = path.join(dir, 'results');
+    fs.mkdirSync(outDir, { recursive: true });
+    const outFile = path.join(outDir, `${report.evalset_hash.slice(7, 19)}-${corpusHash.slice(7, 19)}.json`);
+    const rendered = JSON.stringify(report, null, 2) + '\n';
+    // G4 artifact reproduction: an existing artifact for this (evalset, corpus)
+    // key must match byte-for-byte, or the committed numbers are not these.
+    if (fs.existsSync(outFile) && fs.readFileSync(outFile, 'utf8') !== rendered) {
+      console.log(format === 'json'
+        ? JSON.stringify({ ok: false, error: { command: 'evalset', message: `artifact mismatch: ${path.relative(ROOT, outFile)} does not reproduce` } }, null, 2)
+        : `FAIL — artifact mismatch: ${path.relative(ROOT, outFile)} does not reproduce`);
+      return 1;
+    }
+    fs.writeFileSync(outFile, rendered);
+    const h = report.headline;
+    console.log(format === 'json' ? JSON.stringify({ ok: true, artifact: path.relative(ROOT, outFile), watermark: report.watermark, headline: h }, null, 2)
+      : `${report.watermark}\n  headline n=${h.n}  recall@${config.k?.[0] ?? 3}: ${JSON.stringify(h[`recall_at_${config.k?.[0] ?? 3}`])}\n  artifact: ${path.relative(ROOT, outFile)}`);
+    return 0;
+  }
+
+  console.log(format === 'json'
+    ? JSON.stringify({ ok: false, error: { command: 'evalset', message: `unknown subcommand: ${sub}` } }, null, 2)
+    : `unknown subcommand: ${sub} (check | hash | run)`);
+  return 1;
+}
+
 // ---------------------------------------------------------------- dispatch
 
-const COMMANDS = { init, verify, index, migrate, sources, ingest, assess, promote, cards, facets, link, supersede, support, revalidate, audit, context, log: logCmd, query, export: exportCmd, queue: queueCmd };
+const COMMANDS = { init, verify, index, migrate, sources, ingest, assess, promote, cards, facets, link, supersede, support, revalidate, audit, context, log: logCmd, query, export: exportCmd, queue: queueCmd, evalset: evalsetCmd };
 
 const USAGE = `kb — knowledge pipeline
 

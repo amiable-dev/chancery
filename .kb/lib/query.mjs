@@ -51,6 +51,9 @@ export function retrieve(notes, question, { filters = {}, limit = 6 } = {}) {
     if (superseded) r.score = r.score / 2;
     return {
       slug: n.slug,
+      // Exposed for the eval harness's abstention contract (spec v2): a
+      // declared score cutoff needs the score it cuts on.
+      score: r.score,
       ...(superseded ? { superseded_by: n.data?.superseded_by ?? [] } : {}),
       title: n.title,
       domain: n.data?.domain ?? null,

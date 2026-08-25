@@ -1,0 +1,8 @@
+# Policy config — every value here changes numbers without changing the corpus,
+# so all of it is inside the eval-set hash (packet 8, G4 policy-hash completeness).
+k: [3, 6]
+score_cutoff: 0        # abstention: no hit clears this ⇒ the challenger abstains
+curator_cap: 0.5
+marginal_treatment: strict   # lenient always co-reported when pooled qrels exist
+near_dup: normalized-exact   # tier-1 screen; stemmer lands with the vocab-mismatch tier
+stemmer: none-v0
