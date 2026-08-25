@@ -69,7 +69,7 @@ const out = path.join(fixture, 'site');
   const page = fs.readFileSync(path.join(out, 'concepts', 'other-note.md'), 'utf8');
   check('mounted ids are prefixed (default kb/)', /^id: kb\/other-note$/m.test(page));
   check('links are site-absolute under --base-path', page.includes('](/kb/live-note)'));
-  check('manifest pins transform + config', manifest.transform_version === '2' && manifest.config.base_path === '/kb' && manifest.config.id_prefix === 'kb/');
+  check('manifest pins transform + config', manifest.transform_version === '3' && manifest.config.base_path === '/kb' && manifest.config.id_prefix === 'kb/');
   check('manifest hashes rendered files', Object.values(manifest.files).every((h) => /^sha256:[0-9a-f]{64}$/.test(h)));
 }
 
@@ -103,7 +103,7 @@ const out = path.join(fixture, 'site');
   const r = run(['export', 'json', '--out', out, '--format', 'json']);
   check('json renders', r.code === 0);
   const corpus = JSON.parse(fs.readFileSync(path.join(out, 'corpus.json'), 'utf8'));
-  check('json preserves source structure', corpus.schema_version === '1'
+  check('json preserves source structure', corpus.schema_version === '2'
     && corpus.notes.every((n) => n.slug && n.frontmatter && typeof n.body === 'string')
     && corpus.notes.some((n) => n.body.includes('[[live-note')));
   check('json excludes superseded notes too', !corpus.notes.some((n) => n.slug === 'old-note'));

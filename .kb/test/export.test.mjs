@@ -6,7 +6,7 @@
  * worth pinning are the three places Obsidian and Docusaurus genuinely disagree.
  */
 import { stringify as stringifyYaml } from 'yaml';
-import { rewriteLinks, docFrontmatter, transformNote } from '../lib/export-docusaurus.mjs';
+import { rewriteLinks, docFrontmatter, transformNote, provenanceExceptions, renderProvenance } from '../lib/export-docusaurus.mjs';
 
 const failures = [];
 const check = (name, cond) => { if (!cond) failures.push(name); };
@@ -60,4 +60,34 @@ if (failures.length) {
   console.error('EXPORT TEST FAILED\n' + failures.map((f) => `  - ${f}`).join('\n'));
   process.exit(1);
 }
+// ---- D4: provenance-graded rendering — exceptions only, against the norm ----
+{
+  const norm = { supplier: 'model-single', source_class: 'external-primary' };
+  const none = provenanceExceptions({
+    data: { sources: [{ url: 'u', class: 'external-primary' }] },
+    admission: { supplier: { class: 'model-single' }, action: 'promote' },
+  }, norm);
+  check('norm case yields no exceptions', none.length === 0);
+
+  const exc = provenanceExceptions({
+    data: { sources: [{ url: 'u', class: 'external-secondary' }] },
+    admission: { supplier: { class: 'model-single' }, action: 'queue', override: true, override_date: '2026-08-24' },
+  }, norm);
+  check('secondary source is an exception', exc.some((e) => e.kind === 'secondary-source'));
+  check('owner override is an exception and carries its date',
+    exc.some((e) => e.kind === 'owner-override' && e.date === '2026-08-24'));
+
+  const html = renderProvenance(exc);
+  check('exceptions render one accessible, machine-readable block',
+    html.includes('kb-provenance') && html.includes('data-exceptions=') && /owner override/i.test(html));
+  check('norm renders nothing', renderProvenance([]) === '');
+
+  const out = transformNote('x', '---\ntitle: "X"\ntags: [concept]\n---\n\n# X\n\n## Definition\nBody.\n',
+    new Set(['x']), () => 'X', stringifyYaml, { provenance: exc });
+  check('transformNote appends the exceptions block', out.includes('kb-provenance'));
+  const outNorm = transformNote('x', '---\ntitle: "X"\ntags: [concept]\n---\n\n# X\n\n## Definition\nBody.\n',
+    new Set(['x']), () => 'X', stringifyYaml, { provenance: [] });
+  check('norm note body is untouched', !outNorm.includes('kb-provenance'));
+}
+
 console.log('export test passed — links, facets and headings translate; code stays untouched');

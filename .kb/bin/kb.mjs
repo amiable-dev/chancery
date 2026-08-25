@@ -30,7 +30,7 @@ import * as queue from '../lib/queue.mjs';
 import { buildDraftTask, renderConcept, stagingSourceUrl, unresolvedTargets } from '../lib/promote.mjs';
 import { loadFacets, conformance, buildFacetTask, applyFacets } from '../lib/facets.mjs';
 import { linkGraph, oneWay, buildLinkTask, appendRelationships, loadNotes } from '../lib/link.mjs';
-import { transformNote, tagsFile, rewriteLinks, jsonCorpus, mergeTags, TRANSFORM_VERSION, JSON_SCHEMA_VERSION } from '../lib/export-docusaurus.mjs';
+import { transformNote, tagsFile, rewriteLinks, jsonCorpus, mergeTags, provenanceExceptions, renderProvenance, TRANSFORM_VERSION, JSON_SCHEMA_VERSION } from '../lib/export-docusaurus.mjs';
 import { loadProcedures, render as renderAdapters } from './install-knowledge.mjs';
 import { retrieve, buildQueryTask, checkCitations } from '../lib/query.mjs';
 import * as evalset from '../lib/evalset.mjs';
@@ -2029,14 +2029,47 @@ function exportCmd(argv) {
     files[rel] = `sha256:${crypto.createHash('sha256').update(content).digest('hex')}`;
   };
 
+  // D4: provenance grading, computed here at build time from records — the
+  // admitting assessment (supplier, routed action) reached through the log's
+  // promote lines, override dates from the queue's resolution records, and
+  // source classes from the notes themselves. The norm for this corpus:
+  // model-single supplier, external-primary sources, no override. Exceptions
+  // only are rendered; the norm renders nothing.
+  const PROVENANCE_NORM = { supplier: 'model-single', source_class: 'external-primary' };
+  const admissions = (() => {
+    const bySlug = new Map();
+    const logDir = path.join(ROOT, 'log');
+    const lines = fs.existsSync(logDir)
+      ? fs.readdirSync(logDir).filter((f) => f.endsWith('.md'))
+          .flatMap((f) => fs.readFileSync(path.join(logDir, f), 'utf8').split('\n')) : [];
+    const resolved = new Map(queue.list(QUEUE_DIR, {})
+      .filter((e) => e.kind === 'promotion' && e.status === 'accepted')
+      .map((e) => [String(e.subject), e.resolved ?? null]));
+    for (const ln of lines) {
+      const m = ln.match(/^- promote staging\/(.+?)\.md → applied; \d+ concept\(s\): ([^;]+)/);
+      if (!m) continue;
+      const stem = m[1];
+      const aFile = path.join(KB_DIR, 'assessments', `${stem}.json`);
+      if (!fs.existsSync(aFile)) continue;
+      const a = JSON.parse(fs.readFileSync(aFile, 'utf8'));
+      const override = a.action !== 'promote' && a.action !== 'split';
+      const admission = { supplier: a.verdict?.supplier ?? null, action: a.action,
+        override, override_date: override ? (resolved.get(`staging/${stem}.md`) ?? a.assessed ?? null) : null };
+      for (const s of m[2].split(',').map((x) => x.trim())) bySlug.set(s, admission);
+    }
+    return bySlug;
+  })();
+  const gradesOf = (note) => provenanceExceptions({ data: note.data, admission: admissions.get(note.slug) ?? null }, PROVENANCE_NORM);
+
   let delinked = 0;
   if (target === 'json') {
-    put('corpus.json', `${JSON.stringify(jsonCorpus(notes), null, 2)}\n`);
+    put('corpus.json', `${JSON.stringify(jsonCorpus(notes, gradesOf), null, 2)}\n`);
   } else {
     for (const note of notes) {
+      const grades = gradesOf(note);
       const out = target === 'docusaurus'
-        ? transformNote(note.slug, note.raw ? `---\n${note.raw}\n---\n${note.body}` : fs.readFileSync(note.abs, 'utf8'), known, titleOf, stringifyYaml, { basePath, idPrefix })
-        : `# ${note.data?.title ?? note.slug}\n\n${rewriteLinks(note.body.replace(/^\s*#\s+.+?\r?\n+/, ''), known, titleOf, { basePath })}`;
+        ? transformNote(note.slug, note.raw ? `---\n${note.raw}\n---\n${note.body}` : fs.readFileSync(note.abs, 'utf8'), known, titleOf, stringifyYaml, { basePath, idPrefix, provenance: grades })
+        : `# ${note.data?.title ?? note.slug}\n\n${rewriteLinks(note.body.replace(/^\s*#\s+.+?\r?\n+/, ''), known, titleOf, { basePath })}${renderProvenance(grades)}`;
       if (!out) continue;
       put(path.posix.join('concepts', `${note.slug}.md`), out);
       for (const l of wikilinks(note.body)) if (!known.has(targetSlug(l.target))) delinked++;
