@@ -11,7 +11,7 @@
     "kb": "node .kb/bin/kb.mjs",
     "verify": "node .kb/bin/kb.mjs verify",
     "index": "node .kb/bin/kb.mjs index",
-    "test": "node .kb/test/md.test.mjs && node .kb/test/polarity.test.mjs && node .kb/test/routing.test.mjs && node .kb/test/migrate.test.mjs && node .kb/test/promote.test.mjs && node .kb/test/cards.test.mjs && node .kb/test/facets.test.mjs && node .kb/test/link.test.mjs && node .kb/test/query.test.mjs && node .kb/test/queue.test.mjs && node .kb/test/export.test.mjs && node .kb/test/adapters.test.mjs && node .kb/test/cli.test.mjs && node .kb/test/conformance.test.mjs && node .kb/test/r1a.test.mjs && node .kb/test/context.test.mjs && node .kb/test/mcp.test.mjs && node .kb/test/log-audit.test.mjs && node .kb/test/export-integration.test.mjs && node .kb/test/package.test.mjs && node .kb/test/evalset.test.mjs && node .kb/test/derivations.test.mjs",
+    "test": "node .kb/test/md.test.mjs && node .kb/test/polarity.test.mjs && node .kb/test/routing.test.mjs && node .kb/test/migrate.test.mjs && node .kb/test/promote.test.mjs && node .kb/test/cards.test.mjs && node .kb/test/facets.test.mjs && node .kb/test/link.test.mjs && node .kb/test/query.test.mjs && node .kb/test/queue.test.mjs && node .kb/test/export.test.mjs && node .kb/test/adapters.test.mjs && node .kb/test/cli.test.mjs && node .kb/test/conformance.test.mjs && node .kb/test/r1a.test.mjs && node .kb/test/context.test.mjs && node .kb/test/mcp.test.mjs && node .kb/test/log-audit.test.mjs && node .kb/test/export-integration.test.mjs && node .kb/test/package.test.mjs && node .kb/test/evalset.test.mjs && node .kb/test/derivations.test.mjs && node .kb/test/crux.test.mjs",
     "export": "node .kb/bin/kb.mjs export docusaurus",
     "adapters": "node .kb/bin/install-knowledge.mjs"
   },

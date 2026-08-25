@@ -23,7 +23,7 @@ import { finding, reportJson, reportHuman, summarise, pickFormat } from '../lib/
 import { buildIndex } from '../lib/index-gen.mjs';
 import { parseDeck, renderDeck, mergeDeck } from '../lib/cards.mjs';
 import { migrateConcept, migrateDeck } from '../lib/migrate.mjs';
-import { fetchAll, fetchExtract } from '../lib/sources.mjs';
+import { fetchAll, fetchExtract, hashText } from '../lib/sources.mjs';
 import { fetchArticle, renderStagingNote, deriveSlug } from '../lib/ingest.mjs';
 import { loadRubric, nearest, buildTask, route } from '../lib/rubric.mjs';
 import * as queue from '../lib/queue.mjs';
@@ -35,6 +35,7 @@ import { loadProcedures, render as renderAdapters } from './install-knowledge.mj
 import { retrieve, buildQueryTask, checkCitations } from '../lib/query.mjs';
 import * as evalset from '../lib/evalset.mjs';
 import * as derivations from '../lib/derivations.mjs';
+import * as crux from '../lib/crux.mjs';
 import * as envlib from '../lib/envelope.mjs';
 import * as evidence from '../lib/evidence.mjs';
 import { TASKS as CONTEXT_TASKS, loadAnchors, resolveAnchor, compile as compileContext, edgesFor } from '../lib/context.mjs';
@@ -657,6 +658,16 @@ function verify(argv) {
       .map((n) => ({ ...n, data: splitFrontmatter(fs.readFileSync(n.abs, 'utf8')).data })),
   }, cfg, out);
 
+  // D3: crux tri-state, integrity, and the per-work aggregate cap (KB024).
+  {
+    const notesFull = listNotes(cfg.collections.concepts).map((n) => {
+      const { data } = splitFrontmatter(fs.readFileSync(n.abs, 'utf8'));
+      return { slug: n.slug, data };
+    });
+    for (const f of crux.checkCrux(notesFull, (h) => crux.readCruxObject(ROOT, h),
+      { perWorkCap: cfg.checks?.crux_per_work_cap ?? 1500 })) out.push(finding(f));
+  }
+
   // D8: rebuild == cached — the executable determinism test. Read-only here;
   // only read verbs write the cache, and an absent cache is honest cold state.
   {
@@ -861,7 +872,7 @@ async function sources(argv) {
         // what we fetched, never what a human (or judged pass) recorded about
         // the source. Dropping `class` here cost 157 classifications once.
         const keep = {};
-        for (const k of ['title', 'class']) if (s[k] !== undefined) keep[k] = s[k];
+        for (const k of ['title', 'class', 'crux']) if (s[k] !== undefined) keep[k] = s[k];
         return r.unreachable
           ? { url: s.url, ...keep, unreachable: true, reachability: r.reachability, reason: r.reason, checked: r.checked,
               ...(r.archive ? { archive: r.archive } : {}) }
@@ -2698,9 +2709,77 @@ function evalsetCmd(argv) {
   return 1;
 }
 
+/** ADR-013 D3 — capture the load-bearing verbatim excerpt of a source, at judge time. */
+async function cruxCmd(argv) {
+  const cfg = loadConfig();
+  const format = pickFormat(argv.format);
+  const [slug, url] = argv.rest;
+  if (!slug || !url) throw new Error('usage: kb crux <slug> <url> --text "<verbatim>" [--locator L] [--license X] | --withheld');
+  const noteFile = path.join(ROOT, cfg.collections.concepts.path, `${slug}.md`);
+  if (!fs.existsSync(noteFile)) throw new Error(`no such concept: ${slug}`);
+  const raw = fs.readFileSync(noteFile, 'utf8');
+  const { data } = splitFrontmatter(raw);
+  const entry = (data?.sources ?? []).find((s) => s.url === url);
+  if (!entry) throw new Error(`concept ${slug} does not cite ${url}`);
+
+  let fields;
+  if (argv.withheld) {
+    // License-bound material: locator + the accepted source hash, no text.
+    fields = { source_hash: entry.hash ?? null, captured_at: today(),
+      ...(argv.locator ? { locator: argv.locator } : {}), license: 'withheld-license' };
+    if (!fields.source_hash) throw new Error('withheld crux needs an accepted source hash on the citation');
+  } else {
+    if (!argv.text) throw new Error('provide --text "<verbatim excerpt>" or --withheld');
+    // Capture-time containment: the ONLY time verbatimness is checkable,
+    // because the C5 store keeps hashes, not bytes (packet 7, stated plainly).
+    const got = await fetchExtract(url);
+    if (!got.text) throw new Error(`source not fetchable right now (${got.reason ?? got.reachability}); a crux binds to a fetched version`);
+    const contained = crux.checkContainment(got.text, argv.text);
+    if (!contained.ok) {
+      console.log(format === 'json'
+        ? JSON.stringify({ ok: false, error: { command: 'crux', message: contained.reason } }, null, 2)
+        : `REFUSED — ${contained.reason}`);
+      return 1;
+    }
+    const cap = crux.cruxCap(got.text.length);
+    if (argv.text.length > cap) {
+      console.log(format === 'json'
+        ? JSON.stringify({ ok: false, error: { command: 'crux', message: `excerpt is ${argv.text.length} chars; cap for this source is ${cap} (ceiling 500, lesser-of 25% for short works)` } }, null, 2)
+        : `REFUSED — excerpt is ${argv.text.length} chars; cap for this source is ${cap}`);
+      return 1;
+    }
+    const sourceHash = hashText(got.text);
+    fields = crux.storeCrux(ROOT, slug, { url, text: argv.text, source_hash: sourceHash,
+      captured_at: today(), locator: argv.locator ?? null, license: argv.license ?? null });
+    if (entry.hash && sourceHash !== entry.hash) {
+      // Not an error: the crux binds to what was fetched TODAY; the tri-state
+      // will read contested until the drift is accepted. Say so.
+      fields._note = 'fetched version differs from the accepted baseline — this crux reads contested until `kb sources` accepts the drift';
+    }
+  }
+
+  const { _note, ...cruxFields } = fields;
+  const lines = raw.split('\n');
+  const urlIdx = lines.findIndex((l) => l.includes(`url: ${url}`));
+  if (urlIdx === -1) throw new Error('could not locate the source entry to annotate');
+  let end = urlIdx + 1;
+  while (end < lines.length && /^\s{4,}\S/.test(lines[end])) end += 1;
+  const yaml = stringifyYaml({ crux: cruxFields }, { lineWidth: 0 }).trimEnd().split('\n')
+    .map((l) => `    ${l}`).join('\n');
+  lines.splice(end, 0, yaml);
+  fs.writeFileSync(noteFile, lines.join('\n'));
+  logApply({ verb: 'crux', target: `${slug} ← ${url}`, disposition: argv.withheld ? 'withheld' : 'captured',
+    rationale: argv.locator ?? null });
+
+  const payload = { ok: true, slug, url, crux: cruxFields, ...(_note ? { note: _note } : {}) };
+  console.log(format === 'json' ? JSON.stringify(payload, null, 2)
+    : `crux ${argv.withheld ? 'withheld' : 'captured'} for ${slug} (${(cruxFields.hash ?? '').slice(0, 20)}…)${_note ? `\n  NOTE: ${_note}` : ''}`);
+  return 0;
+}
+
 // ---------------------------------------------------------------- dispatch
 
-const COMMANDS = { init, verify, index, migrate, sources, ingest, assess, promote, cards, facets, link, supersede, support, revalidate, audit, context, log: logCmd, query, export: exportCmd, queue: queueCmd, evalset: evalsetCmd };
+const COMMANDS = { init, verify, index, migrate, sources, ingest, assess, promote, cards, facets, link, supersede, support, revalidate, audit, context, log: logCmd, query, export: exportCmd, queue: queueCmd, evalset: evalsetCmd, crux: cruxCmd };
 
 const USAGE = `kb — knowledge pipeline
 
@@ -2771,9 +2850,9 @@ const VALUE_FLAGS = new Set([
   '--slug', '--accept', '--out', '--domain', '--maturity', '--by', '--verdicts', '--why',
   '--for', '--query', '--budget', '--base', '--findings', '--only',
   '--base-path', '--id-prefix', '--host-tags', '--include-status',
-  '--surface', '--change', '--rationale',
+  '--surface', '--change', '--rationale', '--text', '--locator', '--license',
 ]);
-const BOOL_FLAGS = new Set(['--check', '--apply', '--retry-dead', '--force', '--all', '--no-fetch', '--merge-tags', '--follows-failing-run', '--favors-metric']);
+const BOOL_FLAGS = new Set(['--check', '--apply', '--retry-dead', '--force', '--all', '--no-fetch', '--merge-tags', '--follows-failing-run', '--favors-metric', '--withheld']);
 
 const parseArgs = (rest) => {
   const opts = {};
@@ -2824,6 +2903,10 @@ const parseArgs = (rest) => {
     rationale: opts['--rationale'] ?? null,
     'follows-failing-run': !!opts['--follows-failing-run'],
     'favors-metric': !!opts['--favors-metric'],
+    text: opts['--text'] ?? null,
+    locator: opts['--locator'] ?? null,
+    license: opts['--license'] ?? null,
+    withheld: !!opts['--withheld'],
     urls: positional.filter((a) => /^https?:\/\//.test(a)),
     target: positional.find((a) => !/^https?:\/\//.test(a)) ?? null,
     rest: positional,

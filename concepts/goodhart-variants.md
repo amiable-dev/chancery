@@ -12,6 +12,11 @@ sources:
     retrieved: 2026-08-24
     class: external-primary
     reachability: ok
+    crux:
+      hash: sha256:0d7fb4252422f247a3d9fc971594b21de868866d77e1893a7051b88e5761ec17
+      source_hash: sha256:7a0d21abcfbf8c5c5daa61350561eba47b8035bdcd6c6a7df09c9fa3f0cb6eb3
+      captured_at: 2026-08-25
+      locator: abstract, sentence 2
 ---
 
 # Goodhart's law variants

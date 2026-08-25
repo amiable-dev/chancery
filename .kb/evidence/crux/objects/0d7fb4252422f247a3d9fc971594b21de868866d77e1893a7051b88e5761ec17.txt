@@ -1,0 +1,1 @@
+a metric which can be used to improve a system is used to an extent that further optimization is ineffective or harmful
