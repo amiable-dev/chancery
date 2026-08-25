@@ -114,3 +114,34 @@ export function loadNotes(root, collection, listNotes) {
 }
 
 export { path };
+
+/**
+ * D7 (`kb suggest-links`, ADR-013 / packet 7): validate a supplier's proposed
+ * typed links BEFORE they reach the queue. The model is a proposer under
+ * governance — nothing here applies a link; accepted proposals wait for the
+ * owner. Rules by construction: targets must exist, clauses must say HOW
+ * (bare relatedness is rejected), no self-links, pairs already linked in the
+ * note are skipped with a reason, duplicates within one submission collapse.
+ */
+export function validateLinkSuggestions(slug, links, { known, existing }) {
+  const findings = [];
+  const accepted = [];
+  const skipped = [];
+  const seen = new Set();
+  const already = existing?.get(slug) ?? new Set();
+  for (const l of links ?? []) {
+    const target = l?.target;
+    if (!target || !known.has(target)) { findings.push({ target, reason: 'unknown target slug' }); continue; }
+    if (target === slug) { findings.push({ target, reason: 'self-link' }); continue; }
+    const clause = String(l.clause ?? '').trim();
+    if (!clause) { findings.push({ target, reason: 'missing clause' }); continue; }
+    if (/^related to\b/i.test(clause) || clause.split(/\s+/).length < 4) {
+      findings.push({ target, reason: 'clause must say HOW the two relate' }); continue;
+    }
+    if (already.has(target)) { skipped.push({ target, reason: 'already linked in the note' }); continue; }
+    if (seen.has(target)) { skipped.push({ target, reason: 'duplicate target in this submission' }); continue; }
+    seen.add(target);
+    accepted.push({ target, clause, ...(l.reciprocal ? { reciprocal: true } : {}) });
+  }
+  return { findings, accepted, skipped };
+}

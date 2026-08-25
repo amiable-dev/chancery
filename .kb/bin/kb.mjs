@@ -29,10 +29,10 @@ import { loadRubric, nearest, buildTask, route } from '../lib/rubric.mjs';
 import * as queue from '../lib/queue.mjs';
 import { buildDraftTask, renderConcept, stagingSourceUrl, unresolvedTargets } from '../lib/promote.mjs';
 import { loadFacets, conformance, buildFacetTask, applyFacets } from '../lib/facets.mjs';
-import { linkGraph, oneWay, buildLinkTask, appendRelationships, loadNotes } from '../lib/link.mjs';
+import { linkGraph, oneWay, buildLinkTask, appendRelationships, loadNotes, validateLinkSuggestions } from '../lib/link.mjs';
 import { transformNote, tagsFile, rewriteLinks, jsonCorpus, mergeTags, provenanceExceptions, renderProvenance, TRANSFORM_VERSION, JSON_SCHEMA_VERSION } from '../lib/export-docusaurus.mjs';
 import { loadProcedures, render as renderAdapters } from './install-knowledge.mjs';
-import { retrieve, buildQueryTask, checkCitations } from '../lib/query.mjs';
+import { retrieve, buildQueryTask, checkCitations, relationships } from '../lib/query.mjs';
 import * as evalset from '../lib/evalset.mjs';
 import * as derivations from '../lib/derivations.mjs';
 import * as crux from '../lib/crux.mjs';
@@ -2777,9 +2777,72 @@ async function cruxCmd(argv) {
   return 0;
 }
 
+/** ADR-013 D7 — model-assisted link proposal under governance: propose, never apply. */
+function suggestLinksCmd(argv) {
+  const cfg = loadConfig();
+  const format = pickFormat(argv.format);
+  const [slug] = argv.rest;
+  if (!slug) throw new Error('usage: kb suggest-links <slug> [--draft d.json]');
+  const notes = listNotes(cfg.collections.concepts).map((n) => {
+    const { data, body } = splitFrontmatter(fs.readFileSync(n.abs, 'utf8'));
+    return { slug: n.slug, title: data?.title ?? n.slug, data, body };
+  });
+  const me = notes.find((n) => n.slug === slug);
+  if (!me) throw new Error(`no such concept: ${slug}`);
+  const known = new Set(notes.map((n) => n.slug));
+  const linked = new Set(relationships(me.body).map((r) => r.target));
+  const firstSentence = (body) => {
+    const m = body.match(/## Definition\n([\s\S]*?)(\n## |$)/);
+    return (m?.[1] ?? '').trim().replace(/\s+/g, ' ').slice(0, 200);
+  };
+  const catalogue = notes.filter((n) => n.slug !== slug)
+    .map((n) => ({ slug: n.slug, title: n.title, definition: firstSentence(n.body) }));
+
+  if (!argv.draft) {
+    const wrapped = envlib.emit(ROOT, {
+      verb: 'suggest-links', taskClass: 'structuring', target: slug,
+      inputs: [{ name: `concept:${slug}`, text: me.body }],
+      allowedWrites: ['.kb/queue/*.jsonl'],
+      schemaVersion: String(cfg.version),
+      task: {
+        instructions: 'Propose 0-5 typed links from this concept to catalogue entries where a GENUINE mechanism-level relationship exists. The clause must say HOW they relate — a full clause; "related to X" is rejected. An empty list is the correct answer when nothing genuinely relates. Never invent slugs; never re-propose existing links. Proposals go to the owner\u2019s queue — nothing is applied. Reply {"task_id":..., "links": [{"target","clause","reciprocal"?}], "supplier": {...}} and nothing else.',
+        slug, body: me.body, existing_links: [...linked].sort(), catalogue,
+      },
+    });
+    console.log(JSON.stringify(wrapped, null, 2));
+    return 0;
+  }
+
+  const draft = JSON.parse(fs.readFileSync(path.resolve(argv.draft), 'utf8'));
+  const gate = envlib.check(ROOT, draft, {
+    verb: 'suggest-links', schemaVersion: String(cfg.version),
+    resolveInput: (name) => name === `concept:${slug}` ? me.body : undefined,
+  });
+  if (!gate.ok) return refusal('suggest-links', format, gate);
+  const existing = new Map([[slug, linked]]);
+  const { findings, accepted, skipped } = validateLinkSuggestions(slug, draft.links, { known, existing });
+  if (findings.length) {
+    console.log(format === 'json'
+      ? JSON.stringify({ ok: false, error: { command: 'suggest-links', message: 'invalid proposals', findings } }, null, 2)
+      : `INVALID — ${findings.map((f) => `${f.target ?? '?'}: ${f.reason}`).join('; ')}`);
+    return 1;
+  }
+  for (const l of accepted) {
+    queue.propose(QUEUE_DIR, 'link', { subject: slug, value: l.target,
+      rationale: `${l.clause}${l.reciprocal ? ' [reciprocal]' : ''} — proposed by ${draft.supplier?.id ?? 'unattested supplier'} via suggest-links`,
+      source: 'suggest-links', today: today() });
+  }
+  envlib.commit(gate, { answer: draft, written: ['.kb/queue/link-proposals.jsonl'] });
+  const payload = { ok: true, slug, queued: accepted.length, skipped,
+    next: accepted.length ? 'owner reviews with `kb queue`; accepted pairs are applied through the normal `kb link --draft --apply` flow' : 'nothing genuinely related — an honest empty answer' };
+  console.log(format === 'json' ? JSON.stringify(payload, null, 2)
+    : `queued ${accepted.length} proposal(s) for ${slug}${skipped.length ? `; skipped ${skipped.length}` : ''}`);
+  return 0;
+}
+
 // ---------------------------------------------------------------- dispatch
 
-const COMMANDS = { init, verify, index, migrate, sources, ingest, assess, promote, cards, facets, link, supersede, support, revalidate, audit, context, log: logCmd, query, export: exportCmd, queue: queueCmd, evalset: evalsetCmd, crux: cruxCmd };
+const COMMANDS = { init, verify, index, migrate, sources, ingest, assess, promote, cards, facets, link, supersede, support, revalidate, audit, context, log: logCmd, query, export: exportCmd, queue: queueCmd, evalset: evalsetCmd, crux: cruxCmd, 'suggest-links': suggestLinksCmd };
 
 const USAGE = `kb — knowledge pipeline
 

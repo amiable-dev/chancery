@@ -1,0 +1,28 @@
+{
+  "envelope": {
+    "task_id": "d04cfc9328d0352e",
+    "verb": "suggest-links",
+    "task_class": "structuring",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "c3ee0006a46e200e921f91eef3c05f30c86c1c51",
+    "input_hashes": {
+      "concept:answer-layer-interception": "sha256:f18d4dcd18878687700635f575bf91eb8028484a154c972766fc3add0855c1f1"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:b796d76b521ea523088c624a8f49536903c8cf9674da76cfe1f152723fd70a6c",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/queue/link-proposals.jsonl"
+  ]
+}

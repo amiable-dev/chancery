@@ -7,7 +7,7 @@
  * 2026-07-26 incident that policy exists for was caused by exactly this class of
  * bulk link operation.
  */
-import { appendRelationships, linkGraph, oneWay } from '../lib/link.mjs';
+import { appendRelationships, linkGraph, oneWay, validateLinkSuggestions } from '../lib/link.mjs';
 
 const NOTE = `---
 title: "A"
@@ -92,4 +92,26 @@ if (failures.length) {
   console.error('LINK TEST FAILED\n' + failures.map((f) => `  - ${f}`).join('\n'));
   process.exit(1);
 }
+// ---- D7: suggest-links — model proposals validated, queued, never auto-applied ----
+{
+  const known = new Set(['alpha', 'beta', 'gamma']);
+  const existing = new Map([['alpha', new Set(['beta'])]]); // alpha already links beta
+  const v = (links) => validateLinkSuggestions('alpha', links, { known, existing });
+
+  const good = v([{ target: 'gamma', clause: 'shares the seed-expansion mechanism with alpha' }]);
+  check('valid suggestion passes', good.findings.length === 0 && good.accepted.length === 1);
+  check('unknown target rejected', v([{ target: 'ghost', clause: 'x y z' }]).findings.length > 0);
+  check('self-link rejected', v([{ target: 'alpha', clause: 'links to itself somehow' }]).findings.length > 0);
+  check('missing clause rejected', v([{ target: 'gamma' }]).findings.length > 0);
+  check('bare relatedness clause rejected', v([{ target: 'gamma', clause: 'related to gamma' }]).findings.length > 0);
+  const dup = v([{ target: 'beta', clause: 'already linked in the note body today' }]);
+  check('already-linked pair skipped with a reason, not accepted',
+    dup.accepted.length === 0 && dup.skipped.length === 1 && /already/.test(dup.skipped[0].reason));
+  const twice = v([
+    { target: 'gamma', clause: 'shares the seed-expansion mechanism with alpha' },
+    { target: 'gamma', clause: 'second phrasing of the same pair' }]);
+  check('duplicate targets within one submission collapse to one',
+    twice.accepted.length === 1 && twice.skipped.length === 1);
+}
+
 console.log('link test passed — additive only, no original line is ever lost');
