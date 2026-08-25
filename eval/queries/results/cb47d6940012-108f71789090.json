@@ -1,0 +1,147 @@
+{
+  "watermark": "pilot / not adjudicable",
+  "generated_at": "2026-08-25T00:00:00Z",
+  "evalset_hash": "sha256:cb47d6940012983e28ea43f6974b95475fac6133a390c89895996790de260e91",
+  "headline": {
+    "n": 5,
+    "recall_at_3": {
+      "hits": 5,
+      "of": 5
+    },
+    "no_answer": {
+      "hits": 0,
+      "of": 0
+    },
+    "forbidden_violations": 0,
+    "unjudged_at_3": 0,
+    "pooled_precision_at_3": {
+      "hits": 7,
+      "of": 15,
+      "rate": 0.4667
+    },
+    "pooled_precision_at_3_lenient": {
+      "hits": 14,
+      "of": 15,
+      "rate": 0.9333
+    }
+  },
+  "slices": {
+    "by_class": [
+      {
+        "class": "standard",
+        "items": [
+          {
+            "id": "q-0001",
+            "pass": true
+          },
+          {
+            "id": "q-0002",
+            "pass": true
+          },
+          {
+            "id": "q-0003",
+            "pass": true
+          },
+          {
+            "id": "q-0004",
+            "pass": true
+          },
+          {
+            "id": "q-0005",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "class": "vocab-mismatch",
+        "items": []
+      },
+      {
+        "class": "no-answer",
+        "items": []
+      }
+    ]
+  },
+  "per_item": [
+    {
+      "id": "q-0001",
+      "class": "standard",
+      "provenance": "log-derived",
+      "pass": true,
+      "abstained": false,
+      "returned": [
+        "proxy-boundary-session-capture",
+        "stateful-agent-reliability",
+        "memory-as-harness-capability"
+      ],
+      "forbidden_hits": []
+    },
+    {
+      "id": "q-0002",
+      "class": "standard",
+      "provenance": "log-derived",
+      "pass": true,
+      "abstained": false,
+      "returned": [
+        "siem-agentic-visibility-gap",
+        "agent-loop-governance",
+        "observability-pipeline-control-point"
+      ],
+      "forbidden_hits": []
+    },
+    {
+      "id": "q-0003",
+      "class": "standard",
+      "provenance": "log-derived",
+      "pass": true,
+      "abstained": false,
+      "returned": [
+        "shadow-mcp-detection",
+        "paved-road-mcp-platform",
+        "remote-first-mcp-governance"
+      ],
+      "forbidden_hits": []
+    },
+    {
+      "id": "q-0004",
+      "class": "standard",
+      "provenance": "issue-thread",
+      "pass": true,
+      "abstained": false,
+      "returned": [
+        "golden-dataset-retrieval-evals",
+        "trec",
+        "agent-led-elicitation"
+      ],
+      "forbidden_hits": []
+    },
+    {
+      "id": "q-0005",
+      "class": "standard",
+      "provenance": "council-packet",
+      "pass": true,
+      "abstained": false,
+      "returned": [
+        "ladder-mechanism",
+        "adaptive-data-analysis",
+        "evaluation-api-reward-hacking"
+      ],
+      "forbidden_hits": []
+    },
+    {
+      "id": "q-0006",
+      "class": "standard",
+      "provenance": "curator",
+      "pass": true,
+      "abstained": false,
+      "returned": [
+        "okapi-bm25",
+        "hybrid-search-fusion",
+        "fitted-spaced-repetition-scheduling"
+      ],
+      "forbidden_hits": []
+    }
+  ],
+  "corpus_hash": "sha256:108f7178909042539948ad3d62703314e5812e7a552cdb26ec602e2435cb0c22",
+  "post_hoc_favorable_deltas": 1
+}

@@ -1,4 +1,6 @@
-# D9 alias table — versioned corpus data; snapshot hash pinned per run;
-# edits enter the delta ledger; frozen during bake-offs. Empty is honest: every
-# entry must be earned by an alias_repairable finding or a recorded miss.
-{}
+# D9 alias table — versioned corpus data; snapshot inside the eval-set hash;
+# edits enter the delta ledger; frozen during bake-offs. Every entry is earned
+# by a recorded miss, never speculative.
+holdout:
+  - held-out set
+  - held out set

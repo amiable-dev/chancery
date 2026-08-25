@@ -106,8 +106,20 @@ export function runHarness({ notes, items, aliases = {}, config, pooledQrels = [
   const cutoff = config.score_cutoff ?? 0;
   const live = items.filter((q) => !q.superseded_by);
 
+  // D9: the lexical+aliases challenger. Aliases map corpus-term → query
+  // synonyms; when a synonym appears in the (normalized) query, the corpus
+  // term joins the retrieval text. Declared, versioned, hash-carried data —
+  // the cheapest honest repair for vocabulary mismatch.
+  const expand = (text) => {
+    const norm = ` ${normalizeQueryText(text)} `;
+    const injected = Object.entries(aliases)
+      .filter(([, syns]) => (syns ?? []).some((s) => norm.includes(` ${normalizeQueryText(s)} `)))
+      .map(([term]) => term);
+    return injected.length ? `${text} ${injected.join(' ')}` : text;
+  };
+
   const perItem = live.map((q) => {
-    const hits = retrieve(notes, q.text).filter((h) => (h.score ?? 0) > cutoff);
+    const hits = retrieve(notes, expand(q.text)).filter((h) => (h.score ?? 0) > cutoff);
     const top = Object.fromEntries(ks.map((k) => [k, hits.slice(0, k).map((h) => h.slug)]));
     const abstained = hits.length === 0;
     let pass;

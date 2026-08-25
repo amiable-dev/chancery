@@ -200,6 +200,20 @@ const item = (over = {}) => ({
   })());
 }
 
+// ---- D9: alias expansion — the lexical+aliases challenger ----
+{
+  const items = [item({ id: 'q-0020', text: 'how do we notice spend racing away?', required: ['slo-alerting'] })];
+  const config = { k: [3], score_cutoff: 0, now: '2026-08-25T00:00:00Z' };
+  const bare = runHarness({ notes: NOTES, items, config });
+  const aliased = runHarness({ notes: NOTES, items, config, aliases: { 'error budget burn alerting': ['racing away'] } });
+  check('alias repairs a vocabulary miss', bare.per_item[0].pass === false && aliased.per_item[0].pass === true);
+  check('aliases are inert when no synonym appears in the query',
+    JSON.stringify(runHarness({ notes: NOTES, items, config, aliases: { zeta: ['quantum foam'] } }).per_item)
+      === JSON.stringify(bare.per_item));
+  check('alias expansion moves the one hash',
+    aliased.evalset_hash !== bare.evalset_hash);
+}
+
 if (failures.length) {
   console.error('evalset test FAILED:\n  - ' + failures.join('\n  - '));
   process.exit(1);
