@@ -34,6 +34,7 @@ import { transformNote, tagsFile, rewriteLinks, jsonCorpus, mergeTags, TRANSFORM
 import { loadProcedures, render as renderAdapters } from './install-knowledge.mjs';
 import { retrieve, buildQueryTask, checkCitations } from '../lib/query.mjs';
 import * as evalset from '../lib/evalset.mjs';
+import * as derivations from '../lib/derivations.mjs';
 import * as envlib from '../lib/envelope.mjs';
 import * as evidence from '../lib/evidence.mjs';
 import { TASKS as CONTEXT_TASKS, loadAnchors, resolveAnchor, compile as compileContext, edgesFor } from '../lib/context.mjs';
@@ -65,6 +66,10 @@ const today = () => new Date().toISOString().slice(0, 10);
 //      repo governs itself; identical behaviour when developing in this one).
 //   3. Fallback: the package's parent (engine run from an unrelated cwd).
 const PKG_KB = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const PKG_VERSION = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(PKG_KB, '..', 'package.json'), 'utf8')).version ?? '0'; }
+  catch { return '0'; }
+})();
 const discoverRoot = () => {
   let d = process.cwd();
   for (;;) {
@@ -651,6 +656,19 @@ function verify(argv) {
     concepts: listNotes(cfg.collections.concepts)
       .map((n) => ({ ...n, data: splitFrontmatter(fs.readFileSync(n.abs, 'utf8')).data })),
   }, cfg, out);
+
+  // D8: rebuild == cached — the executable determinism test. Read-only here;
+  // only read verbs write the cache, and an absent cache is honest cold state.
+  {
+    const notesFull = listNotes(cfg.collections.concepts).map((n) => {
+      const { data, body } = splitFrontmatter(fs.readFileSync(n.abs, 'utf8'));
+      return { slug: n.slug, title: data?.title ?? n.slug, data, body };
+    });
+    for (const f of derivations.checkDerivationCache({
+      cacheDir: path.join(KB_DIR, 'cache'), notes: notesFull,
+      meta: { schema_version: cfg.version, tool_version: PKG_VERSION, policy_hash: 'none' },
+    })) out.push(finding({ severity: 'error', ...f }));
+  }
 
   for (const e of queue.stale(QUEUE_DIR, cfg.queue?.stale_after_days ?? 14, today())) {
     out.push(finding({
@@ -2356,10 +2374,17 @@ function query(argv) {
   const question = argv.rest.join(' ').trim();
   if (!question) throw new Error('query needs a question');
 
-  const notes = listNotes(cfg.collections.concepts).map((n) => {
+  const loaded = listNotes(cfg.collections.concepts).map((n) => {
     const { data, body } = splitFrontmatter(fs.readFileSync(n.abs, 'utf8'));
-    return { ...n, data, body, title: data?.title ?? n.slug };
+    return { slug: n.slug, data, body, title: data?.title ?? n.slug };
   });
+  // D8: the derivation cache is a keyed convenience, never authoritative —
+  // key mismatch silently rebuilds. verify holds it to rebuild==cached.
+  const { derived } = derivations.serveDerived({
+    cacheDir: path.join(KB_DIR, 'cache'), notes: loaded,
+    meta: { schema_version: cfg.version, tool_version: PKG_VERSION, policy_hash: 'none' },
+  });
+  const notes = derived.notes;
 
   const filters = { domain: argv.domain, maturity: argv.maturity };
   const hits = retrieve(notes, question, { filters, limit: argv.limit ?? 6 });
