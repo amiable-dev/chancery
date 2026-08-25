@@ -6,3 +6,4 @@ curator_cap: 0.5
 marginal_treatment: strict   # lenient always co-reported when pooled qrels exist
 near_dup: normalized-exact   # tier-1 screen; stemmer lands with the vocab-mismatch tier
 stemmer: none-v0
+report_version: 2   # slice B: pooled precision, unjudged@k, post-hoc delta count in the artifact

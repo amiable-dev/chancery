@@ -1,0 +1,29 @@
+{
+  "envelope": {
+    "task_id": "581b30a1d8462477",
+    "verb": "evalset-label",
+    "task_class": "classification",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "9e52cf23a73ac6b945c48497a9f118c0af0a1899",
+    "input_hashes": {
+      "evalset:q-0001": "sha256:a8b205122eaadb432be396b56c9530864124c9e908eb869e9e90756b5b3d4b3b",
+      "evalset:rubric": "sha256:003e93ff994a3d8e5802046e78aad1af26ad5200f680188a5ae5fb3ad6f1484f"
+    },
+    "allowed_writes": [
+      "eval/queries/qrels/pooled/*.jsonl"
+    ],
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:e770583429f484e22a24af743932c4e7a1781a129f3012fd37f72d7ced08c9bf",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    "eval/queries/qrels/pooled/v1.jsonl"
+  ]
+}

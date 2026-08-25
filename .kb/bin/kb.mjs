@@ -2450,7 +2450,9 @@ function evalsetCmd(argv) {
   const corpusHash = 'sha256:' + crypto.createHash('sha256')
     .update(notes.map((n) => `${n.slug}\n${n.body}`).sort().join('\x00')).digest('hex');
 
-  const surfaces = { queries: items, apriori, aliases, config };
+  const pooledPath = path.join(dir, 'qrels', 'pooled', 'v1.jsonl');
+  const pooledAll = readJsonl(pooledPath);
+  const surfaces = { queries: items, apriori, pooledQrels: pooledAll, aliases, config };
   const hash = evalset.evalsetHash(surfaces);
 
   if (sub === 'hash') {
@@ -2469,7 +2471,109 @@ function evalsetCmd(argv) {
     return findings.length ? 1 : 0;
   }
 
+  const ledgerFile = path.join(dir, 'ledger.jsonl');
+  const ledgerAll = readJsonl(ledgerFile);
+  const genesis = ledgerAll[0]?.type === 'genesis' ? ledgerAll[0] : null;
+  const ledgerEntries = genesis ? ledgerAll.slice(1) : ledgerAll;
+
+  if (sub === 'ledger') {
+    const [, action] = argv.rest;
+    if (action === 'add') {
+      for (const f of ['surface', 'change', 'rationale'])
+        if (!argv[f]) throw new Error(`ledger add requires --${f}`);
+      const entry = { seq: (ledgerEntries[ledgerEntries.length - 1]?.seq ?? 0) + 1,
+        evalset_hash_after: hash, surface: argv.surface, change: argv.change, rationale: argv.rationale,
+        follows_failing_run: Boolean(argv['follows-failing-run']), favors_metric: Boolean(argv['favors-metric']) };
+      fs.appendFileSync(ledgerFile, JSON.stringify(entry) + '\n');
+      console.log(format === 'json' ? JSON.stringify({ ok: true, entry }, null, 2) : `ledgered seq ${entry.seq} (${entry.surface})`);
+      return 0;
+    }
+    if (action === 'genesis') {
+      if (ledgerAll.length) throw new Error('ledger already has entries');
+      fs.writeFileSync(ledgerFile, JSON.stringify({ seq: 0, type: 'genesis', evalset_hash_after: hash }) + '\n');
+      console.log(format === 'json' ? JSON.stringify({ ok: true, genesis: hash }, null, 2) : `genesis ${hash.slice(0, 23)}…`);
+      return 0;
+    }
+    console.log(JSON.stringify({ ok: true, genesis: genesis?.evalset_hash_after ?? null, entries: ledgerEntries,
+      post_hoc_favorable_deltas: evalset.postHocFavorableDeltas(ledgerEntries) }, null, 2));
+    return 0;
+  }
+
+  if (sub === 'label') {
+    const [, qid] = argv.rest;
+    const q = items.find((i) => i.id === qid && !i.superseded_by);
+    if (!q) throw new Error(`no live query item: ${qid}`);
+    // Pool: the registered challenger's top-(max k) ∪ the a-priori required set.
+    // The task itself is blind — required-membership never travels with it.
+    const kMax = Math.max(...(config.k ?? [3]));
+    const hits = retrieve(notes, q.text).filter((h) => (h.score ?? 0) > (config.score_cutoff ?? 0)).slice(0, kMax);
+    const pool = [...new Set([...hits.map((h) => h.slug), ...(q.required ?? [])])];
+    const rubricText = fs.readFileSync(path.join(dir, 'rubric.md'), 'utf8');
+
+    if (!argv.verdicts) {
+      const task = evalset.buildLabelTask(q, pool, `${hash}:${qid}`);
+      task.definitions = Object.fromEntries(task.candidates.map((s) => {
+        const n = notes.find((x) => x.slug === s);
+        const m = n?.body.match(/## Definition\n([\s\S]*?)(\n## |$)/);
+        return [s, (m?.[1] ?? '').trim().slice(0, 600)];
+      }));
+      const wrapped = envlib.emit(ROOT, {
+        verb: 'evalset-label', taskClass: 'classification', target: qid,
+        inputs: [
+          { name: `evalset:${qid}`, text: JSON.stringify({ id: q.id, text: q.text }) },
+          { name: 'evalset:rubric', text: rubricText },
+        ],
+        allowedWrites: ['eval/queries/qrels/pooled/*.jsonl'],
+        schemaVersion: String(cfg.version),
+        task: { instructions: 'Grade every candidate against the question alone, per the rubric. You see no ranks, scores, or origins. Reply {"task_id":..., "judgments": {"<slug>": "relevant|marginal|irrelevant"}, "supplier": {...}} and nothing else.', ...task },
+      });
+      console.log(JSON.stringify(wrapped, null, 2));
+      return 0;
+    }
+
+    const verdicts = JSON.parse(fs.readFileSync(path.resolve(argv.verdicts), 'utf8'));
+    const gate = envlib.check(ROOT, verdicts, {
+      verb: 'evalset-label', schemaVersion: String(cfg.version),
+      resolveInput: (name) => name === 'evalset:rubric' ? rubricText
+        : name === `evalset:${qid}` ? JSON.stringify({ id: q.id, text: q.text }) : undefined,
+    });
+    if (!gate.ok) return refusal('evalset', format, gate);
+    const bad = evalset.validateLabelVerdicts(verdicts, pool);
+    if (bad.length) {
+      console.log(format === 'json'
+        ? JSON.stringify({ ok: false, error: { command: 'evalset', message: 'invalid judgments', findings: bad } }, null, 2)
+        : `INVALID — ${bad.map((f) => `${f.id}: ${f.message}`).join('; ')}`);
+      return 1;
+    }
+    const outDirQ = path.join(dir, 'qrels', 'pooled');
+    fs.mkdirSync(outDirQ, { recursive: true });
+    const row = { query: qid, judgments: verdicts.judgments, seed: `${hash}:${qid}`,
+      pool_evalset_hash: hash, supplier: verdicts.supplier ?? null };
+    fs.appendFileSync(path.join(outDirQ, 'v1.jsonl'), JSON.stringify(row) + '\n');
+    // A label append moves the one hash, so it ledgers itself: the tail-match
+    // invariant stays mechanical and no judgment lands off the books.
+    const newHash = evalset.evalsetHash({ ...surfaces, pooledQrels: [...pooledAll, row] });
+    const seq = (ledgerEntries[ledgerEntries.length - 1]?.seq ?? 0) + 1;
+    fs.appendFileSync(ledgerFile, JSON.stringify({ seq, evalset_hash_after: newHash, surface: 'qrels',
+      change: `labeled ${qid} (${Object.keys(verdicts.judgments).length} candidates)`,
+      rationale: `blind pooled judgment, supplier ${verdicts.supplier?.id ?? 'unattested'}, seed ${row.seed.slice(0, 20)}…`,
+      follows_failing_run: false, favors_metric: false }) + '\n');
+    envlib.commit(gate, { answer: verdicts, written: [`eval/queries/qrels/pooled/v1.jsonl`, 'eval/queries/ledger.jsonl'] });
+    console.log(format === 'json' ? JSON.stringify({ ok: true, query: qid, judged: Object.keys(verdicts.judgments).length }, null, 2)
+      : `labeled ${qid}: ${Object.keys(verdicts.judgments).length} candidates`);
+    return 0;
+  }
+
   if (sub === 'run') {
+    // Unledgered surface changes refuse the run (B6): the ledger tail must
+    // match the recomputed hash, or someone edited a surface off the books.
+    const ledgerBad = evalset.ledgerCheck(ledgerEntries, hash, { initialHash: genesis?.evalset_hash_after });
+    if (ledgerBad.length) {
+      console.log(format === 'json'
+        ? JSON.stringify({ ok: false, error: { command: 'evalset', message: 'ledger check failed', findings: ledgerBad } }, null, 2)
+        : `REFUSED — ledger: ${ledgerBad.map((f) => f.message).join('; ')}`);
+      return 1;
+    }
     // The clock is pinned (packet 8 B4/D5): KB_NOW, else the HEAD commit
     // date. Never wall time — a deterministic harness must not flap daily.
     let now = process.env.KB_NOW;
@@ -2490,8 +2594,17 @@ function evalsetCmd(argv) {
         : 'REFUSED — hygiene failing; run `kb evalset check`');
       return 1;
     }
-    const report = evalset.runHarness({ notes, items, aliases, config: { ...config, now } });
+    const report = evalset.runHarness({ notes, items, aliases, config: { ...config, now }, pooledQrels: pooledAll });
     report.corpus_hash = corpusHash;
+    report.post_hoc_favorable_deltas = evalset.postHocFavorableDeltas(ledgerEntries);
+    const holdoutIds = new Set(readJsonl(path.join(dir, 'holdout', 'queries.jsonl')).map((q) => q.id));
+    const leak = evalset.holdoutLint(report, holdoutIds);
+    if (leak.length) {
+      console.log(format === 'json'
+        ? JSON.stringify({ ok: false, error: { command: 'evalset', message: 'holdout leakage', findings: leak } }, null, 2)
+        : `REFUSED — holdout leakage: ${leak.map((f) => f.id).join(', ')}`);
+      return 1;
+    }
     const outDir = path.join(dir, 'results');
     fs.mkdirSync(outDir, { recursive: true });
     const outFile = path.join(outDir, `${report.evalset_hash.slice(7, 19)}-${corpusHash.slice(7, 19)}.json`);
@@ -2590,8 +2703,9 @@ const VALUE_FLAGS = new Set([
   '--slug', '--accept', '--out', '--domain', '--maturity', '--by', '--verdicts', '--why',
   '--for', '--query', '--budget', '--base', '--findings', '--only',
   '--base-path', '--id-prefix', '--host-tags', '--include-status',
+  '--surface', '--change', '--rationale',
 ]);
-const BOOL_FLAGS = new Set(['--check', '--apply', '--retry-dead', '--force', '--all', '--no-fetch', '--merge-tags']);
+const BOOL_FLAGS = new Set(['--check', '--apply', '--retry-dead', '--force', '--all', '--no-fetch', '--merge-tags', '--follows-failing-run', '--favors-metric']);
 
 const parseArgs = (rest) => {
   const opts = {};
@@ -2637,6 +2751,11 @@ const parseArgs = (rest) => {
     hostTags: opts['--host-tags'] ?? null,
     includeStatus: opts['--include-status'] ?? null,
     mergeTags: !!opts['--merge-tags'],
+    surface: opts['--surface'] ?? null,
+    change: opts['--change'] ?? null,
+    rationale: opts['--rationale'] ?? null,
+    'follows-failing-run': !!opts['--follows-failing-run'],
+    'favors-metric': !!opts['--favors-metric'],
     urls: positional.filter((a) => /^https?:\/\//.test(a)),
     target: positional.find((a) => !/^https?:\/\//.test(a)) ?? null,
     rest: positional,

@@ -101,7 +101,7 @@ const rate = (hits, of) => ({ hits, of, ...(of >= 10 ? { rate: Number((hits / of
  * items instead of rates, and the report carries the pinned clock and the
  * eval-set hash. Scores below config.score_cutoff are abstention.
  */
-export function runHarness({ notes, items, aliases = {}, config }) {
+export function runHarness({ notes, items, aliases = {}, config, pooledQrels = [] }) {
   const ks = config.k ?? [3];
   const cutoff = config.score_cutoff ?? 0;
   const live = items.filter((q) => !q.superseded_by);
@@ -118,6 +118,10 @@ export function runHarness({ notes, items, aliases = {}, config }) {
       returned: top[ks[0]], forbidden_hits: forbiddenHit };
   });
 
+  // Pooled precision (packet 8, B1/B5): computable only where the reported
+  // top-k is fully judged; otherwise n/a — never approximated. Strict marginal
+  // treatment is primary; the lenient variant is always co-reported.
+  const qrelsByQuery = new Map(pooledQrels.map((q) => [q.query, q.judgments ?? {}]));
   const headlineItems = perItem.filter((p) => p.provenance !== 'curator');
   const recallable = headlineItems.filter((p) => p.class !== 'no-answer');
   const headline = {
@@ -127,6 +131,25 @@ export function runHarness({ notes, items, aliases = {}, config }) {
       headlineItems.filter((p) => p.class === 'no-answer').length),
     forbidden_violations: perItem.reduce((a, p) => a + p.forbidden_hits.length, 0),
   };
+  {
+    let judged = 0, unjudged = 0, strict = 0, lenient = 0;
+    for (const p of headlineItems) {
+      const j = qrelsByQuery.get(p.id);
+      for (const slug of p.returned) {
+        const g = j?.[slug];
+        if (g === undefined) { unjudged += 1; continue; }
+        judged += 1;
+        if (g === 'relevant') { strict += 1; lenient += 1; }
+        else if (g === 'marginal') lenient += 1;
+      }
+    }
+    headline[`unjudged_at_${ks[0]}`] = unjudged;
+    if (unjudged > 0 || judged === 0) headline[`pooled_precision_at_${ks[0]}`] = 'n/a';
+    else {
+      headline[`pooled_precision_at_${ks[0]}`] = rate(strict, judged);
+      headline[`pooled_precision_at_${ks[0]}_lenient`] = rate(lenient, judged);
+    }
+  }
 
   const byClass = [...CLASSES].map((c) => {
     const rows = headlineItems.filter((p) => p.class === c);
@@ -138,9 +161,105 @@ export function runHarness({ notes, items, aliases = {}, config }) {
   return {
     watermark: 'pilot / not adjudicable',
     generated_at: config.now,
-    evalset_hash: (() => { const { now: _, ...cfg } = config; return evalsetHash({ queries: items, apriori: [], aliases, config: cfg }); })(),
+    evalset_hash: (() => { const { now: _, ...cfg } = config; return evalsetHash({ queries: items, apriori: [], pooledQrels, aliases, config: cfg }); })(),
     headline,
     slices: { by_class: byClass },
     per_item: perItem,
   };
+}
+
+// ---------------------------------------------------------------- labeling
+
+/** Deterministic seeded shuffle (Fisher–Yates over a hash stream). */
+const seededShuffle = (arr, seed) => {
+  const out = [...arr];
+  let h = crypto.createHash('sha256').update(seed).digest();
+  let i = out.length, cursor = 0;
+  const next = () => {
+    if (cursor >= h.length - 4) { h = crypto.createHash('sha256').update(h).digest(); cursor = 0; }
+    const v = h.readUInt32BE(cursor); cursor += 4; return v;
+  };
+  while (i > 1) { const j = next() % i; i -= 1; [out[i], out[j]] = [out[j], out[i]]; }
+  return out;
+};
+
+/**
+ * Blind labeling task (B1/B2): the judge sees the question and a shuffled,
+ * attribution-free candidate list — no system, no rank, no score, and no
+ * required-membership. The shuffle seed is recorded with the attestation.
+ */
+export function buildLabelTask(queryItem, candidateSlugs, seed) {
+  return {
+    query_id: queryItem.id,
+    text: queryItem.text,
+    seed,
+    candidates: seededShuffle([...new Set(candidateSlugs)].sort(), seed),
+    grades: ['relevant', 'marginal', 'irrelevant'],
+  };
+}
+
+const GRADES = new Set(['relevant', 'marginal', 'irrelevant']);
+
+/** Verdicts must grade the whole pool with known grades — nothing more, nothing less. */
+export function validateLabelVerdicts(verdicts, candidateSlugs) {
+  const out = [];
+  const j = verdicts?.judgments ?? {};
+  const pool = new Set(candidateSlugs);
+  for (const [slug, grade] of Object.entries(j)) {
+    if (!pool.has(slug)) out.push(finding(slug, 'EV010', 'judgment for a slug outside the pool'));
+    if (!GRADES.has(grade)) out.push(finding(slug, 'EV010', `unknown grade: ${grade}`));
+  }
+  for (const slug of pool) if (!(slug in j)) out.push(finding(slug, 'EV010', 'pool candidate left unjudged'));
+  return out;
+}
+
+// ---------------------------------------------------------------- ledger
+
+/**
+ * Delta-ledger enforcement (B6): every change to a hashed surface appends an
+ * entry whose evalset_hash_after matches the recomputed hash — an unledgered
+ * edit is a tail mismatch. Sequence is strictly monotonic; every entry
+ * carries a written rationale.
+ */
+export function ledgerCheck(entries, currentHash, { initialHash } = {}) {
+  const out = [];
+  if (!entries.length) {
+    if (initialHash !== currentHash)
+      out.push(finding('(ledger)', 'EV011', 'no ledger entries and hash differs from the declared initial hash'));
+    return out;
+  }
+  let prev = 0;
+  for (const e of entries) {
+    if (typeof e.seq !== 'number' || e.seq <= prev) out.push(finding(`seq:${e.seq}`, 'EV011', 'sequence must be strictly monotonic'));
+    prev = Math.max(prev, e.seq ?? prev);
+    if (!e.surface || !e.change) out.push(finding(`seq:${e.seq}`, 'EV011', 'entry needs surface and change'));
+    if (!String(e.rationale ?? '').trim()) out.push(finding(`seq:${e.seq}`, 'EV011', 'entry needs a written rationale'));
+    if (!/^sha256:[0-9a-f]{64}$/.test(e.evalset_hash_after ?? '')) out.push(finding(`seq:${e.seq}`, 'EV011', 'entry needs evalset_hash_after'));
+  }
+  const tail = entries[entries.length - 1];
+  if (tail.evalset_hash_after !== currentHash)
+    out.push(finding('(ledger)', 'EV011', 'current eval-set hash does not match the ledger tail — an unledgered change exists'));
+  return out;
+}
+
+/** The published gaming signal: deltas that both follow a failing run and favor a metric. */
+export const postHocFavorableDeltas = (entries) =>
+  entries.filter((e) => e.follows_failing_run && e.favors_metric).length;
+
+// ---------------------------------------------------------------- holdout
+
+/**
+ * Holdout leakage lint (B7): a holdout item id appearing ANYWHERE in a report
+ * — per-item rows or serialized prose — is a failure. The ratchet leaks one
+ * scalar per look; item-level feedback defeats it regardless of file secrecy.
+ */
+export function holdoutLint(report, holdoutIds) {
+  const out = [];
+  for (const p of report?.per_item ?? [])
+    if (holdoutIds.has(p.id)) out.push(finding(p.id, 'EV012', 'holdout item in per-item output'));
+  const blob = JSON.stringify(report ?? {});
+  for (const id of holdoutIds)
+    if (blob.includes(id) && !(report?.per_item ?? []).some((p) => p.id === id))
+      out.push(finding(id, 'EV012', 'holdout id appears in the serialized report'));
+  return out;
 }

@@ -7,7 +7,7 @@
  * decoration — the packet-8 mutation-test principle applied to the harness's
  * own validators.
  */
-import { validateItems, normalizeQueryText, evalsetHash, runHarness } from '../lib/evalset.mjs';
+import { validateItems, normalizeQueryText, evalsetHash, runHarness, buildLabelTask, validateLabelVerdicts, ledgerCheck, holdoutLint } from '../lib/evalset.mjs';
 import { retrieve } from '../lib/query.mjs';
 
 const failures = [];
@@ -107,7 +107,10 @@ const item = (over = {}) => ({
   const r2 = runHarness({ notes: NOTES, items, config });
   check('harness byte-deterministic', JSON.stringify(r1) === JSON.stringify(r2));
   check('one hash: run strips the clock exactly as check omits it',
-    r1.evalset_hash === evalsetHash({ queries: items, apriori: [], aliases: {}, config: { k: [3], score_cutoff: 0 } }));
+    r1.evalset_hash === evalsetHash({ queries: items, apriori: [], pooledQrels: [], aliases: {}, config: { k: [3], score_cutoff: 0 } }));
+  check('labeling moves the one hash (qrels are a hashed surface)',
+    evalsetHash({ queries: items, apriori: [], pooledQrels: [{ query: 'q-0001', judgments: { 'proxy-capture': 'relevant' } }], aliases: {}, config: { k: [3], score_cutoff: 0 } })
+      !== r1.evalset_hash);
   check('report carries the eval-set hash', /^sha256:/.test(r1.evalset_hash));
   check('pilot watermark present', r1.watermark === 'pilot / not adjudicable');
   check('clock is the pinned one, not wall time', r1.generated_at === '2026-08-25T00:00:00Z');
@@ -122,8 +125,83 @@ const item = (over = {}) => ({
   check('n<10 slice enumerates items instead of rates', Array.isArray(slice.items) && slice.rate === undefined);
 }
 
+// ---- two-phase labeling: blind, seeded, attribution-stripped (B1/B2) ----
+{
+  const q = item();
+  const cands = ['proxy-capture', 'slo-alerting', 'alias-table'];
+  const t1 = buildLabelTask(q, cands, 'seed-1');
+  const t2 = buildLabelTask(q, cands, 'seed-1');
+  check('label task deterministic under a seed', JSON.stringify(t1) === JSON.stringify(t2));
+  check('label task order varies with the seed',
+    JSON.stringify(buildLabelTask(q, cands, 'seed-2').candidates) !== JSON.stringify(t1.candidates) ||
+    JSON.stringify(buildLabelTask(q, cands, 'seed-3').candidates) !== JSON.stringify(t1.candidates));
+  check('label task carries no required-membership or rank attribution',
+    !('required' in t1) && !JSON.stringify(t1.candidates).includes('required') && t1.candidates.every((c) => typeof c === 'string'));
+  check('label task carries the question text', t1.text === q.text);
+
+  const ok = validateLabelVerdicts({ judgments: { 'proxy-capture': 'relevant', 'slo-alerting': 'irrelevant', 'alias-table': 'marginal' } }, cands);
+  check('complete judgments over the pool pass', ok.length === 0);
+  check('unknown slug in judgments fails',
+    validateLabelVerdicts({ judgments: { ghost: 'relevant' } }, cands).length > 0);
+  check('unknown grade fails',
+    validateLabelVerdicts({ judgments: { 'proxy-capture': 'good' } }, cands).length > 0);
+  check('missing candidate fails',
+    validateLabelVerdicts({ judgments: { 'proxy-capture': 'relevant' } }, cands).length > 0);
+}
+
+// ---- delta ledger: every surface change is ledgered (B6) ----
+{
+  const h = 'sha256:' + 'b'.repeat(64);
+  const good = [{ seq: 1, evalset_hash_after: h, surface: 'aliases', change: 'added crash→failure', rationale: 'q-0005 miss', follows_failing_run: true, favors_metric: true }];
+  check('ledger tail matching current hash passes', ledgerCheck(good, h).length === 0);
+  check('unledgered change fails (hash mismatch at tail)', ledgerCheck(good, 'sha256:' + 'c'.repeat(64)).length > 0);
+  check('empty ledger with any hash passes only when declared initial',
+    ledgerCheck([], h, { initialHash: h }).length === 0 && ledgerCheck([], h, { initialHash: 'sha256:' + 'd'.repeat(64) }).length > 0);
+  check('missing rationale fails', ledgerCheck([{ seq: 1, evalset_hash_after: h, surface: 'aliases', change: 'x' }], h).length > 0);
+  check('non-monotonic seq fails', ledgerCheck(
+    [{ seq: 2, evalset_hash_after: h, surface: 'a', change: 'x', rationale: 'r' },
+     { seq: 1, evalset_hash_after: h, surface: 'a', change: 'y', rationale: 'r' }], h).length > 0);
+  const count = (entries) => entries.filter((e) => e.follows_failing_run && e.favors_metric).length;
+  check('post-hoc-favorable-delta count computed', count(good) === 1);
+}
+
+// ---- holdout leakage lint (B7): per-item holdout data anywhere fails ----
+{
+  const holdoutIds = new Set(['h-0001']);
+  const cleanReport = { per_item: [{ id: 'q-0001', pass: true }], headline: { n: 1 } };
+  const leaky = { per_item: [{ id: 'h-0001', pass: false }], headline: { n: 2 } };
+  check('clean report passes the lint', holdoutLint(cleanReport, holdoutIds).length === 0);
+  check('holdout id in per-item output fails the lint', holdoutLint(leaky, holdoutIds).length > 0);
+  check('holdout id anywhere in the serialized report fails',
+    holdoutLint({ per_item: [], notes: 'h-0001 regressed on X' }, holdoutIds).length > 0);
+}
+
+// ---- pooled precision: n/a without full judgment, computed with it ----
+{
+  const items = [item({ id: 'q-0010', text: 'how does error budget burn alerting work?', required: ['slo-alerting'] })];
+  const config = { k: [3], score_cutoff: 0, now: '2026-08-25T00:00:00Z' };
+  const bare = runHarness({ notes: NOTES, items, config });
+  check('precision is n/a with no pooled qrels', bare.headline.pooled_precision_at_3 === 'n/a');
+  const returned = bare.per_item[0].returned;
+  check('pooled fixture actually retrieves something', returned.length > 0);
+  const qrels = [{ query: 'q-0010', judgments: Object.fromEntries(returned.map((s) => [s, s === 'slo-alerting' ? 'relevant' : 'irrelevant'])), version: 'v1' }];
+  const withQ = runHarness({ notes: NOTES, items, config, pooledQrels: qrels });
+  const pp = withQ.headline.pooled_precision_at_3;
+  check('pooled precision computed when top-k fully judged',
+    pp && typeof pp.hits === 'number' && pp.of === returned.length && typeof withQ.headline.unjudged_at_3 === 'number');
+  const partial = [{ query: 'q-0010', judgments: {}, version: 'v1' }];
+  const withPartial = runHarness({ notes: NOTES, items, config, pooledQrels: partial });
+  check('partial judgment yields n/a plus a nonzero unjudged count',
+    withPartial.headline.pooled_precision_at_3 === 'n/a' && withPartial.headline.unjudged_at_3 > 0);
+  check('strict marginal treatment: marginal is not relevant', (() => {
+    const m = [{ query: 'q-0010', judgments: Object.fromEntries(returned.map((s) => [s, 'marginal'])), version: 'v1' }];
+    const r = runHarness({ notes: NOTES, items, config, pooledQrels: m });
+    return r.headline.pooled_precision_at_3.hits === 0 && r.headline.pooled_precision_at_3_lenient.hits === returned.length;
+  })());
+}
+
 if (failures.length) {
   console.error('evalset test FAILED:\n  - ' + failures.join('\n  - '));
   process.exit(1);
 }
-console.log('evalset test passed — hygiene both-polarity, canonical hash, deterministic pinned-clock harness, curator-excluded headlines');
+console.log('evalset test passed — hygiene both-polarity, canonical hash, pinned-clock harness, blind seeded labeling, ledger enforcement, holdout lint, pooled precision with strict/lenient co-report');
