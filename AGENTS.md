@@ -28,6 +28,8 @@ judgment; the CLI supplies the structure and every decision that can be made by 
 - Never delete a file. A `discard` verdict is a recommendation.
 - Bulk writers dry-run by default; `--apply` needs a clean tree so the change stays reviewable.
 
+**Supplier economics** (ADR-014): every emitted task carries an advisory `cognition` grade — `mechanical` tasks suit your cheapest competent model, `composition` a mid tier, `judgment` the strongest you can afford, because that answer becomes canon. And regardless of tier: tasks are self-contained by design, so run them in **short-lived workers** (one or a few tasks each) — a single long-lived agent looping over many items re-reads its own growing transcript on every turn and pays for it.
+
 Run `kb verify` before committing. It is the contract — CI runs it, and these instructions cannot enforce anything.
 
 <!-- END kb-pipeline -->

@@ -259,5 +259,14 @@ if (failures.length) {
   console.error(`conformance test FAILED:\n${failures.map((f) => `  - ${f}`).join('\n')}`);
   process.exitCode = 1;
 } else {
-  console.log('conformance test passed — envelope binding, refusals, C6 record, rollback, gate purity');
+  // ADR-014: cognition hints are advisory — present on emissions, never demanded of answers.
+{
+  const { COGNITION, TASK_CLASSES } = await import('../lib/envelope.mjs');
+  check('every task class carries a cognition grade',
+    Object.keys(TASK_CLASSES).every((c) => ['mechanical', 'composition', 'judgment'].includes(COGNITION[c]?.grade)));
+  check('judgment classes are the canon-forming ones',
+    COGNITION['rubric-ordinal'].grade === 'judgment' && COGNITION['evidence-verdict'].grade === 'judgment');
+}
+
+console.log('conformance test passed — envelope binding, refusals, C6 record, rollback, gate purity');
 }

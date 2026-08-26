@@ -88,3 +88,22 @@ Semver, 0.x; **1.0 criterion**: the envelope schema and the `kb query` phase-1 J
 - **Weekly (automated)**: dependabot PRs (cooled down 7 days), npm audit, gitleaks full-history sweep, zizmor, node-eol check.
 - **When node-eol fails**: one PR bumps the matrix, `engines`, `.nvmrc`, and the runtime floor in `kb.mjs` together.
 - **Dated review triggers**: zizmor pin (1.6.0, set 2026-08-22 — bump quarterly); actionlint adoption (deferred 2026-08-22: no npm/PyPI-native distribution; revisit when a pinned, checksummed install is one line); vendor facts in `install-knowledge.mjs` (their own dated triggers).
+
+## Supplier economics
+
+The engine hints, the harness decides. Every emitted task carries an advisory
+`cognition` grade derived from its task class (ADR-014): **mechanical**
+(classification, structuring — rule-shaped; your cheapest competent model, batched
+in short-lived workers), **composition** (drafting — prose persists, mid-tier with
+the provided exemplars suffices), **judgment** (rubric and evidence verdicts — the
+answer becomes canon; strongest you can afford). Never a gate: a human supplier
+ignores the field without consequence.
+
+The lesson that bought this section: generating the reference corpus initially ran
+every stage on a flagship model in long-lived agents and burned ~405M cache-read
+tokens against ~1.9M of writing — the agents were paying to re-read their own
+transcripts. The same pipeline's later stages, run per this guidance, cost two
+orders of magnitude less: 184 card decks ≈ 2.2M total on mid-tier short-lived
+workers; a 129-item mechanical queue reconciliation ≈ 38K on the smallest tier.
+Tier matters; **agent shape matters more** — tasks are self-contained precisely so
+that no worker ever needs a long memory.

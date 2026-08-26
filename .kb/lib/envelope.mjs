@@ -20,6 +20,18 @@ export const TASK_CLASSES = {
   structuring: ['human', 'model-single', 'model-panel'],
 };
 
+// Advisory cognition grades (ADR-014): derived from task_class, read by
+// harnesses at dispatch time, never validated — a hint, not a gate. The
+// engine names the KIND of thinking a task needs; mapping kind→model is the
+// supplier's business (and meaningless for a human supplier).
+export const COGNITION = {
+  classification: { grade: 'mechanical', hint: 'rule-shaped; any competent supplier; batch in short-lived workers' },
+  structuring: { grade: 'mechanical', hint: 'rule-shaped; any competent supplier; batch in short-lived workers' },
+  drafting: { grade: 'composition', hint: 'prose persists in canon; mid-tier suffices with the style exemplars provided' },
+  'rubric-ordinal': { grade: 'judgment', hint: 'this answer becomes canon; use the strongest judgment you can afford' },
+  'evidence-verdict': { grade: 'judgment', hint: 'this answer becomes canon; use the strongest judgment you can afford' },
+};
+
 // Refusal codes: stable, documented in the overview registry as the KB022 family.
 export const REFUSALS = {
   UNKNOWN_TASK: { code: 'KB022.1', remedy: 're-emit the task and answer the new emission' },
@@ -71,6 +83,7 @@ export function emit(root, { verb, taskClass, target, inputs, allowedWrites, sch
     corpus_commit: gitHead(root),
     input_hashes,
     allowed_writes: allowedWrites,
+    cognition: COGNITION[taskClass] ?? null,
     untrusted_payload: true,
   };
 
