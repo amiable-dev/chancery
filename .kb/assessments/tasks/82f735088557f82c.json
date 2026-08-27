@@ -1,0 +1,35 @@
+{
+  "envelope": {
+    "task_id": "82f735088557f82c",
+    "verb": "assess",
+    "task_class": "rubric-ordinal",
+    "envelope_version": "1",
+    "schema_version": "1",
+    "corpus_commit": "b0f15a677cdaed606abc10d486c6c7c592a891a5",
+    "input_hashes": {
+      "staging/switch.md": "sha256:1b1e11c366900f7799b47f9ab742dff005548e008cbd740f96632574ca7ecb94",
+      "rubric:promotion": "sha256:d0d257c237770d067f3d0cc334cf3c3b174661f4b054475af770484d513e076d",
+      "schema:rubric-verdict.schema.json": "sha256:754aaad81a54661fed1d4549994a0d2b311ab4e58d51ec47c914d6efec7077ee"
+    },
+    "allowed_writes": [
+      ".kb/queue/*.jsonl",
+      ".kb/assessments/*.json"
+    ],
+    "cognition": {
+      "grade": "judgment",
+      "hint": "this answer becomes canon; use the strongest judgment you can afford"
+    },
+    "untrusted_payload": true
+  },
+  "status": "applied",
+  "answer_digest": "sha256:24f3c2b9fd3ff98372b4c7341314f21f6b62a8efe61a93856ec331976f38bfb9",
+  "supplier": {
+    "class": "model-single",
+    "id": "claude-fable-5"
+  },
+  "proposer_overlap": "unknown",
+  "decision_provenance": "model",
+  "written": [
+    ".kb/assessments/switch.json"
+  ]
+}

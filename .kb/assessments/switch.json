@@ -1,0 +1,49 @@
+{
+  "target": "staging/switch.md",
+  "rubric": "promotion@3",
+  "assessed": "2026-08-27",
+  "action": "queue",
+  "reason": "no routing rule matched",
+  "ratings": {
+    "durability": "weak",
+    "actionability": "strong",
+    "atomicity": "strong"
+  },
+  "verdict": {
+    "rubric": "promotion@3",
+    "target": "staging/switch.md",
+    "task_id": "82f735088557f82c",
+    "disqualifiers": {
+      "pure-announcement": {
+        "triggered": false,
+        "rationale": "A framework README with a designed operating model and explicit non-goals, not a launch post."
+      },
+      "duplicate": {
+        "triggered": false,
+        "rationale": "The corpus covers multi-agent orchestration and agent interop, but nothing on human-agent teaming inside existing collaboration surfaces or a maturity ladder for mixed organizations."
+      },
+      "unfalsifiable": {
+        "triggered": false,
+        "rationale": "Open repository; the claims about what ships are checkable against the code and releases."
+      }
+    },
+    "dimensions": {
+      "durability": {
+        "rating": "weak",
+        "rationale": "The transferable ideas — agents joining the team's existing channels rather than a new surface, the four-level adoption ladder, organization-as-designed-artifact — are durable-shaped, but the source carries them as a young product's promises: early-access builds, guardrails explicitly 'coming next', no deployment evidence or measurements."
+      },
+      "actionability": {
+        "rating": "strong",
+        "rationale": "Installable today with a concrete stepwise adoption path (the ladder is itself a how-to), MCP-served docs, and self-hosting as the primary deployment."
+      },
+      "atomicity": {
+        "rating": "strong",
+        "rationale": "One subject: the framework and its operating model."
+      }
+    },
+    "supplier": {
+      "class": "model-single",
+      "id": "claude-fable-5"
+    }
+  }
+}

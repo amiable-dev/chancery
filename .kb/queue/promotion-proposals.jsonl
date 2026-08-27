@@ -92,3 +92,4 @@
 {"id":"46be0c6d","kind":"promotion","subject":"staging/tmate.md","value":"queue","rationale":"no routing rule matched","source":"promotion@3","status":"open","opened":"2026-08-24"}
 {"id":"8e4a8bb0","kind":"promotion","subject":"staging/ard-spec-document.md","value":"queue","rationale":"no routing rule matched","source":"promotion@3","status":"open","opened":"2026-08-24"}
 {"id":"4073c404","kind":"promotion","subject":"staging/architecture-overview-model-context-protocol.md","value":"queue","rationale":"no routing rule matched","source":"promotion@3","status":"open","opened":"2026-08-24"}
+{"id":"c3193878","kind":"promotion","subject":"staging/switch.md","value":"queue","rationale":"no routing rule matched","source":"promotion@3","status":"open","opened":"2026-08-27"}
